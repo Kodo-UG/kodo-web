@@ -2,18 +2,6 @@ import React from "react";
 
 const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
   return (
-    // <div>
-    //         <label>Last Name
-    //             <input
-    //                 type="text"
-    //                 name='lastName'
-    //                 value={formData.lastName}
-    //                 onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-    //             />
-    //         </label>
-    //         <button onClick={nextStep}>Next</button>
-    //         <button onClick={ prevStep }>Previous</button>
-    //     </div>
 
     <div class="app-container">
       <div class="app-wrapper">
