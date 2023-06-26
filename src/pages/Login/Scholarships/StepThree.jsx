@@ -1,6 +1,8 @@
 import React from "react";
 
 const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
+
+   const myList = []
   return (
 
     <div class="app-container">

@@ -1,282 +1,109 @@
 import React from "react";
+import Body from "../../../components/Layout/Body";
+import { BiSignal1 } from "react-icons/bi";
 
 const StepperFour = ({ nextStep, prevStep, formData, setFormData }) => {
 	return (
-		// <div>
-		//         <label>Email
-		//             <input
-		//                 type="text"
-		//                 name='email'
-		//                 value={formData.email}
-		//                 onChange={(e) => setFormData({...formData, email: e.target.value})}
-		//             />
-		//         </label>
-		//         <button onClick={nextStep}>Next</button>
-		//         <button onClick={ prevStep }>Previous</button>
-		//     </div>
-
-		<div
-			id="voyager"
-			data-basename="/voyager/experience"
-			class="flex-1 relative"
-		>
-			<section id="voyager-blocks">
-				<section>
-					<section class="">
-						<div data-testid="progress-bar" class="_progressBar_63yfq_1">
+		<Body>
+			<div
+				id="voyager"
+				data-basename="/voyager/experience"
+				className="flex-1 relative"
+			>
+				<section id="voyager-blocks">
+					<section>
+						<section>
 							<div
-								class="_progress_63yfq_1"
-								style={{ width: "10%" }}
-							></div>
-						</div>
-						<div class="_notAnimated_pmptr_10">
-							<span class="_headingContainer_1fpvz_1">
-								<p>
-									First things first, catch us up on your education
-									journey so far.
-								</p>
-								<h2 class="_soloHeading_1fpvz_8">
-									What’s the highest level of education you’ve
-									completed?
-								</h2>
-							</span>
-							<div>
-								<div class="_optionGroup_9bife_5 _optionGroupCols4_9bife_70">
-									<div class="_option_9bife_5">
-										<div class="_optionInner_9bife_23">
-											<input
-												id="High School"
-												type="checkbox"
-												class="_optionCheckmark_9bife_94"
-												data-testid="educationlevel-highschool"
-												value="highschool"
-											/>
-											<label
-												for="High School"
-												class="_optionBody_9bife_90"
+								data-testid="progress-bar"
+								className="_progressBar_63yfq_1"
+							>
+								<div
+									className="_progress_63yfq_1"
+									style={{ width: "10%" }}
+								></div>
+							</div>
+							<div className="_notAnimated_pmptr_10">
+								<span className="_headingContainer_1fpvz_1">
+									<p>
+										First things first, catch us up on your education
+										journey so far.
+									</p>
+									<h2 className="_soloHeading_1fpvz_8">
+										What’s the highest level of education you’ve
+										completed?
+									</h2>
+								</span>
+								<div>
+									<span className="_conditional_gamud_1">
+										<div>
+											<div
+												data-testid="callout-field"
+												className="_callout_1qfey_1"
 											>
-												<span class="_optionIcon_9bife_48">
-													<div
-														style={{
-															height: "1.5rem",
-															width: "1.5rem",
-														}}
-													>
-														<img
-															loading="lazy"
-															src="https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1"
-															alt="signal1"
-														/>
-													</div>
-												</span>
-												<div>
-													<span class="_optionLabel_9bife_106 _normal_9bife_137">
-														High School
-													</span>
-												</div>
-											</label>
+												<b>
+													We have hundreds of schools to choose
+													from.
+												</b>
+												<p>
+													Tell us a little about yourself, and
+													we'll find the BEST one for you.
+												</p>
+											</div>
 										</div>
+									</span>
+								</div>
+								<div
+									style={{
+										background: "white",
+										borderRadius: 20,
+										maxWidth: "10rem",
+										height: "10rem",
+										boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+										display: "flex",
+										flexDirection: "column",
+										justifyContent: "center",
+										alignItems: "center",
+									}}
+								>
+									<div
+										style={{
+											borderRadius: "50%",
+											background: "#E6E9ED",
+											width: "2.5rem",
+											height: "2.5rem",
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+										}}
+									>
+										<BiSignal1
+											style={{
+												color: "red",
+												width: "6rem",
+												height: "4rem",
+												marginTop: "-12px",
+												marginLeft: "15px",
+											}}
+										/>
 									</div>
-									<div class="_option_9bife_5">
-										<div class="_optionInner_9bife_23">
-											<input
-												id="GED"
-												type="checkbox"
-												class="_optionCheckmark_9bife_94"
-												data-testid="educationlevel-ged"
-												value="ged"
-											/>
-											<label for="GED" class="_optionBody_9bife_90">
-												<span class="_optionIcon_9bife_48">
-													<div
-														style={{
-															height: "1.5rem",
-															width: "1.5rem",
-														}}
-													>
-														<img
-															loading="lazy"
-															src="https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1"
-															alt="signal1"
-														/>
-													</div>
-												</span>
-												<div>
-													<span class="_optionLabel_9bife_106 _normal_9bife_137">
-														GED
-													</span>
-												</div>
-											</label>
-										</div>
-									</div>
-									<div class="_option_9bife_5">
-										<div class="_optionInner_9bife_23">
-											<input
-												id="High School"
-												type="checkbox"
-												class="_optionCheckmark_9bife_94"
-												data-testid="educationlevel-highschool"
-												value="highschool"
-											/>
-											<label
-												for="High School"
-												class="_optionBody_9bife_90"
-											>
-												<span class="_optionIcon_9bife_48">
-													<div
-														style={{
-															height: "1.5rem",
-															width: "1.5rem",
-														}}
-													>
-														<img
-															loading="lazy"
-															src="https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1"
-															alt="signal1"
-														/>
-													</div>
-												</span>
-												<div>
-													<span class="_optionLabel_9bife_106 _normal_9bife_137">
-														High School
-													</span>
-												</div>
-											</label>
-										</div>
-									</div>
-									<div class="_option_9bife_5">
-										<div class="_optionInner_9bife_23">
-											<input
-												id="GED"
-												type="checkbox"
-												class="_optionCheckmark_9bife_94"
-												data-testid="educationlevel-ged"
-												value="ged"
-											/>
-											<label for="GED" class="_optionBody_9bife_90">
-												<span class="_optionIcon_9bife_48">
-													<div
-														style={{
-															height: "1.5rem",
-															width: "1.5rem",
-														}}
-													>
-														<img
-															loading="lazy"
-															src="https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1"
-															alt="signal1"
-														/>
-													</div>
-												</span>
-												<div>
-													<span class="_optionLabel_9bife_106 _normal_9bife_137">
-														GED
-													</span>
-												</div>
-											</label>
-										</div>
-									</div>
-									<div class="_option_9bife_5">
-										<div class="_optionInner_9bife_23">
-											<input
-												id="High School"
-												type="checkbox"
-												class="_optionCheckmark_9bife_94"
-												data-testid="educationlevel-highschool"
-												value="highschool"
-											/>
-											<label
-												for="High School"
-												class="_optionBody_9bife_90"
-											>
-												<span class="_optionIcon_9bife_48">
-													<div
-														style={{
-															height: "1.5rem",
-															width: "1.5rem",
-														}}
-													>
-														<img
-															loading="lazy"
-															src="https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1"
-															alt="signal1"
-														/>
-													</div>
-												</span>
-												<div>
-													<span class="_optionLabel_9bife_106 _normal_9bife_137">
-														High School
-													</span>
-												</div>
-											</label>
-										</div>
-									</div>
-									<div class="_option_9bife_5">
-										<div class="_optionInner_9bife_23">
-											<input
-												id="GED"
-												type="checkbox"
-												class="_optionCheckmark_9bife_94"
-												data-testid="educationlevel-ged"
-												value="ged"
-											/>
-											<label for="GED" class="_optionBody_9bife_90">
-												<span class="_optionIcon_9bife_48">
-													<div
-														style={{
-															height: "1.5rem",
-															width: "1.5rem",
-														}}
-													>
-														<img
-															loading="lazy"
-															src="https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1"
-															alt="signal1"
-														/>
-													</div>
-												</span>
-												<div>
-													<span class="_optionLabel_9bife_106 _normal_9bife_137">
-														GED 
-													</span>
-												</div>
-											</label>
-										</div>
+									<div style={{ marginTop: "1rem" }}>
+										<h5>Text</h5>
 									</div>
 								</div>
 							</div>
-							<div></div>
-							<div>
-								<span class="_conditional_gamud_1">
-									<div>
-										<div
-											data-testid="callout-field"
-											class="_callout_1qfey_1"
-										>
-											<b>
-												We have hundreds of schools to choose from.
-											</b>
-											<p>
-												Tell us a little about yourself, and we'll
-												find the BEST one for you.
-											</p>
-										</div>
-									</div>
-								</span>
-							</div>
-						</div>
+						</section>
 					</section>
 				</section>
-			</section>
-			<div className="d-felx">
-				<button class="select-option sonic-btn" onClick={prevStep}>
-					Previous
-				</button>
-				<button class="select-option sonic-btn" onClick={nextStep}>
-					Next
-				</button>
+				<div style={{ marginTop: "16px" }} className="d-flex">
+					<button className="select-option sonic-btn" onClick={prevStep}>
+						Previous
+					</button>
+					<button className="select-option sonic-btn" onClick={nextStep}>
+						Next
+					</button>
+				</div>
 			</div>
-		</div>
+		</Body>
 	);
 };
 

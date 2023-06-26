@@ -1,23 +1,47 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	user: null,
+	lname: "",
+	fname: "",
+	email: "",
+	country: "",
+	city: "",
+	password: "",
+	scholarshipStart: "",
+	educationlevel: "",
+	degree: "",
+	phone: "",
+	appType: "",
+	scholarshipcategory: "",
 };
 const userSlice = createSlice({
 	name: "user",
 	initialState,
 	reducers: {
-		setUser: (state, action) => {
-			state.user = action.payload;
+		regUser: (state, action) => {
+			return { ...state, ...action.payload };
 		},
-		clearUser: (state) => {
-			state.user = null;
+		resetUser: () => {
+			return {
+				lname: "",
+				fname: "",
+				email: "",
+				country: "",
+				city: "",
+				password: "",
+				scholarshipStart: "",
+				educationlevel: "",
+				degree: "",
+				phone: "",
+				appType: "",
+				scholarshipcategory: "",
+			};
 		},
 	},
 });
 
 // Export actions
-export const { setUser, clearUser } = userSlice.actions;
+export const { regUser, resetUser } = userSlice.actions;
 
 // Export the reducer
 export default userSlice.reducer;

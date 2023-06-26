@@ -1,7 +1,11 @@
 import React from "react";
 import MyButton from "../../../components/Button";
+import { useDispatch } from "react-redux";
 
 const StepOne = ({ nextStep, prevStep, formData, setFormData }) => {
+	const dispatch = useDispatch();
+
+	
 	const myList = [
 		{
 			id: 1,
