@@ -7,14 +7,9 @@ import { store, persistor } from "./store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ReactQueryDevtools } from "react-query/devtools";
+import "./main.css";
 
-import {
-	useQuery,
-	useMutation,
-	useQueryClient,
-	QueryClient,
-	QueryClientProvider,
-} from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 persistor.purge();
 

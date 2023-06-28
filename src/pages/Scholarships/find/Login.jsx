@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
 
-const FindScholarship = () => {
+const Login = () => {
 	const dispatch = useDispatch();
 
 	const object = [
@@ -40,11 +40,7 @@ const FindScholarship = () => {
 							onClick={() => handleClick(obj.title)}
 							key={obj.id}
 							class="col-lg-6"
-							style={{
-								cursor: "pointer",
-								height: "30rem",
-								maxHeight: "40rem",
-							}}
+							style={{ cursor: "pointer"  }}
 						>
 							<div class="card custom-card">
 								<div
@@ -71,7 +67,7 @@ const FindScholarship = () => {
 										class="btn ss-btn w-100"
 										id="button1"
 									>
-										Sign Up
+										Login
 									</Link>
 								</div>
 							</div>
@@ -96,4 +92,4 @@ const FindScholarship = () => {
 	);
 };
 
-export default FindScholarship;
+export default Login;

@@ -84,7 +84,10 @@ const StepOne = ({ nextStep, setFormData }) => {
 											: "transparent",
 									cursor: "pointer",
 								}}
-								onClick={() => handleButtonClick(list.id)}
+								onClick={() => {
+									handleButtonClick(list.id);
+									nextStep();
+								}}
 							/>
 						))}
 					</div>
