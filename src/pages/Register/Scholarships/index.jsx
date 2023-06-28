@@ -6,6 +6,9 @@ import StepThree from "./StepThree";
 import StepperFour from "./StepperFour";
 import StepSix from "./StepSix";
 import Final from "./Final";
+import StepSeven from "./StepSeven";
+import StepEight from "./StepEight";
+import StepNine from "./StepNine";
 
 const Stepper = () => {
 	const [step, setStep] = useState(1);
@@ -79,6 +82,37 @@ const Stepper = () => {
 						setFormData={setFormData}
 					/>
 				);
+			case 6:
+					return (
+						<StepSeven
+							nextStep={nextStep}
+							prevStep={prevStep}
+							formData={formData}
+							setFormData={setFormData}
+						/>
+					);	
+
+					case 7:
+						return (
+							<StepEight
+								nextStep={nextStep}
+								prevStep={prevStep}
+								formData={formData}
+								setFormData={setFormData}
+							/>
+						);	
+
+
+						
+					case 8:
+						return (
+							<StepNine
+								nextStep={nextStep}
+								prevStep={prevStep}
+								formData={formData}
+								setFormData={setFormData}
+							/>
+						);	
 			default:
 				return null;
 		}

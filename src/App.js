@@ -5,11 +5,11 @@ import Layout from './components/Layout'
 import Home from './pages/HomePage';
 import AboutUs from './pages/AboutUs'
 import Blog from './pages/Blog'
-import Login from './pages/Login'
+import Login from './pages/Register'
 import ContactUs from './pages/ContactUs';
 import Scholarships from './pages/Scholarships';
 import Testimonals from './pages/Testimonals';
-import Stepper from './pages/Login/Scholarships';
+import Stepper from './pages/Register/Scholarships';
 
 const App = () => {
   return (

@@ -1,0 +1,229 @@
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { clearFormData, updateFormData } from "../../../toolkit/formReducer";
+import api from "../../../api/apiClient";
+import axios from "axios";
+import CustomModal from "../../../components/modal/Modal";
+import { useMutation } from "react-query";
+
+const StepNine = ({ nextStep, prevStep }) => {
+	const [modalOpen, setModalOpen] = useState(false);
+	const [loading, setLoading] = useState(false);
+	const formData = useSelector((state) => state.formData);
+	const dispatch = useDispatch();
+	const handleEmailChange = (e) => {
+		const { name, value } = e.target;
+		console.log(`Field: ${name}, Value: ${value}`);
+		// Dispatch an action to update the form data in the Redux store
+		dispatch(updateFormData({ field: "email", value: value }));
+	};
+	const handlePasswordChange = (e) => {
+		const { name, value } = e.target;
+		console.log(`Field: ${name}, Value: ${value}`);
+		// Dispatch an action to update the form data in the Redux store
+		dispatch(updateFormData({ field: "password", value: value }));
+	};
+	const handlePhoneChange = (e) => {
+		const { name, value } = e.target;
+		console.log(`Field: ${name}, Value: ${value}`);
+		// Dispatch an action to update the form data in the Redux store
+		dispatch(updateFormData({ field: "phone", value: value }));
+	};
+
+	const registerMutation = useMutation(async () => {
+		try {
+			const res = await axios.post(
+				"https://kodo-api.onrender.com/api/v1/auth/user/signup",
+				formData
+			);
+
+			setModalOpen(true);
+
+			// console.log(res, "	WEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+			// dispatch(clearFormData());
+		} catch (error) {
+			console.log(error, "ERROR");
+			throw error;
+		}
+	});
+
+	// const handleRegister = async () => {
+	// 	const response = await api
+	// }
+	return (
+		<div
+			className="_notAnimated_pmptr_10"
+			style={{
+				display: "flex",
+				alignItems: "center",
+				marginTop: "10px",
+				marginBottom: "20px",
+				justifyContent: "center",
+				flexDirection: "column",
+			}}
+		>
+			<span
+				className="_headingContainer_1fpvz_1"
+				style={{ marginTop: "10px", marginBottom: "20px" }}
+			>
+				<h2 className="_soloHeading_1fpvz_8">Create Account</h2>
+			</span>
+			<form
+				method="POST"
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "space-between",
+					marginTop: "10px",
+					marginBottom: "40px",
+					alignItems: "center",
+				}}
+			>
+				<div style={{ marginTop: "20px", marginBottom: "20px" }}>
+					{" "}
+					<div className="_fieldGroup_1g3ja_1">
+						<input
+							id="email"
+							className="_textField_fwd9c_1"
+							name="email"
+							placeholder="Email"
+							required=""
+							data-testid="email"
+							onChange={handleEmailChange}
+							style={{
+								borderRadius: "50px",
+								width: "500px",
+								padding: "15px",
+								border: "1px solid #ccc",
+								outline: "none",
+								transition: "box-shadow 0.3s ease-in-out",
+								boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+								fontFamily: "Arial, sans-serif",
+								fontSize: "16px",
+								lineHeight: "1.5",
+								color: "#333",
+								backgroundColor: "#fff",
+							}}
+						/>
+					</div>
+				</div>
+				<div style={{ marginTop: "20px", marginBottom: "20px" }}>
+					{" "}
+					<div className="_fieldGroup_1g3ja_1">
+						<input
+							id="phone"
+							className="_textField_fwd9c_1"
+							name="phone"
+							placeholder="Phone"
+							required=""
+							data-testid="phone"
+							onChange={handlePhoneChange}
+							style={{
+								borderRadius: "50px",
+								width: "500px",
+								padding: "15px",
+								border: "1px solid #ccc",
+								outline: "none",
+								transition: "box-shadow 0.3s ease-in-out",
+								boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+								fontFamily: "Arial, sans-serif",
+								fontSize: "16px",
+								lineHeight: "1.5",
+								color: "#333",
+								backgroundColor: "#fff",
+							}}
+						/>
+					</div>
+				</div>
+				<div style={{ marginTop: "20px", marginBottom: "20px" }}>
+					<div className="_fieldGroup_1g3ja_1">
+						<input
+							id="password"
+							className="_textField_fwd9c_1"
+							name="password"
+							placeholder="Password"
+							required=""
+							data-testid="password"
+							onChange={handlePasswordChange}
+							style={{
+								borderRadius: "50px",
+								width: "500px",
+								padding: "15px",
+								border: "1px solid #ccc",
+								outline: "none",
+								transition: "box-shadow 0.3s ease-in-out",
+								boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+								fontFamily: "Arial, sans-serif",
+								fontSize: "16px",
+								lineHeight: "1.5",
+								color: "#333",
+								backgroundColor: "#fff",
+							}}
+						/>
+					</div>
+				</div>
+
+				<div>
+					<div className="_fieldGroup_1g3ja_1">
+						<input
+							id="confrimPassword"
+							className="_textField_fwd9c_1"
+							name="confirm-password"
+							placeholder="Confirm Password"
+							required=""
+							data-testid="confirm-password"
+							value=""
+							style={{
+								borderRadius: "50px",
+								width: "500px",
+								padding: "15px",
+								border: "1px solid #ccc",
+								outline: "none",
+								transition: "box-shadow 0.3s ease-in-out",
+								boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+								fontFamily: "Arial, sans-serif",
+								fontSize: "16px",
+								lineHeight: "1.5",
+								color: "#333",
+								backgroundColor: "#fff",
+							}}
+						/>
+					</div>
+				</div>
+			</form>
+			<div
+				className="d-flex"
+				style={{ display: "flex", justifyContent: "center" }}
+			>
+				<button
+					className="select-option sonic-btn"
+					onClick={registerMutation.mutate}
+					style={{
+						borderRadius: "20px",
+						padding: "10px 20px",
+						border: "none",
+						outline: "none",
+						transition:
+							"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
+						fontFamily: "Arial, sans-serif",
+						fontSize: "16px",
+						lineHeight: "1.5",
+						color: "#fff",
+						cursor: "pointer",
+					}}
+					disabled={registerMutation.isLoading}
+				>
+					{registerMutation.isLoading ? "Registering..." : "Register"}
+				</button>
+				{modalOpen && (
+					<CustomModal
+						onCancel={() => setModalOpen(false)}
+						onOk={() => setModalOpen(false)}
+					/>
+				)}
+			</div>
+		</div>
+	);
+};
+
+export default StepNine;
