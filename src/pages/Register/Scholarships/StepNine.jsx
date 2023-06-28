@@ -4,10 +4,9 @@ import { clearFormData, updateFormData } from "../../../toolkit/formReducer";
 import api from "../../../api/apiClient";
 import axios from "axios";
 import CustomModal from "../../../components/modal/Modal";
-import { useMutation } from "react-query";
 
 const StepNine = ({ nextStep, prevStep }) => {
-	const [modalOpen, setModalOpen] = useState(false);
+	const [modalOpen, setModalOpen] = useState(true);
 	const [loading, setLoading] = useState(false);
 	const formData = useSelector((state) => state.formData);
 	const dispatch = useDispatch();
@@ -30,23 +29,34 @@ const StepNine = ({ nextStep, prevStep }) => {
 		dispatch(updateFormData({ field: "phone", value: value }));
 	};
 
-	const registerMutation = useMutation(async () => {
+	const register = async () => {
+		setLoading(true);
+		let data = JSON.stringify(formData);
+
+		console.log(data, "DATA IS HERE ");
 		try {
 			const res = await axios.post(
-				"https://kodo-api.onrender.com/api/v1/auth/user/signup",
+				"http://165.227.139.53/api/v1/auth/user/signup",
 				formData
 			);
+			console.log(res.data.id);
+			localStorage.setItem("userID", res.data.id);
 
-			setModalOpen(true);
+			if (res.data.id) {
+				nextStep();
+			}
 
-			// console.log(res, "	WEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+			// setModalOpen(true);
+
+			console.log(res, "	WEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 			// dispatch(clearFormData());
 		} catch (error) {
 			console.log(error, "ERROR");
-			throw error;
+		} finally {
+			setLoading(false);
 		}
-	});
-
+	};
+	console.log(modalOpen);
 	// const handleRegister = async () => {
 	// 	const response = await api
 	// }
@@ -197,7 +207,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 			>
 				<button
 					className="select-option sonic-btn"
-					onClick={registerMutation.mutate}
+					onClick={register}
 					style={{
 						borderRadius: "20px",
 						padding: "10px 20px",
@@ -211,16 +221,9 @@ const StepNine = ({ nextStep, prevStep }) => {
 						color: "#fff",
 						cursor: "pointer",
 					}}
-					disabled={registerMutation.isLoading}
 				>
-					{registerMutation.isLoading ? "Registering..." : "Register"}
+					{loading ? "Registering...." : "Register"}
 				</button>
-				{modalOpen && (
-					<CustomModal
-						onCancel={() => setModalOpen(false)}
-						onOk={() => setModalOpen(false)}
-					/>
-				)}
 			</div>
 		</div>
 	);

@@ -8,14 +8,14 @@ import { useQuery, useMutation } from "react-query";
 
 const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 	const formData = useSelector((state) => state.formData);
-	const [categories, setCategories] = useState([]);
+	// const [categories, setCategories] = useState([]);
 	const dispatch = useDispatch();
 
 	// const [id, setId] = useState();
 
 	async function fetchCategories() {
 		const response = await fetch(
-			"https://kodo-api.onrender.com/api/v1/scholarship/categories"
+			"http://165.227.139.53/api/v1/scholarship/categories"
 		);
 		const data = await response.json();
 		return data;
@@ -32,14 +32,6 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 
 	const newData = data?.data;
 
-	console.log("+++++", newData, "===========");
-
-	// const getCategories = async () => {
-	// 	const data = await axios.get(
-	// 		"https://kodo-api.onrender.com/api/v1/scholarship/categories"
-	// 	);
-	// 	setCategories(data.data.data);
-	// };
 	const handleClick = (id) => {
 		// setId(id);
 		dispatch(updateFormData({ field: "scholarshipcategory", value: id }));
@@ -55,29 +47,34 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 					}}
 				>
 					<h2>What school category interests you?</h2>
-					<div class="option-list">
-						{newData?.map((info) => (
-							<button
-								key={info._id}
-								onClick={() => handleClick(info._id)}
-								type="button"
-								class="select-option sonic-btn"
-								style={{
-									padding: "15px",
-									border: "1px solid #ccc",
-									outline: "none",
-									transition: "box-shadow 0.3s ease-in-out",
-									boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-									fontFamily: "Arial, sans-serif",
-									fontSize: "16px",
-									lineHeight: "1.5",
-									color: "white",
-								}}
-							>
-								{info.name}
-							</button>
-						))}
-					</div>
+					{isLoading ? (
+						"Please wait as we load the categories"
+					) : (
+						<div class="option-list">
+							{newData?.map((info) => (
+								<button
+									key={info._id}
+									onClick={() => handleClick(info._id)}
+									type="button"
+									class="select-option sonic-btn"
+									style={{
+										padding: "15px",
+										border: "1px solid #ccc",
+										outline: "none",
+										transition: "box-shadow 0.3s ease-in-out",
+										boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+										fontFamily: "Arial, sans-serif",
+										fontSize: "16px",
+										lineHeight: "1.5",
+										color: "white",
+										cursor: "pointer",
+									}}
+								>
+									{info.name}
+								</button>
+							))}
+						</div>
+					)}
 				</div>
 			</div>
 			<div className="d-felx">
@@ -95,6 +92,7 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 						lineHeight: "1.5",
 						color: "#fff",
 						cursor: "pointer",
+						marginBottom: "4px",
 					}}
 				>
 					Previous

@@ -29,13 +29,14 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 				>
 					<h2>How soon were you looking to start this new program?</h2>
 					<div class="option-list">
-						<div
+					<div
 							style={{
 								display: "flex",
 								flexDirection: "row",
 								flexWrap: "wrap",
 								padding: "13px",
 								margin: "2.3rem",
+								cursor: "pointer",
 							}}
 						>
 							{buttons.map((button) => (
