@@ -17,11 +17,8 @@ export default function Login() {
           </div>
         </div>
         <div className="col-md-6 d-flex align-items-center justify-content-center">
-          <img
-            src="https://res.cloudinary.com/ultronic-software-developers/image/upload/v1687970392/bg1-l_jptexl.jpg"
-            alt="Image"
-            className="img-fluid"
-          />
+        <div className="image-container"></div>
+
         </div>
       </div>
     </div>

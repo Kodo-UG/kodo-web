@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Layout from './components/Layout'
-
+import Layout from "./components/Layout";
 import Home from './pages/HomePage';
 import AboutUs from './pages/AboutUs'
 import Blog from './pages/Blog'
@@ -31,4 +30,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

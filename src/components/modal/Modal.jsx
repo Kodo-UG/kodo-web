@@ -1,16 +1,16 @@
 import { Button, Modal } from "antd";
 import { useState } from "react";
 
-const CustomModal = ({ setOpen, onOk, onCancel }) => {
+const CustomModal = ({  setModalOPen,modalOpen }) => {
 	// const [modalOpen, setModalOpen] = useState(false);
 	return (
 		<>
 			<Modal
 				title="Email Verification"
 				centered
-				open={setOpen}
-				onOk={onOk}
-				onCancel={onCancel}
+                  visible={modalOpen}
+				footer={null}
+				onCancel={()=>setModalOPen(false)}
 			>
 				<div className="_fieldGroup_1g3ja_1">
 					<input

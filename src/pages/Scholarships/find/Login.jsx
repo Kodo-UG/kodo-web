@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
 
-const FindScholarship = () => {
+const Login = () => {
 	const dispatch = useDispatch();
 
 	const object = [
@@ -40,11 +40,7 @@ const FindScholarship = () => {
 							onClick={() => handleClick(obj.title)}
 							key={obj.id}
 							class="col-lg-6"
-							style={{
-								cursor: "pointer",
-								height: "30rem",
-								maxHeight: "40rem",
-							}}
+							style={{ cursor: "pointer"  }}
 						>
 							<div class="card custom-card">
 								<div
@@ -71,18 +67,29 @@ const FindScholarship = () => {
 										class="btn ss-btn w-100"
 										id="button1"
 									>
-										Sign Up
+										Login
 									</Link>
 								</div>
 							</div>
 						</div>
 					))}
 
-
+					{/* <div class="col-lg-6">
+                        <div class="card custom-card">
+                            <div class="card-header d-flex align-items-center justify-content-center">
+                                <img src="https://www.kodoscholarships.com/logo.png" style={{ width: '95px' }} alt="Logo" class="logo" />
+                                <span class="card-title" style={{ fontSize: '18px', marginBottom: '-4px' }}>Jobs</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text text-center">Are you looking for a remote Job, find Life Changing Jobs Now !.</p>
+                                <a href="https://www.kodoscholarships.com/steps/program" class="btn ss-btn w-100" id="button2">Sign Up</a>
+                            </div>
+                        </div>
+                    </div> */}
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default FindScholarship;
+export default Login;
