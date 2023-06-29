@@ -4,7 +4,7 @@ import { clearFormData, updateFormData } from "../../../toolkit/formReducer";
 import api from "../../../api/apiClient";
 import { Input } from "antd";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const { TextArea } = Input;
 
 const StepTen = ({ nextStep, prevStep }) => {
@@ -12,7 +12,7 @@ const StepTen = ({ nextStep, prevStep }) => {
 	const [loading, setLoading] = useState(false);
 	const [code, setCode] = useState(null);
 
-	const navigate = useNavigate();
+	const navigate = useHistory();
 
 	const handleCodeChange = (e) => {
 		const { name, value } = e.target;
