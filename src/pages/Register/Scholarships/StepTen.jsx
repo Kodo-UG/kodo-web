@@ -12,7 +12,7 @@ const StepTen = ({ nextStep, prevStep }) => {
 	const [loading, setLoading] = useState(false);
 	const [code, setCode] = useState(null);
 
-	const navigate = useHistory();
+	const history = useHistory();
 
 	const handleCodeChange = (e) => {
 		const { name, value } = e.target;
@@ -33,7 +33,7 @@ const StepTen = ({ nextStep, prevStep }) => {
 			);
 
 			if (response) {
-				navigate("/login");
+				history("/login");
 			}
 
 			console.log(response);

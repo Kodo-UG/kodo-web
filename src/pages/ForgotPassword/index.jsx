@@ -4,9 +4,8 @@ import apiClient from '../../api/apiClient';
 import axios from 'axios';
 import { displayErrorMessage, displaySuccessMessage } from '../../utils/Toast';
 
-export default function Login() {
+export default function ForgotPassword() {
   const [email,setEmail] = useState()
-  const [password,setPassword] = useState()
 
   const history = useHistory()
   const handleChange = (setState) => (e) => {
@@ -15,18 +14,16 @@ export default function Login() {
 
  const handleLogin = async() =>{
   try {
-    const data = await axios.post('http://165.227.139.53/api/v1/auth/login',{email,password})
-    if(data.status=="201"){
-      localStorage.setItem('userData', JSON.stringify(data.data))
-      displaySuccessMessage("Login successful")
-      history.push("/dasboard");
+    const data = await apiClient.post('/auth/forgot/password',{email})
+    if(data.status=="200"){
+      displaySuccessMessage(`Password reset instructions sent ${email}`)
     }else{
       displayErrorMessage("Login Failed")
 
     }
   } catch (error) {
     console.log(error)
-    displayErrorMessage("Invalid username or password")
+    displayErrorMessage("Invalid Email or Password")
   }
  }
   return (
@@ -93,7 +90,7 @@ export default function Login() {
                 fontWeight: "bold", fontSize: "24px", transition:
                   "background-color 0.3s ease-in-out, color 0.3s ease-in-out",
                 fontFamily: "Arial, sans-serif",
-              }}>Log in</h1>
+              }}>Forgot Password</h1>
               <h1 style={{
                 transition:
                   "background-color 0.3s ease-in-out, color 0.3s ease-in-out",
@@ -101,7 +98,7 @@ export default function Login() {
                 fontSize: "16px",
                 lineHeight: "1.5",
                 color: "gray",
-              }}>Log in to continue to Kodo</h1>
+              }}>Request for password reset</h1>
 
             </div>
 
@@ -133,33 +130,6 @@ export default function Login() {
                 />
               </div>
             </div>
-            <div style={{ marginBottom: "10px" }}>
-
-              <div className="form-group" style={{ display: "flex", flexDirection: "column" }}>
-                <label htmlFor="password">Password</label>
-                <input
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  required=""
-                  type="password"
-                  style={{
-                    borderRadius: "40px",
-                    width: "500px",
-                    padding: "10px",
-                    border: "1px solid #ccc",
-                    outline: "none",
-                    transition: "box-shadow 0.3s ease-in-out",
-                    boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-                    fontFamily: "Arial, sans-serif",
-                    fontSize: "16px",
-                    lineHeight: "1.5",
-                    color: "#333",
-                  }}
-                  onChange={handleChange(setPassword)}
-                />
-              </div>
-            </div>
             <div style={{
               display: "flex",
               alignItems: "flex-start",
@@ -186,12 +156,11 @@ export default function Login() {
                     marginBottom: "4px",
                   }}
                 >
-                  Login
+                  Reset
                 </button>
               </div>
               <div>
-                <Link
-                to="/forgot/password"
+                <h1
                   style={{
                     padding: "10px 20px",
                     border: "none",
@@ -205,8 +174,8 @@ export default function Login() {
                     cursor: "pointer",
                   }}
                 >
-                  Forgot Password
-                </Link>
+                  Back to login
+                </h1>
               </div>
             </div>
 
