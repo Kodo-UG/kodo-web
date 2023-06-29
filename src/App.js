@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
-
+import { ProtectedRoute } from "./protectedRoute";
 import Home from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
@@ -11,10 +11,22 @@ import Testimonals from "./pages/Testimonals";
 import Stepper from "./pages/Register/Scholarships";
 import FindScholarship from "./pages/Register";
 import Login from "./pages/Scholarships/Login";
+import Signin from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import ForgotPassword from "./pages/ForgotPassword";
+import PasswordReset from "./pages/PasswordReset";
 
 const App = () => {
 	return (
 		<Switch>
+			{/* <Route exact path="/dashboard" component={Dashboard} /> */}
+			<Route
+          path="/dashboard"
+          element={<ProtectedRoute element={<Dashboard />} />}
+        />
+			<Route exact path="/signin" component={Signin} />
+			<Route exact path="/forgot/password" component={ForgotPassword} />
+			<Route path="/reset-password" component={PasswordReset} />
 			<Layout>
 				<Route exact path="/" component={Home} />
 				<Route exact path="/aboutus" component={AboutUs} />

@@ -11,7 +11,7 @@ const Login = () => {
 			id: 1,
 			title: "Scholarships",
 			text: "We’ve helped students win more than $10 million dollars in scholarships.",
-			link: "/stepper",
+			link: "/signin",
 		},
 		{
 			id: 2,
