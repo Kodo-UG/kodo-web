@@ -11,12 +11,14 @@ import Testimonals from "./pages/Testimonals";
 import Stepper from "./pages/Register/Scholarships";
 import FindScholarship from "./pages/Register";
 import Login from "./pages/Scholarships/Login";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
 	return (
 		<Switch>
 			<Layout>
 				<Route exact path="/" component={Home} />
+				<Route exact path="/dashboard" component={Dashboard} />
 				<Route exact path="/aboutus" component={AboutUs} />
 				<Route exact path="/login" component={Login} />
 				<Route exact path="/blog" component={Blog} />

@@ -7,7 +7,6 @@ import { store, persistor } from "./store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ReactQueryDevtools } from "react-query/devtools";
-import "./main.css";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
