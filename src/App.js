@@ -5,12 +5,12 @@ import Layout from "./components/Layout";
 import Home from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
-import Login from "./pages/Register";
 import ContactUs from "./pages/ContactUs";
 import Scholarships from "./pages/Scholarships";
 import Testimonals from "./pages/Testimonals";
 import Stepper from "./pages/Register/Scholarships";
 import FindScholarship from "./pages/Register";
+import Login from "./pages/Scholarships/Login";
 
 const App = () => {
 	return (
@@ -18,8 +18,9 @@ const App = () => {
 			<Layout>
 				<Route exact path="/" component={Home} />
 				<Route exact path="/aboutus" component={AboutUs} />
+				<Route exact path="/login" component={Login} />
 				<Route exact path="/blog" component={Blog} />
-				<Route exact path="/login" component={FindScholarship} />
+				<Route exact path="/admissions" component={FindScholarship} />
 				<Route exact path="/stepper" component={Stepper} />
 				<Route exact path="/contactus" component={ContactUs} />
 				<Route exact path="/scholarships" component={Scholarships} />
