@@ -56,7 +56,7 @@ export default function ForgotPassword() {
                 }}
               >
                 <div>
-                  <img src="logo-kodo.png" width={200} alt='logo' />
+                  <img src="https://res.cloudinary.com/ultronic-software-developers/image/upload/v1688102021/logo-kodo_xjcbvm.png" width={200} alt='logo' />
                 </div>
                 <div
                                 style={{
@@ -160,7 +160,8 @@ export default function ForgotPassword() {
                 </button>
               </div>
               <div>
-                <h1
+                <Link
+                to="/signin"
                   style={{
                     padding: "10px 20px",
                     border: "none",
@@ -175,7 +176,7 @@ export default function ForgotPassword() {
                   }}
                 >
                   Back to login
-                </h1>
+                </Link>
               </div>
             </div>
 

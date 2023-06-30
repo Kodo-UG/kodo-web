@@ -86,13 +86,16 @@ const StepOne = ({ nextStep, setFormData }) => {
 								}}
 								onClick={() => {
 									handleButtonClick(list.id);
-									nextStep();
 								}}
 							/>
 						))}
 					</div>
 				</div>
 			</div>
+			<div
+				className="d-flex"
+				style={{ display: "flex", justifyContent: "center" }}
+			>
 			<button
 				className="select-option sonic-btn"
 				onClick={nextStep}
@@ -112,6 +115,8 @@ const StepOne = ({ nextStep, setFormData }) => {
 				Next
 			</button>
 		</div>
+		</div>
+
 	);
 };
 
