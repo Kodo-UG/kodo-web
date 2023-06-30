@@ -18,6 +18,7 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 			"http://165.227.139.53/api/v1/scholarship/categories"
 		);
 		const data = await response.json();
+
 		return data;
 	}
 
@@ -31,6 +32,9 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 	);
 
 	const newData = data?.data;
+    console.log("=============")
+	console.log( data )
+	console.log("==============")
 
 	const handleClick = (id) => {
 		// setId(id);

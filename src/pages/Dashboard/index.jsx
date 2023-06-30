@@ -1,12 +1,18 @@
-import React from 'react'
+import React from "react";
+import MyHeader from "./Header";
+import Menu from "./Menu";
+import Dashboard from "./dashboard";
+import Footer from "./Footer";
 
-const Dashboard=()=>{
-  return (
-    <div>
-      <h1>fgfgvhffhfhf</h1>
-    </div>
-  )
-}
+const Root = () => {
+	return (
+		<div class="wrapper">
+			<MyHeader />
+			<Menu />
+			<Dashboard />
+			<Footer />
+		</div>
+	);
+};
 
-
-export default Dashboard
+export default Root;

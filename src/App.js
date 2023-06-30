@@ -12,21 +12,18 @@ import Stepper from "./pages/Register/Scholarships";
 import FindScholarship from "./pages/Register";
 import Login from "./pages/Scholarships/Login";
 import Signin from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import PasswordReset from "./pages/PasswordReset";
+import Root from "./pages/Dashboard";
 
 const App = () => {
 	return (
 		<Switch>
-			{/* <Route exact path="/dashboard" component={Dashboard} /> */}
-			<Route
-          path="/dashboard"
-          element={<ProtectedRoute element={<Dashboard />} />}
-        />
 			<Route exact path="/signin" component={Signin} />
 			<Route exact path="/forgot/password" component={ForgotPassword} />
 			<Route path="/reset-password" component={PasswordReset} />
+			<Route exact path="/dashboard" component={Root} />
+
 			<Layout>
 				<Route exact path="/" component={Home} />
 				<Route exact path="/aboutus" component={AboutUs} />
