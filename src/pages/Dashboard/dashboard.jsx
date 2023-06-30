@@ -1,7 +1,60 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
+import Scholarshipcard from "../../components/card/Scholarshipcard";
 
 const Dashboard = () => {
+	const data = [
+		{
+			id: 1,
+			text: "Active Scholarships",
+			bg: "bg-info",
+			total: 45,
+		},
+		{
+			id: 2,
+			text: "Completed Scholarships",
+			bg: "bg-success",
+			total: 45,
+		},
+		{
+			id: 3,
+			text: "Scholarship Registrations",
+			bg: "bg-warning",
+			total: 45,
+		},
+		{
+			id: 4,
+			text: "Pending Scholarships",
+			bg: "bg-warning",
+			total: 45,
+		},
+	];
+
+	const getScholarship = async () => {
+		try {
+			const token =
+				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbm8xOTIwMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NDk2YzE4ZDc3ZGYzMTBkMWU3OWRmNWEiLCJpYXQiOjE2ODc2MDE1OTR9.W_HZn7Z8diK-D3Qjfyg_C8JTcnC2QRjALVh3Dr7Aick";
+			const headers = {
+				Authorization: `Bearer ${token}`,
+			};
+
+			let res = await axios.get("http://165.227.139.53/api/v1/scholarship", {
+				headers,
+			});
+
+			console.log(res, "am here sir");
+			// Process the response here
+		} catch (error) {
+			// Handle the error here
+		}
+	};
+
+	useEffect(() => {
+		getScholarship();
+	}, []);
+
 	return (
 		<div>
 			<div className="content-wrapper">
@@ -18,9 +71,7 @@ const Dashboard = () => {
 									<li className="breadcrumb-item">
 										<a href="#">Home</a>
 									</li>
-									<li className="breadcrumb-item active">
-										Dashboard v1
-									</li>
+									<li className="breadcrumb-item active">Dashboard</li>
 								</ol>
 							</div>
 							{/* /.col */}
@@ -40,7 +91,7 @@ const Dashboard = () => {
 								<div className="small-box bg-info">
 									<div className="inner">
 										<h3>150</h3>
-										<p>New Orders</p>
+										<p>Active Scholarships</p>
 									</div>
 									<div className="icon">
 										<i className="ion ion-bag" />
@@ -59,7 +110,7 @@ const Dashboard = () => {
 										<h3>
 											53<sup style={{ fontSize: 20 }}>%</sup>
 										</h3>
-										<p>Bounce Rate</p>
+										<p>Completed Scholarships</p>
 									</div>
 									<div className="icon">
 										<i className="ion ion-stats-bars" />
@@ -76,7 +127,7 @@ const Dashboard = () => {
 								<div className="small-box bg-warning">
 									<div className="inner">
 										<h3>44</h3>
-										<p>User Registrations</p>
+										<p>Scholarship Registrations</p>
 									</div>
 									<div className="icon">
 										<i className="ion ion-person-add" />
@@ -93,7 +144,7 @@ const Dashboard = () => {
 								<div className="small-box bg-danger">
 									<div className="inner">
 										<h3>65</h3>
-										<p>Unique Visitors</p>
+										<p>Pending Scholarships</p>
 									</div>
 									<div className="icon">
 										<i className="ion ion-pie-graph" />
@@ -104,6 +155,8 @@ const Dashboard = () => {
 									</a>
 								</div>
 							</div>
+
+							<Scholarshipcard />
 						</div>
 					</div>
 				</section>

@@ -15,7 +15,9 @@ const Menu = () => {
 							className="brand-image  elevation-3"
 							style={{ opacity: ".8" }}
 						/>
-						<span className="brand-text font-weight-light">Scholarship</span>
+						<span className="brand-text font-weight-light">
+							Scholarship
+						</span>
 					</a>
 					{/* Sidebar */}
 					<div className="sidebar">
@@ -76,7 +78,7 @@ const Menu = () => {
 										</li>
 									</ul> */}
 								</li>
-								<li className="nav-item">
+								{/* <li className="nav-item">
 									<a href="pages/widgets.html" className="nav-link">
 										<i className="nav-icon fas fa-th" />
 										<p>
@@ -181,8 +183,8 @@ const Menu = () => {
 												<i className="far fa-circle nav-icon" />
 												<p>Flot</p>
 											</a>
-										</li>
-										<li className="nav-item">
+										</li> */}
+								{/* <li className="nav-item">
 											<a
 												href="pages/charts/inline.html"
 												className="nav-link"
@@ -192,8 +194,8 @@ const Menu = () => {
 											</a>
 										</li>
 									</ul>
-								</li>
-								<li className="nav-item has-treeview">
+								</li> */}
+								{/* <li className="nav-item has-treeview">
 									<a href="#" className="nav-link">
 										<i className="nav-icon fas fa-tree" />
 										<p>
@@ -275,8 +277,8 @@ const Menu = () => {
 											</a>
 										</li>
 									</ul>
-								</li>
-								<li className="nav-item has-treeview">
+								</li> */}
+								{/* <li className="nav-item has-treeview">
 									<a href="#" className="nav-link">
 										<i className="nav-icon fas fa-edit" />
 										<p>
@@ -313,8 +315,8 @@ const Menu = () => {
 											</a>
 										</li>
 									</ul>
-								</li>
-								<li className="nav-item has-treeview">
+								</li> */}
+								{/* <li className="nav-item has-treeview">
 									<a href="#" className="nav-link">
 										<i className="nav-icon fas fa-table" />
 										<p>
@@ -351,9 +353,9 @@ const Menu = () => {
 											</a>
 										</li>
 									</ul>
-								</li>
-								<li className="nav-header">EXAMPLES</li>
-								<li className="nav-item">
+								</li> */}
+								{/* <li className="nav-header">EXAMPLES</li> */}
+								{/* <li className="nav-item">
 									<a href="pages/calendar.html" className="nav-link">
 										<i className="nav-icon far fa-calendar-alt" />
 										<p>
@@ -363,14 +365,14 @@ const Menu = () => {
 											</span>
 										</p>
 									</a>
-								</li>
-								<li className="nav-item">
+								</li> */}
+								{/* <li className="nav-item">
 									<a href="pages/gallery.html" className="nav-link">
 										<i className="nav-icon far fa-image" />
 										<p>Gallery</p>
 									</a>
-								</li>
-								<li className="nav-item has-treeview">
+								</li> */}
+								{/* <li className="nav-item has-treeview">
 									<a href="#" className="nav-link">
 										<i className="nav-icon far fa-envelope" />
 										<p>
@@ -407,8 +409,8 @@ const Menu = () => {
 											</a>
 										</li>
 									</ul>
-								</li>
-								<li className="nav-item has-treeview">
+								</li> */}
+								{/* <li className="nav-item has-treeview">
 									<a href="#" className="nav-link">
 										<i className="nav-icon fas fa-book" />
 										<p>
@@ -490,8 +492,8 @@ const Menu = () => {
 											</a>
 										</li>
 									</ul>
-								</li>
-								<li className="nav-item has-treeview">
+								</li> */}
+								{/* <li className="nav-item has-treeview">
 									<a href="#" className="nav-link">
 										<i className="nav-icon far fa-plus-square" />
 										<p>
@@ -606,9 +608,9 @@ const Menu = () => {
 											</a>
 										</li>
 									</ul>
-								</li>
-								<li className="nav-header">MISCELLANEOUS</li>
-								<li className="nav-item">
+								</li> */}
+								{/* <li className="nav-header">MISCELLANEOUS</li> */}
+								{/* <li className="nav-item">
 									<a
 										href="https://adminlte.io/docs/3.0"
 										className="nav-link"
@@ -616,15 +618,15 @@ const Menu = () => {
 										<i className="nav-icon fas fa-file" />
 										<p>Documentation</p>
 									</a>
-								</li>
-								<li className="nav-header">MULTI LEVEL EXAMPLE</li>
-								<li className="nav-item">
+								</li> */}
+								{/* <li className="nav-header">MULTI LEVEL EXAMPLE</li> */}
+								{/* <li className="nav-item">
 									<a href="#" className="nav-link">
 										<i className="fas fa-circle nav-icon" />
 										<p>Level 1</p>
 									</a>
-								</li>
-								<li className="nav-item has-treeview">
+								</li> */}
+								{/* <li className="nav-item has-treeview">
 									<a href="#" className="nav-link">
 										<i className="nav-icon fas fa-circle" />
 										<p>
@@ -675,21 +677,21 @@ const Menu = () => {
 											</a>
 										</li>
 									</ul>
-								</li>
-								<li className="nav-item">
+								</li> */}
+								{/* <li className="nav-item">
 									<a href="#" className="nav-link">
 										<i className="fas fa-circle nav-icon" />
 										<p>Level 1</p>
 									</a>
-								</li>
-								<li className="nav-header">LABELS</li>
-								<li className="nav-item">
+								</li> */}
+								{/* <li className="nav-header">LABELS</li> */}
+								{/* <li className="nav-item">
 									<a href="#" className="nav-link">
 										<i className="nav-icon far fa-circle text-danger" />
 										<p className="text">Important</p>
 									</a>
-								</li>
-								<li className="nav-item">
+								</li> */}
+								{/* <li className="nav-item">
 									<a href="#" className="nav-link">
 										<i className="nav-icon far fa-circle text-warning" />
 										<p>Warning</p>
@@ -700,7 +702,7 @@ const Menu = () => {
 										<i className="nav-icon far fa-circle text-info" />
 										<p>Informational</p>
 									</a>
-								</li>
+								</li> */}
 							</ul>
 						</nav>
 						{/* /.sidebar-menu */}
