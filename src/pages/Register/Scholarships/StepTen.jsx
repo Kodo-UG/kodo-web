@@ -5,6 +5,7 @@ import api from "../../../api/apiClient";
 import { Input } from "antd";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { displayErrorMessage, displaySuccessMessage } from "../../../utils/Toast";
 const { TextArea } = Input;
 
 const StepTen = ({ nextStep, prevStep }) => {
@@ -31,15 +32,16 @@ const StepTen = ({ nextStep, prevStep }) => {
 					code: code,
 				}
 			);
-
-			if (response) {
-				history("/login");
+            console.log(response)
+			if (response.status=="201") {
+				displaySuccessMessage("Account verified successfully")
+				history.push("/signin");
+			}else{
+				displayErrorMessage("Invalid code ")
 			}
-
-			console.log(response);
 			
 		} catch (error) {
-			console.log(error);
+
 		}
 	};
 
@@ -75,32 +77,23 @@ const StepTen = ({ nextStep, prevStep }) => {
 				<div style={{ marginTop: "20px", marginBottom: "20px" }}>
 					{" "}
 					<div className="_fieldGroup_1g3ja_1">
-						{/* <input
-							type="number"
-							id="enter-code"
-							className="_textField_fwd9c_1"
-							name="enter-code"
-							placeholder="enter-code"
-							required
-							data-testid="enter-code"
-							onChange={handleEmailChange}
-							style={{
-								borderRadius: "50px",
-								width: "500px",
-								padding: "15px",
-								border: "1px solid #ccc",
-								outline: "none",
-								transition: "box-shadow 0.3s ease-in-out",
-								boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-								fontFamily: "Arial, sans-serif",
-								fontSize: "16px",
-								lineHeight: "1.5",
-								color: "#333",
-								backgroundColor: "#fff",
-							}}
-						/> */}
 
-						<Input showCount maxLength={5} onChange={handleCodeChange} />
+						<Input showCount maxLength={5} onChange={handleCodeChange}
+						style={{
+							borderRadius: "50px",
+							width: "500px",
+							padding: "10px",
+							border: "1px solid #ccc",
+							outline: "none",
+							transition: "box-shadow 0.3s ease-in-out",
+							boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+							fontFamily: "Arial, sans-serif",
+							fontSize: "16px",
+							lineHeight: "1.5",
+							color: "#333",
+							backgroundColor: "#fff",
+						}}
+						/>
 					</div>
 				</div>
 			</form>
@@ -112,7 +105,6 @@ const StepTen = ({ nextStep, prevStep }) => {
 					className="select-option sonic-btn"
 					onClick={verifyEmail}
 					style={{
-						borderRadius: "20px",
 						padding: "10px 20px",
 						border: "none",
 						outline: "none",
@@ -123,6 +115,7 @@ const StepTen = ({ nextStep, prevStep }) => {
 						lineHeight: "1.5",
 						color: "#fff",
 						cursor: "pointer",
+						marginBottom: "4px",
 					}}
 				>
 					{loading ? "Verifying...." : "Verify Email"}

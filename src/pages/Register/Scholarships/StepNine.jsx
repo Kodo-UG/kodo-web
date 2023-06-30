@@ -4,6 +4,7 @@ import { clearFormData, updateFormData } from "../../../toolkit/formReducer";
 import api from "../../../api/apiClient";
 import axios from "axios";
 import CustomModal from "../../../components/modal/Modal";
+import { displayErrorMessage, displaySuccessMessage } from "../../../utils/Toast";
 
 const StepNine = ({ nextStep, prevStep }) => {
 	const [modalOpen, setModalOpen] = useState(true);
@@ -43,6 +44,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 			localStorage.setItem("userID", res.data.id);
 
 			if (res.data.id) {
+				displaySuccessMessage("Registration successful verification email sent to your email")
 				nextStep();
 			}
 
@@ -52,6 +54,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 			// dispatch(clearFormData());
 		} catch (error) {
 			console.log(error, "ERROR");
+			displayErrorMessage("Failed to register")
 		} finally {
 			setLoading(false);
 		}
@@ -61,23 +64,19 @@ const StepNine = ({ nextStep, prevStep }) => {
 	// 	const response = await api
 	// }
 	return (
-		<div
-			className="_notAnimated_pmptr_10"
-			style={{
-				display: "flex",
-				alignItems: "center",
-				marginTop: "10px",
-				marginBottom: "20px",
-				justifyContent: "center",
-				flexDirection: "column",
-			}}
-		>
-			<span
-				className="_headingContainer_1fpvz_1"
-				style={{ marginTop: "10px", marginBottom: "20px" }}
-			>
-				<h2 className="_soloHeading_1fpvz_8">Create Account</h2>
-			</span>
+		<div className="app-container">
+
+			<div class="app-wrapper">
+				<div
+					class="selections-container"
+					style={{
+						transform: "none",
+						transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms",
+					}}
+				>
+					<h2>Tell us your name.</h2>
+				</div>
+			</div>
 			<form
 				method="POST"
 				style={{
@@ -173,7 +172,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 					</div>
 				</div>
 
-				<div>
+				{/* <div>
 					<div className="_fieldGroup_1g3ja_1">
 						<input
 							id="confrimPassword"
@@ -199,17 +198,17 @@ const StepNine = ({ nextStep, prevStep }) => {
 							}}
 						/>
 					</div>
-				</div>
+				</div> */}
 			</form>
 			<div
 				className="d-flex"
-				style={{ display: "flex", justifyContent: "center" }}
+				style={{ display: "flex", justifyContent: "space-evenly" }}
 			>
+
 				<button
 					className="select-option sonic-btn"
-					onClick={register}
+					onClick={prevStep}
 					style={{
-						borderRadius: "20px",
 						padding: "10px 20px",
 						border: "none",
 						outline: "none",
@@ -220,6 +219,27 @@ const StepNine = ({ nextStep, prevStep }) => {
 						lineHeight: "1.5",
 						color: "#fff",
 						cursor: "pointer",
+						marginBottom: "4px",
+					}}
+				>
+					Previous
+				</button>
+
+				<button
+					className="select-option sonic-btn"
+					onClick={register}
+					style={{
+						padding: "10px 20px",
+						border: "none",
+						outline: "none",
+						transition:
+							"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
+						fontFamily: "Arial, sans-serif",
+						fontSize: "16px",
+						lineHeight: "1.5",
+						color: "#fff",
+						cursor: "pointer",
+						marginBottom: "4px",
 					}}
 				>
 					{loading ? "Registering...." : "Register"}
