@@ -42,10 +42,10 @@ const Scholarshipcard = () => {
 					className="card-footer"
 					style={{ background: "inherit", borderColor: "inherit" }}
 				>
-					<a href="#" className="btn btn-primary">
+					<a href="/" className="btn btn-primary">
 						Option
 					</a>
-					<a href="#" className="btn btn-outline-primary">
+					<a href="/" className="btn btn-outline-primary">
 						Other option
 					</a>
 				</div>

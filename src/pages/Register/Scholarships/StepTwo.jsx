@@ -81,8 +81,11 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 					)}
 				</div>
 			</div>
-			<div className="d-felx">
-				<button
+			<div
+				className="d-flex"
+				style={{ display: "flex", justifyContent: "space-evenly" }}
+			>			
+			<button
 					class="select-option sonic-btn"
 					onClick={prevStep}
 					style={{

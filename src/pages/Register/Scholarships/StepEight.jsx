@@ -18,23 +18,19 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 	};
 
 	return (
-		<div
-			className="_notAnimated_pmptr_10"
-			style={{
-				display: "flex",
-				alignItems: "center",
-				marginTop: "10px",
-				marginBottom: "20px",
-				justifyContent: "center",
-				flexDirection: "column",
-			}}
-		>
-			<span
-				className="_headingContainer_1fpvz_1"
-				style={{ marginTop: "10px", marginBottom: "20px" }}
-			>
-				<h2 className="_soloHeading_1fpvz_8">Tell us your name.</h2>
-			</span>
+		<div className="app-container">
+
+			<div class="app-wrapper">
+				<div
+					class="selections-container"
+					style={{
+						transform: "none",
+						transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms",
+					}}
+				>
+					<h2>Tell us your name.</h2>
+				</div>
+			</div>
 			<form
 				method="POST"
 				style={{
@@ -104,13 +100,12 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 			</form>
 			<div
 				className="d-flex"
-				style={{ display: "flex", justifyContent: "center" }}
+				style={{ display: "flex", justifyContent: "space-evenly" }}
 			>
 				<button
 					className="select-option sonic-btn"
 					onClick={prevStep}
 					style={{
-						borderRadius: "20px",
 						padding: "10px 20px",
 						border: "none",
 						outline: "none",
@@ -121,6 +116,7 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 						lineHeight: "1.5",
 						color: "#fff",
 						cursor: "pointer",
+						marginBottom: "4px",
 					}}
 				>
 					Previous
@@ -130,7 +126,6 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 					className="select-option sonic-btn"
 					onClick={nextStep}
 					style={{
-						borderRadius: "20px",
 						padding: "10px 20px",
 						border: "none",
 						outline: "none",
@@ -141,7 +136,7 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 						lineHeight: "1.5",
 						color: "#fff",
 						cursor: "pointer",
-						marginLeft: "15px",
+						marginBottom: "4px",
 					}}
 				>
 					Next

@@ -175,11 +175,42 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 					</div>
 				</div>
 			</div>
-			<div className="d-felx">
-				<button className="select-option sonic-btn" onClick={prevStep}>
+			<div
+				className="d-flex"
+				style={{ display: "flex", justifyContent: "space-evenly" }}
+			>				
+				<button className="select-option sonic-btn"
+									style={{
+										padding: "10px 20px",
+										border: "none",
+										outline: "none",
+										transition:
+											"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
+										fontFamily: "Arial, sans-serif",
+										fontSize: "16px",
+										lineHeight: "1.5",
+										color: "#fff",
+										cursor: "pointer",
+										marginBottom: "4px",
+									}}
+				onClick={prevStep}>
 					Previous
 				</button>
-				<button className="select-option sonic-btn" onClick={nextStep}>
+				<button className="select-option sonic-btn" 
+									style={{
+										padding: "10px 20px",
+										border: "none",
+										outline: "none",
+										transition:
+											"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
+										fontFamily: "Arial, sans-serif",
+										fontSize: "16px",
+										lineHeight: "1.5",
+										color: "#fff",
+										cursor: "pointer",
+										marginBottom: "4px",
+									}}
+				onClick={nextStep}>
 					Next
 				</button>
 			</div>
