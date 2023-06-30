@@ -4,7 +4,10 @@ import { clearFormData, updateFormData } from "../../../toolkit/formReducer";
 import api from "../../../api/apiClient";
 import axios from "axios";
 import CustomModal from "../../../components/modal/Modal";
-import { displayErrorMessage, displaySuccessMessage } from "../../../utils/Toast";
+import {
+	displayErrorMessage,
+	displaySuccessMessage,
+} from "../../../utils/Toast";
 
 const StepNine = ({ nextStep, prevStep }) => {
 	const [modalOpen, setModalOpen] = useState(true);
@@ -44,7 +47,9 @@ const StepNine = ({ nextStep, prevStep }) => {
 			localStorage.setItem("userID", res.data.id);
 
 			if (res.data.id) {
-				displaySuccessMessage("Registration successful verification email sent to your email")
+				displaySuccessMessage(
+					"Registration successful verification email sent to your email"
+				);
 				nextStep();
 			}
 
@@ -54,7 +59,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 			// dispatch(clearFormData());
 		} catch (error) {
 			console.log(error, "ERROR");
-			displayErrorMessage("Failed to register")
+			displayErrorMessage("Failed to register");
 		} finally {
 			setLoading(false);
 		}
@@ -65,7 +70,6 @@ const StepNine = ({ nextStep, prevStep }) => {
 	// }
 	return (
 		<div className="app-container">
-
 			<div class="app-wrapper">
 				<div
 					class="selections-container"
@@ -100,7 +104,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 							data-testid="email"
 							onChange={handleEmailChange}
 							style={{
-								borderRadius: "50px",
+								borderRadius: "10px",
 								width: "500px",
 								padding: "15px",
 								border: "1px solid #ccc",
@@ -128,7 +132,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 							data-testid="phone"
 							onChange={handlePhoneChange}
 							style={{
-								borderRadius: "50px",
+								borderRadius: "10px",
 								width: "500px",
 								padding: "15px",
 								border: "1px solid #ccc",
@@ -155,7 +159,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 							data-testid="password"
 							onChange={handlePasswordChange}
 							style={{
-								borderRadius: "50px",
+								borderRadius: "10px",
 								width: "500px",
 								padding: "15px",
 								border: "1px solid #ccc",
@@ -183,7 +187,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 							data-testid="confirm-password"
 							value=""
 							style={{
-								borderRadius: "50px",
+								borderRadius: "10px",
 								width: "500px",
 								padding: "15px",
 								border: "1px solid #ccc",
@@ -204,7 +208,6 @@ const StepNine = ({ nextStep, prevStep }) => {
 				className="d-flex"
 				style={{ display: "flex", justifyContent: "space-evenly" }}
 			>
-
 				<button
 					className="select-option sonic-btn"
 					onClick={prevStep}

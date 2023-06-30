@@ -1,11 +1,11 @@
 import React from "react";
 
-const Scholarshipcard = () => {
+const Scholarshipcard = ({ cardTitle, text, award, deadline }) => {
 	return (
-		<div class="col-md-6 col-lg-4 pb-3">
+		<div class="col-lg-3 col-6 pb-3">
 			<div
 				className="card card-custom bg-white border-white border-0"
-				style={{ height: 450 }}
+				style={{ height: 400, width: 395 }}
 			>
 				<div
 					className="card-custom-img"
@@ -17,36 +17,42 @@ const Scholarshipcard = () => {
 				<div className="card-custom-avatar">
 					<img
 						className="img-fluid"
-						src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+						src="https://res.cloudinary.com/itgenius/image/upload/v1688120420/logo_ab67xw.ico"
 						alt="Avatar"
 					/>
 				</div>
 				<div className="card-body" style={{ overflowY: "auto" }}>
-					<h4 className="card-title">Card title</h4>
-					<p className="card-text">
-						You can also set maximum height on and the card will not
-						expand, instead a scrollbar in the card body will appear.
-					</p>
-					<p className="card-text">
-						Some example text to show the scrollbar.
-					</p>
-					<p className="card-text">
-						Lorem ipsum dolor sit amet, te vix omittam fastidii, enim
-						paulo omnes ea has, illud luptatum no qui. Sed ea qualisque
-						urbanitas, purto elit nec te. Possim inermis antiopam ut eum.
-						Eos te zril labore laboramus, quem erant nam in. Ut sed
-						molestie antiopam. At altera facilisis mel.
-					</p>
+					<h4 className="card-title">{cardTitle}</h4>
+					<p className="card-text">{text}</p>
+
+					<span style={{ padding: 4 }}>
+						Award:{" "}
+						<span style={{ color: "blue", fontWeight: "bold" }}>
+							{award}
+						</span>
+					</span>
+
+					<span style={{ padding: 4 }}>
+						Deadline:{" "}
+						<span style={{ color: "blue", fontWeight: "bold" }}>
+							{deadline}
+						</span>
+					</span>
 				</div>
 				<div
 					className="card-footer"
 					style={{ background: "inherit", borderColor: "inherit" }}
 				>
 					<a href="/" className="btn btn-primary">
-						Option
+						Upgrade
 					</a>
-					<a href="/" className="btn btn-outline-primary">
-						Other option
+
+					<a
+						style={{ marginLeft: 4, marginRight: 0 }}
+						href="/"
+						className="btn btn-outline-primary"
+					>
+						Apply
 					</a>
 				</div>
 			</div>

@@ -20,8 +20,7 @@ const StepSeven = ({ nextStep, prevStep }) => {
 	};
 
 	return (
-
-			<div className="app-container">
+		<div className="app-container">
 			<div class="app-wrapper">
 				<div
 					class="selections-container"
@@ -53,7 +52,7 @@ const StepSeven = ({ nextStep, prevStep }) => {
 							required=""
 							type="text"
 							style={{
-								borderRadius: "50px",
+								borderRadius: "10px",
 								width: "500px",
 								padding: "15px",
 								border: "1px solid #ccc",
@@ -80,7 +79,7 @@ const StepSeven = ({ nextStep, prevStep }) => {
 							required=""
 							data-testid="city"
 							style={{
-								borderRadius: "50px",
+								borderRadius: "10px",
 								width: "500px",
 								padding: "15px",
 								border: "1px solid #ccc",

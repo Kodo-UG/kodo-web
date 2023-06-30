@@ -16,7 +16,7 @@ const Login = () => {
 		{
 			id: 2,
 			title: "Jobs",
-			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.",
+			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
 			link: "https://www.kodoscholarships.com/steps/program",
 		},
 	];
@@ -29,7 +29,10 @@ const Login = () => {
 		<div class="container">
 			<div class="row m-5">
 				<div class="col-lg-12 text-center">
-					<h4 style={{ marginBottom: "60px" }} class="welcome-title">
+					<h4
+						style={{ marginBottom: "60px", fontWeight: "bold" }}
+						class="welcome-title"
+					>
 						Welcome Back
 					</h4>
 				</div>
@@ -40,7 +43,7 @@ const Login = () => {
 							onClick={() => handleClick(obj.title)}
 							key={obj.id}
 							class="col-lg-6"
-							style={{ cursor: "pointer"  }}
+							style={{ cursor: "pointer" }}
 						>
 							<div class="card custom-card">
 								<div
@@ -66,6 +69,12 @@ const Login = () => {
 										to={`${obj.link}`}
 										class="btn ss-btn w-100"
 										id="button1"
+										style={{
+											height: 45,
+											backgroundColor: "#f27251",
+											color: "#fff",
+											fontWeight: "bold",
+										}}
 									>
 										Login
 									</Link>

@@ -1,37 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import Scholarshipcard from "../../components/card/Scholarshipcard";
 
 const Dashboard = () => {
-	const data = [
-		{
-			id: 1,
-			text: "Active Scholarships",
-			bg: "bg-info",
-			total: 45,
-		},
-		{
-			id: 2,
-			text: "Completed Scholarships",
-			bg: "bg-success",
-			total: 45,
-		},
-		{
-			id: 3,
-			text: "Scholarship Registrations",
-			bg: "bg-warning",
-			total: 45,
-		},
-		{
-			id: 4,
-			text: "Pending Scholarships",
-			bg: "bg-warning",
-			total: 45,
-		},
-	];
-
+	const [data, setData] = useState();
 	const getScholarship = async () => {
 		try {
 			const token =
@@ -44,8 +18,8 @@ const Dashboard = () => {
 				headers,
 			});
 
-			console.log(res, "am here sir");
-			// Process the response here
+			setData(res.data.data);
+			console.log(res.data.data);
 		} catch (error) {
 			// Handle the error here
 		}
@@ -155,8 +129,15 @@ const Dashboard = () => {
 									</a>
 								</div>
 							</div>
-
-							<Scholarshipcard />
+							{data?.map((dta) => (
+								<Scholarshipcard
+									key={dta.id}
+									cardTitle={dta.title}
+									award={dta.award}
+									deadline={dta.deadline}
+									text={dta.about}
+								/>
+							))}
 						</div>
 					</div>
 				</section>
