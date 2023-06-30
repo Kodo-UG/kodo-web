@@ -78,7 +78,7 @@ export default function Login() {
                   fontFamily: "Arial, sans-serif",
                   fontSize: "16px"
                   }}>Login | </h1>
-                   <Link to='/register'
+                   <Link to='/stepper'
                    style={{
                     color:"gray",
                     transition:
