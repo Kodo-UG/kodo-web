@@ -25,8 +25,8 @@ export default function Login() {
 			if (data.status == "201") {
 				localStorage.setItem("userData", JSON.stringify(data.data));
 				displaySuccessMessage("Login successful");
-				history.push("/dasboard");
-				console.log(data);
+				history.push("/db");
+				console.log(data, "LOGIN DATA");
 			} else {
 				displayErrorMessage("Login Failed");
 			}
@@ -67,7 +67,6 @@ export default function Login() {
 									marginBottom: "40px",
 									justifyContent: "space-between",
 									flexDirection: "row",
-									
 								}}
 							>
 								<div>
@@ -79,8 +78,6 @@ export default function Login() {
 										alignItems: "center",
 										justifyContent: "space-between",
 										flexDirection: "row",
-										
-										
 									}}
 								>
 									<h1
@@ -95,7 +92,7 @@ export default function Login() {
 										Login |{" "}
 									</h1>
 									<Link
-										to="/stepper"
+										to="/admissions"
 										style={{
 											color: "gray",
 											transition:

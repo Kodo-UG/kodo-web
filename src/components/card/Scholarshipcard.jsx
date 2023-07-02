@@ -14,7 +14,7 @@ const formattedDate = date.toLocaleDateString();
 		<div class="col-lg-3 col-6 pb-3">
 			<div
 				className="card card-custom bg-white border-white border-0"
-				style={{ height: 400, width: 395 }}
+				style={{ height: 400, width: 300 }}
 			>
 				<div
 					className="card-custom-img"
