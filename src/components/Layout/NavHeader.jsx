@@ -27,42 +27,51 @@ const NavHeader = () => {
 				>
 					<li class="nav-item active">
 						<a class="nav-link" href="/">
-							Home <span class="sr-only">(current)</span>
+						<Link to="/">Home <span class="sr-only">(current)</span></Link>
+							
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="/">
-							About us
+						<Link to="/aboutus">About us</Link>
+							
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link " href="/">
-							Scholarship
+						<Link to="/scholarships">Scholarship</Link>
+							
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link " href="/">
-							Testimonals
+						<Link to="/testimonals">Testimonals</Link>
+							
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link " href="/">
-							Blog
+						<Link to="/blog">Blog</Link>
+							
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link " href="/">
-							Contact us
+						<Link to="/contactus">Contact us</Link>
+							
 						</a>
 					</li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<div class="second-header-btn" id="loginbtn">
+				<form class=" my-2 my-lg-0 " style={{
+					display: "flex",
+
+				}} >
+					<div class="second-header-btn" id="loginbtn" style={{marginRight: "1rem"}} >
 						<Link to="/login" class="btn">
 							Login
 						</Link>
 					</div>
-					<div style={{ marginLeft: 8 }} class="second-header-btn">
+					<div class="second-header-btn">
 						<Link to="/admissions" class="btn">
 							admission open
 						</Link>

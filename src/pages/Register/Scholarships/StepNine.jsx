@@ -152,10 +152,11 @@ const StepNine = ({ nextStep, prevStep }) => {
 					<div className="_fieldGroup_1g3ja_1">
 						<input
 							id="password"
+							type="password"
 							className="_textField_fwd9c_1"
 							name="password"
 							placeholder="Password"
-							required=""
+							required
 							data-testid="password"
 							onChange={handlePasswordChange}
 							style={{

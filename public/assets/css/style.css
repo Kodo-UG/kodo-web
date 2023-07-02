@@ -2788,15 +2788,21 @@ text-decoration: underline;
 }
 .services-box07{
 background-color: rgba(18, 88, 117, 0.85);
-    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 270px;
     transition: all 0.3s ease 0s;
 }
 
 .services-box07:hover,.services-box07.active{
+    height: 300px;
     background: #ff7350;
 }
 .services-box07 .sr-contner {
     display: flex;
+
 }
 .services-box07 .sr-contner .icon {
   width: 138px;
@@ -11290,7 +11296,7 @@ padding-left: 0;
 .avatar {
     border-radius: 50% !important;
 }
-.wpding .footer-widget .widget_recent_comments ul li,.wpding .footer-widget .widget_rss ul li,.wpding .footer-widget .widget_meta ul li {
+.wpding .footer-widget .widget_recent_comments ul li,.wpding .footr-widget .widget_rss ul li,.wpding .footer-widget .widget_meta ul li {
     padding-bottom: 0px;
     border-bottom: 1px solid #e4e4e4;
     padding-top: 0px;
@@ -11699,7 +11705,7 @@ color: #fff;
   
   .sidebar {
     width: 200px;
-    background-color: #f8f9fa;
+    background-color: #343A40;
     padding: 20px;
   }
   
@@ -11748,8 +11754,8 @@ color: #fff;
   }
   
   .sidebar {
-    width: 200px;
-    background-color: #f8f9fa;
+    width: 400px;
+    background-color: #343A40;
     padding: 20px;
   }
   
@@ -11823,6 +11829,73 @@ color: #fff;
   width: 100px;
   height: 100px;
 }
-
+.payment-plans-container {
+    text-align: center;
+    margin-top: 20px;
+  }
   
+  .payment-plans {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .payment-plan {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px;
+    width: 280px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .plan-header {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .plan-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .plan-description {
+    margin-bottom: 10px;
+  }
+  
+  .plan-price {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .plan-features ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  
+  .plan-features li {
+    margin-bottom: 5px;
+  }
+  
+  .select-plan-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .select-plan-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 600px) {
+    .payment-plan {
+      width: 100%;
+    }
+  }
   

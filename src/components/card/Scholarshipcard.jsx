@@ -1,6 +1,15 @@
 import React from "react";
 
-const Scholarshipcard = ({ cardTitle, text, award, deadline }) => {
+const Scholarshipcard = ({
+	cardTitle,
+	text,
+	award,
+	deadline,
+	subscription,
+}) => {
+	const date = new Date(deadline);
+const formattedDate = date.toLocaleDateString();
+
 	return (
 		<div class="col-lg-3 col-6 pb-3">
 			<div
@@ -35,7 +44,7 @@ const Scholarshipcard = ({ cardTitle, text, award, deadline }) => {
 					<span style={{ padding: 4 }}>
 						Deadline:{" "}
 						<span style={{ color: "blue", fontWeight: "bold" }}>
-							{deadline}
+							{formattedDate}
 						</span>
 					</span>
 				</div>
@@ -47,13 +56,24 @@ const Scholarshipcard = ({ cardTitle, text, award, deadline }) => {
 						Upgrade
 					</a>
 
-					<a
-						style={{ marginLeft: 4, marginRight: 0 }}
-						href="/"
+					<button
+						style={{
+							marginLeft: 4,
+							marginRight: 0,
+							cursor: subscription ? "pointer" : "not-allowed",
+						}}
+						onClick={() => {
+							if (subscription) {
+								// Handle the click action if subscription is true
+								// For example, you can add a function here.
+								console.log("Link clicked!");
+							}
+						}}
 						className="btn btn-outline-primary"
+						 disabled={!subscription}
 					>
 						Apply
-					</a>
+					</button>
 				</div>
 			</div>
 		</div>

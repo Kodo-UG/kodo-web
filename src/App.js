@@ -15,17 +15,17 @@ import Signin from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import PasswordReset from "./pages/PasswordReset";
 import Root from "./pages/Dashboard";
-
+import Payment from "./pages/payment";
 const App = () => {
 	return (
 		<Switch>
 			<Route exact path="/signin" component={Signin} />
 			<Route exact path="/forgot/password" component={ForgotPassword} />
 			<Route path="/reset-password" component={PasswordReset} />
-			<Route exact path="/dashboard" component={Root} />
-
+			<Route  path="/dashboard" component={Root} />
 			<Layout>
 				<Route exact path="/" component={Home} />
+				<Route  path="/payment" component={Payment} />
 				<Route exact path="/aboutus" component={AboutUs} />
 				<Route exact path="/login" component={Login} />
 				<Route exact path="/blog" component={Blog} />

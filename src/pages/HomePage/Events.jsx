@@ -3,10 +3,10 @@ import React from 'react'
 const Events = () => {
     return (
         <section class="event pt-120 pb-90 p-relative fix">
-            <div class="animations-06"><img src="img/bg/an-img-06.png" alt="an-img-01" /></div>
+            {/* <div class="animations-06"><img src="img/bg/an-img-06.png" alt="an-img-01" /></div>
             <div class="animations-07"><img src="img/bg/an-img-07.png" alt="contact-bg-an-01" /></div>
             <div class="animations-08"><img src="img/bg/an-img-08.png" alt="contact-bg-an-01" /></div>
-            <div class="animations-09"><img src="img/bg/an-img-09.png" alt="contact-bg-an-01" /></div>
+            <div class="animations-09"><img src="img/bg/an-img-09.png" alt="contact-bg-an-01" /></div> */}
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 p-relative">
@@ -24,7 +24,7 @@ const Events = () => {
                     <div class="col-lg-4 col-md-6  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                         <div class="event-item mb-30 hover-zoomin">
                             <div class="thumb">
-                                <a href="single-event.html"><img src="img/bg/evn-img-1.jpg" alt="contact-bg-an-01" /></a>
+                                <a href="single-event.html"><img src="https://res.cloudinary.com/itgenius/image/upload/v1688242890/woman_gooca7.jpg" alt="contact-bg-an-01" /></a>
                             </div>
                             <div class="event-content">
                                 <div class="date"><strong>18</strong> March, 2023</div>
@@ -37,7 +37,7 @@ const Events = () => {
                     <div class="col-lg-4 col-md-6  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                         <div class="event-item mb-30 hover-zoomin">
                             <div class="thumb">
-                                <a href="single-event.html"><img src="img/bg/evn-img-2.jpg" alt="contact-bg-an-01" /></a>
+                                <a href="single-event.html"><img src="https://res.cloudinary.com/itgenius/image/upload/v1688242889/interracial_glx8wp.jpg" alt="contact-bg-an-01" /></a>
                             </div>
                             <div class="event-content">
                                 <div class="date"><strong>20</strong> March, 2023</div>
@@ -50,7 +50,7 @@ const Events = () => {
                     <div class="col-lg-4 col-md-6  wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                         <div class="event-item mb-30 hover-zoomin">
                             <div class="thumb">
-                                <a href="single-event.html"><img src="img/bg/evn-img-3.jpg" alt="contact-bg-an-01" /></a>
+                                <a href="single-event.html"><img src="https://res.cloudinary.com/itgenius/image/upload/v1688242890/whiteguy_l1zkg0.jpg" alt="contact-bg-an-01" /></a>
                             </div>
                             <div class="event-content">
                                 <div class="date"><strong>22</strong> March, 2023</div>
