@@ -23,8 +23,8 @@ const App = () => {
 			<Route exact path="/signin" component={Signin} />
 			<Route exact path="/forgot/password" component={ForgotPassword} />
 			<Route path="/reset-password" component={PasswordReset} />
-			<PrivateRoute  path="/dashboard" component={Root} />
 			<Layout>
+			<PrivateRoute  path="/dashboard" component={Root} />
 				<Route exact path="/" component={Home} />
 				<Route  path="/payment" component={Payment} />
 				<Route exact path="/aboutus" component={AboutUs} />
