@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Scholarshipcard from "../../components/card/Scholarshipcard";
+import { Row } from "antd";
 
 const Dashboard = () => {
 	const [data, setData] = useState([]);
@@ -132,6 +133,8 @@ const Dashboard = () => {
 									</a>
 								</div>
 							</div>
+							<Row justify="center" gutter={[16, 16]}>
+
 							{data?.map((dta) => (
 								<Scholarshipcard
 									key={dta.id}
@@ -142,6 +145,8 @@ const Dashboard = () => {
 									subscription={subscription}
 								/>
 							))}
+							    </Row>
+
 						</div>
 					</div>
 				</section>

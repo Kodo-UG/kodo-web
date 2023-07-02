@@ -11899,3 +11899,62 @@ color: #fff;
     }
   }
   
+
+  .scholarship-card {
+    margin-bottom: 20px;
+  }
+  
+  .scholarship-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .scholarship-amount,
+  .scholarship-deadline {
+    margin: 0;
+  }
+  
+  .scholarship-amount {
+    font-weight: bold;
+  }
+  
+  .scholarship-deadline {
+    color: #777;
+  }
+  
+  .upgrade-section {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .padlock-icon {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+  
+  .upgrade-text {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+
+  .upgrade-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.upgrade-text {
+  margin-left: 10px;
+}
+
+.upgrade-button {
+  display: block;
+  margin-top: 10px;
+}
+
+.apply-button {
+  margin-top: 10px;
+}

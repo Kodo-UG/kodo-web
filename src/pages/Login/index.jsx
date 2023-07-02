@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import apiClient from "../../api/apiClient";
 import axios from "axios";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
-import Spinner from "../../components/Spinner";
+import Spinner from "../../components/spinner";
 
 export default function Login() {
 	const [email, setEmail] = useState();

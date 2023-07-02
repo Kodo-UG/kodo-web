@@ -9,11 +9,13 @@ const ScholarshipPage = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const getScholarship = async () => {
+
 		try {
-			const token =
-				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbm8xOTIwMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NDk2YzE4ZDc3ZGYzMTBkMWU3OWRmNWEiLCJpYXQiOjE2ODc2MDE1OTR9.W_HZn7Z8diK-D3Qjfyg_C8JTcnC2QRjALVh3Dr7Aick";
+			const userData = localStorage.getItem('userData');
+         
+			console.log(userData);
 			const headers = {
-				Authorization: `Bearer ${token}`,
+				Authorization: `Bearer ${userData.token}`,
 			};
 
 			let res = await axios.get("http://165.227.139.53/api/v1/scholarship", {
