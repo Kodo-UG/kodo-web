@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MyHeader = () => {
 	return (
@@ -8,23 +9,23 @@ const MyHeader = () => {
 				{/* Left navbar links */}
 				<ul className="navbar-nav">
 					<li className="nav-item">
-						<a className="nav-link" data-widget="pushmenu" href="#">
+						<Link className="nav-link" data-widget="pushmenu" href="#">
 							<i className="fas fa-bars" />
-						</a>
+						</Link>
 					</li>
 					<li className="nav-item d-none d-sm-inline-block">
-						<a href="index3.html" className="nav-link">
+						<Link href="index3.html" className="nav-link">
 							Home
-						</a>
+						</Link>
 					</li>
-					<li className="nav-item d-none d-sm-inline-block">
-						<a href="#" className="nav-link">
+					{/* <li className="nav-item d-none d-sm-inline-block">
+						<Link href="#" className="nav-link">
 							Contact
-						</a>
-					</li>
+						</Link>
+					</li> */}
 				</ul>
 				{/* SEARCH FORM */}
-				<form className="form-inline ml-3">
+				<form className="form-inline ml-4">
 					<div className="input-group input-group-sm">
 						<input
 							className="form-control form-control-navbar"
@@ -167,14 +168,14 @@ const MyHeader = () => {
 						</div>
 					</li>
 					<li className="nav-item">
-						<a
+						<Link
 							className="nav-link"
 							data-widget="control-sidebar"
 							data-slide="true"
-							href="#"
+							to="/dashboard"
 						>
 							<i className="fas fa-th-large" />
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</nav>
