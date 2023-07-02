@@ -23,10 +23,9 @@ const App = () => {
 			<Route exact path="/signin" component={Signin} />
 			<Route exact path="/forgot/password" component={ForgotPassword} />
 			<Route path="/reset-password" component={PasswordReset} />
-			<PrivateRoute  path="/dashboard" component={Root} />
+			<Route exact path="/db" component={Root} />
 			<Layout>
-				<Route exact path="/" component={Home} />
-				<Route  path="/payment" component={Payment} />
+				<Route path="/payment" component={Payment} />
 				<Route exact path="/aboutus" component={AboutUs} />
 				<Route exact path="/login" component={Login} />
 				<Route exact path="/blog" component={Blog} />
@@ -35,6 +34,7 @@ const App = () => {
 				<Route exact path="/contactus" component={ContactUs} />
 				<Route exact path="/scholarships" component={Scholarships} />
 				<Route exact path="/testimonals" component={Testimonals} />
+				<Route exact path="/" component={Home} />
 			</Layout>
 		</Switch>
 	);
