@@ -57,7 +57,10 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
 								></div>
 							</div>
 							<div className="_notAnimated_pmptr_10">
-								<span className="_headingContainer_1fpvz_1">
+								<span className="_headingContainer_1fpvz_1" style={{
+									padding: '10px',
+									
+								}}>
 									<p>
 										First things first, catch us up on your education
 										journey so far.
@@ -89,11 +92,10 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
 
 								<div
 									style={{
-										display: "flex",
-										flexDirection: "row",
-										flexWrap: "wrap",
-										padding: "13px",
-										margin: "2.3rem",
+										display: "grid",
+										gridTemplateColumns: "repeat(3, 1fr)",
+										gap: "2rem",
+										margin: "30px",
 									}}
 								>
 									{list.map((item) => (
@@ -112,7 +114,8 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
 												alignItems: "center",
 												marginLeft: "20px",
 												cursor: "pointer",
-												transition: "background-color 0.3s ease-in-out"
+												transition:
+													"background-color 0.3s ease-in-out",
 											}}
 											onClick={() => handleClick(item.text)}
 										>
@@ -151,25 +154,9 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
 				<div
 					className="d-flex"
 					style={{ display: "flex", justifyContent: "space-evenly" }}
-				>				
-					<button className="select-option sonic-btn"
-					style={{
-						padding: "10px 20px",
-						border: "none",
-						outline: "none",
-						transition:
-							"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-						fontFamily: "Arial, sans-serif",
-						fontSize: "16px",
-						lineHeight: "1.5",
-						color: "#fff",
-						cursor: "pointer",
-						marginBottom: "4px",
-					}}
-					onClick={prevStep}>
-						Previous
-					</button>
-					<button className="select-option sonic-btn"
+				>
+					<button
+						className="select-option sonic-btn"
 						style={{
 							padding: "10px 20px",
 							border: "none",
@@ -183,7 +170,27 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
 							cursor: "pointer",
 							marginBottom: "4px",
 						}}
-						onClick={nextStep}>
+						onClick={prevStep}
+					>
+						Previous
+					</button>
+					<button
+						className="select-option sonic-btn"
+						style={{
+							padding: "10px 20px",
+							border: "none",
+							outline: "none",
+							transition:
+								"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
+							fontFamily: "Arial, sans-serif",
+							fontSize: "16px",
+							lineHeight: "1.5",
+							color: "#fff",
+							cursor: "pointer",
+							marginBottom: "4px",
+						}}
+						onClick={nextStep}
+					>
 						Next
 					</button>
 				</div>

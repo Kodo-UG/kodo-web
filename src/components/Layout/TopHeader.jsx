@@ -23,7 +23,7 @@ const Header = () => {
                                 <li>
                                     <div class="call-box">
                                         <div class="icon">
-                                            <img src="img/icon/phone-call.png" alt="img" />
+                                            <img src="https://res.cloudinary.com/itgenius/image/upload/v1688244299/phone-call-svgrepo-com_oy79sn.svg" alt="img" />
                                         </div>
                                         <div class="text">
                                             <span>Call Now !</span>
@@ -34,7 +34,7 @@ const Header = () => {
                                 <li>
                                     <div class="call-box">
                                         <div class="icon">
-                                            <img src="img/icon/mailing.png" alt="img" />
+                                            <img src="https://res.cloudinary.com/itgenius/image/upload/v1688244438/email-1573-svgrepo-com_oegbvh.svg" alt="img" />
                                         </div>
                                         <div class="text">
                                             <span>Email Now</span>

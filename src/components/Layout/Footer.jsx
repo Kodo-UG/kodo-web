@@ -47,13 +47,13 @@ const Footer = () => {
                                 <div class="recent-blog-footer">
                                     <ul>
                                         <li>
-                                            <div class="thum"> <img src="img/blog/s-blogimg-01.png" alt="img" /></div>
+                                            <div class="thum"> <img src="https://res.cloudinary.com/itgenius/image/upload/v1688243163/work-building-svgrepo-com_zydazp.svg" alt="img" /></div>
                                             <div class="text"> <a href="blog-details.html">Nothing impossble to need hard work</a>
                                                 <span>7 March, 2020</span></div>
                                         </li>
 
                                         <li>
-                                            <div class="thum"> <img src="img/blog/s-blogimg-02.png" alt="img" /></div>
+                                            <div class="thum"> <img src="https://res.cloudinary.com/itgenius/image/upload/v1688243163/work-building-svgrepo-com_zydazp.svg" alt="img" /></div>
                                             <div class="text"> <a href="blog-details.html">Nothing impossble to need hard work</a>
                                                 <span>7 March, 2020</span></div>
                                         </li>

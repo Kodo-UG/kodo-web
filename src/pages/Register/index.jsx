@@ -16,7 +16,7 @@ const FindScholarship = () => {
 		{
 			id: 2,
 			title: "Jobs",
-			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.",
+			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
 			link: "https://www.kodoscholarships.com/steps/program",
 		},
 	];
@@ -70,6 +70,12 @@ const FindScholarship = () => {
 										to={`${obj.link}`}
 										class="btn ss-btn w-100"
 										id="button1"
+										style={{
+											height: 45,
+											backgroundColor: "#f27251",
+											color: "#fff",
+											fontWeight: "bold",
+										}}
 									>
 										Sign Up
 									</Link>
@@ -77,8 +83,6 @@ const FindScholarship = () => {
 							</div>
 						</div>
 					))}
-
-
 				</div>
 			</div>
 		</div>

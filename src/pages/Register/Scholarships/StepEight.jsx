@@ -19,7 +19,6 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 
 	return (
 		<div className="app-container">
-
 			<div class="app-wrapper">
 				<div
 					class="selections-container"
@@ -54,7 +53,7 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 							data-testid="fname"
 							onChange={handleFNameChange}
 							style={{
-								borderRadius: "50px",
+								borderRadius: "10px",
 								width: "500px",
 								padding: "15px",
 								border: "1px solid #ccc",
@@ -81,7 +80,7 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 							data-testid="lname"
 							onChange={handleLNameChange}
 							style={{
-								borderRadius: "50px",
+								borderRadius: "10px",
 								width: "500px",
 								padding: "15px",
 								border: "1px solid #ccc",

@@ -31,11 +31,10 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 					<div class="option-list">
 						<div
 							style={{
-								display: "flex",
-								flexDirection: "row",
-								flexWrap: "wrap",
-								padding: "13px",
-								margin: "2.3rem",
+								display: "grid",
+								gridTemplateColumns: "repeat(3, 1fr)",
+								gap: "2rem",
+								margin: "30px",
 								cursor: "pointer",
 							}}
 						>
@@ -93,7 +92,8 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 				className="d-flex"
 				style={{ display: "flex", justifyContent: "space-evenly" }}
 			>
-				<button class="select-option sonic-btn"
+				<button
+					class="select-option sonic-btn"
 					style={{
 						padding: "10px 20px",
 						border: "none",
@@ -107,10 +107,12 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 						cursor: "pointer",
 						marginBottom: "4px",
 					}}
-					onClick={prevStep}>
+					onClick={prevStep}
+				>
 					Previous
 				</button>
-				<button class="select-option sonic-btn"
+				<button
+					class="select-option sonic-btn"
 					style={{
 						padding: "10px 20px",
 						border: "none",
@@ -124,7 +126,8 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 						cursor: "pointer",
 						marginBottom: "4px",
 					}}
-					onClick={nextStep}>
+					onClick={nextStep}
+				>
 					Next
 				</button>
 			</div>

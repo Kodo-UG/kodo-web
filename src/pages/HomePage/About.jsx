@@ -3,12 +3,24 @@ import React from 'react'
 const About = () => {
     return (
         <section class="about-area about-p pt-120 pb-120 p-relative fix" style={{ background: '#eff7ff' }}>
-            <div class="animations-02"><img src="img/bg/an-img-02.png" alt="contact-bg-an-01" /></div>
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="animations-02"><img src="https://res.cloudinary.com/itgenius/image/upload/v1688241470/an-img-02_lzw6od.png" alt="contact-bg-an-01" /></div>
+            <div class="" style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+            }}>
+                <div class="" style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    width: "75%",  
+                }}>
+                    <div class="" style={{
+                        display: "flex",
+                        
+                    }}>
                         <div class="s-about-img p-relative  wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-                            <img src="img/features/about_img_02.png" alt="img" />
+                            <img src="https://res.cloudinary.com/itgenius/image/upload/v1688241331/about_img_02-1_sbyudl.png" alt="img" />
                             <div class="about-text second-about">
                                 <span>25 <sub>+</sub></span>
                                 <p>Years of Experience</p>
@@ -37,7 +49,10 @@ const About = () => {
                                 </div>
                             </div>
                             <div class="slider-btn mt-20">
-                                <a href="about.html" class="btn ss-btn smoth-scroll">Read More <i class="fal fa-long-arrow-right"></i></a>
+                                <a href="about.html" class="btn ss-btn smoth-scroll" style={{
+                                    padding: "20px",
+                                    color: "white",
+                                }}>Read More <i class="fal fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

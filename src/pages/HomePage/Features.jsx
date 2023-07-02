@@ -2,11 +2,11 @@ import React from 'react'
 
 const Features = () => {
     return (
-        <section class="steps-area p-relative" style={{backgroundColor: '#032e3f'}}>
-            <div class="animations-10"><img src="img/bg/an-img-10.png" alt="an-img-01" /></div>
+        <section class="steps-area p-relative bg-primar" style={{backgroundColor: '#032e3f', paddingBottom: "100px", padding: "100px"}}>
+            <div class="animations-10 "><img src="https://res.cloudinary.com/itgenius/image/upload/v1688241999/an-img-10_g61hnh.png" alt="an-img-01" /></div>
             <div class="container">
 
-                <div class="row align-items-center">
+                <div class="row align-items-center ">
                     <div class="col-lg-6 col-md-12">
                         <div class="section-title mb-35 wow fadeInDown animated" data-animation="fadeInDown" data-delay=".4s">
                             <h2>Our Best Features</h2>
@@ -16,7 +16,7 @@ const Features = () => {
                             <li>
                                 <div class="step-box wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                     <div class="dnumber">
-                                        <div class="date-box"><img src="img/icon/fea-icon01.png" alt="icon" /></div>
+                                        <div class="date-box"><img src="https://res.cloudinary.com/itgenius/image/upload/v1688241848/fea-icon01_wzszas.png" alt="icon" /></div>
                                     </div>
                                     <div class="text">
                                         <h3>Skilled Teachers</h3>
@@ -27,7 +27,7 @@ const Features = () => {
                             <li>
                                 <div class="step-box wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                     <div class="dnumber">
-                                        <div class="date-box"><img src="img/icon/fea-icon02.png" alt="icon" /></div>
+                                        <div class="date-box"><img src="https://res.cloudinary.com/itgenius/image/upload/v1688241848/fea-icon02_eyvyv9.png" alt="icon" /></div>
                                     </div>
                                     <div class="text">
                                         <h3>Affordable Courses</h3>
@@ -38,7 +38,7 @@ const Features = () => {
                             <li>
                                 <div class="step-box wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
                                     <div class="dnumber">
-                                        <div class="date-box"><img src="img/icon/fea-icon03.png" alt="icon" /></div>
+                                        <div class="date-box"><img src="https://res.cloudinary.com/itgenius/image/upload/v1688241848/fea-icon03_loll6n.png" alt="icon" /></div>
                                     </div>
                                     <div class="text">
                                         <h3>Efficient & Flexible</h3>
@@ -50,7 +50,7 @@ const Features = () => {
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="step-img wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
-                            <img src="img/bg/steps-img.png" alt="class image" />
+                            <img src="https://res.cloudinary.com/itgenius/image/upload/v1688241561/man-woman-students-with-documents_xuy7jp.jpg" alt="class image" />
                         </div>
                     </div>
                 </div>
