@@ -1,2 +1,2 @@
-# Kodo sholarship
+# Kodo scholarship
 
