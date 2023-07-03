@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
 import { ProtectedRoute } from "./protectedRoute";
 import Home from "./pages/HomePage";
-import AboutUs from "./pages/AboutUs";
+import AboutUs from "./pages/AboutUs/index";
 import Blog from "./pages/Blog";
 import ContactUs from "./pages/ContactUs";
 import Scholarships from "./pages/Scholarships";
@@ -23,7 +23,7 @@ const App = () => {
 			<Route exact path="/signin" component={Signin} />
 			<Route exact path="/forgot/password" component={ForgotPassword} />
 			<Route path="/reset-password" component={PasswordReset} />
-			<Route exact path="/db" component={Root} />
+			<PrivateRoute exact path="/db" component={Root} />
 			<Layout>
 				<Route path="/payment" component={Payment} />
 				<Route exact path="/aboutus" component={AboutUs} />

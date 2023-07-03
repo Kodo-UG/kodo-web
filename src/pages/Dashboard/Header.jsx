@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { AiOutlineLogout } from "react-icons/ai";
 
 const MyHeader = () => {
 	return (
@@ -169,12 +170,24 @@ const MyHeader = () => {
 					</li>
 					<li className="nav-item">
 						<Link
-							className="nav-link"
+							className=""
 							data-widget="control-sidebar"
 							data-slide="true"
-							to="/dashboard"
+							to="/db"
+							style={{
+								display: "flex",
+								fontWeight: "bold",
+								justifyContent: "center",
+								alignItems: "center",
+								marginTop: "6px",
+								padding: "5px",
+							}}
+							onClick={() => {
+								localStorage.removeItem("token");
+								Redirect("/login");
+							}}
 						>
-							<i className="fas fa-th-large" />
+							<AiOutlineLogout /> logout
 						</Link>
 					</li>
 				</ul>

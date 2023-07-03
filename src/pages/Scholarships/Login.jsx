@@ -37,7 +37,7 @@ const Login = () => {
 					</h4>
 				</div>
 
-				<div class="row">
+				<div class="row " >
 					{object.map((obj) => (
 						<div
 							onClick={() => handleClick(obj.title)}

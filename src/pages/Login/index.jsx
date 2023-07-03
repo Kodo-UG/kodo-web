@@ -25,6 +25,7 @@ export default function Login() {
 			if (data.status == "201") {
 				localStorage.setItem("userData", JSON.stringify(data.data));
 				displaySuccessMessage("Login successful");
+				localStorage.setItem("token", data.data.token);
 				history.push("/db");
 				console.log(data, "LOGIN DATA");
 			} else {

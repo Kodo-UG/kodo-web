@@ -42,7 +42,7 @@ const FindScholarship = () => {
 							class="col-lg-6"
 							style={{
 								cursor: "pointer",
-								height: "30rem",
+								height: "15rem",
 								maxHeight: "40rem",
 							}}
 						>
