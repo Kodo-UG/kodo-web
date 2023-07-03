@@ -9,44 +9,52 @@ const Slidder = () => {
 						class="single-slider slider-bg"
 						style={{
 							backgroundImage:
-								'url("https://res.cloudinary.com/itgenius/image/upload/v1688242890/whiteguy_l1zkg0.jpg")',
+								'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688301655/pexels-joshua-mcknight-1139319_bknjyh.jpg")',
 							backgroundSize: "cover",
 						}}
 					>
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-7 col-md-7">
-									<div class="slider-content s-slider-content mt-130">
+									<div
+										class="slider-content s-slider-content mt-130 bg-dark "
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											justifyContent: "center",
+											padding: "2rem",
+											height: "80vh",
+											opacity: "0.8",
+										}}
+									>
 										<h5 data-animation="fadeInUp" data-delay=".4s">
-											welcome To Qeducato
+											welcome To Kodo
 										</h5>
-										<h2 data-animation="fadeInUp" data-delay=".4s">
+										<h2
+											data-animation="fadeInUp font-weight-700"
+											data-delay=".4s"
+											style={{
+												fontWeight: "bold",
+											}}
+										>
 											Education is the best key success in life
 										</h2>
 										<p data-animation="fadeInUp" data-delay=".6s">
-											Donec vitae libero non enim placerat eleifend
-											aliquam erat volutpat. Curabitur diam ex,
-											dapibus purus sapien, cursus sed nisl
-											tristique, commodo gravida lectus non.
+											While success can be defined differently by
+											individuals, education serves as a fundamental
+											catalyst in achieving personal, professional,
+											and societal goals.
 										</p>
 
-										<div class="slider-btn mt-30">
+										<div class="second-header-btn btn-sm">
 											<a
-												href="about.html"
+												href="/"
 												class="btn ss-btn mr-15"
 												data-animation="fadeInLeft"
 												data-delay=".4s"
+												style={{ background: "#FF7350" }}
 											>
-												Discover More{" "}
-												<i class="fal fa-long-arrow-right"></i>
-											</a>
-											<a
-												href="contact.html"
-												class="btn ss-btn active"
-												data-animation="fadeInLeft"
-												data-delay=".4s"
-											>
-												Contact Us{" "}
+												admission open
 												<i class="fal fa-long-arrow-right"></i>
 											</a>
 										</div>
@@ -56,26 +64,6 @@ const Slidder = () => {
 							</div>
 						</div>
 					</div>
-					{/* <div class="single-slider slider-bg" style={{backgroundImage: 'url(img/slider/slider_bg.png)', backgroundSize: 'cover'}}>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-7 col-md-7">
-                                <div class="slider-content s-slider-content mt-130">
-                                    <h5 data-animation="fadeInUp" data-delay=".4s">welcome To Qeducato</h5>
-                                    <h2 data-animation="fadeInUp" data-delay=".4s">Education is the best key success in life</h2>
-                                    <p data-animation="fadeInUp" data-delay=".6s">Donec vitae libero non enim placerat eleifend aliquam erat volutpat. Curabitur diam ex, dapibus purus sapien, cursus sed nisl tristique, commodo gravida lectus non.</p>
-
-                                    <div class="slider-btn mt-30">
-                                        <a href="about.html" class="btn ss-btn mr-15" data-animation="fadeInLeft" data-delay=".4s">Discover More <i class="fal fa-long-arrow-right"></i></a>
-                                        <a href="contact.html" class="btn ss-btn active" data-animation="fadeInLeft" data-delay=".4s">Contact Us <i class="fal fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-5 p-relative">
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
 				</div>
 			</section>
 
@@ -93,14 +81,15 @@ const Slidder = () => {
 									</div>
 									<div class="text">
 										<h5>
-											<a href="about.html">Education Services</a>
+											<a href="/">Start Your New Career</a>
 										</h5>
 										<p>
-											Seamlessly visualize quality ellectual capital
-											without superior collaboration and idea sharing
-											listically
+											Kodo Scholarship is dedicated to creating
+											opportunities for young people in Africa and
+											the rest of the world to pursue their dreams
+											and reach their full potential.
 										</p>
-										<a href="about.html">
+										<a href="/">
 											Read More{" "}
 											<i class="fal fa-long-arrow-right"></i>
 										</a>
@@ -119,14 +108,15 @@ const Slidder = () => {
 									</div>
 									<div class="text">
 										<h5>
-											<a href="about.html">International Hubs</a>
+											<a href="/">Scholarship Programs</a>
 										</h5>
 										<p>
-											Seamlessly visualize quality ellectual capital
-											without superior collaboration and idea sharing
-											listically
+											Kodo is the #1 college scholarship web app in
+											the world and has helped students win more than
+											$10 million dollars. Join today and start
+											matching with scholarships in minutes.
 										</p>
-										<a href="about.html">
+										<a href="/">
 											Read More{" "}
 											<i class="fal fa-long-arrow-right"></i>
 										</a>
@@ -146,16 +136,15 @@ const Slidder = () => {
 									</div>
 									<div class="text">
 										<h5>
-											<a href="about.html">
-												Bachelor’s and Master’s
-											</a>
+											<a href="/">Career Opportunities</a>
 										</h5>
 										<p>
-											Seamlessly visualize quality ellectual capital
-											without superior collaboration and idea sharing
-											listically
+											Looking for a remote job as a developer,
+											customer service rep, recruiter, designer or
+											sales professional? Launch your career with
+											global remote job opportunities
 										</p>
-										<a href="about.html">
+										<a href="/">
 											Read More{" "}
 											<i class="fal fa-long-arrow-right"></i>
 										</a>
