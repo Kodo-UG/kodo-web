@@ -18,7 +18,7 @@ const PaymentCard = ({ data }) => {
     },
     customizations: {
       title: "Kodo Scholarships Payments",
-      description: "Payments for Kodo Scholarships",
+      description: "Payments for Kodo Scholarships subscription",
       logo: "https://res.cloudinary.com/itgenius/image/upload/v1688120420/logo_ab67xw.ico",
     },
   };
@@ -27,9 +27,10 @@ const PaymentCard = ({ data }) => {
 
   const subscribe = async(id,status)=>{
     try {
-      const userData = localStorage.getItem('userData');
-         
-			console.log(userData);
+      const userDataString = localStorage.getItem('userData');
+      const userData = JSON.parse(userDataString);
+
+			console.log(userData.token);
       const token =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbm8xOTIwMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NDk2YzE4ZDc3ZGYzMTBkMWU3OWRmNWEiLCJpYXQiOjE2ODc2MDE1OTR9.W_HZn7Z8diK-D3Qjfyg_C8JTcnC2QRjALVh3Dr7Aick";
     const headers = {
