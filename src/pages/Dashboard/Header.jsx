@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
@@ -10,7 +11,7 @@ const MyHeader = () => {
 				{/* Left navbar links */}
 				<ul className="navbar-nav">
 					<li className="nav-item">
-						<Link className="nav-link" data-widget="pushmenu" href="#">
+						<Link className="nav-link" data-widget="pushmenu">
 							<i className="fas fa-bars" />
 						</Link>
 					</li>
@@ -137,58 +138,58 @@ const MyHeader = () => {
 								15
 							</span>
 						</a>
-						<div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-							<span className="dropdown-item dropdown-header">
-								15 Notifications
-							</span>
-							<div className="dropdown-divider" />
-							<a href="#" className="dropdown-item">
-								<i className="fas fa-envelope mr-2" /> 4 new messages
-								<span className="float-right text-muted text-sm">
-									3 mins
-								</span>
-							</a>
-							<div className="dropdown-divider" />
-							<a href="#" className="dropdown-item">
-								<i className="fas fa-users mr-2" /> 8 friend requests
-								<span className="float-right text-muted text-sm">
-									12 hours
-								</span>
-							</a>
-							<div className="dropdown-divider" />
-							<a href="#" className="dropdown-item">
-								<i className="fas fa-file mr-2" /> 3 new reports
-								<span className="float-right text-muted text-sm">
-									2 days
-								</span>
-							</a>
-							<div className="dropdown-divider" />
-							<a href="#" className="dropdown-item dropdown-footer">
-								See All Notifications
-							</a>
-						</div>
-					</li>
-					<li className="nav-item">
-						<Link
-							className=""
-							data-widget="control-sidebar"
-							data-slide="true"
-							to="/db"
-							style={{
-								display: "flex",
-								fontWeight: "bold",
-								justifyContent: "center",
-								alignItems: "center",
-								marginTop: "6px",
-								padding: "5px",
-							}}
-							onClick={() => {
-								localStorage.removeItem("token");
-								Redirect("/login");
-							}}
+						<div
+							style={{ cursor: "pointer" }}
+							className="dropdown-menu dropdown-menu-md dropdown-menu-right"
 						>
-							<AiOutlineLogout /> logout
-						</Link>
+							<div className="dropdown-divider" />
+							<div
+								style={{
+									display: "flex",
+									justifyContent: "space-between",
+									alignItems: "center",
+								}}
+								className="dropdown-item"
+							>
+								<div style={{ width: "30px" }} className="">
+									<img
+										src="https://res.cloudinary.com/itgenius/image/upload/v1688438198/6_isfrng.png"
+										className="img-circle elevation-2"
+										alt="User Image"
+									/>
+								</div>
+								<div className="info">
+									<div className="d-block">Bukenya</div>
+								</div>
+							</div>
+							<div className="dropdown-divider" />
+							<div>
+								<div
+									style={{
+										display: "flex",
+										justifyContent: "space-between",
+										alignItems: "center",
+										fontWeight: "bold",
+										padding: "8px",
+									}}
+									onClick={() => {
+										localStorage.removeItem("token");
+										Redirect("/login");
+									}}
+									className="dropdown-item"
+								>
+									<div
+										className=""
+										data-widget="control-sidebar"
+										data-slide="true"
+									>
+										<AiOutlineLogout />
+									</div>
+
+									<div>logout</div>
+								</div>
+							</div>
+						</div>
 					</li>
 				</ul>
 			</nav>

@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const Slidder = () => {
 	return (
@@ -47,8 +48,8 @@ const Slidder = () => {
 										</p>
 
 										<div class="second-header-btn btn-sm">
-											<a
-												href="/"
+											<Link
+												to="/admissions"
 												class="btn ss-btn mr-15"
 												data-animation="fadeInLeft"
 												data-delay=".4s"
@@ -56,7 +57,7 @@ const Slidder = () => {
 											>
 												admission open
 												<i class="fal fa-long-arrow-right"></i>
-											</a>
+											</Link>
 										</div>
 									</div>
 								</div>

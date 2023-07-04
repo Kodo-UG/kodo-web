@@ -56,8 +56,8 @@ const Header = () => {
 										<div class="text">
 											<span>Email Now</span>
 											<strong>
-												<a href="mailto:info@example.com">
-													jobs@webtrueexample.com
+												<a href="mailto:Info@kodoscholarships.com">
+													Info@kodoscholarships.com
 												</a>
 											</strong>
 										</div>

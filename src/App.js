@@ -17,13 +17,18 @@ import PasswordReset from "./pages/PasswordReset";
 import Root from "./pages/Dashboard";
 import Payment from "./pages/payment";
 import PrivateRoute from "./utils/PrivateRoute";
+import RootScholarship from "./pages/Dashboard/scholarship";
+import MainProfile from "./pages/Dashboard/Profile";
 const App = () => {
 	return (
 		<Switch>
 			<Route exact path="/signin" component={Signin} />
 			<Route exact path="/forgot/password" component={ForgotPassword} />
 			<Route path="/reset-password" component={PasswordReset} />
-			<PrivateRoute exact path="/db" component={Root} />
+			<Route exact path="/db" component={Root} />
+			<PrivateRoute exact path="/scholars" component={RootScholarship} />
+			<Route exact path="/profile" component={MainProfile} />
+
 			<Layout>
 				<Route path="/payment" component={Payment} />
 				<Route exact path="/aboutus" component={AboutUs} />

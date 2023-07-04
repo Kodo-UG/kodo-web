@@ -5,6 +5,8 @@ import CustomLink from "../customlink";
 const NavHeader = () => {
 	const history = useHistory();
 
+	const token = localStorage.getItem("token");
+
 	const routeData = [
 		{
 			id: 1,
@@ -72,26 +74,6 @@ const NavHeader = () => {
 							children={dta.children}
 						/>
 					))}
-					{/* <li class="nav-item active">
-						<Link to="/">
-							Home <span class="sr-only">(current)</span>
-						</Link>
-					</li>
-					<li class="nav-item">
-						<Link to="/aboutus">About us</Link>
-					</li>
-					<li class="nav-item">
-						<Link to="/scholarships">Scholarship</Link>
-					</li>
-					<li class="nav-item">
-						<Link to="/testimonals">Testimonals</Link>
-					</li>
-					<li class="nav-item">
-						<Link to="/blog">Blog</Link>
-					</li>
-					<li class="nav-item">
-						<Link to="/contactus">Contact us</Link>
-					</li> */}
 				</ul>
 				<form
 					class=" my-lg-0 "
@@ -99,36 +81,61 @@ const NavHeader = () => {
 						display: "flex",
 					}}
 				>
-					{/* <div class="second-header-btn btn-sm" id="loginbtn" style={{marginRight: "1rem"}} >
-            <Link to="/login" class="btn btn-sm">
-              Login
-            </Link>
-          </div> */}
-					<button
-						class="select-option sonic-btn"
-						style={{
-							padding: "10px 20px",
+					{token ? (
+						<button
+							class="select-option sonic-btn"
+							style={{
+								padding: "10px 20px",
 
-							border: "none",
-							outline: "none",
-							background: "#FF7350",
-							transition:
-								"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-							fontFamily: "Arial, sans-serif",
-							fontSize: "16px",
-							lineHeight: "1.5",
-							color: "#fff",
-							cursor: "pointer",
-							marginBottom: "4px",
-							marginRight: "1rem",
-						}}
-						onClick={(e) => {
-							e.preventDefault();
-							history.push("/login");
-						}}
-					>
-						Login
-					</button>
+								border: "none",
+								outline: "none",
+								background: "#FF7350",
+								transition:
+									"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
+								fontFamily: "Arial, sans-serif",
+								fontSize: "16px",
+								lineHeight: "1.5",
+								color: "#fff",
+								cursor: "pointer",
+								marginBottom: "4px",
+								marginRight: "1rem",
+							}}
+							onClick={(e) => {
+								e.preventDefault();
+								localStorage.removeItem("token");
+								history.push("/login");
+							}}
+						>
+							Logout
+						</button>
+					) : (
+						<button
+							class="select-option sonic-btn"
+							style={{
+								padding: "10px 20px",
+
+								border: "none",
+								outline: "none",
+								background: "#FF7350",
+								transition:
+									"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
+								fontFamily: "Arial, sans-serif",
+								fontSize: "16px",
+								lineHeight: "1.5",
+								color: "#fff",
+								cursor: "pointer",
+								marginBottom: "4px",
+								marginRight: "1rem",
+							}}
+							onClick={(e) => {
+								e.preventDefault();
+
+								history.push("/login");
+							}}
+						>
+							Login
+						</button>
+					)}
 					<button
 						class="select-option sonic-btn"
 						style={{
@@ -152,91 +159,9 @@ const NavHeader = () => {
 					>
 						admission open
 					</button>
-					{/* <div class="second-header-btn btn-sm">
-            <Link to="/admissions" class="btn">
-              admission open
-            </Link>
-          </div> */}
 				</form>
 			</div>
 		</nav>
-
-		// <div
-		//  style={{
-		//    display: "flex",
-		//    flexDirection: "row",
-		//    justifyContent: "center",
-		//    alignContent: "center",
-		//  }}
-		//  id="header-sticky"
-		//  class="menu-area"
-		// >
-		//  <div class="container">
-		//    <div class="second-menu">
-		//      <div class="row align-items-center">
-		//        <div class="col-xl-3 col-lg-3">
-		//          <div class="logo">
-		//            <Link style={{ width: 20, height: 20 }} to="/">
-		//              <img src="logo-kodo.png" alt="logo" />
-		//            </Link>
-		//          </div>
-		//        </div>
-		//        <div class="col-xl-6 col-lg-6">
-		//          <div class="main-menu text-right text-xl-right">
-		//            <nav id="mobile-menu">
-		//              <ul>
-		//                <li class="has-sub">
-		//                  <Link to="/">Home</Link>
-		//                </li>
-		//                <li>
-		//                  <Link to="/aboutus">About Us</Link>
-		//                </li>
-		//                <li>
-		//                  <Link to="/scholarships">Scholarships</Link>
-		//                </li>
-		//                <li>
-		//                  <Link to="/testimonals">Testimonals</Link>
-		//                </li>
-		//                <li>
-		//                  <Link to="/blog">Blog</Link>
-		//                </li>
-		//                <li>
-		//                  <Link to="/contactus">Contact Us</Link>
-		//                </li>
-		//              </ul>
-		//            </nav>
-		//          </div>
-		//        </div>
-		//        <div
-		//          style={{ display: "flex", flexDirection: "row" }}
-		//          class="text-right d-none d-lg-block  text-xl-right"
-		//        >
-		//          <div class="login">
-		//            <ul>
-		//              <li>
-		//                <div class="second-header-btn" id="loginbtn">
-		//                  <Link to="/login" class="btn">
-		//                    Login
-		//                  </Link>
-		//                </div>
-		//              </li>
-		//              <li>
-		//                <div class="second-header-btn">
-		//                  <Link to="/admissions" class="btn">
-		//                    admission open
-		//                  </Link>
-		//                </div>
-		//              </li>
-		//            </ul>
-		//          </div>
-		//        </div>
-		//        <div class="col-12">
-		//          <div class="mobile-menu"></div>
-		//        </div>
-		//      </div>
-		//    </div>
-		//  </div>
-		// </div>
 	);
 };
 
