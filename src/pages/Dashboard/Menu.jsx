@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -28,18 +29,7 @@ const Menu = () => {
 					<div style={{ backgroungColor: "#343A40" }} className="sidebar">
 						{/* Sidebar user panel (optional) */}
 						<div className="user-panel mt-3 pb-3 mb-3 d-flex">
-							<div className="image">
-								<img
-									src="dist/img/user2-160x160.jpg"
-									className="img-circle elevation-2"
-									alt="User Image"
-								/>
-							</div>
-							<div className="info">
-								<Link to="/" className="d-block">
-									Bukenya Kizza
-								</Link>
-							</div>
+							
 						</div>
 						{/* Sidebar Menu */}
 						<nav className="mt-4">
@@ -72,7 +62,7 @@ const Menu = () => {
 									</ul> */}
 								</li>
 								<li className="nav-item">
-									<Link to="/scholarships" className="nav-link">
+									<Link to="/scholars" className="nav-link">
 										<i className="nav-icon fas fa-th" />
 										<p>
 											Sholarships
@@ -83,7 +73,7 @@ const Menu = () => {
 									</Link>
 								</li>
 								<li className="nav-item has-treeview">
-									<Link to="/" className="nav-link">
+									<Link to="/db" className="nav-link">
 										<i className="nav-icon fas fa-copy" />
 										<p>
 											History
