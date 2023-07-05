@@ -17,7 +17,7 @@ const Menu = () => {
 			<div>
 				<aside
 					className="main-sidebar sidebar-dark-primary elevation-4"
-					style={{ backgroundColor: "#343A40" }}
+					style={{ backgroundColor: "#125875" }}
 				>
 					{/* Brand Logo */}
 					<Link to="/db" className="brand-link">
@@ -28,14 +28,17 @@ const Menu = () => {
 							style={{ opacity: ".8" }}
 						/>
 						<span
-							style={{ padding: "4px", marginRight: "9px" }}
+							style={{
+								fontSize: "15px",
+								color: "white",
+								fontWeight: "bold",
+							}}
 							className="brand-text font-weight-light"
 						>
 							Scholarship
 						</span>
 					</Link>
-					{/* Sidebar */}
-					<div className="sidebar">
+					<div style={{ backgroundColor: "#125875" }} className="sidebar">
 						{/* Sidebar user panel (optional) */}
 						<div className="user-panel mt-3 pb-3 mb-3 d-flex"></div>
 						{/* Sidebar Menu */}
@@ -80,7 +83,7 @@ const Menu = () => {
 										</p>
 									</Link>
 								</li>
-								<li className="nav-item has-treeview">
+								{/* <li className="nav-item has-treeview">
 									<Link
 										onClick={() => handleActive("history")}
 										to="/history"
@@ -117,7 +120,7 @@ const Menu = () => {
 											</Link>
 										</li>
 									</ul>
-								</li>
+								</li> */}
 							</ul>
 						</nav>
 						{/* /.sidebar-menu */}

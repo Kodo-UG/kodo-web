@@ -38,7 +38,16 @@ const Scholarship = () => {
 			<div className="content-wrapper">
 				<section className="content">
 					<div>
-						<div style={{ padding: "20px" }}>Available scholarships</div>
+						<div
+							style={{
+								fontWeight: "",
+								fontSize: "20px",
+								margin: "5px",
+								padding: "10px",
+							}}
+						>
+							Available scholarships
+						</div>
 						{/* Small boxes (Stat box) */}
 						<div
 							style={{

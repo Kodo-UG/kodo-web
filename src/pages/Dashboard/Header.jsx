@@ -35,7 +35,7 @@ const MyHeader = () => {
 				{/* Left navbar links */}
 				<ul className="navbar-nav">
 					<li className="nav-item">
-						<Link className="nav-link" data-widget="pushmenu">
+						<Link to="#" className="nav-link" data-widget="pushmenu">
 							<i className="fas fa-bars" />
 						</Link>
 					</li>

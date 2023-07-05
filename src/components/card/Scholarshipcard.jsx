@@ -45,7 +45,11 @@ const ScholarshipCard = ({
 						</div>
 
 						<Link to="/payment">
-							<Button type="primary" className="upgrade-button">
+							<Button
+								style={{ backgroundColor: "#FF7350" }}
+								type="primary"
+								className=""
+							>
 								Upgrade Now
 							</Button>
 						</Link>
