@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import Scholarshipcard from "../../components/card/Scholarshipcard";
 import { Row } from "antd";
+import MyChart from "../../components/chart";
 
 const Dashboard = () => {
 	const [data, setData] = useState([]);
@@ -133,7 +134,16 @@ const Dashboard = () => {
 									</a>
 								</div>
 							</div>
-							<div  >Data Visualizations</div>
+							<div
+								style={{
+									fontWeight: "",
+									fontSize: "27px",
+									margin: "5px",
+								}}
+							>
+								Data Visualizations
+							</div>
+							<MyChart />
 							{/* <Row justify="center" gutter={[16, 16]}>
 
 							{data?.map((dta) => (
