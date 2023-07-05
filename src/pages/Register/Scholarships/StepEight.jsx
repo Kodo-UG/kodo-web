@@ -1,6 +1,7 @@
 import React from "react";
 import { updateFormData } from "../../../toolkit/formReducer";
 import { useDispatch } from "react-redux";
+import Input from "../../../components/input/index";
 
 const StepEight = ({ nextStep, prevStep, setFormData }) => {
 	const dispatch = useDispatch();
@@ -44,55 +45,25 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 				<div style={{ marginTop: "20px", marginBottom: "20px" }}>
 					{" "}
 					<div className="_fieldGroup_1g3ja_1">
-						<input
-							id="fName"
-							className="_textField_fwd9c_1"
-							name="fname"
-							placeholder="First Name"
-							required=""
-							data-testid="fname"
+						<Input
 							onChange={handleFNameChange}
-							style={{
-								borderRadius: "10px",
-								width: "500px",
-								padding: "15px",
-								border: "1px solid #ccc",
-								outline: "none",
-								transition: "box-shadow 0.3s ease-in-out",
-								boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-								fontFamily: "Arial, sans-serif",
-								fontSize: "16px",
-								lineHeight: "1.5",
-								color: "#333",
-								backgroundColor: "#fff",
-							}}
+							name="fname"
+							type="text"
+							id="fname"
+							label="First Name"
+							placeholder="Your first name"
 						/>
 					</div>
 				</div>
 				<div>
 					<div className="_fieldGroup_1g3ja_1">
-						<input
-							id="lastName"
-							className="_textField_fwd9c_1"
-							name="lname"
-							placeholder="Last Name"
-							required=""
-							data-testid="lname"
+						<Input
 							onChange={handleLNameChange}
-							style={{
-								borderRadius: "10px",
-								width: "500px",
-								padding: "15px",
-								border: "1px solid #ccc",
-								outline: "none",
-								transition: "box-shadow 0.3s ease-in-out",
-								boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-								fontFamily: "Arial, sans-serif",
-								fontSize: "16px",
-								lineHeight: "1.5",
-								color: "#333",
-								backgroundColor: "#fff",
-							}}
+							name="lname"
+							type="text"
+							id="lastname"
+							label="Last Name"
+							placeholder="Your last name"
 						/>
 					</div>
 				</div>

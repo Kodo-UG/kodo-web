@@ -30,7 +30,7 @@ const StepOne = ({ nextStep, setFormData }) => {
 		},
 		{
 			id: 6,
-			text: "Certificate / Diploma",
+			text: "Certificate/ Diploma",
 		},
 		{
 			id: 7,
@@ -46,10 +46,11 @@ const StepOne = ({ nextStep, setFormData }) => {
 		},
 	];
 
-	const [clickedButtonId, setClickedButtonId] = useState(null);
+	const [selectedButtonId, setSelectedButtonId] = useState(null);
 
 	const handleButtonClick = (id) => {
-		setClickedButtonId(id);
+		setSelectedButtonId(id);
+		dispatch(updateFormData({ field: "degree", value: id }));
 	};
 
 	return (
@@ -68,25 +69,8 @@ const StepOne = ({ nextStep, setFormData }) => {
 							<MyButton
 								key={list.id}
 								text={list.text}
-								style={{
-									padding: "10px 20px",
-									border: "none",
-									outline: "none",
-									transition:
-										"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-									fontFamily: "Arial, sans-serif",
-									fontSize: "16px",
-									lineHeight: "1.5",
-									color: clickedButtonId === list.id ? "#fff" : "#000",
-									backgroundColor:
-										clickedButtonId === list.id
-											? "blue"
-											: "transparent",
-									cursor: "pointer",
-								}}
-								onClick={() => {
-									handleButtonClick(list.id);
-								}}
+								isSelected={selectedButtonId === list.id}
+								onClick={() => handleButtonClick(list.id)}
 							/>
 						))}
 					</div>
@@ -96,27 +80,26 @@ const StepOne = ({ nextStep, setFormData }) => {
 				className="d-flex"
 				style={{ display: "flex", justifyContent: "center" }}
 			>
-			<button
-				className="select-option sonic-btn"
-				onClick={nextStep}
-				style={{
-					padding: "10px 20px",
-					border: "none",
-					outline: "none",
-					transition:
-						"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-					fontFamily: "Arial, sans-serif",
-					fontSize: "16px",
-					lineHeight: "1.5",
-					color: "#fff",
-					cursor: "pointer",
-				}}
-			>
-				Next
-			</button>
+				<button
+					className="select-option sonic-btn"
+					onClick={nextStep}
+					style={{
+						padding: "20px 20px",
+						border: "none",
+						outline: "none",
+						transition:
+							"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
+						fontFamily: "Arial, sans-serif",
+						fontSize: "16px",
+						lineHeight: "1.5",
+						color: "#fff",
+						cursor: "pointer",
+					}}
+				>
+					Next
+				</button>
+			</div>
 		</div>
-		</div>
-
 	);
 };
 
