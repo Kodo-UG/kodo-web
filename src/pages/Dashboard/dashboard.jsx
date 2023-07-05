@@ -133,7 +133,8 @@ const Dashboard = () => {
 									</a>
 								</div>
 							</div>
-							<Row justify="center" gutter={[16, 16]}>
+							<div  >Data Visualizations</div>
+							{/* <Row justify="center" gutter={[16, 16]}>
 
 							{data?.map((dta) => (
 								<Scholarshipcard
@@ -145,8 +146,7 @@ const Dashboard = () => {
 									subscription={subscription}
 								/>
 							))}
-							    </Row>
-
+							    </Row> */}
 						</div>
 					</div>
 				</section>
