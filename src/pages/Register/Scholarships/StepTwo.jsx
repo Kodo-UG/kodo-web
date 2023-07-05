@@ -3,6 +3,8 @@ import api from "../../../api/apiClient";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
 import axios from "axios";
+import MyButton from "../../../components/Button";
+import "../../../components/Button.css";
 
 import { useQuery, useMutation } from "react-query";
 
@@ -32,12 +34,14 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 	);
 
 	const newData = data?.data;
-    console.log("=============")
-	console.log( data )
-	console.log("==============")
+	console.log("=============");
+	console.log(data);
+	console.log("==============");
 
+	const [selectedButtonId, setSelectedButtonId] = useState(null);
 	const handleClick = (id) => {
 		// setId(id);
+		setSelectedButtonId(id);
 		dispatch(updateFormData({ field: "scholarshipcategory", value: id }));
 	};
 	return (
@@ -56,36 +60,27 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 					) : (
 						<div class="option-list">
 							{newData?.map((info) => (
-								<button
-									key={info._id}
+								<MyButton
+									key={info.id}
+									text={info.name}
+									isSelected={selectedButtonId === info.id}
 									onClick={() => handleClick(info._id)}
-									type="button"
-									class="select-option sonic-btn"
-									style={{
-										padding: "15px",
-										border: "1px solid #ccc",
-										outline: "none",
-										transition: "box-shadow 0.3s ease-in-out",
-										boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-										fontFamily: "Arial, sans-serif",
-										fontSize: "16px",
-										lineHeight: "1.5",
-										color: "white",
-										cursor: "pointer",
-									}}
-								>
-									{info.name}
-								</button>
+								/>
 							))}
 						</div>
 					)}
 				</div>
 			</div>
 			<div
-				className="d-flex"
-				style={{ display: "flex", justifyContent: "space-evenly" }}
-			>			
-			<button
+				className="container"
+				style={{
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "space-between",
+					width: "50%",
+				}}
+			>
+				<button
 					class="select-option sonic-btn"
 					onClick={prevStep}
 					style={{

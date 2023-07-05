@@ -25,7 +25,7 @@ const App = () => {
 			<Route exact path="/signin" component={Signin} />
 			<Route exact path="/forgot/password" component={ForgotPassword} />
 			<Route path="/reset-password" component={PasswordReset} />
-			<Route exact path="/db" component={Root} />
+			<PrivateRoute exact path="/db" component={Root} />
 			<PrivateRoute exact path="/scholars" component={RootScholarship} />
 			<Route exact path="/profile" component={MainProfile} />
 

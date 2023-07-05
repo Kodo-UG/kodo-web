@@ -2,6 +2,9 @@ import React from "react";
 import { BiSignal1 } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
+import { useState } from "react";
+import StepperCard from "../../../components/StepperCard";
+import StepperCard2 from "../../../components/StepperCard2";
 
 const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 	const dispatch = useDispatch();
@@ -12,8 +15,9 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 		{ id: 4, title: "6 - 12 months" },
 		{ id: 5, title: "12 or more months" },
 	];
-
-	const handleClick = (title) => {
+	const [selectedCard, setSelectedCard] = useState(null);
+	const handleClick = (title, id) => {
+		setSelectedCard(id);
 		dispatch(updateFormData({ field: "scholarshipStart", value: title }));
 	};
 
@@ -34,55 +38,17 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 								display: "grid",
 								gridTemplateColumns: "repeat(3, 1fr)",
 								gap: "2rem",
-								margin: "30px",
 								cursor: "pointer",
+								padding: "3rem",
+								width: "100%",
 							}}
 						>
-							{buttons.map((button) => (
-								<div
-									key={button.id}
-									style={{
-										background: "white",
-										borderRadius: 20,
-										maxWidth: "10rem",
-										width: "10rem",
-										height: "10rem",
-										boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
-										display: "flex",
-										flexDirection: "column",
-										justifyContent: "center",
-										alignItems: "center",
-										marginLeft: "20px",
-										marginTop: "10px",
-									}}
-									onClick={() => handleClick(button.title)}
-								>
-									<div
-										style={{
-											borderRadius: "50%",
-											background: "#E6E9ED",
-											width: "2.5rem",
-											height: "2.5rem",
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-										}}
-									>
-										<BiSignal1
-											style={{
-												color: "red",
-												width: "6rem",
-												height: "4rem",
-												marginTop: "-12px",
-												marginLeft: "15px",
-											}}
-										/>
-									</div>
-
-									<div style={{ marginTop: "1rem" }}>
-										<h5>{button.title}</h5>
-									</div>
-								</div>
+							{buttons.map((item) => (
+								<StepperCard2
+									item={item}
+									handleClick={handleClick}
+									selectedCard={selectedCard}
+								/>
 							))}
 						</div>
 					</div>
