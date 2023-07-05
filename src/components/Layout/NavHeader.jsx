@@ -38,6 +38,11 @@ const NavHeader = () => {
 			route: "/contactus",
 			children: "Contact us",
 		},
+		{
+			id: 7,
+			route: "/db",
+			children: "Dashboard",
+		},
 	];
 	return (
 		<nav class="navbar navbar-expand-lg navbar-light ">

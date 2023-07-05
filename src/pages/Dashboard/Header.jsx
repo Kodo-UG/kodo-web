@@ -1,10 +1,34 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
+import { BsPersonCircle } from "react-icons/bs";
+import axiosInstance from "../../api/axiosInstance";
+import { useEffect } from "react";
 
 const MyHeader = () => {
+	const history = useHistory();
+	const token = localStorage.getItem("token");
+
+	// const [userID, setUserID] = useState(null);
+	// const fetchUser = async () => {
+	// 	try {
+	// 		const response = await axiosInstance.get(
+	// 			"http://165.227.139.53/api/v1/user/profile/64a151d67a60cf3cb920892a"
+	// 		);
+
+	// 		console.log(response.data.data.fname, "RESPONSE IS HERE ");
+	// 		// return user;
+	// 	} catch (error) {
+	// 		console.error("Error fetching user:", error);
+	// 		throw error;
+	// 	}
+	// };
+
+	// useEffect(() => {
+	// 	fetchUser();
+	// }, []);
 	return (
 		<div>
 			<nav className="main-header navbar navbar-expand navbar-white navbar-light">
@@ -16,7 +40,7 @@ const MyHeader = () => {
 						</Link>
 					</li>
 					<li className="nav-item d-none d-sm-inline-block">
-						<Link href="index3.html" className="nav-link">
+						<Link to="/" className="nav-link">
 							Home
 						</Link>
 					</li>
@@ -77,53 +101,7 @@ const MyHeader = () => {
 								{/* Message End */}
 							</a>
 							<div className="dropdown-divider" />
-							<a href="#" className="dropdown-item">
-								{/* Message Start */}
-								<div className="media">
-									<img
-										src="dist/img/user8-128x128.jpg"
-										alt="User Avatar"
-										className="img-size-50 img-circle mr-3"
-									/>
-									<div className="media-body">
-										<h3 className="dropdown-item-title">
-											John Pierce
-											<span className="float-right text-sm text-muted">
-												<i className="fas fa-star" />
-											</span>
-										</h3>
-										<p className="text-sm">I got your message bro</p>
-										<p className="text-sm text-muted">
-											<i className="far fa-clock mr-1" /> 4 Hours Ago
-										</p>
-									</div>
-								</div>
-								{/* Message End */}
-							</a>
-							<div className="dropdown-divider" />
-							<a href="#" className="dropdown-item">
-								{/* Message Start */}
-								<div className="media">
-									<img
-										src="dist/img/user3-128x128.jpg"
-										alt="User Avatar"
-										className="img-size-50 img-circle mr-3"
-									/>
-									<div className="media-body">
-										<h3 className="dropdown-item-title">
-											new user
-											<span className="float-right text-sm text-warning">
-												<i className="fas fa-star" />
-											</span>
-										</h3>
-										<p className="text-sm">The subject goes here</p>
-										<p className="text-sm text-muted">
-											<i className="far fa-clock mr-1" /> 4 Hours Ago
-										</p>
-									</div>
-								</div>
-								{/* Message End */}
-							</a>
+
 							<div className="dropdown-divider" />
 							<a href="#" className="dropdown-item dropdown-footer">
 								See All Messages
@@ -133,10 +111,7 @@ const MyHeader = () => {
 					{/* Notifications Dropdown Menu */}
 					<li className="nav-item dropdown">
 						<a className="nav-link" data-toggle="dropdown" href="#">
-							<i className="far fa-bell" />
-							<span className="badge badge-warning navbar-badge">
-								15
-							</span>
+							<BsPersonCircle />
 						</a>
 						<div
 							style={{ cursor: "pointer" }}
@@ -159,34 +134,34 @@ const MyHeader = () => {
 									/>
 								</div>
 								<div className="info">
-									<div className="d-block">Bukenya</div>
+									<Link to="/profile">
+										<div className="d-block">Bukenya</div>
+									</Link>
 								</div>
 							</div>
 							<div className="dropdown-divider" />
-							<div>
-								<div
-									style={{
-										display: "flex",
-										justifyContent: "space-between",
-										alignItems: "center",
-										fontWeight: "bold",
-										padding: "8px",
-									}}
-									onClick={() => {
-										localStorage.removeItem("token");
-										Redirect("/login");
-									}}
-									className="dropdown-item"
-								>
-									<div
-										className=""
-										data-widget="control-sidebar"
-										data-slide="true"
-									>
-										<AiOutlineLogout />
-									</div>
+							<div
+								style={{
+									display: "flex",
+									justifyContent: "space-between",
+									alignItems: "center",
+									fontWeight: "bold",
+									padding: "8px",
+								}}
+								className="dropdown-item"
+							>
+								<div data-widget="control-sidebar" data-slide="true">
+									<AiOutlineLogout />
+								</div>
 
-									<div>logout</div>
+								<div
+									onClick={(e) => {
+										e.preventDefault();
+										localStorage.removeItem("token");
+										history.push("/login");
+									}}
+								>
+									logout
 								</div>
 							</div>
 						</div>
