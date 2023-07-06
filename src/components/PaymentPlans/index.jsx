@@ -6,7 +6,7 @@ const PaymentCard = ({ data }) => {
 	const { details } = data;
   const history = useHistory()
   const config = {
-    public_key: "FLWPUBK_TEST-2c6654d532a83dc9f75241b925ab0d85-X",
+    public_key: "FLWPUBK_TEST-02518ab938416219120df2c5cf3e056c-X",
     tx_ref: Date.now(),
     amount: data.amount,
     currency: "USD",
