@@ -59,11 +59,11 @@ const Menu = () => {
 											isButtonActive("dashboard") ? "active" : ""
 										}`}
 									>
-										<i className="nav-icon fas fa-tachometer-alt" />
-										<p>
-											Dashboard
-											{/* <i className="right fas fa-angle-left" /> */}
-										</p>
+										<i
+											class="fa fa-graduation-cap"
+											aria-hidden="true"
+										></i>{" "}
+										<p>Dashboard</p>
 									</Link>
 								</li>
 								<li className="nav-item">
@@ -74,12 +74,29 @@ const Menu = () => {
 											isButtonActive("scholarships") ? "active" : ""
 										}`}
 									>
-										<i className="nav-icon fas fa-th" />
+										<i class="fa fa-trophy" aria-hidden="true"></i>{" "}
 										<p>
 											Scholarships
 											<span className="right badge badge-danger">
 												New
 											</span>
+										</p>
+									</Link>
+								</li>
+								<li className="nav-item">
+									<Link
+										onClick={() => handleActive("applications")}
+										to="/scholars"
+										className={`nav-link ${
+											isButtonActive("applications") ? "active" : ""
+										}`}
+									>
+										<i class="fa fa-tags" aria-hidden="true"></i>{" "}
+										<p>
+											My Applications
+											{/* <span className="right badge badge-danger">
+												New
+											</span> */}
 										</p>
 									</Link>
 								</li>

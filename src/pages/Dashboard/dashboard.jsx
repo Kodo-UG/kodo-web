@@ -73,7 +73,7 @@ const Dashboard = () => {
 										<p>Active Scholarships</p>
 									</div>
 									<div className="icon">
-										<i className="ion ion-bag" />
+										{/* <i className="ion ion-bag" /> */}
 									</div>
 									<a href="#" className="small-box-footer">
 										More info{" "}
@@ -92,7 +92,7 @@ const Dashboard = () => {
 										<p>Completed Scholarships</p>
 									</div>
 									<div className="icon">
-										<i className="ion ion-stats-bars" />
+										{/* <i className="ion ion-stats-bars" /> */}
 									</div>
 									<a href="/" className="small-box-footer">
 										More info{" "}
@@ -109,7 +109,7 @@ const Dashboard = () => {
 										<p>Scholarship Registrations</p>
 									</div>
 									<div className="icon">
-										<i className="ion ion-person-add" />
+										{/* <i className="ion ion-person-add" /> */}
 									</div>
 									<a href="#" className="small-box-footer">
 										More info{" "}
@@ -126,7 +126,7 @@ const Dashboard = () => {
 										<p>Pending Scholarships</p>
 									</div>
 									<div className="icon">
-										<i className="ion ion-pie-graph" />
+										{/* <i className="ion ion-pie-graph" /> */}
 									</div>
 									<a href="#" className="small-box-footer">
 										More info{" "}
@@ -143,7 +143,7 @@ const Dashboard = () => {
 							>
 								Data Visualizations
 							</div>
-							<MyChart />
+							{/* <MyChart /> */}
 							{/* <Row justify="center" gutter={[16, 16]}>
 
 							{data?.map((dta) => (
