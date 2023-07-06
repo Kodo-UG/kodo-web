@@ -50,6 +50,8 @@ const StepOne = ({ nextStep, setFormData }) => {
 
 	const handleButtonClick = (id) => {
 		setSelectedButtonId(id);
+		dispatch(updateFormData({ field: "appType", value: "scholarship" }));
+
 		dispatch(updateFormData({ field: "degree", value: id }));
 	};
 
