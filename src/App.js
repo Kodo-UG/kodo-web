@@ -19,6 +19,7 @@ import Payment from "./pages/payment";
 import PrivateRoute from "./utils/PrivateRoute";
 import RootScholarship from "./pages/Dashboard/scholarship";
 import MainProfile from "./pages/Dashboard/Profile";
+import Accordion from "./accordion/Accordion";
 const App = () => {
 	return (
 		<Switch>
@@ -37,7 +38,7 @@ const App = () => {
 				<Route exact path="/admissions" component={FindScholarship} />
 				<Route exact path="/stepper" component={Stepper} />
 				<Route exact path="/contactus" component={ContactUs} />
-				<Route exact path="/scholarships" component={Scholarships} />
+				<Route exact path="/scholarships" component={Accordion} />
 				<Route exact path="/testimonals" component={Testimonals} />
 				<Route exact path="/" component={Home} />
 			</Layout>
