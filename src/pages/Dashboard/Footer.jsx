@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
 	return (
@@ -6,8 +7,8 @@ const Footer = () => {
 			<div>
 				<footer className="main-footer">
 					<strong>
-						Copyright © 2014-2019{" "}
-						<a href="http://adminlte.io">Kodo scholarships</a>.
+						Copyright © 2023{" "}
+						<Link to="">Kodo scholarships</Link>.
 					</strong>
 					All rights reserved.
 					<div className="float-right d-none d-sm-inline-block">

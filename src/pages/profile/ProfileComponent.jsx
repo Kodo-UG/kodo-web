@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import CustomInput from "../../components/input";
+import axiosInstance from "../../api/axiosInstance";
 
 const ProfileComponent = ({
 	name,
@@ -10,6 +12,27 @@ const ProfileComponent = ({
 	address,
 }) => {
 	const [bg, setBg] = useState("#FF7350");
+	const [value, setValues] = useState({
+		fname: "",
+		lname: "",
+		city: "",
+		country: "",
+		phone: "",
+	});
+
+	const handleEditUserInfo = async () => {
+		try {
+			const res = await axiosInstance.patch("/user/profile", {
+				fname: value.fname,
+				lname: value.lname,
+				city: value.city,
+				country: value.country,
+				phone: value.phone,
+			});
+		} catch (error) {
+			throw error;
+		}
+	};
 
 	return (
 		<div>
@@ -39,7 +62,13 @@ const ProfileComponent = ({
 											{location}
 										</p>
 
-										<button className="btn btn-outline-primary">
+										<button
+											style={{
+												backgroundColor: "#EC1D64",
+												color: "white",
+											}}
+											className="btn "
+										>
 											Subscription Active
 										</button>
 									</div>
@@ -98,17 +127,17 @@ const ProfileComponent = ({
 								<div className="row">
 									<div className="col-sm-12">
 										<button
-											onMouseOver={() => setBg("red")}
-											onMouseLeave={() => setBg("#FF7350")}
 											style={{
-												padding: "10px",
+												backgroundColor: "#EC1D64",
+												padding: "8px",
 												width: "90px",
+												marginTop: "8px",
 												color: "white",
-												fontWeight: "bold",
-												backgroundColor: `${bg}`,
 											}}
-											target="__blank"
-											to="#"
+											type="button"
+											class="btn "
+											data-toggle="modal"
+											data-target="#exampleModalCenter"
 										>
 											Edit
 										</button>
@@ -116,172 +145,104 @@ const ProfileComponent = ({
 								</div>
 							</div>
 						</div>
-						{/* <div className="row gutters-sm">
-								<div className="col-sm-6 mb-3">
-									<div className="card h-100">
-										<div className="card-body">
-											<h6 className="d-flex align-items-center mb-3">
-												<i className="material-icons text-info mr-2">
-													assignment
-												</i>
-												Project Status
-											</h6>
-											<small>Web Design</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "80%" }}
-													aria-valuenow={80}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-											<small>Website Markup</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "72%" }}
-													aria-valuenow={72}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-											<small>One Page</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "89%" }}
-													aria-valuenow={89}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-											<small>Mobile Template</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "55%" }}
-													aria-valuenow={55}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-											<small>Backend API</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "66%" }}
-													aria-valuenow={66}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-										</div>
+
+						<div
+							class="modal fade"
+							id="exampleModalCenter"
+							tabindex="-1"
+							role="dialog"
+							aria-labelledby="exampleModalCenterTitle"
+							aria-hidden="true"
+						>
+							<div
+								class="modal-dialog modal-dialog-centered"
+								role="document"
+							>
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5
+											class="modal-title"
+											id="exampleModalLongTitle"
+										>
+											Edit User Information
+										</h5>
+										<button
+											type="button"
+											class="close"
+											data-dismiss="modal"
+											aria-label="Close"
+										>
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div style={{ display: "grid" }} class="modal-body">
+										<CustomInput
+											// style={{ width: "10rem" }}
+											value={value.fname}
+											name="fname"
+											type="text"
+											placeholder="Enter first name"
+											label="First Name"
+										/>
+
+										<CustomInput
+											name="lname"
+											type="text"
+											placeholder="Enter Last name"
+											label="Last Name"
+											value={value.lname}
+										/>
+										<CustomInput
+											name="email"
+											value={value.email}
+											type="text"
+											placeholder="Enter Email"
+											label="Email"
+										/>
+										<CustomInput
+											name="phone"
+											type="text"
+											placeholder="Enter Phone Number"
+											label="Phone Number"
+											value={value.phone}
+										/>
+										<CustomInput
+											name="country"
+											type="text"
+											placeholder="Enter Country"
+											label="Country"
+											value={value.country}
+										/>
+										<CustomInput
+											name="city"
+											type="text"
+											placeholder="Enter City"
+											label="City"
+											value={value.city}
+										/>
+									</div>
+									<div class="modal-footer">
+										<button
+											type="button"
+											class="btn btn-secondary"
+											data-dismiss="modal"
+										>
+											Close
+										</button>
+										<button
+											style={{
+												backgroundColor: "#EC1D64",
+												color: "white",
+											}}
+											type="button"
+											class="btn "
+										>
+											Save changes
+										</button>
 									</div>
 								</div>
-								<div className="col-sm-6 mb-3">
-									<div className="card h-100">
-										<div className="card-body">
-											<h6 className="d-flex align-items-center mb-3">
-												<i className="material-icons text-info mr-2">
-													assignment
-												</i>
-												Project Status
-											</h6>
-											<small>Web Design</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "80%" }}
-													aria-valuenow={80}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-											<small>Website Markup</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "72%" }}
-													aria-valuenow={72}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-											<small>One Page</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "89%" }}
-													aria-valuenow={89}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-											<small>Mobile Template</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "55%" }}
-													aria-valuenow={55}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-											<small>Backend API</small>
-											<div
-												className="progress mb-3"
-												style={{ height: 5 }}
-											>
-												<div
-													className="progress-bar bg-primary"
-													role="progressbar"
-													style={{ width: "66%" }}
-													aria-valuenow={66}
-													aria-valuemin={0}
-													aria-valuemax={100}
-												/>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> */}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
