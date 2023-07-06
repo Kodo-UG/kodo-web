@@ -10,7 +10,7 @@ const CustomInput = ({
 	placeholder,
 }) => {
 	return (
-		<div style={{ marginTop: "20px", marginBottom: "20px" }}>
+		<div style={{ marginTop: "10px", marginBottom: "10px" }}>
 			<div
 				className="form-group"
 				style={{ display: "flex", flexDirection: "column" }}
@@ -25,7 +25,7 @@ const CustomInput = ({
 					type={type}
 					style={{
 						borderRadius: "10px",
-						width: "500px",
+						width: "450px",
 						padding: "10px",
 						border: "1px solid #ccc",
 						outline: "none",

@@ -5,24 +5,41 @@ import ProfileComponent from "./ProfileComponent";
 
 const Profile = () => {
 	const [data, setData] = useState([]);
-	const fetchUser = async () => {
-		try {
-			const response = await axiosInstance.get(
-				"http://165.227.139.53/api/v1/user/profile/64a151d67a60cf3cb920892a"
-			);
+	const [id, setId] = useState(null);
 
-			console.log(response.data.data, "RESPONSE IS HERE from profile ");
+	useEffect(() => {
+		const fetchUserData = async () => {
+			try {
+				const userDataPromise = localStorage.getItem("userData");
+				const userData = await userDataPromise;
+				const parsedUserData = JSON.parse(userData);
+				const userId = parsedUserData.user._id;
+				setId(userId);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+
+		fetchUserData();
+	}, []);
+
+	const fetchUser = async (id) => {
+		try {
+			const response = await axiosInstance.get(`/user/profile/${id}`);
+
+			// console.log(response.data.data, "RESPONSE IS HERE from profile ");
 			setData(response.data.data);
-			// return user;
 		} catch (error) {
-			console.error("Error fetching user:", error);
+			// console.error("Error fetching user:", error);
 			throw error;
 		}
 	};
 
 	useEffect(() => {
-		fetchUser();
-	}, []);
+		if (id) {
+			fetchUser(id);
+		}
+	}, [id]);
 
 	return (
 		<div>
@@ -48,4 +65,5 @@ const Profile = () => {
 		</div>
 	);
 };
+
 export default Profile;
