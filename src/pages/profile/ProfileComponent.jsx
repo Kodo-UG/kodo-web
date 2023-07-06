@@ -21,17 +21,13 @@ const ProfileComponent = ({
 	});
 
 	const handleEditUserInfo = async () => {
-		try {
-			const res = await axiosInstance.patch("/user/profile", {
-				fname: value.fname,
-				lname: value.lname,
-				city: value.city,
-				country: value.country,
-				phone: value.phone,
-			});
-		} catch (error) {
-			throw error;
-		}
+		const res = axiosInstance.patch("/user/profile", {
+			fname: value.fname,
+			lname: value.lname,
+			city: value.city,
+			country: value.country,
+			phone: value.phone,
+		});
 	};
 
 	return (
@@ -178,7 +174,6 @@ const ProfileComponent = ({
 									<div style={{ display: "grid" }} class="modal-body">
 										<CustomInput
 											// style={{ width: "10rem" }}
-											value={value.fname}
 											name="fname"
 											type="text"
 											placeholder="Enter first name"
@@ -190,11 +185,9 @@ const ProfileComponent = ({
 											type="text"
 											placeholder="Enter Last name"
 											label="Last Name"
-											value={value.lname}
 										/>
 										<CustomInput
 											name="email"
-											value={value.email}
 											type="text"
 											placeholder="Enter Email"
 											label="Email"
@@ -204,21 +197,18 @@ const ProfileComponent = ({
 											type="text"
 											placeholder="Enter Phone Number"
 											label="Phone Number"
-											value={value.phone}
 										/>
 										<CustomInput
 											name="country"
 											type="text"
 											placeholder="Enter Country"
 											label="Country"
-											value={value.country}
 										/>
 										<CustomInput
 											name="city"
 											type="text"
 											placeholder="Enter City"
 											label="City"
-											value={value.city}
 										/>
 									</div>
 									<div class="modal-footer">
