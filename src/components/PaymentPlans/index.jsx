@@ -1,5 +1,4 @@
 import React from "react";
-import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 const PaymentCard = ({ data }) => {
@@ -25,34 +24,31 @@ const PaymentCard = ({ data }) => {
 
 	// const handleFlutterPayment = useFlutterwave(config);
 
-	const subscribe = async (id, status) => {
+	const handleSubmit = async (id) => {
 		try {
 			const token = localStorage.getItem("token");
-
-			// console.log(userData.token);
 
 			const headers = {
 				Authorization: `Bearer ${token}`,
 			};
 
-			let res = await axios.post(
-				"http://165.227.139.53/api/v1/payment/subscription",
+			let {data} = await axios.post(
+				"http://165.227.139.53/api/v1/transantions",
 				{
 					plan: id,
-					status: status,
 				},
 				{
 					headers,
 				}
 			);
-			console.log(res);
-			history.push("/db");
+	
+      window.location.href =  data.data.data.link
+
 		} catch (error) {
 			console.log(error);
 		}
 	};
 
-	const handleSubmit = (id) => {};
 
 	return (
 		<div className="col-md-4">
