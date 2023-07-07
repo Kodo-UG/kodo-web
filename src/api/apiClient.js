@@ -1,7 +1,7 @@
 import axios from "axios";
 
  const apiClient = axios.create({
-	baseURL: "http://165.227.139.53/api/v1",
+	baseURL: "https://demo.kodoscholarships.com/api/v1",
 });
 
 

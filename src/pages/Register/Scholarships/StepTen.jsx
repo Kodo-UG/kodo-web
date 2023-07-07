@@ -29,7 +29,7 @@ const StepTen = ({ nextStep, prevStep }) => {
 	const verifyEmail = async () => {
 		try {
 			let response = await axios.post(
-				"http://165.227.139.53/api/v1/auth/account/verification",
+				"https://demo.kodoscholarships.com/api/v1/auth/account/verification",
 				{
 					id: userID,
 					code: code,

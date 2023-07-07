@@ -51,7 +51,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 
     try {
       const res = await axios.post(
-        "http://165.227.139.53/api/v1/auth/user/signup",
+        "https://demo.kodoscholarships.com/api/v1/auth/user/signup",
         formData
       );
       console.log(res.data.id);
@@ -84,7 +84,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 
   //    try {
   //      const res = await axios.post(
-  //        "http://165.227.139.53/api/v1/auth/user/signup",
+  //        "https://demo.kodoscholarships.com/api/v1/auth/user/signup",
   //        formData
   //      );
   //      console.log(res.data.id);

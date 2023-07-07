@@ -8,7 +8,7 @@ export default function Payment() {
 		setLoading(true);
 		try {
 			const { data } = await axios.get(
-				"http://165.227.139.53/api/v1/payment/plans"
+				"https://demo.kodoscholarships.com/api/v1/payment/plans"
 			);
 			setPlans(data.data);
 			console.log(plans, "am here sir");

@@ -17,7 +17,7 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 
 	async function fetchCategories() {
 		const response = await fetch(
-			"http://165.227.139.53/api/v1/scholarship/categories"
+			"https://demo.kodoscholarships.com/api/v1/scholarship/categories"
 		);
 		const data = await response.json();
 

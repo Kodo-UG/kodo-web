@@ -20,7 +20,7 @@ const Scholarship = () => {
 				Authorization: `Bearer ${token}`,
 			};
 
-			let res = await axios.get("http://165.227.139.53/api/v1/scholarship", {
+			let res = await axios.get("https://demo.kodoscholarships.com/api/v1/scholarship", {
 				headers,
 			});
 

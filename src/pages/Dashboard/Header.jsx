@@ -15,7 +15,7 @@ const MyHeader = () => {
 	// const fetchUser = async () => {
 	// 	try {
 	// 		const response = await axiosInstance.get(
-	// 			"http://165.227.139.53/api/v1/user/profile/64a151d67a60cf3cb920892a"
+	// 			"https://demo.kodoscholarships.com/api/v1/user/profile/64a151d67a60cf3cb920892a"
 	// 		);
 
 	// 		console.log(response.data.data.fname, "RESPONSE IS HERE ");
