@@ -5,21 +5,19 @@ import { useEffect } from "react";
 import Scholarshipcard from "../../components/card/Scholarshipcard";
 import { Row } from "antd";
 import MyChart from "../../components/chart";
+import axiosInstance from "../../api/axiosInstance";
 
 const Dashboard = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const getScholarship = async () => {
 		try {
-			const token =
-				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbm8xOTIwMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NDk2YzE4ZDc3ZGYzMTBkMWU3OWRmNWEiLCJpYXQiOjE2ODc2MDE1OTR9.W_HZn7Z8diK-D3Qjfyg_C8JTcnC2QRjALVh3Dr7Aick";
-			const headers = {
-				Authorization: `Bearer ${token}`,
-			};
+			// const token = localStorage.getItem()
+			// const headers = {
+			// 	Authorization: `Bearer ${token}`,
+			// };
 
-			let res = await axios.get("http://165.227.139.53/api/v1/scholarship", {
-				headers,
-			});
+			let res = await axiosInstance.get("/scholarship");
 
 			setData(res.data.data);
 			// console.log(res.data.data);
@@ -33,6 +31,8 @@ const Dashboard = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
+
+	console.log(data, "data is here");
 
 	return (
 		<div>
@@ -69,8 +69,8 @@ const Dashboard = () => {
 								{/* small box */}
 								<div className="small-box bg-info">
 									<div className="inner">
-										<h3>150</h3>
-										<p>Active Scholarships</p>
+										<h3>{data.length}</h3>
+										<p>Available Scholarships</p>
 									</div>
 									<div className="icon">
 										{/* <i className="ion ion-bag" /> */}
@@ -87,9 +87,9 @@ const Dashboard = () => {
 								<div className="small-box bg-success">
 									<div className="inner">
 										<h3>
-											53<sup style={{ fontSize: 20 }}>%</sup>
+											1000<sup style={{ fontSize: 20 }}>USD</sup>
 										</h3>
-										<p>Completed Scholarships</p>
+										<p>Total Amount spent</p>
 									</div>
 									<div className="icon">
 										{/* <i className="ion ion-stats-bars" /> */}

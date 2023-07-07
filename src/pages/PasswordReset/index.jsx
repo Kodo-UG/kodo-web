@@ -27,7 +27,7 @@ export default function PasswordReset() {
 			}
 		} catch (error) {
 			console.log(error);
-			displayErrorMessage("Invalid username or password");
+			displayErrorMessage(error.message);
 		}
 	};
 	return (
