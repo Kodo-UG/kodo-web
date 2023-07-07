@@ -51,7 +51,9 @@ const Scholarship = () => {
 								padding: "10px",
 							}}
 						>
-							Available scholarships
+							{data.length === 0
+								? "No Available scholarships for this program"
+								: "Available scholarships"}
 						</div>
 						{/* Small boxes (Stat box) */}
 						<div
@@ -62,6 +64,13 @@ const Scholarship = () => {
 								gap: "2rem",
 							}}
 						>
+							{/* {
+								(data.length = 0 ? (
+									<div>No scholarships available for your program</div>
+								) : (
+									""
+								))
+							} */}
 							{!subscription &&
 								data?.map((dta) => (
 									<CardScholarship

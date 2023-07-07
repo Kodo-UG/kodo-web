@@ -5,7 +5,10 @@ import api from "../../../api/apiClient";
 import { Input } from "antd";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { displayErrorMessage, displaySuccessMessage } from "../../../utils/Toast";
+import {
+	displayErrorMessage,
+	displaySuccessMessage,
+} from "../../../utils/Toast";
 const { TextArea } = Input;
 
 const StepTen = ({ nextStep, prevStep }) => {
@@ -32,17 +35,13 @@ const StepTen = ({ nextStep, prevStep }) => {
 					code: code,
 				}
 			);
-            console.log(response)
-			if (response.status=="201") {
-				displaySuccessMessage("Account verified successfully")
+			if (response.status == "201") {
+				displaySuccessMessage("Account verified successfully");
 				history.push("/signin");
-			}else{
-				displayErrorMessage("Invalid code ")
+			} else {
+				displayErrorMessage("Invalid code ");
 			}
-			
-		} catch (error) {
-
-		}
+		} catch (error) {}
 	};
 
 	return (
@@ -77,22 +76,24 @@ const StepTen = ({ nextStep, prevStep }) => {
 				<div style={{ marginTop: "20px", marginBottom: "20px" }}>
 					{" "}
 					<div className="_fieldGroup_1g3ja_1">
-
-						<Input showCount maxLength={5} onChange={handleCodeChange}
-						style={{
-							borderRadius: "50px",
-							width: "500px",
-							padding: "10px",
-							border: "1px solid #ccc",
-							outline: "none",
-							transition: "box-shadow 0.3s ease-in-out",
-							boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-							fontFamily: "Arial, sans-serif",
-							fontSize: "16px",
-							lineHeight: "1.5",
-							color: "#333",
-							backgroundColor: "#fff",
-						}}
+						<Input
+							showCount
+							maxLength={5}
+							onChange={handleCodeChange}
+							style={{
+								borderRadius: "10px",
+								width: "500px",
+								padding: "10px",
+								border: "1px solid #ccc",
+								outline: "none",
+								transition: "box-shadow 0.3s ease-in-out",
+								boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+								fontFamily: "Arial, sans-serif",
+								fontSize: "16px",
+								lineHeight: "1.5",
+								color: "#333",
+								backgroundColor: "#fff",
+							}}
 						/>
 					</div>
 				</div>
