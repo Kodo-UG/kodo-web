@@ -20,6 +20,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import RootScholarship from "./pages/Dashboard/scholarship";
 import MainProfile from "./pages/Dashboard/Profile";
 import Accordion from "./accordion/Accordion";
+import RootApplication from "./pages/Dashboard/applications";
 const App = () => {
 	return (
 		<Switch>
@@ -28,6 +29,8 @@ const App = () => {
 			<Route path="/reset-password" component={PasswordReset} />
 			<PrivateRoute exact path="/db" component={Root} />
 			<PrivateRoute exact path="/scholars" component={RootScholarship} />
+			<PrivateRoute exact path="/applications" component={RootApplication} />
+
 			<Route exact path="/profile" component={MainProfile} />
 
 			<Layout>

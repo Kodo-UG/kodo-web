@@ -86,7 +86,7 @@ const Menu = () => {
 								<li className="nav-item">
 									<Link
 										onClick={() => handleActive("applications")}
-										to="/scholars"
+										to="/applications"
 										className={`nav-link ${
 											isButtonActive("applications") ? "active" : ""
 										}`}

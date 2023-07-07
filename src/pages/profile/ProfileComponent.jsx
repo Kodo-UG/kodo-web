@@ -5,29 +5,40 @@ import axiosInstance from "../../api/axiosInstance";
 
 const ProfileComponent = ({
 	name,
-	location,
-	fullname,
 	email,
 	phone,
-	address,
+	city,
+	country,
+	lname,
+	fname,
 }) => {
 	const [bg, setBg] = useState("#FF7350");
-	const [value, setValues] = useState({
-		fname: "",
-		lname: "",
-		city: "",
-		country: "",
-		phone: "",
-	});
+	const [first_name, setName] = useState(fname);
+	const [last_name, setLastName] = useState(lname);
+	const [ncity, setCity] = useState(city);
+	const [newPhone, setNewPhone] = useState(phone);
+	const [newEmail, setNewEmail] = useState(email);
+	const [ncountry, setCountry] = useState(country);
 
 	const handleEditUserInfo = async () => {
-		const res = axiosInstance.patch("/user/profile", {
-			fname: value.fname,
-			lname: value.lname,
-			city: value.city,
-			country: value.country,
-			phone: value.phone,
-		});
+		try {
+			const res = axiosInstance.patch("/user/profile", {
+				fname: first_name,
+				lname: last_name,
+				city: ncity,
+				country: ncountry,
+				phone: newPhone,
+				email: newEmail,
+			});
+
+			console.log(res, "editiiiiiiiin");
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const handleInputChange = (setState) => (event) => {
+		setState(event.target.value);
 	};
 
 	return (
@@ -55,7 +66,7 @@ const ProfileComponent = ({
 										<h4>{name}</h4>
 
 										<p className="text-muted font-size-sm">
-											{location}
+											{city},{country}
 										</p>
 
 										<button
@@ -77,10 +88,19 @@ const ProfileComponent = ({
 							<div className="card-body">
 								<div className="row">
 									<div className="col-sm-3">
-										<h6 className="mb-0">Full Name</h6>
+										<h6 className="mb-0">First Name</h6>
 									</div>
 									<div className="col-sm-9 text-secondary">
-										{fullname}
+										{fname}
+									</div>
+								</div>
+								<hr />
+								<div className="row">
+									<div className="col-sm-3">
+										<h6 className="mb-0">Last Name</h6>
+									</div>
+									<div className="col-sm-9 text-secondary">
+										{lname}
 									</div>
 								</div>
 								<hr />
@@ -116,7 +136,7 @@ const ProfileComponent = ({
 										<h6 className="mb-0">Address</h6>
 									</div>
 									<div className="col-sm-9 text-secondary">
-										{address}
+										{city} ,{country}
 									</div>
 								</div>
 								<hr />
@@ -174,6 +194,8 @@ const ProfileComponent = ({
 									<div style={{ display: "grid" }} class="modal-body">
 										<CustomInput
 											// style={{ width: "10rem" }}
+											defaultValue={first_name}
+											onChange={handleInputChange(setName)}
 											name="fname"
 											type="text"
 											placeholder="Enter first name"
@@ -181,30 +203,40 @@ const ProfileComponent = ({
 										/>
 
 										<CustomInput
+											defaultValue={last_name}
+											onChange={handleInputChange(setLastName)}
 											name="lname"
 											type="text"
 											placeholder="Enter Last name"
 											label="Last Name"
 										/>
 										<CustomInput
+											onChange={handleInputChange(setNewEmail)}
 											name="email"
+											defaultValue={newEmail}
 											type="text"
 											placeholder="Enter Email"
 											label="Email"
 										/>
 										<CustomInput
+											onChange={handleInputChange(setNewPhone)}
+											defaultValue={newPhone}
 											name="phone"
 											type="text"
 											placeholder="Enter Phone Number"
 											label="Phone Number"
 										/>
 										<CustomInput
+											onChange={handleInputChange(setCountry)}
+											defaultValue={ncountry}
 											name="country"
 											type="text"
 											placeholder="Enter Country"
 											label="Country"
 										/>
 										<CustomInput
+											onChange={handleInputChange(setCity)}
+											defaultValue={ncity}
 											name="city"
 											type="text"
 											placeholder="Enter City"
@@ -220,6 +252,7 @@ const ProfileComponent = ({
 											Close
 										</button>
 										<button
+											onClick={handleEditUserInfo}
 											style={{
 												backgroundColor: "#EC1D64",
 												color: "white",
