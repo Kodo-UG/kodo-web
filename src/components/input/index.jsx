@@ -8,6 +8,7 @@ const CustomInput = ({
 	id,
 	label,
 	placeholder,
+	defaultValue
 }) => {
 	return (
 		<div style={{ marginTop: "10px", marginBottom: "10px" }}>
@@ -20,6 +21,7 @@ const CustomInput = ({
 					id={id}
 					name={name}
 					placeholder={placeholder}
+					defaultValue={defaultValue}
 					onChange={onChange}
 					required=""
 					type={type}

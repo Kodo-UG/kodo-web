@@ -29,6 +29,7 @@ const Profile = () => {
 
 			// console.log(response.data.data, "RESPONSE IS HERE from profile ");
 			setData(response.data.data);
+			console.log(response.data.data, "DATAAAAAAAAAAAA");
 		} catch (error) {
 			// console.error("Error fetching user:", error);
 			throw error;
@@ -56,10 +57,11 @@ const Profile = () => {
 					key={data._id}
 					name={data.fname + "  " + data.lname}
 					email={data.email}
-					location={data.city + "," + data.country}
 					phone={data.phone}
-					address={data.city + "," + data.country}
-					fullname={data.fname + " " + data.lname}
+					country={ data.country}
+					city={data.city}
+					fname={data.fname }
+					lname={ data.lname}
 				/>
 			</div>
 		</div>

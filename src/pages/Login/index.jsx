@@ -27,13 +27,14 @@ export default function Login() {
 				displaySuccessMessage("Login successful");
 				localStorage.setItem("token", data.data.token);
 				history.push("/db");
-				console.log(data, "LOGIN DATA");
+				// console.log(data.data.user.status, "LOGIN DATA");
+				localStorage.setItem("status", data.data.user.status);
 			} else {
 				displayErrorMessage("Login Failed");
 			}
 		} catch (error) {
-			console.log(error);
-			displayErrorMessage("Invalid username or password");
+			// console.log(error);
+			displayErrorMessage("Invalid username or password", error);
 		} finally {
 			setLoading(false);
 		}
