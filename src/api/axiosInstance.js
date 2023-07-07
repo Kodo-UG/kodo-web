@@ -5,7 +5,7 @@ const token = localStorage.getItem("token");
 
 // console.log(data, "TOKEN DATA  IS HERE ");
 
-const baseURL = "http://165.227.139.53/api/v1";
+const baseURL = "https://demo.kodoscholarships.com/api/v1";
 
 const axiosInstance = axios.create({
 	baseURL,

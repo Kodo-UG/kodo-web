@@ -20,7 +20,7 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 
 	const fetchData =  async()=>{
 		try {	  
-		  const {data} = await axios.get(`http://165.227.139.53/api/v1/scholarship/categories/${scholarshipcategory}`);
+		  const {data} = await axios.get(`https://demo.kodoscholarships.com/api/v1/scholarship/categories/${scholarshipcategory}`);
 		  setData(data.data.categories)
 		} catch (error) {
 			console.log(error)

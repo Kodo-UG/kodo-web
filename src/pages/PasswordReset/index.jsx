@@ -16,7 +16,7 @@ export default function PasswordReset() {
 	const handleLogin = async () => {
 		try {
 			const data = await axios.post(
-				`http://165.227.139.53/api/v1/auth/password/reset/${token}`,
+				`https://demo.kodoscholarships.com/api/v1/auth/password/reset/${token}`,
 				{ password }
 			);
 			if (data.status == "200") {

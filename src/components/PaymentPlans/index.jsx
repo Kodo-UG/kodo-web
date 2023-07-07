@@ -1,53 +1,95 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
+import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
+
 const PaymentCard = ({ data }) => {
 	const { details } = data;
 	const history = useHistory();
-	// const config = {
-	//   public_key: "FLWPUBK_TEST-02518ab938416219120df2c5cf3e056c-X",
-	//   tx_ref: Date.now(),
-	//   amount: data.amount,
-	//   currency: "USD",
-	//   payment_options: "card,mobilemoney,ussd",
-	//   customer: {
-	//     email: "wafulaallan5@gmail.com",
-	//     phone_number: "0779825056",
-	//     name: "kodo testing",
-	//   },
-	//   customizations: {
-	//     title: "Kodo Scholarships Payments",
-	//     description: "Payments for Kodo Scholarships subscription",
-	//     logo: "https://res.cloudinary.com/itgenius/image/upload/v1688120420/logo_ab67xw.ico",
-	//   },
+     const [dataUser,setDataUser] = useState()
+
+	useEffect(()=>{
+        setDataUser(JSON.parse(localStorage.getItem("userData")))
+	},[])
+
+
+	const config = {
+		public_key: 'FLWPUBK_TEST-2c6654d532a83dc9f75241b925ab0d85-X',
+		tx_ref: Date.now(),
+	  amount: data.amount,
+	  currency: "USD",
+	  payment_options: "card,mobilemoney",
+	  customer: {
+	    email: `${dataUser?.user.email}`,
+	    phone_number: `${dataUser?.user.phone}`,
+	    name: `${dataUser?.user.fname}`,
+	  },
+	  customizations: {
+	    title: "Kodo Scholarships Subscription",
+	    description: "Payments for Kodo Scholarships subscription",
+	    logo: "https://res.cloudinary.com/itgenius/image/upload/v1688120420/logo_ab67xw.ico",
+	  },
+	};
+
+	const handleFlutterPayment = useFlutterwave(config);
+
+	// const handleSubmit = async (id) => {
+	// 	try {
+	// 		const token = localStorage.getItem("token");
+
+	// 		const headers = {
+	// 			Authorization: `Bearer ${token}`,
+	// 		};
+
+	// 		let {data} = await axios.post(
+	// 			"https://demo.kodoscholarships.com/api/v1/transantions",
+	// 			{
+	// 				plan: id,
+	// 			},
+	// 			{
+	// 				headers,
+	// 			}
+	// 		);
+	
+    //   window.location.href =  data.data.data.link
+
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
 	// };
 
-	// const handleFlutterPayment = useFlutterwave(config);
-
-	const handleSubmit = async (id) => {
+     console.log(dataUser)
+	const  subscribe = async (status,id)=>{
 		try {
-			const token = localStorage.getItem("token");
+		  const data = JSON.stringify({
+			"plan": id,
+			"status": status
+		  });
+		  
+		  const url = 'https://demo.kodoscholarships.com/api/v1/payment/subscription'; 
+		//   const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhZnVsYXJlYWN0ZGV2QGdtYWlsLmNvbSIsInVzZXJJZCI6IjY0YTgzNzI5YTEzZTUyOWEyNDQzZTMzZiIsImlhdCI6MTY4ODc1OTA3Mn0.IQgx1BLWZrlLjOk1_yjAk2GCWWO_qQL-c5gKWLZWMVM"
 
-			const headers = {
-				Authorization: `Bearer ${token}`,
-			};
-
-			let {data} = await axios.post(
-				"http://165.227.139.53/api/v1/transantions",
-				{
-					plan: id,
-				},
-				{
-					headers,
-				}
-			);
-	
-      window.location.href =  data.data.data.link
-
+		  const headers = {
+			'Content-Type': 'application/json',
+			'Authorization':`Bearer ${dataUser.token}`
+		  };
+	  
+		  const response = await axios.post(url, data, { headers });
+		  console.log(response);
+		  if(response.status=="201" && status=="successful"){
+			displaySuccessMessage("Subscription successful")
+           history.push('/scholars')
+		  }else{
+			displayErrorMessage("Subscription failed try again later")
+			history.push('/scholars')
+		  }
+	  
 		} catch (error) {
-			console.log(error);
-		}
-	};
+		  console.log(error)
+		}  
+	  }
+	  
 
 
 	return (
@@ -77,7 +119,19 @@ const PaymentCard = ({ data }) => {
 								<button
 									style={{ backgroundColor: "#F27251" }}
 									className="btn btn-info-gradiant font-14 border-0 text-white p-3 btn-block mt-3"
-									onClick={() => handleSubmit(data._id)}
+									// onClick={() => handleSubmit(data._id)}
+									onClick={() => {
+										handleFlutterPayment({
+										  callback: async (response) => {
+											 await subscribe(response.status,data._id);
+											  closePaymentModal() // this will close the modal programmatically
+										  },
+										  onClose: (data) => {
+							
+											console.log("onclose=======>",data)
+										  },
+										});
+									  }}
 								>
 									CHOOSE PLAN
 								</button>
