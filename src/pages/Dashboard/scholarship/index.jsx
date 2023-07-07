@@ -11,7 +11,7 @@ const RootScholarship = () => {
 		<div class="wrapper">
 			<MyHeader />
 			<Menu />
-			{status === "unpaid" ? <Scholarship /> : <Paid />}
+			<Scholarship />
 
 			<Footer />
 		</div>

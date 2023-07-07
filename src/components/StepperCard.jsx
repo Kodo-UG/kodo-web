@@ -12,7 +12,6 @@ function StepperCard({ item, handleClick, selectedCard }) {
 	const signal = (id) => {
 		switch (id) {
 			case 1:
-				console.log("It's Monday!");
 				return (
 					<BiSignal1
 						style={{
@@ -23,7 +22,6 @@ function StepperCard({ item, handleClick, selectedCard }) {
 					/>
 				);
 			case 2:
-				console.log("It's Monday!");
 				return (
 					<BiSignal2
 						style={{
@@ -34,7 +32,6 @@ function StepperCard({ item, handleClick, selectedCard }) {
 					/>
 				);
 			case 3:
-				console.log("It's Monday!");
 				return (
 					<BiSignal3
 						style={{
@@ -84,6 +81,7 @@ function StepperCard({ item, handleClick, selectedCard }) {
 
 	return (
 		<div
+		    style={{height:"8rem"}}
 			className={`card  ${
 				selectedCard === item.id ? "selected" : "notSelected"
 			}`}
@@ -94,11 +92,11 @@ function StepperCard({ item, handleClick, selectedCard }) {
 					borderRadius: "50%",
 					background: "#E6E9ED",
 					width: "2.5rem",
-					height: "2.5rem",
+					height: "2.3rem",
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
-					padding: "3px",
+					padding: "px",
 				}}
 			>
 				{signal(item.id)}

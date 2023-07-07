@@ -25,6 +25,7 @@ const CardScholarship = ({
 				borderRadius: "0.5rem",
 				cursor: "pointer",
 			}}
+			onClick={() => history.push("/payment")}
 		>
 			<div
 				className="card-header"
@@ -53,7 +54,6 @@ const CardScholarship = ({
 									color: "#FF7350",
 									opacity: 0.9,
 								}}
-								onClick={() => history.push("/")}
 							>
 								Access all matched scholarships{" "}
 								<IoIosArrowForward
