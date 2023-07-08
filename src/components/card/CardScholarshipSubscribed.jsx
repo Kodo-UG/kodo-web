@@ -1,7 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
 import CollapsibleInput from "./CollapsibleInput";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Modal } from 'antd';
 
 function CardScholarshipSubscribed({
 	cardTitle,
@@ -9,15 +13,43 @@ function CardScholarshipSubscribed({
 	award,
 	deadline,
 	subscription,
+	link,
+	about,
+	id
 }) {
-	console.log(subscription);
 	const date = new Date(deadline);
 	const formattedDate = date.toLocaleDateString();
+	const [data,setData] = useState(null)
+    const [visible,setVisible] = useState(false)
+
+	const handleFetch = async ()=>{
+		 const token = localStorage.getItem("token");
+		
+			const headers = {
+				Authorization: `Bearer ${token}`,
+			};
+
+			let res = await axios.get(`https://demo.kodoscholarships.com/api/v1/scholarship/${id}`, {
+				headers,
+			});
+
+			setData(res.data.data);
+			setVisible(!visible)
+		}
+		// console.log("DATA :" , data?.title)
+	// console.log(data?.link,data?.about)
+
+	// useEffect(()=>{
+	// 	handleFetch(id)
+	// },[id])
+	const hanleModal = ()=>{
+		setVisible(!visible)
+
+	}
 	return (
 		<div
+		    onClick={()=>handleFetch()}
 			className=" shadow-xl"
-			data-toggle="modal"
-      data-target="#exampleModalLong"
 			style={{
 				width: "24rem",
 				display: "flex",
@@ -27,6 +59,7 @@ function CardScholarshipSubscribed({
 				background: "white",
 				borderRadius: "0.5rem",
 				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+				cursor:"pointer"
 			}}
 		>
 			<div
@@ -81,7 +114,7 @@ function CardScholarshipSubscribed({
 				<div className="d-flex justify-content-between align-items-center">
 					<div className="d-flex flex-column align-items-center">
 						<p className="mb-1">Award</p>
-						<p style={{ color: "#125875" }}>$ {award}</p>
+						<p style={{ color: "#125875" }}>{award}</p>
 					</div>
 					<div className="d-flex flex-column align-items-center">
 						<p className="mb-1">Deadline</p>
@@ -126,89 +159,64 @@ function CardScholarshipSubscribed({
 
 
 
+			<Modal
+      open={visible}
+      footer={null}
+      onCancel={hanleModal}
+	  maskClosable={false}
 
-			<div
-        class="modal fade shadow-xl"
-        id="exampleModalLong"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true"
-        style={{
-  
-              backdropFilter: "blur(10px)",
-        backgroundColor: "rgba(0, 0, 0, 0.5)", 
-        }}
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content"  style={{
-                  borderRadius: "2rem",
-                  padding: "1rem",
-          opacity: 0.8,
-        }}>
-            <div class="modal-header" style={{height: "6rem", background: "#125875", color: "white", fontWeight: "bold", display: "flex", alignItems: "center", }}>
-              <h5 class="modal-title" id="exampleModalLongTitle">
-                Scholarship Details
-              </h5>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
+      bodyStyle={{
+        borderRadius: "2rem",
+        padding: "1rem",
+        opacity: 0.8,
+      }}
+      style={{
+        backdropFilter: "blur(10px)",
+      }}
+    >
+<div style={{ height: "6rem", background: "#125875", color: "white", fontWeight: "bold", display: "flex", alignItems: "center", justifyContent: "center" }}>
+  <h5 style={{ margin: 0 }}>
+Scholarship Details
+  </h5>
+</div>
+      <div style={{ padding: "1rem" }}>
+        <div className="card-body" style={{ height: "6rem" }}>
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="d-flex flex-column align-items-center">
+              <p className="mb-1">Award</p>
+              <p style={{ color: "#125875" }}>{award}</p>
             </div>
-            <div class="modal-body">
-              <div className="card-body" style={{ height: "6rem" }}>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div className="d-flex flex-column align-items-center">
-                    <p className="mb-1">Award</p>
-                    <p style={{ color: "#125875" }}>$ {award}</p>
-                  </div>
-                  <div className="d-flex flex-column align-items-center">
-                    <p className="mb-1">Deadline</p>
-                    <p style={{ color: "#125875" }}>{formattedDate}</p>
-                  </div>
-                  <div className="d-flex flex-column align-items-center">
-                    <p className="mb-1">Effort</p>
-                    <img
-                      src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688650069/Screenshot_from_2023-07-06_14-10-36-removebg-preview__2_-removebg-preview_du6wl6.png"
-                      alt="svg"
-                      style={{
-                        objectFit: "cover",
-                        maxWidth: "70%",
-                        maxHeight: "70%",
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h4 style={{fontWeight: "bold"}}>About</h4>
-                <p style={{color: "gray"}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum porro illum quasi expedita asperiores molestias et omnis sed. Iure non illum provident, maiores distinctio inventore harum quae adipisci aliquam voluptatibus!</p>
-              </div>
-
-                <div><h4 style={{fontWeight: "bold"}}>Status</h4></div>
-              <div style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between"
-              }}>
-              
-                <div>
-                  <CollapsibleInput />
-                </div>
-              </div>
+            <div className="d-flex flex-column align-items-center">
+              <p className="mb-1">Deadline</p>
+              <p style={{ color: "#125875" }}>{formattedDate}</p>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-lg btn-block" style={{background: "#FF7350", border: "none",}}>
-                Apply
-              </button>
+            <div className="d-flex flex-column align-items-center">
+              <p className="mb-1">Effort</p>
+              <img
+                src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688650069/Screenshot_from_2023-07-06_14-10-36-removebg-preview__2_-removebg-preview_du6wl6.png"
+                alt="svg"
+                style={{
+                  objectFit: "cover",
+                  maxWidth: "70%",
+                  maxHeight: "70%",
+                }}
+              />
             </div>
           </div>
         </div>
+        <div>
+          <h4 style={{ fontWeight: "bold" }}>About</h4>
+          <p style={{ color: "gray" }}>{about}</p>
+        </div>
       </div>
+      <div style={{ textAlign: "center", marginTop: "1rem" }}>
+        <a href={`${link}`} className="ant-btn ant-btn-primary ant-btn-lg ant-btn-block" style={{ background: "#f44b69", border: "none", color: "white" }}>
+          Apply
+        </a>
+      </div>
+    </Modal>
+
+	  
 		</div>
 	);
 }

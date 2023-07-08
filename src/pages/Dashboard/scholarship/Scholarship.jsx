@@ -25,9 +25,9 @@ const Scholarship = () => {
 			});
 
 			setData(res.data.data);
-			console.log(res, "AAAAAAAAAAAAA");
+			// console.log(res, "AAAAAAAAAAAAA");
 			setSubscription(res.data.subscription);
-			console.log(res.data.subscription);
+			// console.log(res.data.subscription);
 		} catch (error) {
 			// Handle the error here
 		}
@@ -36,7 +36,7 @@ const Scholarship = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
-	console.log(data);
+	// console.log(data);
 
 	return (
 		<div>
@@ -64,13 +64,7 @@ const Scholarship = () => {
 								gap: "2rem",
 							}}
 						>
-							{/* {
-								(data.length = 0 ? (
-									<div>No scholarships available for your program</div>
-								) : (
-									""
-								))
-							} */}
+							
 							{!subscription &&
 								data?.map((dta) => (
 									<CardScholarship
@@ -83,11 +77,14 @@ const Scholarship = () => {
 							{subscription &&
 								data?.map((dta) => (
 									<CardScholarshipSubscribed
-										key={dta.id}
+										key={dta._id}
 										award={dta.award}
 										deadline={dta.deadline}
 										subscription={subscription}
 										cardTitle={dta.title}
+										link={dta.link}
+										about={dta.about}
+										id={dta._id}
 									/>
 								))}
 
