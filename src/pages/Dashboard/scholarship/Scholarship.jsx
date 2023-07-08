@@ -99,6 +99,9 @@ const Scholarship = () => {
 											deadline={dta.deadline}
 											subscription={subscription}
 											cardTitle={dta.title}
+											id={dta._id}
+											link={dta.link}
+											about={dta.about}
 										/>
 									))}
 

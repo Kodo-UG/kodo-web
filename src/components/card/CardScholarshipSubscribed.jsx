@@ -48,10 +48,8 @@ function CardScholarshipSubscribed({
 	}
 	return (
 		<div
-		    onClick={()=>handleFetch()}
+		    onClick={()=>setVisible(!visible)}
 			className=" shadow-xl"
-			data-toggle="modal"
-			data-target="#exampleModalLong"
 			style={{
 				width: "24rem",
 				display: "flex",
@@ -61,8 +59,9 @@ function CardScholarshipSubscribed({
 				background: "white",
 				borderRadius: "0.5rem",
 				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
-				marginBottom: "3rem",
-				marginRight: "3rem",
+				cursor:"pointer",
+				marginRight:"3rem",
+				marginBottom:"3rem"
 			}}
 		>
 			<div
@@ -179,7 +178,7 @@ function CardScholarshipSubscribed({
     >
 <div style={{ height: "6rem", background: "#125875", color: "white", fontWeight: "bold", display: "flex", alignItems: "center", justifyContent: "center" }}>
   <h5 style={{ margin: 0 }}>
-Scholarship Details
+    {cardTitle} Scholarship Details
   </h5>
 </div>
       <div style={{ padding: "1rem" }}>
@@ -213,7 +212,7 @@ Scholarship Details
         </div>
       </div>
       <div style={{ textAlign: "center", marginTop: "1rem" }}>
-        <a href={`${link}`} className="ant-btn ant-btn-primary ant-btn-lg ant-btn-block" style={{ background: "#f44b69", border: "none", color: "white" }}>
+        <a href={`${link}`} className="ant-btn ant-btn-primary ant-btn-lg ant-btn-block" style={{ background: "#ec1d64", border: "none", color: "white" }}>
           Apply
         </a>
       </div>
