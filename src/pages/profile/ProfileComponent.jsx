@@ -19,10 +19,12 @@ const ProfileComponent = ({
 	const [newPhone, setNewPhone] = useState(phone);
 	const [newEmail, setNewEmail] = useState(email);
 	const [ncountry, setCountry] = useState(country);
+	const [loading, setLoading] = useState(false);
 
 	const handleEditUserInfo = async () => {
+		setLoading(true);
 		try {
-			const res = axiosInstance.patch("/user/profile", {
+			const res = await axiosInstance.patch("/user/profile", {
 				fname: first_name,
 				lname: last_name,
 				city: ncity,
@@ -31,9 +33,21 @@ const ProfileComponent = ({
 				email: newEmail,
 			});
 
-			console.log(res, "editiiiiiiiin");
+			setCity("");
+			setCountry("");
+			setLastName("");
+			setName("");
+			setNewEmail("");
+			setNewPhone("");
+
+			console.log(res?.data.data, "editiiiiiiiin");
+			if (res?.data.data) {
+				alert(res?.data.data);
+			}
 		} catch (error) {
 			console.log(error);
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -121,15 +135,7 @@ const ProfileComponent = ({
 										{phone}
 									</div>
 								</div>
-								{/* <hr /> */}
-								{/* <div className="row">
-									<div className="col-sm-3">
-										<h6 className="mb-0">Mobile</h6>
-									</div>
-									<div className="col-sm-9 text-secondary">
-										(320) 380-4539
-									</div>
-								</div> */}
+
 								<hr />
 								<div className="row">
 									<div className="col-sm-3">
@@ -260,7 +266,7 @@ const ProfileComponent = ({
 											type="button"
 											class="btn "
 										>
-											Save changes
+											{loading ? "Loading..." : "Save "}
 										</button>
 									</div>
 								</div>

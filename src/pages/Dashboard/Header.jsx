@@ -135,7 +135,7 @@ const MyHeader = () => {
 								</div>
 								<div className="info">
 									<Link to="/profile">
-										<div className="d-block">Bukenya</div>
+										<div className="d-block">Profile</div>
 									</Link>
 								</div>
 							</div>

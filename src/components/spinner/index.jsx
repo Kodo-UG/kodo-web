@@ -1,8 +1,12 @@
-import React from "react";
+import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
-
-const Spinner = ({ wrapperClassName, size }) => (
-	<Spin wrapperClassName={wrapperClassName} size={size} />
+const antIcon = (
+	<LoadingOutlined
+		style={{
+			fontSize: 60,
+		}}
+		spin
+	/>
 );
-
+const Spinner = () => <Spin indicator={antIcon} />;
 export default Spinner;
