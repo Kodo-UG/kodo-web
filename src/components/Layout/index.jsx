@@ -7,7 +7,6 @@ const Layout = ({ children }) => {
 	return (
 		<Fragment>
 			<header className="header-area header-three">
-				<TopHeader />
 				<NavHeader />
 			</header>
 			<main>{children}</main>

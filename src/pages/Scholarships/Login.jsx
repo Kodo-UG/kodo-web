@@ -37,7 +37,7 @@ const Login = () => {
 					</h4>
 				</div>
 
-				<div class="row " >
+				<div class="row ">
 					{object.map((obj) => (
 						<div
 							onClick={() => handleClick(obj.title)}
@@ -71,7 +71,7 @@ const Login = () => {
 										id="button1"
 										style={{
 											height: 45,
-											backgroundColor: "#f27251",
+											backgroundColor: "#ec1d64",
 											color: "#fff",
 											fontWeight: "bold",
 										}}

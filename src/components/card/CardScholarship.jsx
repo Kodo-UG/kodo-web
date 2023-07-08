@@ -51,13 +51,13 @@ const CardScholarship = ({
 							<span
 								style={{
 									fontWeight: "normal",
-									color: "#FF7350",
+									color: "#ec1d64",
 									opacity: 0.9,
 								}}
 							>
 								Access all matched scholarships{" "}
 								<IoIosArrowForward
-									style={{ color: "#FF7350", opacity: 0.9 }}
+									style={{ color: "#ec1d64", opacity: 0.9 }}
 								/>
 							</span>
 						</p>

@@ -72,7 +72,7 @@ const FindScholarship = () => {
 										id="button1"
 										style={{
 											height: 45,
-											backgroundColor: "#f27251",
+											backgroundColor: "#ec1d64",
 											color: "#fff",
 											fontWeight: "bold",
 										}}

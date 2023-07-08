@@ -46,7 +46,7 @@ const ScholarshipCard = ({
 
 						<Link to="/payment">
 							<Button
-								style={{ backgroundColor: "#FF7350" }}
+								style={{ backgroundColor: "#ec1d64" }}
 								type="primary"
 								className=""
 							>

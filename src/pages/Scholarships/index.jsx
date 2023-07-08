@@ -56,7 +56,7 @@ const Scholarships = () => {
 												<h6 class="font-weight-light">MONTHLY</h6>
 												<Link
 													style={{
-														backgroundColor: "#F27251",
+														backgroundColor: "#ec1d64",
 													}}
 													class="btn btn-info-gradiant font-14 border-0 text-white p-3 btn-block mt-3"
 													onClick={() =>

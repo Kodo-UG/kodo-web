@@ -48,7 +48,7 @@ function AboutKodo() {
 					>
 						<div
 							style={{
-								background: "#FF7350",
+								background: "#ec1d64",
 								height: "5rem",
 								width: "5rem",
 								borderRadius: "50%",

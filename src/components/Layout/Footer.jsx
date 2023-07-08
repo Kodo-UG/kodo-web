@@ -6,7 +6,7 @@ const Footer = () => {
 			class="footer-bg footer-p pt-90"
 			style={{
 				backgroundColor: "#125875",
-				backgroundImage: "url(img/bg/footer-bg.png)",
+				backgroundImage: "url(https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688766213/footer-bg_hrigyb.png)",
 			}}
 		>
 			<div class="footer-top pb-70">

@@ -1,21 +1,27 @@
-.box-cont{
-    height: 150vh;
+/* .box-cont{
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 5rem;
-    padding-right: 5rem;
   
     
   }
   .box{
-    height: 60vh;
+ 
     display: flex;
-    
   }
   .image-box{
-    height: 100vh;
+height: 100vh;
     width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .image-content{
+
+    width: 90%;
+    height: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -24,10 +30,6 @@
     align-items: center;
     justify-content: center;
     grid-row: span 2;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
      
     
   }
@@ -56,8 +58,16 @@
   .content-box{
     width: 50%;
     height: 100vh;
+      display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
   
+  
+  }
+  .content-items{
+     width: 90%;
+    height: 90%;
   }
   .sub-content{
     display: flex;
@@ -68,4 +78,100 @@
   .sub-content1{
     padding-left: 1rem;
     padding-right: 1rem;
+
+  } */
+
+
+
+
+.box-cont{
+     height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  min-width: 360px;
+  
+    
   }
+  .box{
+ 
+    display: flex;
+  }
+  .image-box{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  }
+  .image-content{
+
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .image1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: span 2;
+     
+    
+  }
+  .image2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     padding: 1rem;
+   
+    
+  }
+  .image3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     padding: 1rem;
+  
+    
+  }
+  .image-original{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    object-fit: cover;
+  }
+  .content-box{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  
+  
+  }
+  .content-items{
+     width: 90%;
+    height: 90%;
+  }
+  .sub-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: justify;
+    min-width: 360px;
+    
+  }
+  .sub-content1{
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+  }
+@media (max-width: 767.98px) {
+  .image-box,
+  .content-box {
+    padding: 1rem;
+  }
+}

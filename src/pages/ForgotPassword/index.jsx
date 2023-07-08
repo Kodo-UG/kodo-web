@@ -77,7 +77,7 @@
 // 								>
 // 									<h1
 // 										style={{
-// 											color: "#ff0000",
+// 											color: "#ec1d64",
 // 											transition:
 // 												"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
 // 											fontFamily: "Arial, sans-serif",

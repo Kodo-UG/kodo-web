@@ -24,11 +24,8 @@ const About = () => {
 								src="https://res.cloudinary.com/itgenius/image/upload/v1688241331/about_img_02-1_sbyudl.png"
 								alt="img"
 							/>
-							<div
-								style={{ width: "17rem", height: "8rem" }}
-								className="about-text second-about"
-							>
-								<span style={{ fontSize: "38px" }}>
+							<div className="about-text second-about">
+								<span>
 									25 <sub>+</sub>
 								</span>
 								<p>Years of Experience</p>

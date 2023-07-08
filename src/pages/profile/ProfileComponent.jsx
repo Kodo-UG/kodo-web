@@ -12,7 +12,7 @@ const ProfileComponent = ({
 	lname,
 	fname,
 }) => {
-	const [bg, setBg] = useState("#FF7350");
+	const [bg, setBg] = useState("#ec1d64");
 	const [first_name, setName] = useState(fname);
 	const [last_name, setLastName] = useState(lname);
 	const [ncity, setCity] = useState(city);
