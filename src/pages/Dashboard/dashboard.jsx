@@ -10,17 +10,45 @@ import axiosInstance from "../../api/axiosInstance";
 const Dashboard = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
+	const [amount, setAmount] = useState();
+	const [amData, setAmData] = useState([]);
+	const [id, setId] = useState(null);
+
+	useEffect(() => {
+		const fetchUserData = async () => {
+			try {
+				const userDataPromise = localStorage.getItem("userData");
+				const userData = await userDataPromise;
+				const parsedUserData = JSON.parse(userData);
+				const userId = parsedUserData.user._id;
+				setId(userId);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+
+		fetchUserData();
+	}, []);
+
 	const getScholarship = async () => {
 		try {
-			// const token = localStorage.getItem()
-			// const headers = {
-			// 	Authorization: `Bearer ${token}`,
-			// };
+			const token = localStorage.getItem("token");
+			// console.log(token, "tokrn");
+			// const token =
+			// 	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbm8xOTIwMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NDk2YzE4ZDc3ZGYzMTBkMWU3OWRmNWEiLCJpYXQiOjE2ODc2MDE1OTR9.W_HZn7Z8diK-D3Qjfyg_C8JTcnC2QRjALVh3Dr7Aick";
+			const headers = {
+				Authorization: `Bearer ${token}`,
+			};
 
-			let res = await axiosInstance.get("/scholarship");
+			let res = await axios.get(
+				"https://demo.kodoscholarships.com/api/v1/scholarship",
+				{
+					headers,
+				}
+			);
 
 			setData(res.data.data);
-			// console.log(res.data.data);
+			// console.log(res, "AAAAAAAAAAAAA");
 			setSubscription(res.data.subscription);
 			// console.log(res.data.subscription);
 		} catch (error) {
@@ -28,11 +56,44 @@ const Dashboard = () => {
 		}
 	};
 
+	const getAmount = async (id) => {
+		try {
+			const res = await axiosInstance.get(`/transantions/user/${id}`);
+			console.log(res.data.data, "========");
+			setAmData(res.data.data);
+		} catch (error) {
+			console.log(error, "ERROR");
+		}
+	};
+
 	useEffect(() => {
 		getScholarship();
-	}, []);
+		getAmount(id);
+	}, [id]);
 
-	console.log(data, "data is here");
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const sumSuccessfulAmounts = () => {
+		let sum = 0;
+
+		// Filter data entries with status "successful"
+		const successfulData = amData.filter(
+			(entry) => entry.status === "successful"
+		);
+
+		// Sum up the amounts
+		successfulData.forEach((entry) => {
+			sum += entry.paymentplan.amount;
+		});
+
+		setAmount(sum);
+		console.log("SUM :", sum);
+
+		return sum;
+	};
+
+	useEffect(() => {
+		sumSuccessfulAmounts();
+	}, [sumSuccessfulAmounts]);
 
 	return (
 		<div>
@@ -87,7 +148,8 @@ const Dashboard = () => {
 								<div className="small-box bg-success">
 									<div className="inner">
 										<h3>
-											1000<sup style={{ fontSize: 20 }}>USD</sup>
+											{amount}
+											<sup style={{ fontSize: 20 }}>USD</sup>
 										</h3>
 										<p>Total Amount spent</p>
 									</div>

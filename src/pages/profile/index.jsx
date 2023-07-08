@@ -26,12 +26,8 @@ const Profile = () => {
 	const fetchUser = async (id) => {
 		try {
 			const response = await axiosInstance.get(`/user/profile/${id}`);
-
-			// console.log(response.data.data, "RESPONSE IS HERE from profile ");
 			setData(response.data.data);
-			console.log(response.data.data, "DATAAAAAAAAAAAA");
 		} catch (error) {
-			// console.error("Error fetching user:", error);
 			throw error;
 		}
 	};

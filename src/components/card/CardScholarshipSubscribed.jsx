@@ -50,6 +50,8 @@ function CardScholarshipSubscribed({
 		<div
 		    onClick={()=>handleFetch()}
 			className=" shadow-xl"
+			data-toggle="modal"
+			data-target="#exampleModalLong"
 			style={{
 				width: "24rem",
 				display: "flex",
@@ -59,7 +61,8 @@ function CardScholarshipSubscribed({
 				background: "white",
 				borderRadius: "0.5rem",
 				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
-				cursor:"pointer"
+				marginBottom: "3rem",
+				marginRight: "3rem",
 			}}
 		>
 			<div
