@@ -1,6 +1,7 @@
 import React from "react";
 import { accordionData } from "./AccordionData.js";
 import AccordionCard from "./AccordionCard.jsx";
+
 function Accordion() {
   return (
     <main>
@@ -8,14 +9,14 @@ function Accordion() {
         <div className="container">
           <div className="row">
             <div
-              className="col-lg-5 col-md-5  wow fadeInUp animated"
+              className="col-lg-5 col-md-5  wow fadeInUp animated "
               data-animation="fadeInUp"
               data-delay=".4s"
             >
               <div
-                class="s-video-wrap2"
-                styles={{
-                  backgroundImage: "url(img/video/faq.jpg)",
+                className="s-video-wrap2"
+                style={{
+                  backgroundImage: 'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688923526/pexels-karolina-grabowska-8106683_nrej9g.jpg")',
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                 }}
@@ -24,7 +25,7 @@ function Accordion() {
                   <h6>
                     <a
                       href="https://www.youtube.com/watch?v=7e90gBu4pas"
-                      class="popup-video mb-50"
+                      className="popup-video mb-50"
                     >
                       <img
                         src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688920197/play-button_x1mykn.png"
@@ -35,7 +36,7 @@ function Accordion() {
                 </div>
               </div>
             </div>
-            <div
+           <div
               className="col-lg-7 col-md-7  wow fadeInUp animated"
               data-animation="fadeInUp"
               data-delay=".4s"
@@ -201,8 +202,8 @@ function Accordion() {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
+        </div>
         </div>
       </section>
     </main>
@@ -210,3 +211,8 @@ function Accordion() {
 }
 
 export default Accordion;
+
+
+
+
+
