@@ -70,3 +70,40 @@ z-index: 99999999px;
         font-size: 4rem;
     }
 }
+
+
+
+@media  only screen and (max-width: 767px) {
+    /* your mobile styles here */
+    .footer {
+      display: flex;
+      flex-direction: column;
+    }
+    }
+    @media (max-width: 576px) {
+    .link-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-left: 10px;
+      padding-bottom: 20px;
+    }
+    
+    .link-list li {
+      flex: 0 0 48%;
+      margin-bottom: 10px;
+    }
+    .footer-social{
+     margin-left:0px;
+     padding-bottom: 28px;
+     padding-left: 13px;
+    }
+    .footer-widget{
+      margin-left: -15px;
+      margin-bottom: -10px;
+    }
+    .f-widget-title {
+      margin-top: -30px;
+      padding-bottom: 30px;
+    }
+}
