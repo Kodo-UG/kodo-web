@@ -138,7 +138,7 @@ const NavHeader = () => {
 								history.push("/admissions");
 							}}
 						>
-							FIND SCHOLARSHIPS
+							FIND SCHOLARSHIP
 						</button>
 					</form>
 				</div>
