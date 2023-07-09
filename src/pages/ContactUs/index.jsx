@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import EmbeddedMap from "./EmbeddedMap";
+import CustomForm from "./CustomForm";
 
 const ContactUs = () => {
 	return (
@@ -14,7 +15,7 @@ const ContactUs = () => {
 								data-delay=".4s"
 								style={{
 									visibility: "visible",
-									animationName: "fadeInDown",
+									animationName: "fadeInDown"
 								}}
 							>
 								<h5>
@@ -78,10 +79,13 @@ const ContactUs = () => {
 						</div>
 					</div>
 				</div>
-				<div style={{ marginTop: "2rem" }}>
-					<EmbeddedMap />
-				</div>
 			</section>
+			<div>
+				<EmbeddedMap />
+			</div>
+			<div>
+				<CustomForm />
+			</div>
 		</Fragment>
 	);
 };
