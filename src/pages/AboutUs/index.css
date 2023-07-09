@@ -182,9 +182,25 @@ height: 100vh;
     margin-top: 15rem;
     margin-bottom: 17rem;
    }
-
    .imgbk{ 
     height: 20rem;
      width: 13rem;
      }
+     /* p{
+      font-size: 1.4rem;
+     } */
+     .im{
+      width: 50%;
+      height: 50%;
+     }
+}
+
+@media (max-width: 750px) {
+  .sub-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    
+  }
 }

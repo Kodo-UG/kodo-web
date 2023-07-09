@@ -18,7 +18,11 @@ const AboutUs1 = () => {
 							<div className="image-content">
 								<div className="image1">
 									<img
-										style={{ height: "30rem", width: "18rem" }}
+										style={{
+											height: "30rem",
+											width: "18rem",
+											zIndex: "-1000px",
+										}}
 										src="https://res.cloudinary.com/itgenius/image/upload/v1688886728/Screenshot_from_2023-07-09_10-07-07_rp5zg3.png"
 										alt=""
 										className="image-original imgbk"
