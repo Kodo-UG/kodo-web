@@ -91,7 +91,7 @@ export default function Login() {
 											fontSize: "24px",
 										}}
 									>
-										Login |{" "}
+										Login | {" "}
 									</h1>
 									<Link
 										to="/admissions"
