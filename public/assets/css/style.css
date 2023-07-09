@@ -6179,12 +6179,12 @@ margin-bottom: 10px;
 .f-insta ul li:hover a::before{top: 50%;opacity: 1;}
 .f-insta ul li:hover a::after{opacity: .6;}
 .copyright-wrap {
-    background: #EC1D64;
+    background: #1f5875;
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
 }
 .copyright-wrap .container{
-    padding: 20px 0;
+    padding: 5px 0;
 }
 .copyright-wrap li {
     display: inline;
@@ -6208,6 +6208,12 @@ border-radius: 50px;
 .copyright-wrap li a{
     color: #fff;
 }
+
+/* @media (max-width:1005px){
+    .copyright-wrap{
+        font-size: 0.1rem;
+    }
+} */
 .f-contact .icon {
     float: left;
     margin-top: 7px;

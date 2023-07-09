@@ -96,7 +96,10 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			<div class="copyright-wrap">
+			<div
+				style={{ backgroundColor: "#1f5875" }}
+				class="copyright-wrap"
+			>
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-4">
