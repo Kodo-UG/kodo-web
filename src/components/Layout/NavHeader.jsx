@@ -51,7 +51,7 @@ const NavHeader = () => {
 			style={{
 				boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
 				backgroundColor: "white",
-				height: "5.7rem"
+				height: "5.4rem"
 			}}
 		>
 			<Link to="/">
@@ -62,7 +62,8 @@ const NavHeader = () => {
 						style={{
 							width: "",
 							height: "35px",
-							marginLeft: "3rem"
+							marginLeft: "3rem",
+							paddingLeft:"2rem"
 						}}
 					/>
 				</div>
@@ -138,7 +139,7 @@ const NavHeader = () => {
 								history.push("/admissions");
 							}}
 						>
-							FIND SCHOLARSHIPS
+							FIND SCHOLARSHIP
 						</button>
 					</form>
 				</div>

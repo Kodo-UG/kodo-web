@@ -207,6 +207,7 @@ import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import CustomInput from "../../components/input";
 // import LoginComponent from "../Login/LoginComponent ";
 import LoginComponent from "../Login/LoginComponent";
+import Forgot from "./Forgot";
 
 export default function ForgotPassword() {
 	const [email, setEmail] = useState();
@@ -238,7 +239,7 @@ export default function ForgotPassword() {
 							display: "flex",
 							marginTop: "10px",
 							marginBottom: "20px",
-							flexDirection: "column",
+							flexDirection: "column"
 						}}
 					>
 						<div
@@ -248,7 +249,7 @@ export default function ForgotPassword() {
 								marginTop: "10px",
 								marginBottom: "10px",
 								// justifyContent: "center",
-								flexDirection: "column",
+								flexDirection: "column"
 							}}
 						>
 							<LoginComponent />
@@ -258,7 +259,7 @@ export default function ForgotPassword() {
 									fontSize: "24px",
 									transition:
 										"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-									fontFamily: "Arial, sans-serif",
+									fontFamily: "Arial, sans-serif"
 								}}
 							>
 								Forgot Password
@@ -270,7 +271,7 @@ export default function ForgotPassword() {
 									fontFamily: "Arial, sans-serif",
 									fontSize: "16px",
 									lineHeight: "1.5",
-									color: "gray",
+									color: "gray"
 								}}
 							>
 								Request for password reset
@@ -290,7 +291,7 @@ export default function ForgotPassword() {
 								display: "flex",
 								alignItems: "start",
 
-								justifyContent: "space-between",
+								justifyContent: "space-between"
 							}}
 						>
 							<button
@@ -307,7 +308,7 @@ export default function ForgotPassword() {
 									lineHeight: "1.5",
 									color: "#fff",
 									cursor: "pointer",
-									marginBottom: "4px",
+									marginBottom: "4px"
 								}}
 							>
 								Reset
@@ -326,7 +327,7 @@ export default function ForgotPassword() {
 										fontSize: "16px",
 										lineHeight: "1.5",
 										color: "gray",
-										cursor: "pointer",
+										cursor: "pointer"
 									}}
 								>
 									Back to login
@@ -335,6 +336,8 @@ export default function ForgotPassword() {
 						</div>
 					</div>
 				</div>
+
+				{/* <Forgot /> */}
 
 				<div className="col-md-6 d-flex align-items-center justify-content-center ">
 					<div className="image-container "></div>

@@ -6,91 +6,36 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function AboutKodo() {
 	return (
-		<div className="container-fluid">
-			<div className="row">
-				<div
-					className="col-lg-6"
-					style={{
-						background: "#125875",
-						color: "white",
-						padding: "1rem",
-						height: "90vh",
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-						minWidth: "360px",
-					}}
-				>
-					<div
-						style={{
-							width: "90%",
-							height: "100%",
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "center",
-							textAlign: "justify",
-							fontSize: "1.2rem",
-							minWidth: "360px",
-						}}
-					>
-						<div
-							style={{
-								background: "#ec1d64",
-								height: "5rem",
-								width: "5rem",
-								borderRadius: "50%",
-								marginBottom: "1rem",
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "center",
-							}}
-						>
-							<img
-								src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688676150/fea-icon01_sfnppb.png"
-								alt="group svg"
-								style={{
-									objectFit: "cover",
-									width: "72%",
-									height: "72%",
-								}}
-								className="im"
-							/>
-						</div>
-						<h2
-							className="font-weight-bold"
-							style={{ fontSize: "2.5rem", marginBottom: "0.7rem" }}
-						>
-							Kodo Scholarships
-						</h2>
-						<p>
-							We were founded by a group of individuals who are
-							passionate about making a difference in the world and who
-							understand the transformative power of education. Through
-							our work, we hope to create a brighter future. We are
-							committed to building a community of lifelong learners and
-							leaders who will shape the future of their continents and
-							beyond.
-						</p>
-					</div>
-				</div>
-				<div
-					className="col-lg-6 d-none d-lg-block"
-					style={{ background: "blue", padding: 0, minWidth: "360px" }}
-				>
-					<div style={{ width: "100%", height: "100%" }}>
-						<img
-							src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688676546/doctor_gih7eh.jpg"
-							alt="doctor-image"
-							style={{
-								width: "100%",
-								height: "100%",
-								objectFit: "cover",
-							}}
-						/>
-					</div>
-				</div>
-			</div>
-		</div>
+<section className="steps-area2 p-relative fix" style={{ background: "#125875" }}>
+
+            <div class="animations-02"><img src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688930170/an-img-20_ojaurs.png" alt="an-img-01"/></div>
+            <div className="container">
+      
+                <div className="row align-items-center">
+                    <div className="col-lg-6 col-md-12">
+                        <div className="step-box step-box2 wow fadeInUp animated" data-animation="fadeInUp" data-delay=".4s">
+                            <div className="dnumber">
+                                <div class="date-box"><img src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688929716/fea-icon01_1_lyxxuc.png" alt="icon"/></div>
+                            </div>
+                            <div className="text">
+                                <h2>Kodo Scholarships</h2>
+                                <p>We were founded by a group of individuals who are passionate about making a difference in the world and who understand the transformative power of education. Through our work, we hope to create a brighter future. We are committed to building a community of life long learners and leaders who will shape the future of their continents and beyond.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 col-md-12">
+                        <div className="step-img2 wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
+                            <img src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688929720/lecturer-professor-with-students-2022-04-14-08-02-34-utc_fmbvk9.jpg" alt="class image"/>
+                        </div>
+                       
+                    </div>
+                    
+                   
+                    
+                </div>
+                
+            </div>
+        </section>
 	);
 }
 
