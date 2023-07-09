@@ -24,7 +24,7 @@ const Menu = () => {
 						<img
 							src="/logo-kodo.png"
 							alt="kodo Logo"
-							className="brand-image elevation-3"
+							className="brand-image "
 							style={{ opacity: ".8" }}
 						/>
 						<span
@@ -40,7 +40,7 @@ const Menu = () => {
 					</Link>
 					<div style={{ backgroundColor: "#125875" }} className="sidebar">
 						{/* Sidebar user panel (optional) */}
-						<div className="user-panel mt-3 pb-3 mb-3 d-flex"></div>
+						{/* <div className="user-panel mt-3 pb-3 mb-3 d-flex"></div> */}
 						{/* Sidebar Menu */}
 						<nav className="mt-4">
 							<ul
