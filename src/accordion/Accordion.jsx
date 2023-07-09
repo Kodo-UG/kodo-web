@@ -16,7 +16,7 @@ function Accordion() {
               <div
                 className="s-video-wrap2"
                 style={{
-                  backgroundImage: 'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688923526/pexels-karolina-grabowska-8106683_nrej9g.jpg")',
+                  backgroundImage: 'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688930513/faq_ufbxqd.jpg")',
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                 }}
