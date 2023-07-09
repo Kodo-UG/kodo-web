@@ -11,38 +11,38 @@ const NavHeader = () => {
 		{
 			id: 1,
 			route: "/",
-			children: "Home",
+			children: "Home"
 		},
 		{
 			id: 2,
 			route: "/aboutus",
-			children: "About us",
+			children: "About us"
 		},
 		{
 			id: 3,
 			route: "/scholarships",
-			children: "Scholarships",
+			children: "Scholarships"
 		},
 		{
 			id: 4,
 			route: "/testimonals",
-			children: "Testimonals",
+			children: "Testimonals"
 		},
 		{
 			id: 5,
 			route: "/blog",
-			children: "Blog",
+			children: "Blog"
 		},
 		{
 			id: 6,
 			route: "/contactus",
-			children: "Contact us",
+			children: "Contact us"
 		},
 		{
 			id: 7,
 			route: "/db",
-			children: "Dashboard",
-		},
+			children: "Dashboard"
+		}
 	];
 
 	return (
@@ -51,7 +51,7 @@ const NavHeader = () => {
 			style={{
 				boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
 				backgroundColor: "white",
-				height: "5.7rem",
+				height: "5.7rem"
 			}}
 		>
 			<Link to="/">
@@ -62,7 +62,7 @@ const NavHeader = () => {
 						style={{
 							width: "",
 							height: "35px",
-							marginLeft: "3rem",
+							marginLeft: "3rem"
 						}}
 					/>
 				</div>
@@ -81,7 +81,7 @@ const NavHeader = () => {
 			</button>
 
 			<div
-				// style={{ backgroundColor: "red", zIndex: "999999999999px" }}
+				style={{}}
 				className="collapse navbar-collapse "
 				id="navbarTogglerDemo01"
 			>
@@ -104,7 +104,7 @@ const NavHeader = () => {
 									background: "#EC1D64",
 									borderRadius: "0",
 									color: "white",
-									marginRight: "0.1223rem",
+									marginRight: "0.1223rem"
 								}}
 								onClick={(e) => {
 									e.preventDefault();
@@ -131,14 +131,14 @@ const NavHeader = () => {
 							style={{
 								background: "#EC1D64",
 								borderRadius: "0",
-								color: "white",
+								color: "white"
 							}}
 							onClick={(e) => {
 								e.preventDefault();
 								history.push("/admissions");
 							}}
 						>
-							FIND SCHOLARSHIP
+							FIND SCHOLARSHIPS
 						</button>
 					</form>
 				</div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
 	return (
@@ -24,8 +25,11 @@ const About = () => {
 								src="https://res.cloudinary.com/itgenius/image/upload/v1688241331/about_img_02-1_sbyudl.png"
 								alt="img"
 							/>
-							<div className="about-text second-about">
-								<span>
+							<div
+								style={{ height: "7.8rem", width: "15.8rem" }}
+								className="about-text second-about"
+							>
+								<span style={{ fontSize: "2rem" }}>
 									25 <sub>+</sub>
 								</span>
 								<p>Years of Experience</p>
@@ -86,13 +90,14 @@ const About = () => {
                 </div>
               </div> */}
 							<div className="slider-btn mt-20">
-								<a
-									href="about.html"
+								<Link
+									to="/db"
 									className="btn ss-btn smoth-scroll"
-									style={{ padding: "20px", color: "white" }}
+									style={{ padding: "18px", color: "white" }}
 								>
-									Read More <i className="fal fa-long-arrow-right"></i>
-								</a>
+									Search Programs{" "}
+									<i className="fal fa-long-arrow-right"></i>
+								</Link>
 							</div>
 						</div>
 					</div>

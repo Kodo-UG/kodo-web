@@ -57,21 +57,21 @@ function Content() {
 			className="slider-content-wrapper position-absolute"
 			style={{
 				top: "4rem",
-				left: "4rem",
+				left: "4rem"
 			}}
 		>
 			<div className="container">
 				<div className="row">
-					<div className="col-lg-7 col-md-7">
+					<div className="col-lg-7 col-md-7 slide">
 						<div className="p-4 text-white" style={{ opacity: "0.9" }}>
-							<h5
+							{/* <h5
 								data-animation="fadeInUp"
 								data-delay=".4s"
 								className="mb-4"
 								style={{ fontSize: "1.5rem" }}
 							>
 								Welcome To Kodo
-							</h5>
+							</h5> */}
 							<h2
 								data-animation="fadeInUp"
 								data-delay=".4s"
@@ -81,13 +81,15 @@ function Content() {
 								Find Life Changing Scholarships Made For You
 							</h2>
 							<p
+								style={{ color: "white", font: "bold" }}
 								data-animation="fadeInUp"
 								data-delay=".6s"
 								className="mb-4 pr"
 							>
-								While success can be defined differently by individuals,
-								education serves as a fundamental catalyst in achieving
-								personal, professional, and societal goals.
+								KODO Scholarships is #1 college scholarship app <br />
+								in the world and has helped students win more than $1{" "}
+								<br />
+								million dollars
 							</p>
 
 							<div
@@ -106,11 +108,11 @@ function Content() {
 										display: "flex",
 										alignItems: "center",
 										justifyContent: "center",
-										width: "10rem",
-										fontWeight: "bold",
+										width: "16rem",
+										fontWeight: "bold"
 									}}
 								>
-									Find Jobs Now
+									Find Scholarships Now
 									<i className="fal fa-long-arrow-right"></i>
 								</a>
 							</div>
