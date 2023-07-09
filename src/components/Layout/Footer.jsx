@@ -6,13 +6,17 @@ const Footer = () => {
 			class="footer-bg footer-p pt-90"
 			style={{
 				backgroundColor: "#125875",
-				backgroundImage: "url(https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688766213/footer-bg_hrigyb.png)",
+				backgroundImage:
+					"url(https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688766213/footer-bg_hrigyb.png)",
 			}}
 		>
-			<div class="footer-top pb-70">
+			<div class="footer-top  pb-70">
 				<div class="container">
 					<div class="row justify-content-between">
-						<div class="col-xl-4 col-lg-4 col-sm-6">
+						<div
+							style={{ paddingLeft: "3rem" }}
+							class="col-xl-4 col-lg-4 col-sm-6"
+						>
 							<div class="footer-widget mb-30">
 								<div class="f-widget-title">
 									<h2>About Us</h2>
@@ -38,7 +42,10 @@ const Footer = () => {
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-2 col-lg-2 col-sm-6">
+						<div
+							style={{ paddingLeft: "3rem" }}
+							class="col-xl-2 col-lg-2 col-sm-6"
+						>
 							<div class="footer-widget mb-30">
 								<div class="f-widget-title">
 									<h2>Our Links</h2>
@@ -62,7 +69,10 @@ const Footer = () => {
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-3 col-lg-3 col-sm-6">
+						<div
+							style={{ paddingLeft: "3rem" }}
+							class="col-xl-3 col-lg-3 col-sm-6"
+						>
 							<div class="footer-widget mb-30">
 								<div class="f-widget-title">
 									<h2>Latest Post</h2>
@@ -92,7 +102,10 @@ const Footer = () => {
 								</div>
 							</div>
 						</div>
-						<div class="col-xl-3 col-lg-3 col-sm-6">
+						<div
+							style={{ paddingLeft: "3rem" }}
+							class="col-xl-3 col-lg-3 col-sm-6"
+						>
 							<div class="footer-widget mb-30">
 								<div class="f-widget-title">
 									<h2>Contact Us</h2>
