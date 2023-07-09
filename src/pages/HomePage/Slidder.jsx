@@ -32,25 +32,23 @@
 
 // export default Slidder;
 
-
-
 import { Fragment } from "react";
 import BackgroundCarousel from "./BackgroundCarousel";
 import Content from "./Content";
 import CardSection from "./CardSection";
 
 const Slidder = () => {
-  return (
-    <Fragment>
-      <section id="home" className="slider-area fix p-relative">
-        <BackgroundCarousel />
-        <section className="content-section">
-          <Content />
-        </section>
-        <CardSection />
-      </section>
-    </Fragment>
-  );
+	return (
+		<Fragment>
+			<section id="home" className="slider-area fix p-relative">
+				<BackgroundCarousel />
+				<section className="content-section">
+					<Content />
+				</section>
+				<CardSection />
+			</section>
+		</Fragment>
+	);
 };
 
 export default Slidder;
