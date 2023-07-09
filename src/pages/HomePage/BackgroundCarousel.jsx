@@ -6,23 +6,22 @@ import Content from "./Content";
 const BackgroundCarousel = () => {
 	return (
 		<Carousel
-			interval={8000}
+			interval={8900}
 			pause={false}
 			slide={true}
-			style={{ 
-						backgroundImage:
-							'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688760317/slider-main_axin8h.jpg")',
-						backgroundSize: "cover",
-						backgroundPosition: "center",
-						height: "87vh",
-						position: "relative",
-								 filter: "brightness(70%)", 
-						
-			 }}
+			style={{
+				backgroundImage:
+					'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688760317/slider-main_axin8h.jpg")',
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				height: "87vh",
+				position: "relative",
+				filter: "brightness(90%)",
+			}}
 		>
 			<Carousel.Item>
 				<div
-					className="d-block w-100  bg-dark"
+					className="d-block w-100  "
 					style={{
 						backgroundImage:
 							'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688356748/whiteguy_vxrfnm.jpg")',
@@ -30,11 +29,11 @@ const BackgroundCarousel = () => {
 						backgroundPosition: "center",
 						height: "87vh",
 						position: "relative",
-						 filter: "brightness(70%)", 
+						filter: "brightness(90%)",
 					}}
 				></div>
 			</Carousel.Item>
-			<Carousel.Item>
+			{/* <Carousel.Item>
 				<div
 					className="d-block w-100  bg-dark"
 					style={{
@@ -44,11 +43,10 @@ const BackgroundCarousel = () => {
 						backgroundPosition: "center",
 						height: "87vh",
 						position: "relative",
-						 filter: "brightness(70%)", 
+						filter: "brightness(70%)",
 					}}
 				></div>
-			</Carousel.Item>
-			
+			</Carousel.Item> */}
 		</Carousel>
 	);
 };

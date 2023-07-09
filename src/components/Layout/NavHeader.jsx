@@ -47,10 +47,10 @@ const NavHeader = () => {
 
 	return (
 		<nav
-			className="navbar navbar-expand-lg navbar-light bg-light"
+			className="navbar navbar-expand-lg navbar-light bg-light glass"
 			style={{
 				boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-				background: "#FFFFFF",
+				backgroundColor: "white",
 				height: "5.7rem",
 			}}
 		>
@@ -82,10 +82,10 @@ const NavHeader = () => {
 
 			<div
 				// style={{ backgroundColor: "red", zIndex: "999999999999px" }}
-				className="collapse navbar-collapse glass"
+				className="collapse navbar-collapse "
 				id="navbarTogglerDemo01"
 			>
-				<ul className="navbar-nav ml-auto">
+				<ul style={{ color: "#202F4A" }} className="navbar-nav ml-auto ul ">
 					{routeData.map((dta) => (
 						<CustomLink
 							key={dta.id}

@@ -158,13 +158,13 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-			{/* <div class="copyright-wrap">
+			<div class="copyright-wrap">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-4">
-                            <div class="copy-text">
+                            {/* <div class="copy-text">
                                 <a href="/"><img src="img/logo/f_logo.png" alt="img" /></a>
-                            </div>
+                            </div> */}
                         </div>
                         <div class="col-lg-4 text-center">
 
@@ -174,7 +174,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
 		</footer>
 	);
 };
