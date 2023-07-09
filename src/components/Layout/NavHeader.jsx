@@ -256,7 +256,13 @@ const NavHeader = () => {
 					<form className="form-inline">
 						{token ? (
 							<button
-								className="select-option sonic-btn mr-2"
+								className="btn btn-lg"
+								style={{
+									background: "#EC1D64",
+									borderRadius: "0",
+									color: "white",
+									marginRight: "0.1223rem",
+								}}
 								onClick={(e) => {
 									e.preventDefault();
 									localStorage.removeItem("token");
