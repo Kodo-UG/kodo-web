@@ -24,6 +24,8 @@ const CardScholarship = ({
 				height: "12rem",
 				borderRadius: "0.5rem",
 				cursor: "pointer",
+				marginRight: "3rem",
+				marginBottom: "3rem",
 			}}
 			onClick={() => history.push("/payment")}
 		>
