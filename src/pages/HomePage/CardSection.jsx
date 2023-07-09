@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function CardSection() {
 	return (
@@ -10,13 +11,14 @@ function CardSection() {
 							<div class="sr-contner">
 								<div class="icon">
 									<img
-										src="https://res.cloudinary.com/itgenius/image/upload/v1688240472/degree-education-university-scroll-svgrepo-com_u19iso.svg"
+										style={{ width: "30px", marginLeft: "15px" }}
+										src="https://res.cloudinary.com/itgenius/image/upload/v1688910165/sve-icon4_wj25fd.png"
 										alt="icon01"
 									/>
 								</div>
 								<div class="text">
 									<h5>
-										<a href="about.html">Start Your New Career</a>
+										<a href="/aboutus">Start Your New Career</a>
 									</h5>
 									<p>
 										Kodo Scholarship is dedicated to creating
@@ -24,9 +26,9 @@ function CardSection() {
 										rest of the world to pursue their dreams and reach
 										their full potential.
 									</p>
-									<a href="about.html">
+									<Link to="/aboutus">
 										Read More <i class="fal fa-long-arrow-right"></i>
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -36,13 +38,14 @@ function CardSection() {
 							<div class="sr-contner">
 								<div class="icon">
 									<img
-										src="https://res.cloudinary.com/itgenius/image/upload/v1688240403/education-bag-learning-2-svgrepo-com_4_uska8r.svg"
+										style={{ width: "30px", marginLeft: "15px" }}
+										src="https://res.cloudinary.com/itgenius/image/upload/v1688910165/sve-icon5_isymhj.png"
 										alt="icon01"
 									/>
 								</div>
 								<div class="text">
 									<h5>
-										<a href="about.html">Scholarship Programs</a>
+										<Link to="/aboutus">Scholarship Programs</Link>
 									</h5>
 									<p>
 										Kodo is the #1 college scholarship web app in the
@@ -50,9 +53,9 @@ function CardSection() {
 										million dollars. Join today and start matching
 										with scholarships in minutes.
 									</p>
-									<a href="about.html">
+									<Link to="/aboutus">
 										Read More <i class="fal fa-long-arrow-right"></i>
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -63,13 +66,14 @@ function CardSection() {
 							<div class="sr-contner">
 								<div class="icon">
 									<img
-										src="https://res.cloudinary.com/itgenius/image/upload/v1688240271/education-svgrepo-com_1_s0jmyk.svg"
+										style={{ width: "30px", marginLeft: "15px" }}
+										src="https://res.cloudinary.com/itgenius/image/upload/v1688910165/sve-icon6_xunnnu.png"
 										alt="icon01"
 									/>
 								</div>
 								<div class="text">
 									<h5>
-										<a href="about.html">Career Opportunities</a>
+										<Link to="/aboutus">Career Opportunities</Link>
 									</h5>
 									<p>
 										Looking for a remote job as a developer, customer
