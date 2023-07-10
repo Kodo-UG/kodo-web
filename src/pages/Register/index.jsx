@@ -85,7 +85,13 @@ const FindScholarship = () => {
 									</span>
 								</div>
 								<div class="card-body">
-									<p class="card-text text-center"> {obj.text} </p>
+									<p
+										class="card-text text-center"
+										style={{ fontSize: "14px" }}
+									>
+										{" "}
+										{obj.text}{" "}
+									</p>
 									<Link
 										to={`${obj.link}`}
 										class="btn ss-btn w-100"

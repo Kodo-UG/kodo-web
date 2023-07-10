@@ -10,40 +10,40 @@ const StepOne = ({ nextStep, setFormData }) => {
 	const myList = [
 		{
 			id: 1,
-			text: "Associate's",
+			text: "Associate's"
 		},
 		{
 			id: 2,
-			text: "Bachelor's",
+			text: "Bachelor's"
 		},
 		{
 			id: 3,
-			text: "Master's",
+			text: "Master's"
 		},
 		{
 			id: 4,
-			text: "Doctorate",
+			text: "Doctorate"
 		},
 		{
 			id: 5,
-			text: "Non-Degree Courses",
+			text: "Non-Degree Courses"
 		},
 		{
 			id: 6,
-			text: "Certificate/ Diploma",
+			text: "Certificate/ Diploma"
 		},
 		{
 			id: 7,
-			text: "Graduate Certificates",
+			text: "Graduate Certificates"
 		},
 		{
 			id: 8,
-			text: "General",
+			text: "General"
 		},
 		{
 			id: 9,
-			text: "Bootcamps",
-		},
+			text: "Bootcamps"
+		}
 	];
 
 	const [selectedButtonId, setSelectedButtonId] = useState(null);
@@ -57,12 +57,12 @@ const StepOne = ({ nextStep, setFormData }) => {
 
 	return (
 		<div className="app-container">
-			<div className="app-wrapper">
+			<div style={{ marginTop: "" }} className="app-wrapper">
 				<div
 					className="selections-container"
 					style={{
 						transform: "none",
-						transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms",
+						transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms"
 					}}
 				>
 					<h2>What degree level are you looking for?</h2>
@@ -86,7 +86,7 @@ const StepOne = ({ nextStep, setFormData }) => {
 					className="select-option sonic-btn"
 					onClick={nextStep}
 					style={{
-						padding: "20px 20px",
+						padding: "10px 20px",
 						border: "none",
 						outline: "none",
 						transition:
@@ -95,7 +95,7 @@ const StepOne = ({ nextStep, setFormData }) => {
 						fontSize: "16px",
 						lineHeight: "1.5",
 						color: "#fff",
-						cursor: "pointer",
+						cursor: "pointer"
 					}}
 				>
 					Next
