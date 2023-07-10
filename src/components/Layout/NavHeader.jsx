@@ -2,9 +2,15 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import CustomLink from "../customlink";
 import "./index.css";
+import { useState } from "react";
 
 const NavHeader = () => {
 	const history = useHistory();
+	const [showDropDown, setShowDropDown] = useState(false);
+
+	const handleShowDropDown = () => {
+		setShowDropDown(!showDropDown);
+	};
 	const token = localStorage.getItem("token");
 
 	const routeData = [
@@ -68,9 +74,9 @@ const NavHeader = () => {
 					/>
 				</div>
 			</Link>
-			
 
 			<button
+				onClick={handleShowDropDown}
 				className="navbar-toggler"
 				type="button"
 				data-toggle="collapse"
@@ -82,69 +88,95 @@ const NavHeader = () => {
 				<span className="navbar-toggler-icon"></span>
 			</button>
 
-			<div
-				style={{}}
-				className="collapse navbar-collapse "
-				id="navbarTogglerDemo01"
-			>
-				<ul style={{ color: "#202F4A" }} className="navbar-nav ml-auto ul ">
-					{routeData.map((dta) => (
-						<CustomLink
-							key={dta.id}
-							route={dta.route}
-							children={dta.children}
-						/>
-					))}
-				</ul>
+			{showDropDown ? (
+				<div
+					style={{
+						height: "30rem",
+						position: "absolute",
+						top: "5.6rem",
+						zIndex: 9999999,
+						width: "20rem",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						flexDirection: "column",
+						padding: "2rem",
+						objectFit: "contain"
+					}}
+					className="glass"
+				>
+					<div>
+						<ul style={{ color: "#202F4A" }} className=" ul ">
+							{routeData.map((dta) => (
+								<CustomLink
+									key={dta.id}
+									route={dta.route}
+									children={dta.children}
+								/>
+							))}
+						</ul>
+					</div>
 
-				<div className="my-2 my-lg-0 bt" style={{ marginLeft: "2rem" }}>
-					<form className="form-inline">
-						{token ? (
+					<div className="" style={{ marginLeft: "2rem" }}>
+						<form className="">
+							{token ? (
+								<button
+									className="btn btn-lg"
+									style={{
+										background: "#EC1D64",
+										borderRadius: "0",
+										color: "white",
+										marginRight: "0.1223rem"
+									}}
+									onClick={(e) => {
+										e.preventDefault();
+										localStorage.removeItem("token");
+										history.push("/login");
+									}}
+								>
+									Logout
+								</button>
+							) : (
+								<button
+									className="btn btn-lg mr-2"
+									onClick={(e) => {
+										e.preventDefault();
+										history.push("/login");
+									}}
+									style={{
+										background: "#EC1D64",
+										borderRadius: "0",
+										color: "white",
+										width: "13.2rem",
+										borderRadius: 50,
+										marginBottom: "1rem"
+									}}
+								>
+									Login
+								</button>
+							)}
+
 							<button
 								className="btn btn-lg"
 								style={{
 									background: "#EC1D64",
 									borderRadius: "0",
 									color: "white",
-									marginRight: "0.1223rem"
+									borderRadius: 50
 								}}
 								onClick={(e) => {
 									e.preventDefault();
-									localStorage.removeItem("token");
-									history.push("/login");
+									history.push("/admissions");
 								}}
 							>
-								Logout
+								FIND SCHOLARSHIPS
 							</button>
-						) : (
-							<button
-								className="btn btn-lg mr-2"
-								onClick={(e) => {
-									e.preventDefault();
-									history.push("/login");
-								}}
-							>
-								Login
-							</button>
-						)}
-
-						<button
-							className="btn btn-lg"
-							style={{
-								background: "#EC1D64",
-								borderRadius: "0",
-								color: "white"
-							}}
-							onClick={(e) => {
-								e.preventDefault();
-								history.push("/admissions");
-							}}
-						>
-							FIND SCHOLARSHIPS
-						</button>
-					</form>
+						</form>
+					</div>
 				</div>
-			</div>
+			) : (
+				""
+			)}
 		</nav>
 	);
 };

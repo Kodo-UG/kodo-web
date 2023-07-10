@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
+import "./index.css";
 
 const FindScholarship = () => {
 	const dispatch = useDispatch();
@@ -11,14 +12,14 @@ const FindScholarship = () => {
 			id: 1,
 			title: "Scholarships",
 			text: "We’ve helped students win more than $10 million dollars in scholarships.",
-			link: "/stepper",
+			link: "/stepper"
 		},
 		{
 			id: 2,
 			title: "Jobs",
 			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
-			link: "https://www.kodoscholarships.com/steps/program",
-		},
+			link: "https://www.kodoscholarships.com/steps/program"
+		}
 	];
 
 	const handleClick = (appType) => {
@@ -39,27 +40,46 @@ const FindScholarship = () => {
 						<div
 							onClick={() => handleClick(obj.title)}
 							key={obj.id}
-							class="col-lg-6"
+							class="col-lg-6 admissions"
 							style={{
 								cursor: "pointer",
-								height: "15rem",
-								maxHeight: "40rem",
+								height: "16rem",
+								maxHeight: "40rem"
 							}}
 						>
-							<div class="card custom-card">
+							<div
+								// style={{ backgroundColor: "red", width: "29rem" }}
+								class="card custom-card"
+							>
 								<div
+									style={{
+										justifyContent: "center",
+										// display: "flex",
+										// alignItems: "center",
+										margin: "auto",
+										// backgroundColor: "red",
+										width: "32rem"
+									}}
 									key={obj.id}
 									class="card-header d-flex align-items-center justify-content-center"
 								>
 									<img
 										src="https://www.kodoscholarships.com/logo.png"
-										style={{ width: "95px" }}
+										style={{
+											width: "7rem",
+											marginLeft: "7rem",
+											height: "2rem"
+										}}
 										alt="Logo"
 										class="logo"
 									/>
 									<span
-										class="card-title"
-										style={{ fontSize: "18px", marginBottom: "-4px" }}
+										class="card-title text"
+										style={{
+											fontSize: "16px",
+											marginBottom: "-4px",
+											marginRight: "10rem"
+										}}
 									>
 										{obj.title}
 									</span>
@@ -74,7 +94,7 @@ const FindScholarship = () => {
 											height: 45,
 											backgroundColor: "#ec1d64",
 											color: "#fff",
-											fontWeight: "bold",
+											fontWeight: "bold"
 										}}
 									>
 										Sign Up

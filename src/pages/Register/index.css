@@ -1,0 +1,10 @@
+@media (max-width:900px){
+    .admissions{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .text{
+        font-size: 1rem;
+    }
+}
