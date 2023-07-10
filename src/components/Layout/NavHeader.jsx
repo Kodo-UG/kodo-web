@@ -250,7 +250,8 @@ const NavHeader = () => {
 							width: "",
 							height: "35px",
 							marginLeft: "3rem",
-							paddingLeft: "2rem"
+							paddingLeft: "2rem",
+							zIndex:9999999999
 						}}
 					/>
 				</div>
@@ -326,7 +327,7 @@ const NavHeader = () => {
 								history.push("/admissions");
 							}}
 						>
-							FIND SCHOLARSHIP
+							FIND SCHOLARSHIPS
 						</button>
 					</form>
 				</div>
