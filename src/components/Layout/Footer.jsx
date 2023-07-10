@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
 	return (
 		<footer
-			className="footer-bg footer-p pt-90"
+			className="footer-bg  footer-p pt-90"
 			style={{
 				backgroundColor: "#125875",
 				backgroundImage:
