@@ -7,7 +7,8 @@ const Footer = () => {
 			className="footer-bg footer-p pt-90"
 			style={{
 				backgroundColor: "#125875",
-				backgroundImage: "url(/img/bg/footer-bg.png)"
+				backgroundImage:
+					"url(https://kodoscholarships.com/img/bg/footer-bg.png)"
 			}}
 		>
 			<div className="footer-top pb-70">
@@ -17,7 +18,7 @@ const Footer = () => {
 							<div className="footer-widget mb-30">
 								<div className="f-widget-title">
 									<img
-										src="/img/logo-urayana.png"
+										src="https://kodoscholarships.com/img/logo-urayana.png"
 										alt="img"
 										style={{
 											marginRight: 10,
@@ -37,13 +38,19 @@ const Footer = () => {
 											style={{ fontWeight: "bold" }}
 										>
 											<li>
-												<a href="/aboutus">About Us</a>
+												<a href="https://kodoscholarships.com/about">
+													About Us
+												</a>
 											</li>
 											<li>
-												<a href="/faq">FAQ</a>
+												<a href="https://kodoscholarships.com/faq">
+													FAQ
+												</a>
 											</li>
 											<li>
-												<a href="/search-programs">Scholarships</a>
+												<a href="https://kodoscholarships.com/search-programs">
+													Scholarships
+												</a>
 											</li>
 											<li>
 												<a href="#">Privacy Policy</a>
@@ -56,16 +63,22 @@ const Footer = () => {
 											style={{ fontWeight: "bold" }}
 										>
 											<li>
-												<a href="/testimonial">Testimonials</a>
+												<a href="https://kodoscholarships.com/testimonial">
+													Testimonials
+												</a>
 											</li>
 											<li>
 												<a href="#">Terms of Service</a>
 											</li>
 											<li>
-												<a href="/blog">Blog</a>
+												<a href="https://kodoscholarships.com/blog">
+													Blog
+												</a>
 											</li>
 											<li>
-												<a href="/contact">Contact Us</a>
+												<a href="https://kodoscholarships.com/contact">
+													Contact Us
+												</a>
 											</li>
 										</ul>
 									</div>
@@ -89,14 +102,14 @@ const Footer = () => {
 									<a href="#">
 										<img
 											style={{ width: 140 }}
-											src="/img/playstore.png"
+											src="https://kodoscholarships.com/img/playstore.png"
 											alt="Google Playstore"
 										/>
 									</a>
 									<a href="#">
 										<img
 											style={{ width: 130 }}
-											src="/img/appstore.png"
+											src="https://kodoscholarships.com/img/appstore.png"
 											alt="Appstore"
 										/>
 									</a>

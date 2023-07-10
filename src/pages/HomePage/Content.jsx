@@ -28,7 +28,7 @@
 
 // 							<div className="second-header-btn btn-sm" >
 // 								<a
-// 									href="about.html"
+// 									href="/"
 // 									className="btn ss-btn mr-15"
 // 									data-animation="fadeInLeft"
 // 									data-delay=".4s"
@@ -97,7 +97,7 @@ function Content() {
 								style={{ display: "flex" }}
 							>
 								<a
-									href="about.html"
+									href="/"
 									className="btn ss-btn mr-2"
 									data-animation="fadeInLeft"
 									data-delay=".4s"
