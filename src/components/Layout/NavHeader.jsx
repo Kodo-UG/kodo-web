@@ -47,7 +47,7 @@ const NavHeader = () => {
 
 	return (
 		<nav
-			className="navbar navbar-expand-lg navbar-light bg-light glass"
+			className="navbar navbar-expand-lg navbar-light bg-light "
 			style={{
 				boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
 				backgroundColor: "white",
@@ -60,14 +60,15 @@ const NavHeader = () => {
 						src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
 						alt="logo"
 						style={{
-							width: "",
-							height: "35px",
+							width: "10rem",
+							height: "3rem",
 							marginLeft: "3rem",
-							paddingLeft:"2rem"
+							paddingLeft: "2rem"
 						}}
 					/>
 				</div>
 			</Link>
+			
 
 			<button
 				className="navbar-toggler"
@@ -139,7 +140,7 @@ const NavHeader = () => {
 								history.push("/admissions");
 							}}
 						>
-							FIND SCHOLARSHIP
+							FIND SCHOLARSHIPS
 						</button>
 					</form>
 				</div>
