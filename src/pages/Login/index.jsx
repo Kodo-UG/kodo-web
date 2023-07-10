@@ -4,6 +4,7 @@ import apiClient from "../../api/apiClient";
 import axios from "axios";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import Spinner from "../../components/spinner";
+import "./custom.css";
 
 export default function Login() {
 	const [email, setEmail] = useState();
@@ -72,7 +73,7 @@ export default function Login() {
 								}}
 							>
 								<div>
-									<img src="logo-kodo.png" width={200} alt="logo" />
+									<img src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png" width={200} alt="logo" />
 								</div>
 								<div
 									style={{
@@ -250,7 +251,9 @@ export default function Login() {
 				</div>
 
 				<div className="col-md-6 d-flex align-items-center justify-content-center ">
-					<div className="image-container "></div>
+					<div className="image-container " style={{width: "100%", height: "100%"}}>
+						<img src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688935613/bg1-l_rvlan9.jpg" alt=""  style={{width: "100%", height: "100%", objectFit: "cover"}}/>
+					</div>
 				</div>
 			</div>
 		</div>
