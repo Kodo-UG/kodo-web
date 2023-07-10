@@ -87,8 +87,8 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
                   <div className="col-md-4" key={item.id}>
                     <StepperCard
                       item={item.id}
-                      // handleClick={handleClick}
-                      // selectedCard={selectedCard}
+                      handleClick={handleClick}
+                      selectedCard={selectedCard}
                     />
                   </div>
                 ))} 

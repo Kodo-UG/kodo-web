@@ -7,77 +7,78 @@ import {
 	BiSignal5,
 } from "react-icons/bi";
 import "./stepperFourCss.css";
+import "./../pages/Register/Scholarships/stepper4.css"
 
 function StepperCard({ item, handleClick, selectedCard }) {
-	const signal = (id) => {
-		switch (id) {
-			case 1:
-				return (
-					<BiSignal1
-						style={{
-							color: "red",
-							width: "6rem",
-							height: "4rem",
-						}}
-					/>
-				);
-			case 2:
-				return (
-					<BiSignal2
-						style={{
-							color: "red",
-							width: "6rem",
-							height: "4rem",
-						}}
-					/>
-				);
-			case 3:
-				return (
-					<BiSignal3
-						style={{
-							color: "red",
-							width: "6rem",
-							height: "4rem",
-						}}
-					/>
-				);
-			case 4:
-				console.log("It's Monday!");
-				return (
-					<BiSignal4
-						style={{
-							color: "red",
-							width: "6rem",
-							height: "4rem",
-						}}
-					/>
-				);
-			case 5:
-				console.log("It's Monday!");
-				return (
-					<BiSignal5
-						style={{
-							color: "red",
-							width: "6rem",
-							height: "4rem",
-						}}
-					/>
-				);
-			case 6:
-				console.log("It's Monday!");
-				return (
-					<BiSignal5
-						style={{
-							color: "red",
-							width: "6rem",
-							height: "4rem",
-						}}
-					/>
-				);
-			default:
-				return null;
-		}
-	};
+	// const signal = (id) => {
+	// 	switch (id) {
+	// 		case 1:
+	// 			return (
+	// 				<BiSignal1
+	// 					style={{
+	// 						color: "red",
+	// 						width: "6rem",
+	// 						height: "4rem",
+	// 					}}
+	// 				/>
+	// 			);
+	// 		case 2:
+	// 			return (
+	// 				<BiSignal2
+	// 					style={{
+	// 						color: "red",
+	// 						width: "6rem",
+	// 						height: "4rem",
+	// 					}}
+	// 				/>
+	// 			);
+	// 		case 3:
+	// 			return (
+	// 				<BiSignal3
+	// 					style={{
+	// 						color: "red",
+	// 						width: "6rem",
+	// 						height: "4rem",
+	// 					}}
+	// 				/>
+	// 			);
+	// 		case 4:
+	// 			console.log("It's Monday!");
+	// 			return (
+	// 				<BiSignal4
+	// 					style={{
+	// 						color: "red",
+	// 						width: "6rem",
+	// 						height: "4rem",
+	// 					}}
+	// 				/>
+	// 			);
+	// 		case 5:
+	// 			console.log("It's Monday!");
+	// 			return (
+	// 				<BiSignal5
+	// 					style={{
+	// 						color: "red",
+	// 						width: "6rem",
+	// 						height: "4rem",
+	// 					}}
+	// 				/>
+	// 			);
+	// 		case 6:
+	// 			console.log("It's Monday!");
+	// 			return (
+	// 				<BiSignal5
+	// 					style={{
+	// 						color: "red",
+	// 						width: "6rem",
+	// 						height: "4rem",
+	// 					}}
+	// 				/>
+	// 			);
+	// 		default:
+	// 			return null;
+	// 	}
+	// };
 
 	return (
 
@@ -86,8 +87,13 @@ function StepperCard({ item, handleClick, selectedCard }) {
 
 
 
-		<div className="_option_9bife_5 _selected_9bife_44">
-                  <div className="_optionInner_9bife_23">
+		<div 
+		 	className={`  ${
+		 		selectedCard === item.id ? "selected" : "_option_9bife_5"
+		 	}`}
+		 	onClick={() => handleClick(item.text, item.id)}
+		>
+                  <div className="_optionInner_9bife_23 ">
                     <input
                       id="Associate"
                       type="checkbox"
