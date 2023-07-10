@@ -233,6 +233,7 @@ const NavHeader = () => {
 	];
 
 	return (
+
 		<nav
 			className="navbar fixed-top navbar-expand-lg navbar-light bg-light "
 			style={{

@@ -32,6 +32,7 @@ const App = () => {
 			<PrivateRoute exact path="/applications" component={RootApplication} />
 
 			<Route exact path="/profile" component={MainProfile} />
+			<Route exact path="/stepper" component={Stepper} />
 
 			<Route exact path="/stepper" component={Stepper} />
 			<Layout>
@@ -40,6 +41,7 @@ const App = () => {
 				<Route exact path="/login" component={Login} />
 				<Route exact path="/blog" component={Blog} />
 				<Route exact path="/admissions" component={FindScholarship} />
+				
 				<Route exact path="/contactus" component={ContactUs} />
 				<Route exact path="/scholarships" component={Accordion} />
 				<Route exact path="/testimonals" component={Testimonals} />

@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
 import { useState } from "react";
 import StepperCard from "../../../components/StepperCard";
-import StepperCard2 from "../../../components/StepperCard2";
+
 
 const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 	const dispatch = useDispatch();
@@ -44,10 +44,10 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 							}}
 						>
 							{buttons.map((item) => (
-								<StepperCard2
-									item={item}
-									handleClick={handleClick}
-									selectedCard={selectedCard}
+								<StepperCard
+									item={item.title}
+									// handleClick={handleClick}
+									// selectedCard={selectedCard}
 								/>
 							))}
 						</div>

@@ -1,4 +1,3 @@
-
 import React from "react";
 import Body from "../../../components/Layout/Body";
 import { BiSignal1 } from "react-icons/bi";
@@ -7,6 +6,7 @@ import { updateFormData } from "../../../toolkit/formReducer";
 import { useState } from "react";
 import StepperCard from "../../../components/StepperCard";
 import Column from "antd/es/table/Column";
+import "./stepper4.css";
 
 const StepperFour = ({ nextStep, prevStep, setFormData }) => {
   const dispatch = useDispatch();
@@ -81,15 +81,17 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
                   padding: "2rem",
                 }}
               >
+                
+
                 {list.map((item) => (
                   <div className="col-md-4" key={item.id}>
                     <StepperCard
-                      item={item}
+                      item={item.id}
                       handleClick={handleClick}
                       selectedCard={selectedCard}
                     />
                   </div>
-                ))}
+                ))} 
               </div>
             </div>
           </section>
@@ -140,4 +142,3 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
 };
 
 export default StepperFour;
-
