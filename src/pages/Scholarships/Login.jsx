@@ -26,7 +26,7 @@ const Login = () => {
 	};
 
 	return (
-		<div class="container">
+		<div style={{ marginTop: "15rem" }} class="container">
 			<div class="row m-5">
 				<div class="col-lg-12 text-center">
 					<h4 style={{ marginBottom: "60px" }} class="welcome-title">
