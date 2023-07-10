@@ -71,11 +71,16 @@ const CustomForm = () => {
 											</div>
 											<div className="slider-btn  text-center">
 												<button
+													style={{
+														color: "#fff",
+														fontWeight: "bold",
+														padding: "1rem"
+													}}
 													className="btn ss-btn"
 													data-animation="fadeInRight"
 													data-delay=".8s"
 												>
-													Make An Request{" "}
+													Make A Request{" "}
 													<i className="fal fa-long-arrow-right" />
 												</button>
 											</div>

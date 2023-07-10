@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Menu = () => {
 	const [activeButton, setActiveButton] = useState(null);
+	const [data, setData] = useState()
 
 	const handleActive = (buttonName) => {
 		setActiveButton(buttonName);
@@ -11,6 +13,28 @@ const Menu = () => {
 	const isButtonActive = (buttonName) => {
 		return activeButton === buttonName;
 	};
+
+	const token = localStorage.getItem("token");
+
+	const fetchNotifications = async () => {
+
+		const headers = {
+			Authorization: `Bearer ${token}`,
+		};
+
+		let res = await axios.get(
+			"https://demo.kodoscholarships.com/api/v1/user/notifications",
+			{
+				headers,
+			}
+		);
+
+		setData(res.data.data);
+	};
+
+	useEffect(() => {
+		fetchNotifications();
+	}, []);
 
 	return (
 		<div>
@@ -55,9 +79,8 @@ const Menu = () => {
 									<Link
 										onClick={() => handleActive("dashboard")}
 										to="/db"
-										className={`nav-link ${
-											isButtonActive("dashboard") ? "active" : ""
-										}`}
+										className={`nav-link ${isButtonActive("dashboard") ? "active" : ""
+											}`}
 									>
 										<i
 											class="fa fa-graduation-cap"
@@ -70,16 +93,18 @@ const Menu = () => {
 									<Link
 										onClick={() => handleActive("scholarships")}
 										to="/scholars"
-										className={`nav-link ${
-											isButtonActive("scholarships") ? "active" : ""
-										}`}
+										className={`nav-link ${isButtonActive("scholarships") ? "active" : ""
+											}`}
 									>
 										<i class="fa fa-trophy" aria-hidden="true"></i>{" "}
 										<p>
 											Scholarships
-											<span className="right badge badge-danger">
-												New
-											</span>
+											{data?.length > 0 ? (
+												<span className="right badge badge-danger">
+													New
+												</span>
+											) : null
+											}
 										</p>
 									</Link>
 								</li>
@@ -87,9 +112,8 @@ const Menu = () => {
 									<Link
 										onClick={() => handleActive("applications")}
 										to="/applications"
-										className={`nav-link ${
-											isButtonActive("applications") ? "active" : ""
-										}`}
+										className={`nav-link ${isButtonActive("applications") ? "active" : ""
+											}`}
 									>
 										<i class="fa fa-tags" aria-hidden="true"></i>{" "}
 										<p>

@@ -34,6 +34,7 @@ const App = () => {
 			<Route exact path="/profile" component={MainProfile} />
 			<Route exact path="/stepper" component={Stepper} />
 
+			<Route exact path="/stepper" component={Stepper} />
 			<Layout>
 				<Route path="/payment" component={Payment} />
 				<Route exact path="/aboutus" component={AboutUs} />

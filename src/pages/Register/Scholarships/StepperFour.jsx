@@ -6,6 +6,7 @@ import { updateFormData } from "../../../toolkit/formReducer";
 import { useState } from "react";
 import StepperCard from "../../../components/StepperCard";
 import Column from "antd/es/table/Column";
+import "./stepper4.css";
 
 const StepperFour = ({ nextStep, prevStep, setFormData }) => {
   const dispatch = useDispatch();
@@ -51,25 +52,10 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
         style={{
           width: "100%",
           display: "flex",
-          flexDirection:  
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <header className="w-full flex justify-center py-4 bg-white">
-          <a href="https://www.kodoscholarships.com">
-            <img
-              class="icon-component icon-component--logo-horizontal "
-              src="https://www.kodoscholarships.com/kodo-logo.png"
-              width="232"
-              height="36"
-              fill="var(--secondary-600)"
-              role="img"
-              viewBox="0 0 232 37"
-            />
-          </a>
-        </header>
-
         <div className="container">
           <section id="voyager-blocks">
             <div className="_notAnimated_pmptr_10 text-center row  justify-content-center align-items-center">
@@ -95,15 +81,17 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
                   padding: "2rem",
                 }}
               >
+                
+
                 {list.map((item) => (
                   <div className="col-md-4" key={item.id}>
                     <StepperCard
-                      item={item}
-                      handleClick={handleClick}
-                      selectedCard={selectedCard}
+                      item={item.id}
+                      // handleClick={handleClick}
+                      // selectedCard={selectedCard}
                     />
                   </div>
-                ))}
+                ))} 
               </div>
             </div>
           </section>

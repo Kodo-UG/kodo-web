@@ -10,6 +10,7 @@ import StepSeven from "./StepSeven";
 import StepEight from "./StepEight";
 import StepNine from "./StepNine";
 import StepTen from "./StepTen";
+import HeaderLayout from "../../../components/Layout/steeperLayout";
 
 const Stepper = () => {
 	const [step, setStep] = useState(1);
@@ -26,7 +27,7 @@ const Stepper = () => {
 		degree: "",
 		phone: "",
 		appType: "",
-		scholarshipcategory: "",
+		scholarshipcategory: ""
 	});
 
 	const nextStep = () => setStep(step + 1);
@@ -126,7 +127,22 @@ const Stepper = () => {
 		}
 	};
 
-	return <div className="m-5">{renderStepContent()}</div>;
+	return (
+		<HeaderLayout>
+			<div
+				style={{
+					backgroundColor: "#e6e6e6",
+					height: "80vh",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center"
+				}}
+				className=""
+			>
+				{renderStepContent()}
+			</div>
+		</HeaderLayout>
+	);
 };
 
 export default Stepper;

@@ -11,14 +11,14 @@ const Login = () => {
 			id: 1,
 			title: "Scholarships",
 			text: "We’ve helped students win more than $10 million dollars in scholarships.",
-			link: "/signin",
+			link: "/signin"
 		},
 		{
 			id: 2,
 			title: "Jobs",
 			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
-			link: "https://www.kodoscholarships.com/steps/program",
-		},
+			link: "#"
+		}
 	];
 
 	const handleClick = (appType) => {
@@ -29,42 +29,68 @@ const Login = () => {
 		<div class="container">
 			<div class="row m-5">
 				<div class="col-lg-12 text-center">
-					<h4
-						style={{ marginBottom: "60px", fontWeight: "bold" }}
-						class="welcome-title"
-					>
+					<h4 style={{ marginBottom: "60px" }} class="welcome-title">
 						Welcome Back
 					</h4>
 				</div>
 
-				<div class="row ">
+				<div class="row">
 					{object.map((obj) => (
 						<div
 							onClick={() => handleClick(obj.title)}
 							key={obj.id}
-							class="col-lg-6"
-							style={{ cursor: "pointer" }}
+							class="col-lg-6 admissions"
+							style={{
+								cursor: "pointer",
+								height: "16rem",
+								maxHeight: "40rem"
+							}}
 						>
-							<div class="card custom-card">
+							<div
+								// style={{ backgroundColor: "red", width: "29rem" }}
+								class="card custom-card"
+							>
 								<div
+									style={{
+										justifyContent: "center",
+										// display: "flex",
+										// alignItems: "center",
+										margin: "auto",
+										// backgroundColor: "red",
+										width: "32rem"
+									}}
 									key={obj.id}
 									class="card-header d-flex align-items-center justify-content-center"
 								>
 									<img
 										src="https://www.kodoscholarships.com/logo.png"
-										style={{ width: "95px" }}
+										style={{
+											width: "7rem",
+											marginLeft: "7rem",
+											height: "2rem"
+										}}
 										alt="Logo"
 										class="logo"
 									/>
 									<span
-										class="card-title"
-										style={{ fontSize: "18px", marginBottom: "-4px" }}
+										class="card-title text"
+										style={{
+											fontSize: "16px",
+											marginBottom: "-4px",
+											marginRight: "10rem"
+										}}
 									>
 										{obj.title}
 									</span>
 								</div>
 								<div class="card-body">
-									<p class="card-text text-center"> {obj.text} </p>
+									<p
+										class="card-text text-center"
+										style={{ fontSize: "14px" }}
+									>
+										{" "}
+										{obj.text}{" "}
+									</p>
 									<Link
 										to={`${obj.link}`}
 										class="btn ss-btn w-100"
@@ -73,7 +99,7 @@ const Login = () => {
 											height: 45,
 											backgroundColor: "#ec1d64",
 											color: "#fff",
-											fontWeight: "bold",
+											fontWeight: "bold"
 										}}
 									>
 										Login
@@ -82,19 +108,6 @@ const Login = () => {
 							</div>
 						</div>
 					))}
-
-					{/* <div class="col-lg-6">
-                        <div class="card custom-card">
-                            <div class="card-header d-flex align-items-center justify-content-center">
-                                <img src="https://www.kodoscholarships.com/logo.png" style={{ width: '95px' }} alt="Logo" class="logo" />
-                                <span class="card-title" style={{ fontSize: '18px', marginBottom: '-4px' }}>Jobs</span>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text text-center">Are you looking for a remote Job, find Life Changing Jobs Now !.</p>
-                                <a href="https://www.kodoscholarships.com/steps/program" class="btn ss-btn w-100" id="button2">Sign Up</a>
-                            </div>
-                        </div>
-                    </div> */}
 				</div>
 			</div>
 		</div>
