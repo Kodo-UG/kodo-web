@@ -6,29 +6,56 @@ import { AiOutlineLogout } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
 import axiosInstance from "../../api/axiosInstance";
 import { useEffect } from "react";
+import axios from "axios";
+import moment from "moment";
 
 const MyHeader = () => {
 	const history = useHistory();
+	const [data, setData] = useState()
+	const [userID, setUserID] = useState(null);
+
+
 	const token = localStorage.getItem("token");
 
-	// const [userID, setUserID] = useState(null);
-	// const fetchUser = async () => {
-	// 	try {
-	// 		const response = await axiosInstance.get(
-	// 			"https://demo.kodoscholarships.com/api/v1/user/profile/64a151d67a60cf3cb920892a"
-	// 		);
+	const fetchNotifications = async () => {
 
-	// 		console.log(response.data.data.fname, "RESPONSE IS HERE ");
-	// 		// return user;
-	// 	} catch (error) {
-	// 		console.error("Error fetching user:", error);
-	// 		throw error;
-	// 	}
-	// };
+		const headers = {
+			Authorization: `Bearer ${token}`,
+		};
 
-	// useEffect(() => {
-	// 	fetchUser();
-	// }, []);
+		let res = await axios.get(
+			"https://demo.kodoscholarships.com/api/v1/user/notifications",
+			{
+				headers,
+			}
+		);
+
+		setData(res.data.data);
+	};
+
+	useEffect(() => {
+		fetchNotifications();
+	}, []);
+	console.log(data, 'notifications')
+
+	const HandleClick = async (id) => {
+		try {
+			console.log(token)
+			const headers = {
+				Authorization: `Bearer ${token}`,
+			};
+
+			await axios.patch(
+				`https://demo.kodoscholarships.com/api/v1/user/notifications/${id}`
+			);
+
+			fetchNotifications();
+
+
+		} catch (error) {
+			console.log(error)
+		}
+	}
 	return (
 		<div>
 			<nav className="main-header navbar navbar-expand navbar-white navbar-light">
@@ -72,40 +99,55 @@ const MyHeader = () => {
 					<li className="nav-item dropdown">
 						<a className="nav-link" data-toggle="dropdown" href="#">
 							<i className="far fa-comments" />
-							<span className="badge badge-danger navbar-badge">3</span>
+							<span className="badge badge-danger navbar-badge">{data?.length || null}</span>
 						</a>
 						<div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-							<a href="#" className="dropdown-item">
-								{/* Message Start */}
-								<div className="media">
-									<img
-										src="dist/img/user1-128x128.jpg"
-										alt="User Avatar"
-										className="img-size-50 mr-3 img-circle"
-									/>
-									<div className="media-body">
-										<h3 className="dropdown-item-title">
-											user
-											<span className="float-right text-sm text-danger">
-												<i className="fas fa-star" />
-											</span>
-										</h3>
-										<p className="text-sm">
-											Call me whenever you can...
-										</p>
-										<p className="text-sm text-muted">
-											<i className="far fa-clock mr-1" /> 4 Hours Ago
-										</p>
+							{data?.length > 0 ? (
+								data.map((notif) => (
+									<div
+										onClick={() => HandleClick(notif._id)}
+										style={{ cursor: "pointer" }}
+										className="dropdown-item"
+										key={notif._id}
+									>
+										{/* Message Start */}
+										<div className="media">
+											<img
+												src="https://ui-avatars.com/api/name=admin&background=random"
+												alt="User Avatar"
+												className="img-size-50 mr-3 img-circle"
+											/>
+											<div className="media-body">
+												<h3 className="dropdown-item-title">
+													Admin
+													<span className="float-right text-sm text-danger">
+														<i className="fas fa-star" />
+													</span>
+												</h3>
+
+												<p className="text-sm">{notif.message}</p>
+												<p className="text-sm text-muted">
+													<i className="far fa-clock mr-1" />
+													{moment(notif.createdAt).from(moment())}
+												</p>
+											</div>
+										</div>
+										{/* Message End */}
 									</div>
+								))
+							) : (
+								<div className="dropdown-item" style={{ padding: "10px", backgroundColor: "#f5f5f5", borderBottom: "1px solid #ddd" }}>
+									<p style={{ margin: "0", fontWeight: "bold", color: "#555" }}>No notifications at the moment</p>
 								</div>
-								{/* Message End */}
-							</a>
+
+							)}
+
 							<div className="dropdown-divider" />
 
 							<div className="dropdown-divider" />
-							<a href="#" className="dropdown-item dropdown-footer">
+							{/* <a href="#" className="dropdown-item dropdown-footer">
 								See All Messages
-							</a>
+							</a> */}
 						</div>
 					</li>
 					{/* Notifications Dropdown Menu */}
@@ -141,6 +183,11 @@ const MyHeader = () => {
 							</div>
 							<div className="dropdown-divider" />
 							<div
+								onClick={(e) => {
+									e.preventDefault();
+									localStorage.removeItem("token");
+									history.push("/login");
+								}}
 								style={{
 									display: "flex",
 									justifyContent: "space-between",
@@ -155,11 +202,7 @@ const MyHeader = () => {
 								</div>
 
 								<div
-									onClick={(e) => {
-										e.preventDefault();
-										localStorage.removeItem("token");
-										history.push("/login");
-									}}
+
 								>
 									logout
 								</div>
