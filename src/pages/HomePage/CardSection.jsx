@@ -81,7 +81,7 @@ function CardSection() {
 										professional? Launch your career with global
 										remote job opportunities
 									</p>
-									<a href="about.html">
+									<a href="/">
 										Read More <i class="fal fa-long-arrow-right"></i>
 									</a>
 								</div>

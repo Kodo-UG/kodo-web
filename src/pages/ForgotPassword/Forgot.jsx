@@ -13,10 +13,7 @@ const Forgot = () => {
 									<span className="card-title">Forgot Password</span>
 								</div>
 								<div className="card-body">
-									<form
-										method="POST"
-										action="https://kodoscholarships.com/forgot-password"
-									>
+									<form method="POST" action="/forgot-password">
 										<input
 											type="hidden"
 											name="_token"
@@ -47,9 +44,7 @@ const Forgot = () => {
 									</form>
 								</div>
 								<div className="card-footer text-center">
-									<a href="https://kodoscholarships.com/login">
-										Back to Login
-									</a>
+									<a href="/login">Back to Login</a>
 								</div>
 							</div>
 						</div>
