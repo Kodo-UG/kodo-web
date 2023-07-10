@@ -1,4 +1,3 @@
-
 import React from "react";
 import Body from "../../../components/Layout/Body";
 import { BiSignal1 } from "react-icons/bi";
@@ -52,10 +51,25 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
         style={{
           width: "100%",
           display: "flex",
+          flexDirection:  
           alignItems: "center",
           justifyContent: "center",
         }}
       >
+        <header className="w-full flex justify-center py-4 bg-white">
+          <a href="https://www.kodoscholarships.com">
+            <img
+              class="icon-component icon-component--logo-horizontal "
+              src="https://www.kodoscholarships.com/kodo-logo.png"
+              width="232"
+              height="36"
+              fill="var(--secondary-600)"
+              role="img"
+              viewBox="0 0 232 37"
+            />
+          </a>
+        </header>
+
         <div className="container">
           <section id="voyager-blocks">
             <div className="_notAnimated_pmptr_10 text-center row  justify-content-center align-items-center">
@@ -140,4 +154,3 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
 };
 
 export default StepperFour;
-

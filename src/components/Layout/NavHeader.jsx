@@ -46,6 +46,7 @@ const NavHeader = () => {
 	];
 
 	return (
+
 		<nav
 			className="navbar navbar-expand-lg navbar-light bg-light glass"
 			style={{
