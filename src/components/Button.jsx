@@ -15,7 +15,14 @@ const MyButton = ({ text, isSelected, onClick }) => {
 			<div
 				onClick={handleClick}
 				type="button"
-				className={`btn btn-lg ${isSelected ? "selected" : "notSelected"}`}
+				className={`btn btn-xs ${isSelected ? "selected" : "notSelected"}`}
+				style={{
+					fontWeight: "bold",
+					height: "1.3rem",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center"
+				}}
 			>
 				{text}
 			</div>
