@@ -12,7 +12,7 @@ const CustomLink = ({ route, children }) => {
 				}}
 				class=""
 			>
-				<Link to={`${route}`} style={{ color: "black" }}>
+				<Link to={`${route}`} style={{ color: "black", fontSize: "20px" }}>
 					{children}
 				</Link>
 			</li>

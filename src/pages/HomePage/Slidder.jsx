@@ -43,7 +43,7 @@ const Slidder = () => {
 			<section id="home" className="slider-area fix p-relative">
 				<BackgroundCarousel />
 				<section className="content-section">
-					<Content />
+					
 				</section>
 				<CardSection />
 			</section>
