@@ -74,7 +74,7 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
               </p>
 
               <div
-                className="row  justify-content-center align-items-center"
+                className="row  justify-content-center align-items-center "
                 style={{
                   width: "75%",
 
@@ -86,9 +86,9 @@ const StepperFour = ({ nextStep, prevStep, setFormData }) => {
                 {list.map((item) => (
                   <div className="col-md-4" key={item.id}>
                     <StepperCard
-                      item={item.id}
-                      handleClick={handleClick}
-                      selectedCard={selectedCard}
+                      item={item.text}
+                      // handleClick={handleClick}
+                      // selectedCard={selectedCard}
                     />
                   </div>
                 ))} 
