@@ -82,16 +82,8 @@ function StepperCard({ item, handleClick, selectedCard }) {
 
 	return (
 
-
-
-
-
-
 		<div 
-		 	className={`  ${
-		 		selectedCard === item.id ? "selected" : "_option_9bife_5"
-		 	}`}
-		 	onClick={() => handleClick(item.text, item.id)}
+		 	className="_selected_9bife_44  _option_9bife_5 "
 		>
                   <div className="_optionInner_9bife_23 ">
                     <input
@@ -113,7 +105,7 @@ function StepperCard({ item, handleClick, selectedCard }) {
                       </span>
                       <div>
                         <span className="_optionLabel_9bife_106 _normal_9bife_137">
-                          Associate
+                         {item}
                         </span>
                       </div>
                     </label>
