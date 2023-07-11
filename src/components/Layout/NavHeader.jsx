@@ -235,11 +235,11 @@ const NavHeader = () => {
 	return (
 
 		<nav
-			className="navbar fixed-top navbar-expand-lg navbar-light bg-light "
+			className="navbar fixed-top navbar-expand-lg navbar-light "
 			style={{
 				boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
 				backgroundColor: "white",
-				height: "5.4rem"
+				
 			}}
 		>
 			<Link to="/">
@@ -248,9 +248,9 @@ const NavHeader = () => {
 						src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
 						alt="logo"
 						style={{
-							width: "",
-							height: "35px",
-							marginLeft: "3rem",
+							width: "120px",
+							height: "auto",
+							marginLeft: "8rem",
 							paddingLeft: "2rem",
 							zIndex:9999999999
 						}}
@@ -272,7 +272,7 @@ const NavHeader = () => {
 
 			<div
 				style={{ zIndex: 99999 }}
-				className="collapse navbar-collapse glass "
+				className="collapse navbar-collapse  "
 				id="navbarTogglerDemo01"
 			>
 				<ul style={{ color: "#202F4A" }} className="navbar-nav ml-auto ul ">
