@@ -13,7 +13,8 @@ export default function PasswordReset() {
 		setState(e.target.value);
 	};
 
-	const handleLogin = async () => {
+	const handleSubmit = async (e) => {
+		e.preventDefault()
 		try {
 			const data = await axios.post(
 				`https://demo.kodoscholarships.com/api/v1/auth/password/reset/${token}`,
@@ -31,179 +32,75 @@ export default function PasswordReset() {
 		}
 	};
 	return (
-		<div className="container-fluid vh-100 " style={{ width: "100vw" }}>
-			<div className="row h-100">
-				<div className="col-md-6 bg-white d-flex align-items-center justify-content-center">
-					<div
-						style={{
-							display: "flex",
-							marginTop: "10px",
-							marginBottom: "20px",
-							flexDirection: "column",
-						}}
-					>
-						<div
-							style={{
-								display: "flex",
-								// alignItems: "flex-start",
-								marginTop: "10px",
-								marginBottom: "10px",
-								// justifyContent: "center",
-								flexDirection: "column",
-							}}
-						>
-							<div
-								style={{
-									display: "flex",
-									alignItems: "center",
-									marginTop: "10px",
-									marginBottom: "40px",
-									justifyContent: "space-between",
-									flexDirection: "row",
-								}}
-							>
-								<div>
-									<img src="logo-kodo.png" width={200} alt="logo" />
-								</div>
-								<div
-									style={{
-										display: "flex",
-										alignItems: "center",
-										marginTop: "10px",
-										marginBottom: "40px",
-										justifyContent: "space-between",
-										flexDirection: "row",
-									}}
-								>
-									<h1
-										style={{
-											color: "#ec1d64",
-											transition:
-												"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-											fontFamily: "Arial, sans-serif",
-											fontSize: "16px",
-										}}
-									>
-										Login |{" "}
-									</h1>
-									<Link
-										to="/register"
-										style={{
-											color: "gray",
-											transition:
-												"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-											fontFamily: "Arial, sans-serif",
-											fontSize: "16px",
-										}}
-									>
-										Sign up
-									</Link>
-								</div>
-							</div>
-							<h1
-								style={{
-									fontWeight: "bold",
-									fontSize: "24px",
-									transition:
-										"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-									fontFamily: "Arial, sans-serif",
-								}}
-							>
-								Reset New Password
-							</h1>
-						</div>
-
-						<div style={{ marginBottom: "10px" }}>
-							<div
-								className="form-group"
-								style={{ display: "flex", flexDirection: "column" }}
-							>
-								<label
-									htmlFor="password"
-									style={{ marginBottom: "10px" }}
-								>
-									New Password
-								</label>
-								<input
-									id="password"
-									name="password"
-									placeholder="Password"
-									required=""
-									type="password"
-									style={{
-										borderRadius: "10px",
-										width: "500px",
-										padding: "10px",
-										border: "1px solid #ccc",
-										outline: "none",
-										transition: "box-shadow 0.3s ease-in-out",
-										boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-										fontFamily: "Arial, sans-serif",
-										fontSize: "16px",
-										lineHeight: "1.5",
-										color: "#333",
-									}}
-									onChange={handleChange(setPassword)}
+		<section className=" fxt-template-layout1" >
+			<div className="container-fluid " style={{ display: "flex", }}>
+				<div className="col-md-6 col-12 fxt-bg-color b" style={{ background: "white" }}>
+					<div className="fxt-content">
+						<div className="fxt-header">
+							<Link href="/" className="fxt-logo">
+								<img
+									src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
+									alt="Logo"
 								/>
+							</Link>
+							<div className="fxt-page-switcher">
+								<Link to="/signin" className="switcher-text1 active">
+									Log In
+								</Link>
+								<Link
+									to="/login"
+									className="switcher-text1"
+								>
+									Sign Up
+								</Link>
 							</div>
 						</div>
-						<div
-							style={{
-								display: "flex",
-								alignItems: "flex-start",
-								marginTop: "20px",
-								marginBottom: "15px",
-								justifyContent: "space-evenly",
-								flexDirection: "row",
-							}}
-						>
-							<div>
-								<button
-									onClick={handleLogin}
-									class="select-option sonic-btn"
-									style={{
-										padding: "10px 20px",
-										border: "none",
-										outline: "none",
-										transition:
-											"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-										fontFamily: "Arial, sans-serif",
-										fontSize: "16px",
-										lineHeight: "1.5",
-										color: "#fff",
-										cursor: "pointer",
-										marginBottom: "4px",
-									}}
-								>
-									Confirm
-								</button>
-							</div>
-							<div>
-								<h1
-									style={{
-										padding: "10px 20px",
-										border: "none",
-										outline: "none",
-										transition:
-											"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-										fontFamily: "Arial, sans-serif",
-										fontSize: "16px",
-										lineHeight: "1.5",
-										color: "gray",
-										cursor: "pointer",
-									}}
-								>
-									Sign up
-								</h1>
-							</div>
+						<div className="fxt-form" >
+							<h2 style={{ textAlign: "start" }}>Reset New Password</h2>
+							<form onSubmit={handleSubmit}>
+
+								<div className="form-group">
+									<div className="fxt-transformY-50 fxt-transition-delay-1">
+										<input
+											id="password"
+											name="password"
+											placeholder="Password"
+											onChange={handleChange(setPassword)}
+											className="form-control"
+										/>
+										<i className="flaticon-envelope"></i>
+									</div>
+								</div>
+								<div className="form-group">
+									<div className="fxt-transformY-50 fxt-transition-delay-3">
+										<div className="fxt-content-between">
+											<button
+											type="submit"
+												className="fxt-btn-fill">
+												Comfirm
+											</button>
+											<Link
+												to="/signin"
+												className="switcher-text2"
+											>
+												Back to Login
+											</Link>
+										</div>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
-				</div>
 
-				<div className="col-md-6 d-flex align-items-center justify-content-center ">
-					<div className="image-container "></div>
+
 				</div>
+				<div className="col-md-6 col-12 fxt-none-767 fxt-bg-img " style={{
+					backgroundImage: 'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688935613/bg1-l_rvlan9.jpg")',
+					backgroundPosition: "center",
+					backgroundSize: "cover"
+				}}></div>
 			</div>
-		</div>
+		</section>
+
 	);
 }

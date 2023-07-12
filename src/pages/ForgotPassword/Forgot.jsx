@@ -1,7 +1,9 @@
 import React from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
 
 const Forgot = () => {
+
 	return (
 		<div>
 			<section className="contact-area pt-60 pb-120 p-relative fix">
@@ -13,12 +15,7 @@ const Forgot = () => {
 									<span className="card-title">Forgot Password</span>
 								</div>
 								<div className="card-body">
-									<form method="POST" action="/forgot-password">
-										<input
-											type="hidden"
-											name="_token"
-											defaultValue="Eieq0MOIpyceXIatEtFUgwqzdzjRDq0zPwDEPQu3"
-										/>{" "}
+									<form >
 										<div
 											style={{ paddingBottom: 30 }}
 											className="form-group"
@@ -44,7 +41,7 @@ const Forgot = () => {
 									</form>
 								</div>
 								<div className="card-footer text-center">
-									<a href="/login">Back to Login</a>
+									<Link href="/login">Back to Login</Link>
 								</div>
 							</div>
 						</div>
