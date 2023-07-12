@@ -73,7 +73,7 @@ const CardScholarship = ({
 				<div className="d-flex justify-content-between align-items-center">
 					<div className="d-flex flex-column align-items-center">
 						<p className="mb-1">Award</p>
-						<p style={{ color: "#125875" }}>$ {award}</p>
+						<p style={{ color: "#125875" }}> {award}</p>
 					</div>
 					<div className="d-flex flex-column align-items-center">
 						<p className="mb-1">Deadline</p>
