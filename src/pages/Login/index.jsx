@@ -18,7 +18,8 @@ export default function Login() {
     setState(e.target.value);
   };
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+	e.preventDefault()
     setLoading(true);
     try {
       const data = await axios.post(
@@ -42,47 +43,44 @@ export default function Login() {
       setLoading(false);
     }
   };
+  console.log(email,password,"creds")
   return (
     <section className=" fxt-template-layout1">
   <div className="container-fluid " style={{display: "flex",}}>
     <div className="col-md-6 col-12 fxt-bg-color ">
       <div className="fxt-content">
         <div className="fxt-header">
-          <a href="https://www.kodoscholarships.com" className="fxt-logo">
+          <Link href="/" className="fxt-logo">
             <img
-              src="https://www.kodoscholarships.com/kodo-logo.png"
+              src="logo-kodo.png"
               alt="Logo"
             />
-          </a>
+          </Link>
           <div className="fxt-page-switcher">
             <a href="#!" className="switcher-text1 active">
               Log In
             </a>
-            <a
-              href="https://kodoscholarships.com/landing?action=signup"
+            <Link
+              to="/login"
               className="switcher-text1"
             >
               Sign Up
-            </a>
+            </Link>
           </div>
         </div>
         <div className="fxt-form" >
           <h2 style={{textAlign: "start"}}>Log In</h2>
           <p>Log in to continue to Kodo</p>
-          <form method="POST" action="https://www.kodoscholarships.com/login">
-            <input
-              type="hidden"
-              name="_token"
-              value="YtIWGeRYMF9ksqarNbnRLldrb2uoUBvHGKiKGlzu"
-            />
+          <form onSubmit={handleLogin}>
             <div className="form-group">
               <div className="fxt-transformY-50 fxt-transition-delay-1">
                 <input
+				 id="email"
                   type="email"
                   className="form-control"
-                  name="email"
                   placeholder="Email Address"
-                  required="required"
+				  name="email"
+				  onChange={handleChange(setEmail)}
                 />
                 <i className="flaticon-envelope"></i>
               </div>
@@ -93,9 +91,11 @@ export default function Login() {
                   type="password"
                   className="form-control"
                   name="password"
-                  autoComplete="current-password"
                   placeholder="Password"
                   required="required"
+				  onChange={handleChange(setPassword)}
+				  id="password"
+
                 />
                 <i className="flaticon-padlock"></i>
               </div>
@@ -103,15 +103,16 @@ export default function Login() {
             <div className="form-group">
               <div className="fxt-transformY-50 fxt-transition-delay-3">
                 <div className="fxt-content-between">
-                  <button type="submit" className="fxt-btn-fill">
+                  <button 
+				  className="fxt-btn-fill">
                     Log in
                   </button>
-                  <a
-                    href="https://www.kodoscholarships.com/forgot-password"
+                  <Link
+                    to="/forgot-password"
                     className="switcher-text2"
                   >
                     Forgot Password
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
