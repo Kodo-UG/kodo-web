@@ -4,12 +4,12 @@ import HeaderStepper from "./HeaderStepper";
 import Footer from "./Footer";
 
 
-const HeaderLayout = ({ children }) => {
+const HeaderLayout = ({ children , nextStep }) => {
 	return (
 		<Fragment>
 			<HeaderStepper />
 			<main>{children}</main>
-			<Footer />
+			<Footer nextStep={nextStep} />
 		</Fragment>
 	);
 };

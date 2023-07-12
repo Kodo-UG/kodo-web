@@ -29,8 +29,11 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 		}
 	};
 
-	console.log(selectedOption);
-
+	const selectStyle = {
+		border: "none", // Remove border
+		boxShadow: "none", // Remove box shadow
+		width: "100%"
+	};
 	const handleChange = (value) => {
 		dispatch(updateFormData({ field: "subject", value: value }));
 	};
@@ -43,102 +46,43 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 						What subject do you want to study?
 					</h2>
 					<div className="dropdown-container">
-  <button className="dropdown">
-    <div className="dropdown-top">
-      <div className="select-title" onClick={nextStep}>Select a subject</div>
-      <div className="arrow">
-        <div className="down"></div>
-      </div>
-    </div>
-    <div className="dropdown-break-line"></div>
-  </button>
-  <div
-    id="dropdown-list"
-    className="dropdown-list"
-    style={{
-      visibility: "hidden",
-      transform: "translateY(915px) translateY(-10.9727px)",
-    }}
-  >
-    <button type="button" className="option-button">
-      Art &amp; Art History
-    </button>
-    <button type="button" className="option-button">
-      Graphic Design
-    </button>
-    <button type="button" className="option-button">
-      Multimedia Design
-    </button>
-    <button type="button" className="option-button">
-      Photography
-    </button>
-  </div>
-</div>
+						<button className="dropdown">
+							<div className="dropdown-top">
+								<button onClick={() => nextStep()}>next</button>
+								<Select
+									style={selectStyle}
+									showSearch
+									className="selectr"
+									placeholder="Search to Select"
+									optionFilterProp="children"
+									onChange={handleChange}
+								>
+									{data?.map((option, index) => (
+										<Option
+											// onClick={() => nextStep()}
+											key={index}
+											value={option}
+										>
+											{option}
+										</Option>
+									))}
+								</Select>
+							</div>
+							<div className="dropdown-break-line"></div>
+						</button>
+						<div
+							id="dropdown-list"
+							className="dropdown-list"
+							style={{
+								visibility: "hidden",
+								transform: "translateY(915px) translateY(-10.9727px)"
+							}}
+						></div>
+					</div>
 
-					{/* <div className="">
-						<Select
-							showSearch
-							className="selectr"
-							placeholder="Search to Select"
-							optionFilterProp="children"
-							onChange={handleChange}
-						>
-							{data?.map((option, index) => (
-								<Option key={index} value={option}>
-									{option}
-								</Option>
-							))}
-						</Select>
-					</div> */}
+					<div className=""></div>
 				</div>
 			</div>
-			{/* <div
-				className="container"
-				style={{
-					display: "flex",
-					justifyContent: "space-between",
-					width: "50%"
-				}}
-			>
-				<button
-					className="select-option sonic-btn"
-					style={{
-						padding: "10px 20px",
-						border: "none",
-						outline: "none",
-						transition:
-							"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-						fontFamily: "Arial, sans-serif",
-						fontSize: "16px",
-						lineHeight: "1.5",
-						color: "#fff",
-						cursor: "pointer",
-						marginBottom: "4px"
-					}}
-					onClick={prevStep}
-				>
-					Previous
-				</button>
-				<button
-					className="select-option sonic-btn"
-					style={{
-						padding: "10px 20px",
-						border: "none",
-						outline: "none",
-						transition:
-							"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-						fontFamily: "Arial, sans-serif",
-						fontSize: "16px",
-						lineHeight: "1.5",
-						color: "#fff",
-						cursor: "pointer",
-						marginBottom: "4px"
-					}}
-					onClick={nextStep}
-				>
-					Next
-				</button>
-			</div> */}
 		</div>
 	);
 };

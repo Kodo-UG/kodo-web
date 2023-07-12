@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import api from "../../../api/apiClient";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
-import axios from "axios";
-import MyButton from "../../../components/Button";
 import "../../../components/Button.css";
 import "../../../components/Layout/steeperLayout/footer.css";
 
-import { useQuery, useMutation } from "react-query";
+import { useQuery } from "react-query";
+import { useCallback } from "react";
 
 const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 	const formData = useSelector((state) => state.formData);
@@ -35,32 +33,42 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
 	);
 
 	const newData = data?.data;
-	console.log("=============");
-	console.log(data);
-	console.log("==============");
+	// console.log("=============");
+	// console.log(data);
+	// console.log("==============");
 
 	const [selectedButtonId, setSelectedButtonId] = useState(null);
-	const handleClick = (id) => {
-		// setId(id);
-		setSelectedButtonId(id);
-		dispatch(updateFormData({ field: "scholarshipcategory", value: id }));
-	};
+	const handleClick = useCallback(
+		(id) => {
+			// setId(id);
+			setSelectedButtonId(id);
+			dispatch(updateFormData({ field: "scholarshipcategory", value: id }));
+			nextStep();
+		},
+		[dispatch, nextStep]
+	);
 	return (
-		<div className="selections-container" style={{ transform: 'none', transition: 'transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms' }}>
-  <h2>What school category interests you?</h2>
-  <div className="option-list">
-    <button type="button" className="select-option sonic-btn" onClick={nextStep}>Art &amp; Design</button>
-    <button type="button" className="select-option sonic-btn">Business &amp; Management</button>
-    <button type="button" className="select-option sonic-btn">Computers &amp; Technology</button>
-    <button type="button" className="select-option sonic-btn">Criminal Justice &amp; Legal</button>
-    <button type="button" className="select-option sonic-btn">Science &amp; Engineering</button>
-    <button type="button" className="select-option sonic-btn">Trades &amp; Careers</button>
-  </div>
-</div>
-
-
-
-
+		<div
+			className="selections-container"
+			style={{
+				transform: "none",
+				transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms"
+			}}
+		>
+			<h2>What school category interests you?</h2>
+			<div className="option-list">
+				{newData?.map((dta) => (
+					<button
+						key={dta._id}
+						type="button"
+						className="select-option sonic-btn"
+						onClick={() => handleClick(dta._id)}
+					>
+						{dta.name}
+					</button>
+				))}
+			</div>
+		</div>
 
 		// <div class="app-container">
 		// 	<div class="app-wrapper">
