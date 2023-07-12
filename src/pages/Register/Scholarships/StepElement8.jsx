@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./stepperElement.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
+import { useHistory } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 import {
@@ -12,7 +13,7 @@ import axiosInstance from "../../../api/axiosInstance";
 
 function StepElement8() {
 	const formData = useSelector((state) => state.formData);
-
+	const history = useHistory();
 	const [modalOpen, setModalOpen] = useState(true);
 	const [loading, setLoading] = useState(false);
 
@@ -76,6 +77,7 @@ function StepElement8() {
 				displaySuccessMessage(
 					"Registration successful verification email sent to your email"
 				);
+				history.push("/verify");
 				// nextStep();
 			}
 		} catch (error) {
@@ -151,7 +153,7 @@ function StepElement8() {
 									style={{ width: "50%" }}
 								></div>
 							</div>
-							<Link to="javascript:history.back()">
+							<Link to="/test2">
 								<button
 									data-testid="button-previous"
 									type="button"
@@ -274,7 +276,7 @@ function StepElement8() {
 											className="_buttonContinue_pmptr_46 _button_pmptr_30"
 											data-testid="continue"
 										>
-											<span>Register</span>
+											<span>{loading ? "loading.." :"Register"}</span>
 											<svg
 												width="26"
 												height="16"
