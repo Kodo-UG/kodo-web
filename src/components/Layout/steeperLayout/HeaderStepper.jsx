@@ -1,10 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./footer.css"
 
 const HeaderStepper = () => {
 	return (
 		<div>
-			<div className="container">
+			  <a
+            className="navigation-container"
+            href="#"
+          >
+            <img
+              src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
+              alt="Logomark"
+            />
+          </a>
+			{/* <div className="container">
 				<nav
 					// style={{ backgroundColor: "red" }}
 					className="navbar  navbar-light bg-light"
@@ -17,7 +27,7 @@ const HeaderStepper = () => {
 						/>
 					</Link>
 				</nav>
-			</div>
+			</div> */}
 		</div>
 	);
 };

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
-import "./index.css";
+import "./stp3.css";
 import { Select } from "antd";
 const { Option } = Select;
 
@@ -36,13 +36,46 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 	};
 
 	return (
-		<div className="app-container">
+		<div className="">
 			<div className="app-wrapper">
 				<div style={{ padding: "2rem" }} className="">
 					<h2 style={{ fontSize: "2rem" }}>
 						What subject do you want to study?
 					</h2>
-					<div className="">
+					<div className="dropdown-container">
+  <button className="dropdown">
+    <div className="dropdown-top">
+      <div className="select-title" onClick={nextStep}>Select a subject</div>
+      <div className="arrow">
+        <div className="down"></div>
+      </div>
+    </div>
+    <div className="dropdown-break-line"></div>
+  </button>
+  <div
+    id="dropdown-list"
+    className="dropdown-list"
+    style={{
+      visibility: "hidden",
+      transform: "translateY(915px) translateY(-10.9727px)",
+    }}
+  >
+    <button type="button" className="option-button">
+      Art &amp; Art History
+    </button>
+    <button type="button" className="option-button">
+      Graphic Design
+    </button>
+    <button type="button" className="option-button">
+      Multimedia Design
+    </button>
+    <button type="button" className="option-button">
+      Photography
+    </button>
+  </div>
+</div>
+
+					{/* <div className="">
 						<Select
 							showSearch
 							className="selectr"
@@ -56,10 +89,10 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 								</Option>
 							))}
 						</Select>
-					</div>
+					</div> */}
 				</div>
 			</div>
-			<div
+			{/* <div
 				className="container"
 				style={{
 					display: "flex",
@@ -105,7 +138,7 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 				>
 					Next
 				</button>
-			</div>
+			</div> */}
 		</div>
 	);
 };
