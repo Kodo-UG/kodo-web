@@ -1,32 +1,71 @@
-/* eslint-disable no-script-url */
-import React from "react";
+import React, { useState } from "react";
 import "./stepperElement.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
 import { useHistory } from "react-router-dom";
-
 import { Link } from "react-router-dom";
+import {
+	displayErrorMessage,
+	displaySuccessMessage
+} from "../../../utils/Toast";
+import axiosInstance from "../../../api/axiosInstance";
+import { Input } from "antd";
+import axios from "axios";
 
-function StepperElement7() {
-	const dispatch = useDispatch();
-	const formData = useSelector((state) => state.formData);
+const { TextArea } = Input;
+
+function StepComfirmation() {
+	const userID = localStorage.getItem("userID");
+	const [loading, setLoading] = useState(false);
+	const [code, setCode] = useState(null);
+
 	const history = useHistory();
 
-	const handleCountryChange = (e) => {
+	const handleCodeChange = (e) => {
 		const { name, value } = e.target;
 		console.log(`Field: ${name}, Value: ${value}`);
+		console.log(value);
+		setCode(value);
 		// Dispatch an action to update the form data in the Redux store
-		dispatch(updateFormData({ field: "country", value: value }));
-	};
-	const handleCityChange = (e) => {
-		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
-		// Dispatch an action to update the form data in the Redux store
-		dispatch(updateFormData({ field: "city", value: value }));
 	};
 
-	const handleSubmit = (e) => {
+	const verifyEmail = async (e) => {
 		e.preventDefault();
+		setLoading(true);
+		// console.log("clicked");
+		// try {
+		// 	let response = await axios.post(
+		// 		"https://demo.kodoscholarships.com/api/v1/auth/account/verification",
+		// 		{
+		// 			id: userID,
+		// 			code: code
+		// 		}
+		// 	);
+		// 	if (response.status == "201") {
+		// 		displaySuccessMessage("Account verified successfully");
+		// 		history.push("/signin");
+		// 	} else {
+		// 		displayErrorMessage("Invalid code ");
+		// 	}
+		// } catch (error) {}
+		try {
+			let response = await axiosInstance.post("/auth/account/verification", {
+				id: userID,
+				code: code
+			});
+
+			if (response.status == "201") {
+				displaySuccessMessage(response.data.message);
+				history.push("/signin");
+			} else {
+				displayErrorMessage("Invalid code ");
+			}
+			// console.log(response);
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	return (
@@ -73,7 +112,10 @@ function StepperElement7() {
 			>
 				<section id="voyager-blocks">
 					<section>
-						<section className="">
+						<section
+							// style={{ padding: "2rem", marginTop: "12rem" }}
+							className=""
+						>
 							<div
 								data-testid="progress-bar"
 								className="_progressBar_63yfq_1"
@@ -83,7 +125,7 @@ function StepperElement7() {
 									style={{ width: "50%" }}
 								></div>
 							</div>
-							<Link to="javascript:history.back()">
+							<Link to="/final">
 								<button
 									data-testid="button-previous"
 									type="button"
@@ -104,62 +146,37 @@ function StepperElement7() {
 									<span className="_buttonText_pmptr_41">Back</span>
 								</button>
 							</Link>
-							<div className="_notAnimated_pmptr_10">
+							<div
+								style={{ padding: "10rem" }}
+								className="_notAnimated_pmptr_10"
+							>
 								<span className="_headingContainer_1fpvz_1">
 									<h2 className="_soloHeading_1fpvz_8">
-										Where do you currently live?
+										Verify Your Email
 									</h2>
 								</span>
-								<form onSubmit={handleSubmit}>
+								<form onSubmit={verifyEmail}>
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
-											<input
+											<Input
 												className="_textField_fwd9c_1"
-												onChange={handleCountryChange}
-												name="country"
-												type="text"
-												id="country"
-												placeholder="country"
+												showCount
+												maxLength={5}
+												onChange={handleCodeChange}
+												type="number"
 											/>
 										</div>
 									</div>
-									<div>
-										<div className="_fieldGroup_1g3ja_1">
-											<input
-												className="_textField_fwd9c_1"
-												onChange={handleCityChange}
-												name="city"
-												type="text"
-												id="city"
-												label="city"
-												placeholder="city"
-											/>
-										</div>
-									</div>
+
 									<div className="_pageActions_pmptr_26">
-										<Link to="/final">
-											<button
-												type="submit"
-												className="_buttonContinue_pmptr_46 _button_pmptr_30"
-												data-testid="continue"
-											>
-												<span>Continue</span>
-												<svg
-													width="26"
-													height="16"
-													viewBox="0 0 26 16"
-													fill="none"
-													xmlns="http://www.w3.org/2000/svg"
-												>
-													<path
-														fillRule="evenodd"
-														clipRule="evenodd"
-														d="M16.6774 0.468629C17.3023 -0.15621 18.3153 -0.15621 18.9402 0.468629L25.3402 6.86863C25.965 7.49347 25.965 8.50653 25.3402 9.13137L18.9402 15.5314C18.3153 16.1562 17.3023 16.1562 16.6774 15.5314C16.0526 14.9065 16.0526 13.8935 16.6774 13.2686L20.346 9.6H1.80879C0.925131 9.6 0.208786 8.88366 0.208786 8C0.208786 7.11634 0.925131 6.4 1.80879 6.4H20.346L16.6774 2.73137C16.0526 2.10653 16.0526 1.09347 16.6774 0.468629Z"
-														fill="white"
-													></path>
-												</svg>
-											</button>
-										</Link>
+										<button
+											onClick={verifyEmail}
+											type="submit"
+											className="_buttonContinue_pmptr_46 _button_pmptr_30"
+											data-testid="continue"
+										>
+											{loading ? "loading..." : "Comfirm"}
+										</button>
 									</div>
 								</form>
 								<div className="_pageActions_pmptr_26"></div>
@@ -231,4 +248,4 @@ function StepperElement7() {
 	);
 }
 
-export default StepperElement7;
+export default StepComfirmation;
