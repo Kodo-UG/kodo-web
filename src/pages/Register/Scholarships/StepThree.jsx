@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
 import "./stp3.css";
+import { Link } from "react-router-dom";
 import { Select } from "antd";
 const { Option } = Select;
 
@@ -48,7 +49,7 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 					<div className="dropdown-container">
 						<button className="dropdown">
 							<div className="dropdown-top">
-								<button onClick={() => nextStep()}>next</button>
+								<Link to="/test">next</Link>
 								<Select
 									style={selectStyle}
 									showSearch
