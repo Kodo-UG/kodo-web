@@ -23,6 +23,7 @@ import Accordion from "./accordion/Accordion";
 import RootApplication from "./pages/Dashboard/applications";
 import StepperElementFour from "./pages/Register/Scholarships/StepperElementFour";
 import StepperElementSix from "./pages/Register/Scholarships/StepperElementSix";
+import StepperElement7 from "./pages/Register/Scholarships/StepperElement7";
 const App = () => {
   return (
     <Switch>
@@ -34,6 +35,7 @@ const App = () => {
       <PrivateRoute exact path="/applications" component={RootApplication} />
 
       <Route exact path="/profile" component={MainProfile} />
+			<Route exact path="/test3" component={StepperElement7} />
 			<Route  exact path="/test2" component={StepperElementSix} />
       <Route exact path="/stepper" component={Stepper} />
       <Route exact path="/test" component={StepperElementFour} />
