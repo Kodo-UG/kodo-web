@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
-import StepperFour from "./StepperFour";
+// import StepperFour from "./StepperFour";
 import StepSix from "./StepSix";
 import Final from "./Final";
 import StepSeven from "./StepSeven";
@@ -68,7 +68,7 @@ const Stepper = () => {
 				);
 			case 4:
 				return (
-					<StepperFour
+					<StepSix
 						nextStep={nextStep}
 						prevStep={prevStep}
 						formData={formData}
