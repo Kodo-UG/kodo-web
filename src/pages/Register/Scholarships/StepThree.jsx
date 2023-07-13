@@ -13,6 +13,7 @@ import { useHistory } from "react-router-dom";
 const { Option } = Select;
 
 const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
+
 	const { scholarshipcategory } = useSelector((state) => state.formData);
 	const [data, setData] = useState();
 	const [selectedOption, setSelectedOption] = useState("select a subject");

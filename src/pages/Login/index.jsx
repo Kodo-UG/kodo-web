@@ -54,7 +54,7 @@ export default function Login() {
 							</Link>
 							<div className="fxt-page-switcher">
 								<p className="switcher-text1 active">Log In</p>
-								<Link to="/login" className="switcher-text1">
+								<Link to="/admissions" className="switcher-text1">
 									Sign Up
 								</Link>
 							</div>
