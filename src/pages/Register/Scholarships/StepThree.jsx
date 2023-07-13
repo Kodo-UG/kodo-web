@@ -31,8 +31,8 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 	};
 
 	const selectStyle = {
-		border: "none", // Remove border
-		boxShadow: "none", // Remove box shadow
+		border: "none", 
+		boxShadow: "none", 
 		width: "100%"
 	};
 	const handleChange = (value) => {
