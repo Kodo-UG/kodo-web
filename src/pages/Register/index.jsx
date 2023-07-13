@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import "./findScholarship.css";
+
 import StepperCard from "./StepperCard";
 
 const FindScholarship = () => {
