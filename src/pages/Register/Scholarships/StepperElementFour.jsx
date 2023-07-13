@@ -164,12 +164,12 @@ function StepperElementFour() {
 										</span>
 									</div>
 									<div className="_pageActions_pmptr_26">
-										<Link to="/test2">
+										<Link to="/route2">
 											<button
 												type="button"
 												className="_buttonContinue_pmptr_46 _button_pmptr_30"
 												data-testid="continue"
-												// onClick={() => history.push("/test2")}
+												// onClick={() => history.push("/route2")}
 											>
 												<span>Continue</span>
 												<svg

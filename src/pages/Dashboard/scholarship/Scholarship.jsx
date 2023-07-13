@@ -1,7 +1,5 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Row } from "antd";
-import ScholarshipCard from "../../../components/card/Scholarshipcard";
 import CardScholarship from "../../../components/card/CardScholarship";
 import CardScholarshipSubscribed from "../../../components/card/CardScholarshipSubscribed";
 import Spinner from "../../../components/spinner";
@@ -27,11 +25,8 @@ const Scholarship = () => {
 			);
 
 			setData(res.data.data);
-			// console.log(res, "AAAAAAAAAAAAA");
 			setSubscription(res.data.subscription);
-			// console.log(res.data.subscription);
 		} catch (error) {
-			// Handle   error here
 		} finally {
 			setLoading(false);
 		}
@@ -40,7 +35,6 @@ const Scholarship = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
-	// console.log(data);
 
 	return (
 		<div>

@@ -26,24 +26,29 @@ export default function Payment() {
 
 	return (
 		<div class="pricing6 py-5 bg-light">
-        				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-md-8 text-center">
-							<h3 class="mb-3">Pricing to make your Work Effective</h3>
-							<h6 class="subtitle font-weight-normal">
-								We offer 100% satisafaction and Money back Guarantee
-							</h6>
-						</div>
+			<div
+				style={{
+					marginTop: "4rem",
+					width: "100vw ",
+					height: "50vh",
+					padding: "7rem"
+				}}
+				class="container"
+			>
+				<div class="row justify-content-center">
+					<div class="col-md-8 text-center">
+						<h3 class="mb-3">Pricing to make your Work Effective</h3>
+						<h6 class="subtitle font-weight-normal">
+							We offer 100% satisafaction and Money back Guarantee
+						</h6>
 					</div>
-					<div className="d-flex justify-content-center">
-
+				</div>
+				<div className="d-flex justify-content-center">
 					{plans?.map((dta) => (
-				<PaymentCard key={dta._id} data={dta} />
-			))}
+						<PaymentCard key={dta._id} data={dta} />
+					))}
+				</div>
+			</div>
 		</div>
-		</div>
-
-		</div>
-
 	);
 }

@@ -180,7 +180,7 @@ function StepperElementSix() {
 									</div>
 								</div>
 								<div className="_pageActions_pmptr_26">
-									<Link to="/test3">
+									<Link to="/route1">
 										<button
 											type="button"
 											className="_buttonContinue_pmptr_46 _button_pmptr_30"
@@ -240,7 +240,7 @@ function StepperElementSix() {
 							fill="#fff"
 							role="img"
 							viewBox="0 0 350 105"
-              alt=""
+							alt=""
 						/>
 					</Link>
 					<div className="py-2 divide-x px-4 flex flex-wrap justify-center">

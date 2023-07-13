@@ -31,7 +31,7 @@ const CardScholarship = ({
 		>
 			<div
 				className="card-header"
-				style={{ background: "#125875", color: "white" }}
+				style={{ background: "#125875", color: "white", height: "7rem" }}
 			>
 				<div className="d-flex align-items-center justify-content-between">
 					<div className="w-25">
@@ -42,9 +42,10 @@ const CardScholarship = ({
 						/>
 					</div>
 					<div
-						className="w-75 d-flex flex-column align-items-start justify-content-center pl-3"
+						className="w-75 d-flex flex-column align-items-start justify-content-between pl-3"
 						style={{
-							marginTop: "1rem"
+							marginTop: "2rem",
+							justifyContent: "center"
 						}}
 					>
 						<p style={{ fontWeight: "bold" }}>
@@ -55,11 +56,15 @@ const CardScholarship = ({
 									fontWeight: "normal",
 									color: "#ec1d64",
 									opacity: 0.9,
+									display: "flex",
 									justifyContent: "center",
-									alignItems: "center"
+									alignItems: "center",
+									textJustify: "none"
 								}}
 							>
-								<span>Access all matched scholarships </span>
+								<span style={{ marginRight: "5px", fontSize: "13px" }}>
+									Access all matched scholarships
+								</span>
 								<IoIosArrowForward
 									style={{ color: "#ec1d64", opacity: 0.9 }}
 								/>

@@ -153,7 +153,7 @@ function StepElement8() {
 									style={{ width: "50%" }}
 								></div>
 							</div>
-							<Link to="/test2">
+							<Link to="/route2">
 								<button
 									data-testid="button-previous"
 									type="button"
