@@ -12,56 +12,6 @@
         max-width: 24rem
     }
 }
-.clicked {
-  position: relative;
-  display: flex;
-  height: 100%;
-  align-items: center;
-  border-radius: 0.75rem;
-  border-width: 2px;
-  /* border-color: transparent; */
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-
-
-  border-color: var(--primary-300, #a99fdf);
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
-    0 2px 4px -2px var(--tw-shadow-color);
-
-}
-
-@media (min-width: 768px) {
-  .active {
-    height: 10rem;
-    width: 10rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-}
-
-._label_1g3ja_5 {
-  margin-bottom: 0.25rem;
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-}
-
-._checkboxContainer_nvs1o_1 {
-  display: flex;
-}
-
-._label_nvs1o_5 {
-  margin-left: 0.5rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-._label_nvs1o_5 a {
-  color: var(--primary-700, #533fbe);
-}
-
 
 ._label_1g3ja_5 {
     margin-bottom: .25rem;

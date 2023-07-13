@@ -133,7 +133,7 @@ function StepperElementFour() {
 													// style={divStyle}
                           className="_option_9bife_5"
                         >
-                          <div className={`${data.id === active ?  'clicked'  : '_optionInner_9bife_23'}`}>
+                          <div className={`${data.id === active ? '_optionInner_9bife_23' : 'clicked'}`}>
 
 
                             <label
