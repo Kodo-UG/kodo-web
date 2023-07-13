@@ -66,7 +66,12 @@ const StepOne = ({ nextStep, setFormData }) => {
 					transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms"
 				}}
 			>
-				<h2>What degree level are you looking for?</h2>
+				<h2 style={{
+					fontFamily: "Lexend Deca, Helvetica, Arial, sans-serif",
+					fontWeight: "700",
+					color: "#00234a",
+
+				}}>What degree level are you looking for?</h2>
 				<div className="option-list">
 					{myList.map((info) => (
 						<button
