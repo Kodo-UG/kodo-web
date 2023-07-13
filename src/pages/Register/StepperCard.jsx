@@ -12,7 +12,7 @@ function StepperCard({list}) {
         </h4>
       </div>
     </div>
-    <div className="row">
+
 			{
 				list.map((data)=>
 				<div className="col-lg-6">
@@ -69,6 +69,7 @@ function StepperCard({list}) {
           </div>
         </div>
       </div>
+
 				)
       
 }
@@ -131,5 +132,6 @@ function StepperCard({list}) {
 </section>
   )
 }
+
 
 export default StepperCard
