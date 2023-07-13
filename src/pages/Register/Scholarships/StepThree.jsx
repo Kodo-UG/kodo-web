@@ -138,7 +138,9 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
             }}
           >
             {data?.map((option, index) => (
-              <button
+              <Option
+							value={option}
+							key={index}
                 onClick={() => {
                   handleOptionChange(option);
                 }}
@@ -166,7 +168,7 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
                 >
                   <Link to="/test">{option}</Link>
                 </h4>
-              </button>
+              </Option>
             ))}
           </div>
         ) : null}
