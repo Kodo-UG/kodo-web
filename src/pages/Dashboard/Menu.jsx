@@ -44,7 +44,7 @@ const Menu = () => {
 					style={{ backgroundColor: "#125875" }}
 				>
 					{/* Brand Logo */}
-					<Link to="/db" className="brand-link">
+					<Link to="/scholars" className="brand-link">
 						<img
 							src="/logo-kodo.png"
 							alt="kodo Logo"
@@ -75,7 +75,7 @@ const Menu = () => {
 							>
 								{/* Add icons to the links using the .nav-icon class
                       with font-awesome or any other icon font library */}
-								<li className="nav-item">
+								{/* <li className="nav-item">
 									<Link
 										onClick={() => handleActive("dashboard")}
 										to="/db"
@@ -86,9 +86,9 @@ const Menu = () => {
 											class="fa fa-graduation-cap"
 											aria-hidden="true"
 										></i>{" "}
-										<p>Dashboard</p>
+										<p>Matched Scholarship</p>
 									</Link>
-								</li>
+								</li> */}
 								<li className="nav-item">
 									<Link
 										onClick={() => handleActive("scholarships")}

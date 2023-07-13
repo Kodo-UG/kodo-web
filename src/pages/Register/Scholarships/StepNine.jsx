@@ -11,6 +11,7 @@ import {
 import Input from "../../../components/input/index";
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import axiosInstance from "../../../api/axiosInstance";
 
 const StepNine = ({ nextStep, prevStep }) => {
 	const [modalOpen, setModalOpen] = useState(true);
@@ -55,8 +56,8 @@ const StepNine = ({ nextStep, prevStep }) => {
 		}
 
 		try {
-			const res = await axios.post(
-				"https://demo.kodoscholarships.com/api/v1/auth/user/signup",
+			const res = await axiosInstance.post(
+				"/auth/user/signup",
 				formData
 			);
 			console.log(res.data.id);

@@ -8,7 +8,7 @@ const CardScholarship = ({
 	text,
 	award,
 	deadline,
-	subscription,
+	subscription
 }) => {
 	console.log(subscription);
 	const date = new Date(deadline);
@@ -21,11 +21,11 @@ const CardScholarship = ({
 			className="shadow-xl"
 			style={{
 				width: "24rem",
-				height: "12rem",
+				height: "13rem",
 				borderRadius: "0.5rem",
 				cursor: "pointer",
 				marginRight: "3rem",
-				marginBottom: "3rem",
+				marginBottom: "3rem"
 			}}
 			onClick={() => history.push("/payment")}
 		>
@@ -44,7 +44,7 @@ const CardScholarship = ({
 					<div
 						className="w-75 d-flex flex-column align-items-start justify-content-center pl-3"
 						style={{
-							marginTop: "1rem",
+							marginTop: "1rem"
 						}}
 					>
 						<p style={{ fontWeight: "bold" }}>
@@ -55,9 +55,11 @@ const CardScholarship = ({
 									fontWeight: "normal",
 									color: "#ec1d64",
 									opacity: 0.9,
+									justifyContent: "center",
+									alignItems: "center"
 								}}
 							>
-								Access all matched scholarships{" "}
+								<span>Access all matched scholarships </span>
 								<IoIosArrowForward
 									style={{ color: "#ec1d64", opacity: 0.9 }}
 								/>
@@ -71,7 +73,7 @@ const CardScholarship = ({
 				<div className="d-flex justify-content-between align-items-center">
 					<div className="d-flex flex-column align-items-center">
 						<p className="mb-1">Award</p>
-						<p style={{ color: "#125875" }}>$ {award}</p>
+						<p style={{ color: "#125875" }}> {award}</p>
 					</div>
 					<div className="d-flex flex-column align-items-center">
 						<p className="mb-1">Deadline</p>
@@ -85,7 +87,7 @@ const CardScholarship = ({
 							style={{
 								objectFit: "cover",
 								maxWidth: "70%",
-								maxHeight: "70%",
+								maxHeight: "70%"
 							}}
 						/>
 					</div>
