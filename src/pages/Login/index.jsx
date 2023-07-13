@@ -44,7 +44,7 @@ export default function Login() {
 	};
 	console.log(email, password, "creds");
 	return (
-		<section className=" fxt-template-layout1">
+		<section className=" fxt-template-layout1 ">
 			<div className="container-fluid " style={{ display: "flex" }}>
 				<div className="col-md-6 col-12 fxt-bg-color ">
 					<div className="fxt-content">
