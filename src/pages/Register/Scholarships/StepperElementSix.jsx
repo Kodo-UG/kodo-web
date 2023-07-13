@@ -54,7 +54,7 @@ function StepperElementSix() {
 					justifyContent: "center"
 				}}
 			>
-				<a to="https://www.kodoscholarships.com">
+				<Link to="https://www.kodoscholarships.com">
 					<style type="text/css">
 						{`
         svg.icon-component.icon-component--logo-horizontal:hover {
@@ -72,7 +72,7 @@ function StepperElementSix() {
 						viewBox="0 0 232 37"
 						alt=""
 					/>
-				</a>
+				</Link>
 			</header>
 			<div
 				id="voyager"
@@ -91,7 +91,7 @@ function StepperElementSix() {
 									style={{ width: "16.6667%" }}
 								></div>
 							</div>
-							<Link to="javascript:history.back()">
+							<Link to="/test">
 								<button
 									data-testid="button-previous"
 									type="button"
@@ -230,7 +230,7 @@ function StepperElementSix() {
 			</div>
 			<footer className="flex justify-center items-center bg-primary-900 mt-4 py-5">
 				<div className="flex flex-col items-center justify-center md:flex-row flex-wrap">
-					<a to="https://www.kodoscholarships.com">
+					<Link to="https://www.kodoscholarships.com">
 						<img
 							className="icon-component icon-component--logo-stacked-horizontal"
 							style={{ color: "#fff" }}
@@ -242,7 +242,7 @@ function StepperElementSix() {
 							viewBox="0 0 350 105"
               alt=""
 						/>
-					</a>
+					</Link>
 					<div className="py-2 divide-x px-4 flex flex-wrap justify-center">
 						<Link
 							className="px-2 text-xs text-white font-bold hover:text-white"

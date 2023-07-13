@@ -276,7 +276,9 @@ function StepElement8() {
 											className="_buttonContinue_pmptr_46 _button_pmptr_30"
 											data-testid="continue"
 										>
-											<span>{loading ? "loading.." :"Register"}</span>
+											<span>
+												{loading ? "loading.." : "Register"}
+											</span>
 											<svg
 												width="26"
 												height="16"
