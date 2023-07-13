@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
 			<header className="header-area header-three">
 				<NavHeader />
 			</header>
-			<main>{children}</main>
+			<main >{children}</main>
 			<Footer />
 		</Fragment>
 	);
