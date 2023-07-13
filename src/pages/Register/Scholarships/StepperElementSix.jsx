@@ -99,7 +99,7 @@ function StepperElementSix() {
                   </div>
                 </div>
                 <div className="_option_9bife_5">
-                  <div className="_optionInner_9bife_23">
+                 <div className={`${data.id === active ?  'clicked'  : '_optionInner_9bife_23'}`}>
                     <input
                       id="In the next 3 months"
                       type="checkbox"
