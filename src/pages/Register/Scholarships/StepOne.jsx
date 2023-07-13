@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import MyButton from "../../../components/Button";
 import { useSelector, useDispatch } from "react-redux";

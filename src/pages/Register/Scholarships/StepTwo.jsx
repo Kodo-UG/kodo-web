@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
@@ -7,8 +8,7 @@ import "../../../components/Layout/steeperLayout/footer.css";
 import { useQuery } from "react-query";
 import { useCallback } from "react";
 
-const StepTwo = ({ nextStep, prevStep, setFormData }) => {
-  const formData = useSelector((state) => state.formData);
+const StepTwo = ({ nextStep }) => {
   // const [categories, setCategories] = useState([]);
   const dispatch = useDispatch();
 
@@ -27,7 +27,7 @@ const StepTwo = ({ nextStep, prevStep, setFormData }) => {
     fetchCategories();
   }, []);
 
-  const { isLoading, isError, data, error } = useQuery(
+  const { data } = useQuery(
     "categories",
     fetchCategories
   );

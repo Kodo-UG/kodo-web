@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
 import StepperCard from "../Register/StepperCard";
 import "./index.css";

@@ -73,7 +73,7 @@ function StepperElement7() {
 			>
 				<section id="voyager-blocks">
 					<section>
-						<section className="">
+						<section style={{ padding: "3rem" }} className="">
 							<div
 								data-testid="progress-bar"
 								className="_progressBar_63yfq_1"

@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import TopHeader from "./TopHeader";
 import NavHeader from "./NavHeader";
 import Footer from "./Footer";
 
