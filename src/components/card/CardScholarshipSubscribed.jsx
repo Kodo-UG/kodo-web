@@ -169,6 +169,7 @@ function CardScholarshipSubscribed({
 					backdropFilter: "blur(10px)"
 				}}
 			>
+				{console.log(link, "link is here")}
 				<div
 					style={{
 						height: "6rem",
@@ -213,17 +214,20 @@ function CardScholarshipSubscribed({
 					</div>
 				</div>
 				<div style={{ textAlign: "center", marginTop: "1rem" }}>
-					<Link
-						to={`${link}`}
+					<a
+						href={`${link}`}
 						className="ant-btn ant-btn-primary ant-btn-lg ant-btn-block"
 						style={{
-							background: "#ec1d64",
+							backgroundColor: "#ec1d64",
 							border: "none",
-							color: "white"
+							color: "white",
+							padding: "1rem",
+							width: "2rem",
+							borderRadius: "10px"
 						}}
 					>
 						Apply
-					</Link>
+					</a>
 				</div>
 			</Modal>
 		</div>
