@@ -28,6 +28,7 @@
     .logo{
         height: 3rem;
         width: 8rem;
+        margin-left: -2rem;
     }
 
     
@@ -164,9 +165,9 @@ padding: 1.188rem;
     text-align: center;
     margin-left: -80px;
   }
-  @media (max-width: 991px) {
+  @media (max-width: 700px) {
     .logo {
-      margin-left: -8px;
+      margin-left: -8rem;
     }
     .login,
     .second-header-btn {
@@ -213,7 +214,7 @@ padding: 1.188rem;
         padding-left: 0;
         padding-right: 0;
       }
-    /* .mobile-menu-list {
+    .mobile-menu-list {
       height: 380px;
       display: flex;
       flex-direction: column;
@@ -225,15 +226,15 @@ padding: 1.188rem;
       margin-bottom: 1px;
       padding-bottom: 0;
       color: grey;
-    } */
+    } 
   
   }
   
-  /* @media (max-width: 991px) {
+   @media (max-width: 991px) {
     .second-menu {
       width: 100%;
       margin-left: 0;
       margin-right: 0;
     }
-  } */
+  } 
   

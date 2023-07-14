@@ -13,7 +13,7 @@ const ScholarshipPage = () => {
 		try {
 			const userData = localStorage.getItem('userData');
          
-			console.log(userData);
+			
 			const headers = {
 				Authorization: `Bearer ${userData.token}`,
 			};
@@ -23,11 +23,11 @@ const ScholarshipPage = () => {
 			});
 
 			setData(res.data.data);
-			// console.log(res.data.data);
+			;
 			setSubscription(res.data.subscription);
-			// console.log(res.data.subscription);
+			
 		} catch (error) {
-			// Handle the error here
+			throw error
 		}
 	};
 

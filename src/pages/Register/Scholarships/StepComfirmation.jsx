@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./stepperElement.css";
-import { useDispatch, useSelector } from "react-redux";
-import { updateFormData } from "../../../toolkit/formReducer";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import {
@@ -10,7 +8,6 @@ import {
 } from "../../../utils/Toast";
 import axiosInstance from "../../../api/axiosInstance";
 import { Input } from "antd";
-import axios from "axios";
 
 const { TextArea } = Input;
 
@@ -23,31 +20,13 @@ function StepComfirmation() {
 
 	const handleCodeChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
-		console.log(value);
 		setCode(value);
-		// Dispatch an action to update the form data in the Redux store
 	};
 
 	const verifyEmail = async (e) => {
 		e.preventDefault();
 		setLoading(true);
-		// console.log("clicked");
-		// try {
-		// 	let response = await axios.post(
-		// 		"https://demo.kodoscholarships.com/api/v1/auth/account/verification",
-		// 		{
-		// 			id: userID,
-		// 			code: code
-		// 		}
-		// 	);
-		// 	if (response.status == "201") {
-		// 		displaySuccessMessage("Account verified successfully");
-		// 		history.push("/signin");
-		// 	} else {
-		// 		displayErrorMessage("Invalid code ");
-		// 	}
-		// } catch (error) {}
+
 		try {
 			let response = await axiosInstance.post("/auth/account/verification", {
 				id: userID,
@@ -60,9 +39,8 @@ function StepComfirmation() {
 			} else {
 				displayErrorMessage("Invalid code ");
 			}
-			// console.log(response);
 		} catch (error) {
-			console.log(error);
+			throw error;
 		} finally {
 			setLoading(false);
 		}

@@ -22,11 +22,11 @@ const Dashboard = () => {
 			});
 
 			setData(res.data.data);
-			// console.log(res.data.data);
+			
 			setSubscription(res.data.subscription);
-			// console.log(res.data.subscription);
+			
 		} catch (error) {
-			// Handle the error here
+					throw error 
 		}
 	};
 

@@ -27,21 +27,21 @@ import StepperElement7 from "./pages/Register/Scholarships/StepperElement7";
 import StepElement8 from "./pages/Register/Scholarships/StepElement8";
 import StepComfirmation from "./pages/Register/Scholarships/StepComfirmation";
 const App = () => {
-  return (
-    <Switch>
-      <Route exact path="/signin" component={Signin} />
-      <Route exact path="/forgot/password" component={ForgotPassword} />
-      <Route path="/reset-password" component={PasswordReset} />
-      <PrivateRoute exact path="/db" component={Root} />
-      <PrivateRoute exact path="/scholars" component={RootScholarship} />
-      <PrivateRoute exact path="/applications" component={RootApplication} />
+	return (
+		<Switch>
+			<Route exact path="/signin" component={Signin} />
+			<Route exact path="/forgot/password" component={ForgotPassword} />
+			<Route path="/reset-password" component={PasswordReset} />
+			<PrivateRoute exact path="/db" component={Root} />
+			<PrivateRoute exact path="/scholars" component={RootScholarship} />
+			<PrivateRoute exact path="/applications" component={RootApplication} />
 
       <Route exact path="/profile" component={MainProfile} />
+      <Route exact path="/route1" component={StepperElementSix} />
+      <Route exact path="/route2" component={StepperElement7} />
+       <Route exact path="/verify" component={StepComfirmation} />
       <Route exact path="/final" component={StepElement8} />
-			<Route exact path="/test3" component={StepperElement7} />
-			<Route  exact path="/test2" component={StepperElementSix} />
-      <Route  exact path="/verify" component={StepComfirmation} />
-      {/* <Route exact path="/stepper" component={Stepper} /> */}
+      <Route exact path="/stepper" component={Stepper} />
       <Route exact path="/test" component={StepperElementFour} />
       <Route exact path="/stepper" component={Stepper} />
       <Layout>
@@ -51,13 +51,13 @@ const App = () => {
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/admissions" component={FindScholarship} />
 
-        <Route exact path="/contactus" component={ContactUs} />
-        <Route exact path="/scholarships" component={Accordion} />
-        <Route exact path="/testimonals" component={Testimonals} />
-        <Route exact path="/" component={Home} />
-      </Layout>
-    </Switch>
-  );
+				<Route exact path="/contactus" component={ContactUs} />
+				<Route exact path="/scholarships" component={Accordion} />
+				<Route exact path="/testimonals" component={Testimonals} />
+				<Route exact path="/" component={Home} />
+			</Layout>
+		</Switch>
+	);
 };
 
 export default App;

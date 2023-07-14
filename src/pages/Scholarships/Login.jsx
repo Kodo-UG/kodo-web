@@ -3,7 +3,6 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { updateFormData } from "../../toolkit/formReducer";
 import StepperCard from "../Register/StepperCard";
-import "./index.css";
 
 const Login = () => {
 	const dispatch = useDispatch();
@@ -14,14 +13,14 @@ const Login = () => {
 			title: "Scholarships",
 			text: "We’ve helped students win more than $10 million dollars in scholarships.",
 			link: "/signin",
-			Button: "Log in"
+			Button: "log in"
 		},
 		{
 			id: 2,
 			title: "Jobs",
 			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
 			link: "#",
-			Button: "Loog in"
+			Button: "log in"
 		}
 	];
 
@@ -30,7 +29,7 @@ const Login = () => {
 	};
 
 	return (
-	 <div
+		  <div
       style={{
         height: "80vh",
         display: "flex",

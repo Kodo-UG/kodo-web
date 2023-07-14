@@ -16,7 +16,8 @@ const Profile = () => {
 				const userId = parsedUserData.user._id;
 				setId(userId);
 			} catch (error) {
-				console.log(error);
+				throw error 
+
 			}
 		};
 

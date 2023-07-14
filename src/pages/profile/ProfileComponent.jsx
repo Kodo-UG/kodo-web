@@ -40,12 +40,13 @@ const ProfileComponent = ({
 			setNewEmail("");
 			setNewPhone("");
 
-			console.log(res?.data.data, "editiiiiiiiin");
+			
 			if (res?.data.data) {
 				alert(res?.data.data);
 			}
 		} catch (error) {
-			console.log(error);
+			throw error 
+
 		} finally {
 			setLoading(false);
 		}

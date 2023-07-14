@@ -15,7 +15,7 @@ function CardScholarshipSubscribed({
 	subscription,
 	link,
 	about,
-	id,
+	id
 }) {
 	const date = new Date(deadline);
 	const formattedDate = date.toLocaleDateString();
@@ -26,32 +26,27 @@ function CardScholarshipSubscribed({
 		const token = localStorage.getItem("token");
 
 		const headers = {
-			Authorization: `Bearer ${token}`,
+			Authorization: `Bearer ${token}`
 		};
 
 		let res = await axios.get(
 			`https://demo.kodoscholarships.com/api/v1/scholarship/${id}`,
 			{
-				headers,
+				headers
 			}
 		);
 
 		setData(res.data.data);
 		setVisible(!visible);
 	};
-	// console.log("DATA :" , data?.title)
-	// console.log(data?.link,data?.about)
 
-	// useEffect(()=>{
-	// 	handleFetch(id)
-	// },[id])
 	const hanleModal = () => {
 		setVisible(!visible);
 	};
 	return (
 		<div
 			onClick={() => setVisible(!visible)}
-			className=" shadow-xl"
+			className=" shadow-3xl"
 			style={{
 				width: "24rem",
 				display: "flex",
@@ -62,8 +57,8 @@ function CardScholarshipSubscribed({
 				borderRadius: "0.5rem",
 				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
 				cursor: "pointer",
-				marginRight: "3rem",
-				marginBottom: "3rem",
+				marginRight: "1rem",
+				marginBottom: "3rem"
 			}}
 		>
 			<div
@@ -75,7 +70,7 @@ function CardScholarshipSubscribed({
 					justifyContent: "space-between",
 
 					borderTopLeftRadius: "0.5rem",
-					borderTopRightRadius: "0.5rem",
+					borderTopRightRadius: "0.5rem"
 				}}
 			>
 				<div
@@ -83,7 +78,7 @@ function CardScholarshipSubscribed({
 						width: "75%",
 						padding: "0.5rem",
 						alignItems: "center",
-						justifyContent: "center",
+						justifyContent: "center"
 					}}
 				>
 					<h4
@@ -91,7 +86,7 @@ function CardScholarshipSubscribed({
 						style={{
 							marginLeft: "0.5rem",
 							opacity: 0.8,
-							fontWeight: "bold",
+							fontWeight: "bold"
 						}}
 					>
 						{" "}
@@ -106,7 +101,7 @@ function CardScholarshipSubscribed({
 						alignItems: "center",
 						justifyContent: "space-evenly",
 						fontWeight: "bold",
-						opacity: 0.5,
+						opacity: 0.5
 					}}
 				>
 					<BsBookmark style={{ height: "25px", width: "25px" }} />
@@ -132,7 +127,7 @@ function CardScholarshipSubscribed({
 							style={{
 								objectFit: "cover",
 								maxWidth: "70%",
-								maxHeight: "70%",
+								maxHeight: "70%"
 							}}
 						/>
 					</div>
@@ -145,7 +140,7 @@ function CardScholarshipSubscribed({
 					justifyContent: "end",
 					width: "100%",
 					paddingRight: "1rem",
-					color: "gray",
+					color: "gray"
 				}}
 			>
 				<p>
@@ -153,7 +148,7 @@ function CardScholarshipSubscribed({
 						style={{
 							marginRight: "0.5rem",
 							width: "25px",
-							height: "25px",
+							height: "25px"
 						}}
 					/>
 					viewed
@@ -168,10 +163,10 @@ function CardScholarshipSubscribed({
 				bodyStyle={{
 					borderRadius: "2rem",
 					padding: "1rem",
-					opacity: 0.8,
+					opacity: 0.8
 				}}
 				style={{
-					backdropFilter: "blur(10px)",
+					backdropFilter: "blur(10px)"
 				}}
 			>
 				<div
@@ -182,7 +177,7 @@ function CardScholarshipSubscribed({
 						fontWeight: "bold",
 						display: "flex",
 						alignItems: "center",
-						justifyContent: "center",
+						justifyContent: "center"
 					}}
 				>
 					<h5 style={{ margin: 0 }}>{cardTitle} Scholarship Details</h5>
@@ -206,7 +201,7 @@ function CardScholarshipSubscribed({
 									style={{
 										objectFit: "cover",
 										maxWidth: "70%",
-										maxHeight: "70%",
+										maxHeight: "70%"
 									}}
 								/>
 							</div>
@@ -218,17 +213,20 @@ function CardScholarshipSubscribed({
 					</div>
 				</div>
 				<div style={{ textAlign: "center", marginTop: "1rem" }}>
-					<Link
-						to={`${link}`}
+					<a
+						href={`${link}`}
 						className="ant-btn ant-btn-primary ant-btn-lg ant-btn-block"
 						style={{
-							background: "#ec1d64",
+							backgroundColor: "#ec1d64",
 							border: "none",
 							color: "white",
+							padding: "1rem",
+							width: "2rem",
+							borderRadius: "10px"
 						}}
 					>
 						Apply
-					</Link>
+					</a>
 				</div>
 			</Modal>
 		</div>

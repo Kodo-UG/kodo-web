@@ -7,7 +7,7 @@ import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 export default function PasswordReset() {
 	const [password, setPassword] = useState();
 	const token = new URLSearchParams(window.location.search).get("token");
-	console.log(token);
+	;
 	const history = useHistory();
 	const handleChange = (setState) => (e) => {
 		setState(e.target.value);
@@ -27,7 +27,7 @@ export default function PasswordReset() {
 				displayErrorMessage("Password Reset failed");
 			}
 		} catch (error) {
-			console.log(error);
+			
 			displayErrorMessage(error.message);
 		}
 	};

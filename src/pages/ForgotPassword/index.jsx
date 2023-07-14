@@ -27,8 +27,8 @@ export default function ForgotPassword() {
 				displayErrorMessage("Password reset");
 			}
 		} catch (error) {
-			console.log(error);
-			displayErrorMessage("Invalid Email or Password");
+     
+	displayErrorMessage("Invalid Email or Password");
 		}
 	};
 	return (

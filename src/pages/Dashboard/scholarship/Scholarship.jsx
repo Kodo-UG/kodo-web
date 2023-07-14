@@ -1,37 +1,44 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Row } from "antd";
-import ScholarshipCard from "../../../components/card/Scholarshipcard";
 import CardScholarship from "../../../components/card/CardScholarship";
 import CardScholarshipSubscribed from "../../../components/card/CardScholarshipSubscribed";
 import Spinner from "../../../components/spinner";
+import CustomTab from "../../../components/tab";
 
 const Scholarship = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
 
+	const obj = [
+		{
+			id: 1,
+			label: "All Scholarships(1291)"
+
+			// children:()
+		}
+	];
+
 	const getScholarship = async () => {
 		setLoading(true);
 		try {
 			const token = localStorage.getItem("token");
 			const headers = {
-				Authorization: `Bearer ${token}`,
+				Authorization: `Bearer ${token}`
 			};
 
 			let res = await axios.get(
 				"https://demo.kodoscholarships.com/api/v1/scholarship",
 				{
-					headers,
+					headers
 				}
 			);
 
 			setData(res.data.data);
-			// console.log(res, "AAAAAAAAAAAAA");
 			setSubscription(res.data.subscription);
-			// console.log(res.data.subscription);
 		} catch (error) {
 			// Handle   error here
+			throw error;
 		} finally {
 			setLoading(false);
 		}
@@ -40,7 +47,6 @@ const Scholarship = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
-	// console.log(data);
 
 	return (
 		<div>
@@ -52,7 +58,7 @@ const Scholarship = () => {
 							flexDirection: "column",
 							width: "100%",
 							alignItems: "center",
-							justifyContent: "center",
+							justifyContent: "center"
 						}}
 					>
 						<div
@@ -60,13 +66,14 @@ const Scholarship = () => {
 								fontWeight: "",
 								fontSize: "20px",
 								margin: "5px",
-								padding: "10px",
+								padding: "10px"
 							}}
 						>
-							{/* {loading ? "Loading Scholarships" : ""} */}
-							{data.length === 0
-								? "No Available scholarships for this program"
-								: "Available scholarships"}
+							{data.length === 0 ? (
+								"No Available scholarships for this program"
+							) : (
+								<CustomTab total={data.length} />
+							)}
 						</div>
 						{/* Small boxes (Stat box) */}
 						{loading ? (
@@ -79,7 +86,7 @@ const Scholarship = () => {
 									display: "flex",
 									flexWrap: "wrap",
 									justifyContent: "flex-start",
-									alignItems: "flex-start",
+									alignItems: "flex-start"
 								}}
 							>
 								{!subscription &&

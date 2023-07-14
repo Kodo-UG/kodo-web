@@ -25,31 +25,26 @@ function StepElement8() {
 	const dispatch = useDispatch();
 	const handleEmailChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "email", value: value }));
 	};
 	const handlePasswordChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "password", value: value }));
 	};
 	const handlePhoneChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "phone", value: value }));
 	};
 	const handleFirstNameChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "fname", value: value }));
 	};
 	const handleLastNameChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "lname", value: value }));
 	};
@@ -59,10 +54,7 @@ function StepElement8() {
 		setLoading(true);
 		let data = JSON.stringify(formData);
 
-		// console.log(data, "DATA IS HERE");
-
 		if (!formData.email || !formData.phone || !formData.password) {
-			console.log("no data");
 			displayErrorMessage("Please fill in all the required fields");
 			setLoading(false);
 			return;
@@ -70,7 +62,6 @@ function StepElement8() {
 
 		try {
 			const res = await axiosInstance.post("/auth/user/signup", formData);
-			console.log(res.data.id);
 			localStorage.setItem("userID", res.data.id);
 
 			if (res.data.id) {
@@ -81,7 +72,6 @@ function StepElement8() {
 				// nextStep();
 			}
 		} catch (error) {
-			console.log(error, "ERROR");
 			displayErrorMessage("Failed to register");
 		} finally {
 			setLoading(false);
@@ -94,7 +84,6 @@ function StepElement8() {
 
 	const handleGenderChange = (e) => {
 		setGender(e.target.value);
-		console.log(`Field: ${gender}, Value: ${gender}`);
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "sex", value: e.target.value }));
 	};
@@ -121,8 +110,8 @@ function StepElement8() {
 				<Link to="/">
 					<style type="text/css">
 						{`svg.icon-component.icon-component--logo-horizontal:hover {
-                    fill: var(--secondary-700);
-                }`}
+ fill: var(--secondary-700);
+ }`}
 					</style>
 					<img
 						className="icon-component icon-component--logo-horizontal"
@@ -153,7 +142,7 @@ function StepElement8() {
 									style={{ width: "50%" }}
 								></div>
 							</div>
-							<Link to="/test2">
+							<Link to="/route2">
 								<button
 									data-testid="button-previous"
 									type="button"
@@ -189,7 +178,7 @@ function StepElement8() {
 												name="email"
 												type="text"
 												id="email"
-												placeholder="your email"
+												placeholder="Your email"
 											/>
 										</div>
 									</div>
@@ -227,7 +216,7 @@ function StepElement8() {
 												type="text"
 												id="phone"
 												label="Phone Number"
-												placeholder="phone"
+												placeholder="Phone"
 											/>
 										</div>
 									</div>
@@ -240,23 +229,23 @@ function StepElement8() {
 												type="password"
 												id="password"
 												label="password"
-												placeholder="password"
+												placeholder="Password"
 											/>
 										</div>
 									</div>
 									{/* <div>
-										<div className="_fieldGroup_1g3ja_1">
-											<input
-												className="_textField_fwd9c_1"
-												onChange={handleGenderChange}
-												name={showPassword ? "text" : "password"}
-												type="text"
-												id="password"
-												label="password"
-												placeholder="password"
-											/>
-										</div>
-									</div> */}
+ <div className="_fieldGroup_1g3ja_1">
+ <input
+ className="_textField_fwd9c_1"
+ onChange={handleGenderChange}
+ name={showPassword ? "text" : "password"}
+ type="text"
+ id="password"
+ label="password"
+ placeholder="password"
+ />
+ </div>
+ </div> */}
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
 											<select

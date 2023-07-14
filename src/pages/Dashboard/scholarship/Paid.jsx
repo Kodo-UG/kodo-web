@@ -23,18 +23,18 @@ const Paid = () => {
 			});
 
 			setData(res.data.data);
-			console.log(res, "AAAAAAAAAAAAA");
+			
 			setSubscription(res.data.subscription);
-			// console.log(res.data.subscription);
+			
 		} catch (error) {
-			// Handle the error here
+			throw error 
 		}
 	};
 
 	useEffect(() => {
 		getScholarship();
 	}, []);
-	console.log(data);
+	
 
 	return (
 		<div>
