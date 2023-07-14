@@ -48,8 +48,17 @@ const Testimonals = () => {
 	// 	}
 	// ];
 	return (
-		<section className="testimonial-section">
-			<div className="container">
+		<section
+			style={{
+				display: "flex",
+				justifyContent: "center",
+				margin: "auto",
+				alignItems: "center",
+				padding: "4rem"
+			}}
+			className="testimonial-section"
+		>
+			<div className="">
 				<h3 className="section-title">Testimonials</h3>
 				<div className="testimonial-carousel">
 					<div className="testimonial-item">
@@ -132,7 +141,10 @@ const Testimonals = () => {
 					</div>
 					<div className="testimonial-item">
 						<div className="testimonial-image">
-							<img src="https://res.cloudinary.com/itgenius/image/upload/v1688929279/jurica-koletic-7YVZYZeITc8-unsplash_kzkhuo.jpg" alt="testimonial-1" />
+							<img
+								src="https://res.cloudinary.com/itgenius/image/upload/v1689358592/robin_t5ce9s.jpg"
+								alt="testimonial-1"
+							/>
 							<div className="testimonial-icon">
 								<i className="fas fa-quote-left" />
 							</div>

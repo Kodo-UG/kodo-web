@@ -169,7 +169,6 @@ function CardScholarshipSubscribed({
 					backdropFilter: "blur(10px)"
 				}}
 			>
-				{console.log(link, "link is here")}
 				<div
 					style={{
 						height: "6rem",
