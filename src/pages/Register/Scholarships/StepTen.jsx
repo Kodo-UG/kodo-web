@@ -20,8 +20,8 @@ const StepTen = ({ nextStep, prevStep }) => {
 
 	const handleCodeChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
-		console.log(value);
+		
+		
 		setCode(value);
 		// Dispatch an action to update the form data in the Redux store
 	};
@@ -41,7 +41,10 @@ const StepTen = ({ nextStep, prevStep }) => {
 			} else {
 				displayErrorMessage("Invalid code ");
 			}
-		} catch (error) {}
+		} catch (error) {
+			throw error 
+
+		}
 	};
 
 	return (

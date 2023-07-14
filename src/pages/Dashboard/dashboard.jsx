@@ -23,8 +23,7 @@ const Dashboard = () => {
 				const userId = parsedUserData.user._id;
 				setId(userId);
 			} catch (error) {
-				console.log(error);
-			}
+throw error			}
 		};
 
 		fetchUserData();
@@ -33,9 +32,6 @@ const Dashboard = () => {
 	const getScholarship = async () => {
 		try {
 			const token = localStorage.getItem("token");
-			// console.log(token, "tokrn");
-			// const token =
-			// 	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbm8xOTIwMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NDk2YzE4ZDc3ZGYzMTBkMWU3OWRmNWEiLCJpYXQiOjE2ODc2MDE1OTR9.W_HZn7Z8diK-D3Qjfyg_C8JTcnC2QRjALVh3Dr7Aick";
 			const headers = {
 				Authorization: `Bearer ${token}`,
 			};
@@ -48,22 +44,17 @@ const Dashboard = () => {
 			);
 
 			setData(res.data.data);
-			// console.log(res, "AAAAAAAAAAAAA");
 			setSubscription(res.data.subscription);
-			// console.log(res.data.subscription);
 		} catch (error) {
-			// Handle the error here
-		}
+throw error		}
 	};
 
 	const getAmount = async (id) => {
 		try {
 			const res = await axiosInstance.get(`/transantions/user/${id}`);
-			console.log(res.data.data, "========");
 			setAmData(res.data.data);
 		} catch (error) {
-			console.log(error, "ERROR");
-		}
+throw error		}
 	};
 
 	useEffect(() => {
@@ -86,7 +77,6 @@ const Dashboard = () => {
 		});
 
 		setAmount(sum);
-		console.log("SUM :", sum);
 
 		return sum;
 	};

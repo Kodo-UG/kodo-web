@@ -9,7 +9,7 @@ const ScholarshipCard = ({
 	deadline,
 	subscription,
 }) => {
-	console.log(subscription);
+	
 	const date = new Date(deadline);
 	const formattedDate = date.toLocaleDateString();
 	return (

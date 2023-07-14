@@ -9,13 +9,13 @@ const StepSeven = ({ nextStep, prevStep }) => {
 
 	const handleCountryChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
+		
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "country", value: value }));
 	};
 	const handleCityChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
+		
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "city", value: value }));
 	};

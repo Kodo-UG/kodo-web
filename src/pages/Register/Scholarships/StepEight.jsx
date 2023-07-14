@@ -7,13 +7,11 @@ const StepEight = ({ nextStep, prevStep, setFormData }) => {
 	const dispatch = useDispatch();
 	const handleFNameChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "fname", value: value }));
 	};
 	const handleLNameChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "lname", value: value }));
 	};

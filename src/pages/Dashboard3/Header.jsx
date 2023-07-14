@@ -11,24 +11,7 @@ const MyHeader = () => {
 	const history = useHistory();
 	const token = localStorage.getItem("token");
 
-	// const [userID, setUserID] = useState(null);
-	// const fetchUser = async () => {
-	// 	try {
-	// 		const response = await axiosInstance.get(
-	// 			"http://165.227.139.53/api/v1/user/profile/64a151d67a60cf3cb920892a"
-	// 		);
-
-	// 		console.log(response.data.data.fname, "RESPONSE IS HERE ");
-	// 		// return user;
-	// 	} catch (error) {
-	// 		console.error("Error fetching user:", error);
-	// 		throw error;
-	// 	}
-	// };
-
-	// useEffect(() => {
-	// 	fetchUser();
-	// }, []);
+	
 	return (
 		<div>
 			<nav className="main-header navbar navbar-expand navbar-white navbar-light">

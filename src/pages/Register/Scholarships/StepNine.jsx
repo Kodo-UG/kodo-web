@@ -25,19 +25,19 @@ const StepNine = ({ nextStep, prevStep }) => {
 	const dispatch = useDispatch();
 	const handleEmailChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
+		
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "email", value: value }));
 	};
 	const handlePasswordChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
+		
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "password", value: value }));
 	};
 	const handlePhoneChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
+		
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "phone", value: value }));
 	};
@@ -46,10 +46,10 @@ const StepNine = ({ nextStep, prevStep }) => {
 		setLoading(true);
 		let data = JSON.stringify(formData);
 
-		console.log(data, "DATA IS HERE");
+		
 
 		if (!formData.email || !formData.phone || !formData.password) {
-			console.log("no data");
+			
 			displayErrorMessage("Please fill in all the required fields");
 			setLoading(false);
 			return;
@@ -60,7 +60,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 				"/auth/user/signup",
 				formData
 			);
-			console.log(res.data.id);
+			
 			localStorage.setItem("userID", res.data.id);
 
 			if (res.data.id) {
@@ -70,7 +70,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 				nextStep();
 			}
 		} catch (error) {
-			console.log(error, "ERROR");
+			
 			displayErrorMessage("Failed to register");
 		} finally {
 			setLoading(false);
@@ -83,7 +83,7 @@ const StepNine = ({ nextStep, prevStep }) => {
 
 	const handleGenderChange = (e) => {
 		setGender(e.target.value);
-		console.log(`Field: ${gender}, Value: ${gender}`);
+		
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "sex", value: e.target.value }));
 	};

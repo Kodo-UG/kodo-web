@@ -20,7 +20,6 @@ function StepComfirmation() {
 
 	const handleCodeChange = (e) => {
 		const { name, value } = e.target;
-		console.log(`Field: ${name}, Value: ${value}`);
 		setCode(value);
 	};
 

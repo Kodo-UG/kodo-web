@@ -12,7 +12,7 @@ function StepperCard2({ item, handleClick, selectedCard }) {
 	const signal = (id) => {
 		switch (id) {
 			case 1:
-				console.log("It's Monday!");
+				
 				return (
 					<BiSignal1
 						style={{
@@ -23,7 +23,7 @@ function StepperCard2({ item, handleClick, selectedCard }) {
 					/>
 				);
 			case 2:
-				console.log("It's Monday!");
+				
 				return (
 					<BiSignal2
 						style={{
@@ -34,7 +34,7 @@ function StepperCard2({ item, handleClick, selectedCard }) {
 					/>
 				);
 			case 3:
-				console.log("It's Monday!");
+				
 				return (
 					<BiSignal3
 						style={{
@@ -45,7 +45,7 @@ function StepperCard2({ item, handleClick, selectedCard }) {
 					/>
 				);
 			case 4:
-				console.log("It's Monday!");
+				
 				return (
 					<BiSignal4
 						style={{
@@ -56,7 +56,7 @@ function StepperCard2({ item, handleClick, selectedCard }) {
 					/>
 				);
 			case 5:
-				console.log("It's Monday!");
+				
 				return (
 					<BiSignal5
 						style={{
@@ -67,7 +67,7 @@ function StepperCard2({ item, handleClick, selectedCard }) {
 					/>
 				);
 			case 6:
-				console.log("It's Monday!");
+				
 				return (
 					<BiSignal5
 						style={{

@@ -35,12 +35,10 @@ const MyHeader = () => {
 
 	useEffect(() => {
 		fetchNotifications();
-	}, []);
-	console.log(data, 'notifications')
+	}, [fetchNotifications]);
 
 	const HandleClick = async (id) => {
 		try {
-			console.log(token)
 			const headers = {
 				Authorization: `Bearer ${token}`,
 			};
@@ -53,7 +51,7 @@ const MyHeader = () => {
 
 
 		} catch (error) {
-			console.log(error)
+			throw error
 		}
 	}
 	return (

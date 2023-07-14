@@ -37,7 +37,7 @@ const BackgroundCarousel = () => {
 							<h1
 								className="titl"
 								style={{
-									fontSize: "60px",
+									fontSize: "50px",
 									fontWeight: "bolder",
 									color: "#fff",
 									marginTop: "4.5rem",
@@ -54,9 +54,9 @@ const BackgroundCarousel = () => {
 							<h5
 								style={{
 									color: "#fff",
-									width: "60%",
+									width: "70%",
 									marginBottom: "4rem",
-									fontSize: "18px",
+									fontSize: "16px",
 									fontWeight: "800px",
 									fontFamily: "Jost, sans-serif",
 									lineHeight: "22px",
@@ -128,7 +128,7 @@ const BackgroundCarousel = () => {
 						>
 							<h1
 								style={{
-									fontSize: "60px",
+									fontSize: "50px",
 									fontWeight: "bolder",
 									color: "#fff",
 									marginTop: "4rem",

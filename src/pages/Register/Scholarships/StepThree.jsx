@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+
 /* eslint-disable no-unused-vars */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -22,6 +22,7 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 	const history = useHistory();
 	const dispatch = useDispatch();
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const fetchData = async () => {
 		try {
 			const { data } = await axios.get(
@@ -29,7 +30,8 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 			);
 			setData(data.data.categories);
 		} catch (error) {
-			console.log(error);
+			throw error 
+
 		}
 	};
 
