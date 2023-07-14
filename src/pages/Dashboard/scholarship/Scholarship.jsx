@@ -27,11 +27,12 @@ const Scholarship = () => {
 			);
 
 			setData(res.data.data);
-			// console.log(res, "AAAAAAAAAAAAA");
+		
 			setSubscription(res.data.subscription);
-			// console.log(res.data.subscription);
+		
 		} catch (error) {
 			// Handle   error here
+			throw error
 		} finally {
 			setLoading(false);
 		}
@@ -40,7 +41,7 @@ const Scholarship = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
-	// console.log(data);
+
 
 	return (
 		<div>

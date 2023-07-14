@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./stepperElement.css";
 import { useDispatch } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
@@ -32,6 +32,7 @@ function StepperElementSix() {
       link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/calendarPlus",
     },
   ];
+  const [active, setActive] = useState("");
 
   const dispatch = useDispatch();
   const handleClick = (text) => {
@@ -54,7 +55,7 @@ function StepperElementSix() {
           justifyContent: "center",
         }}
       >
-        <a to="https://www.kodoscholarships.com">
+        <Link to="/">
           <style type="text/css">
             {`
         svg.icon-component.icon-component--logo-horizontal:hover {
@@ -72,7 +73,7 @@ function StepperElementSix() {
             viewBox="0 0 232 37"
             alt=""
           />
-        </a>
+        </Link>
       </header>
       <div
         id="voyager"
@@ -121,10 +122,20 @@ function StepperElementSix() {
                     {/* start */}
                     {list.map((data) => (
                       <div
-                        onClick={() => handleClick(data.text)}
+                        onClick={() => {
+                          setActive(data.id);
+                          // handleCardClick(data.id)
+                          handleClick(data.text);
+                        }}
                         className="_option_9bife_5"
                       >
-                        <div className="_optionInner_9bife_23">
+                        <div
+                          className={`${
+                            data.id === active
+                              ? "clicked"
+                              : "_optionInner_9bife_23"
+                          }`}
+                        >
                           <input
                             id="As soon as possible"
                             type="checkbox"
@@ -171,7 +182,7 @@ function StepperElementSix() {
                   </div>
                 </div>
                 <div className="_pageActions_pmptr_26">
-                  <Link to="/test3">
+                  <Link to="/route2">
                     <button
                       type="button"
                       className="_buttonContinue_pmptr_46 _button_pmptr_30"

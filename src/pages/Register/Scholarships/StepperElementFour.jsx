@@ -40,21 +40,20 @@ function StepperElementFour() {
 
   function changeDivStyle(div) {
     div.style.backgroundColor = "#F9FAFB";
-     // Change the background color to red
+    // Change the background color to red
   }
 
   const dispatch = useDispatch();
   const history = useHistory();
-	const [divStyle, setDivStyle] = useState({});
-  const [active, setActive] = useState('');
-	  // const handleCardClick = (id) => {
-    //   if(id===active){
-    // const newStyle = {
-    //   backgroundColor: 'red',
-    //   color: 'white',
-    //   // Add any other styles you want to update
-    // };
-    
+  const [divStyle, setDivStyle] = useState({});
+  const [active, setActive] = useState("");
+  // const handleCardClick = (id) => {
+  //   if(id===active){
+  // const newStyle = {
+  //   backgroundColor: 'red',
+  //   color: 'white',
+  //   // Add any other styles you want to update
+  // };
 
   const handleClick = (text) => {
     dispatch(updateFormData({ field: "educationlevel", value: text }));
@@ -72,7 +71,7 @@ function StepperElementFour() {
         }}
       >
         <header className="w-full flex justify-center py-4 bg-white">
-          <a href="https://www.kodoscholarships.com">
+          <Link to="/">
             <style>
               {`
             svg.icon-component.icon-component--logo-horizontal:hover {
@@ -90,7 +89,7 @@ function StepperElementFour() {
               viewBox="0 0 232 37"
               alt=""
             />
-          </a>
+          </Link>
         </header>
         <div
           id="voyager"
@@ -125,21 +124,23 @@ function StepperElementFour() {
                       {list.map((data) => (
                         <div
                           onClick={() => {
-                             setActive(data.id)
+                            setActive(data.id);
                             // handleCardClick(data.id)
-                            handleClick(data.text)
-                           
+                            handleClick(data.text);
                           }}
-													// style={divStyle}
+                          // style={divStyle}
                           className="_option_9bife_5"
                         >
-                          <div className={`${data.id === active ? '_optionInner_9bife_23' : 'clicked'}`}>
-
-
+                          <div
+                            className={`${
+                              data.id === active
+                                ? "clicked"
+                                : "_optionInner_9bife_23"
+                            }`}
+                          >
                             <label
                               htmlFor="High School "
                               className="_optionBody_9bife_90"
-														
                             >
                               <span className="_optionIcon_9bife_48">
                                 <div
@@ -185,12 +186,12 @@ function StepperElementFour() {
                     </span>
                   </div>
                   <div className="_pageActions_pmptr_26">
-                    <Link to="/test2">
+                    <Link to="/route1">
                       <button
                         type="button"
                         className="_buttonContinue_pmptr_46 _button_pmptr_30"
                         data-testid="continue"
-                        // onClick={() => history.push("/test2")}
+                        // onClick={() => history.push("/route1")}
                       >
                         <span>Continue</span>
                         <svg
