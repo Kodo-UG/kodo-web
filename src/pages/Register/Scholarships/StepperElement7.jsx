@@ -116,7 +116,7 @@ function StepperElement7() {
                         name="country"
                         type="text"
                         id="country"
-                        placeholder="country"
+                        placeholder="Country"
                       />
                     </div>
                   </div>
@@ -129,7 +129,7 @@ function StepperElement7() {
                         type="text"
                         id="city"
                         label="city"
-                        placeholder="city"
+                        placeholder="City"
                       />
                     </div>
                   </div>

@@ -22,7 +22,7 @@ const BackgroundCarousel = () => {
 						style={{
 							display: "flex",
 							flexDirection: "column",
-							alignItems: "center"
+							alignItems: "start"
 						}}
 					>
 						<div
@@ -105,7 +105,7 @@ const BackgroundCarousel = () => {
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						filter: "brightness(95%)",
-						height: "93vh" // Increased height
+						height: "91vh" // Increased height
 					}}
 				>
 					<div
@@ -113,7 +113,7 @@ const BackgroundCarousel = () => {
 						style={{
 							display: "flex",
 							flexDirection: "column",
-							alignItems: "center",
+							alignItems: "start",
 							margitnLeft: "-5rem"
 						}}
 					>
