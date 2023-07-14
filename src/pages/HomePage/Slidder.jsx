@@ -2,7 +2,6 @@
 
 import { Fragment } from "react";
 import BackgroundCarousel from "./BackgroundCarousel";
-import Content from "./Content";
 import CardSection from "./CardSection";
 
 const Slidder = () => {

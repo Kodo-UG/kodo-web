@@ -74,3 +74,11 @@
     justify-content: center;
   }
 }
+
+@media (max-width:700px) {
+  .titl{
+    font-size: 0.1rem;
+
+  }
+  
+}
