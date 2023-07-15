@@ -1,6 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const CustomAlert = () => {
+	const history = useHistory();
 	return (
 		<div style={{ padding: "20px" }} className="content-wrapper">
 			<section className="content">
@@ -25,8 +27,9 @@ const CustomAlert = () => {
 					color: "white",
 					borderRadius: "7px",
 					padding: "8px",
-					marginLeft: "6.8px",
+					marginLeft: "6.8px"
 				}}
+				onClick={() => history.push("/scholars")}
 			>
 				Continue &gt;&gt;
 			</button>
