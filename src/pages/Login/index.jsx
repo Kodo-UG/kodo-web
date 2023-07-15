@@ -132,7 +132,7 @@ export default function Login() {
                 <div className="form-group">
                   <div className="fxt-transformY-50 fxt-transition-delay-3">
                     <div className="fxt-content-between">
-                      <button className="fxt-btn-fill">Log in</button>
+                      <button className="fxt-btn-fill" type="submit">Log in</button>
                       <Link to="/forgot/password" className="switcher-text2">
                         Forgot Password
                       </Link>
