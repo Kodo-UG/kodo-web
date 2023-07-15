@@ -9,15 +9,9 @@ const Scholarship = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [expiry, setExpiry] = useState(false);
 
-	const obj = [
-		{
-			id: 1,
-			label: "All Scholarships(1291)"
-
-			// children:()
-		}
-	];
+	const deadline = new Date();
 
 	const getScholarship = async () => {
 		setLoading(true);
@@ -47,6 +41,7 @@ const Scholarship = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
+
 
 	return (
 		<div>
@@ -94,7 +89,7 @@ const Scholarship = () => {
 										<CardScholarship
 											key={dta.id}
 											award={dta.award}
-											deadline={dta.deadline}
+											deadline={!expiry ? "Expired" : dta.deadline}
 											subscription={subscription}
 										/>
 									))}
@@ -109,6 +104,7 @@ const Scholarship = () => {
 											id={dta._id}
 											link={dta.link}
 											about={dta.about}
+											// days={}
 										/>
 									))}
 

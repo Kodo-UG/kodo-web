@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
-import CollapsibleInput from "./CollapsibleInput";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { Modal } from "antd";
+import { useCallback } from "react";
 
 function CardScholarshipSubscribed({
 	cardTitle,
@@ -15,30 +13,13 @@ function CardScholarshipSubscribed({
 	subscription,
 	link,
 	about,
-	id
+	id,
+	days
 }) {
 	const date = new Date(deadline);
 	const formattedDate = date.toLocaleDateString();
 	const [data, setData] = useState(null);
 	const [visible, setVisible] = useState(false);
-
-	const handleFetch = async () => {
-		const token = localStorage.getItem("token");
-
-		const headers = {
-			Authorization: `Bearer ${token}`
-		};
-
-		let res = await axios.get(
-			`https://demo.kodoscholarships.com/api/v1/scholarship/${id}`,
-			{
-				headers
-			}
-		);
-
-		setData(res.data.data);
-		setVisible(!visible);
-	};
 
 	const hanleModal = () => {
 		setVisible(!visible);
@@ -46,7 +27,7 @@ function CardScholarshipSubscribed({
 	return (
 		<div
 			onClick={() => setVisible(!visible)}
-			className=" shadow-3xl"
+			className=" shadow-3xl "
 			style={{
 				width: "24rem",
 				display: "flex",
@@ -104,6 +85,9 @@ function CardScholarshipSubscribed({
 						opacity: 0.5
 					}}
 				>
+					<span style={{ fontSize: ".2rem", lineBreak: "auto" }}>
+						{days}
+					</span>
 					<BsBookmark style={{ height: "25px", width: "25px" }} />
 					<BsThreeDotsVertical style={{ height: "25px", width: "25px" }} />
 				</div>
@@ -133,6 +117,8 @@ function CardScholarshipSubscribed({
 					</div>
 				</div>
 			</div>
+			<div></div>
+
 			<div
 				style={{
 					display: "flex",
