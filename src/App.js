@@ -36,20 +36,20 @@ const App = () => {
 			<PrivateRoute exact path="/scholars" component={RootScholarship} />
 			<PrivateRoute exact path="/applications" component={RootApplication} />
 
-      <Route exact path="/profile" component={MainProfile} />
-      <Route exact path="/route1" component={StepperElementSix} />
-      <Route exact path="/route2" component={StepperElement7} />
-       <Route exact path="/verify" component={StepComfirmation} />
-      <Route exact path="/final" component={StepElement8} />
-      <Route exact path="/stepper" component={Stepper} />
-      <Route exact path="/test" component={StepperElementFour} />
-      <Route exact path="/stepper" component={Stepper} />
-      <Layout>
-        <Route path="/payment" component={Payment} />
-        <Route exact path="/aboutus" component={AboutUs} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/blog" component={Blog} />
-        <Route exact path="/admissions" component={FindScholarship} />
+			<Route exact path="/profile" component={MainProfile} />
+			<Route exact path="/route1" component={StepperElementSix} />
+			<Route exact path="/route2" component={StepperElement7} />
+			<Route exact path="/verify" component={StepComfirmation} />
+			<Route exact path="/final" component={StepElement8} />
+			<Route exact path="/stepper" component={Stepper} />
+			<Route exact path="/test" component={StepperElementFour} />
+			<Route exact path="/stepper" component={Stepper} />
+			<Layout>
+				<Route path="/payment" component={Payment} />
+				<Route exact path="/aboutus" component={AboutUs} />
+				<Route exact path="/login" component={Login} />
+				<Route exact path="/blog" component={Blog} />
+				<Route exact path="/admissions" component={FindScholarship} />
 
 				<Route exact path="/contactus" component={ContactUs} />
 				<Route exact path="/scholarships" component={Accordion} />
