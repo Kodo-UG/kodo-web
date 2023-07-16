@@ -1,32 +1,30 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { AiOutlineLogout } from "react-icons/ai";
-import { BsPersonCircle } from "react-icons/bs";
-import axiosInstance from "../../api/axiosInstance";
-import { useEffect } from "react";
+import { AiOutlineLogout,AiOutlineBell } from "react-icons/ai";
 import axios from "axios";
 import moment from "moment";
+import { Dropdown, Affix, Space } from "antd";
+import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
 
 const MyHeader = () => {
 	const history = useHistory();
-	const [data, setData] = useState()
-	const [userID, setUserID] = useState(null);
-
+	const [data, setData] = useState();
 
 	const token = localStorage.getItem("token");
+	const info = JSON.parse(localStorage.getItem("userData"));
 
 	const fetchNotifications = async () => {
-
 		const headers = {
-			Authorization: `Bearer ${token}`,
+			Authorization: `Bearer ${token}`
 		};
 
 		let res = await axios.get(
 			"https://demo.kodoscholarships.com/api/v1/user/notifications",
 			{
-				headers,
+				headers
 			}
 		);
 
@@ -40,7 +38,7 @@ const MyHeader = () => {
 	const HandleClick = async (id) => {
 		try {
 			const headers = {
-				Authorization: `Bearer ${token}`,
+				Authorization: `Bearer ${token}`
 			};
 
 			await axios.patch(
@@ -48,15 +46,47 @@ const MyHeader = () => {
 			);
 
 			fetchNotifications();
-
-
 		} catch (error) {
-			throw error
+			throw error;
 		}
-	}
+	};
+
+	const items = [
+		{
+			label: (
+				<Link to="/profile">
+					<a href="/profile">
+						<Affix align="center">
+							<UserOutlined style={{ marginRight: "4px" }} />
+							<span>Profile Settings</span>
+						</Affix>
+					</a>
+				</Link>
+			),
+			key: "0"
+		},
+		{
+			label: (
+				<a
+					href="#"
+					onClick={(e) => {
+						e.preventDefault();
+						localStorage.removeItem("token");
+						history.push("/login");
+					}}
+				>
+					<Affix style={{ display: "flex" }} align="">
+						<LogoutOutlined style={{ marginRight: "4px" }} />
+						<span>Logout</span>
+					</Affix>
+				</a>
+			),
+			key: "1"
+		}
+	];
 	return (
 		<div>
-			<nav className="main-header navbar navbar-expand navbar-white navbar-light">
+			<nav className="main-header navbar fixed-top navbar-expand navbar-white navbar-light">
 				{/* Left navbar links */}
 				<ul className="navbar-nav">
 					<li className="nav-item">
@@ -94,10 +124,13 @@ const MyHeader = () => {
 				{/* Right navbar links */}
 				<ul className="navbar-nav ml-auto">
 					{/* Messages Dropdown Menu */}
-					<li className="nav-item dropdown">
+					<li className=" ">
 						<a className="nav-link" data-toggle="dropdown" href="#">
-							<i className="far fa-comments" />
-							<span className="badge badge-danger navbar-badge">{data?.length || null}</span>
+							{/* <i className="far fa-comments" /> */}
+							<AiOutlineBell style={{ width: '20px', height: '20px' }} /> {/* Adjust the width and height */}
+							<span className="badge badge-danger navbar-badge">
+								{data?.length || null}
+							</span>
 						</a>
 						<div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 							{data?.length > 0 ? (
@@ -134,10 +167,24 @@ const MyHeader = () => {
 									</div>
 								))
 							) : (
-								<div className="dropdown-item" style={{ padding: "10px", backgroundColor: "#f5f5f5", borderBottom: "1px solid #ddd" }}>
-									<p style={{ margin: "0", fontWeight: "bold", color: "#555" }}>No notifications at the moment</p>
+								<div
+									className="dropdown-item"
+									style={{
+										padding: "10px",
+										backgroundColor: "#f5f5f5",
+										borderBottom: "1px solid #ddd"
+									}}
+								>
+									<p
+										style={{
+											margin: "0",
+											fontWeight: "bold",
+											color: "#555"
+										}}
+									>
+										No notifications at the moment
+									</p>
 								</div>
-
 							)}
 
 							<div className="dropdown-divider" />
@@ -149,10 +196,40 @@ const MyHeader = () => {
 						</div>
 					</li>
 					{/* Notifications Dropdown Menu */}
-					<li className="nav-item dropdown">
-						<a className="nav-link" data-toggle="dropdown" href="#">
-							<BsPersonCircle />
-						</a>
+					<li
+						style={{ marginLeft: "1rem", marginRight: ".1rem" }}
+						className="nav-item "
+					>
+						{/* <a
+							style={{
+								justifyContent: "center",
+								display: "flex",
+								alignItems: "center"
+							}}
+							className="nav-link"
+							data-toggle="dropdown"
+							href="#"
+						> */}
+						<Dropdown
+							menu={{
+								items
+							}}
+							trigger={["click"]}
+							style={{ cusror: "pointer" }}
+						>
+							<a onClick={(e) => e.preventDefault()}>
+								<Space>
+									<img
+										style={{ padding: "", cursor: "pointer" }}
+										class="rounded-circle header-profile-user"
+										src={`https://ui-avatars.com/api/name=${info.user.fname}&background=random`}
+										alt="User"
+										width={30}
+									/>
+								</Space>
+							</a>
+						</Dropdown>
+						{/* </a> */}
 						<div
 							style={{ cursor: "pointer" }}
 							className="dropdown-menu dropdown-menu-md dropdown-menu-right"
@@ -162,7 +239,7 @@ const MyHeader = () => {
 								style={{
 									display: "flex",
 									justifyContent: "space-between",
-									alignItems: "center",
+									alignItems: "center"
 								}}
 								className="dropdown-item"
 							>
@@ -191,7 +268,7 @@ const MyHeader = () => {
 									justifyContent: "space-between",
 									alignItems: "center",
 									fontWeight: "bold",
-									padding: "8px",
+									padding: "8px"
 								}}
 								className="dropdown-item"
 							>
@@ -199,11 +276,7 @@ const MyHeader = () => {
 									<AiOutlineLogout />
 								</div>
 
-								<div
-
-								>
-									logout
-								</div>
+								<div>logout</div>
 							</div>
 						</div>
 					</li>

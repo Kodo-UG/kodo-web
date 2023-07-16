@@ -1,5 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { Button } from "antd";
+import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
+
+import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
+import LargeCard from "../card/LargeCard";
+// import { IconName } from "react-icons/si";
 
 const CustomAlert = () => {
 	const history = useHistory();
@@ -33,6 +39,8 @@ const CustomAlert = () => {
 			>
 				Continue &gt;&gt;
 			</button>
+
+			<LargeCard />
 		</div>
 	);
 };
