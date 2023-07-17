@@ -46,6 +46,7 @@ const FindScholarship = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        background: "red"
       }}
     >
       <StepperCard list={object} />

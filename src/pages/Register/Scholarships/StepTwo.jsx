@@ -61,7 +61,10 @@ const StepTwo = ({ nextStep }) => {
       >
         What school category interests you?
       </h2>
-      <div className="option-list">
+   <div>
+       <div  className="option-list" style={{
+         height: "28rem", overflow: "scroll"
+      }}>
         {newData?.map((dta) => (
           <button
             key={dta._id}
@@ -73,8 +76,8 @@ const StepTwo = ({ nextStep }) => {
           </button>
         ))}
       </div>
+   </div>
     </div>
-
   );
 };
 
