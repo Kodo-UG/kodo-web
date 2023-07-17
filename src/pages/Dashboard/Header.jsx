@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { AiOutlineLogout,AiOutlineBell } from "react-icons/ai";
+import { AiOutlineLogout, AiOutlineBell } from "react-icons/ai";
 import axios from "axios";
 import moment from "moment";
 import { Dropdown, Affix, Space } from "antd";
@@ -12,6 +12,12 @@ import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
 const MyHeader = () => {
 	const history = useHistory();
 	const [data, setData] = useState();
+
+	const [isInputVisible, setInputVisible] = useState(false);
+
+	const handleSearchIconClick = () => {
+		setInputVisible(!isInputVisible);
+	};
 
 	const token = localStorage.getItem("token");
 	const info = JSON.parse(localStorage.getItem("userData"));
@@ -33,9 +39,10 @@ const MyHeader = () => {
 
 	useEffect(() => {
 		fetchNotifications();
-	}, [fetchNotifications]);
+	}, []);
 
 	const HandleClick = async (id) => {
+		
 		try {
 			const headers = {
 				Authorization: `Bearer ${token}`
@@ -107,16 +114,32 @@ const MyHeader = () => {
 				</ul>
 				{/* SEARCH FORM */}
 				<form className="form-inline ml-4">
-					<div className="input-group input-group-sm">
-						<input
-							className="form-control form-control-navbar"
-							type="search"
-							placeholder="Search"
-							aria-label="Search"
-						/>
+					<div
+						className={`input-group input-group-sm ${
+							isInputVisible ? "search-bar-focused" : ""
+						}`}
+					>
+						{isInputVisible && (
+							<input
+								className="form-control form-control-navbar"
+								type="search"
+								placeholder="Search"
+								aria-label="Search"
+							/>
+						)}
 						<div className="input-group-append">
-							<button className="btn btn-navbar" type="submit">
-								<i className="fas fa-search" />
+							<button
+								className={`  ${
+									isInputVisible ? "btn-search-active" : ""
+								}`}
+								type="button"
+								onClick={handleSearchIconClick}
+							>
+								<i
+									className={`fas ${
+										isInputVisible ? "fa-times" : "fa-search"
+									}`}
+								/>
 							</button>
 						</div>
 					</div>
@@ -127,7 +150,10 @@ const MyHeader = () => {
 					<li className=" ">
 						<a className="nav-link" data-toggle="dropdown" href="#">
 							{/* <i className="far fa-comments" /> */}
-							<AiOutlineBell style={{ width: '20px', height: '20px' }} /> {/* Adjust the width and height */}
+							<AiOutlineBell
+								style={{ width: "20px", height: "20px" }}
+							/>{" "}
+							{/* Adjust the width and height */}
 							<span className="badge badge-danger navbar-badge">
 								{data?.length || null}
 							</span>
