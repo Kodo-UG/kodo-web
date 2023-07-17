@@ -12,7 +12,7 @@ const Scholarship = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [expiry, setExpiry] = useState(false);
+	const [count, setCount] = useState(1);
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const isMd = useMediaQuery(
@@ -51,6 +51,34 @@ const Scholarship = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
+
+	let handleFetchMore = async () => {
+		setLoading(true);
+		setCount(count + 1);
+		try {
+			const token = localStorage.getItem("token");
+			const headers = {
+				Authorization: `Bearer ${token}`
+			};
+
+			let res = await axios.get(
+				`https://demo.kodoscholarships.com/api/v1/scholarship?page=${count}`,
+				{
+					headers
+				}
+			);
+
+			console.log(res, "loaded more dara");
+
+			setData(res.data.data);
+			setSubscription(res.data.subscription);
+		} catch (error) {
+			// Handle   error here
+			throw error;
+		} finally {
+			setLoading(false);
+		}
+	};
 
 	return (
 		<div>
@@ -96,6 +124,7 @@ const Scholarship = () => {
 								color: "#fff",
 								fontWeight: "bold"
 							}}
+							onClick={() => handleFetchMore()}
 						>
 							Load More
 						</Button>
