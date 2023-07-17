@@ -48,12 +48,11 @@ const Menu = () => {
 							src="/logo-kodo.png"
 							alt="kodo Logo"
 							className="brand-image "
-							style={{ opacity: ".8" }}
 						/>
 						<span
 							style={{
 								fontSize: "15px",
-								color: "white",
+								color: "#125875",
 								fontWeight: "bold"
 							}}
 							className="brand-text font-weight-light"
