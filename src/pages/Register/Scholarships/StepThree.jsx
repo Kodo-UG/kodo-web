@@ -56,12 +56,12 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 		dispatch(updateFormData({ field: "subject", value: selected }));
 	};
 	return (
-		<div
-			className="selections-contai "
+		<div style={{display: "flex", alignItems: "center", justifyContent: "center",  height: "100%", width: "100vw", 	margin: "2rem",                                   padding: "1rem"}}>		<div
+			className="searchDiv"
 			style={{
 				transform: "none",
 				transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms",
-				width: "40vw"
+				width: "40rem"
 			}}
 		>
 			<h2
@@ -69,7 +69,8 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 					paddingTop: "0px",
 					paddingBottom: "0px",
 					color: "#00234a",
-					fontFamily: "Lexend Deca, Helvetica, Arial, sans-seri"
+					fontFamily: "Lexend Deca, Helvetica, Arial, sans-seri",
+				
 				}}
 			>
 				What subject do you want to study?
@@ -137,7 +138,9 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 							background: "white", // Glass morphism background color
 							boxShadow: "0 2px 2px 0 rgba(31, 38, 135, 0.37)", // Glass morphism shadow
 							backdropFilter: "blur(5px)", // Glass morphism blur effect
-							padding: "20px" // Padding around the div
+							padding: "20px", // Padding around the div
+							height: "25rem",
+							overflowY: "scroll",
 						}}
 					>
 						{data?.map((option, index) => (
@@ -175,6 +178,8 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 				) : null}
 			</div>
 		</div>
+		</div>
+
 	);
 };
 

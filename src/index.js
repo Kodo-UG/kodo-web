@@ -8,6 +8,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ReactQueryDevtools } from "react-query/devtools";
 
+import "./index.css";
+
 import { QueryClient, QueryClientProvider } from "react-query";
 
 persistor.purge();
@@ -19,8 +21,8 @@ ReactDOM.render(
 			<QueryClientProvider client={queryClient}>
 				<Provider store={store}>
 					<PersistGate loading={null} persistor={persistor}>
-					<App />
-						
+						<App />
+
 						<ReactQueryDevtools initialIsOpen={false} />
 					</PersistGate>
 				</Provider>

@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
-import CollapsibleInput from "./CollapsibleInput";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { Modal } from "antd";
 
 function CardScholarshipSubscribed({
@@ -15,30 +11,12 @@ function CardScholarshipSubscribed({
 	subscription,
 	link,
 	about,
-	id
+	id,
+	days
 }) {
 	const date = new Date(deadline);
 	const formattedDate = date.toLocaleDateString();
-	const [data, setData] = useState(null);
 	const [visible, setVisible] = useState(false);
-
-	const handleFetch = async () => {
-		const token = localStorage.getItem("token");
-
-		const headers = {
-			Authorization: `Bearer ${token}`
-		};
-
-		let res = await axios.get(
-			`https://demo.kodoscholarships.com/api/v1/scholarship/${id}`,
-			{
-				headers
-			}
-		);
-
-		setData(res.data.data);
-		setVisible(!visible);
-	};
 
 	const hanleModal = () => {
 		setVisible(!visible);
@@ -46,7 +24,7 @@ function CardScholarshipSubscribed({
 	return (
 		<div
 			onClick={() => setVisible(!visible)}
-			className=" shadow-3xl"
+			className=" shadow-3xl "
 			style={{
 				width: "24rem",
 				display: "flex",
@@ -58,7 +36,8 @@ function CardScholarshipSubscribed({
 				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
 				cursor: "pointer",
 				marginRight: "1rem",
-				marginBottom: "3rem"
+				marginBottom: "3rem",
+				fontFamily: "Arial, sans-serif"
 			}}
 		>
 			<div
@@ -68,25 +47,26 @@ function CardScholarshipSubscribed({
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "space-between",
-
 					borderTopLeftRadius: "0.5rem",
-					borderTopRightRadius: "0.5rem"
+					borderTopRightRadius: "0.5rem",
+					padding: ".7rem"
 				}}
 			>
 				<div
 					style={{
 						width: "75%",
-						padding: "0.5rem",
+						padding: "0.4rem",
 						alignItems: "center",
 						justifyContent: "center"
 					}}
 				>
 					<h4
-						className="text-lg"
+						className="text-md"
 						style={{
-							marginLeft: "0.5rem",
-							opacity: 0.8,
-							fontWeight: "bold"
+							marginLeft: "0.4rem",
+							fontWeight: "bold",
+							fontSize: "14px",
+							fontFamily: "Arial, sans-serif"
 						}}
 					>
 						{" "}
@@ -104,35 +84,73 @@ function CardScholarshipSubscribed({
 						opacity: 0.5
 					}}
 				>
-					<BsBookmark style={{ height: "25px", width: "25px" }} />
-					<BsThreeDotsVertical style={{ height: "25px", width: "25px" }} />
+					<span style={{ fontSize: ".2rem", lineBreak: "auto" }}>
+						{days}
+					</span>
+					<BsBookmark
+						style={{
+							height: "20px",
+							width: "20px",
+							fontWeight: "bolder"
+						}}
+					/>
+					<BsThreeDotsVertical style={{ height: "20px", width: "20px" }} />
 				</div>
 			</div>
 
 			<div className="card-body" style={{ height: "6rem" }}>
 				<div className="d-flex justify-content-between align-items-center">
 					<div className="d-flex flex-column align-items-center">
-						<p className="mb-1">Award</p>
-						<p style={{ color: "#125875" }}>{award}</p>
+						<p className="mb-1" style={{ color: "#a0a3bd" }}>
+							Award
+						</p>
+						<p
+							style={{
+								color: "#125875",
+								fontWeight: "bold",
+								padding: ".1rem",
+								lineHeight: "1.5rem"
+							}}
+						>
+							{award}
+						</p>
 					</div>
 					<div className="d-flex flex-column align-items-center">
-						<p className="mb-1">Deadline</p>
-						<p style={{ color: "#125875" }}>{formattedDate}</p>
+						<p
+							className="mb-1"
+							style={{ color: "#a0a3bd", lineHeight: "1.5rem" }}
+						>
+							Deadline
+						</p>
+						<p
+							style={{
+								color: "#125875",
+								fontWeight: "bold",
+								padding: ".1rem",
+								lineHeight: "1.5rem"
+							}}
+						>
+							{formattedDate}
+						</p>
 					</div>
 					<div className="d-flex flex-column align-items-center">
-						<p className="mb-1">Effort</p>
+						<p className="mb-1" style={{ color: "#a0a3bd" }}>
+							Effort
+						</p>
 						<img
 							src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688650069/Screenshot_from_2023-07-06_14-10-36-removebg-preview__2_-removebg-preview_du6wl6.png"
 							alt="svg"
 							style={{
 								objectFit: "cover",
-								maxWidth: "70%",
-								maxHeight: "70%"
+								maxWidth: "80%",
+								maxHeight: "80%"
 							}}
 						/>
 					</div>
 				</div>
 			</div>
+			<div></div>
+
 			<div
 				style={{
 					display: "flex",
@@ -143,16 +161,23 @@ function CardScholarshipSubscribed({
 					color: "gray"
 				}}
 			>
-				<p>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center"
+						// alignItems: "center"
+					}}
+				>
 					<AiOutlineEye
 						style={{
-							marginRight: "0.5rem",
-							width: "25px",
-							height: "25px"
+							marginRight: "0.3rem",
+							width: "18px",
+							height: "18px",
+							color: "#a0a3bd"
 						}}
 					/>
-					viewed
-				</p>
+					<p style={{ color: "#a0a3bd" }}>viewed</p>
+				</div>
 			</div>
 
 			<Modal
@@ -187,11 +212,15 @@ function CardScholarshipSubscribed({
 						<div className="d-flex justify-content-between align-items-center">
 							<div className="d-flex flex-column align-items-center">
 								<p className="mb-1">Award</p>
-								<p style={{ color: "#125875" }}>{award}</p>
+								<p style={{ color: "#125875", fontWeight: "bold" }}>
+									{award}
+								</p>
 							</div>
 							<div className="d-flex flex-column align-items-center">
 								<p className="mb-1">Deadline</p>
-								<p style={{ color: "#125875" }}>{formattedDate}</p>
+								<p style={{ color: "#125875", fontWeight: "bold" }}>
+									{formattedDate}
+								</p>
 							</div>
 							<div className="d-flex flex-column align-items-center">
 								<p className="mb-1">Effort</p>
@@ -209,20 +238,31 @@ function CardScholarshipSubscribed({
 					</div>
 					<div>
 						<h4 style={{ fontWeight: "bold" }}>About</h4>
-						<p style={{ color: "gray" }}>{about}</p>
+						<p style={{ color: "gray", textAlign: "justify" }}>{about}</p>
 					</div>
 				</div>
-				<div style={{ textAlign: "center", marginTop: "1rem" }}>
+				<div
+					style={{
+						textAlign: "center",
+						marginTop: "1rem",
+						width: "100%",
+						height: "6rem",
+						color: "white",
+						fontWeight: "bold",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center"
+					}}
+				>
 					<a
 						href={`${link}`}
-						className="ant-btn ant-btn-primary ant-btn-lg ant-btn-block"
 						style={{
 							backgroundColor: "#ec1d64",
 							border: "none",
 							color: "white",
 							padding: "1rem",
-							width: "2rem",
-							borderRadius: "10px"
+							width: "100%",
+							borderRadius: "5px"
 						}}
 					>
 						Apply

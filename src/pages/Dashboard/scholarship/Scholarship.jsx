@@ -1,23 +1,27 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import CardScholarship from "../../../components/card/CardScholarship";
-import CardScholarshipSubscribed from "../../../components/card/CardScholarshipSubscribed";
-import Spinner from "../../../components/spinner";
 import CustomTab from "../../../components/tab";
+
+import { useMediaQuery } from "@uidotdev/usehooks";
+import CombinedScholarshipCard from "./CombinedScholarshipCard";
+import LargeCard from "../../../components/card/LargeCard";
+import MapCardData from "./MapCardData";
+import { Button } from "antd";
 
 const Scholarship = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [expiry, setExpiry] = useState(false);
 
-	const obj = [
-		{
-			id: 1,
-			label: "All Scholarships(1291)"
-
-			// children:()
-		}
-	];
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const isMd = useMediaQuery(
+		"only screen and (min-width : 700px) and (max-width : 992px)"
+	);
+	const isLg = useMediaQuery(
+		"only screen and (min-width : 993px) and (max-width : 1200px)"
+	);
+	const isXl = useMediaQuery("only screen and (min-width : 1201px)");
 
 	const getScholarship = async () => {
 		setLoading(true);
@@ -75,49 +79,28 @@ const Scholarship = () => {
 								<CustomTab total={data.length} />
 							)}
 						</div>
-						{/* Small boxes (Stat box) */}
-						{loading ? (
-							<Spinner />
-						) : (
-							<div
-								style={{
-									//
-									padding: "1rem",
-									display: "flex",
-									flexWrap: "wrap",
-									justifyContent: "flex-start",
-									alignItems: "flex-start"
-								}}
-							>
-								{!subscription &&
-									data?.map((dta) => (
-										<CardScholarship
-											key={dta.id}
-											award={dta.award}
-											deadline={dta.deadline}
-											subscription={subscription}
-										/>
-									))}
-								{subscription &&
-									data?.map((dta) => (
-										<CardScholarshipSubscribed
-											key={dta.id}
-											award={dta.award}
-											deadline={dta.deadline}
-											subscription={subscription}
-											cardTitle={dta.title}
-											id={dta._id}
-											link={dta.link}
-											about={dta.about}
-										/>
-									))}
-
-								{/* <Row justify="center" gutter={[16, 16]}></Row> */}
-							</div>
-						)}
+						{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
+					</div>
+					<div
+						style={{
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							padding: "1rem"
+						}}
+					>
+						<Button
+							style={{
+								width: "12rem",
+								backgroundColor: "#125875",
+								color: "#fff",
+								fontWeight: "bold"
+							}}
+						>
+							Load More
+						</Button>
 					</div>
 				</section>
-				{/* /.content */}
 			</div>
 		</div>
 	);

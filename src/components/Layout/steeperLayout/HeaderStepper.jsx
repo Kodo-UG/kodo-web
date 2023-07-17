@@ -4,7 +4,7 @@ import "./footer.css"
 
 const HeaderStepper = () => {
 	return (
-		<div>
+		<div className="">
 			  <Link
             className="navigation-container"
             to="/"
