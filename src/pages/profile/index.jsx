@@ -87,6 +87,12 @@ function Profile() {
 	const [loading, setLoading] = useState(false);
 	const [count, setCount] = useState(1);
 
+	const [activeTab, setActiveTab] = useState("profileMain");
+
+	const handleTabClick = (tab) => {
+		setActiveTab(tab);
+	};
+
 	useEffect(() => {
 		const fetchUserData = async () => {
 			try {
@@ -171,7 +177,13 @@ function Profile() {
 													/>
 												</div>
 												<div className="ms-4">
-													<h4>{data.fname + data.lname}</h4>
+													<h4
+														style={{
+															color: "#707070"
+														}}
+													>
+														{data.fname + " " + data.lname}
+													</h4>
 													<p className="text-muted mb-2">
 														{data.email}
 													</p>
@@ -194,10 +206,14 @@ function Profile() {
 														<span className="text-muted">
 															Matched
 														</span>
-														<div style={{
-																	fontSize: "2rem",
-																	marginRight: "2px",
-																}} className="fw-semibold fs-25">
+														<div
+															style={{
+																fontSize: "2rem",
+																marginRight: "2px",
+																color: "#707070"
+															}}
+															className="fw-semibold fs-25"
+														>
 															{scholarship.length}
 														</div>
 													</div>
@@ -216,10 +232,14 @@ function Profile() {
 														<span className="text-muted">
 															Applied
 														</span>
-														<div style={{
-																	fontSize: "2rem",
-																	marginRight: "2px",
-																}} className="fw-semibold fs-25">
+														<div
+															style={{
+																fontSize: "1.7rem",
+																marginRight: "2px",
+																color: "#707070"
+															}}
+															className="fw-semibold fs-25"
+														>
 															0
 														</div>
 													</div>
@@ -238,10 +258,14 @@ function Profile() {
 														<span className="text-muted">
 															Favorites
 														</span>
-														<div style={{
-																	fontSize: "2rem",
-																	marginRight: "2px",
-																}} className="fw-semibold fs-25">
+														<div
+															style={{
+																fontSize: "1.7rem",
+																marginRight: "2px",
+																color: "#707070"
+															}}
+															className="fw-semibold fs-25"
+														>
 															0
 														</div>
 													</div>
@@ -254,33 +278,60 @@ function Profile() {
 									<div className="wideget-user-tab">
 										<div className="tab-menu-heading">
 											<div
-												style={{ display: "flex" }}
-												className="tabs-menu1"
+												style={{
+													display: "flex",
+													flexDirection: "row"
+												}}
+												className="tabs-menu1 "
 											>
 												<ul
 													style={{
-														display: "flex",
-														justifyContent: "center",
-														alignItems: "center",
 														padding: "1rem"
 													}}
 													className="nav"
 												>
-													<li style={{ marginRight: "1rem" }}>
-														{" "}
-														{/* Added margin between the links */}
+													<li
+														style={{
+															marginRight: "1rem",
+															borderBottom:
+																activeTab === "profileMain"
+																	? "2px solid red"
+																	: "none",
+															display: "inline" // Set the li to display inline
+														}}
+													>
 														<a
 															href="#profileMain"
-															className="active show"
+															className={
+																activeTab === "profileMain"
+																	? "active show"
+																	: ""
+															}
 															data-bs-toggle="tab"
+															onClick={() =>
+																handleTabClick("profileMain")
+															}
 														>
 															Profile
 														</a>
 													</li>
-													<li>
+													<li
+														style={{
+															borderBottom:
+																activeTab === "accountSettings"
+																	? "2px solid red"
+																	: "none",
+															display: "inline"
+														}}
+													>
 														<a
 															href="#accountSettings"
 															data-bs-toggle="tab"
+															onClick={() =>
+																handleTabClick(
+																	"accountSettings"
+																)
+															}
 														>
 															Account Settings
 														</a>
@@ -368,7 +419,7 @@ function Profile() {
 														>
 															<span
 																style={{
-																	fontSize: "2rem",
+																	fontSize: "1.7rem",
 																	marginRight: "2px"
 																}}
 																className="border-0 mb-0 pb-0 fs-21"
@@ -392,7 +443,7 @@ function Profile() {
 														>
 															<span
 																style={{
-																	fontSize: "2rem",
+																	fontSize: "1.7rem",
 																	marginRight: "2px"
 																}}
 																className="border-0 mb-0 pb-0 fs-21"
@@ -416,7 +467,7 @@ function Profile() {
 														>
 															<span
 																style={{
-																	fontSize: "2rem",
+																	fontSize: "1.7rem",
 																	marginRight: "2px"
 																}}
 																className="border-0 mb-0 pb-0 fs-21"
@@ -495,7 +546,7 @@ function Profile() {
 																	color: "#fff"
 																}}
 																className="btn  my-1 float-end"
-																to="#"
+																href="#"
 															>
 																Update
 															</Link>
