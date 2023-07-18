@@ -26,9 +26,11 @@ import StepperElementSix from "./pages/Register/Scholarships/StepperElementSix";
 import StepperElement7 from "./pages/Register/Scholarships/StepperElement7";
 import StepElement8 from "./pages/Register/Scholarships/StepElement8";
 import StepComfirmation from "./pages/Register/Scholarships/StepComfirmation";
+import Index from "../src/pages/profile/index";
 const App = () => {
 	return (
 		<Switch>
+			<Route exact path="/index" component={Index} />
 			<Route exact path="/signin" component={Signin} />
 			<Route exact path="/forgot/password" component={ForgotPassword} />
 			<Route path="/reset-password" component={PasswordReset} />
