@@ -126,10 +126,10 @@ const Menu = () => {
 
 								<li className="nav-item">
 									<Link
-										onClick={() => handleActive("favorites")}
-										to="#"
+										onClick={() => handleActive("favorite")}
+										to="/favorite"
 										className={`nav-link ${
-											isButtonActive("favorites") ? "active" : ""
+											isButtonActive("favorite") ? "active" : ""
 										}`}
 									>
 										<i class="fa fa-bookmark" aria-hidden="true"></i>

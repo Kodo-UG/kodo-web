@@ -40,7 +40,7 @@ const CombinedScholarshipCard = () => {
 	}, []);
 	return (
 		<div>
-			<div
+			<div 
 				style={{
 					//
 					padding: "1rem",
