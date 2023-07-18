@@ -68,7 +68,7 @@ const LargeCard = ({ formatDate, title, subText, award, link, about }) => {
 					>
 						<h2
 							style={{
-								fontSize: isMd ? "1" : "1.4rem",
+								fontSize: isMd ? "1" : "1.46rem",
 								color: "#125875",
 								lineHeight: 1.2,
 								fontWeight: 700,
@@ -84,7 +84,7 @@ const LargeCard = ({ formatDate, title, subText, award, link, about }) => {
 							style={{
 								letterSpacing: "1.3px",
 								textAlign: "left",
-								fontFamily: "Poppins",
+								fontFamily: "Poppins,san-serif",
 								marginLeft: ".1rem",
 								color: "#4e4b66",
 								fontSize: "14px",
