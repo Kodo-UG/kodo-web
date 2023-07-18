@@ -317,7 +317,6 @@ function Profile() {
 
 	const [activeTab, setActiveTab] = useState("profileMain");
 
-	const token = localStorage.getItem("token");
 	const info = JSON.parse(localStorage.getItem("userData"));
 
 	const handleTabClick = (tab) => {
@@ -351,25 +350,38 @@ function Profile() {
 
 	const handleInputChange = (setState) => (e) => {
 		setState(e.target.value);
-		console.log(e.target.value);
 	};
 
-	const handleEditUserInfo = async (event) => {
-		event.preventDefault();
+	const handleEditUserInfo = async () => {
 		setLoading(true);
 		try {
 			const res = await axiosInstance.patch("/user/profile", {
 				fname: firstname,
-				lname: lastname,
-				password: password
+				lname: lastname
 			});
 
-			// console.log(res?.data.data, "editiiiiiiiin");
 			if (res?.data.data) {
 				alert(res?.data.data);
 			}
 		} catch (error) {
 			console.log(error);
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	const handleEditPassword = async (e) => {
+		e.preventDefault();
+		setLoading(true);
+		try {
+			const res = await axiosInstance.patch("/user/profile", {
+				password: password
+			});
+
+			if (res?.data.data) {
+				alert(res?.data.data);
+			}
+		} catch (error) {
 		} finally {
 			setLoading(false);
 		}
@@ -435,7 +447,7 @@ function Profile() {
 														class="rounded-circle header-profile-user"
 														src={`https://ui-avatars.com/api/name=${info.user.fname}&background=random`}
 														alt="User"
-														width={65}
+														width={68}
 													/>
 												</div>
 												<div className="ms-4 ">
@@ -854,7 +866,12 @@ function Profile() {
 												</div>
 												<div className="form-group ">
 													<div className="row row-sm">
-														<div className="col-md-12">
+														<div
+															onClick={() =>
+																handleEditUserInfo()
+															}
+															className="col-md-12"
+														>
 															<Link
 																style={{
 																	backgroundColor: "#EC1D64",
@@ -862,18 +879,17 @@ function Profile() {
 																}}
 																className="btn  my-1 float-end"
 																to="#"
-																onClick={() =>
-																	handleEditUserInfo()
-																}
 															>
-																Update
+																{loading
+																	? "Updating..."
+																	: "Update"}
 															</Link>
 														</div>
 													</div>
 												</div>
 											</form>
 											<form
-												onSubmit={handleEditUserInfo}
+												onSubmit={handleEditPassword}
 												className="form-horizontal"
 											>
 												<div className="mb-4 main-content-label">

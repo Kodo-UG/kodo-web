@@ -46,20 +46,23 @@ const CardScholarship = ({
 							marginTop: "1rem"
 						}}
 					>
-						<p style={{ fontWeight: "bold", color: "gray" }}>
-							Upgrade Account Required
+						<p style={{ fontWeight: "bold", color: "#fff" }}>
+							Upgrade To View Details
 							<br />
 							<span
 								style={{
 									fontWeight: "normal",
-									color: "#ec1d64",
+									color: "#fff",
 									display: "flex",
 									justifyContent: "center",
-									alignItems: "center"
+									alignItems: "center",
+									letterSpacing: ".4px"
 								}}
 							>
 								Access all matched scholarships{" "}
-								<IoIosArrowForward style={{ color: "#ec1d64" }} />
+								<IoIosArrowForward
+									style={{ color: "#fff", fontWeight: "bold" }}
+								/>
 							</span>
 						</p>
 					</div>
@@ -69,14 +72,34 @@ const CardScholarship = ({
 			<div className="card-body" style={{ height: "6.5rem" }}>
 				<div className="d-flex justify-content-between align-items-center">
 					<div className="d-flex flex-column align-items-center">
-						<p className="mb-1">Award</p>
-						<p style={{ color: "#125875", fontWeight: "bold" }}>
+						<p style={{ textAlign: "left" }} className="mb-1">
+							Award
+						</p>
+						<p
+							style={{
+								marginTop: "0px",
+								fontWeight: "bold",
+								color: "#125875",
+								fontSize: ".8rem",
+								fontFamily: "Poppins",
+								letterSpacing: "2px"
+							}}
+						>
 							{award}
 						</p>
 					</div>
 					<div className="d-flex flex-column align-items-center">
 						<p className="mb-1">Deadline</p>
-						<p style={{ color: "#125875", fontWeight: "bold" }}>
+						<p
+							style={{
+								marginTop: "0px",
+								fontWeight: "bold",
+								color: "#125875",
+								fontSize: ".8rem",
+								fontFamily: "Poppins",
+								letterSpacing: "2px"
+							}}
+						>
 							{formattedDate}
 						</p>
 					</div>

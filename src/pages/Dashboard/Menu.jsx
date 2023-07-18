@@ -123,15 +123,17 @@ const Menu = () => {
 										</p>
 									</Link>
 								</li>
-								{/* <li className="nav-item">
+
+								<li className="nav-item">
 									<Link
-										onClick={() => handleActive("dashboard")}
+										onClick={() => handleActive("favorites")}
 										to="#"
 										className={`nav-link ${
-											isButtonActive("dashboard") ? "active" : ""
+											isButtonActive("favorites") ? "active" : ""
 										}`}
 									>
-										<i class="fa fa-favorite" aria-hidden="true"></i>{" "}
+										<i class="fa fa-bookmark" aria-hidden="true"></i>
+
 										<p
 											style={{
 												color: "#fff",
@@ -142,7 +144,7 @@ const Menu = () => {
 											Favorites
 										</p>
 									</Link>
-								</li> */}
+								</li>
 							</ul>
 						</nav>
 						{/* /.sidebar-menu */}
