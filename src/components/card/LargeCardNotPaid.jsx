@@ -3,6 +3,8 @@ import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
+import {BsAward} from "react-icons/bs";
+import {CgCalendarDates} from "react-icons/cg";
 
 const LargeCardNotPaid = ({
   formatDate,
@@ -91,7 +93,8 @@ const LargeCardNotPaid = ({
                   width: "90%",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  paddingTop: "1rem"
+                  paddingTop: "1rem",
+    
                 }}
               >
                 <p
@@ -109,7 +112,6 @@ const LargeCardNotPaid = ({
                     fontWeight: "normal",
                     fontSize: "16px",
                     display: "flex",
-                    
                   }}
                 >
                   Access all matched Scholarships
@@ -130,7 +132,7 @@ const LargeCardNotPaid = ({
               justifyContent: "space-between",
               paddingLeft: "1rem",
               paddingRight: "1rem",
-                // backgroundColor: "yellow",
+              // backgroundColor: "yellow",
               height: "5rem",
               width: "100%",
               borderBottomRightRadius: "1rem",
@@ -145,12 +147,12 @@ const LargeCardNotPaid = ({
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100%",
-            
               }}
             >
               <div
                 style={{
                   // padding: ".1rem",
+                  display: "flex",
                   justifyContent: "center",
                   height: "100%",
                   alignItems: "center",
@@ -158,8 +160,10 @@ const LargeCardNotPaid = ({
                   marginLeft: ".8rem",
                 }}
               >
+                <BsAward size={25}  style={{color: "gray"}}/>
                 {" "}
-                <p
+                <div style={{marginLeft: "0.5rem"}}>
+                  <p
                   style={{
                     marginBottom: "-1px",
                     marginLeft: ".1rem",
@@ -182,6 +186,7 @@ const LargeCardNotPaid = ({
                 >
                   {award}
                 </p>
+                </div>
               </div>
             </div>
             {/* middle child */}
@@ -199,6 +204,7 @@ const LargeCardNotPaid = ({
               <div
                 style={{
                   // padding: ".1rem",
+                  display: "flex",
                   justifyContent: "center",
                   height: "100%",
                   alignItems: "center",
@@ -207,7 +213,9 @@ const LargeCardNotPaid = ({
                 }}
               >
                 {" "}
-                <p
+                <CgCalendarDates size={25} style={{color: "gray"}}/>
+                <div style={{marginLeft: "0.5rem"}}>
+                  <p
                   style={{
                     marginBottom: "-1px",
                     marginLeft: ".1rem",
@@ -230,6 +238,7 @@ const LargeCardNotPaid = ({
                 >
                   {formattedDate}
                 </p>
+                </div>
               </div>
             </div>
             {/* right child */}
@@ -293,7 +302,7 @@ const LargeCardNotPaid = ({
                 background: "gray",
                 height: "100%",
                 width: "1px",
-                opacity: "0.8"
+                opacity: "0.8",
               }}
             ></div>
             <div
@@ -309,9 +318,12 @@ const LargeCardNotPaid = ({
                 style={{
                   color: "gray",
                   background: "rgba(152,172,248,1)",
-                  borderRadius: "2rem",
+                  borderRadius: "0.5rem",
                   width: "90%",
-                  padding: "0.7rem",
+                  paddingTop: "0.5rem",
+                  paddingBottom: "0.5rem",
+                  paddingLeft: "0.7rem",
+                  paddingRight: "0.7rem",
                   opacity: "0.8",
                   fontWeight: "bold",
                 }}
