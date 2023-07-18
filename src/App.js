@@ -27,6 +27,7 @@ import StepperElement7 from "./pages/Register/Scholarships/StepperElement7";
 import StepElement8 from "./pages/Register/Scholarships/StepElement8";
 import StepComfirmation from "./pages/Register/Scholarships/StepComfirmation";
 import Index from "../src/pages/profile/index";
+import Favorite from "./pages/favorite";
 const App = () => {
 	return (
 		<Switch>
@@ -37,7 +38,7 @@ const App = () => {
 			<PrivateRoute exact path="/db" component={Root} />
 			<PrivateRoute exact path="/scholars" component={RootScholarship} />
 			<PrivateRoute exact path="/applications" component={RootApplication} />
-
+			<Route exact path="/favorite" component={Favorite} />
 			<Route exact path="/profile" component={MainProfile} />
 			<Route exact path="/route1" component={StepperElementSix} />
 			<Route exact path="/route2" component={StepperElement7} />

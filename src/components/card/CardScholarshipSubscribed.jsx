@@ -226,11 +226,11 @@ function CardScholarshipSubscribed({
 				bodyStyle={{
 					borderRadius: "2rem",
 					padding: "1rem",
-					opacity: 0.8
 				}}
 				style={{
 					backdropFilter: "blur(10px)"
 				}}
+				width={1000}
 			>
 				<div
 					style={{
