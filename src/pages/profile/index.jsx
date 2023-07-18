@@ -466,7 +466,7 @@ function Profile() {
                                                 <div className="media m-3">
                                                     <div
                                                         style={{
-                                                               padding: "1rem",
+                                                            padding: "1rem",
                                                             borderRadius:
                                                                 "10px",
                                                             marginBottom:
