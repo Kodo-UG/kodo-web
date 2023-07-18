@@ -7,6 +7,8 @@ import CombinedScholarshipCard from "./CombinedScholarshipCard";
 import LargeCard from "../../../components/card/LargeCard";
 import MapCardData from "./MapCardData";
 import { Button } from "antd";
+import axiosInstance from "../../../api/axiosInstance";
+import DashboardCard from "../../../components/card/DashboardCard";
 
 const Scholarship = () => {
 	const [data, setData] = useState([]);
@@ -26,16 +28,8 @@ const Scholarship = () => {
 	const getScholarship = async () => {
 		setLoading(true);
 		try {
-			const token = localStorage.getItem("token");
-			const headers = {
-				Authorization: `Bearer ${token}`
-			};
-
-			let res = await axios.get(
-				"https://demo.kodoscholarships.com/api/v1/scholarship",
-				{
-					headers
-				}
+			let res = await axiosInstance.get(
+				"https://demo.kodoscholarships.com/api/v1/scholarship"
 			);
 
 			setData(res.data.data);
@@ -67,8 +61,6 @@ const Scholarship = () => {
 					headers
 				}
 			);
-
-			console.log(res, "loaded more dara");
 
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
@@ -108,6 +100,9 @@ const Scholarship = () => {
 								<CustomTab total={data.length} />
 							)}
 						</div>
+						{/* <DashboardCard>
+							
+						</DashboardCard> */}
 						{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
 					</div>
 					<div
