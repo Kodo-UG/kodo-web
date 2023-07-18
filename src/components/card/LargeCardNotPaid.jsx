@@ -30,16 +30,15 @@ const LargeCardNotPaid = ({
           // padding: "4px",
           width: "65%",
           marginLeft: "12rem",
-          
         }}
-         onClick={() => history.push("/payment")}
+        onClick={() => history.push("/payment")}
       >
         {/* left div */}
         <div
           style={{
             height: "100%",
             width: "100%",
-            justifyContent: "space-between",
+            // justifyContent: "space-between",
             alignItems: "center",
             // background: "red",
             display: "flex",
@@ -61,7 +60,7 @@ const LargeCardNotPaid = ({
               display: "flex",
               width: "100%",
               height: "6rem",
-              paddingLeft: "2rem",
+              paddingLeft: "1rem",
               paddingRight: "2rem",
             }}
           >
@@ -75,7 +74,7 @@ const LargeCardNotPaid = ({
               }}
             >
               <img
-                src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688646453/Screenshot_from_2023-07-06_14-10-36-removebg-preview_1_dxweaz.png"
+                src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1689711758/Screenshot_from_2023-07-18_23-19-08-removebg-preview_kavcdq.png"
                 alt=""
                 style={{
                   maxWidth: "100%",
@@ -89,39 +88,49 @@ const LargeCardNotPaid = ({
                 style={{
                   // background: "orange",
                   display: "flex",
-                  width: "85%",
+                  width: "90%",
                   alignItems: "center",
                   justifyContent: "space-between",
+                  paddingTop: "1rem"
                 }}
               >
-                <div className="" style={{}}>
-                  <p
-                    style={{
-                      fontWeight: "bold",
-                      color: "white",
-                      fontSize: "18px",
-                      paddingTop: "1rem",
-                    }}
-                  >
-                    Upgrade Account Required
-                    <br />
-                    <span style={{ color: "white", fontWeight: "normal", fontSize: "16px" }}>
-                      Access all matched Scholarships
-                    </span>
-                  </p>
-                </div>
-                <IoIosArrowForward size={25} style={{ color: "white" }} />
+                <p
+                  style={{
+                    fontWeight: "bold",
+                    color: "white",
+                    fontSize: "18px",
+                  }}
+                >
+                  Upgrade Account Required
+                </p>
+                <p
+                  style={{
+                    color: "#7E57C2",
+                    fontWeight: "normal",
+                    fontSize: "16px",
+                    display: "flex",
+                    
+                  }}
+                >
+                  Access all matched Scholarships
+                  <span>
+                    <IoIosArrowForward
+                      size={25}
+                      style={{ color: "#7E57C2", marginLeft: "1rem" }}
+                    />
+                  </span>
+                </p>
               </div>
             </div>
           </div>
           <div
             style={{
               display: "flex",
-              alignItems: "center",
+              alignItems: "end",
               justifyContent: "space-between",
               paddingLeft: "1rem",
               paddingRight: "1rem",
-              //   backgroundColor: "yellow",
+                // backgroundColor: "yellow",
               height: "5rem",
               width: "100%",
               borderBottomRightRadius: "1rem",
@@ -136,6 +145,7 @@ const LargeCardNotPaid = ({
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100%",
+            
               }}
             >
               <div
@@ -277,6 +287,37 @@ const LargeCardNotPaid = ({
                   />
                 </div>
               </div>
+            </div>
+            <div
+              style={{
+                background: "gray",
+                height: "100%",
+                width: "1px",
+                opacity: "0.8"
+              }}
+            ></div>
+            <div
+              style={{
+                width: "25%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <button
+                style={{
+                  color: "gray",
+                  background: "rgba(152,172,248,1)",
+                  borderRadius: "2rem",
+                  width: "90%",
+                  padding: "0.7rem",
+                  opacity: "0.8",
+                  fontWeight: "bold",
+                }}
+              >
+                Apply
+              </button>
             </div>
           </div>
         </div>
