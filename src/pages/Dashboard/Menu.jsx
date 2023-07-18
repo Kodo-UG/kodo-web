@@ -82,7 +82,10 @@ const Menu = () => {
 											isButtonActive("scholarships") ? "active" : ""
 										}`}
 									>
-										<i class="fa fa-trophy" aria-hidden="true"></i>{" "}
+										<i
+											class="fa fa-graduation-cap"
+											aria-hidden="true"
+										></i>{" "}
 										<p
 											style={{
 												color: "#fff",
@@ -90,7 +93,7 @@ const Menu = () => {
 												padding: ".9rem"
 											}}
 										>
-											Scholarships
+											Dashboard
 											{data?.length > 0 ? (
 												<span className="right badge badge-danger">
 													New
@@ -108,10 +111,7 @@ const Menu = () => {
 											isButtonActive("dashboard") ? "active" : ""
 										}`}
 									>
-										<i
-											class="fa fa-graduation-cap"
-											aria-hidden="true"
-										></i>{" "}
+										<i class="fa fa-trophy" aria-hidden="true"></i>{" "}
 										<p
 											style={{
 												color: "#fff",
@@ -125,13 +125,13 @@ const Menu = () => {
 								</li>
 								{/* <li className="nav-item">
 									<Link
-										onClick={() => handleActive("applications")}
-										to="/applications"
+										onClick={() => handleActive("dashboard")}
+										to="#"
 										className={`nav-link ${
-											isButtonActive("applications") ? "active" : ""
+											isButtonActive("dashboard") ? "active" : ""
 										}`}
 									>
-										<i class="fa fa-tags" aria-hidden="true"></i>{" "}
+										<i class="fa fa-favorite" aria-hidden="true"></i>{" "}
 										<p
 											style={{
 												color: "#fff",
@@ -139,51 +139,9 @@ const Menu = () => {
 												padding: ".9rem"
 											}}
 										>
-											My Applications
-											{/* <span className="right badge badge-danger">
-												New
-											</span> */}
-								{/* </p>
-									</Link>
-								</li> */}
-
-								{/* <li className="nav-item has-treeview">
-									<Link
-										onClick={() => handleActive("history")}
-										to="/history"
-										className={`nav-link ${
-											isButtonActive("history") ? "active" : ""
-										}`}
-									>
-										<i className="nav-icon fas fa-copy" />
-										<p>
-											History
-											<i className="fas fa-angle-left right" />
-											<span className="badge badge-info right">
-												6
-											</span>
+											Favorites
 										</p>
 									</Link>
-									<ul className="nav nav-treeview">
-										<li className="nav-item">
-											<Link
-												to="pages/layout/top-nav.html"
-												className="nav-link"
-											>
-												<i className="far fa-circle nav-icon" />
-												<p>Top Navigation</p>
-											</Link>
-										</li>
-										<li className="nav-item">
-											<Link
-												to="pages/layout/boxed.html"
-												className="nav-link"
-											>
-												<i className="far fa-circle nav-icon" />
-												<p>Boxed</p>
-											</Link>
-										</li>
-									</ul>
 								</li> */}
 							</ul>
 						</nav>

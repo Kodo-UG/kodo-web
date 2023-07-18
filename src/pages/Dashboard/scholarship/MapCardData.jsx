@@ -57,7 +57,7 @@ const MapCardData = () => {
 						title={dta.title}
 						formatDate={dta.deadline}
 						award={dta.award}
-						subText={truncateText(dta.about, 7)}
+						subText={truncateText(dta.about, 6)}
 						about={dta.about}
 						link={dta.link}
 					/>
@@ -74,7 +74,6 @@ const MapCardData = () => {
 						link={dta.link}
 					/>
 				))}
-			
 		</div>
 	);
 };

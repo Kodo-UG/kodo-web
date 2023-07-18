@@ -5,13 +5,15 @@ const Footer = () => {
 	return (
 		<div>
 			<div>
-				<footer className="main-footer" style={{ height: "30px" }}>
+				<footer
+					className="main-footer fixed-bottom"
+					style={{ height: "30px"}}
+				>
 					<strong>
 						&copy; 2023{" "}
 						<Link style={{ color: "#125875" }} to="/">
 							Kodo scholarships
 						</Link>
-						
 					</strong>
 					All rights reserved.
 					<div className="float-right d-none d-sm-inline-block">

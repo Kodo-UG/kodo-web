@@ -14,9 +14,9 @@ const Scholarship = () => {
 	const [loading, setLoading] = useState(false);
 	const [count, setCount] = useState(1);
 
-	const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const isSm = useMediaQuery("only screen and (max-width : 900px)");
 	const isMd = useMediaQuery(
-		"only screen and (min-width : 700px) and (max-width : 992px)"
+		"only screen and (min-width : 900px) and (max-width : 1002px)"
 	);
 	const isLg = useMediaQuery(
 		"only screen and (min-width : 993px) and (max-width : 1200px)"
@@ -98,7 +98,8 @@ const Scholarship = () => {
 								fontWeight: "",
 								fontSize: "20px",
 								margin: "5px",
-								padding: "10px"
+								padding: "10px",
+								marginTop: "4rem"
 							}}
 						>
 							{data.length === 0 ? (
@@ -117,17 +118,21 @@ const Scholarship = () => {
 							padding: "1rem"
 						}}
 					>
-						<Button
-							style={{
-								width: "12rem",
-								backgroundColor: "#125875",
-								color: "#fff",
-								fontWeight: "bold"
-							}}
-							onClick={() => handleFetchMore()}
-						>
-							Load More
-						</Button>
+						{data.length > 4 ? (
+							<Button
+								style={{
+									width: "12rem",
+									backgroundColor: "#125875",
+									color: "#fff",
+									fontWeight: "bold"
+								}}
+								onClick={() => handleFetchMore()}
+							>
+								Load More
+							</Button>
+						) : (
+							""
+						)}
 					</div>
 				</section>
 			</div>
