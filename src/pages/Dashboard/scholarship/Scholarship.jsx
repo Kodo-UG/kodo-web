@@ -78,8 +78,6 @@ const Scholarship = () => {
 		}
 	};
 
-	console.log(data, "tttttttttttt");
-
 	return (
 		<div>
 			<div className="content-wrapper">
@@ -90,6 +88,7 @@ const Scholarship = () => {
 							flexDirection: "column",
 							width: "100%",
 							alignItems: "center",
+							padding: "2px",
 							justifyContent: "center"
 						}}
 					>
@@ -111,7 +110,6 @@ const Scholarship = () => {
 						>
 							<div
 								style={{
-									height: "9rem",
 									width: "18%",
 									display: "flex",
 									alignItems: "center",

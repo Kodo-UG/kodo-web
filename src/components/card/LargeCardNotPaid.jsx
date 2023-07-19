@@ -40,7 +40,8 @@ const LargeCardNotPaid = ({
 					cursor: "pointer",
 					// padding: "4px",
 					width: isMd ? "70%" : "65%",
-					marginLeft: isLg ? "18rem" : "" | isMd ? "11rem" : ""
+					marginLeft: isLg ? "18rem" : "" | isMd ? "11rem" : "",
+					marginBottom: "2rem"
 				}}
 				onClick={() => history.push("/payment")}
 			>
@@ -228,8 +229,23 @@ const LargeCardNotPaid = ({
 									marginLeft: ".8rem"
 								}}
 							>
-								{" "}
-								<CgCalendarDates size={25} style={{ color: "gray" }} />
+								<div
+									style={{
+										paddingLeft: ".1rem",
+										height: "100%",
+										display: "flex",
+										justifyContent: "center",
+										alignItems: "center"
+									}}
+								>
+									<FaRegCalendarAlt
+										style={{
+											width: "1.7rem",
+											height: "1.7rem",
+											color: "#D8D8D8"
+										}}
+									/>
+								</div>
 								<div style={{ marginLeft: "0.5rem" }}>
 									<p
 										style={{

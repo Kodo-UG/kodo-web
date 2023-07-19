@@ -19,11 +19,11 @@ const CardScholarship = ({
 		<Card
 			className="shadow-xl"
 			style={{
-				width: "24rem",
-				height: "13rem",
+				width: "100%",
+				// height: "13rem",
 				borderRadius: "0.5rem",
 				cursor: "pointer",
-				marginRight: "3rem",
+				marginLeft: "-1rem",
 				marginBottom: "3rem"
 			}}
 			onClick={() => history.push("/payment")}

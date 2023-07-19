@@ -48,7 +48,8 @@ const CombinedScholarshipCard = () => {
 					flexWrap: "wrap",
 					justifyContent: "center",
 					alignItems: "center",
-					marginLeft: "2.5rem"
+					marginLeft: "2.5rem",
+					// width:"100%"
 				}}
 			>
 				{!subscription &&

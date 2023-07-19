@@ -46,11 +46,24 @@ export default function Login() {
 	return (
 		<section
 			className="fxt-template-layout1 "
-			style={{ background: "white" }}
+			style={{ backgroundColor: "#fff", width: "100%" }}
 		>
-			<div className="container-fluid " style={{ display: "flex" }}>
-				<div className="col-md-6 col-12 " style={{ background: "white" }}>
-					<div className="fxt-content">
+			<div
+				className="container-fluid "
+				style={{ display: "flex", backgroundColor: "#fff" }}
+			>
+				<div
+					className="col-md-6 col-12 "
+					style={{
+						backgroundColor: "#fff",
+						width: "100%",
+						height: "100vh"
+					}}
+				>
+					<div
+						style={{ backgroundColor: "#fff", height: "100%" }}
+						className="fxt-content"
+					>
 						<div className="fxt-header">
 							<Link href="/" className="fxt-logo">
 								<img src="logo-kodo.png" alt="Logo" />
