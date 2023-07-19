@@ -65,12 +65,25 @@ const Favorite = () => {
 						marginLeft: isSm ? "" : "6rem"
 					}}
 				>
-					<h4 style={{ fontSize: "2rem", letterSpacing: "1.6px" }}>
+					<h4
+						style={{
+							fontSize: "18px",
+							letterSpacing: "1.6px",
+							fontWeight: "400",
+							lineHeight: "27px"
+						}}
+					>
 						Start saving scholarships now!
 					</h4>
 					<p
 						onClick={() => history.push("/scholars")}
-						style={{ fontSize: "1.4rem", letterSpacing: "1.6px" }}
+						style={{
+							fontSize: "14px",
+							letterSpacing: "1.6px",
+							fontWeight: 400,
+							lineHeight: "20px",
+							color: "rgb(74,74,74)"
+						}}
 					>
 						Back to matches
 					</p>
