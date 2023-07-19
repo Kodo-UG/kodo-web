@@ -21,33 +21,33 @@ const Scholarship = () => {
 
 	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
 	const isMd = useMediaQuery(
-		"only screen and (min-width : 1000px) and (max-width : 1602px)"
+		"only screen and (min-width : 1000px) and (max-width : 1202px)"
 	);
 	const isLg = useMediaQuery(
-		"only screen and (min-width : 993px) and (max-width : 1200px)"
+		"only screen and (min-width : 1202px) and (max-width : 1300px)"
 	);
 	const isXl = useMediaQuery("only screen and (min-width : 1201px)");
 
-	// const getScholarship = async () => {
-	// 	setLoading(true);
-	// 	try {
-	// 		let res = await axiosInstance.get(
-	// 			"https://demo.kodoscholarships.com/api/v1/scholarship"
-	// 		);
+	const getScholarship = async () => {
+		setLoading(true);
+		try {
+			let res = await axiosInstance.get(
+				"https://demo.kodoscholarships.com/api/v1/scholarship"
+			);
 
-	// 		setData(res.data.data);
-	// 		setSubscription(res.data.subscription);
-	// 	} catch (error) {
-	// 		// Handle   error here
-	// 		throw error;
-	// 	} finally {
-	// 		setLoading(false);
-	// 	}
-	// };
+			setData(res.data.data);
+			setSubscription(res.data.subscription);
+		} catch (error) {
+			// Handle   error here
+			throw error;
+		} finally {
+			setLoading(false);
+		}
+	};
 
-	// useEffect(() => {
-	// 	getScholarship();
-	// }, []);
+	useEffect(() => {
+		getScholarship();
+	}, []);
 
 	let handleFetchMore = async () => {
 		setLoading(true);
@@ -67,7 +67,8 @@ const Scholarship = () => {
 
 			setTotalPages(res.data.totalPages);
 
-			setData((prev) => [...prev, res.data.data]);
+			// setData((prev) => [...prev, res.data.data]);
+			setData(res.data.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
 			// Handle   error here
@@ -76,6 +77,8 @@ const Scholarship = () => {
 			setLoading(false);
 		}
 	};
+
+	console.log(data, "tttttttttttt");
 
 	return (
 		<div>
@@ -94,7 +97,7 @@ const Scholarship = () => {
 							onClick={() => history.push("/profile")}
 							style={{
 								// height: "8rem",
-								width: isSm ? "100%" : "40%",
+								width: isSm ? "100%" : "50%",
 								background: "white",
 								display: "flex",
 								marginTop: "4rem",
@@ -102,6 +105,7 @@ const Scholarship = () => {
 								padding: "1rem",
 								alignItems: "center",
 								cursor: "pointer"
+
 								// justifyContent: "space-between"
 							}}
 						>
@@ -123,12 +127,16 @@ const Scholarship = () => {
 								/>
 							</div>
 							<div
-								style={{ height: "100%", width: "75%", background: "" }}
+								style={{
+									height: "100%",
+									width: "100%",
+									background: ""
+								}}
 							>
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: "24px",
+										fontSize: isSm ? "20px" : "24px",
 										color: "#3259f1",
 										fontWeight: "bold"
 									}}
@@ -138,10 +146,11 @@ const Scholarship = () => {
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: isSm ? "17px" : "19px",
+										fontSize: isSm ? "12px" : "16px",
 										display: "flex",
 										alignItems: "center",
-										lineHeight: "1px"
+										lineHeight: "1px",
+										fontWeight: "bold"
 									}}
 								>
 									Update your profile to match to more
@@ -150,7 +159,8 @@ const Scholarship = () => {
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: isSm ? "17px" : "19px"
+										fontSize: isSm ? "12px" : "16px",
+										fontWeight: "bold"
 									}}
 								>
 									scholarships.

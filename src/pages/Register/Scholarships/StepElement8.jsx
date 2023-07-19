@@ -166,7 +166,7 @@ function StepElement8() {
 							<div className="_notAnimated_pmptr_10">
 								<span className="_headingContainer_1fpvz_1">
 									<h2 className="_soloHeading_1fpvz_8">
-										Where do you currently live?
+										Create Your Account
 									</h2>
 								</span>
 								<form onSubmit={register}>

@@ -38,7 +38,7 @@ function Cta() {
 							data-delay=".2s"
 						>
 							<Link
-								to="/db"
+								to="/scholars"
 								style={{
 									backgroundColor: "#EC1D64",
 									color: "#fff",

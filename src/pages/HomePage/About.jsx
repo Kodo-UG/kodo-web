@@ -91,7 +91,7 @@ const About = () => {
               </div> */}
 							<div className="slider-btn mt-20">
 								<Link
-									to="/db"
+									to="/scholars"
 									className="btn ss-btn smoth-scroll"
 									style={{ padding: "18px", color: "white" }}
 								>

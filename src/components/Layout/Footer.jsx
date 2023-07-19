@@ -37,9 +37,7 @@ const Footer = () => {
 											style={{ fontWeight: "bold" }}
 										>
 											<li>
-												<a href="https://kodoscholarships.com/about">
-													About Us
-												</a>
+												<a href="/aboutus">About Us</a>
 											</li>
 											<li>
 												<a href="https://kodoscholarships.com/faq">
@@ -47,9 +45,7 @@ const Footer = () => {
 												</a>
 											</li>
 											<li>
-												<a href="https://kodoscholarships.com/search-programs">
-													Scholarships
-												</a>
+												<a href="/scholarships">Scholarships</a>
 											</li>
 											<li>
 												<a href="#">Privacy Policy</a>
@@ -70,14 +66,10 @@ const Footer = () => {
 												<a href="#">Terms of Service</a>
 											</li>
 											<li>
-												<a href="https://kodoscholarships.com/blog">
-													Blog
-												</a>
+												<a href="/blog">Blog</a>
 											</li>
 											<li>
-												<a href="https://kodoscholarships.com/contact">
-													Contact Us
-												</a>
+												<a href="/contactus">Contact Us</a>
 											</li>
 										</ul>
 									</div>
