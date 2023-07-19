@@ -1,7 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./bg.css";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
+
 
 const BackgroundCarousel = () => {
 	return (
@@ -72,7 +73,6 @@ const BackgroundCarousel = () => {
 								million dollars
 							</h5>
 							<div style={{ width: "50%" }}>
-								<Link to="/scholars">
 								<button
 									type="button"
 									className="btn btn-lg btn-primary"
@@ -92,7 +92,6 @@ const BackgroundCarousel = () => {
 									Find Scholarships Now{" "}
 									<i class="fal fa-long-arrow-right"></i>
 								</button>
-								</Link>
 							</div>
 						</div>
 					</div>

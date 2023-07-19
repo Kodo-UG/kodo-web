@@ -19,35 +19,35 @@ const Scholarship = () => {
 
   const history = useHistory();
 
-  const isSm = useMediaQuery("only screen and (max-width : 1000px)");
-  const isMd = useMediaQuery(
-    "only screen and (min-width : 1000px) and (max-width : 1602px)"
-  );
-  const isLg = useMediaQuery(
-    "only screen and (min-width : 993px) and (max-width : 1200px)"
-  );
-  const isXl = useMediaQuery("only screen and (min-width : 1201px)");
+	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
+	const isMd = useMediaQuery(
+		"only screen and (min-width : 1000px) and (max-width : 1202px)"
+	);
+	const isLg = useMediaQuery(
+		"only screen and (min-width : 1202px) and (max-width : 1300px)"
+	);
+	const isXl = useMediaQuery("only screen and (min-width : 1201px)");
 
-  // const getScholarship = async () => {
-  // 	setLoading(true);
-  // 	try {
-  // 		let res = await axiosInstance.get(
-  // 			"https://demo.kodoscholarships.com/api/v1/scholarship"
-  // 		);
+	const getScholarship = async () => {
+		setLoading(true);
+		try {
+			let res = await axiosInstance.get(
+				"https://demo.kodoscholarships.com/api/v1/scholarship"
+			);
 
-  // 		setData(res.data.data);
-  // 		setSubscription(res.data.subscription);
-  // 	} catch (error) {
-  // 		// Handle   error here
-  // 		throw error;
-  // 	} finally {
-  // 		setLoading(false);
-  // 	}
-  // };
+			setData(res.data.data);
+			setSubscription(res.data.subscription);
+		} catch (error) {
+			// Handle   error here
+			throw error;
+		} finally {
+			setLoading(false);
+		}
+	};
 
-  // useEffect(() => {
-  // 	getScholarship();
-  // }, []);
+	useEffect(() => {
+		getScholarship();
+	}, []);
 
   let handleFetchMore = async () => {
     setLoading(true);
@@ -67,94 +67,106 @@ const Scholarship = () => {
 
       setTotalPages(res.data.totalPages);
 
-      setData((prev) => [...prev, res.data.data]);
-      setSubscription(res.data.subscription);
-    } catch (error) {
-      // Handle   error here
-      throw error;
-    } finally {
-      setLoading(false);
-    }
-  };
+			// setData((prev) => [...prev, res.data.data]);
+			setData(res.data.data);
+			setSubscription(res.data.subscription);
+		} catch (error) {
+			// Handle   error here
+			throw error;
+		} finally {
+			setLoading(false);
+		}
+	};
 
-  return (
-    <div>
-      <div className="content-wrapper">
-        <section style={{ marginBottom: "3rem" }} className="content">
-          <div
-            style={{
-              display: "flex ",
-              flexDirection: "column",
-              width: "100%",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              onClick={() => history.push("/profile")}
-              style={{
-                // height: "8rem",
-                width: isSm ? "100%" : "40%",
-                background: "white",
-                display: "flex",
-                marginTop: "4rem",
-                boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
-                padding: "1rem",
-                alignItems: "center",
-                cursor: "pointer",
-                // justifyContent: "space-between"
-              }}
-            >
-              <div
-                style={{
-                  height: "9rem",
-                  width: "18%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginRight: "1rem",
-                }}
-              >
-                <SiFiles
-                  size={75}
-                  style={{
-                    color: "#3259f1",
-                  }}
-                />
-              </div>
-              <div style={{ height: "100%", width: "75%", background: "" }}>
-                <p
-                  style={{
-                    fontFamily: "Poppins",
-                    fontSize: "24px",
-                    color: "#3259f1",
-                    fontWeight: "bold",
-                  }}
-                >
-                  $14,500 In Matches
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Poppins",
-                    fontSize: isSm ? "16px" : "17px",
-                    display: "flex",
-                    alignItems: "center",
-                    lineHeight: "1px",
-                  }}
-                >
-                  Update your profile to match to more
-                  <MdArrowForwardIos style={{ marginLeft: "2rem" }} />
-                </p>{" "}
-                <p
-                  style={{
-                    fontFamily: "Poppins",
-                    fontSize: isSm ? "17px" : "19px",
-                  }}
-                >
-                  scholarships.
-                </p>
-              </div>
-            </div>
+	console.log(data, "tttttttttttt");
+
+	return (
+		<div>
+			<div className="content-wrapper">
+				<section style={{ marginBottom: "3rem" }} className="content">
+					<div
+						style={{
+							display: "flex ",
+							flexDirection: "column",
+							width: "100%",
+							alignItems: "center",
+							justifyContent: "center"
+						}}
+					>
+						<div
+							onClick={() => history.push("/profile")}
+							style={{
+								// height: "8rem",
+								width: isSm ? "100%" : "50%",
+								background: "white",
+								display: "flex",
+								marginTop: "4rem",
+								boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+								padding: "1rem",
+								alignItems: "center",
+								cursor: "pointer"
+
+								// justifyContent: "space-between"
+							}}
+						>
+							<div
+								style={{
+									height: "9rem",
+									width: "18%",
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+									marginRight: "1rem"
+								}}
+							>
+								<SiFiles
+									size={75}
+									style={{
+										color: "#3259f1"
+									}}
+								/>
+							</div>
+							<div
+								style={{
+									height: "100%",
+									width: "100%",
+									background: ""
+								}}
+							>
+								<p
+									style={{
+										fontFamily: "Poppins",
+										fontSize: isSm ? "20px" : "24px",
+										color: "#3259f1",
+										fontWeight: "bold"
+									}}
+								>
+									$14,500 In Matches
+								</p>
+								<p
+									style={{
+										fontFamily: "Poppins",
+										fontSize: isSm ? "12px" : "16px",
+										display: "flex",
+										alignItems: "center",
+										lineHeight: "1px",
+										fontWeight: "bold"
+									}}
+								>
+									Update your profile to match to more
+									<MdArrowForwardIos style={{ marginLeft: "2rem" }} />
+								</p>{" "}
+								<p
+									style={{
+										fontFamily: "Poppins",
+										fontSize: isSm ? "12px" : "16px",
+										fontWeight: "bold"
+									}}
+								>
+									scholarships.
+								</p>
+							</div>
+						</div>
 
             {/* end of card */}
             <div

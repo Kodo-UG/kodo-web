@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+
 import { Link, useHistory } from "react-router-dom";
 import CustomLink from "../customlink";
 import "./index.css";
+import { useMediaQuery } from "@uidotdev/usehooks";
+import { GrClose } from "react-icons/gr";
+import { useState } from "react";
 
 const NavHeader = () => {
-  const history = useHistory();
-  const token = localStorage.getItem("token");
-  const [toggle, setToggle] = useState(false);
+	const history = useHistory();
+	const token = localStorage.getItem("token");
+	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
+	const [open, setOpen] = useState(false);
+	const smallClass = isSm ? "navbar-nav  ul" : "navbar-nav ml-auto ul";
+
+	const handleReloadPage = () => {
+		window.location.reload();
+	};
 
   const routeData = [
     {
@@ -70,41 +79,42 @@ const NavHeader = () => {
         </div>
       </Link>
 
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-		onClick ={()=> setToggle(!toggle)}
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
+			<button
+				className="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarTogglerDemo01"
+				aria-controls="navbarTogglerDemo01"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+				// onClick={() => setOpen(!open)}
+			>
+				<span className="navbar-toggler-icon"></span>
+			</button>
 
-      <div
-        style={{ zIndex: 99999 }}
-        className="collapse navbar-collapse  "
-        id="navbarTogglerDemo01"
-      >
-        <ul
-          style={{
-            color: "#202F4A",
-            width: "60%",
-            display: "flex",
-            justifyContent: "center",
-          }}
-          className="navbar-nav ml-auto ul "
-        >
-          {routeData.map((dta) => (
-            <CustomLink
-              key={dta.id}
-              route={dta.route}
-              children={dta.children}
-            />
-          ))}
-        </ul>
+			<div
+				style={{ zIndex: 99999 }}
+				className="collapse navbar-collapse  "
+				id="navbarTogglerDemo01"
+			>
+				<ul
+					style={{
+						color: "#202F4A",
+						width: "60%",
+						display: "flex",
+						justifyContent: "center"
+					}}
+					className={smallClass}
+				>
+					{routeData.map((dta) => (
+						<CustomLink
+							// onClick={handleReloadPage}
+							key={dta.id}
+							route={dta.route}
+							children={dta.children}
+						/>
+					))}
+				</ul>
 
         <div
           className="my-2 my-lg-0 bt "
