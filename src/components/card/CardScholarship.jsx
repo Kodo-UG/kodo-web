@@ -21,7 +21,7 @@ const CardScholarship = ({
       className="shadow-xl"
       style={{
         width: "100%",
-        height: "13rem",
+        // height: "13rem",
         borderRadius: "0.5rem",
         cursor: "pointer",
         marginLeft: "-1rem",
