@@ -15,7 +15,7 @@ const FindScholarship = () => {
 			id: 2,
 			title: "Jobs",
 			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
-			link: "https://www.kodoscholarships.com/steps/program",
+			link: "/",
 			Button: "Sign Up"
 		}
 	];
@@ -34,9 +34,9 @@ const FindScholarship = () => {
 		const button2 = document.getElementById("button2");
 
 		button1.textContent = "Sign Up";
-		button1.href = "https://www.kodoscholarships.com/search-programs";
+		button1.href = "/signin";
 		button2.textContent = "Sign Up";
-		button2.href = "https://www.kodoscholarships.com/steps/program";
+		button2.href = "/signin";
 	};
 
 	return (

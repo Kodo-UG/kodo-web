@@ -37,7 +37,7 @@ const LargeCard = ({ formatDate, title, subText, award, link, about }) => {
 			<div
 				style={{
 					backgroundColor: "#fff",
-					height: "12rem",
+					// height: "12rem",
 					borderRadius: "5px",
 					marginTop: "1rem",
 					display: "flex",

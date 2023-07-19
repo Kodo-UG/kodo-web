@@ -39,8 +39,8 @@ const LargeCardNotPaid = ({
 					boxShadow: "0 5px 10px rgba(0,0,0,0.10)",
 					cursor: "pointer",
 					// padding: "4px",
-					width: "60%",
-					marginLeft:isLg? "18rem" : ""
+					width: isMd ? "70%" : "65%",
+					marginLeft: isLg ? "18rem" : "" | isMd ? "11rem" : ""
 				}}
 				onClick={() => history.push("/payment")}
 			>

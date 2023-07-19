@@ -2,10 +2,20 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import CustomLink from "../customlink";
 import "./index.css";
+import { useMediaQuery } from "@uidotdev/usehooks";
+import { GrClose } from "react-icons/gr";
+import { useState } from "react";
 
 const NavHeader = () => {
 	const history = useHistory();
 	const token = localStorage.getItem("token");
+	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
+	const [open, setOpen] = useState(false);
+	const smallClass = isSm ? "navbar-nav  ul" : "navbar-nav ml-auto ul";
+
+	const handleReloadPage = () => {
+		window.location.reload();
+	};
 
 	const routeData = [
 		{
@@ -77,6 +87,7 @@ const NavHeader = () => {
 				aria-controls="navbarTogglerDemo01"
 				aria-expanded="false"
 				aria-label="Toggle navigation"
+				// onClick={() => setOpen(!open)}
 			>
 				<span className="navbar-toggler-icon"></span>
 			</button>
@@ -93,10 +104,11 @@ const NavHeader = () => {
 						display: "flex",
 						justifyContent: "center"
 					}}
-					className="navbar-nav ml-auto ul "
+					className={smallClass}
 				>
 					{routeData.map((dta) => (
 						<CustomLink
+							// onClick={handleReloadPage}
 							key={dta.id}
 							route={dta.route}
 							children={dta.children}
