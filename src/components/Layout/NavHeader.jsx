@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link, useHistory } from "react-router-dom";
 import CustomLink from "../customlink";
 import "./index.css";
@@ -17,67 +17,67 @@ const NavHeader = () => {
 		window.location.reload();
 	};
 
-	const routeData = [
-		{
-			id: 1,
-			route: "/",
-			children: "Home"
-		},
-		{
-			id: 2,
-			route: "/aboutus",
-			children: "About us"
-		},
-		{
-			id: 3,
-			route: "/scholarships",
-			children: "Scholarships"
-		},
-		{
-			id: 4,
-			route: "/testimonals",
-			children: "Testimonals"
-		},
-		{
-			id: 5,
-			route: "/blog",
-			children: "Blog"
-		},
-		{
-			id: 6,
-			route: "/contactus",
-			children: "Contact us"
-		},
-		{
-			id: 7,
-			route: "/scholars",
-			children: token ? "Dashboard" : ""
-		}
-	];
+  const routeData = [
+    {
+      id: 1,
+      route: "/",
+      children: "Home",
+    },
+    {
+      id: 2,
+      route: "/aboutus",
+      children: "About us",
+    },
+    {
+      id: 3,
+      route: "/scholarships",
+      children: "Scholarships",
+    },
+    {
+      id: 4,
+      route: "/testimonals",
+      children: "Testimonals",
+    },
+    {
+      id: 5,
+      route: "/blog",
+      children: "Blog",
+    },
+    {
+      id: 6,
+      route: "/contactus",
+      children: "Contact us",
+    },
+    {
+      id: 7,
+      route: "/scholars",
+      children: token ? "Dashboard" : "",
+    },
+  ];
 
-	return (
-		<nav
-			className="navbar fixed-top navbar-expand-lg navbar-light "
-			style={{
-				boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-				backgroundColor: "white"
-			}}
-		>
-			<Link to="/">
-				<div className="logo">
-					<img
-						src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
-						alt="logo"
-						style={{
-							width: "180px",
-							height: "auto",
-							marginLeft: "8rem",
-							paddingLeft: "2rem",
-							zIndex: 9999999999
-						}}
-					/>
-				</div>
-			</Link>
+  return (
+    <nav
+      className="navbar fixed-top navbar-expand-lg navbar-light "
+      style={{
+        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+        backgroundColor: "white",
+      }}
+    >
+      <Link to="/">
+        <div className="logo">
+          <img
+            src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
+            alt="logo"
+            style={{
+              width: "180px",
+              height: "auto",
+              marginLeft: "8rem",
+              paddingLeft: "2rem",
+              zIndex: 9999999999,
+            }}
+          />
+        </div>
+      </Link>
 
 			<button
 				className="navbar-toggler"
@@ -116,77 +116,77 @@ const NavHeader = () => {
 					))}
 				</ul>
 
-				<div
-					className="my-2 my-lg-0 bt "
-					style={{
-						margin: "0px",
-						width: "20rem",
-						display: "flex",
-						justifyContent: "space-between"
-					}}
-				>
-					<form className="form-inline">
-						{token ? (
-							<button
-								className="btn btn-lg"
-								style={{
-									height: "4rem",
-									marginTop: "0px",
-									marginBottom: "0px",
-									fontFamily: "Roboto, sans-serif",
-									fontSize: "16px"
-								}}
-								onClick={(e) => {
-									e.preventDefault();
-									localStorage.removeItem("token");
-									history.push("/login");
-								}}
-							>
-								LOGOUT
-							</button>
-						) : (
-							<button
-								className="btn btn-lg mr-2 "
-								onClick={(e) => {
-									e.preventDefault();
-									history.push("/login");
-								}}
-								style={{
-									height: "4rem",
-									marginTop: "0px",
-									marginBottom: "0px",
-									fontFamily: "Roboto, sans-serif",
-									fontSize: "16px"
-								}}
-							>
-								LOGIN
-							</button>
-						)}
+        <div
+          className="my-2 my-lg-0 bt "
+          style={{
+            margin: "0px",
+            width: "20rem",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <form className="form-inline">
+            {token ? (
+              <button
+                className="btn btn-lg"
+                style={{
+                  height: "4rem",
+                  marginTop: "0px",
+                  marginBottom: "0px",
+                  fontFamily: "Roboto, sans-serif",
+                  fontSize: "16px",
+                }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  localStorage.removeItem("token");
+                  history.push("/login");
+                }}
+              >
+                LOGOUT
+              </button>
+            ) : (
+              <button
+                className="btn btn-lg mr-2 "
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push("/login");
+                }}
+                style={{
+                  height: "4rem",
+                  marginTop: "0px",
+                  marginBottom: "0px",
+                  fontFamily: "Roboto, sans-serif",
+                  fontSize: "16px",
+                }}
+              >
+                LOGIN
+              </button>
+            )}
 
-						<button
-							className="btn btn-lg"
-							style={{
-								background: "#EC1D64",
-								borderRadius: "0",
-								color: "white",
-								height: "4rem",
-								marginTop: "0px",
-								marginBottom: "0px",
-								fontFamily: "Roboto, sans-serif",
-								fontSize: "16px"
-							}}
-							onClick={(e) => {
-								e.preventDefault();
-								history.push("/admissions");
-							}}
-						>
-							FIND SCHOLARSHIPS
-						</button>
-					</form>
-				</div>
-			</div>
-		</nav>
-	);
+            <button
+              className="btn btn-lg"
+              style={{
+                background: "#EC1D64",
+                borderRadius: "0",
+                color: "white",
+                height: "4rem",
+                marginTop: "0px",
+                marginBottom: "0px",
+                fontFamily: "Roboto, sans-serif",
+                fontSize: "16px",
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                history.push("/admissions");
+              }}
+            >
+              FIND SCHOLARSHIPS
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default NavHeader;
