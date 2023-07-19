@@ -132,13 +132,18 @@ const Menu = () => {
 											isButtonActive("favorite") ? "active" : ""
 										}`}
 									>
-										<i class="fa fa-bookmark" aria-hidden="true"></i>
+										<i
+											style={{ marginLeft: "3px" }}
+											class="fa fa-bookmark"
+											aria-hidden="true"
+										></i>
 
 										<p
 											style={{
 												color: "#fff",
 												fontWeight: "bold",
-												padding: ".9rem"
+												padding: ".9rem",
+												marginLeft: "4px"
 											}}
 										>
 											Favorites
