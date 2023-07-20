@@ -58,7 +58,7 @@ const Footer = () => {
 											style={{ fontWeight: "bold" }}
 										>
 											<li>
-												<a href="https://kodoscholarships.com/testimonial">
+												<a href="/testimonial">
 													Testimonials
 												</a>
 											</li>
