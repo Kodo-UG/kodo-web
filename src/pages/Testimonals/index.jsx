@@ -54,12 +54,16 @@ const Testimonals = () => {
 				justifyContent: "center",
 				margin: "auto",
 				alignItems: "center",
-				padding: "4rem"
+				padding: "4rem",
+				marginTop: "5rem",
 			}}
-			className="testimonial-section"
+			className="testimonial-section "
 		>
 			<div className="">
-				<h3 className="section-title">Testimonials</h3>
+				<h3 className="section-title" style={{
+					fontFamily: "Jost, sans-serif",
+					fontWeight: "bold",
+				}}>Testimonials</h3>
 				<div className="testimonial-carousel">
 					<div className="testimonial-item">
 						<div className="testimonial-image">

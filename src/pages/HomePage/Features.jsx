@@ -54,7 +54,13 @@ const Features = () => {
                   </div>
                   <div className="text">
                     <h3 className="font-weight-bold">Kodo Ai</h3>
-                    <p>
+                    <p
+                      style={{
+                        fontFamily: "Roboto, sans-serif",
+                        fontSize: "15px",
+                        lineHeight: "26px",
+                      }}
+                    >
                       Our kodo scholarship AI will compare your profile to
                       thousands of active scholarships to create a prioritized
                       list of opportunities. You’ll be able to sort by level
@@ -86,7 +92,13 @@ const Features = () => {
                   </div>
                   <div className="text">
                     <h3 className="font-weight-bold">Expert Support</h3>
-                    <p>
+                    <p
+                      style={{
+                        fontFamily: "Roboto, sans-serif",
+                        fontSize: "15px",
+                        lineHeight: "26px",
+                      }}
+                    >
                       Experience peace of mind with our extensive all-season
                       support team, providing you with the resources and
                       guidance you need.
@@ -117,7 +129,13 @@ const Features = () => {
                   </div>
                   <div className="text">
                     <h3 className="font-weight-bold">Application Process</h3>
-                    <p>
+                    <p
+                      style={{
+                        fontFamily: "Roboto, sans-serif",
+                        fontSize: "15px",
+                        lineHeight: "26px",
+                      }}
+                    >
                       Take control of your success with our extensive
                       feature-rich dashboard, to provide you with a
                       comprehensive view of your progress and personalized
