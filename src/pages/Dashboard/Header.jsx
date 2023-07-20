@@ -286,6 +286,8 @@ const MyHeader = () => {
 								onClick={(e) => {
 									e.preventDefault();
 									localStorage.removeItem("token");
+									localStorage.removeItem("userData");
+
 									history.push("/login");
 								}}
 								style={{

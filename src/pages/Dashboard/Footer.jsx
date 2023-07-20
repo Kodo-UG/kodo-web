@@ -7,11 +7,11 @@ const Footer = () => {
 			<div>
 				<footer
 					className="main-footer fixed-bottom"
-					style={{ height: "30px"}}
+					style={{ height: "50px", marginBottom: "1rem", color: "black" }}
 				>
 					<strong>
 						&copy; 2023{" "}
-						<Link style={{ color: "#125875" }} to="/">
+						<Link style={{ color: "#125875", padding: "3px" }} to="/">
 							Kodo scholarships
 						</Link>
 					</strong>

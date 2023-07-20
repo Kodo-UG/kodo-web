@@ -145,7 +145,7 @@ const Scholarship = () => {
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: isSm ? "15px" : "16px",
+										fontSize: isSm ? "14px" : "15px",
 										display: "flex",
 										alignItems: "center",
 										lineHeight: "1px",

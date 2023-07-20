@@ -865,8 +865,8 @@ ul.fxt-socials li.fxt-pinterest a:hover {
  .fxt-content {
   padding: 100px 65px 70px 80px;
   width: 100%;
-  -webkit-box-shadow: 3px 0 79px 0 rgba(0, 0, 0, 0.08);
-  box-shadow: 3px 0 79px 0 rgba(0, 0, 0, 0.08);
+  /* -webkit-box-shadow: 3px 0 79px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 3px 0 79px 0 rgba(0, 0, 0, 0.08); */
 }
 @media only screen and (max-width: 1199px) {
    .fxt-content {
