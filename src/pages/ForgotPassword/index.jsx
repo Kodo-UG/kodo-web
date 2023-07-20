@@ -18,51 +18,6 @@ export default function ForgotPassword() {
 		setState(e.target.value);
 	};
 
-<<<<<<< HEAD
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const data = await apiClient.post("/auth/forgot/password", { email });
-      if (data.status == "200") {
-        displaySuccessMessage(`Password reset instructions sent ${email}`);
-      } else {
-        displayErrorMessage("Password reset");
-      }
-    } catch (error) {
-      displayErrorMessage("Invalid Email or Password");
-    }
-  };
-  return (
-    <section className=" fxt-template-layout1" 
-    style={{background: "white", height: "100vh", display: "flex", 
-    alignItems: "center", justifyContent: "center"}}>
-      <div className="container-fluid " style={{ display: "flex" }}>
-        <div
-          className="col-md-6 col-12 "
-          style={{ background: "white" }}
-        >
-          <div className="fxt-content" style={{background: "white"}}>
-            <div className="fxt-header">
-              <Link href="/" className="fxt-logo">
-                <img
-                  src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
-                  alt="Logo"
-                />
-              </Link>
-              <div className="fxt-page-switcher">
-                <Link to="/signin" className="switcher-text1 active">
-                  Log In
-                </Link>
-                <Link to="/login" className="switcher-text1">
-                  Sign Up
-                </Link>
-              </div>
-            </div>
-            <div className="fxt-form">
-              <h2 style={{ textAlign: "start" }}>Forgot PassWord</h2>
-              <p>Request for password reset</p>
-              <form onSubmit={handleSubmit}>
-=======
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
@@ -151,7 +106,6 @@ export default function ForgotPassword() {
 											}}
 											onChange={handleChange(setEmail)}
 										/>
->>>>>>> 9782b5b3f30ed8df6fb8d8ae32af9445147d3b38
 
 										<i>
 											{" "}
