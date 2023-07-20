@@ -31,8 +31,8 @@ const Footer = ({ nextStep, prevStep }) => {
 			<div className="footer-container">
 				<p>© 2023 kodoscholarships.com</p>
 				<div className="footer-options">
-					<a href="/privacy-policy/">Privacy Policy</a>
-					<a href="/advertising-disclosure/">Advertising Disclosures</a>
+					<a href="/privacy-policy/"  style={{color: "#EC1D64"}}>Privacy Policy</a>
+					<a href="/advertising-disclosure/"  style={{color: "#EC1D64"}} >Advertising Disclosures</a>
 				</div>
 			</div>
 		</div>
