@@ -44,8 +44,8 @@ const Favorite = () => {
 	console.log(data, "DATAAAAAA");
 
 	const truncateText = (text, maxWords) => {
-		const wordsArray = text.split(" ");
-		if (wordsArray.length > maxWords) {
+		const wordsArray = text?.split(" ");
+		if (wordsArray?.length > maxWords) {
 			return wordsArray.slice(0, maxWords).join(" ") + "...";
 		} else {
 			return text;
@@ -134,11 +134,11 @@ const Favorite = () => {
 				) : (
 					data?.map((dta) => (
 						<LargeCardFavourite
-							title={dta.favourite.title}
-							formatDate={dta.favourite.deadline}
-							subText={truncateText(dta.favourite.about, 6)}
-							award={dta.favourite.award}
-							link={dta.favourite.link}
+							title={dta.favourite?.title}
+							formatDate={dta.favourite?.deadline}
+							subText={truncateText(dta.favourite?.about, 6)}
+							award={dta.favourite?.award}
+							link={dta.favourite?.link}
 						/>
 					))
 				)}
