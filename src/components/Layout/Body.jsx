@@ -4,6 +4,7 @@ const Body = ({ children }) => {
 		paddingRight: "16px",
 		display: "flex",
 		justifyContent: "center",
+		
 	};
 	return <div style={containerStyles}>{children}</div>;
 };

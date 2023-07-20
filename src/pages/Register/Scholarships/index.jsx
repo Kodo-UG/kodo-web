@@ -144,7 +144,7 @@ const Stepper = () => {
 					style={{
 						display: "flex",
 						justifyContent: "center",
-						alignItems: "center"
+						alignItems: "center",
 					}}
 				>
 					{renderStepContent()}

@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
 	return (
 		<footer
-			className="footer-bg  footer-p pt-90"
+			className="footer-bg  footer-p pt-90  "
 			style={{
 				backgroundColor: "#125875",
 				backgroundImage:
@@ -58,9 +58,7 @@ const Footer = () => {
 											style={{ fontWeight: "bold" }}
 										>
 											<li>
-												<a href="/testimonial">
-													Testimonials
-												</a>
+												<a href="/testimonial">Testimonials</a>
 											</li>
 											<li>
 												<a href="#">Terms of Service</a>
