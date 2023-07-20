@@ -38,9 +38,19 @@ const CombinedScholarshipCard = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
+
+	// const truncateText = (text, maxWords) => {
+	// 	const wordsArray = text.split(" ");
+	// 	if (wordsArray.length > maxWords) {
+	// 		return wordsArray.slice(0, maxWords).join(" ") + "...";
+	// 	} else {
+	// 		return text;
+	// 	}
+	// };
+
 	return (
 		<div>
-			<div 
+			<div
 				style={{
 					//
 					padding: "1rem",
@@ -48,7 +58,7 @@ const CombinedScholarshipCard = () => {
 					flexWrap: "wrap",
 					justifyContent: "center",
 					alignItems: "center",
-					marginLeft: "2.5rem",
+					marginLeft: "2.5rem"
 					// width:"100%"
 				}}
 			>
