@@ -164,7 +164,7 @@ function Profile() {
 													<div className="ms-4 ">
 														<h4
 															style={{
-																color: "#707070"
+																color: "black"
 															}}
 														>
 															{data.fname + " " + data.lname}
@@ -308,6 +308,7 @@ function Profile() {
 													>
 														<li
 															style={{
+																color: "black",
 																marginRight: "1rem",
 																borderBottom:
 																	activeTab === "profileMain"
@@ -327,6 +328,10 @@ function Profile() {
 																onClick={() =>
 																	handleTabClick("profileMain")
 																}
+																style={{
+																	color: "black",
+																	fontWeight: "bold"
+																}}
 															>
 																Profile
 															</a>
@@ -349,6 +354,10 @@ function Profile() {
 																		"accountSettings"
 																	)
 																}
+																style={{
+																	color: "black",
+																	fontWeight: "bold"
+																}}
 															>
 																Account Settings
 															</a>
@@ -430,104 +439,7 @@ function Profile() {
 													</table>
 												</div>
 												<div className="border-top"></div>
-												<div
-													style={{
-														display: "flex",
-														flexDirection: "column"
-													}}
-													className="p-5"
-												>
-													<h3
-														className="card-titl"
-														style={{
-															fontFamily: "Poppins, sans-serif",
-															color: "gray",
-															fontSize: "18px",
-															lineHeight: "20px",
-															fontWeight: "bold",
-															margin: "1rem",
-															marginBottom: "2rem"
-														}}
-													>
-														Statistics
-													</h3>
-													<div className="">
-														<ul className="nav p-0 border-bottom-0 mb-0">
-															<li
-																style={{
-																	padding: "1rem",
-																	height: "5rem",
-																	width: "8rem",
-																	display: "flex",
-																	justifyContent: "center",
-																	alignItems: "center",
-																	borderRadius: "5px",
-																	backgroundColor: "#fbfbfc"
-																}}
-																className="border p-3 br-5 bg-light-lightest wpx-100 hpx-70 text-center my-1"
-															>
-																<span
-																	style={{
-																		fontSize: "1.7rem",
-																		marginRight: "2px"
-																	}}
-																	className="border-0 mb-0 pb-0 fs-21"
-																>
-																	{scholarship.length}
-																</span>
-																Matched
-															</li>
-															<li
-																style={{
-																	padding: "1rem",
-																	height: "5rem",
-																	width: "8rem",
-																	display: "flex",
-																	justifyContent: "center",
-																	alignItems: "center",
-																	borderRadius: "5px",
-																	backgroundColor: "#fbfbfc"
-																}}
-																className="border p-2 br-5 bg-light-lightest wpx-100 hpx-70 text-center mx-2 my-1"
-															>
-																<span
-																	style={{
-																		fontSize: "1.7rem",
-																		marginRight: "2px"
-																	}}
-																	className="border-0 mb-0 pb-0 fs-21"
-																>
-																	0
-																</span>
-																Applied
-															</li>
-															<li
-																style={{
-																	padding: "1rem",
-																	height: "5rem",
-																	width: "8rem",
-																	display: "flex",
-																	justifyContent: "center",
-																	alignItems: "center",
-																	borderRadius: "5px",
-																	backgroundColor: "#fbfbfc"
-																}}
-																className="border p-2 br-5 bg-light-lightest wpx-100 hpx-70 text-center my-1"
-															>
-																<span
-																	style={{
-																		fontSize: "1.7rem",
-																		marginRight: "2px"
-																	}}
-																	className="border-0 mb-0 pb-0 fs-21"
-																>
-																	0
-																</span>
-																Favorites
-															</li>
-														</ul>
-													</div>
-												</div>
+
 												<div className="border-top"></div>
 											</div>
 										</div>

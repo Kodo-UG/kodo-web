@@ -154,7 +154,7 @@ const Features = () => {
             >
               <img
                 src="https://res.cloudinary.com/itgenius/image/upload/v1688241561/man-woman-students-with-documents_xuy7jp.jpg"
-                alt="class image"
+                alt=""
               />
             </div>
           </div>

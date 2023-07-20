@@ -157,7 +157,10 @@ function StepperElementFour() {
 																</div>
 															</span>
 															<div>
-																<span className="_optionLabel_9bife_106 _normal_9bife_137">
+																<span
+																	style={{ color: "black" }}
+																	className="_optionLabel_9bife_106 _normal_9bife_137"
+																>
 																	{data.text}
 																</span>
 															</div>

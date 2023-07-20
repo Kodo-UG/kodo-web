@@ -93,7 +93,7 @@ function StepperElementSix() {
 									style={{ width: "16.6667%" }}
 								></div>
 							</div>
-							<Link to="/test">
+							<Link to="/educationlevel">
 								<button
 									data-testid="button-previous"
 									type="button"
@@ -172,7 +172,10 @@ function StepperElementSix() {
 															</div>
 														</span>
 														<div>
-															<span className="_optionLabel_9bife_106 _normal_9bife_137">
+															<span
+																style={{ color: "black" }}
+																className="_optionLabel_9bife_106 _normal_9bife_137"
+															>
 																{data.text}
 															</span>
 														</div>
@@ -290,4 +293,3 @@ function StepperElementSix() {
 }
 
 export default StepperElementSix;
-

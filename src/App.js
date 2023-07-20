@@ -45,7 +45,7 @@ const App = () => {
 			<Route exact path="/verify" component={StepComfirmation} />
 			<Route exact path="/final" component={StepElement8} />
 			<Route exact path="/stepper" component={Stepper} />
-			<Route exact path="/test" component={StepperElementFour} />
+			<Route exact path="/educationlevel" component={StepperElementFour} />
 			<Route exact path="/stepper" component={Stepper} />
 			<Layout>
 				<PrivateRoute path="/payment" component={Payment} />

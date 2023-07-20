@@ -32,7 +32,7 @@ const CardScholarship = ({
 			<div
 				className="card-heade"
 				style={{
-					background: "#192C78",
+					background: "#1c2755",
 					color: "white",
 					padding: "0.2rem",
 					borderTopLeftRadius: "0.5rem",
@@ -96,7 +96,7 @@ const CardScholarship = ({
 						<p className="mb-1">Award</p>
 						<p
 							style={{
-								color: "#192C78",
+								color: "#1c2755",
 								fontWeight: "bold",
 								fontSize: "18px"
 							}}
@@ -108,7 +108,7 @@ const CardScholarship = ({
 						<p className="mb-1">Deadline</p>
 						<p
 							style={{
-								color: "#192C78",
+								color: "#1c2755",
 								fontWeight: "bold",
 								fontSize: "18px"
 							}}
@@ -118,7 +118,7 @@ const CardScholarship = ({
 					</div>
 					<div className="d-flex flex-column align-items-center">
 						<p className="mb-1">Effort</p>
-						<BsSpeedometer2 size={30} style={{ color: "#192C78" }} />
+						<BsSpeedometer2 size={30} style={{ color: "#1c2755" }} />
 					</div>
 				</div>
 			</div>
