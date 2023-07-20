@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import apiClient from "../../api/apiClient";
 import axios from "axios";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
-import Spinner from "../../components/spinner";
 import "./custom.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BiEnvelope } from "react-icons/bi";
@@ -181,20 +179,7 @@ export default function Login() {
 										</i>
 									</div>
 								</div>
-								{/* <div className="form-group">
-                  <div className="fxt-transformY-50 fxt-transition-delay-2">
-                    <input
-                      type="password"
-                      className="form-control"
-                      name="password"
-                      placeholder="Password"
-                      required="required"
-                      onChange={handleChange(setPassword)}
-                      id="password"
-                    />
-                    <i className="flaticon-padlock"></i>
-                  </div>
-                </div> */}
+								
 								<div className="form-group">
 									<div className="fxt-transformY-50 fxt-transition-delay-3">
 										<div className="fxt-content-between">

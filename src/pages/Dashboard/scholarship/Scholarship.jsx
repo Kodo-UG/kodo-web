@@ -110,7 +110,7 @@ const Scholarship = () => {
 						>
 							<div
 								style={{
-									width: "18%",
+									width: "20%",
 									display: "flex",
 									alignItems: "center",
 									justifyContent: "center",
@@ -120,23 +120,23 @@ const Scholarship = () => {
 								<SiFiles
 									size={75}
 									style={{
-										color: "#3259f1"
+										color: "#192C78"
 									}}
 								/>
 							</div>
 							<div
 								style={{
-									height: "100%",
-									width: "100%",
-									background: ""
+									// height: "100%",
+									width: "100vw",
 								}}
 							>
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: isSm ? "20px" : "24px",
-										color: "#3259f1",
-										fontWeight: "bold"
+										fontSize: isSm ? "22px" : "24px",
+										color: "#192C78",
+										fontWeight: "bold",
+										letterSpacing: "1px"
 									}}
 								>
 									$14,500 In Matches
@@ -144,20 +144,21 @@ const Scholarship = () => {
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: isSm ? "12px" : "16px",
+										fontSize: isSm ? "15px" : "16px",
 										display: "flex",
 										alignItems: "center",
 										lineHeight: "1px",
-										fontWeight: "bold"
+										fontWeight: "bold",
+										textAlign: "justify"
 									}}
 								>
 									Update your profile to match to more
-									<MdArrowForwardIos style={{ marginLeft: "2rem" }} />
+									<MdArrowForwardIos />
 								</p>{" "}
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: isSm ? "12px" : "16px",
+										fontSize: isSm ? "16px" : "16px",
 										fontWeight: "bold"
 									}}
 								>
@@ -178,7 +179,7 @@ const Scholarship = () => {
 								lineHeight: "45px"
 							}}
 						>
-							{data.length === 0 ? (
+							{data.length < 0 ? (
 								<div
 									style={{
 										letterSpacing: "2px",
