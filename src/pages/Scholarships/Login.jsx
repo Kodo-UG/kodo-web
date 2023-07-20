@@ -3,9 +3,11 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { updateFormData } from "../../toolkit/formReducer";
 import StepperCard from "../Register/StepperCard";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const Login = () => {
 	const dispatch = useDispatch();
+	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
 
 	const object = [
 		{
@@ -29,16 +31,20 @@ const Login = () => {
 	};
 
 	return (
-		  <div
-      style={{
-        height: "80vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <StepperCard list={object} />
-    </div>
+		<div
+			style={{
+				height: "40rem",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				// background: "orange",
+				width: "100%",
+				marginTop: isSm ? "9rem" : "3rem"
+				// margin: "auto"
+			}}
+		>
+			<StepperCard list={object} />
+		</div>
 	);
 };
 

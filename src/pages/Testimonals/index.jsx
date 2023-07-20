@@ -55,15 +55,30 @@ const Testimonals = () => {
 				margin: "auto",
 				alignItems: "center",
 				padding: "4rem",
-				marginTop: "5rem",
+				marginTop: "5rem"
 			}}
 			className="testimonial-section "
 		>
-			<div className="">
-				<h3 className="section-title" style={{
-					fontFamily: "Jost, sans-serif",
-					fontWeight: "bold",
-				}}>Testimonials</h3>
+			<div
+				className=" "
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					justifyContent: "center",
+					paddingLeft: "8rem",
+					paddingRight: "8rem"
+				}}
+			>
+				<h3
+					className="section-title"
+					style={{
+						fontFamily: "Jost, sans-serif",
+						fontWeight: "bold"
+					}}
+				>
+					Testimonials
+				</h3>
 				<div className="testimonial-carousel">
 					<div className="testimonial-item">
 						<div className="testimonial-image">

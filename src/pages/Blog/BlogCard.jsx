@@ -2,8 +2,8 @@ import React from "react";
 
 function BlogCard({image, blogType, tittle, text}) {
   return (
-     <div class="col-lg-4 col-md-6 " style={{height: "100vh"}}>
-    <div class="courses-item mb-30 hover-zoomin">
+     <div class="col-lg-4 col-md-6" style={{height: "100vh"}}>
+    <div class="courses-item mb-30 hover-zoomin " style={{height: "80rem"}}>
       <div class="thumb fix">
         <a href="#">
           <img
@@ -12,7 +12,7 @@ function BlogCard({image, blogType, tittle, text}) {
           />
         </a>
       </div>
-      <div class="courses-content">
+      <div class="courses-content bg-red-600" style={{height: "45rem"}}>
         <div class="cat">
           <i class="fal fa-graduation-cap"></i> {blogType}
         </div>

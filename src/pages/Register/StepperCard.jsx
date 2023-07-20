@@ -12,7 +12,7 @@ function StepperCard({ list }) {
 								marginBottom: "60px",
 								fontFamily: "Jost, sans-serif",
 								fontWeight: 600,
-								fontSize: "22px"
+								fontSize: "2rem"
 							}}
 							className="welcome-title"
 						>
@@ -22,15 +22,15 @@ function StepperCard({ list }) {
 				</div>
 				<div className="row">
 					{list.map((data) => (
-						<div className="col-lg-6">
+						<div style={{ padding: "1rem" }} className="col-lg-6">
 							<div
 								className="card custom-card"
 								style={{
 									backgroundColor: "#FFFFFF",
 									boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
 									borderRadius: "10px",
-									overflow: "hidden",
-									marginBottom: "30px"
+									overflow: "hidden"
+									// marginBottom: "30px"
 								}}
 							>
 								<div

@@ -141,12 +141,18 @@
   .testimonial-carousel {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    width: "100%";
+    
+   
   }
   
   .testimonial-item {
     flex-basis: calc(33.33% - 30px);
     margin-bottom: 60px;
+  
+
   }
   
   .testimonial-image {
@@ -237,26 +243,11 @@
   font-size: 16px;
   color: #888888;
   }
-  .testimonial-section {
-    padding: 60px 0;
-    background: #f8f8f8;
-  }
+
+
+
   
-  .section-title {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  
-  .testimonial-carousel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .testimonial-item {
-    flex-basis: calc(33.33% - 30px);
-    margin-bottom: 60px;
-  }
+
   
   .testimonial-image {
     position: relative;

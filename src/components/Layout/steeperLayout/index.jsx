@@ -8,7 +8,7 @@ const HeaderLayout = ({ children , nextStep }) => {
 	return (
 		<Fragment>
 			<HeaderStepper />
-			<main>{children}</main>
+			<main >{children}</main>
 			<Footer nextStep={nextStep} />
 		</Fragment>
 	);
