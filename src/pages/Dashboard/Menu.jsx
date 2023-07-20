@@ -43,7 +43,7 @@ const Menu = () => {
 					style={{ backgroundColor: "#fff" }}
 				>
 					{/* Brand Logo */}
-					<Link to="/scholars" className="brand-link">
+					<Link to="/" className="brand-link">
 						<img
 							src="/logo-kodo.png"
 							alt="kodo Logo"
@@ -57,7 +57,8 @@ const Menu = () => {
 							}}
 							className="brand-text font-weight-light"
 						>
-.						</span>
+							.{" "}
+						</span>
 					</Link>
 					<div style={{ backgroundColor: "#1d2755" }} className="sidebar">
 						{/* Sidebar user panel (optional) */}
