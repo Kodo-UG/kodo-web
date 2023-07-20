@@ -96,7 +96,7 @@ const Scholarship = () => {
 							onClick={() => history.push("/profile")}
 							style={{
 								// height: "8rem",
-								width: isSm ? "100%" : "" | isMd ? "50%" : "30%",
+								width: isSm ? "100%" : "" | isMd ? "52%" : "35%",
 								background: "white",
 								display: "flex",
 								marginTop: "4rem",

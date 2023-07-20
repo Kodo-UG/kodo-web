@@ -228,15 +228,14 @@ function CardScholarshipSubscribed({
 					padding: "1rem",
 				}}
 				style={{
-					backdropFilter: "blur(10px)"
+					backdropFilter: "blur(20px)"
 				}}
 				width={1000}
 			>
 				<div
 					style={{
 						height: "6rem",
-						background: "#125875",
-						color: "white",
+						color: "black",
 						fontWeight: "bold",
 						display: "flex",
 						alignItems: "center",

@@ -60,7 +60,7 @@ const Favorite = () => {
 				<div
 					style={{
 						marginTop: "3.8rem",
-						width: isSm ? "100%" : "" | isMd ? "80%" : "",
+						width: isSm ? "100%" : "" | isMd ? "80%" : "3px",
 						marginLeft: isSm ? "" : "17.8rem" | isMd ? "" : "17",
 						display: "flex",
 						justifyContent: "center",
