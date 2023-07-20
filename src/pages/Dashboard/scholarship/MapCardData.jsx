@@ -17,29 +17,21 @@ const MapCardData = () => {
 
 			console.log(res, "===");
 		} catch (error) {
-			throw error;
+			console.log(error);
 		}
 	};
 
+	// FcBookmark
+
 	const handleClick = (id) => {
-		console.log(id);
+		// console.log(id);
 		setFav(id);
 		postFavorite(id);
 	};
 
 	const getScholarship = async () => {
 		try {
-			const token = localStorage.getItem("token");
-			const headers = {
-				Authorization: `Bearer ${token}`
-			};
-
-			const res = await axios.get(
-				"https://demo.kodoscholarships.com/api/v1/scholarship",
-				{
-					headers
-				}
-			);
+			const res = await axiosInstance.get("/scholarship");
 
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
