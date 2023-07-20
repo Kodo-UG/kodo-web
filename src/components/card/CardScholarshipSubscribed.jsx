@@ -21,12 +21,22 @@ function CardScholarshipSubscribed({
 	const hanleModal = () => {
 		setVisible(!visible);
 	};
+
+	const truncateText = (text, maxWords) => {
+		const wordsArray = text.split(" ");
+		if (wordsArray.length > maxWords) {
+			return wordsArray.slice(0, maxWords).join(" ") + "...";
+		} else {
+			return text;
+		}
+	};
+
 	return (
 		<div
 			onClick={() => setVisible(!visible)}
 			className=" shadow-3xl "
 			style={{
-				width: "26.3rem",
+				width: "24rem",
 				display: "flex",
 				flexDirection: "column",
 				height: "13rem",
@@ -71,7 +81,7 @@ function CardScholarshipSubscribed({
 						}}
 					>
 						{" "}
-						{cardTitle}
+						{truncateText(cardTitle, 3)}
 					</h4>
 				</div>
 				<div
@@ -225,7 +235,7 @@ function CardScholarshipSubscribed({
 				maskClosable={false}
 				bodyStyle={{
 					borderRadius: "2rem",
-					padding: "1rem",
+					padding: "1rem"
 				}}
 				style={{
 					backdropFilter: "blur(10px)"
@@ -234,16 +244,24 @@ function CardScholarshipSubscribed({
 			>
 				<div
 					style={{
-						height: "6rem",
-						background: "#125875",
-						color: "white",
+						height: "8rem",
+						color: "#1c2755",
 						fontWeight: "bold",
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "center"
 					}}
 				>
-					<h5 style={{ margin: 0 }}>{cardTitle} Scholarship Details</h5>
+					<h5
+						style={{
+							fontWeight: "bold",
+							fontSize: "1.5rem",
+							fontFamily: "Poppins",
+							letterSpacing: "1px"
+						}}
+					>
+						{cardTitle}
+					</h5>
 				</div>
 				<div style={{ padding: "1rem" }}>
 					<div className="card-body" style={{ height: "6rem" }}>
@@ -275,8 +293,27 @@ function CardScholarshipSubscribed({
 						</div>
 					</div>
 					<div>
-						<h4 style={{ fontWeight: "bold" }}>About</h4>
-						<p style={{ color: "gray", textAlign: "justify" }}>{about}</p>
+						<h4
+							style={{
+								fontWeight: "600",
+								fontSize: "1.5rem",
+								letterSpacing: "1px",
+								textAlign: "left",
+								color: "#1c2755"
+							}}
+						>
+							About
+						</h4>
+						<p
+							style={{
+								color: "#4e4b66",
+								textAlign: "justify",
+								letterSpacing: "1px",
+								fontSize: "15px"
+							}}
+						>
+							{about}
+						</p>
 					</div>
 				</div>
 				<div
