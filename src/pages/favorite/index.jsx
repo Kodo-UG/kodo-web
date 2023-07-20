@@ -43,14 +43,14 @@ const Favorite = () => {
 
   console.log(data, "DATAAAAAA");
 
-  const truncateText = (text, maxWords) => {
-    const wordsArray = text.split(" ");
-    if (wordsArray.length > maxWords) {
-      return wordsArray.slice(0, maxWords).join(" ") + "...";
-    } else {
-      return text;
-    }
-  };
+	const truncateText = (text, maxWords) => {
+		const wordsArray = text?.split(" ");
+		if (wordsArray?.length > maxWords) {
+			return wordsArray.slice(0, maxWords).join(" ") + "...";
+		} else {
+			return text;
+		}
+	};
 
   return (
     <>
@@ -82,66 +82,66 @@ const Favorite = () => {
             ></i>
           </div>
 
-          <div style={{ width: "60%", textAlign: "left" }}>
-            <h4
-              style={{
-                fontWeight: "bolder",
-                fontSize: "3.2rem",
-                fontFamily: "Poppins",
-                letterSpacing: "1.6px",
-              }}
-              class="alert-heading"
-            >
-              Saved
-            </h4>
-          </div>
-        </div>
-        {data?.length === 0 ? (
-          <div
-            style={{
-              textAlign: "center",
-              marginTop: "4rem",
-              fontFamily: "Poppins",
-              cursor: "pointer",
-              marginLeft: isSm ? "" : "6rem",
-            }}
-          >
-            <h4
-              style={{
-                fontSize: "18px",
-                letterSpacing: "1.6px",
-                fontWeight: "400",
-                lineHeight: "27px",
-              }}
-            >
-              Start saving scholarships now!
-            </h4>
-            <p
-              onClick={() => history.push("/scholars")}
-              style={{
-                fontSize: "14px",
-                letterSpacing: "1.6px",
-                fontWeight: 400,
-                lineHeight: "20px",
-                color: "rgb(74,74,74)",
-              }}
-            >
-              Back to matches
-            </p>
-          </div>
-        ) : (
-          data?.map((dta) => (
-            <LargeCardFavourite
-              title={dta?.favourite.title}
-              formatDate={dta?.favourite.deadline}
-              subText={truncateText(dta?.favourite.about, 6)}
-              award={dta?.favourite.award}
-              link={dta?.favourite.link}
-            />
-          ))
-        )}
-        <Footer />
-      </div>
+					<div style={{ width: "60%", textAlign: "left" }}>
+						<h4
+							style={{
+								fontWeight: "bolder",
+								fontSize: "3.2rem",
+								fontFamily: "Poppins",
+								letterSpacing: "1.6px"
+							}}
+							class="alert-heading"
+						>
+							Saved
+						</h4>
+					</div>
+				</div>
+				{data?.length === 0 ? (
+					<div
+						style={{
+							textAlign: "center",
+							marginTop: "4rem",
+							fontFamily: "Poppins",
+							cursor: "pointer",
+							marginLeft: isSm ? "" : "6rem"
+						}}
+					>
+						<h4
+							style={{
+								fontSize: "18px",
+								letterSpacing: "1.6px",
+								fontWeight: "400",
+								lineHeight: "27px"
+							}}
+						>
+							Start saving scholarships now!
+						</h4>
+						<p
+							onClick={() => history.push("/scholars")}
+							style={{
+								fontSize: "14px",
+								letterSpacing: "1.6px",
+								fontWeight: 400,
+								lineHeight: "20px",
+								color: "rgb(74,74,74)"
+							}}
+						>
+							Back to matches
+						</p>
+					</div>
+				) : (
+					data?.map((dta) => (
+						<LargeCardFavourite
+							title={dta.favourite?.title}
+							formatDate={dta.favourite?.deadline}
+							subText={truncateText(dta.favourite?.about, 6)}
+							award={dta.favourite?.award}
+							link={dta.favourite?.link}
+						/>
+					))
+				)}
+				<Footer />
+			</div>
 
       {/* <Dashboard /> */}
     </>
