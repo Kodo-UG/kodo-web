@@ -1,25 +1,40 @@
 import axios from "axios";
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LargeCard from "../../../components/card/LargeCard";
 import LargeCardNotPaid from "../../../components/card/LargeCardNotPaid";
+import axiosInstance from "../../../api/axiosInstance";
 
 const MapCardData = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
-	const [loading, setLoading] = useState(false);
-	const [expiry, setExpiry] = useState(false);
+	const [fav, setFav] = useState(null);
+
+	const postFavorite = async () => {
+		try {
+			const res = await axiosInstance.post("/user/favourites", {
+				id: fav
+			});
+
+			console.log(res, "===");
+		} catch (error) {
+			throw error;
+		}
+	};
+
+	const handleClick = (id) => {
+		console.log(id);
+		setFav(id);
+		postFavorite(id);
+	};
 
 	const getScholarship = async () => {
-		setLoading(true);
 		try {
 			const token = localStorage.getItem("token");
 			const headers = {
 				Authorization: `Bearer ${token}`
 			};
 
-			let res = await axios.get(
+			const res = await axios.get(
 				"https://demo.kodoscholarships.com/api/v1/scholarship",
 				{
 					headers
@@ -29,10 +44,8 @@ const MapCardData = () => {
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
-			// Handle   error here
+			// Handle error here
 			throw error;
-		} finally {
-			setLoading(false);
 		}
 	};
 
@@ -48,6 +61,7 @@ const MapCardData = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
+
 	return (
 		<div style={{ width: "100%" }}>
 			{subscription &&
@@ -60,6 +74,7 @@ const MapCardData = () => {
 						subText={truncateText(dta.about, 6)}
 						about={dta.about}
 						link={dta.link}
+						onClick={() => handleClick(dta._id)}
 					/>
 				))}
 			{!subscription &&

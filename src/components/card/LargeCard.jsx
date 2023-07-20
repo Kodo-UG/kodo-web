@@ -5,11 +5,19 @@ import { useState } from "react";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
 
-const LargeCard = ({ formatDate, title, subText, award, link, about }) => {
-  const date = new Date(formatDate);
-  const formattedDate = date.toLocaleDateString();
+const LargeCard = ({
+	formatDate,
+	title,
+	subText,
+	award,
+	link,
+	about,
+	onClick
+}) => {
+	const date = new Date(formatDate);
+	const formattedDate = date.toLocaleDateString();
 
-  const [visible, setVisible] = useState(false);
+	const [visible, setVisible] = useState(false);
 
 	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
 	const isMd = useMediaQuery(
@@ -23,14 +31,20 @@ const LargeCard = ({ formatDate, title, subText, award, link, about }) => {
 		setVisible(!visible);
 	};
 
-  const textStyle = {
-    fontFamily: "Poppins",
-    fontStyle: "normal",
-    fontWeight: 600,
-    fontSize: "15px",
-    lineHeight: "21px",
-    color: "#4e4b66",
-  };
+	const [bg, setBg] = useState(false);
+
+	const textStyle = {
+		fontFamily: "Poppins",
+		fontStyle: "normal",
+		fontWeight: 600,
+		fontSize: "15px",
+		lineHeight: "21px",
+		color: "#4e4b66"
+	};
+
+	const handleBackground = () => {
+		setBg(!bg);
+	};
 
 	return (
 		<>
@@ -346,6 +360,7 @@ const LargeCard = ({ formatDate, title, subText, award, link, about }) => {
 						}}
 					>
 						<BsBookmark
+							onClick={onClick}
 							style={{
 								height: "20px",
 								width: "20px",

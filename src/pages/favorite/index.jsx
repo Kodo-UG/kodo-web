@@ -23,7 +23,7 @@ const Favorite = () => {
 						justifyContent: "center",
 						alignItems: "center",
 						height: "9rem",
-						backgroundColor: "#125875"
+						backgroundColor: "#1d2755"
 					}}
 					class="alert alert-success"
 					role="alert"

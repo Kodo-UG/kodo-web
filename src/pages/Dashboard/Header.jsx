@@ -42,7 +42,6 @@ const MyHeader = () => {
 	}, []);
 
 	const HandleClick = async (id) => {
-		
 		try {
 			const headers = {
 				Authorization: `Bearer ${token}`
@@ -101,11 +100,11 @@ const MyHeader = () => {
 							<i className="fas fa-bars" />
 						</Link>
 					</li>
-					<li className="nav-item d-none d-sm-inline-block">
+					{/* <li className="nav-item d-none d-sm-inline-block">
 						<Link to="/" className="nav-link">
 							Home
 						</Link>
-					</li>
+					</li> */}
 					{/* <li className="nav-item d-none d-sm-inline-block">
 						<Link href="#" className="nav-link">
 							Contact
@@ -113,7 +112,7 @@ const MyHeader = () => {
 					</li> */}
 				</ul>
 				{/* SEARCH FORM */}
-				<form className="form-inline ml-4">
+				{/* <form className="form-inline ml-4">
 					<div
 						className={`input-group input-group-sm ${
 							isInputVisible ? "search-bar-focused" : ""
@@ -143,7 +142,7 @@ const MyHeader = () => {
 							</button>
 						</div>
 					</div>
-				</form>
+				</form> */}
 				{/* Right navbar links */}
 				<ul className="navbar-nav ml-auto">
 					{/* Messages Dropdown Menu */}
