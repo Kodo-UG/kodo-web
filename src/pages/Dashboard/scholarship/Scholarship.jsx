@@ -120,21 +120,21 @@ const Scholarship = () => {
 								<SiFiles
 									size={75}
 									style={{
-										color: "#192C78"
+										color: "#1d2755"
 									}}
 								/>
 							</div>
 							<div
 								style={{
 									// height: "100%",
-									width: "100vw",
+									width: "100vw"
 								}}
 							>
 								<p
 									style={{
 										fontFamily: "Poppins",
 										fontSize: isSm ? "22px" : "24px",
-										color: "#192C78",
+										color: "#1d2755",
 										fontWeight: "bold",
 										letterSpacing: "1px"
 									}}
@@ -216,7 +216,7 @@ const Scholarship = () => {
 							<Button
 								style={{
 									width: "12rem",
-									backgroundColor: "#125875",
+									backgroundColor: "#1d2755",
 									color: "#fff",
 									fontWeight: "bold",
 									marginBottom: "3rem"

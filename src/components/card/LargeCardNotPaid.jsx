@@ -63,7 +63,7 @@ const LargeCardNotPaid = ({
 							// paddingTop: ".4rem",
 							// marginLeft: "1rem",
 							// marginBottom: "2rem",
-							backgroundColor: "#125875",
+							backgroundColor: "#1d2755",
 							// marginRight: "1rem",
 							borderTopRightRadius: ".3rem",
 							borderTopLeftRadius: ".3rem",
@@ -196,7 +196,7 @@ const LargeCardNotPaid = ({
 										style={{
 											marginTop: "0px",
 											fontWeight: "bold",
-											color: "#125875",
+											color: "#1d2755",
 											fontSize: "18px",
 											lineHeight: "20px"
 										}}
@@ -263,7 +263,7 @@ const LargeCardNotPaid = ({
 										style={{
 											marginTop: "0px",
 											fontWeight: "bold",
-											color: "#125875",
+											color: "#1d2755",
 											fontSize: "18px",
 											lineHeight: "20px"
 										}}
@@ -313,7 +313,7 @@ const LargeCardNotPaid = ({
 									style={{
 										marginTop: "6px",
 										fontWeight: "bold",
-										color: "#125875",
+										color: "#1d2755",
 										fontSize: "18px",
 										lineHeight: "20px"
 									}}
@@ -326,7 +326,7 @@ const LargeCardNotPaid = ({
 									>
 										<path
 											d="M29.961 13.783a16.45 16.45 0 0 0-1.52-4.985 16.05 16.05 0 0 0-4.38-5.482C17.505-1.992 7.604-.834 2.694 6.118a14.45 14.45 0 0 0-2.31 5.105c-.43 1.84-.499 3.749-.202 5.616-.21-3.603 1.06-7.31 3.444-9.954 4.753-5.419 13.292-5.827 18.264-.562a11.999 11.999 0 0 1 3.298 7.91v.008c-.006.325.051.649.17.952.118.302.294.578.518.81a2.371 2.371 0 0 0 3.437 0A2.483 2.483 0 0 0 30 14.24a2.531 2.531 0 0 0-.039-.458"
-											fill="#125875"
+											fill="#1d2755"
 										></path>
 									</svg>
 									<svg
@@ -345,7 +345,7 @@ const LargeCardNotPaid = ({
 									>
 										<path
 											d="M2.416.288S.992 11.25.993 11.753c.002.394.156.772.43 1.05a1.442 1.442 0 0 0 2.068-.003 1.49 1.49 0 0 0 .427-1.053c0-.52-1.502-11.459-1.502-11.459Z"
-											fill="#125875"
+											fill="#1d2755"
 										></path>
 									</svg>
 								</div>
