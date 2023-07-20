@@ -11,13 +11,13 @@ import { SiFiles } from "react-icons/si";
 import { useHistory } from "react-router-dom";
 
 const Scholarship = () => {
-  const [data, setData] = useState([]);
-  const [subscription, setSubscription] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [count, setCount] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
+	const [data, setData] = useState([]);
+	const [subscription, setSubscription] = useState(false);
+	const [loading, setLoading] = useState(false);
+	const [count, setCount] = useState(1);
+	const [totalPages, setTotalPages] = useState(0);
 
-  const history = useHistory();
+	const history = useHistory();
 
 	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
 	const isMd = useMediaQuery(
@@ -49,23 +49,23 @@ const Scholarship = () => {
 		getScholarship();
 	}, []);
 
-  let handleFetchMore = async () => {
-    setLoading(true);
-    setCount(count + 1);
-    try {
-      const token = localStorage.getItem("token");
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
+	let handleFetchMore = async () => {
+		setLoading(true);
+		setCount(count + 1);
+		try {
+			const token = localStorage.getItem("token");
+			const headers = {
+				Authorization: `Bearer ${token}`
+			};
 
-      let res = await axios.get(
-        `https://demo.kodoscholarships.com/api/v1/scholarship?page=${count}`,
-        {
-          headers,
-        }
-      );
+			let res = await axios.get(
+				`https://demo.kodoscholarships.com/api/v1/scholarship?page=${count}`,
+				{
+					headers
+				}
+			);
 
-      setTotalPages(res.data.totalPages);
+			setTotalPages(res.data.totalPages);
 
 			// setData((prev) => [...prev, res.data.data]);
 			setData(res.data.data);
@@ -78,8 +78,6 @@ const Scholarship = () => {
 		}
 	};
 
-	console.log(data, "tttttttttttt");
-
 	return (
 		<div>
 			<div className="content-wrapper">
@@ -90,6 +88,7 @@ const Scholarship = () => {
 							flexDirection: "column",
 							width: "100%",
 							alignItems: "center",
+							padding: "2px",
 							justifyContent: "center"
 						}}
 					>
@@ -111,8 +110,7 @@ const Scholarship = () => {
 						>
 							<div
 								style={{
-									height: "9rem",
-									width: "18%",
+									width: "20%",
 									display: "flex",
 									alignItems: "center",
 									justifyContent: "center",
@@ -122,23 +120,23 @@ const Scholarship = () => {
 								<SiFiles
 									size={75}
 									style={{
-										color: "#3259f1"
+										color: "#1d2755"
 									}}
 								/>
 							</div>
 							<div
 								style={{
-									height: "100%",
-									width: "100%",
-									background: ""
+									// height: "100%",
+									width: "100vw"
 								}}
 							>
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: isSm ? "20px" : "24px",
-										color: "#3259f1",
-										fontWeight: "bold"
+										fontSize: isSm ? "22px" : "24px",
+										color: "#1d2755",
+										fontWeight: "bold",
+										letterSpacing: "1px"
 									}}
 								>
 									$14,500 In Matches
@@ -146,20 +144,21 @@ const Scholarship = () => {
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: isSm ? "12px" : "16px",
+										fontSize: isSm ? "15px" : "16px",
 										display: "flex",
 										alignItems: "center",
 										lineHeight: "1px",
-										fontWeight: "bold"
+										fontWeight: "bold",
+										textAlign: "justify"
 									}}
 								>
 									Update your profile to match to more
-									<MdArrowForwardIos style={{ marginLeft: "2rem" }} />
+									<MdArrowForwardIos />
 								</p>{" "}
 								<p
 									style={{
 										fontFamily: "Poppins",
-										fontSize: isSm ? "12px" : "16px",
+										fontSize: isSm ? "16px" : "16px",
 										fontWeight: "bold"
 									}}
 								>
@@ -168,70 +167,70 @@ const Scholarship = () => {
 							</div>
 						</div>
 
-            {/* end of card */}
-            <div
-              style={{
-                fontWeight: 300,
-                fontSize: "30px",
-                margin: "5px",
-                padding: "10px",
-                marginTop: "3rem",
-                fontFamily: "Poppins",
-                lineHeight: "45px",
-              }}
-            >
-              {data.length < 0 ? (
-                <div
-                  style={{
-                    letterSpacing: "2px",
-                    color: "rgb(74,74,74)",
-                  }}
-                >
-                  No Available scholarships for this program
-                </div>
-              ) : (
-                <div
-                  style={{
-                    letterSpacing: "2px",
-                    color: "rgb(74,74,74)",
-                  }}
-                >
-                  Latest Scholarships
-                </div>
-              )}
-            </div>
-            {/* <DashboardCard>
+						{/* end of card */}
+						<div
+							style={{
+								fontWeight: 300,
+								fontSize: "30px",
+								margin: "5px",
+								padding: "10px",
+								marginTop: "3rem",
+								fontFamily: "Poppins",
+								lineHeight: "45px"
+							}}
+						>
+							{data.length < 0 ? (
+								<div
+									style={{
+										letterSpacing: "2px",
+										color: "rgb(74,74,74)"
+									}}
+								>
+									No Available scholarships for this program
+								</div>
+							) : (
+								<div
+									style={{
+										letterSpacing: "2px",
+										color: "rgb(74,74,74)"
+									}}
+								>
+									Latest Scholarships
+								</div>
+							)}
+						</div>
+						{/* <DashboardCard>
 							
 						</DashboardCard> */}
-            {isSm ? <CombinedScholarshipCard /> : <MapCardData />}
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: "1rem",
-            }}
-          >
-            {count < totalPages && (
-              <Button
-                style={{
-                  width: "12rem",
-                  backgroundColor: "#125875",
-                  color: "#fff",
-                  fontWeight: "bold",
-                  marginBottom: "3rem",
-                }}
-                onClick={() => handleFetchMore()}
-              >
-                {loading ? "loading...." : "Load More"}
-              </Button>
-            )}
-          </div>
-        </section>
-      </div>
-    </div>
-  );
+						{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
+					</div>
+					<div
+						style={{
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+							padding: "1rem"
+						}}
+					>
+						{count < totalPages && (
+							<Button
+								style={{
+									width: "12rem",
+									backgroundColor: "#1d2755",
+									color: "#fff",
+									fontWeight: "bold",
+									marginBottom: "3rem"
+								}}
+								onClick={() => handleFetchMore()}
+							>
+								{loading ? "loading...." : "Load More"}
+							</Button>
+						)}
+					</div>
+				</section>
+			</div>
+		</div>
+	);
 };
 
 export default Scholarship;
