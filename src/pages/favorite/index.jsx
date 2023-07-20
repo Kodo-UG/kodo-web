@@ -10,9 +10,15 @@ import { useEffect } from "react";
 import { useMemo } from "react";
 import LargeCard from "../../components/card/LargeCard";
 import LargeCardFavourite from "../../components/card/LargeCardFavourite";
+import {
+	displayErrorNotification,
+	displaySuccessNotification
+} from "../../utils/Toast";
 
 const Favorite = () => {
 	const [loading, setLoading] = useState(false);
+	const [loadingDelete, setLoadingDelete] = useState(false);
+
 	const [data, setData] = useState(null);
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const isMd = useMediaQuery(
@@ -37,11 +43,28 @@ const Favorite = () => {
 		}
 	};
 
+	const handleDelete = async (id) => {
+		setLoadingDelete(true);
+		try {
+			const deleteRes = await axiosInstance.delete(`/user/favourites/${id}`);
+			fetchFavorites();
+			if (deleteRes.status == 201) {
+				displaySuccessNotification(`${deleteRes.data.message}`);
+			} else {
+				displayErrorNotification(`${deleteRes.data.message}`);
+			}
+			// console.log(deleteRes);
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoadingDelete(false);
+		}
+	};
+
 	useMemo(() => {
 		fetchFavorites();
 	}, []);
 
-	console.log(data, "DATAAAAAA");
 
 	const truncateText = (text, maxWords) => {
 		const wordsArray = text?.split(" ");
@@ -139,6 +162,7 @@ const Favorite = () => {
 							subText={truncateText(dta.favourite?.about, 6)}
 							award={dta.favourite?.award}
 							link={dta.favourite?.link}
+							onClick={() => handleDelete(dta._id)}
 						/>
 					))
 				)}

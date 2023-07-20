@@ -12,7 +12,8 @@ const LargeCardFavourite = ({
 	award,
 	link,
 	about,
-	onClick
+	onClick,
+	loading
 }) => {
 	const date = new Date(formatDate);
 	const formattedDate = date.toLocaleDateString();
