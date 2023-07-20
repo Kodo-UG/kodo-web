@@ -60,7 +60,7 @@ const Menu = () => {
 							.{" "}
 						</span>
 					</Link>
-					<div style={{ backgroundColor: "#1d2755" }} className="sidebar">
+					<div style={{ backgroundColor: "#1c2755" }} className="sidebar">
 						{/* Sidebar user panel (optional) */}
 						{/* <div className="user-panel mt-3 pb-3 mb-3 d-flex"></div> */}
 						{/* Sidebar Menu */}

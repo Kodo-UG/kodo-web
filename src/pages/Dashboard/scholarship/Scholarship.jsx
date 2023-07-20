@@ -19,12 +19,12 @@ const Scholarship = () => {
 
 	const history = useHistory();
 
-	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const isMd = useMediaQuery(
-		"only screen and (min-width : 1000px) and (max-width : 1202px)"
+		"only screen and (min-width : 700px) and (max-width : 1250px)"
 	);
 	const isLg = useMediaQuery(
-		"only screen and (min-width : 1202px) and (max-width : 1300px)"
+		"only screen and (min-width : 1250px) and (max-width : 1300px)"
 	);
 	const isXl = useMediaQuery("only screen and (min-width : 1201px)");
 
@@ -96,7 +96,7 @@ const Scholarship = () => {
 							onClick={() => history.push("/profile")}
 							style={{
 								// height: "8rem",
-								width: isSm ? "100%" : "35%",
+								width: isSm ? "100%" : "" | isMd ? "50%" : "30%",
 								background: "white",
 								display: "flex",
 								marginTop: "4rem",
@@ -135,7 +135,7 @@ const Scholarship = () => {
 									style={{
 										fontFamily: "Poppins",
 										fontSize: isSm ? "22px" : "24px",
-										color: "#1d2755",
+										color: "#1c2755",
 										fontWeight: "bold",
 										letterSpacing: "1px"
 									}}

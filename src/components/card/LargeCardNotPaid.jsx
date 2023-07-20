@@ -19,9 +19,9 @@ const LargeCardNotPaid = ({
 	const formattedDate = date.toLocaleDateString();
 	const history = useHistory();
 
-	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const isMd = useMediaQuery(
-		"only screen and (min-width : 1000px) and (max-width : 1302px)"
+		"only screen and (min-width : 700px) and (max-width : 1302px)"
 	);
 	const isLg = useMediaQuery(
 		"only screen and (min-width : 1302px) and (max-width : 1700px)"
@@ -46,7 +46,7 @@ const LargeCardNotPaid = ({
 					marginLeft: isLg
 						? "16rem"
 						: "" | isMd
-						? "11rem"
+						? "10rem"
 						: "" | isXl
 						? "18rem"
 						: "20rem",
@@ -72,7 +72,7 @@ const LargeCardNotPaid = ({
 							// paddingTop: ".4rem",
 							// marginLeft: "1rem",
 							// marginBottom: "2rem",
-							backgroundColor: "#1d2755",
+							backgroundColor: "#1c2755",
 							// marginRight: "1rem",
 							borderTopRightRadius: ".3rem",
 							borderTopLeftRadius: ".3rem",

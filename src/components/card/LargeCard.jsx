@@ -19,9 +19,9 @@ const LargeCard = ({
 
 	const [visible, setVisible] = useState(false);
 
-	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const isMd = useMediaQuery(
-		"only screen and (min-width : 1000px) and (max-width : 1502px)"
+		"only screen and (min-width : 700px) and (max-width : 1250px)"
 	);
 	const isLg = useMediaQuery(
 		"only screen and (min-width : 993px) and (max-width : 1200px)"
@@ -59,8 +59,8 @@ const LargeCard = ({
 					boxShadow: "0 5px 10px rgba(0,0,0,0.10)",
 					cursor: "pointer",
 					padding: "8px",
-					width: "60%",
-					marginLeft: "17rem",
+					width: isMd ? "80%" : "60%",
+					marginLeft: isMd ? "6rem" : "20rem",
 					justifyContent: "center",
 					alignItems: "center"
 				}}
@@ -386,7 +386,7 @@ const LargeCard = ({
 						{" "}
 						<Button
 							onClick={() => setVisible(!visible)}
-							style={{ backgroundColor: "#125875", width: "80%" }}
+							style={{ backgroundColor: "#EC1D64", width: "80%" }}
 							type="primary"
 							block
 						>
@@ -408,12 +408,12 @@ const LargeCard = ({
 							zIndex: 9999999,
 							width: "100%"
 						}}
+						width={900}
 					>
 						<div
 							style={{
-								height: "6rem",
-								background: "#125875",
-								color: "white",
+								height: "8rem",
+								color: "#1c2755",
 								fontWeight: "bold",
 								display: "flex",
 								alignItems: "center",
@@ -425,7 +425,7 @@ const LargeCard = ({
 									margin: 0,
 									marginTop: "0px",
 									fontWeight: "bold",
-									fontSize: isMd ? "1.1" : "1.2rem",
+									fontSize: "3rem",
 									fontFamily: "Poppins",
 									letterSpacing: "2px"
 								}}
@@ -443,7 +443,7 @@ const LargeCard = ({
 												marginTop: "0px",
 												fontWeight: "bold",
 												color: "#125875",
-												fontSize: isMd ? "1.1" : "1.2rem",
+												fontSize: isMd ? "1.5" : "1.5rem",
 												fontFamily: "Poppins",
 												letterSpacing: "2px"
 											}}
@@ -459,7 +459,7 @@ const LargeCard = ({
 												fontWeight: "bold",
 												color: "#125875",
 												lineHeight: "20px",
-												fontSize: "1rem",
+												fontSize: "1.5rem",
 												fontFamily: "Poppins",
 												letterSpacing: "2px"
 											}}
@@ -509,9 +509,10 @@ const LargeCard = ({
 								<h4
 									style={{
 										fontWeight: "600",
-										fontSize: "19px",
+										fontSize: isMd ? "1.1" : "2rem",
 										letterSpacing: "1px",
-										textAlign: "left"
+										textAlign: "left",
+										color: "#1c2755"
 									}}
 								>
 									About
@@ -521,7 +522,8 @@ const LargeCard = ({
 										style={{
 											color: "#4e4b66",
 											textAlign: "justify",
-											letterSpacing: "1.5px"
+											letterSpacing: "1px",
+											fontSize: "19px"
 										}}
 									>
 										{about}
@@ -536,10 +538,11 @@ const LargeCard = ({
 								width: "100%",
 								height: "6rem",
 								color: "white",
-								fontWeight: "bold",
+								fontWeight: "bolder",
 								display: "flex",
 								alignItems: "center",
-								justifyContent: "center"
+								justifyContent: "center",
+								fontSize: "16px"
 							}}
 						>
 							<a
@@ -550,7 +553,9 @@ const LargeCard = ({
 									color: "white",
 									padding: "1rem",
 									width: "100%",
-									borderRadius: "5px"
+									borderRadius: "5px",
+									fontWeight: "bolder",
+									fontSize: "16px"
 								}}
 							>
 								Apply
