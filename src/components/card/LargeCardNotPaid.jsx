@@ -26,6 +26,9 @@ const LargeCardNotPaid = ({
 	const isLg = useMediaQuery(
 		"only screen and (min-width : 1302px) and (max-width : 1700px)"
 	);
+	const isXl = useMediaQuery(
+		"only screen and (min-width : 1700px) and (max-width : 2000px)"
+	);
 
 	return (
 		<>
@@ -40,7 +43,13 @@ const LargeCardNotPaid = ({
 					cursor: "pointer",
 					// padding: "4px",
 					width: isMd ? "70%" : "65%",
-					marginLeft: isLg ? "18rem" : "" | isMd ? "11rem" : "",
+					marginLeft: isLg
+						? "16rem"
+						: "" | isMd
+						? "11rem"
+						: "" | isXl
+						? "18rem"
+						: "20rem",
 					marginBottom: "2rem"
 				}}
 				onClick={() => history.push("/payment")}

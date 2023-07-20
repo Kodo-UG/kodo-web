@@ -96,14 +96,15 @@ const Scholarship = () => {
 							onClick={() => history.push("/profile")}
 							style={{
 								// height: "8rem",
-								width: isSm ? "100%" : "50%",
+								width: isSm ? "100%" : "35%",
 								background: "white",
 								display: "flex",
 								marginTop: "4rem",
 								boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
 								padding: "1rem",
 								alignItems: "center",
-								cursor: "pointer"
+								cursor: "pointer",
+								borderRadius: "4px"
 
 								// justifyContent: "space-between"
 							}}
@@ -148,8 +149,10 @@ const Scholarship = () => {
 										display: "flex",
 										alignItems: "center",
 										lineHeight: "1px",
-										fontWeight: "bold",
-										textAlign: "justify"
+										fontWeight: 500,
+										textAlign: "justify",
+										color: "#000",
+										justifyContent: "space-between"
 									}}
 								>
 									Update your profile to match to more
@@ -159,7 +162,8 @@ const Scholarship = () => {
 									style={{
 										fontFamily: "Poppins",
 										fontSize: isSm ? "16px" : "16px",
-										fontWeight: "bold"
+										fontWeight: 500,
+										color: "#000"
 									}}
 								>
 									scholarships.
