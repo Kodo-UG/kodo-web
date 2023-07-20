@@ -7,16 +7,13 @@ import axiosInstance from "../../../api/axiosInstance";
 const MapCardData = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
-	const [fav, setFav] = useState(null);
+	// const [fav, setFav] = useState(null);
 
-	const postFavorite = async () => {
+	const handleClick = async (fav) => {
 		try {
 			const res = await axiosInstance.post("/user/favourites", {
 				id: fav
 			});
-
-
-			
 
 			console.log(res, "===");
 		} catch (error) {
@@ -26,11 +23,11 @@ const MapCardData = () => {
 
 	// FcBookmark
 
-	const handleClick = (id) => {
-		// console.log(id);
-		setFav(id);
-		postFavorite(id);
-	};
+	// const handleClick = (id) => {
+	// 	// console.log(id);
+	// 	setFav(id);
+	// 	postFavorite(id);
+	// };
 
 	const getScholarship = async () => {
 		try {
