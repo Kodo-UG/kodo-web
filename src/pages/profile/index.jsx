@@ -7,9 +7,13 @@ import { useEffect } from "react";
 import axiosInstance from "../../api/axiosInstance";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { Modal } from "antd"
+import { useHistory } from "react-router-dom";
+import { displaySuccessNotification } from "../../utils/Toast";
 
 function Profile() {
 	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const [data, setData] = useState([]);
 	const [id, setId] = useState(null);
@@ -22,7 +26,7 @@ function Profile() {
 	const [password, setPassword] = useState();
 
 	const [activeTab, setActiveTab] = useState("profileMain");
-
+     const history = useHistory()
 	const info = JSON.parse(localStorage.getItem("userData"));
 
 	const handleTabClick = (tab) => {
@@ -92,6 +96,23 @@ function Profile() {
 			setLoading(false);
 		}
 	};
+
+	const handleDelete = async () => {
+		try {
+			const data = await axiosInstance.delete(
+				"https://demo.kodoscholarships.com/api/v1/user"
+			);
+			if (data) {
+				localStorage.removeItem("token");
+				localStorage.removeItem("userData");
+				displaySuccessNotification("Account deleted successfully")
+				history.push("/");
+			}
+
+		} catch (error) {
+        console.log(error)
+		}
+	}
 
 	const getScholarship = async () => {
 		setLoading(true);
@@ -340,7 +361,7 @@ function Profile() {
 															style={{
 																borderBottom:
 																	activeTab ===
-																	"accountSettings"
+																		"accountSettings"
 																		? "2px solid red"
 																		: "none",
 																display: "inline"
@@ -596,7 +617,42 @@ function Profile() {
 															</div>
 														</div>
 													</div>
+
 												</form>
+
+												<div
+													className="form-horizontal"
+													style={{
+
+														marginTop: "60px"
+													}}
+												>
+													<div className="mt-20 main-content-label">
+														Delete Account
+													</div>
+
+													<div className="form-group ">
+														<div className="row row-sm">
+															<div className="col-md-12 d-flex justify-content-center">
+																<button
+																	className="btn btn-danger my-1"
+																	onClick={() => setIsModalOpen(!isModalOpen)}
+																>
+																	Delete Account
+																</button>
+															</div>
+														</div>
+													</div>
+													<Modal title="Delete Account Confirmation"
+														okButtonProps={{ style: { backgroundColor: '#1C2755', borderColor: '#1C2755' } }}
+
+														open={isModalOpen}
+														onOk={handleDelete}
+														onCancel={() => setIsModalOpen(!isModalOpen)}>
+														<p>Are you sure you want to delete your account?</p>
+													</Modal>
+												</div>
+
 											</div>
 										</div>
 									</div>

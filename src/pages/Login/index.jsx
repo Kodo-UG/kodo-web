@@ -30,7 +30,6 @@ export default function Login() {
 				displaySuccessMessage("Login successful");
 				localStorage.setItem("token", data.data.token);
 				history.push("/scholars");
-				localStorage.setItem("status", data.data.user.status);
 			} else {
 				displayErrorMessage("Login Failed");
 			}
