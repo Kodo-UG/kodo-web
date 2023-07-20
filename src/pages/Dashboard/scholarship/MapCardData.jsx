@@ -15,6 +15,9 @@ const MapCardData = () => {
 				id: fav
 			});
 
+
+			
+
 			console.log(res, "===");
 		} catch (error) {
 			console.log(error);
