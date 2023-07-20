@@ -31,7 +31,9 @@ export default function ForgotPassword() {
     }
   };
   return (
-    <section className=" fxt-template-layout1" style={{background: "white"}}>
+    <section className=" fxt-template-layout1" 
+    style={{background: "white", height: "100vh", display: "flex", 
+    alignItems: "center", justifyContent: "center"}}>
       <div className="container-fluid " style={{ display: "flex" }}>
         <div
           className="col-md-6 col-12 "
