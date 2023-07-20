@@ -57,38 +57,13 @@ const About = () => {
 								and increase your chances of matching you with
 								scholarships in minutes.
 							</p>
-							<p>
+							<p style={{ fontSize: "17px" }}>
 								We’ve helped students win more than $10 million dollars
 								in scholarships. We take the hassle out of the
 								scholarship search process and increase your chances of
 								matching you with scholarships in minutes.
 							</p>
-							{/* <div className="about-content2">
-                <div className="row">
-                  <div className="col-md-12">
-                    <ul className="green2">
-                      <li>
-                        <div className="abcontent">
-                          <div className="ano"><span>01</span></div>
-                          <div className="text">
-                            <h3>Doctoral Degrees</h3>
-                            <p>consectetur adipiscing elit sed do eiusmod tem incid idunt.</p>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="abcontent">
-                          <div className="ano"><span>02</span></div>
-                          <div className="text">
-                            <h3>Global Students</h3>
-                            <p>consectetur adipiscing elit sed do eiusmod tem incid idunt.</p>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div> */}
+
 							<div className="slider-btn mt-20">
 								<Link
 									to="/scholars"
