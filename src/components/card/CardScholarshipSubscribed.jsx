@@ -75,9 +75,9 @@ function CardScholarshipSubscribed({
 						style={{
 							marginLeft: "0.4rem",
 							fontWeight: "bold",
-							fontFamily: "Poppins",
+							fontFamily: "Roboto ",
 							letterSpacing: "2px",
-							fontSize: "1.5rem"
+							fontSize: "1.34rem"
 						}}
 					>
 						{" "}
@@ -128,7 +128,7 @@ function CardScholarshipSubscribed({
 								fontWeight: "bold",
 								padding: ".1rem",
 								lineHeight: "1.5rem",
-								fontFamily: "Poppins",
+								fontFamily: "Roboto",
 								letterSpacing: "2.4px",
 								fontSize: "16px"
 							}}

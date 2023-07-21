@@ -4,12 +4,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import CardScholarship from "../../../components/card/CardScholarship";
 import CardScholarshipSubscribed from "../../../components/card/CardScholarshipSubscribed";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const CombinedScholarshipCard = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [expiry, setExpiry] = useState(false);
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const getScholarship = async () => {
 		setLoading(true);
 		try {
@@ -39,15 +40,6 @@ const CombinedScholarshipCard = () => {
 		getScholarship();
 	}, []);
 
-	// const truncateText = (text, maxWords) => {
-	// 	const wordsArray = text.split(" ");
-	// 	if (wordsArray.length > maxWords) {
-	// 		return wordsArray.slice(0, maxWords).join(" ") + "...";
-	// 	} else {
-	// 		return text;
-	// 	}
-	// };
-
 	return (
 		<div>
 			<div
@@ -58,7 +50,8 @@ const CombinedScholarshipCard = () => {
 					flexWrap: "wrap",
 					justifyContent: "center",
 					alignItems: "center",
-					marginLeft: "2.5rem"
+					marginLeft: "2.5rem",
+					marginBottom: isSm ? "20rem" : ""
 					// width:"100%"
 				}}
 			>

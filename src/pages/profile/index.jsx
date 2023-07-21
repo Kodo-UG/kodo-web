@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import axiosInstance from "../../api/axiosInstance";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Modal } from "antd"
+import { Modal } from "antd";
 import { useHistory } from "react-router-dom";
 import { displaySuccessNotification } from "../../utils/Toast";
 
@@ -20,13 +20,13 @@ function Profile() {
 	const [scholarship, setScholarship] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [count, setCount] = useState(1);
 	const [firstname, setFirstName] = useState();
 	const [lastname, setLastName] = useState();
 	const [password, setPassword] = useState();
+	const [favData, setFavData] = useState([]);
 
 	const [activeTab, setActiveTab] = useState("profileMain");
-     const history = useHistory()
+	const history = useHistory();
 	const info = JSON.parse(localStorage.getItem("userData"));
 
 	const handleTabClick = (tab) => {
@@ -105,14 +105,13 @@ function Profile() {
 			if (data) {
 				localStorage.removeItem("token");
 				localStorage.removeItem("userData");
-				displaySuccessNotification("Account deleted successfully")
+				displaySuccessNotification("Account deleted successfully");
 				history.push("/");
 			}
-
 		} catch (error) {
-        console.log(error)
+			console.log(error);
 		}
-	}
+	};
 
 	const getScholarship = async () => {
 		setLoading(true);
@@ -131,8 +130,22 @@ function Profile() {
 		}
 	};
 
+	const fetchFavorites = async () => {
+		setLoading(true);
+		try {
+			let response = await axiosInstance.get("/user/favourites");
+			setFavData(response?.data?.data);
+			// console.log(response.data.data, "heyyyyy");
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoading(false);
+		}
+	};
+
 	useEffect(() => {
 		getScholarship();
+		fetchFavorites();
 	}, []);
 
 	useMemo(() => {
@@ -303,7 +316,7 @@ function Profile() {
 																}}
 																className="fw-semibold fs-25"
 															>
-																0
+																{favData.length}
 															</div>
 														</div>
 													</div>
@@ -361,7 +374,7 @@ function Profile() {
 															style={{
 																borderBottom:
 																	activeTab ===
-																		"accountSettings"
+																	"accountSettings"
 																		? "2px solid red"
 																		: "none",
 																display: "inline"
@@ -617,13 +630,11 @@ function Profile() {
 															</div>
 														</div>
 													</div>
-
 												</form>
 
 												<div
 													className="form-horizontal"
 													style={{
-
 														marginTop: "60px"
 													}}
 												>
@@ -636,23 +647,37 @@ function Profile() {
 															<div className="col-md-12 d-flex justify-content-center">
 																<button
 																	className="btn btn-danger my-1"
-																	onClick={() => setIsModalOpen(!isModalOpen)}
+																	onClick={() =>
+																		setIsModalOpen(
+																			!isModalOpen
+																		)
+																	}
 																>
 																	Delete Account
 																</button>
 															</div>
 														</div>
 													</div>
-													<Modal title="Delete Account Confirmation"
-														okButtonProps={{ style: { backgroundColor: '#1C2755', borderColor: '#1C2755' } }}
-
+													<Modal
+														title="Delete Account Confirmation"
+														okButtonProps={{
+															style: {
+																backgroundColor: "#1C2755",
+																borderColor: "#1C2755"
+															}
+														}}
 														open={isModalOpen}
 														onOk={handleDelete}
-														onCancel={() => setIsModalOpen(!isModalOpen)}>
-														<p>Are you sure you want to delete your account?</p>
+														onCancel={() =>
+															setIsModalOpen(!isModalOpen)
+														}
+													>
+														<p>
+															Are you sure you want to delete
+															your account?
+														</p>
 													</Modal>
 												</div>
-
 											</div>
 										</div>
 									</div>

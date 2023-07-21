@@ -2,9 +2,13 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+// Import font-awesome CSS to load the required icons
+// import "font-awesome/css/font-awesome.min.css";
+
 const Menu = () => {
 	const [activeButton, setActiveButton] = useState(null);
 	const [data, setData] = useState();
+	const [sidebarVisible, setSidebarVisible] = useState(true);
 
 	const handleActive = (buttonName) => {
 		setActiveButton(buttonName);
@@ -35,11 +39,18 @@ const Menu = () => {
 		fetchNotifications();
 	}, []);
 
+	// Function to toggle the sidebar visibility
+	const toggleSidebar = () => {
+		setSidebarVisible(!sidebarVisible);
+	};
+
 	return (
 		<div>
 			<div>
 				<aside
-					className="main-sidebar sidebar-dark-primary elevation-4"
+					className={`main-sidebar sidebar-dark-primary elevation-4 ${
+						!sidebarVisible ? "sidebar-closed" : ""
+					}`}
 					style={{ backgroundColor: "#fff" }}
 				>
 					{/* Brand Logo */}
@@ -47,7 +58,7 @@ const Menu = () => {
 						<img
 							src="/logo-kodo.png"
 							alt="kodo Logo"
-							className="brand-image "
+							className="brand-image"
 						/>
 						<span
 							style={{
@@ -61,6 +72,17 @@ const Menu = () => {
 						</span>
 					</Link>
 					<div style={{ backgroundColor: "#1c2755" }} className="sidebar">
+						{/* Close Icon */}
+						<div
+							className={`close-icon ${
+								!sidebarVisible ? "close-icon-active" : ""
+							}`}
+							onClick={toggleSidebar}
+						>
+							{/* Use a suitable close icon (e.g., "fa fa-times") */}
+							<i className="fa fa-times" aria-hidden="true"></i>
+						</div>
+
 						{/* Sidebar user panel (optional) */}
 						{/* <div className="user-panel mt-3 pb-3 mb-3 d-flex"></div> */}
 						{/* Sidebar Menu */}
@@ -72,7 +94,7 @@ const Menu = () => {
 								data-accordion="false"
 							>
 								{/* Add icons to the links using the .nav-icon class
-                      with font-awesome or any other icon font library */}
+                    with font-awesome or any other icon font library */}
 
 								<li className="nav-item">
 									<Link
@@ -83,7 +105,7 @@ const Menu = () => {
 										}`}
 									>
 										<i
-											class="fa fa-graduation-cap"
+											className="fa fa-graduation-cap"
 											aria-hidden="true"
 										></i>{" "}
 										<p
@@ -111,7 +133,10 @@ const Menu = () => {
 											isButtonActive("dashboard") ? "active" : ""
 										}`}
 									>
-										<i class="fa fa-trophy" aria-hidden="true"></i>{" "}
+										<i
+											className="fa fa-trophy"
+											aria-hidden="true"
+										></i>{" "}
 										<p
 											style={{
 												color: "#fff",
@@ -126,15 +151,15 @@ const Menu = () => {
 
 								<li className="nav-item">
 									<Link
-										onClick={() => handleActive("favorite")}
+										onClick={() => handleActive("favorites")}
 										to="/favorite"
 										className={`nav-link ${
-											isButtonActive("favorite") ? "active" : ""
+											isButtonActive("favorites") ? "active" : ""
 										}`}
 									>
 										<i
 											style={{ marginLeft: "3px" }}
-											class="fa fa-bookmark"
+											className="fa fa-bookmark"
 											aria-hidden="true"
 										></i>
 
