@@ -25,27 +25,6 @@ const PaymentScreen = () => {
             </p>
             <button style={buttonStyle}>Select</button>
         </div>
-
-        <div className="payment-card" style={cardStyle}>
-          <p className="price" style={priceStyle}>
-            $29.99 
-          </p>
-          <p>Monthly</p>
-          <div style={jointBackgroundStyle}>
-            <div style={blueBackgroundStyle}>
-              <p style={centeredText}>No Trial</p>
-            </div>
-            <p style={noSavingsTextStyle}>No Savings</p>
-          </div>
-          <p style={{ ...centeredText, fontWeight: 'bold', fontSize: '16px', color: '#1C2755', margin: 0 }}>
-              1
-            </p>
-            <p style={{ ...centeredText, fontWeight: 'bold', fontSize: '16px', color: '#1C2755', margin: 0 }}>
-              Month
-            </p>
-
-            <button style={buttonStyle}>Select</button>
-        </div>
       </div>
 
       <div  className="scholarship-info" style={scholarshipStyle}>
