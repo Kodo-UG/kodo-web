@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function CardSection() {
 	return (
-		<section style={{ padding: "2rem" }}>
+		<section>
 			<div class="container ">
 				<div class="row ">
 					<div class="col-lg-4 col-md-12 col-sm-12">

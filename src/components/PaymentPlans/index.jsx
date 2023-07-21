@@ -17,8 +17,8 @@ const PaymentCard = ({ data }) => {
 		public_key: "FLWPUBK_TEST-02518ab938416219120df2c5cf3e056c-X",
 		tx_ref: Date.now(),
 		amount: data.amount,
-		currency: "USD",
-		payment_options: "card,mobilemoney",
+		currency: "UGX",
+		payment_options: "card,mobilemoney,ussd",
 		customer: {
 			email: `${dataUser?.user.email}`,
 			phone_number: `${dataUser?.user.phone}`,
