@@ -31,6 +31,7 @@ function CardScholarshipSubscribed({
 		}
 	};
 
+
 	return (
 		<div
 			onClick={() => setVisible(!visible)}
@@ -299,7 +300,7 @@ function CardScholarshipSubscribed({
 						justifyContent: "center"
 					}}
 				>
-					<a
+					<div 
 						href={`${link}`}
 						style={{
 							backgroundColor: "#ec1d64",
@@ -311,7 +312,7 @@ function CardScholarshipSubscribed({
 						}}
 					>
 						Apply
-					</a>
+					</div>
 				</div>
 			</Modal>
 		</div>

@@ -55,12 +55,13 @@ const MapCardData = () => {
 			{subscription &&
 				data.map((dta) => (
 					<LargeCard
-						key={dta.id}
+						key={dta._id}
 						title={dta.title}
 						formatDate={dta.deadline}
 						award={dta.award}
 						subText={truncateText(dta.about, 6)}
 						about={dta.about}
+						id={dta._id}
 						link={dta.link}
 						onClick={() => handleClick(dta._id)}
 					/>

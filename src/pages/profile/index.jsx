@@ -20,6 +20,7 @@ function Profile() {
 	const [scholarship, setScholarship] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [count, setCount] = useState(1);
 	const [firstname, setFirstName] = useState();
 	const [lastname, setLastName] = useState();
 	const [password, setPassword] = useState();
@@ -129,6 +130,16 @@ function Profile() {
 			setLoading(false);
 		}
 	};
+	const [appliedCount, setAppliedCount] = useState([]);
+
+	const getApplied = async () => {
+		try {
+			const res = await axiosInstance.get("/user/applications");
+			setAppliedCount(res.data.data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	const fetchFavorites = async () => {
 		setLoading(true);
@@ -146,6 +157,7 @@ function Profile() {
 	useEffect(() => {
 		getScholarship();
 		fetchFavorites();
+		getApplied();
 	}, []);
 
 	useMemo(() => {
@@ -280,7 +292,7 @@ function Profile() {
 																}}
 																className="fw-semibold fs-25"
 															>
-																0
+																{appliedCount.length}
 															</div>
 														</div>
 													</div>

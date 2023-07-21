@@ -73,15 +73,6 @@ const Menu = () => {
 					</Link>
 					<div style={{ backgroundColor: "#1c2755" }} className="sidebar">
 						{/* Close Icon */}
-						<div
-							className={`close-icon ${
-								!sidebarVisible ? "close-icon-active" : ""
-							}`}
-							onClick={toggleSidebar}
-						>
-							{/* Use a suitable close icon (e.g., "fa fa-times") */}
-							<i className="fa fa-times" aria-hidden="true"></i>
-						</div>
 
 						{/* Sidebar user panel (optional) */}
 						{/* <div className="user-panel mt-3 pb-3 mb-3 d-flex"></div> */}

@@ -1,3 +1,4 @@
+import React,{useState} from "react"
 // import axios from 'axios';
 
 // const options = {
@@ -17,8 +18,16 @@
 //   });
 
 
-import React from "react"
 
 
 
-econst autoConvert = () =>
+const AutoConvert = () => {
+    const [initialState , setState] = useState({
+        currencies:["USD","EUR","INR","UGX"],
+        base:"USD",
+        amount:"",
+        to:"UGX",
+        result:"",
+        
+    })
+}
