@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PaymentCard from "../../components/PaymentPlans";
 import axios from "axios";
+import { FaCheck } from 'react-icons/fa'; 
+
 
 export default function Payment() {
   const [plans, setPlans] = useState();
@@ -24,9 +26,25 @@ export default function Payment() {
     getPlans();
   }, []);
 
+
+  const info=[
+    {
+      id:1,
+      text:"Access To The #1 Scholarship Database"
+    },
+    {
+      id:2,
+      text:"New Scholarship Matches Every Month"
+    },
+    {
+      id:3,
+      text:"More Than $10 Million Won To Date"
+    }
+  ]
+
   return (
     <div className="pricing6 py-5 bg-light">
-      <div style={{ padding: "8rem" }} className="container">
+      <div style={{ padding: "5rem" }} className="container">
         <div className="row justify-content-center">
           <div className="col-md-8 text-center">
             <h3 className="mb-3">Choose your plan</h3>
@@ -39,9 +57,30 @@ export default function Payment() {
                 <PaymentCard key={dta._id} data={dta} />
               ))}
             </div>
+            <div style={{marginTop:"20px"}}>
+            {info.map(data=>(
+                           <div key={data.id}  className="scholarship-info" style={scholarshipStyle}>
+                           <FaCheck style={{ color: 'green', marginRight: '5px' }} />
+                           <p>{data.text}</p>
+                         </div>
+            ))
+
+}
           </div>
+          </div>
+
         </div>
       </div>
     </div>
   );
 }
+
+
+
+const scholarshipStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  fontSize: '16px',
+  margin:"1rem",
+  marginTop:"10px"
+};
