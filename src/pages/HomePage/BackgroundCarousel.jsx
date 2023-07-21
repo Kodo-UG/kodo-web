@@ -3,7 +3,6 @@ import { Carousel } from "react-bootstrap";
 import "./bg.css";
 import { Link } from "react-router-dom";
 
-
 const BackgroundCarousel = () => {
 	return (
 		<Carousel style={{ zIndex: 0 }} interval={9900} slide={true}>
@@ -15,8 +14,9 @@ const BackgroundCarousel = () => {
 							'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688760317/slider-main_axin8h.jpg")',
 						backgroundSize: "cover",
 						backgroundPosition: "center",
-						filter: "brightness(95%)",
-						height: "93vh" // Increased height
+						filter: "brightness(97%)",
+						height: "93vh",
+						objectFit: "cover"
 					}}
 				>
 					<div
@@ -74,25 +74,25 @@ const BackgroundCarousel = () => {
 							</h5>
 							<div style={{ width: "50%" }}>
 								<Link to="/stepper">
-								<button
-									type="button"
-									className="btn btn-lg btn-primary"
-									style={{
-										borderRadius: "2rem",
-										background: "#ec1d64",
-										border: "none",
-										fontSize: "16px",
-										fontWeight: "bold",
-										color: "#fff",
-										fontFamily: "Roboto, sans-serif;",
-										lineHeight: "16px",
-										fontStyle: "normal",
-										padding: "0.8rem"
-									}}
-								>
-									Find Scholarships Now{" "}
-									<i class="fal fa-long-arrow-right"></i>
-								</button>
+									<button
+										type="button"
+										className="btn btn-lg btn-primary"
+										style={{
+											borderRadius: "2rem",
+											background: "#ec1d64",
+											border: "none",
+											fontSize: "16px",
+											fontWeight: "bold",
+											color: "#fff",
+											fontFamily: "Roboto, sans-serif;",
+											lineHeight: "16px",
+											fontStyle: "normal",
+											padding: "0.8rem"
+										}}
+									>
+										Find Scholarships Now{" "}
+										<i class="fal fa-long-arrow-right"></i>
+									</button>
 								</Link>
 							</div>
 						</div>
@@ -164,7 +164,6 @@ const BackgroundCarousel = () => {
 								Jobs Now!
 							</h5>
 							<div style={{ width: "50%" }}>
-								
 								<button
 									type="button"
 									className="btn btn-lg btn-primary"

@@ -46,6 +46,15 @@ const LargeCard = ({
 		setBg(!bg);
 	};
 
+	const truncateText = (text, maxWords) => {
+		const wordsArray = text.split(" ");
+		if (wordsArray.length > maxWords) {
+			return wordsArray.slice(0, maxWords).join(" ") + "...";
+		} else {
+			return text;
+		}
+	};
+
 	return (
 		<>
 			<div
@@ -92,7 +101,7 @@ const LargeCard = ({
 								textAlign: "left"
 							}}
 						>
-							{title}
+							{truncateText(title, 4)}
 						</h2>
 						<p
 							style={{
@@ -425,7 +434,7 @@ const LargeCard = ({
 									margin: 0,
 									marginTop: "0px",
 									fontWeight: "bold",
-									fontSize: "3rem",
+									fontSize: "1.9rem",
 									fontFamily: "Poppins",
 									letterSpacing: "2px"
 								}}
@@ -443,7 +452,7 @@ const LargeCard = ({
 												marginTop: "0px",
 												fontWeight: "bold",
 												color: "#125875",
-												fontSize: isMd ? "1.5" : "1.5rem",
+												fontSize: "1.5rem",
 												fontFamily: "Poppins",
 												letterSpacing: "2px"
 											}}

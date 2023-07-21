@@ -6,10 +6,12 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import axiosInstance from "../../api/axiosInstance";
-import { useEffect } from "react";
 import { useMemo } from "react";
-import LargeCard from "../../components/card/LargeCard";
 import LargeCardFavourite from "../../components/card/LargeCardFavourite";
+import {
+	displayErrorNotification,
+	displaySuccessNotification
+} from "../../utils/Toast";
 
 const Favorite = () => {
   const [loading, setLoading] = useState(false);
@@ -37,11 +39,27 @@ const Favorite = () => {
     }
   };
 
-  useMemo(() => {
-    fetchFavorites();
-  }, []);
+	const handleDelete = async (id) => {
+		setLoadingDelete(true);
+		try {
+			const deleteRes = await axiosInstance.delete(`/user/favourites/${id}`);
+			fetchFavorites();
+			if (deleteRes.status == 201) {
+				displaySuccessNotification(`${deleteRes.data.message}`);
+			} else {
+				displayErrorNotification(`${deleteRes.data.message}`);
+			}
+			// console.log(deleteRes);
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoadingDelete(false);
+		}
+	};
 
-  console.log(data, "DATAAAAAA");
+	useMemo(() => {
+		fetchFavorites();
+	}, []);
 
 	const truncateText = (text, maxWords) => {
 		const wordsArray = text?.split(" ");
@@ -107,6 +125,7 @@ const Favorite = () => {
 						</h4>
 					</div>
 				</div>
+				
 				{data?.length === 0 ? (
 					<div
 						style={{
@@ -148,6 +167,7 @@ const Favorite = () => {
 							subText={truncateText(dta.favourite?.about, 6)}
 							award={dta.favourite?.award}
 							link={dta.favourite?.link}
+							onClick={() => handleDelete(dta._id)}
 						/>
 					))
 				)}

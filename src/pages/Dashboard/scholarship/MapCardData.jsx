@@ -1,34 +1,15 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import LargeCard from "../../../components/card/LargeCard";
 import LargeCardNotPaid from "../../../components/card/LargeCardNotPaid";
 import axiosInstance from "../../../api/axiosInstance";
+import {
+	displayErrorNotification,
+	displaySuccessNotification
+} from "../../../utils/Toast";
 
 const MapCardData = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
-	// const [fav, setFav] = useState(null);
-
-	const handleClick = async (fav) => {
-		try {
-			const res = await axiosInstance.post("/user/favourites", {
-				id: fav
-			});
-
-			console.log(res, "===");
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
-	// FcBookmark
-
-	// const handleClick = (id) => {
-	// 	// console.log(id);
-	// 	setFav(id);
-	// 	postFavorite(id);
-	// };
-
 	const getScholarship = async () => {
 		try {
 			const res = await axiosInstance.get("/scholarship");
@@ -36,8 +17,23 @@ const MapCardData = () => {
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
-			// Handle error here
 			throw error;
+		}
+	};
+
+	const handleClick = async (fav) => {
+		try {
+			const res = await axiosInstance.post("/user/favourites", {
+				id: fav
+			});
+			if (res.status == 201) {
+				displaySuccessNotification(`${res.data.message}`);
+			} else {
+				displayErrorNotification(`${res.data.message}`);
+			}
+			console.log(res.data.message, "===");
+		} catch (error) {
+			console.log(error);
 		}
 	};
 
@@ -55,7 +51,7 @@ const MapCardData = () => {
 	}, []);
 
 	return (
-		<div style={{ width: "100%" }}>
+		<div style={{ width: "100%", marginBottom: "20rem" }}>
 			{subscription &&
 				data.map((dta) => (
 					<LargeCard

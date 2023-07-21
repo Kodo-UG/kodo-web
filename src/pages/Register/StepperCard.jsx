@@ -1,7 +1,10 @@
+import { useMediaQuery } from "@uidotdev/usehooks";
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function StepperCard({ list }) {
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
+
 	return (
 		<section className=" w-100">
 			<div className="container">
@@ -9,10 +12,11 @@ function StepperCard({ list }) {
 					<div className="col-lg-12 text-center">
 						<h4
 							style={{
-								marginBottom: "60px",
+								marginBottom: isSm ? "20px" : "60px",
 								fontFamily: "Jost, sans-serif",
 								fontWeight: 600,
-								fontSize: "2rem"
+								fontSize: "2rem",
+								marginTop: isSm ? "6rem" : ""
 							}}
 							className="welcome-title"
 						>
