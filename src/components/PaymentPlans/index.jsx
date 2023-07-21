@@ -4,22 +4,96 @@ import { useHistory } from "react-router-dom";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import { FaCheck } from 'react-icons/fa';
+import useCurrencyConverter from "../../utils/converter";
 
 
 const PaymentCard = ({ data }) => {
 	const { details } = data;
 	const history = useHistory();
 	const [dataUser, setDataUser] = useState();
+	const [amount,setAmount]= useState()
+	const [curr,setCurr] = useState("USD")
+
+	const countries = [
+		{
+			id:1,
+			country:"uganda",
+			curr:'UGX'
+		},
+		{
+			id:2,
+			country:"rwanda",
+			curr:"RWF"
+		},{
+			id:3,
+			country:"kenya",
+			curr:"KES"
+		},
+		{
+			id:4,
+			country:"nigeria",
+			curr:"NGN"
+		},
+		{
+			id:5,
+			country:"ghana",
+			curr:"GHS"
+		},
+		{
+			id:6,
+			country:"tanzania",
+			curr:"TZS"
+		},
+		{
+			id:7,
+			country:"zambia",
+			curr:"ZMW"
+		},{
+			id:8,
+			country:"Sierra Leone",
+			curr:"SLL"
+		},
+		{
+			id:9,
+			country:"cameroon",
+			curr:"XOF"
+		},
+		{
+			id:10,
+			country:"gambia",
+			curr:"XOF"
+		},{
+			id:11,
+			country:"zimbabwe",
+			curr:"XOF"
+		}
+	]
+	
 
 	useEffect(() => {
 		setDataUser(JSON.parse(localStorage.getItem("userData")));
 	}, []);
 
+	// console.log(dataUser?.user?.country,"my country")
+
+	const filteredCountries = countries.filter(
+		(countryObj) => countryObj.country.toLowerCase() === dataUser?.user.country.toLowerCase()
+	  );
+	  
+	console.log(filteredCountries[0]?.curr,"new...");
+
+
+
+
+	  const dataInfo = useCurrencyConverter(data.amount)
+
+            console.log(dataInfo,"...................")
+
 	const config = {
 		public_key: "FLWPUBK_TEST-02518ab938416219120df2c5cf3e056c-X",
 		tx_ref: Date.now(),
-		amount: data.amount,
-		currency: "UGX",
+		amount: dataInfo.result,
+		currency: dataInfo.convertTo,
 		payment_options: "card,mobilemoney,ussd",
 		customer: {
 			email: `${dataUser?.user.email}`,
@@ -94,6 +168,7 @@ const PaymentCard = ({ data }) => {
 					</p>
 					<button
 						onClick={() => {
+
 							handleFlutterPayment({
 								callback: async (response) => {
 									await subscribe(response.status, data._id);
