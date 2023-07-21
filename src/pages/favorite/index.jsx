@@ -80,7 +80,13 @@ const Favorite = () => {
   return (
     <>
       <div class="wrapper " style={
-		isSm ? smallScreenStyle :{} 
+		isSm ? smallScreenStyle :{
+			background: "green",
+			display: "flex",
+			flexDirection: "column",
+			alignItems: "center",
+			justifyContent: "center"
+		} 
 	  }>
         <MyHeader />
         <Menu />
@@ -132,6 +138,7 @@ const Favorite = () => {
 							fontFamily: "Poppins",
 							cursor: "pointer",
 							marginLeft: isSm ? "" : "6rem",
+							
 						}}
 					>
 						<h4
