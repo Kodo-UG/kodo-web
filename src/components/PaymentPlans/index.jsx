@@ -100,7 +100,7 @@ const PaymentCard = ({ data }) => {
 										});
 									}}
 								>
-									CHOOSE PLAN
+								SELECT
 								</button>
 							</div>
 						</div>
