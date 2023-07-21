@@ -51,10 +51,21 @@ const Favorite = () => {
 			return text;
 		}
 	};
+	const smallScreenStyle={
+		background: "yellow",
+		width: "100%",
+		padding: "2rem",
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		justifyContent: "center",
+	  };
 
   return (
     <>
-      <div class="wrapper">
+      <div class="wrapper " style={
+		isSm ? smallScreenStyle :{} 
+	  }>
         <MyHeader />
         <Menu />
         <div
@@ -103,7 +114,7 @@ const Favorite = () => {
 							marginTop: "4rem",
 							fontFamily: "Poppins",
 							cursor: "pointer",
-							marginLeft: isSm ? "" : "6rem"
+							marginLeft: isSm ? "" : "6rem",
 						}}
 					>
 						<h4
