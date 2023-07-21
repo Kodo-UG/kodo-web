@@ -96,7 +96,7 @@ const Scholarship = () => {
               onClick={() => history.push("/profile")}
               style={{
                 // height: "8rem",
-                width: isSm ? "400px" : "" | isMd ? "50%" : "35%",
+                width: isSm ? "100%" : "" | isMd ? "50%" : "35%",
                 background: "white",
                 display: "flex",
                 marginTop: "4rem",
@@ -113,18 +113,20 @@ const Scholarship = () => {
             >
               <div
                 style={{
-                  width: isSm? "" : "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  // marginRight: "1rem",
-                  //  background: "yellow"
+                  width: isSm ? "" : "100%",
+                  // display: "flex",
+                  // alignItems: "center",
+                  // justifyContent: "center",
+                  // marginRight: "0.5rem",
+                  //    background: "yellow"
                 }}
               >
                 <SiFiles
-                  size={60}
+                  size={60} 
+                    // size={ isSm? 40: 60} 
                   style={{
                     color: "#1d2755",
+                    padding: isSm? "1rem" : "",
                   }}
                 />
               </div>
@@ -132,17 +134,23 @@ const Scholarship = () => {
                 style={{
                   // height: "100%",
 
-                  width:  "100rem",
+                  width: "100rem",
                   padding: "0.5rem",
-                //   background: "red",
+                  display: "flex",
+                  flexDirection: "column",
+                  //   alignItems: "center",
+                  justifyContent: "center",
+                  //   background: "red",
                 }}
               >
                 <p
                   style={{
                     fontFamily: "Poppins",
-                    fontSize: isSm ? "22px" : "24px",
+                    fontSize: isSm ? "16px" : "24px",
                     color: "#1c2755",
                     fontWeight: "bold",
+                     marginTop:  isSm? "1rem" : "",
+                    marginBottom:  isSm? "-0.1rem" : "",
                     // letterSpacing: "1px"
                   }}
                 >
@@ -151,14 +159,14 @@ const Scholarship = () => {
                 <p
                   style={{
                     fontFamily: "Poppins",
-                    fontSize: isSm ? "15px" : "16px",
+                    fontSize: isSm ? "14px" : "16px",
                     display: "flex",
                     alignItems: "center",
                     lineHeight: "1px",
                     fontWeight: 500,
                     textAlign: "justify",
                     color: "#000",
-                    marginTop: isSm? "" : "-0.8rem",
+                    // marginBottom: isSm ? "" : "-0.8rem",
                     justifyContent: "space-between",
                   }}
                 >
@@ -168,10 +176,10 @@ const Scholarship = () => {
                 <p
                   style={{
                     fontFamily: "Poppins",
-                    fontSize: isSm ? "16px" : "16px",
+                    fontSize: isSm ? "14px" : "16px",
                     fontWeight: 500,
                     color: "#000",
-                    marginTop: "-1rem",
+                    marginTop: isSm? "-1rem" : "",
                   }}
                 >
                   scholarships.
@@ -186,7 +194,7 @@ const Scholarship = () => {
                 fontSize: "30px",
                 margin: "5px",
                 padding: "10px",
-                marginTop: "3rem",
+                // marginTop: "3rem",
                 fontFamily: "Poppins",
                 lineHeight: "45px",
               }}
