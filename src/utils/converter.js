@@ -64,10 +64,7 @@ const filteredCountries = countries.filter(
     (countryObj) => countryObj.country.toLowerCase() === dataUser?.user.country.toLowerCase()
   );
   
-console.log(filteredCountries[0]?.curr,"new...");
 
-//   console.log(fee?.toString(),"am fee===")
-//   console.log(convert?.toString(),"am to===")
 
 const [baseState, setBaseState] = useState({
     currencies: ["USD", "UGX", "KES", "NGN", "RWF", "TZS", "SLL", "GHS", "ZMW", "XOF"],
@@ -91,9 +88,7 @@ const [baseState, setBaseState] = useState({
           const response = await axios.get(
             `https://openexchangerates.org/api/latest.json?app_id=9109134d78fa4fa6a12f3f7bfa0b1934&base=${base}`
           );
-          console.log("response=======>", response);
           const result = (response?.data?.rates[convertTo] * amount).toFixed(3);
-          console.log(result,"am reuslt")
           setBaseState({
             ...baseState,
             result,

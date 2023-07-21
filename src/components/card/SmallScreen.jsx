@@ -33,7 +33,7 @@ function SmallScreen({
 				justifyContent: "space-between",
 				background: "white",
 				borderRadius: "0.5rem",
-				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+				boxShadow: "2px 2px 4px rgba(0.2, 0.5, 0.1, 0.2)",
 				cursor: "pointer",
 				marginRight: "1rem",
 				marginBottom: "3rem",
@@ -187,36 +187,6 @@ function SmallScreen({
 					</div>
 				</div>
 			</div>
-			<div></div>
-
-			<div
-				style={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "end",
-					width: "100%",
-					paddingRight: "1rem",
-					color: "gray"
-				}}
-			>
-				<div
-					style={{
-						display: "flex",
-						justifyContent: "center"
-						// alignItems: "center"
-					}}
-				>
-					<AiOutlineEye
-						style={{
-							marginRight: "0.3rem",
-							width: "18px",
-							height: "18px",
-							color: "#a0a3bd"
-						}}
-					/>
-					<p style={{ color: "#a0a3bd" }}>viewed</p>
-				</div>
-			</div>
 
 			<Modal
 				open={visible}
@@ -225,7 +195,7 @@ function SmallScreen({
 				maskClosable={false}
 				bodyStyle={{
 					borderRadius: "2rem",
-					padding: "1rem",
+					padding: "1rem"
 				}}
 				style={{
 					backdropFilter: "blur(10px)"
