@@ -14,32 +14,30 @@ import {
 } from "../../utils/Toast";
 
 const Favorite = () => {
-	const [loading, setLoading] = useState(false);
-	const [loadingDelete, setLoadingDelete] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState(null);
+  const isSm = useMediaQuery("only screen and (max-width : 700px)");
+  const isMd = useMediaQuery(
+    "only screen and (min-width : 700px) and (max-width : 1250px)"
+  );
+  const isLg = useMediaQuery(
+    "only screen and (min-width : 1250px) and (max-width : 1300px)"
+  );
+  const isXl = useMediaQuery("only screen and (min-width : 1201px)");
+  const history = useHistory();
 
-	const [data, setData] = useState(null);
-	const isSm = useMediaQuery("only screen and (max-width : 700px)");
-	const isMd = useMediaQuery(
-		"only screen and (min-width : 700px) and (max-width : 1250px)"
-	);
-	const isLg = useMediaQuery(
-		"only screen and (min-width : 1250px) and (max-width : 1300px)"
-	);
-	const isXl = useMediaQuery("only screen and (min-width : 1201px)");
-	const history = useHistory();
-
-	const fetchFavorites = async () => {
-		setLoading(true);
-		try {
-			let response = await axiosInstance.get("/user/favourites");
-			setData(response?.data?.data);
-			// console.log(response.data.data, "heyyyyy");
-		} catch (error) {
-			console.log(error);
-		} finally {
-			setLoading(false);
-		}
-	};
+  const fetchFavorites = async () => {
+    setLoading(true);
+    try {
+      let response = await axiosInstance.get("/user/favourites");
+      setData(response?.data?.data);
+      // console.log(response.data.data, "heyyyyy");
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
 	const handleDelete = async (id) => {
 		setLoadingDelete(true);
@@ -71,25 +69,61 @@ const Favorite = () => {
 			return text;
 		}
 	};
+	const smallScreenStyle={
+		background: "yellow",
+		width: "100%",
+		padding: "2rem",
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		justifyContent: "center",
+	  };
 
-	return (
-		<>
-			<div class="wrapper">
-				<MyHeader />
-				<Menu />
+  return (
+    <>
+      <div class="wrapper " style={
+		isSm ? smallScreenStyle :{} 
+	  }>
+        <MyHeader />
+        <Menu />
+        <div
+          style={{
+            marginTop: "3.8rem",
+            width: isSm ? "100%" : "" | isMd ? "80%" : "",
+            marginLeft: isSm ? "" : "17.8rem" | isMd ? "" : "17",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "#1d2755",
+          }}
+          class="alert alert-success"
+          role="alert"
+        >
+          <div style={{ textAlign: "left", width: "40%", cursor: "pointer" }}>
+            <i
+              onClick={() => history.push("/scholars")}
+              style={{
+                fontWeight: "bolder",
+                fontSize: "3rem",
+              }}
+              class="fa fa-arrow-circle-left"
+              aria-hidden="true"
+            ></i>
+          </div>
 
-				<div
-					style={{
-						textAlign: "center",
-						marginTop: "7rem",
-						fontWeight: "bold",
-						fontSize: "2.3rem",
-						color: "#1c2755",
-						marginBottom: "2rem",
-						letterSpacing: "2px"
-					}}
-				>
-					Favorite Scholarships
+					<div style={{ width: "60%", textAlign: "left" }}>
+						<h4
+							style={{
+								fontWeight: "bolder",
+								fontSize: "3.2rem",
+								fontFamily: "Poppins",
+								letterSpacing: "1.6px"
+							}}
+							class="alert-heading"
+						>
+							Saved
+						</h4>
+					</div>
 				</div>
 				
 				{data?.length === 0 ? (
@@ -99,7 +133,7 @@ const Favorite = () => {
 							marginTop: "4rem",
 							fontFamily: "Poppins",
 							cursor: "pointer",
-							marginLeft: isSm ? "" : "6rem"
+							marginLeft: isSm ? "" : "6rem",
 						}}
 					>
 						<h4
@@ -140,9 +174,9 @@ const Favorite = () => {
 				<Footer />
 			</div>
 
-			{/* <Dashboard /> */}
-		</>
-	);
+      {/* <Dashboard /> */}
+    </>
+  );
 };
 
 export default Favorite;
