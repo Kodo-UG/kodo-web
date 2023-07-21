@@ -9,8 +9,8 @@ import axiosInstance from "../../api/axiosInstance";
 import { useMemo } from "react";
 import LargeCardFavourite from "../../components/card/LargeCardFavourite";
 import {
-	displayErrorNotification,
-	displaySuccessNotification
+  displayErrorNotification,
+  displaySuccessNotification,
 } from "../../utils/Toast";
 
 const Favorite = () => {
@@ -39,145 +39,126 @@ const Favorite = () => {
     }
   };
 
-	const handleDelete = async (id) => {
-		try {
-			const deleteRes = await axiosInstance.delete(`/user/favourites/${id}`);
-			fetchFavorites();
-			if (deleteRes.status == 201) {
-				displaySuccessNotification(`${deleteRes.data.message}`);
-			} else {
-				displayErrorNotification(`${deleteRes.data.message}`);
-			}
-			// console.log(deleteRes);
-		} catch (error) {
-			console.log(error);
-		} finally {
-		}
-	};
+  const handleDelete = async (id) => {
+    try {
+      const deleteRes = await axiosInstance.delete(`/user/favourites/${id}`);
+      fetchFavorites();
+      if (deleteRes.status == 201) {
+        displaySuccessNotification(`${deleteRes.data.message}`);
+      } else {
+        displayErrorNotification(`${deleteRes.data.message}`);
+      }
+      // console.log(deleteRes);
+    } catch (error) {
+      console.log(error);
+    } finally {
+    }
+  };
 
-	useMemo(() => {
-		fetchFavorites();
-	}, []);
+  useMemo(() => {
+    fetchFavorites();
+  }, []);
 
-	const truncateText = (text, maxWords) => {
-		const wordsArray = text?.split(" ");
-		if (wordsArray?.length > maxWords) {
-			return wordsArray.slice(0, maxWords).join(" ") + "...";
-		} else {
-			return text;
-		}
-	};
-	const smallScreenStyle={
-		// background: "yellow",
-		width: "100%",
-		padding: "2rem",
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center",
-		justifyContent: "center",
-	  };
+  const truncateText = (text, maxWords) => {
+    const wordsArray = text?.split(" ");
+    if (wordsArray?.length > maxWords) {
+      return wordsArray.slice(0, maxWords).join(" ") + "...";
+    } else {
+      return text;
+    }
+  };
+  const smallScreenStyle = {
+    // background: "yellow",
+    width: "100%",
+    padding: "2rem",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  };
 
   return (
     <>
-      <div class="wrapper " style={
-		isSm ? smallScreenStyle :{
-			background: "green",
-			display: "flex",
-			flexDirection: "column",
-			alignItems: "center",
-			justifyContent: "center"
-		} 
-	  }>
+      <div
+        class="wrapper "
+        style={
+          isSm
+            ? smallScreenStyle
+            : {
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }
+        }
+      >
         <MyHeader />
         <Menu />
         <div
           style={{
-            marginTop: "3.8rem",
-            width: isSm ? "100%" : "" | isMd ? "80%" : "",
-            marginLeft: isSm ? "" : "17.8rem" | isMd ? "" : "17",
+            marginTop: "6rem",
             display: "flex",
-            justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "#1d2755",
+            justifyContent: "center",
+            width: "100%",
+            color: "#1C2755",
+            fontWeight: "bold",
+			fontSize: "2rem",
+			border: "2px",
+			fontFamily: "poppins; serif",
+			marginBottom: "4rem"
           }}
-          class="alert alert-success"
-          role="alert"
         >
-          <div style={{ textAlign: "left", width: "40%", cursor: "pointer" }}>
-            <i
+          Favorite Scholarships
+        </div>
+
+        {data?.length === 0 ? (
+          <div
+            style={{
+              textAlign: "center",
+              marginTop: "4rem",
+              fontFamily: "Poppins",
+              cursor: "pointer",
+              marginLeft: isSm ? "" : "6rem",
+            }}
+          >
+            <h4
+              style={{
+                fontSize: "18px",
+                letterSpacing: "1.6px",
+                fontWeight: "400",
+                lineHeight: "27px",
+              }}
+            >
+              Start saving scholarships now!
+            </h4>
+            <p
               onClick={() => history.push("/scholars")}
               style={{
-                fontWeight: "bolder",
-                fontSize: "3rem",
+                fontSize: "14px",
+                letterSpacing: "1.6px",
+                fontWeight: 400,
+                lineHeight: "20px",
+                color: "rgb(74,74,74)",
               }}
-              class="fa fa-arrow-circle-left"
-              aria-hidden="true"
-            ></i>
+            >
+              Back to matches
+            </p>
           </div>
-
-					<div style={{ width: "60%", textAlign: "left" }}>
-						<h4
-							style={{
-								fontWeight: "bolder",
-								fontSize: "3.2rem",
-								fontFamily: "Poppins",
-								letterSpacing: "1.6px"
-							}}
-							class="alert-heading"
-						>
-							Saved
-						</h4>
-					</div>
-				</div>
-				
-				{data?.length === 0 ? (
-					<div
-						style={{
-							textAlign: "center",
-							marginTop: "4rem",
-							fontFamily: "Poppins",
-							cursor: "pointer",
-							marginLeft: isSm ? "" : "6rem",
-							
-						}}
-					>
-						<h4
-							style={{
-								fontSize: "18px",
-								letterSpacing: "1.6px",
-								fontWeight: "400",
-								lineHeight: "27px"
-							}}
-						>
-							Start saving scholarships now!
-						</h4>
-						<p
-							onClick={() => history.push("/scholars")}
-							style={{
-								fontSize: "14px",
-								letterSpacing: "1.6px",
-								fontWeight: 400,
-								lineHeight: "20px",
-								color: "rgb(74,74,74)"
-							}}
-						>
-							Back to matches
-						</p>
-					</div>
-				) : (
-					data?.map((dta) => (
-						<LargeCardFavourite
-							title={dta.favourite?.title}
-							formatDate={dta.favourite?.deadline}
-							subText={truncateText(dta.favourite?.about, 6)}
-							award={dta.favourite?.award}
-							link={dta.favourite?.link}
-							onClick={() => handleDelete(dta._id)}
-						/>
-					))
-				)}
-				<Footer />
-			</div>
+        ) : (
+          data?.map((dta) => (
+            <LargeCardFavourite
+              title={dta.favourite?.title}
+              formatDate={dta.favourite?.deadline}
+              subText={truncateText(dta.favourite?.about, 6)}
+              award={dta.favourite?.award}
+              link={dta.favourite?.link}
+              onClick={() => handleDelete(dta._id)}
+            />
+          ))
+        )}
+        <Footer />
+      </div>
 
       {/* <Dashboard /> */}
     </>
