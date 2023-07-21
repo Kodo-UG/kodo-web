@@ -126,7 +126,7 @@ const Scholarship = () => {
                     // size={ isSm? 40: 60} 
                   style={{
                     color: "#1d2755",
-                    padding: isSm? "1rem" : "",
+                    padding: isSm? "1rem" : "0.5rem",
                   }}
                 />
               </div>
