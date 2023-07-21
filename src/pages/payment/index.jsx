@@ -29,10 +29,7 @@ export default function Payment() {
       <div style={{ padding: "8rem" }} className="container">
         <div className="row justify-content-center">
           <div className="col-md-8 text-center">
-            <h3 className="mb-3">Pricing to make your Work Effective</h3>
-            <h6 className="subtitle font-weight-normal">
-              We offer 100% satisfaction and Money back Guarantee
-            </h6>
+            <h3 className="mb-3">Choose your plan</h3>
           </div>
         </div>
         <div className="row">

@@ -40,7 +40,6 @@ const Favorite = () => {
   };
 
 	const handleDelete = async (id) => {
-		setLoadingDelete(true);
 		try {
 			const deleteRes = await axiosInstance.delete(`/user/favourites/${id}`);
 			fetchFavorites();
@@ -53,7 +52,6 @@ const Favorite = () => {
 		} catch (error) {
 			console.log(error);
 		} finally {
-			setLoadingDelete(false);
 		}
 	};
 
