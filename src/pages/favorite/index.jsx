@@ -70,7 +70,7 @@ const Favorite = () => {
 		}
 	};
 	const smallScreenStyle={
-		background: "yellow",
+		// background: "yellow",
 		width: "100%",
 		padding: "2rem",
 		display: "flex",
