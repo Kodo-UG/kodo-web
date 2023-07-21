@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PaymentCard from "../../components/PaymentPlans";
 import axios from "axios";
-import { FaCheck } from 'react-icons/fa'; 
+import { AiFillCheckCircle  } from 'react-icons/ai'; 
 
 
 export default function Payment() {
@@ -60,7 +60,7 @@ export default function Payment() {
             <div style={{marginTop:"20px"}}>
             {info.map(data=>(
                            <div key={data.id}  className="scholarship-info" style={scholarshipStyle}>
-                           <FaCheck style={{ color: 'green', marginRight: '5px' }} />
+                           <AiFillCheckCircle  style={{ color: 'green', marginRight: '5px' }} />
                            <p>{data.text}</p>
                          </div>
             ))
@@ -82,5 +82,6 @@ const scholarshipStyle = {
   justifyContent: 'center',
   fontSize: '16px',
   margin:"1rem",
-  marginTop:"10px"
+  marginTop:"10px",
+  textAlign:"left"
 };
