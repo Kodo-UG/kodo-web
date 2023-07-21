@@ -197,36 +197,6 @@ function CardScholarshipSubscribed({
 					</div>
 				</div>
 			</div>
-			<div></div>
-
-			<div
-				style={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "end",
-					width: "100%",
-					paddingRight: "1rem",
-					color: "gray"
-				}}
-			>
-				<div
-					style={{
-						display: "flex",
-						justifyContent: "center"
-						// alignItems: "center"
-					}}
-				>
-					<AiOutlineEye
-						style={{
-							marginRight: "0.3rem",
-							width: "18px",
-							height: "18px",
-							color: "#a0a3bd"
-						}}
-					/>
-					<p style={{ color: "#a0a3bd" }}>viewed</p>
-				</div>
-			</div>
 
 			<Modal
 				open={visible}
