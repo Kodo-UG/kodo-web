@@ -3,8 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
-import { FaCheck } from 'react-icons/fa';
-
+import { FaCheck } from "react-icons/fa";
 
 const PaymentCard = ({ data }) => {
 	const { details } = data;
@@ -19,7 +18,7 @@ const PaymentCard = ({ data }) => {
 		public_key: "FLWPUBK_TEST-02518ab938416219120df2c5cf3e056c-X",
 		tx_ref: Date.now(),
 		amount: data.amount,
-		currency: "UGX",
+		currency: "USD",
 		payment_options: "card,mobilemoney,ussd",
 		customer: {
 			email: `${dataUser?.user.email}`,
@@ -66,31 +65,47 @@ const PaymentCard = ({ data }) => {
 
 	return (
 		<div className="">
-
 			<div className="payment-cards-container" style={containerStyle}>
 				<div className="payment-card" style={cardStyle}>
 					<p className="price" style={priceStyle}>
 						$ {data.amount}
-
 					</p>
 					<p>{data.interval.toUpperCase()}</p>
 					<div style={jointBackgroundStyle}>
 						<div style={blueBackgroundStyle}>
-							<p style={centeredText}>No Trial</p>
+							<p style={{ ...centeredText, fontWeight: "normal" }}>
+								No Trial
+							</p>
 						</div>
-						<p style={noSavingsTextStyle}>No Savings</p>
+						<p style={{ ...noSavingsTextStyle, fontWeight: "bold" }}>
+							No Savings
+						</p>
 					</div>
-					<p style={{ ...centeredText, fontWeight: 'bold', fontSize: '16px', color: '#1C2755', margin: 0 }}>
+					<p
+						style={{
+							...centeredText,
+							fontWeight: "bold",
+							fontSize: "16px",
+							color: "#1C2755",
+							margin: 0
+						}}
+					>
 						{data.amount == "10" && "1"}
 						{data.amount == "30" && "6"}
 						{data.amount == "60" && "12"}
-
 					</p>
-					<p style={{ ...centeredText, fontWeight: 'bold', fontSize: '16px', color: '#1C2755', margin: 0 }}>
+					<p
+						style={{
+							...centeredText,
+							fontWeight: "bold",
+							fontSize: "16px",
+							color: "#1C2755",
+							margin: 0
+						}}
+					>
 						{data.amount == "10" && "Month"}
 						{data.amount == "30" && "Months"}
 						{data.amount == "60" && "Months"}
-
 					</p>
 					<button
 						onClick={() => {
@@ -99,10 +114,13 @@ const PaymentCard = ({ data }) => {
 									await subscribe(response.status, data._id);
 									closePaymentModal(); // this will close the modal programmatically
 								},
-								onClose: (data) => { }
+								onClose: (data) => {}
 							});
 						}}
-						style={buttonStyle}>Select</button>
+						style={buttonStyle}
+					>
+						Select
+					</button>
 				</div>
 			</div>
 			{/* </div> */}
@@ -110,74 +128,72 @@ const PaymentCard = ({ data }) => {
 	);
 };
 
-
-
 // Inline CSS styles
 const containerStyle = {
-	display: 'flex',
-	justifyContent: 'center',
-	flexWrap: 'wrap',
+	display: "flex",
+	justifyContent: "center",
+	flexWrap: "wrap"
 };
 
 const cardStyle = {
-	display: 'flex',
-	flexDirection: 'column',
-	alignItems: 'center',
-	backgroundColor: '#ffffff',
-	boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Improved box shadow
-	padding: '20px',
-	width: '200px',
-	margin: '10px',
-	borderRadius: '8px',
+	display: "flex",
+	flexDirection: "column",
+	alignItems: "center",
+	backgroundColor: "#ffffff",
+	boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", // Improved box shadow
+	padding: "20px",
+	width: "200px",
+	margin: "10px",
+	borderRadius: "8px"
 };
 
 const priceStyle = {
-	color: '#1C2755',
-	fontSize: '24px',
-	fontWeight: 'bold',
+	color: "#1C2755",
+	fontSize: "24px",
+	fontWeight: "bold"
 };
 
 const jointBackgroundStyle = {
-	display: 'flex',
-	flexDirection: 'column',
-	alignItems: 'center',
-	background: '#f57f9e', // Joint background color for "No Trial" and "No Savings"
-	borderRadius: '8px',
-	width: '100%',
-	marginBottom: '10px',
+	display: "flex",
+	flexDirection: "column",
+	alignItems: "center",
+	background: "#f57f9e", // Joint background color for "No Trial" and "No Savings"
+	borderRadius: "8px",
+	width: "100%",
+	marginBottom: "10px"
 };
 
 const blueBackgroundStyle = {
-	background: '#F5527D',
-	borderRadius: '8px',
-	width: '100%',
+	background: "#F5527D",
+	borderRadius: "8px",
+	width: "100%"
 };
 
 const centeredText = {
-	color: '#ffffff',
-	padding: '4px',
-	textAlign: 'center', // Center the "No Trial" text within the blue background
+	color: "#ffffff",
+	padding: "4px",
+	textAlign: "center" // Center the "No Trial" text within the blue background
 };
 
 const noSavingsTextStyle = {
-	color: '#ffffff',
-	padding: '4px',
+	color: "#ffffff",
+	padding: "4px"
 };
 
 const scholarshipStyle = {
-	display: 'flex',
-	justifyContent: 'center',
-	fontSize: '16px',
+	display: "flex",
+	justifyContent: "center",
+	fontSize: "16px",
 	margin: "1rem",
 	marginTop: "20px"
 };
 const buttonStyle = {
-	backgroundColor: '#ffffff',
-	color: '#1C2755', // White text color
-	border: '1px solid #CCCCCC', // Smooth gray border
-	padding: '10px 20px', // Adjust padding as needed
-	borderRadius: '6px', // Rounded corners
-	cursor: 'pointer',
+	backgroundColor: "#ffffff",
+	color: "#1C2755", // White text color
+	border: "1px solid #CCCCCC", // Smooth gray border
+	padding: "10px 20px", // Adjust padding as needed
+	borderRadius: "6px", // Rounded corners
+	cursor: "pointer",
 	width: "100%"
 };
 
