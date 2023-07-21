@@ -302,6 +302,7 @@ const LargeCardNotPaid = ({
                   alignItems: "center",
                   marginTop: "1.52rem",
                   marginLeft: ".8rem",
+				 
                 }}
               >
                 {" "}
