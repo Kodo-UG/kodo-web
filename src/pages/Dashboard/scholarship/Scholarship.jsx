@@ -89,7 +89,8 @@ const Scholarship = () => {
 							width: "100%",
 							alignItems: "center",
 							padding: "2px",
-							justifyContent: "center"
+							justifyContent: "center",
+              
 						}}
 					>
 						<div
@@ -101,25 +102,29 @@ const Scholarship = () => {
 								display: "flex",
 								marginTop: "4rem",
 								boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
-								padding: "1rem",
+								// padding: "1rem",
+                justifyContent: "center",
 								alignItems: "center",
 								cursor: "pointer",
-								borderRadius: "4px"
+								borderRadius: "4px",
+                //  background: "green"
 
 								// justifyContent: "space-between"
 							}}
 						>
 							<div
 								style={{
-									width: "20%",
+									width: "100%",
 									display: "flex",
 									alignItems: "center",
 									justifyContent: "center",
-									marginRight: "1rem"
+									marginRight: "1rem",
+                  //  background: "yellow"
+                 
 								}}
 							>
 								<SiFiles
-									size={75}
+									size={60}
 									style={{
 										color: "#1d2755"
 									}}
@@ -128,7 +133,9 @@ const Scholarship = () => {
 							<div
 								style={{
 									// height: "100%",
-									width: "100vw"
+									width: "100vw",
+                  padding: "0.5rem",
+                  // background: "red",
 								}}
 							>
 								<p
@@ -137,7 +144,7 @@ const Scholarship = () => {
 										fontSize: isSm ? "22px" : "24px",
 										color: "#1c2755",
 										fontWeight: "bold",
-										letterSpacing: "1px"
+										// letterSpacing: "1px"
 									}}
 								>
 									$14,500 In Matches
@@ -152,6 +159,7 @@ const Scholarship = () => {
 										fontWeight: 500,
 										textAlign: "justify",
 										color: "#000",
+                    marginTop: "-0.8rem",
 										justifyContent: "space-between"
 									}}
 								>
@@ -164,7 +172,7 @@ const Scholarship = () => {
 										fontSize: isSm ? "16px" : "16px",
 										fontWeight: 500,
 										color: "#000",
-										marginTop: 0
+										marginTop: "-1rem"
 									}}
 								>
 									scholarships.
