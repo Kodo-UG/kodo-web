@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import $ from "jquery";
 import Client from "./Client";
 import TestimonialComponent from "./TestimonialComponent";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "./testimonial.css"; // Assuming you create this file for additional CSS
 // Assuming you create this file for additional JavaScript
 import TestimonialCarousel from "./TestimonialCarousel";
@@ -60,14 +60,14 @@ const Testimonals = () => {
 			className="testimonial-section "
 		>
 			<div
-				className=" "
+				className=""
 				style={{
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "center",
 					justifyContent: "center",
-					paddingLeft: "8rem",
-					paddingRight: "8rem"
+					paddingLeft: "4rem",
+					paddingRight: "4rem"
 				}}
 			>
 				<h3
@@ -79,8 +79,8 @@ const Testimonals = () => {
 				>
 					Testimonials
 				</h3>
-				<div className="testimonial-carousel">
-					<div className="testimonial-item">
+				<div className="testimonial-carousel ">
+					<div className="testimonial-item ">
 						<div className="testimonial-image">
 							<img
 								src="https://res.cloudinary.com/itgenius/image/upload/v1688928366/samantha_orwf70.jpg"

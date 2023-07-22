@@ -4,22 +4,35 @@ import { useHistory } from "react-router-dom";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import { AiFillCheckCircle } from 'react-icons/ai';
+import { FaCheck } from 'react-icons/fa';
+import useCurrencyConverter from "../../utils/converter";
 
 
 const PaymentCard = ({ data }) => {
 	const { details } = data;
 	const history = useHistory();
 	const [dataUser, setDataUser] = useState();
+	const [amount,setAmount]= useState()
+	const [curr,setCurr] = useState("USD")
+
 
 	useEffect(() => {
 		setDataUser(JSON.parse(localStorage.getItem("userData")));
 	}, []);
 
+	
+
+
+
+
+	  const dataInfo = useCurrencyConverter(data.amount)
+
+
 	const config = {
 		public_key: "FLWPUBK_TEST-02518ab938416219120df2c5cf3e056c-X",
 		tx_ref: Date.now(),
-		amount: data.amount,
-		currency: "USD",
+		amount: dataInfo.result,
+		currency: dataInfo.convertTo,
 		payment_options: "card,mobilemoney,ussd",
 		customer: {
 			email: `${dataUser?.user.email}`,
@@ -110,6 +123,7 @@ const PaymentCard = ({ data }) => {
 					</p>
 					<button
 						onClick={() => {
+
 							handleFlutterPayment({
 								callback: async (response) => {
 									await subscribe(response.status, data._id);

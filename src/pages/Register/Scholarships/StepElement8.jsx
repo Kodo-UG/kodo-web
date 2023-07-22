@@ -54,7 +54,7 @@ function StepElement8() {
 		setLoading(true);
 		let data = JSON.stringify(formData);
 
-		if (!formData.email || !formData.phone || !formData.password) {
+		if (!formData.email || !formData.phone || !formData.password || !gender) {
 			displayErrorMessage("Please fill in all the required fields");
 			setLoading(false);
 			return;
@@ -70,9 +70,14 @@ function StepElement8() {
 				);
 				history.push("/verify");
 				// nextStep();
+			} else {
+				displayErrorMessage(res.data.message);
 			}
 		} catch (error) {
-			displayErrorMessage("Failed to register");
+			console.log(error.message);
+			displayErrorMessage(
+				"Failed to register email  already exists or wrong "
+			);
 		} finally {
 			setLoading(false);
 		}
@@ -233,19 +238,7 @@ function StepElement8() {
 											/>
 										</div>
 									</div>
-									{/* <div>
- <div className="_fieldGroup_1g3ja_1">
- <input
- className="_textField_fwd9c_1"
- onChange={handleGenderChange}
- name={showPassword ? "text" : "password"}
- type="text"
- id="password"
- label="password"
- placeholder="password"
- />
- </div>
- </div> */}
+
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
 											<select
