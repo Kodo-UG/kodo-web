@@ -49,34 +49,34 @@ const Scholarship = () => {
     getScholarship();
   }, []);
 
-  let handleFetchMore = async () => {
-    setLoading(true);
-    setCount(count + 1);
-    try {
-      const token = localStorage.getItem("token");
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
+  // let handleFetchMore = async () => {
+  //   setLoading(true);
+  //   setCount(count + 1);
+  //   try {
+  //     const token = localStorage.getItem("token");
+  //     const headers = {
+  //       Authorization: `Bearer ${token}`,
+  //     };
 
-      let res = await axios.get(
-        `https://demo.kodoscholarships.com/api/v1/scholarship?page=${count}`,
-        {
-          headers,
-        }
-      );
+  //     let res = await axios.get(
+  //       `https://demo.kodoscholarships.com/api/v1/scholarship?page=${count}`,
+  //       {
+  //         headers,
+  //       }
+  //     );
 
-      setTotalPages(res.data.totalPages);
+  //     setTotalPages(res.data.totalPages);
 
-      // setData((prev) => [...prev, res.data.data]);
-      setData(res.data.data);
-      setSubscription(res.data.subscription);
-    } catch (error) {
-      // Handle   error here
-      throw error;
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     // setData((prev) => [...prev, res.data.data]);
+  //     setData(res.data.data);
+  //     setSubscription(res.data.subscription);
+  //   } catch (error) {
+  //     // Handle   error here
+  //     throw error;
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div>
@@ -225,7 +225,7 @@ const Scholarship = () => {
 						</DashboardCard> */}
             {isSm ? <CombinedScholarshipCard /> : <MapCardData />}
           </div>
-          <div
+          {/* <div
             style={{
               display: "flex",
               justifyContent: "center",
@@ -247,7 +247,7 @@ const Scholarship = () => {
                 {loading ? "loading...." : "Load More"}
               </Button>
             )}
-          </div>
+          </div> */}
         </section>
       </div>
     </div>

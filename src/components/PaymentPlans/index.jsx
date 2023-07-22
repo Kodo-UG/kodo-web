@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
+import { AiFillCheckCircle } from 'react-icons/ai';
 import { FaCheck } from 'react-icons/fa';
 import useCurrencyConverter from "../../utils/converter";
 

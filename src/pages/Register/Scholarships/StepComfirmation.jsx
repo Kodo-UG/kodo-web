@@ -125,15 +125,21 @@ function StepComfirmation() {
 								</button>
 							</Link>
 							<div
-								style={{ padding: "10rem" }}
+								// style={{ padding: "10rem" }}
 								className="_notAnimated_pmptr_10"
 							>
-								<span className="_headingContainer_1fpvz_1">
+								<span
+									style={{ marginTop: "6rem" }}
+									className="_headingContainer_1fpvz_1"
+								>
 									<h2 className="_soloHeading_1fpvz_8">
-										Verify Your Email
+										Enter verification code sent to your email
 									</h2>
 								</span>
-								<form onSubmit={verifyEmail}>
+								<form
+									style={{ marginTop: "2rem" }}
+									onSubmit={verifyEmail}
+								>
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
 											<Input
@@ -182,15 +188,15 @@ function StepComfirmation() {
 					</section>
 				</section>
 			</div>
-			<footer className="flex justify-center items-center bg-primary-900 mt-4 py-5">
+			<footer className="flex justify-center items-center fixed-bottom bg-primary-900 mt-4 py-5">
 				<div className="flex flex-col items-center justify-center md:flex-row flex-wrap">
 					<Link to="/">
 						<img
 							className="icon-component icon-component--logo-stacked-horizontal"
 							style={{ color: "#fff" }}
 							src="https://www.kodoscholarships.com/kodo-logo.png"
-							width="36"
-							height="36"
+							width="56"
+							height="56"
 							fill="#fff"
 							role="img"
 							viewBox="0 0 350 105"
