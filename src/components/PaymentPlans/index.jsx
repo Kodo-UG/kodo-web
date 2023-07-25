@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useMediaQuery } from "@uidotdev/usehooks";
 import { useHistory } from "react-router-dom";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
@@ -14,6 +15,15 @@ const PaymentCard = ({ data }) => {
 	const [dataUser, setDataUser] = useState();
 	const [amount,setAmount]= useState()
 	const [curr,setCurr] = useState("USD")
+
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const isMd = useMediaQuery(
+	  "only screen and (min-width : 700px) and (max-width : 1250px)"
+	);
+	const isLg = useMediaQuery(
+	  "only screen and (min-width : 993px) and (max-width : 1200px)"
+	);
+	const isXl = useMediaQuery("only screen and (min-width : 1201px)");
 
 
 	useEffect(() => {
@@ -80,19 +90,30 @@ const PaymentCard = ({ data }) => {
 	return (
 		<div className="">
 			<div className="payment-cards-container" style={containerStyle}>
-				<div className="payment-card" style={cardStyle}>
+				<div className="payment-card" style={{
+	display: "flex",
+	flexDirection: "column",
+	alignItems: "center",
+	backgroundColor: "#ffffff",
+	boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", 
+	padding: "20px",
+	width: isSm ? "100%" : "200px",
+	margin: "10px",
+	borderRadius: "8px"
+}}>
 					<p className="price" style={priceStyle}>
 						$ {data.amount}
 					</p>
-					<p>{data.interval.toUpperCase()}</p>
+					<p>{data.interval=="half year" ? "6 - months":data.interval}</p>
+
 					<div style={jointBackgroundStyle}>
 						<div style={blueBackgroundStyle}>
-							<p style={{ ...centeredText, fontWeight: "normal" }}>
+							<p style={{ ...centeredText, fontWeight: "bold" }}>
 								No Trial
 							</p>
 						</div>
-						<p style={{ ...noSavingsTextStyle, fontWeight: "bold" }}>
-							No Savings
+						<p style={{ ...noSavingsTextStyle, fontWeight: "normal" }}>
+							{data.amount==10?"No savings":(data.amount==30?"60% savings per year":"87% savings per year")}
 						</p>
 					</div>
 					<p
@@ -150,17 +171,6 @@ const containerStyle = {
 	flexWrap: "wrap"
 };
 
-const cardStyle = {
-	display: "flex",
-	flexDirection: "column",
-	alignItems: "center",
-	backgroundColor: "#ffffff",
-	boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", // Improved box shadow
-	padding: "20px",
-	width: "200px",
-	margin: "10px",
-	borderRadius: "8px"
-};
 
 const priceStyle = {
 	color: "#1C2755",

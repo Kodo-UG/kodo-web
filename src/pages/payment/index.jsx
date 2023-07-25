@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import PaymentCard from "../../components/PaymentPlans";
 import axios from "axios";
 import { AiFillCheckCircle  } from 'react-icons/ai'; 
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 
 export default function Payment() {
   const [plans, setPlans] = useState();
   const [loading, setLoading] = useState(false);
+  const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
   const getPlans = async () => {
     setLoading(true);
@@ -59,7 +61,15 @@ export default function Payment() {
             </div>
             <div style={{marginTop:"20px"}}>
             {info.map(data=>(
-                           <div key={data.id}  className="scholarship-info" style={scholarshipStyle}>
+                           <div key={data.id}  className="scholarship-info" style={ {
+                            display: 'flex',
+                            justifyContent: 'center',
+                            fontSize:'16px',
+                            margin:"10px",
+                            marginTop:"10px",
+                            textAlign:"left",
+                            width:"100%"
+                          }}>
                            <AiFillCheckCircle  style={{ color: 'green', marginRight: '5px' }} />
                            <p>{data.text}</p>
                          </div>
@@ -76,12 +86,3 @@ export default function Payment() {
 }
 
 
-
-const scholarshipStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  fontSize: '16px',
-  margin:"1rem",
-  marginTop:"10px",
-  textAlign:"left"
-};
