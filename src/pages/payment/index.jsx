@@ -45,16 +45,18 @@ export default function Payment() {
   ]
 
   return (
-    <div className="pricing6 py-5 bg-light">
-      <div style={{ padding: "5rem" }} className="container">
-        <div className="row justify-content-center">
+    <div className="pricing6 py-5 bg-light " style={{
+      marginTop: isSm?"4rem":""
+    }}>
+      <div style={{ padding: isSm ? "1rem" : "5rem" }} className="container ">
+        <div className="row justify-content-center ">
           <div className="col-md-8 text-center">
             <h3 className="mb-3">Choose your plan</h3>
           </div>
         </div>
-        <div className="row">
-          <div className="col">
-            <div className="d-flex flex-row flex-sm-row justify-content-center" 
+        <div className="row ">
+          <div className="col ">
+            <div className="d-flex flex-row flex-sm-row justify-content-center " 
   style={{ overflowX: isSm ? "scroll" : "hidden" }}
 
             >
