@@ -86,7 +86,7 @@ const JobStep1 = ({ nextStep }) => {
                 ></div>
               </div>
 
-              <a href="javascript:history.back()">
+              <Link to='/admissions'>
                 <button
                   data-testid="button-previous"
                   type="button"
@@ -109,7 +109,7 @@ const JobStep1 = ({ nextStep }) => {
                   </svg>
                   <span className="_buttonText_pmptr_41">Back</span>
                 </button>
-              </a>
+              </Link>
 
               <div className="_notAnimated_pmptr_10">
                 <span className="_headingContainer_1fpvz_1">
