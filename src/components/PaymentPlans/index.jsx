@@ -97,9 +97,11 @@ const PaymentCard = ({ data }) => {
 	backgroundColor: "#ffffff",
 	boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", 
 	padding: "20px",
-	width: isSm ? "100%" : "200px",
+	width: isSm ? "200px" : "200px",
 	margin: "10px",
-	borderRadius: "8px"
+	borderRadius: "8px",
+	height:isSm?"330px":""
+
 }}>
 					<p className="price" style={priceStyle}>
 						$ {data.amount}

@@ -54,10 +54,22 @@ export default function Payment() {
         </div>
         <div className="row">
           <div className="col">
-            <div className="d-flex flex-column flex-sm-row justify-content-center">
+            <div className="d-flex flex-row flex-sm-row justify-content-center" 
+  style={{ overflowX: isSm ? "scroll" : "hidden" }}
+
+            >
+              <div className="" 
+                  style={{
+                    display: "flex",
+                    flexWrap: "nowrap", // Prevent cards from wrapping to a new line
+                    margin: isSm?"10px 0":"", // Apply margin to this container
+                    overflowX: isSm?"auto":""
+                  }}
+              >
               {plans?.map((dta) => (
                 <PaymentCard key={dta._id} data={dta} />
               ))}
+            </div>
             </div>
             <div style={{marginTop:"20px"}}>
             {info.map(data=>(
