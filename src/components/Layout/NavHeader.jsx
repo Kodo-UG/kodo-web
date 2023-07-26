@@ -62,58 +62,59 @@ const NavHeader = () => {
         backgroundColor: "white",
       }}
     >
-      <div style={{
-		// background: "orange",
-		width: isSm? "100%" : "",
-		display: isSm? "flex" : "",
-		alignItems: "center",
-		justifyContent: "space-between"
-	  }}>
-		<Link to="/">
-        <div className="logo">
-          <img
-            src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
-            alt="logo"
-            style={{
-              width: "180px",
-              height: "auto",
-              marginLeft: "8rem",
-              paddingLeft: "2rem",
-            }}
-          />
-        </div>
-      </Link>
+      <div
+        style={{
+          // background: "orange",
+          width: isSm ? "100%" : "",
+          display: isSm ? "flex" : "",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Link to="/">
+          <div className="logo">
+            <img
+              src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
+              alt="logo"
+              style={{
+                width: "180px",
+                height: "auto",
+                marginLeft: "8rem",
+                paddingLeft: "2rem",
+              }}
+            />
+          </div>
+        </Link>
 
-      {isSm && (
-        <button
-          // className="navbar-toggler"
-          type="button"
-          // data-toggle="collapse"
-          // data-target="#navbarTogglerDemo01"
-          // aria-controls="navbarTogglerDemo01"
-          // aria-expanded="false"
-          // aria-label="Toggle navigation"
-          onClick={() => setOpen(!open)}
-        >
-          <HiMenuAlt1
-            style={{
-              color: "red",
-              width: "3rem",
-              height: "2rem",
-              fontWeight: "bolder",
-              marginTop: "1rem",
-            }}
-          />
+        {isSm && (
+          <button
+            // className="navbar-toggler"
+            type="button"
+            // data-toggle="collapse"
+            // data-target="#navbarTogglerDemo01"
+            // aria-controls="navbarTogglerDemo01"
+            // aria-expanded="false"
+            // aria-label="Toggle navigation"
+            onClick={() => setOpen(!open)}
+          >
+            <HiMenuAlt1
+              style={{
+                color: "red",
+                width: "3rem",
+                height: "2rem",
+                fontWeight: "bolder",
+                marginTop: "1rem",
+              }}
+            />
 
-          {/* <span className="navbar-toggler-icon"></span> */}
-        </button>
-      )}
-
-	  </div>
+            {/* <span className="navbar-toggler-icon"></span> */}
+          </button>
+        )}
+      </div>
       {open ? (
         <div
           style={{ zIndex: 99999 }}
-        //   className="collapse navbar-collapse  "
+          //   className="collapse navbar-collapse  "
           // id="navbarTogglerDemo01"
         >
           <ul
@@ -127,7 +128,7 @@ const NavHeader = () => {
           >
             {routeData.map((dta) => (
               <CustomLink
-                // onClick={handleReloadPage}
+                onClick={() => setOpen(false)}
                 key={dta.id}
                 route={dta.route}
                 children={dta.children}
