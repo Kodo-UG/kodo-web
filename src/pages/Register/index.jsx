@@ -15,7 +15,7 @@ const FindScholarship = () => {
 			id: 2,
 			title: "Jobs",
 			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
-			link: "/",
+			link: "/JobStep1",
 			Button: "Sign Up"
 		}
 	];

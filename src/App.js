@@ -28,6 +28,10 @@ import StepElement8 from "./pages/Register/Scholarships/StepElement8";
 import StepComfirmation from "./pages/Register/Scholarships/StepComfirmation";
 import Index from "../src/pages/profile/index";
 import Favorite from "./pages/favorite";
+import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
+import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
+import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
+
 const App = () => {
 	return (
 		<Switch>
@@ -47,6 +51,9 @@ const App = () => {
 			<Route exact path="/stepper" component={Stepper} />
 			<Route exact path="/educationlevel" component={StepperElementFour} />
 			<Route exact path="/stepper" component={Stepper} />
+			<Route exact path="/JobStep1" component={JobStep1} />
+			<Route exact path="/JobStep2" component={JobStep2} />
+			<Route exact path="/JobStep3" component={JobStep3} />
 
 			<Layout>
 				<PrivateRoute path="/payment" component={Payment} />
