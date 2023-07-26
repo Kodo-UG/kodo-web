@@ -5,7 +5,6 @@ import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 // import StepperFour from "./StepperFour";
 import StepSix from "./StepSix";
-import Final from "./Final";
 import StepSeven from "./StepSeven";
 import StepEight from "./StepEight";
 import StepNine from "./StepNine";

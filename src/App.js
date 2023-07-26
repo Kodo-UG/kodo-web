@@ -1,73 +1,85 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
-import { ProtectedRoute } from "./protectedRoute";
-import Home from "./pages/HomePage";
-import AboutUs from "./pages/AboutUs/index";
-import Blog from "./pages/Blog";
-import ContactUs from "./pages/ContactUs";
-import Scholarships from "./pages/Scholarships";
-import Testimonals from "./pages/Testimonals";
-import Stepper from "./pages/Register/Scholarships";
-import FindScholarship from "./pages/Register";
-import Login from "./pages/Scholarships/Login";
-import Signin from "./pages/Login";
-import ForgotPassword from "./pages/ForgotPassword";
-import PasswordReset from "./pages/PasswordReset";
-import Root from "./pages/Dashboard";
-import Payment from "./pages/payment";
 import PrivateRoute from "./utils/PrivateRoute";
-import RootScholarship from "./pages/Dashboard/scholarship";
-import MainProfile from "./pages/Dashboard/Profile";
-import Accordion from "./accordion/Accordion";
-import RootApplication from "./pages/Dashboard/applications";
-import StepperElementFour from "./pages/Register/Scholarships/StepperElementFour";
-import StepperElementSix from "./pages/Register/Scholarships/StepperElementSix";
-import StepperElement7 from "./pages/Register/Scholarships/StepperElement7";
-import StepElement8 from "./pages/Register/Scholarships/StepElement8";
-import StepComfirmation from "./pages/Register/Scholarships/StepComfirmation";
-import Index from "../src/pages/profile/index";
-import Favorite from "./pages/favorite";
-import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
-import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
-import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
+
+// Lazy-loaded components
+const Home = lazy(() => import("./pages/HomePage"));
+const AboutUs = lazy(() => import("./pages/AboutUs/index"));
+const Blog = lazy(() => import("./pages/Blog"));
+const ContactUs = lazy(() => import("./pages/ContactUs"));
+const Scholarships = lazy(() => import("./pages/Scholarships"));
+const Testimonals = lazy(() => import("./pages/Testimonals"));
+const Stepper = lazy(() => import("./pages/Register/Scholarships"));
+const FindScholarship = lazy(() => import("./pages/Register"));
+const Login = lazy(() => import("./pages/Scholarships/Login"));
+const Signin = lazy(() => import("./pages/Login"));
+const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
+const PasswordReset = lazy(() => import("./pages/PasswordReset"));
+const Payment = lazy(() => import("./pages/payment"));
+const RootScholarship = lazy(() => import("./pages/Dashboard/scholarship"));
+const MainProfile = lazy(() => import("./pages/Dashboard/Profile"));
+const Accordion = lazy(() => import("./accordion/Accordion"));
+const RootApplication = lazy(() => import("./pages/Dashboard/applications"));
+const StepperElementFour = lazy(() =>
+	import("./pages/Register/Scholarships/StepperElementFour")
+);
+const StepperElementSix = lazy(() =>
+	import("./pages/Register/Scholarships/StepperElementSix")
+);
+const StepperElement7 = lazy(() =>
+	import("./pages/Register/Scholarships/StepperElement7")
+);
+const StepElement8 = lazy(() =>
+	import("./pages/Register/Scholarships/StepElement8")
+);
+const StepComfirmation = lazy(() =>
+	import("./pages/Register/Scholarships/StepComfirmation")
+);
+const Index = lazy(() => import("../src/pages/profile/index"));
+const Favorite = lazy(() => import("./pages/favorite"));
 
 const App = () => {
 	return (
-		<Switch>
-			<Route exact path="/index" component={Index} />
-			<Route exact path="/signin" component={Signin} />
-			<Route exact path="/forgot/password" component={ForgotPassword} />
-			<Route path="/reset-password" component={PasswordReset} />
-			{/* <PrivateRoute exact path="/scholars" component={Root} /> */}
-			<PrivateRoute exact path="/scholars" component={RootScholarship} />
-			<PrivateRoute exact path="/applications" component={RootApplication} />
-			<PrivateRoute exact path="/favorite" component={Favorite} />
-			<PrivateRoute exact path="/profile" component={MainProfile} />
-			<Route exact path="/route1" component={StepperElementSix} />
-			<Route exact path="/route2" component={StepperElement7} />
-			<Route exact path="/verify" component={StepComfirmation} />
-			<Route exact path="/final" component={StepElement8} />
-			<Route exact path="/stepper" component={Stepper} />
-			<Route exact path="/educationlevel" component={StepperElementFour} />
-			<Route exact path="/stepper" component={Stepper} />
-			<Route exact path="/JobStep1" component={JobStep1} />
-			<Route exact path="/JobStep2" component={JobStep2} />
-			<Route exact path="/JobStep3" component={JobStep3} />
+		<Suspense fallback={<div>Loading...</div>}>
+			<Switch>
+				<Route exact path="/index" component={Index} />
+				<Route exact path="/signin" component={Signin} />
+				<Route exact path="/forgot/password" component={ForgotPassword} />
+				<Route path="/reset-password" component={PasswordReset} />
+				<PrivateRoute exact path="/scholars" component={RootScholarship} />
+				<PrivateRoute
+					exact
+					path="/applications"
+					component={RootApplication}
+				/>
+				<PrivateRoute exact path="/favorite" component={Favorite} />
+				<PrivateRoute exact path="/profile" component={MainProfile} />
+				<Route exact path="/route1" component={StepperElementSix} />
+				<Route exact path="/route2" component={StepperElement7} />
+				<Route exact path="/verify" component={StepComfirmation} />
+				<Route exact path="/final" component={StepElement8} />
+				<Route exact path="/stepper" component={Stepper} />
+				<Route
+					exact
+					path="/educationlevel"
+					component={StepperElementFour}
+				/>
 
-			<Layout>
-				<PrivateRoute path="/payment" component={Payment} />
-				<Route exact path="/aboutus" component={AboutUs} />
-				<Route exact path="/login" component={Login} />
-				<Route exact path="/blog" component={Blog} />
-				<Route exact path="/admissions" component={FindScholarship} />
+				<Layout>
+					<PrivateRoute path="/payment" component={Payment} />
+					<Route exact path="/aboutus" component={AboutUs} />
+					<Route exact path="/login" component={Login} />
+					<Route exact path="/blog" component={Blog} />
+					<Route exact path="/admissions" component={FindScholarship} />
 
-				<Route exact path="/contactus" component={ContactUs} />
-				<Route exact path="/scholarships" component={Accordion} />
-				<Route exact path="/testimonals" component={Testimonals} />
-				<Route exact path="/" component={Home} />
-			</Layout>
-		</Switch>
+					<Route exact path="/contactus" component={ContactUs} />
+					<Route exact path="/scholarships" component={Accordion} />
+					<Route exact path="/testimonals" component={Testimonals} />
+					<Route exact path="/" component={Home} />
+				</Layout>
+			</Switch>
+		</Suspense>
 	);
 };
 

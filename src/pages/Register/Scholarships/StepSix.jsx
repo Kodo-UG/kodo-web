@@ -1,10 +1,8 @@
 import React from "react";
-import { BiSignal1 } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
 import { useState } from "react";
 import StepperCard from "../../../components/StepperCard";
-
 
 const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 	const dispatch = useDispatch();
@@ -13,7 +11,7 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 		{ id: 2, title: "In the next 3 months" },
 		{ id: 3, title: "3 - 6 months" },
 		{ id: 4, title: "6 - 12 months" },
-		{ id: 5, title: "12 or more months" },
+		{ id: 5, title: "12 or more months" }
 	];
 	const [selectedCard, setSelectedCard] = useState(null);
 	const handleClick = (title, id) => {
@@ -28,7 +26,7 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 					class="selections-container"
 					style={{
 						transform: "none",
-						transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms",
+						transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms"
 					}}
 				>
 					<h2>How soon were you looking to start this new program?</h2>
@@ -40,7 +38,7 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 								gap: "2rem",
 								cursor: "pointer",
 								padding: "3rem",
-								width: "100%",
+								width: "100%"
 							}}
 						>
 							{buttons.map((item) => (
@@ -71,7 +69,7 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 						lineHeight: "1.5",
 						color: "#fff",
 						cursor: "pointer",
-						marginBottom: "4px",
+						marginBottom: "4px"
 					}}
 					onClick={prevStep}
 				>
@@ -90,7 +88,7 @@ const StepSix = ({ nextStep, prevStep, formData, setFormData }) => {
 						lineHeight: "1.5",
 						color: "#fff",
 						cursor: "pointer",
-						marginBottom: "4px",
+						marginBottom: "4px"
 					}}
 					onClick={nextStep}
 				>
