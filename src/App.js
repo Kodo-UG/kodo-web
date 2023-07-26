@@ -2,6 +2,9 @@ import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
 import PrivateRoute from "./utils/PrivateRoute";
+import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
+import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
+import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
@@ -60,6 +63,9 @@ const App = () => {
 				<Route exact path="/verify" component={StepComfirmation} />
 				<Route exact path="/final" component={StepElement8} />
 				<Route exact path="/stepper" component={Stepper} />
+				<Route exact path="/JobStep1" component={JobStep1} />
+				<Route exact path="/JobStep2" component={JobStep2} />
+				<Route exact path="/JobStep3" component={JobStep3} />
 				<Route
 					exact
 					path="/educationlevel"
@@ -72,7 +78,7 @@ const App = () => {
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/blog" component={Blog} />
 					<Route exact path="/admissions" component={FindScholarship} />
-
+                    
 					<Route exact path="/contactus" component={ContactUs} />
 					<Route exact path="/scholarships" component={Accordion} />
 					<Route exact path="/testimonals" component={Testimonals} />
