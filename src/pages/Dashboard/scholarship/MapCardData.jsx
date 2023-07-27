@@ -10,14 +10,19 @@ import {
 const MapCardData = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
+	const [loading, setLoading] = useState(false); // Add loading state here
+
 	const getScholarship = async () => {
+		setLoading(true);
 		try {
 			const res = await axiosInstance.get("/scholarship");
-
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
+			// setLoading(false); // Set loading to false once the data is fetched
 		} catch (error) {
 			throw error;
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -26,7 +31,7 @@ const MapCardData = () => {
 			const res = await axiosInstance.post("/user/favourites", {
 				id: fav
 			});
-			if (res.status == 201) {
+			if (res.status === 201) {
 				displaySuccessNotification(`${res.data.message}`);
 			} else {
 				displayErrorNotification(`${res.data.message}`);
@@ -49,6 +54,22 @@ const MapCardData = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
+
+	if (loading) {
+		// Render a loading state while data is being fetched
+		return (
+			<div
+				style={{
+					textAlign: "center",
+					fontWeight: "bold",
+					fontSize: "2rem",
+					justifyContent: "center"
+				}}
+			>
+				Loading scholarships...
+			</div>
+		);
+	}
 
 	return (
 		<div style={{ width: "100%", marginBottom: "20rem" }}>
