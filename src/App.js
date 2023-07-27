@@ -13,7 +13,7 @@ const Home = lazy(() => import("./pages/HomePage"));
 const AboutUs = lazy(() => import("./pages/AboutUs/index"));
 const Blog = lazy(() => import("./pages/Blog"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
-const Scholarships = lazy(() => import("./pages/Scholarships"));
+// const Scholarships = lazy(() => import("./pages/Scholarships"));
 const Testimonals = lazy(() => import("./pages/Testimonals"));
 const Stepper = lazy(() => import("./pages/Register/Scholarships"));
 const FindScholarship = lazy(() => import("./pages/Register"));
@@ -53,13 +53,13 @@ const App = () => {
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "center",
-						marginTop: "8rem"
+						marginTop: "18rem"
 					}}
 				>
 					<img
 						style={{
-							width: "4rem ",
-							height: "5rem",
+							width: "7rem ",
+							height: "7rem",
 							justifyContent: "center",
 							alignItems: "center"
 						}}

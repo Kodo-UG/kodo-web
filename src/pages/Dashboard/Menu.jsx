@@ -142,27 +142,54 @@ const Menu = () => {
                       aria-hidden="true"
                     ></i>
 
-                    <p
-                      style={{
-                        color: "#fff",
-                        fontWeight: "bold",
-                        padding: ".9rem",
-                        marginLeft: "4px",
-                      }}
-                    >
-                      Favorites
-                    </p>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-            {/* /.sidebar-menu */}
-          </div>
-          {/* /.sidebar */}
-        </aside>
-      </div>
-    </div>
-  );
+										<p
+											style={{
+												color: "#fff",
+												fontWeight: "bold",
+												padding: ".9rem",
+												marginLeft: "4px"
+											}}
+										>
+											Favorites
+										</p>
+									</Link>
+								</li>
+
+								<li className="nav-item">
+									<Link
+										onClick={() => handleActive("jobs")}
+										to="/jobs"
+										className={`nav-link ${
+											isButtonActive("jobs") ? "active" : ""
+										}`}
+									>
+										<i
+											style={{ marginLeft: "3px" }}
+											className="fa fa-briefcase"
+											aria-hidden="true"
+										></i>
+
+										<p
+											style={{
+												color: "#fff",
+												fontWeight: "bold",
+												padding: ".9rem",
+												marginLeft: "4px"
+											}}
+										>
+											Jobs
+										</p>
+									</Link>
+								</li>
+							</ul>
+						</nav>
+						{/* /.sidebar-menu */}
+					</div>
+					{/* /.sidebar */}
+				</aside>
+			</div>
+		</div>
+	);
 };
 
 export default Menu;
