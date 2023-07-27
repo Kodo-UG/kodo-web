@@ -90,8 +90,8 @@ const Favorite = () => {
 			>
 				<img
 					style={{
-						width: "8rem ",
-						height: "5rem",
+						width: "7rem ",
+						height: "7rem",
 						justifyContent: "center",
 						alignItems: "center"
 					}}

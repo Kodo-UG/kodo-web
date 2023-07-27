@@ -72,11 +72,6 @@ const Menu = () => {
 						</span>
 					</Link>
 					<div style={{ backgroundColor: "#1c2755" }} className="sidebar">
-						{/* Close Icon */}
-
-						{/* Sidebar user panel (optional) */}
-						{/* <div className="user-panel mt-3 pb-3 mb-3 d-flex"></div> */}
-						{/* Sidebar Menu */}
 						<nav className="mt-4">
 							<ul
 								className="nav nav-pills nav-sidebar flex-column"
@@ -84,9 +79,6 @@ const Menu = () => {
 								role="menu"
 								data-accordion="false"
 							>
-								{/* Add icons to the links using the .nav-icon class
-                    with font-awesome or any other icon font library */}
-
 								<li className="nav-item">
 									<Link
 										onClick={() => handleActive("scholarships")}
@@ -163,6 +155,33 @@ const Menu = () => {
 											}}
 										>
 											Favorites
+										</p>
+									</Link>
+								</li>
+
+								<li className="nav-item">
+									<Link
+										onClick={() => handleActive("jobs")}
+										to="/jobs"
+										className={`nav-link ${
+											isButtonActive("jobs") ? "active" : ""
+										}`}
+									>
+										<i
+											style={{ marginLeft: "3px" }}
+											className="fa fa-briefcase"
+											aria-hidden="true"
+										></i>
+
+										<p
+											style={{
+												color: "#fff",
+												fontWeight: "bold",
+												padding: ".9rem",
+												marginLeft: "4px"
+											}}
+										>
+											Jobs
 										</p>
 									</Link>
 								</li>
