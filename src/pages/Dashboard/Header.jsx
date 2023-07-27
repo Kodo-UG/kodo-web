@@ -111,39 +111,6 @@ const MyHeader = () => {
 						</Link>
 					</li> */}
 				</ul>
-				{/* SEARCH FORM */}
-				{/* <form className="form-inline ml-4">
-					<div
-						className={`input-group input-group-sm ${
-							isInputVisible ? "search-bar-focused" : ""
-						}`}
-					>
-						{isInputVisible && (
-							<input
-								className="form-control form-control-navbar"
-								type="search"
-								placeholder="Search"
-								aria-label="Search"
-							/>
-						)}
-						<div className="input-group-append">
-							<button
-								className={`  ${
-									isInputVisible ? "btn-search-active" : ""
-								}`}
-								type="button"
-								onClick={handleSearchIconClick}
-							>
-								<i
-									className={`fas ${
-										isInputVisible ? "fa-times" : "fa-search"
-									}`}
-								/>
-							</button>
-						</div>
-					</div>
-				</form> */}
-				{/* Right navbar links */}
 				<ul className="navbar-nav ml-auto">
 					{/* Messages Dropdown Menu */}
 					<li className=" ">
@@ -225,16 +192,7 @@ const MyHeader = () => {
 						style={{ marginLeft: "1rem", marginRight: ".1rem" }}
 						className="nav-item "
 					>
-						{/* <a
-							style={{
-								justifyContent: "center",
-								display: "flex",
-								alignItems: "center"
-							}}
-							className="nav-link"
-							data-toggle="dropdown"
-							href="#"
-						> */}
+
 						<Dropdown
 							menu={{
 								items
@@ -247,7 +205,7 @@ const MyHeader = () => {
 									<img
 										style={{ padding: "", cursor: "pointer" }}
 										class="rounded-circle header-profile-user"
-										src={`https://ui-avatars.com/api/name=${info.user.fname}&background=random`}
+										src={`https://ui-avatars.com/api/name=${info?.user?.fname}&background=random`}
 										alt="User"
 										width={30}
 									/>
