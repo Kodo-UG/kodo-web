@@ -38,7 +38,7 @@ const Login = () => {
 				alignItems: "center",
 				justifyContent: "center",
 				width: "100%",
-				marginTop: isSm ? "9rem" : "3rem"
+				marginTop: isSm ? "9rem" : "3.6rem"
 			}}
 		>
 			<StepperCard list={object} />

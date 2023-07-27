@@ -14,8 +14,6 @@ const Scholarship = () => {
   const [data, setData] = useState([]);
   const [subscription, setSubscription] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [count, setCount] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
 
   const history = useHistory();
 
@@ -106,26 +104,20 @@ const Scholarship = () => {
                 alignItems: "center",
                 cursor: "pointer",
                 borderRadius: "4px",
-                //  background: "green"
-
-                // justifyContent: "space-between"
+               
               }}
             >
               <div
                 style={{
                   width: isSm ? "" : "100%",
-                  // display: "flex",
-                  // alignItems: "center",
-                  // justifyContent: "center",
-                  // marginRight: "0.5rem",
-                  //    background: "yellow"
+                 
                 }}
               >
                 <SiFiles
                   size={60} 
-                    // size={ isSm? 40: 60} 
+                  
                   style={{
-                    color: "#1d2755",
+                    color: "#1c2755",
                     padding: isSm? "1rem" : "0.5rem",
                   }}
                 />
