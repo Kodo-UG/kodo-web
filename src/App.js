@@ -5,13 +5,14 @@ import PrivateRoute from "./utils/PrivateRoute";
 import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
 import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
+import { Spin } from "antd";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
 const AboutUs = lazy(() => import("./pages/AboutUs/index"));
 const Blog = lazy(() => import("./pages/Blog"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
-const Scholarships = lazy(() => import("./pages/Scholarships"));
+// const Scholarships = lazy(() => import("./pages/Scholarships"));
 const Testimonals = lazy(() => import("./pages/Testimonals"));
 const Stepper = lazy(() => import("./pages/Register/Scholarships"));
 const FindScholarship = lazy(() => import("./pages/Register"));
@@ -48,13 +49,22 @@ const App = () => {
 			fallback={
 				<div
 					style={{
-						textAlign: "center",
-						fontWeight: "bold",
-						fontSize: "2rem",
-						justifyContent: "center"
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						marginTop: "18rem"
 					}}
 				>
-					Loading...
+					<img
+						style={{
+							width: "7rem ",
+							height: "7rem",
+							justifyContent: "center",
+							alignItems: "center"
+						}}
+						src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
+						alt="middle"
+					/>{" "}
 				</div>
 			}
 		>
