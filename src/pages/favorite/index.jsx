@@ -76,6 +76,22 @@ const Favorite = () => {
 		justifyContent: "center"
 	};
 
+	if (loading) {
+		// Render a loading state while data is being fetched
+		return (
+			<div
+				style={{
+					textAlign: "center",
+					fontWeight: "bold",
+					fontSize: "2rem",
+					justifyContent: "center"
+				}}
+			>
+				Loading scholarships...
+			</div>
+		);
+	}
+
 	return (
 		<>
 			<div

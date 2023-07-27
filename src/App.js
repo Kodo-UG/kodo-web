@@ -44,7 +44,20 @@ const Favorite = lazy(() => import("./pages/favorite"));
 
 const App = () => {
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
+		<Suspense
+			fallback={
+				<div
+					style={{
+						textAlign: "center",
+						fontWeight: "bold",
+						fontSize: "2rem",
+						justifyContent: "center"
+					}}
+				>
+					Loading...
+				</div>
+			}
+		>
 			<Switch>
 				<Route exact path="/index" component={Index} />
 				<Route exact path="/signin" component={Signin} />
@@ -78,7 +91,7 @@ const App = () => {
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/blog" component={Blog} />
 					<Route exact path="/admissions" component={FindScholarship} />
-                    
+
 					<Route exact path="/contactus" component={ContactUs} />
 					<Route exact path="/scholarships" component={Accordion} />
 					<Route exact path="/testimonals" component={Testimonals} />
