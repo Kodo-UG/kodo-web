@@ -124,74 +124,43 @@ const MyHeader = () => {
 							Contact
 						</Link>
 					</li> */}
-        </ul>
-        {/* SEARCH FORM */}
-        {/* <form className="form-inline ml-4">
-					<div
-						className={`input-group input-group-sm ${
-							isInputVisible ? "search-bar-focused" : ""
-						}`}
-					>
-						{isInputVisible && (
-							<input
-								className="form-control form-control-navbar"
-								type="search"
-								placeholder="Search"
-								aria-label="Search"
-							/>
-						)}
-						<div className="input-group-append">
-							<button
-								className={`  ${
-									isInputVisible ? "btn-search-active" : ""
-								}`}
-								type="button"
-								onClick={handleSearchIconClick}
-							>
-								<i
-									className={`fas ${
-										isInputVisible ? "fa-times" : "fa-search"
-									}`}
-								/>
-							</button>
-						</div>
-					</div>
-				</form> */}
-        {/* Right navbar links */}
-        <ul className="navbar-nav ml-auto">
-          {/* Messages Dropdown Menu */}
-          <li className=" ">
-            <a className="nav-link" data-toggle="dropdown" href="#">
-              {/* <i className="far fa-comments" /> */}
-              <AiOutlineBell style={{ width: "20px", height: "20px" }} />{" "}
-              {/* Adjust the width and height */}
-              <span className="badge badge-danger navbar-badge">
-                {data?.length || null}
-              </span>
-            </a>
-            <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              {data?.length > 0 ? (
-                data.map((notif) => (
-                  <div
-                    onClick={() => HandleClick(notif._id)}
-                    style={{ cursor: "pointer" }}
-                    className="dropdown-item"
-                    key={notif._id}
-                  >
-                    {/* Message Start */}
-                    <div className="media">
-                      <img
-                        src="https://ui-avatars.com/api/name=admin&background=random"
-                        alt="User Avatar"
-                        className="img-size-50 mr-3 img-circle"
-                      />
-                      <div className="media-body">
-                        <h3 className="dropdown-item-title">
-                          Admin
-                          <span className="float-right text-sm text-danger">
-                            <i className="fas fa-star" />
-                          </span>
-                        </h3>
+				</ul>
+				<ul className="navbar-nav ml-auto">
+					{/* Messages Dropdown Menu */}
+					<li className=" ">
+						<a className="nav-link" data-toggle="dropdown" href="#">
+							{/* <i className="far fa-comments" /> */}
+							<AiOutlineBell
+								style={{ width: "20px", height: "20px" }}
+							/>{" "}
+							{/* Adjust the width and height */}
+							<span className="badge badge-danger navbar-badge">
+								{data?.length || null}
+							</span>
+						</a>
+						<div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+							{data?.length > 0 ? (
+								data.map((notif) => (
+									<div
+										onClick={() => HandleClick(notif._id)}
+										style={{ cursor: "pointer" }}
+										className="dropdown-item"
+										key={notif._id}
+									>
+										{/* Message Start */}
+										<div className="media">
+											<img
+												src="https://ui-avatars.com/api/name=admin&background=random"
+												alt="User Avatar"
+												className="img-size-50 mr-3 img-circle"
+											/>
+											<div className="media-body">
+												<h3 className="dropdown-item-title">
+													Admin
+													<span className="float-right text-sm text-danger">
+														<i className="fas fa-star" />
+													</span>
+												</h3>
 
                         <p className="text-sm">{notif.message}</p>
                         <p className="text-sm text-muted">
@@ -230,75 +199,66 @@ const MyHeader = () => {
               {/* <a href="#" className="dropdown-item dropdown-footer">
 								See All Messages
 							</a> */}
-            </div>
-          </li>
-          {/* Notifications Dropdown Menu */}
-          <li
-            style={{ marginLeft: "1rem", marginRight: ".1rem" }}
-            className="nav-item "
-          >
-            {/* <a
-							style={{
-								justifyContent: "center",
-								display: "flex",
-								alignItems: "center"
+						</div>
+					</li>
+					{/* Notifications Dropdown Menu */}
+					<li
+						style={{ marginLeft: "1rem", marginRight: ".1rem" }}
+						className="nav-item "
+					>
+
+						<Dropdown
+							menu={{
+								items
 							}}
-							className="nav-link"
-							data-toggle="dropdown"
-							href="#"
-						> */}
-            <Dropdown
-              menu={{
-                items,
-              }}
-              trigger={["click"]}
-              style={{ cusror: "pointer" }}
-            >
-              <a onClick={(e) => e.preventDefault()}>
-                <Space>
-                  <img
-                    style={{ padding: "", cursor: "pointer" }}
-                    class="rounded-circle header-profile-user"
-                    src={`https://ui-avatars.com/api/name=${info.user.fname}&background=random`}
-                    alt="User"
-                    width={30}
-                  />
-                </Space>
-              </a>
-            </Dropdown>
-            {/* </a> */}
-            <div
-              style={{ cursor: "pointer" }}
-              className="dropdown-menu dropdown-menu-md dropdown-menu-right"
-            >
-              <div className="dropdown-divider" />
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-                className="dropdown-item"
-              >
-                <div style={{ width: "30px" }} className="">
-                  <img
-                    src="https://res.cloudinary.com/itgenius/image/upload/v1688438198/6_isfrng.png"
-                    className="img-circle elevation-2"
-                    alt="User Image"
-                  />
-                </div>
-                <div className="info">
-                  <Link to="/profile">
-                    <div className="d-block">Profile</div>
-                  </Link>
-                </div>
-              </div>
-              <div className="dropdown-divider" />
-              <div
-                onClick={(e) => {
-                  e.preventDefault();
-                  localStorage.removeItem("token");
-                  localStorage.removeItem("userData");
+							trigger={["click"]}
+							style={{ cusror: "pointer" }}
+						>
+							<a onClick={(e) => e.preventDefault()}>
+								<Space>
+									<img
+										style={{ padding: "", cursor: "pointer" }}
+										class="rounded-circle header-profile-user"
+										src={`https://ui-avatars.com/api/name=${info?.user?.fname}&background=random`}
+										alt="User"
+										width={30}
+									/>
+								</Space>
+							</a>
+						</Dropdown>
+						{/* </a> */}
+						<div
+							style={{ cursor: "pointer" }}
+							className="dropdown-menu dropdown-menu-md dropdown-menu-right"
+						>
+							<div className="dropdown-divider" />
+							<div
+								style={{
+									display: "flex",
+									justifyContent: "space-between",
+									alignItems: "center"
+								}}
+								className="dropdown-item"
+							>
+								<div style={{ width: "30px" }} className="">
+									<img
+										src="https://res.cloudinary.com/itgenius/image/upload/v1688438198/6_isfrng.png"
+										className="img-circle elevation-2"
+										alt="User Image"
+									/>
+								</div>
+								<div className="info">
+									<Link to="/profile">
+										<div className="d-block">Profile</div>
+									</Link>
+								</div>
+							</div>
+							<div className="dropdown-divider" />
+							<div
+								onClick={(e) => {
+									e.preventDefault();
+									localStorage.removeItem("token");
+									localStorage.removeItem("userData");
 
                   history.push("/login");
                 }}

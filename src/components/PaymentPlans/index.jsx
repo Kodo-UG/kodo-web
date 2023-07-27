@@ -91,7 +91,7 @@ const PaymentCard = ({ data }) => {
             backgroundColor: "#ffffff",
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
             padding: "20px",
-            width: isSm ? "170px" : "200px",
+            width: isSm ? "160px" : "200px",
             margin: "10px",
             borderRadius: "8px",
             height: isSm ? "340px" : "",
