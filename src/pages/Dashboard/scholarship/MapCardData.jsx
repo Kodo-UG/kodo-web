@@ -73,32 +73,31 @@ const MapCardData = () => {
 
 	return (
 		<div style={{ width: "100%", marginBottom: "20rem" }}>
-			{subscription &&
-				data.map((dta) => (
-					<LargeCard
-						key={dta._id}
-						title={dta.title}
-						formatDate={dta.deadline}
-						award={dta.award}
-						subText={truncateText(dta.about, 6)}
-						about={dta.about}
-						id={dta._id}
-						link={dta.link}
-						onClick={() => handleClick(dta._id)}
-					/>
-				))}
-			{!subscription &&
-				data.map((dta) => (
-					<LargeCardNotPaid
-						key={dta.id}
-						title={dta.title}
-						formatDate={dta.deadline}
-						award={dta.award}
-						subText={truncateText(dta.about, 7)}
-						about={dta.about}
-						link={dta.link}
-					/>
-				))}
+			{subscription
+				? data.map((dta) => (
+						<LargeCard
+							key={dta._id}
+							title={dta.title}
+							formatDate={dta.deadline}
+							award={dta.award}
+							subText={truncateText(dta.about, 6)}
+							about={dta.about}
+							id={dta._id}
+							link={dta.link}
+							onClick={() => handleClick(dta._id)}
+						/>
+				  ))
+				: data.map((dta) => (
+						<LargeCardNotPaid
+							key={dta.id}
+							title={dta.title}
+							formatDate={dta.deadline}
+							award={dta.award}
+							subText={truncateText(dta.about, 7)}
+							about={dta.about}
+							link={dta.link}
+						/>
+				  ))}
 		</div>
 	);
 };
