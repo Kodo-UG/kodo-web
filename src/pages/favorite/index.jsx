@@ -132,7 +132,7 @@ const Favorite = () => {
 						border: "2px",
 						fontFamily: "poppins; serif",
 						marginBottom: "4rem",
-						marginLeft: isLg ? "18rem" : ""
+						marginLeft: isLg ? "19rem" : ""
 					}}
 				>
 					Favorite Scholarships

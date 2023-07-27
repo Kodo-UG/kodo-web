@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
-import { AiOutlineEye } from "react-icons/ai";
 import { Modal } from "antd";
 
 function SmallScreen({
@@ -198,22 +197,30 @@ function SmallScreen({
 					padding: "1rem"
 				}}
 				style={{
-					backdropFilter: "blur(10px)"
+					backdropFilter: "blur(20px)"
 				}}
 				width={1000}
 			>
 				<div
 					style={{
-						height: "6rem",
-						background: "#125875",
-						color: "white",
+						height: "8rem",
+						color: "#1c2755",
 						fontWeight: "bold",
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "center"
 					}}
 				>
-					<h5 style={{ margin: 0 }}>{cardTitle} Scholarship Details</h5>
+					<h5
+						style={{
+							fontWeight: "bold",
+							fontSize: "1.5rem",
+							fontFamily: "Poppins",
+							letterSpacing: "1px"
+						}}
+					>
+						{cardTitle}
+					</h5>
 				</div>
 				<div style={{ padding: "1rem" }}>
 					<div className="card-body" style={{ height: "6rem" }}>
@@ -245,8 +252,27 @@ function SmallScreen({
 						</div>
 					</div>
 					<div>
-						<h4 style={{ fontWeight: "bold" }}>About</h4>
-						<p style={{ color: "gray", textAlign: "justify" }}>{about}</p>
+						<h4
+							style={{
+								fontWeight: "600",
+								fontSize: "1.5rem",
+								letterSpacing: "1px",
+								textAlign: "left",
+								color: "#1c2755"
+							}}
+						>
+							About
+						</h4>
+						<p
+							style={{
+								color: "#4e4b66",
+								textAlign: "justify",
+								letterSpacing: "1px",
+								fontSize: "15px"
+							}}
+						>
+							{about}
+						</p>
 					</div>
 				</div>
 				<div
@@ -262,7 +288,7 @@ function SmallScreen({
 						justifyContent: "center"
 					}}
 				>
-					<a
+					<div 
 						href={`${link}`}
 						style={{
 							backgroundColor: "#ec1d64",
@@ -274,7 +300,7 @@ function SmallScreen({
 						}}
 					>
 						Apply
-					</a>
+					</div>
 				</div>
 			</Modal>
 		</div>
