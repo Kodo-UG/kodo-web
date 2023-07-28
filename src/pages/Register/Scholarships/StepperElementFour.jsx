@@ -46,7 +46,6 @@ function StepperElementFour() {
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const [divStyle, setDivStyle] = useState({});
   const [active, setActive] = useState("");
   const isSm = useMediaQuery("only screen and (max-width : 800px)");
 

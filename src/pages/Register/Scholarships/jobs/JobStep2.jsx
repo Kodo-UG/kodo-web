@@ -2,7 +2,7 @@
 import React from "react";
 import "../stepperElement.css";
 import { useDispatch, useSelector } from "react-redux";
-import { updateFormData } from "../../../../toolkit/formReducer";
+import { updateJobData } from "../../../../toolkit/jobReducer";
 import { useHistory } from "react-router-dom";
 
 import { Link } from "react-router-dom";
@@ -10,26 +10,26 @@ import { displayErrorMessage } from "../../../../utils/Toast";
 
 function JobStep2() {
   const dispatch = useDispatch();
-  const formData = useSelector((state) => state.formData);
+  const jobData = useSelector((state) => state.jobData);
   const history = useHistory();
 
   const handleCountryChange = (e) => {
     const { name, value } = e.target;
 
     // Dispatch an action to update the form data in the Redux store
-    dispatch(updateFormData({ field: "country", value: value }));
+    dispatch(updateJobData({ field: "country", value: value }));
   };
   const handleCityChange = (e) => {
     const { name, value } = e.target;
 
     // Dispatch an action to update the form data in the Redux store
-    dispatch(updateFormData({ field: "city", value: value }));
+    dispatch(updateJobData({ field: "city", value: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.country || !formData.city) {
+    if (!jobData.country || !jobData.city) {
       displayErrorMessage("Please fill in all the required fields");
       return;
     }
@@ -209,7 +209,7 @@ function JobStep2() {
           <div className="py-2 divide-x px-4 flex flex-wrap justify-center">
             <Link
               className="px-2 text-xs text-white font-bold hover:text-white"
-              to="#"
+              to="/policy"
               target="_blank"
             >
               Privacy Policy

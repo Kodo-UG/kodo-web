@@ -75,11 +75,10 @@ const CombinedScholarshipCard = () => {
 							id={dta._id}
 							link={dta.link}
 							about={dta.about}
-							// days={}
+							
 						/>
 					))}
 
-				{/* <Row justify="center" gutter={[16, 16]}></Row> */}
 			</div>
 		</div>
 	);

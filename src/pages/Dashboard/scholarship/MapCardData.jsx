@@ -64,7 +64,7 @@ const MapCardData = () => {
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
-					marginTop: "8rem"
+					marginTop: "18rem"
 				}}
 			>
 				<img
