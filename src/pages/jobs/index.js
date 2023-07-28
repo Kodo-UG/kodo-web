@@ -3,15 +3,8 @@ import MyHeader from "../Dashboard/Header";
 import Menu from "../Dashboard/Menu";
 import Footer from "../Dashboard/Footer";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import { useHistory } from "react-router-dom";
 import { useState } from "react";
-import axiosInstance from "../../api/axiosInstance";
-import { useMemo } from "react";
-import LargeCardFavourite from "../../components/card/LargeCardFavourite";
-import {
-	displayErrorNotification,
-	displaySuccessNotification
-} from "../../utils/Toast";
+import { Link } from "react-router-dom";
 
 const Jobs = () => {
 	const [loading, setLoading] = useState(false);
@@ -21,6 +14,9 @@ const Jobs = () => {
 	const isLg = useMediaQuery(
 		"only screen and (min-width : 1250px) and (max-width : 1300px)"
 	);
+	const jobStatus = JSON.parse(localStorage.getItem("userData"));
+
+	console.log(jobStatus.user.jobAppType);
 
 	const truncateText = (text, maxWords) => {
 		const wordsArray = text?.split(" ");
@@ -97,8 +93,23 @@ const Jobs = () => {
 						marginLeft: isLg ? "19rem" : ""
 					}}
 				>
-					No  Jobs Available
+					{jobStatus.user.jobAppType
+						? "Available Jobs"
+						: "Not Registered To Receive Jobs"}
 				</div>
+				<Link to="/JobStep1">
+					<div
+						style={{
+							backgroundColor: "#1C2755",
+							padding: "8px",
+							color: "#fff",
+							borderRadius: 6,
+							fontWeight: "bold"
+						}}
+					>
+						Reister To Recieve Jobs
+					</div>
+				</Link>
 
 				<Footer />
 			</div>

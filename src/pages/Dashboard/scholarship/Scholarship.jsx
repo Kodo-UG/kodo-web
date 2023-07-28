@@ -1,6 +1,4 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-
 import { useMediaQuery } from "@uidotdev/usehooks";
 import CombinedScholarshipCard from "./CombinedScholarshipCard";
 import MapCardData from "./MapCardData";
@@ -25,15 +23,11 @@ const Scholarship = () => {
 	const getScholarship = async () => {
 		setLoading(true);
 		try {
-			let res = await axiosInstance.get(
-				"https://demo.kodoscholarships.com/api/v1/scholarship"
-			);
+			let res = await axiosInstance.get("/scholarship");
 
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
-			console.log(res, "loading.....");
 		} catch (error) {
-			// Handle   error here
 			console.log(error);
 		} finally {
 			setLoading(false);
@@ -204,9 +198,7 @@ const Scholarship = () => {
 								</div>
 							)}
 						</div>
-						{/* <DashboardCard>
-							
-						</DashboardCard> */}
+
 						{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
 					</div>
 					{/* <div

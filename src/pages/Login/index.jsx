@@ -178,7 +178,7 @@ export default function Login() {
 										</i>
 									</div>
 								</div>
-								
+
 								<div className="form-group">
 									<div className="fxt-transformY-50 fxt-transition-delay-3">
 										<div className="fxt-content-between">

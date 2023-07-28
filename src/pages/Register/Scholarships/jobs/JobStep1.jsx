@@ -122,45 +122,52 @@ const JobStep1 = ({ nextStep }) => {
 									</h2>
 								</span>
 
-								<div>
-									<div className="_optionGroup_9bife_5 _optionGroupCols3_9bife_64">
-										{data.map((data) => (
-											<div
-												key={data._id}
-												className="_option_9bife_5"
-												onClick={() => pickId(data._id)}
-											>
-												<div className="_optionInner_9bife_23">
-													<input
-														id="As soon as possible"
-														type="checkbox"
-														className="_optionCheckmark_9bife_94"
-														data-testid="starttime-0"
-														value="0"
-													/>
-													<label
-														htmlFor="As soon as possible"
-														className="_optionBody_9bife_90"
-													>
-														<div>
-															<span
-																style={{ color: "black" }}
-																className="_optionLabel_9bife_106 _normal_9bife_137"
-															>
-																{data.name}
-															</span>
-														</div>
-													</label>
+								{loading ? (
+									<div style={{ textAlign: "center" }}>Loading...</div>
+								) : (
+									<div>
+										<div className="_optionGroup_9bife_5 _optionGroupCols3_9bife_64">
+											{data.map((data) => (
+												<div
+													key={data._id}
+													className="_option_9bife_5"
+													onClick={() => pickId(data._id)}
+												>
+													<div className="_optionInner_9bife_23">
+														<input
+															id="As soon as possible"
+															type="checkbox"
+															className="_optionCheckmark_9bife_94"
+															data-testid="starttime-0"
+															value="0"
+														/>
+														<label
+															htmlFor="As soon as possible"
+															className="_optionBody_9bife_90"
+														>
+															<div>
+																<span
+																	style={{ color: "black" }}
+																	className="_optionLabel_9bife_106 _normal_9bife_137"
+																>
+																	{data.name}
+																</span>
+															</div>
+														</label>
+													</div>
 												</div>
-											</div>
-										))}
+											))}
 
-										{/* More options go here... */}
+											{/* More options go here... */}
+										</div>
 									</div>
-								</div>
+								)}
 
 								<div className="_pageActions_pmptr_26">
-									<Link to="/JobStep2">
+									<Link
+										to="/JobStep2"
+										style={{ marginBottom: "3rem" }}
+									>
 										<button
 											type="button"
 											className="_buttonContinue_pmptr_46 _button_pmptr_30"
@@ -215,8 +222,8 @@ const JobStep1 = ({ nextStep }) => {
 						<img
 							className="icon-component icon-component--logo-stacked-horizontal"
 							style={{ color: "#fff" }}
-							src="https://www.kodoscholarships.com/kodo-logo.png"
-							width="56"
+							src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
+							width="106"
 							height="56"
 							fill="#fff"
 							role="img"
