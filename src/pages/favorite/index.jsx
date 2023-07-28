@@ -128,7 +128,7 @@ const Favorite = () => {
 						fontSize: "2rem",
 						border: "2px",
 						fontFamily: "poppins; serif",
-						marginBottom: "4rem",
+						marginBottom: ".1rem",
 						marginLeft: isLg ? "19rem" : ""
 					}}
 				>
@@ -139,17 +139,17 @@ const Favorite = () => {
 					<div
 						style={{
 							textAlign: "center",
-							marginTop: "4rem",
+							marginTop: ".4rem",
 							fontFamily: "Poppins",
 							cursor: "pointer",
-							marginLeft: isSm ? "" : "6rem"
+							marginLeft: isSm ? "" : "1rem"
 						}}
 					>
 						<h4
 							style={{
 								fontSize: "18px",
 								letterSpacing: "1.6px",
-								fontWeight: "400",
+								fontWeight: "300",
 								lineHeight: "27px"
 							}}
 						>
@@ -183,7 +183,6 @@ const Favorite = () => {
 				)}
 				<Footer />
 			</div>
-
 		</>
 	);
 };
