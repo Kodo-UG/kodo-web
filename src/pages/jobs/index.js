@@ -12,9 +12,8 @@ import {
 	displayErrorNotification,
 	displaySuccessNotification
 } from "../../utils/Toast";
-import { Spin } from "antd";
 
-const Favorite = () => {
+const Jobs = () => {
 	const [loading, setLoading] = useState(false);
 	const [data, setData] = useState(null);
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
@@ -22,40 +21,6 @@ const Favorite = () => {
 	const isLg = useMediaQuery(
 		"only screen and (min-width : 1250px) and (max-width : 1300px)"
 	);
-
-	const history = useHistory();
-
-	const fetchFavorites = async () => {
-		setLoading(true);
-		try {
-			let response = await axiosInstance.get("/user/favourites");
-			setData(response?.data?.data);
-		} catch (error) {
-			console.log(error);
-		} finally {
-			setLoading(false);
-		}
-	};
-
-	const handleDelete = async (id) => {
-		try {
-			const deleteRes = await axiosInstance.delete(`/user/favourites/${id}`);
-			fetchFavorites();
-			if (deleteRes.status == 201) {
-				displaySuccessNotification(`${deleteRes.data.message}`);
-			} else {
-				displayErrorNotification(`${deleteRes.data.message}`);
-			}
-			// console.log(deleteRes);
-		} catch (error) {
-			console.log(error);
-		} finally {
-		}
-	};
-
-	useMemo(() => {
-		fetchFavorites();
-	}, []);
 
 	const truncateText = (text, maxWords) => {
 		const wordsArray = text?.split(" ");
@@ -132,55 +97,9 @@ const Favorite = () => {
 						marginLeft: isLg ? "19rem" : ""
 					}}
 				>
-					Favorite Scholarships
+					No  Jobs Available
 				</div>
 
-				{data?.length === 0 ? (
-					<div
-						style={{
-							textAlign: "center",
-							marginTop: "4rem",
-							fontFamily: "Poppins",
-							cursor: "pointer",
-							marginLeft: isSm ? "" : "6rem"
-						}}
-					>
-						<h4
-							style={{
-								fontSize: "18px",
-								letterSpacing: "1.6px",
-								fontWeight: "400",
-								lineHeight: "27px"
-							}}
-						>
-							Start saving scholarships now!
-						</h4>
-						<p
-							onClick={() => history.push("/scholars")}
-							style={{
-								fontSize: "14px",
-								letterSpacing: "1.6px",
-								fontWeight: 400,
-								lineHeight: "20px",
-								color: "rgb(74,74,74)"
-							}}
-						>
-							Back to matches
-						</p>
-					</div>
-				) : (
-					data?.map((dta) => (
-						<LargeCardFavourite
-							title={dta.favourite?.title}
-							formatDate={dta.favourite?.deadline}
-							subText={truncateText(dta.favourite?.about, 6)}
-							award={dta.favourite?.award}
-							link={dta.favourite?.link}
-							onClick={() => handleDelete(dta._id)}
-							about={dta.favourite?.about}
-						/>
-					))
-				)}
 				<Footer />
 			</div>
 
@@ -189,4 +108,4 @@ const Favorite = () => {
 	);
 };
 
-export default Favorite;
+export default Jobs;

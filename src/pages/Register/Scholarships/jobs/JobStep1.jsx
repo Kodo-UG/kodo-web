@@ -1,40 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import axiosInstance from "../../../../api/axiosInstance";
+import { useMemo } from "react";
 
 const JobStep1 = ({ nextStep }) => {
-	const professionData = [
-		{
-			profession: "Accounting"
-		},
-		{
-			profession: "Networking"
-		},
-		{
-			profession: "Cyber Security"
-		},
-		{
-			profession: "Data Science "
-		},
-		{
-			profession: "Software Engineering"
-		},
-		{
-			profession: "Web Development"
-		},
-		{
-			profession: "Project Management"
-		},
-		{
-			profession: "Digital Marketing"
-		},
-		{
-			profession: "Data Analytics"
-		},
-		{
-			profession: "UX/UI Design"
+	const [data, setData] = useState([]);
+	const [loading, setLoading] = useState(false);
+
+	const fetchJobCategories = async () => {
+		setLoading(true);
+		try {
+			const res = await axiosInstance.get("/job/categories");
+			setData(res.data.data);
+		} catch (error) {
+			console.log(error, "====");
+		} finally {
+			setLoading(false);
 		}
-	];
+	};
+
+	const pickId = (id) => {
+		console.log(id);
+		// try {
+		// 	const res = await axiosInstance.post("");
+		// } catch (error) {}
+	};
+
+	useMemo(() => {
+		fetchJobCategories();
+	}, []);
+
 	return (
 		<main
 			className="voyager-main "
@@ -59,7 +55,7 @@ const JobStep1 = ({ nextStep }) => {
 				<a href="/">
 					<img
 						className="icon-component icon-component--logo-horizontal"
-						src="https://www.kodoscholarships.com/kodo-logo.png"
+						src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
 						width="232"
 						height="36"
 						fill="var(--secondary-600)"
@@ -124,8 +120,12 @@ const JobStep1 = ({ nextStep }) => {
 
 								<div>
 									<div className="_optionGroup_9bife_5 _optionGroupCols3_9bife_64">
-										{professionData.map((data) => (
-											<div className="_option_9bife_5">
+										{data.map((data) => (
+											<div
+												key={data._id}
+												className="_option_9bife_5"
+												onClick={() => pickId(data._id)}
+											>
 												<div className="_optionInner_9bife_23">
 													<input
 														id="As soon as possible"
@@ -139,8 +139,11 @@ const JobStep1 = ({ nextStep }) => {
 														className="_optionBody_9bife_90"
 													>
 														<div>
-															<span className="_optionLabel_9bife_106 _normal_9bife_137">
-																{data.profession}
+															<span
+																style={{ color: "black" }}
+																className="_optionLabel_9bife_106 _normal_9bife_137"
+															>
+																{data.name}
 															</span>
 														</div>
 													</label>

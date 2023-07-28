@@ -34,12 +34,12 @@ const LargeCardFavourite = ({
 		<>
 			{isSm ? (
 				<SmallScreen
-				cardTitle={title}
-				award={award}
-				deadline={formattedDate}
-				link={link}
-				about={about}
-				text={subText}
+					cardTitle={title}
+					award={award}
+					deadline={formattedDate}
+					link={link}
+					about={about}
+					text={subText}
 				/>
 			) : (
 				<div
@@ -53,8 +53,8 @@ const LargeCardFavourite = ({
 						boxShadow: "0 5px 10px rgba(0,0,0,0.10)",
 						cursor: "pointer",
 						padding: "1rem",
-						width: isMd ? "80%" : "60%",
-						marginLeft: isMd ? "" : "30rem",
+						width: isMd ? "70%" : "50%",
+						marginLeft: isMd ? "" : "20rem",
 
 						justifyContent: "center",
 						alignItems: "center"
@@ -420,7 +420,7 @@ const LargeCardFavourite = ({
 										margin: 0,
 										marginTop: "0px",
 										fontWeight: "bold",
-										fontSize: "3rem",
+										fontSize: "1.9rem",
 										fontFamily: "Poppins",
 										letterSpacing: "2px"
 									}}
@@ -438,7 +438,7 @@ const LargeCardFavourite = ({
 													marginTop: "0px",
 													fontWeight: "bold",
 													color: "#125875",
-													fontSize: isMd ? "1.5" : "1.5rem",
+													fontSize: "1.5rem",
 													fontFamily: "Poppins",
 													letterSpacing: "2px"
 												}}
@@ -537,8 +537,7 @@ const LargeCardFavourite = ({
 									display: "flex",
 									alignItems: "center",
 									justifyContent: "center",
-									fontSize: "16px",
-									display: isSm ? "none" : ""
+									fontSize: "16px"
 								}}
 							>
 								<a
