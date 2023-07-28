@@ -6,6 +6,7 @@ import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
 import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
 import { Spin } from "antd";
+import Policy from "./pages/policyPage/Policy";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
@@ -89,6 +90,7 @@ const App = () => {
 				<Route exact path="/JobStep1" component={JobStep1} />
 				<Route exact path="/JobStep2" component={JobStep2} />
 				<Route exact path="/JobStep3" component={JobStep3} />
+				<Route exact path="/policy" component={Policy} />
 				<Route
 					exact
 					path="/educationlevel"
