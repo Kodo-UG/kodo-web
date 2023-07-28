@@ -3,11 +3,13 @@ import "./index.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import axiosInstance from "../../../../api/axiosInstance";
 import { useMemo } from "react";
+import { useDispatch } from "react-redux";
+import { updateJobData } from "../../../../toolkit/jobReducer";
 
 const JobStep1 = ({ nextStep }) => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
-
+	const dispatch = useDispatch();
 	const fetchJobCategories = async () => {
 		setLoading(true);
 		try {
@@ -21,6 +23,8 @@ const JobStep1 = ({ nextStep }) => {
 	};
 
 	const pickId = (id) => {
+		dispatch(updateJobData({ field: "jobcategory", value: id }));
+
 		console.log(id);
 		// try {
 		// 	const res = await axiosInstance.post("");
@@ -205,7 +209,7 @@ const JobStep1 = ({ nextStep }) => {
 					</section>
 				</section>
 			</div>
-			<footer className="flex justify-center items-center bg-primary-900 mt-4 py-5">
+			<footer className="flex justify-center items-center fixed-bottom bg-primary-900 mt-4 py-5">
 				<div className="flex flex-col items-center justify-center md:flex-row flex-wrap">
 					<a href="/">
 						<img
@@ -222,21 +226,21 @@ const JobStep1 = ({ nextStep }) => {
 					<div className="py-2 divide-x px-4 flex flex-wrap justify-center">
 						<a
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							href="#"
+							href="/policy"
 							target="_blank"
 						>
 							Privacy Policy
 						</a>
 						<a
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							href="#"
+							href="/policy"
 							target="_blank"
 						>
 							Advertising Disclosure
 						</a>
 						<a
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							href="#"
+							href="/policy"
 							target="_blank"
 						>
 							Do Not Sell My Info

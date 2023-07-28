@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../stepperElement.css";
 import { useDispatch, useSelector } from "react-redux";
-import { updateFormData } from "../../../../toolkit/formReducer";
+import { updateJobData } from "../../../../toolkit/jobReducer";
 import { useHistory } from "react-router-dom";
 
 import { Link } from "react-router-dom";
@@ -12,64 +12,66 @@ import {
 import axiosInstance from "../../../../api/axiosInstance";
 
 function StepElement8() {
-	const formData = useSelector((state) => state.formData);
+	const jobData = useSelector((state) => state.jobData);
 	const history = useHistory();
-	const [modalOpen, setModalOpen] = useState(true);
 	const [loading, setLoading] = useState(false);
 
 	const [gender, setGender] = useState("");
 
-	const [password, setPassword] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
 
 	const dispatch = useDispatch();
 	const handleEmailChange = (e) => {
 		const { name, value } = e.target;
 		// Dispatch an action to update the form data in the Redux store
-		dispatch(updateFormData({ field: "email", value: value }));
+		dispatch(updateJobData({ field: "email", value: value }));
 	};
 	const handlePasswordChange = (e) => {
 		const { name, value } = e.target;
 		// Dispatch an action to update the form data in the Redux store
-		dispatch(updateFormData({ field: "password", value: value }));
+		dispatch(updateJobData({ field: "password", value: value }));
 	};
 	const handlePhoneChange = (e) => {
 		const { name, value } = e.target;
 		// Dispatch an action to update the form data in the Redux store
-		dispatch(updateFormData({ field: "phone", value: value }));
+		dispatch(updateJobData({ field: "phone", value: value }));
 	};
 	const handleFirstNameChange = (e) => {
 		const { name, value } = e.target;
 		// Dispatch an action to update the form data in the Redux store
-		dispatch(updateFormData({ field: "fname", value: value }));
+		dispatch(updateJobData({ field: "fname", value: value }));
 	};
 	const handleLastNameChange = (e) => {
 		const { name, value } = e.target;
 		// Dispatch an action to update the form data in the Redux store
-		dispatch(updateFormData({ field: "lname", value: value }));
+		dispatch(updateJobData({ field: "lname", value: value }));
 	};
 
 	const register = async (e) => {
 		e.preventDefault();
 		setLoading(true);
-		let data = JSON.stringify(formData);
+		let data = JSON.stringify(jobData);
 
-		if (!formData.email || !formData.phone || !formData.password) {
+		if (!jobData.email || !jobData.phone || !jobData.password) {
 			displayErrorMessage("Please fill in all the required fields");
 			setLoading(false);
 			return;
 		}
 
 		try {
-			const res = await axiosInstance.post("/auth/user/signup", formData);
+			const res = await axiosInstance.post("/auth/job/register", jobData);
 			localStorage.setItem("userID", res.data.id);
 
-			if (res.data.id) {
-				displaySuccessMessage(
-					"Registration successful verification email sent to your email"
-				);
-				history.push("/verify");
+
+			if (res.status == 200) {
+				displaySuccessMessage(res.data.message);
+				history.push("/signin");
 				// nextStep();
+			}
+
+			if (res.status == 201) {
+				displaySuccessMessage(res.data.message);
+				history.push("/verify");
 			}
 		} catch (error) {
 			displayErrorMessage("Failed to register");
@@ -85,7 +87,7 @@ function StepElement8() {
 	const handleGenderChange = (e) => {
 		setGender(e.target.value);
 		// Dispatch an action to update the form data in the Redux store
-		dispatch(updateFormData({ field: "sex", value: e.target.value }));
+		dispatch(updateJobData({ field: "sex", value: e.target.value }));
 	};
 
 	return (
@@ -233,19 +235,6 @@ function StepElement8() {
 											/>
 										</div>
 									</div>
-									{/* <div>
- <div className="_fieldGroup_1g3ja_1">
- <input
- className="_textField_fwd9c_1"
- onChange={handleGenderChange}
- name={showPassword ? "text" : "password"}
- type="text"
- id="password"
- label="password"
- placeholder="password"
- />
- </div>
- </div> */}
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
 											<select

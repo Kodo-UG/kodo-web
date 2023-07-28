@@ -5,11 +5,11 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { useState } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 
-const NavHeader = () => {
+const NavHeader = ({open, setOpen}) => {
   const history = useHistory();
   const token = localStorage.getItem("token");
   const isSm = useMediaQuery("only screen and (max-width : 1000px)");
-  const [open, setOpen] = useState(false);
+
   const smallClass = isSm ? "navbar-nav  ul" : "navbar-nav ml-auto ul";
 
   const handleReloadPage = () => {

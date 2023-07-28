@@ -8,104 +8,118 @@ import axios from "axios";
 import moment from "moment";
 import { Dropdown, Affix, Space } from "antd";
 import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
+import {HiMenuAlt1} from "react-icons/hi";
 
 const MyHeader = () => {
-	const history = useHistory();
-	const [data, setData] = useState();
+  const history = useHistory();
+  const [data, setData] = useState();
 
-	const [isInputVisible, setInputVisible] = useState(false);
+  const [isInputVisible, setInputVisible] = useState(false);
 
-	const handleSearchIconClick = () => {
-		setInputVisible(!isInputVisible);
-	};
+  const handleSearchIconClick = () => {
+    setInputVisible(!isInputVisible);
+  };
 
-	const token = localStorage.getItem("token");
-	const info = JSON.parse(localStorage.getItem("userData"));
+  const token = localStorage.getItem("token");
+  const info = JSON.parse(localStorage.getItem("userData"));
 
-	const fetchNotifications = async () => {
-		const headers = {
-			Authorization: `Bearer ${token}`
-		};
+  const fetchNotifications = async () => {
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
 
-		let res = await axios.get(
-			"https://demo.kodoscholarships.com/api/v1/user/notifications",
-			{
-				headers
-			}
-		);
+    let res = await axios.get(
+      "https://demo.kodoscholarships.com/api/v1/user/notifications",
+      {
+        headers,
+      }
+    );
 
-		setData(res.data.data);
-	};
+    setData(res.data.data);
+  };
 
-	useEffect(() => {
-		fetchNotifications();
-	}, []);
+  useEffect(() => {
+    fetchNotifications();
+  }, []);
 
-	const HandleClick = async (id) => {
-		try {
-			const headers = {
-				Authorization: `Bearer ${token}`
-			};
+  const HandleClick = async (id) => {
+    try {
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
 
-			await axios.patch(
-				`https://demo.kodoscholarships.com/api/v1/user/notifications/${id}`
-			);
+      await axios.patch(
+        `https://demo.kodoscholarships.com/api/v1/user/notifications/${id}`
+      );
 
-			fetchNotifications();
-		} catch (error) {
-			throw error;
-		}
-	};
+      fetchNotifications();
+    } catch (error) {
+      throw error;
+    }
+  };
 
-	const items = [
-		{
-			label: (
-				<Link to="/profile">
-					<a href="/profile">
-						<Affix align="center">
-							<UserOutlined style={{ marginRight: "4px" }} />
-							<span>Profile Settings</span>
-						</Affix>
-					</a>
-				</Link>
-			),
-			key: "0"
-		},
-		{
-			label: (
-				<a
-					href="#"
-					onClick={(e) => {
-						e.preventDefault();
-						localStorage.removeItem("token");
-						history.push("/login");
-					}}
-				>
-					<Affix style={{ display: "flex" }} align="">
-						<LogoutOutlined style={{ marginRight: "4px" }} />
-						<span>Logout</span>
-					</Affix>
-				</a>
-			),
-			key: "1"
-		}
-	];
-	return (
-		<div>
-			<nav className="main-header navbar fixed-top navbar-expand navbar-white navbar-light">
-				{/* Left navbar links */}
-				<ul className="navbar-nav">
-					<li className="nav-item">
-						<Link to="#" className="nav-link" data-widget="pushmenu">
-							<i className="fas fa-bars" />
-						</Link>
-					</li>
-					{/* <li className="nav-item d-none d-sm-inline-block">
+  const items = [
+    {
+      label: (
+        <Link to="/profile">
+          <a href="/profile">
+            <Affix align="center">
+              <UserOutlined style={{ marginRight: "4px" }} />
+              <span>Profile Settings</span>
+            </Affix>
+          </a>
+        </Link>
+      ),
+      key: "0",
+    },
+    {
+      label: (
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            localStorage.removeItem("token");
+            history.push("/login");
+          }}
+        >
+          <Affix style={{ display: "flex" }} align="">
+            <LogoutOutlined style={{ marginRight: "4px" }} />
+            <span>Logout</span>
+          </Affix>
+        </a>
+      ),
+      key: "1",
+    },
+  ];
+  return (
+    <div>
+      <nav
+        className="main-header navbar 
+			fixed-top navbar-expand navbar-white navbar-light "
+      >
+        {/* Left navbar links */}
+        <ul className="navbar-nav">
+          <li className="nav-item">
+		
+            <Link to="#" className="nav-link" data-widget="pushmenu">
+              	 <HiMenuAlt1
+              style={{
+                color: "red",
+                width: "3rem",
+                height: "2rem",
+                fontWeight: "bolder",
+                // marginTop: "1rem",
+              }}
+            />
+              {/* <i className="fas fa-bars" /> */}
+            </Link>
+          </li>
+          {/* <li className="nav-item d-none d-sm-inline-block">
 						<Link to="/" className="nav-link">
 							Home
 						</Link>
 					</li> */}
-					{/* <li className="nav-item d-none d-sm-inline-block">
+          {/* <li className="nav-item d-none d-sm-inline-block">
 						<Link href="#" className="nav-link">
 							Contact
 						</Link>
@@ -148,41 +162,41 @@ const MyHeader = () => {
 													</span>
 												</h3>
 
-												<p className="text-sm">{notif.message}</p>
-												<p className="text-sm text-muted">
-													<i className="far fa-clock mr-1" />
-													{moment(notif.createdAt).from(moment())}
-												</p>
-											</div>
-										</div>
-										{/* Message End */}
-									</div>
-								))
-							) : (
-								<div
-									className="dropdown-item"
-									style={{
-										padding: "10px",
-										backgroundColor: "#f5f5f5",
-										borderBottom: "1px solid #ddd"
-									}}
-								>
-									<p
-										style={{
-											margin: "0",
-											fontWeight: "bold",
-											color: "#555"
-										}}
-									>
-										No notifications at the moment
-									</p>
-								</div>
-							)}
+                        <p className="text-sm">{notif.message}</p>
+                        <p className="text-sm text-muted">
+                          <i className="far fa-clock mr-1" />
+                          {moment(notif.createdAt).from(moment())}
+                        </p>
+                      </div>
+                    </div>
+                    {/* Message End */}
+                  </div>
+                ))
+              ) : (
+                <div
+                  className="dropdown-item"
+                  style={{
+                    padding: "10px",
+                    backgroundColor: "#f5f5f5",
+                    borderBottom: "1px solid #ddd",
+                  }}
+                >
+                  <p
+                    style={{
+                      margin: "0",
+                      fontWeight: "bold",
+                      color: "#555",
+                    }}
+                  >
+                    No notifications at the moment
+                  </p>
+                </div>
+              )}
 
-							<div className="dropdown-divider" />
+              <div className="dropdown-divider" />
 
-							<div className="dropdown-divider" />
-							{/* <a href="#" className="dropdown-item dropdown-footer">
+              <div className="dropdown-divider" />
+              {/* <a href="#" className="dropdown-item dropdown-footer">
 								See All Messages
 							</a> */}
 						</div>
@@ -246,29 +260,29 @@ const MyHeader = () => {
 									localStorage.removeItem("token");
 									localStorage.removeItem("userData");
 
-									history.push("/login");
-								}}
-								style={{
-									display: "flex",
-									justifyContent: "space-between",
-									alignItems: "center",
-									fontWeight: "bold",
-									padding: "8px"
-								}}
-								className="dropdown-item"
-							>
-								<div data-widget="control-sidebar" data-slide="true">
-									<AiOutlineLogout />
-								</div>
+                  history.push("/login");
+                }}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontWeight: "bold",
+                  padding: "8px",
+                }}
+                className="dropdown-item"
+              >
+                <div data-widget="control-sidebar" data-slide="true">
+                  <AiOutlineLogout />
+                </div>
 
-								<div>logout</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	);
+                <div>logout</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 };
 
 export default MyHeader;
