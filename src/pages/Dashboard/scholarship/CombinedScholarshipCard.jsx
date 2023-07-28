@@ -40,6 +40,31 @@ const CombinedScholarshipCard = () => {
 		getScholarship();
 	}, []);
 
+	if (loading) {
+		// Render a loading state while data is being fetched
+		return (
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					marginTop: "13rem"
+				}}
+			>
+				<img
+					style={{
+						width: "7rem ",
+						height: "7rem",
+						justifyContent: "center",
+						alignItems: "center"
+					}}
+					src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
+					alt="middle"
+				/>{" "}
+			</div>
+		);
+	}
+
 	return (
 		<div>
 			<div
@@ -75,10 +100,8 @@ const CombinedScholarshipCard = () => {
 							id={dta._id}
 							link={dta.link}
 							about={dta.about}
-							
 						/>
 					))}
-
 			</div>
 		</div>
 	);

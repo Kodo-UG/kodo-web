@@ -33,12 +33,12 @@ const Login = () => {
 	return (
 		<div
 			style={{
-				height: "40rem",
+				height: "45rem",
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
 				width: "100%",
-				marginTop: isSm ? "9rem" : "3.6rem"
+				marginTop: isSm ? "3rem" : "3.6rem"
 			}}
 		>
 			<StepperCard list={object} />

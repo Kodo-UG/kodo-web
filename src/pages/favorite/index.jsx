@@ -171,9 +171,9 @@ const Favorite = () => {
 				) : (
 					data?.map((dta) => (
 						<LargeCardFavourite
-							title={dta.favourite?.title}
+							title={truncateText(dta.favourite?.title, 4)}
 							formatDate={dta.favourite?.deadline}
-							subText={truncateText(dta.favourite?.about, 6)}
+							subText={truncateText(dta.favourite?.about, 8)}
 							award={dta.favourite?.award}
 							link={dta.favourite?.link}
 							onClick={() => handleDelete(dta._id)}
@@ -184,7 +184,6 @@ const Favorite = () => {
 				<Footer />
 			</div>
 
-			{/* <Dashboard /> */}
 		</>
 	);
 };

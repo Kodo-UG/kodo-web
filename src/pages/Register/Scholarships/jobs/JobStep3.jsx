@@ -62,7 +62,6 @@ function StepElement8() {
 			const res = await axiosInstance.post("/auth/job/register", jobData);
 			localStorage.setItem("userID", res.data.id);
 
-
 			if (res.status == 200) {
 				displaySuccessMessage(res.data.message);
 				history.push("/signin");
@@ -117,7 +116,7 @@ function StepElement8() {
 					</style>
 					<img
 						className="icon-component icon-component--logo-horizontal"
-						src="https://www.kodoscholarships.com/kodo-logo.png"
+						src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
 						width="232"
 						height="36"
 						fill="var(--secondary-600)"
@@ -305,8 +304,8 @@ function StepElement8() {
 						<img
 							className="icon-component icon-component--logo-stacked-horizontal"
 							style={{ color: "#fff" }}
-							src="https://www.kodoscholarships.com/kodo-logo.png"
-							width="36"
+							src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
+							width="106"
 							height="36"
 							fill="#fff"
 							role="img"

@@ -6,67 +6,67 @@ import { Link, useHistory } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 function StepperElementFour() {
-  const list = [
-    {
-      id: 1,
-      text: "High School",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1",
-    },
-    {
-      id: 2,
-      text: "GED",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1",
-    },
-    {
-      id: 3,
-      text: "Associate",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal2",
-    },
-    {
-      id: 4,
-      text: "Bachelor's",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal3",
-    },
-    {
-      id: 5,
-      text: "Master's",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal4",
-    },
-    {
-      id: 6,
-      text: "Doctorate",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal5",
-    },
-  ];
+	const list = [
+		{
+			id: 1,
+			text: "High School",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1"
+		},
+		{
+			id: 2,
+			text: "GED",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1"
+		},
+		{
+			id: 3,
+			text: "Associate",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal2"
+		},
+		{
+			id: 4,
+			text: "Bachelor's",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal3"
+		},
+		{
+			id: 5,
+			text: "Master's",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal4"
+		},
+		{
+			id: 6,
+			text: "Doctorate",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal5"
+		}
+	];
 
-  function changeDivStyle(div) {
-    div.style.backgroundColor = "#F9FAFB";
-    // Change the background color to red
-  }
+	function changeDivStyle(div) {
+		div.style.backgroundColor = "#F9FAFB";
+		// Change the background color to red
+	}
 
-  const dispatch = useDispatch();
-  const history = useHistory();
-  const [active, setActive] = useState("");
-  const isSm = useMediaQuery("only screen and (max-width : 800px)");
+	const dispatch = useDispatch();
+	const history = useHistory();
+	const [active, setActive] = useState("");
+	const isSm = useMediaQuery("only screen and (max-width : 800px)");
 
-  const handleClick = (text) => {
-    dispatch(updateFormData({ field: "educationlevel", value: text }));
-  };
+	const handleClick = (text) => {
+		dispatch(updateFormData({ field: "educationlevel", value: text }));
+	};
 
-  return (
-    <div>
-      <main
-        className="voyager-main flex flex-col min-h-screen "
-        role="main"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <header className="w-full flex justify-center py-4 bg-white">
-          <Link to="/">
-            <style>
-              {`
+	return (
+		<div>
+			<main
+				className="voyager-main flex flex-col min-h-screen "
+				role="main"
+				style={{
+					display: "flex",
+					flexDirection: "column"
+				}}
+			>
+				<header className="w-full flex justify-center py-4 bg-white">
+					<Link to="/">
+						<style>
+							{`
             svg.icon-component.icon-component--logo-horizontal:hover {
               fill: var(--secondary-700);
             }
@@ -74,7 +74,7 @@ function StepperElementFour() {
 						</style>
 						<img
 							className="icon-component icon-component--logo-horizontal"
-							src="https://www.kodoscholarships.com/kodo-logo.png"
+							src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
 							width="232"
 							height="36"
 							fill="var(--secondary-600)"
@@ -246,7 +246,7 @@ function StepperElementFour() {
 							<img
 								className="icon-component icon-component--logo-stacked-horizontal "
 								style={{ color: "#fff" }}
-								src="https://www.kodoscholarships.com/kodo-logo.png"
+								src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
 								width="36"
 								height="36"
 								fill="#fff"

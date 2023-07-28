@@ -6,59 +6,59 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 function StepperElementSix() {
-  const list = [
-    {
-      id: 1,
-      text: "As soon as possible",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/fire",
-    },
-    {
-      id: 2,
-      text: "In the next 3 months",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/hourglass",
-    },
-    {
-      id: 3,
-      text: "3 - 6 months",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/clock",
-    },
-    {
-      id: 4,
-      text: " 6 - 12 months",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/calendar",
-    },
-    {
-      id: 5,
-      text: "  12 or more months",
-      link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/calendarPlus",
-    },
-  ];
-  const [active, setActive] = useState("");
-  const isSm = useMediaQuery("only screen and (max-width : 800px)");
+	const list = [
+		{
+			id: 1,
+			text: "As soon as possible",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/fire"
+		},
+		{
+			id: 2,
+			text: "In the next 3 months",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/hourglass"
+		},
+		{
+			id: 3,
+			text: "3 - 6 months",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/clock"
+		},
+		{
+			id: 4,
+			text: " 6 - 12 months",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/calendar"
+		},
+		{
+			id: 5,
+			text: "  12 or more months",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/calendarPlus"
+		}
+	];
+	const [active, setActive] = useState("");
+	const isSm = useMediaQuery("only screen and (max-width : 800px)");
 
-  const dispatch = useDispatch();
-  const handleClick = (text) => {
-    dispatch(updateFormData({ field: "scholarshipStart", value: text }));
-  };
-  return (
-    <main
-      className="voyager-main flex flex-col min-h-screen bg-gray-50"
-      role="main"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <header
-        className="w-full f py-4 bg-white"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Link to="/">
-          <style type="text/css">
-            {`
+	const dispatch = useDispatch();
+	const handleClick = (text) => {
+		dispatch(updateFormData({ field: "scholarshipStart", value: text }));
+	};
+	return (
+		<main
+			className="voyager-main flex flex-col min-h-screen bg-gray-50"
+			role="main"
+			style={{
+				display: "flex",
+				flexDirection: "column"
+			}}
+		>
+			<header
+				className="w-full f py-4 bg-white"
+				style={{
+					display: "flex",
+					justifyContent: "center"
+				}}
+			>
+				<Link to="/">
+					<style type="text/css">
+						{`
         svg.icon-component.icon-component--logo-horizontal:hover {
           fill: var(--secondary-700);
         }
@@ -66,7 +66,7 @@ function StepperElementSix() {
 					</style>
 					<img
 						className="icon-component icon-component--logo-horizontal"
-						src="https://www.kodoscholarships.com/kodo-logo.png"
+						src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
 						width="232"
 						height="36"
 						fill="var(--secondary-600)"
@@ -254,7 +254,7 @@ function StepperElementSix() {
 						<img
 							className="icon-component icon-component--logo-stacked-horizontal"
 							style={{ color: "#fff" }}
-							src="https://www.kodoscholarships.com/kodo-logo.png"
+							src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
 							width="36"
 							height="36"
 							fill="#fff"
