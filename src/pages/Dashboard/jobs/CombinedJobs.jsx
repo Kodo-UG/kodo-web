@@ -4,10 +4,12 @@ import axiosInstance from "../../../api/axiosInstance";
 import CardScholarship from "../../../components/card/CardScholarship";
 import CardScholarshipSubscribed from "../../../components/card/CardScholarshipSubscribed";
 
-const CombinedJobs = () => {
+const CombinedJobs = ({ path }) => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [newPath, setNewPath] = useState("");
+
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const getJobs = async () => {
 		setLoading(true);
@@ -67,7 +69,7 @@ const CombinedJobs = () => {
 				}}
 			>
 				{data.map((dta) =>
-					!subscription ? (
+					subscription ? (
 						<CardScholarshipSubscribed
 							key={dta.id}
 							award={dta.salary}
@@ -86,6 +88,7 @@ const CombinedJobs = () => {
 							deadline={dta.deadline}
 							text="jobs"
 							type="Salary"
+							path={path}
 						/>
 					)
 				)}

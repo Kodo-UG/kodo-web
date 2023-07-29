@@ -23,6 +23,8 @@ const Signin = lazy(() => import("./pages/Login"));
 const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const PasswordReset = lazy(() => import("./pages/PasswordReset"));
 const Payment = lazy(() => import("./pages/payment"));
+const PaymentJobs = lazy(() => import("./pages/payment/jobs"));
+
 const RootScholarship = lazy(() => import("./pages/Dashboard/scholarship"));
 const MainProfile = lazy(() => import("./pages/Dashboard/Profile"));
 const Accordion = lazy(() => import("./accordion/Accordion"));
@@ -88,6 +90,7 @@ const App = () => {
 				<Route exact path="/JobStep3" component={JobStep3} />
 				<Route exact path="/policy" component={Policy} />
 				<Route exact path="/jobs" component={Jobs} />
+
 				<Route
 					exact
 					path="/educationlevel"
@@ -105,7 +108,7 @@ const App = () => {
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/blog" component={Blog} />
 					<Route exact path="/admissions" component={FindScholarship} />
-
+					<Route exact path="/payjobs" component={PaymentJobs} />
 					<Route exact path="/contactus" component={ContactUs} />
 					<Route exact path="/scholarships" component={Accordion} />
 					<Route exact path="/testimonals" component={Testimonals} />

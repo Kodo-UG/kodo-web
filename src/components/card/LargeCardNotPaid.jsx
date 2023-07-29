@@ -1,10 +1,6 @@
-import { Button } from "antd";
-import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
-import { BsAward } from "react-icons/bs";
-import { CgCalendarDates } from "react-icons/cg";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 const LargeCardNotPaid = ({
@@ -14,7 +10,8 @@ const LargeCardNotPaid = ({
 	award,
 	link,
 	about,
-  type
+	path,
+	type
 }) => {
 	const date = new Date(formatDate);
 	const formattedDate = date.toLocaleDateString();
@@ -30,6 +27,14 @@ const LargeCardNotPaid = ({
 	const isXl = useMediaQuery(
 		"only screen and (min-width : 1700px) and (max-width : 2000px)"
 	);
+
+	const destinationPath = () => {
+		if (path === "/jobs") {
+			history.push("/payjobs");
+		} else {
+			history.push("/payment");
+		}
+	};
 
 	return (
 		<>
@@ -53,16 +58,14 @@ const LargeCardNotPaid = ({
 						: "20rem",
 					marginBottom: "2rem"
 				}}
-				onClick={() => history.push("/payment")}
+				onClick={() => destinationPath()}
 			>
 				{/* left div */}
 				<div
 					style={{
 						height: "100%",
 						width: "100%",
-						// justifyContent: "space-between",
 						alignItems: "center",
-						// background: "red",
 						display: "flex",
 						flexDirection: "column",
 						borderRadius: ".3rem"
@@ -70,11 +73,7 @@ const LargeCardNotPaid = ({
 				>
 					<div
 						style={{
-							// paddingTop: ".4rem",
-							// marginLeft: "1rem",
-							// marginBottom: "2rem",
 							backgroundColor: "#1c2755",
-							// marginRight: "1rem",
 							borderTopRightRadius: ".3rem",
 							borderTopLeftRadius: ".3rem",
 
@@ -101,14 +100,12 @@ const LargeCardNotPaid = ({
 								style={{
 									maxWidth: "100%",
 									height: "auto"
-									// background: "red",
 								}}
 							/>
 
 							<div
 								className=""
 								style={{
-									// background: "orange",
 									display: "flex",
 									width: "90%",
 									alignItems: "center",
@@ -154,7 +151,6 @@ const LargeCardNotPaid = ({
 							justifyContent: "space-between",
 							paddingLeft: "1rem",
 							paddingRight: "1rem",
-							// backgroundColor: "yellow",
 							height: "5rem",
 							width: "100%",
 							borderBottomRightRadius: "1rem",
@@ -173,7 +169,6 @@ const LargeCardNotPaid = ({
 						>
 							<div
 								style={{
-									// padding: ".1rem",
 									display: "flex",
 									justifyContent: "center",
 									height: "100%",
@@ -224,13 +219,11 @@ const LargeCardNotPaid = ({
 								justifyContent: "space-between",
 								paddingLeft: "1rem",
 								paddingRight: "1rem",
-								// backgroundColor: "yellow",
 								height: "5rem"
 							}}
 						>
 							<div
 								style={{
-									// padding: ".1rem",
 									display: "flex",
 									justifyContent: "center",
 									height: "100%",

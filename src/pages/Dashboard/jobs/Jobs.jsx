@@ -11,6 +11,7 @@ const Jobs = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [newPath, setNewPath] = useState("");
 
 	const history = useHistory();
 
@@ -32,6 +33,11 @@ const Jobs = () => {
 			setLoading(false);
 		}
 	};
+
+	useEffect(() => {
+		const currentPath = window.location.pathname;
+		setNewPath(currentPath);
+	}, []);
 
 	useEffect(() => {
 		getScholarship();
@@ -169,7 +175,11 @@ const Jobs = () => {
 							)}
 						</div>
 
-						{isSm ? <CombinedJobs /> : <MapCardJobs />}
+						{isSm ? (
+							<CombinedJobs path={newPath} />
+						) : (
+							<MapCardJobs path={newPath} />
+						)}
 					</div>
 				</section>
 			</div>
