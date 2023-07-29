@@ -4,25 +4,23 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { useHistory } from "react-router-dom";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
-import { AiFillCheckCircle } from "react-icons/ai";
-import { FaCheck } from "react-icons/fa";
 import useCurrencyConverter from "../../utils/converter";
 
 const PaymentCard = ({ data }) => {
   const { details } = data;
   const history = useHistory();
   const [dataUser, setDataUser] = useState();
-  const [amount, setAmount] = useState();
-  const [curr, setCurr] = useState("USD");
+  // const [amount, setAmount] = useState();
+  // const [curr, setCurr] = useState("USD");
 
   const isSm = useMediaQuery("only screen and (max-width : 700px)");
-  const isMd = useMediaQuery(
-    "only screen and (min-width : 700px) and (max-width : 1250px)"
-  );
-  const isLg = useMediaQuery(
-    "only screen and (min-width : 993px) and (max-width : 1200px)"
-  );
-  const isXl = useMediaQuery("only screen and (min-width : 1201px)");
+  // const isMd = useMediaQuery(
+  //   "only screen and (min-width : 700px) and (max-width : 1250px)"
+  // );
+  // const isLg = useMediaQuery(
+  //   "only screen and (min-width : 993px) and (max-width : 1200px)"
+  // );
+  // const isXl = useMediaQuery("only screen and (min-width : 1201px)");
 
   useEffect(() => {
     setDataUser(JSON.parse(localStorage.getItem("userData")));

@@ -9,12 +9,21 @@ const CardScholarship = ({
 	award,
 	deadline,
 	subscription,
-	type
+	type,
+	path
 }) => {
 	const date = new Date(deadline);
 	const formattedDate = date.toLocaleDateString();
 
 	const history = useHistory();
+
+	const destinationPath = () => {
+		if (path === "/jobs") {
+			history.push("/payjobs");
+		} else {
+			history.push("/payment");
+		}
+	};
 
 	return (
 		<Card
@@ -27,7 +36,7 @@ const CardScholarship = ({
 				marginLeft: "-1.9rem",
 				marginBottom: "3rem"
 			}}
-			onClick={() => history.push("/payment")}
+			onClick={() => destinationPath()}
 		>
 			<div
 				className="card-heade"
@@ -50,8 +59,6 @@ const CardScholarship = ({
 					<div
 						className="w-75 d-flex flex-column align-items-start justify-content-center "
 						style={{
-							//   marginTop: "1rem",
-							//   background: "green",
 							display: "flex",
 							alignItems: "center",
 							justifyContent: "space-between"

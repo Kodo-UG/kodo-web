@@ -4,7 +4,7 @@ import LargeCardNotPaid from "../../../components/card/LargeCardNotPaid";
 import axiosInstance from "../../../api/axiosInstance";
 import { Spin } from "antd";
 
-const MapCardJobs = () => {
+const MapCardJobs = ({path}) => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false); // Add loading state here
@@ -14,7 +14,6 @@ const MapCardJobs = () => {
 		try {
 			const res = await axiosInstance.get("/job");
 
-			console.log(res, "::::::::");
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
@@ -99,6 +98,7 @@ const MapCardJobs = () => {
 							award={dta.salary}
 							formatDate={dta.deadline}
 							type="Salary"
+							path={path}
 						/>
 					)
 				)

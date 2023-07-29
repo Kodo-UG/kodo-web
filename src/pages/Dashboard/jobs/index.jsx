@@ -6,6 +6,8 @@ import Footer from "../Footer";
 
 
 const RootJob = () => {
+
+	
 	return (
 		<div class="wrapper">
 			<MyHeader />
