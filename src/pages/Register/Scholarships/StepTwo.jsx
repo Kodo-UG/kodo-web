@@ -11,13 +11,21 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 const StepTwo = ({ nextStep }) => {
 	const dispatch = useDispatch();
 	const isSm = useMediaQuery("only screen and (max-width : 800px)");
+	const [loading, setLoading] = useState(false);
 
 	async function fetchCategories() {
-		const response = await fetch(
-			"https://demo.kodoscholarships.com/api/v1/scholarship/categories"
-		);
-		const data = await response.json();
-		return data;
+		setLoading(true);
+		try {
+			const response = await fetch(
+				"https://demo.kodoscholarships.com/api/v1/scholarship/categories"
+			);
+			const data = await response.json();
+			return data;
+		} catch (err) {
+			console.log(err);
+		} finally {
+			setLoading(false);
+		}
 	}
 
 	useEffect(() => {
@@ -36,6 +44,30 @@ const StepTwo = ({ nextStep }) => {
 		},
 		[dispatch, nextStep]
 	);
+
+	if (loading) {
+		return (
+			<div
+				style={{
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					marginTop: "13rem"
+				}}
+			>
+				<img
+					style={{
+						width: "7rem ",
+						height: "7rem",
+						justifyContent: "center",
+						alignItems: "center"
+					}}
+					src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
+					alt="middle"
+				/>{" "}
+			</div>
+		);
+	}
 
 	return (
 		<div
