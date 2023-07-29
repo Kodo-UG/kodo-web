@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
 import { Modal } from "antd";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function CardScholarshipSubscribed({
 	cardTitle,
@@ -12,7 +13,8 @@ function CardScholarshipSubscribed({
 	link,
 	about,
 	id,
-	days
+	days,
+	type
 }) {
 	const date = new Date(deadline);
 	const formattedDate = date.toLocaleDateString();
@@ -21,6 +23,8 @@ function CardScholarshipSubscribed({
 	const hanleModal = () => {
 		setVisible(!visible);
 	};
+
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
 	const truncateText = (text, maxWords) => {
 		const wordsArray = text.split(" ");
@@ -31,22 +35,20 @@ function CardScholarshipSubscribed({
 		}
 	};
 
-
 	return (
 		<div
 			onClick={() => setVisible(!visible)}
 			className=" shadow-3xl "
 			style={{
-				width: "24rem",
+				width: "23rem",
 				display: "flex",
 				flexDirection: "column",
-				height: "13rem",
 				justifyContent: "space-between",
 				background: "white",
 				borderRadius: "0.5rem",
 				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
 				cursor: "pointer",
-				marginRight: "1rem",
+				marginLeft: isSm ? "-5rem" : "",
 				marginBottom: "3rem",
 				fontFamily: "Arial, sans-serif"
 			}}
@@ -121,7 +123,7 @@ function CardScholarshipSubscribed({
 				<div className="d-flex justify-content-between align-items-center">
 					<div className="d-flex flex-column align-items-center">
 						<p className="mb-1" style={{ color: "#a0a3bd" }}>
-							Award
+							{type}
 						</p>
 						<p
 							style={{
@@ -300,7 +302,7 @@ function CardScholarshipSubscribed({
 						justifyContent: "center"
 					}}
 				>
-					<div 
+					<div
 						href={`${link}`}
 						style={{
 							backgroundColor: "#ec1d64",

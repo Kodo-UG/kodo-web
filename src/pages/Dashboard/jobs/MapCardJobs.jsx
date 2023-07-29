@@ -2,46 +2,47 @@ import React, { useEffect, useState } from "react";
 import LargeCard from "../../../components/card/LargeCard";
 import LargeCardNotPaid from "../../../components/card/LargeCardNotPaid";
 import axiosInstance from "../../../api/axiosInstance";
-import {
-	displayErrorNotification,
-	displaySuccessNotification
-} from "../../../utils/Toast";
 import { Spin } from "antd";
 
-const MapCardData = () => {
+const MapCardJobs = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false); // Add loading state here
 
-	const getScholarship = async () => {
+	const fetchJobs = async () => {
 		setLoading(true);
 		try {
-			const res = await axiosInstance.get("/scholarship");
+			const res = await axiosInstance.get("/job");
+
+			console.log(res, "::::::::");
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
-			// setLoading(false); // Set loading to false once the data is fetched
 		} catch (error) {
-			throw error;
+			console.log(error);
 		} finally {
 			setLoading(false);
 		}
 	};
 
-	const handleClick = async (fav) => {
-		try {
-			const res = await axiosInstance.post("/user/favourites", {
-				id: fav
-			});
-			if (res.status === 201) {
-				displaySuccessNotification(`${res.data.message}`);
-			} else {
-				displayErrorNotification(`${res.data.message}`);
-			}
-			console.log(res.data.message, "===");
-		} catch (error) {
-			console.log(error);
-		}
-	};
+	useEffect(() => {
+		fetchJobs();
+	}, []);
+
+	// const handleClick = async (fav) => {
+	// 	try {
+	// 		const res = await axiosInstance.post("/user/favourites", {
+	// 			id: fav
+	// 		});
+	// 		if (res.status === 201) {
+	// 			displaySuccessNotification(`${res.data.message}`);
+	// 		} else {
+	// 			displayErrorNotification(`${res.data.message}`);
+	// 		}
+	// 		console.log(res.data.message, "===");
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
+	// };
 
 	const truncateText = (text, maxWords) => {
 		const wordsArray = text.split(" ");
@@ -51,10 +52,6 @@ const MapCardData = () => {
 			return text;
 		}
 	};
-
-	useEffect(() => {
-		getScholarship();
-	}, []);
 
 	if (loading) {
 		// Render a loading state while data is being fetched
@@ -83,34 +80,31 @@ const MapCardData = () => {
 
 	return (
 		<div style={{ width: "100%", marginBottom: "20rem" }}>
-			{subscription
-				? data.map((dta) => (
+			{data.length === 0 ? (
+				<div style={{ textAlign: "center" }}>No Jobs Currently</div>
+			) : (
+				data.map((dta) =>
+					subscription ? (
 						<LargeCard
-							key={dta._id}
-							title={dta.title}
+							award={dta.salary}
+							title={truncateText(dta.title, 4)}
 							formatDate={dta.deadline}
-							award={dta.award}
-							subText={truncateText(dta.about, 6)}
+							type="Salary"
+							subText={truncateText(dta.about, 5)}
 							about={dta.about}
-							id={dta._id}
 							link={dta.link}
-							onClick={() => handleClick(dta._id)}
 						/>
-				  ))
-				: data.map((dta) => (
+					) : (
 						<LargeCardNotPaid
-							key={dta.id}
-							title={dta.title}
+							award={dta.salary}
 							formatDate={dta.deadline}
-							award={dta.award}
-							subText={truncateText(dta.about, 7)}
-							about={dta.about}
-							link={dta.link}
-							type="Award"
+							type="Salary"
 						/>
-				  ))}
+					)
+				)
+			)}
 		</div>
 	);
 };
 
-export default MapCardData;
+export default MapCardJobs;

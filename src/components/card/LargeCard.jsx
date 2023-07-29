@@ -43,7 +43,6 @@ const LargeCard = ({
 			let res = await axiosInstance.post("/user/apply", {
 				id: id
 			});
-			console.log(res);
 		} catch (err) {
 			console.log(err, "====");
 		}
@@ -54,7 +53,6 @@ const LargeCard = ({
 			<div
 				style={{
 					backgroundColor: "#fff",
-					// height: "12rem",
 					borderRadius: "5px",
 					marginTop: "1rem",
 					display: "flex",
@@ -119,7 +117,6 @@ const LargeCard = ({
 							justifyContent: "space-between",
 							paddingLeft: "1rem",
 							paddingRight: "1rem",
-							// backgroundColor: "yellow",
 							height: "5rem"
 						}}
 					>
