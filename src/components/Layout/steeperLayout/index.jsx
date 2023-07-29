@@ -3,13 +3,12 @@ import React, { Fragment } from "react";
 import HeaderStepper from "./HeaderStepper";
 import Footer from "./Footer";
 
-
-const HeaderLayout = ({ children , nextStep }) => {
+const HeaderLayout = ({ children, nextStep }) => {
 	return (
 		<Fragment>
 			<HeaderStepper />
-			<main >{children}</main>
-			<Footer nextStep={nextStep} />
+			<main>{children}</main>
+			{/* <Footer nextStep={nextStep} /> */}
 		</Fragment>
 	);
 };
