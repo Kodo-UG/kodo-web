@@ -112,13 +112,7 @@ const Footer = () => {
 			>
 				<div className="container">
 					<div className="row align-items-center">
-						{/* <div class="col-lg-4">
-						<div class="copy-text">
-							<a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-								<span style="font-weight: bold;font-size: 20px;color: white;">KODO Scholarships</span>
-							</a>
-						</div>
-					</div> */}
+						
 						<div
 							style={{ color: "#d2d4d7", textAlign: "center" }}
 							className="col-lg-4 text-center mx-auto"
