@@ -127,6 +127,7 @@ function StepperElementSix() {
 										{/* start */}
 										{list.map((data) => (
 											<div
+												key={data.id}
 												onClick={() => {
 													setActive(data.id);
 													// handleCardClick(data.id)
@@ -255,7 +256,7 @@ function StepperElementSix() {
 							className="icon-component icon-component--logo-stacked-horizontal"
 							style={{ color: "#fff" }}
 							src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
-							width="36"
+							width="106"
 							height="36"
 							fill="#fff"
 							role="img"
@@ -266,7 +267,7 @@ function StepperElementSix() {
 					<div className="py-2 divide-x px-4 flex flex-wrap justify-center">
 						<Link
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							to="#"
+							to="/policy"
 							target="_blank"
 						>
 							Privacy Policy
@@ -280,7 +281,7 @@ function StepperElementSix() {
 						</Link>
 						<Link
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							to="#"
+							to="/policy"
 							target="_blank"
 						>
 							Do Not Sell My Info

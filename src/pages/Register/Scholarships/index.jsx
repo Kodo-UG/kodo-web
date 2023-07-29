@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
@@ -10,6 +10,7 @@ import StepEight from "./StepEight";
 import StepNine from "./StepNine";
 import StepTen from "./StepTen";
 import HeaderLayout from "../../../components/Layout/steeperLayout";
+import Footer from "../../../components/Layout/steeperLayout/Footer";
 
 const Stepper = () => {
 	const [step, setStep] = useState(1);
@@ -29,12 +30,14 @@ const Stepper = () => {
 		scholarshipcategory: ""
 	});
 
-	const nextStep = () => setStep(step + 1);
-	const prevStep = () => setStep(step - 1);
+	const nextStep = () =>
+		setStep((step) => (step < 4 && step > 0 ? step + 1 : 1));
+	const prevStep = () =>
+		setStep((step) => (step < 4 && step > 0 ? step - 1 : 1));
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-	};
+	useEffect(() => {
+		console.log("step: ", step);
+	}, [step]);
 
 	const renderStepContent = () => {
 		switch (step) {
@@ -65,64 +68,71 @@ const Stepper = () => {
 						setFormData={setFormData}
 					/>
 				);
-			case 4:
-				return (
-					<StepSix
-						nextStep={nextStep}
-						prevStep={prevStep}
-						formData={formData}
-						setFormData={setFormData}
-					/>
-				);
-			case 5:
-				return (
-					<StepSix
-						nextStep={nextStep}
-						prevStep={prevStep}
-						formData={formData}
-						setFormData={setFormData}
-					/>
-				);
-			case 6:
-				return (
-					<StepSeven
-						nextStep={nextStep}
-						prevStep={prevStep}
-						formData={formData}
-						setFormData={setFormData}
-					/>
-				);
+			// case 4:
+			// 	return (
+			// 		<StepSix
+			// 			nextStep={nextStep}
+			// 			prevStep={prevStep}
+			// 			formData={formData}
+			// 			setFormData={setFormData}
+			// 		/>
+			// 	);
+			// case 5:
+			// 	return (
+			// 		<StepSix
+			// 			nextStep={nextStep}
+			// 			prevStep={prevStep}
+			// 			formData={formData}
+			// 			setFormData={setFormData}
+			// 		/>
+			// 	);
+			// case 4:
+			// 	return (
+			// 		<StepSeven
+			// 			nextStep={nextStep}
+			// 			prevStep={prevStep}
+			// 			formData={formData}
+			// 			setFormData={setFormData}
+			// 		/>
+			// 	);
 
-			case 7:
-				return (
-					<StepEight
-						nextStep={nextStep}
-						prevStep={prevStep}
-						formData={formData}
-						setFormData={setFormData}
-					/>
-				);
+			// case 7:
+			// 	return (
+			// 		<StepEight
+			// 			nextStep={nextStep}
+			// 			prevStep={prevStep}
+			// 			formData={formData}
+			// 			setFormData={setFormData}
+			// 		/>
+			// 	);
 
-			case 8:
-				return (
-					<StepNine
-						nextStep={nextStep}
-						prevStep={prevStep}
-						formData={formData}
-						setFormData={setFormData}
-					/>
-				);
-			case 9:
-				return (
-					<StepTen
-						nextStep={nextStep}
-						prevStep={prevStep}
-						formData={formData}
-						setFormData={setFormData}
-					/>
-				);
+			// case 4:
+			// 	return (
+			// 		<StepNine
+			// 			nextStep={nextStep}
+			// 			prevStep={prevStep}
+			// 			formData={formData}
+			// 			setFormData={setFormData}
+			// 		/>
+			// 	);
+			// case 5:
+			// 	return (
+			// 		<StepTen
+			// 			nextStep={nextStep}
+			// 			prevStep={prevStep}
+			// 			formData={formData}
+			// 			setFormData={setFormData}
+			// 		/>
+			// 	);
 			default:
-				return null;
+				return (
+					<StepOne
+						nextStep={nextStep}
+						prevStep={prevStep}
+						formData={formData}
+						setFormData={setFormData}
+					/>
+				);
 		}
 	};
 
@@ -143,12 +153,13 @@ const Stepper = () => {
 					style={{
 						display: "flex",
 						justifyContent: "center",
-						alignItems: "center",
+						alignItems: "center"
 					}}
 				>
 					{renderStepContent()}
 				</div>
 			</div>
+			<Footer step={step} nextStep={nextStep} prevStep={prevStep} />
 		</HeaderLayout>
 	);
 };

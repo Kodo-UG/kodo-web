@@ -9,15 +9,23 @@ import { useCallback } from "react";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 const StepTwo = ({ nextStep }) => {
+	const [loading, setLoading] = useState(false);
 	const dispatch = useDispatch();
 	const isSm = useMediaQuery("only screen and (max-width : 800px)");
 
 	async function fetchCategories() {
-		const response = await fetch(
-			"https://demo.kodoscholarships.com/api/v1/scholarship/categories"
-		);
-		const data = await response.json();
-		return data;
+		setLoading(true);
+		try {
+			const response = await fetch(
+				"https://demo.kodoscholarships.com/api/v1/scholarship/categories"
+			);
+			const data = await response.json();
+			return data;
+		} catch (err) {
+			console.log(err);
+		} finally {
+			setLoading(false);
+		}
 	}
 
 	useEffect(() => {
@@ -62,16 +70,18 @@ const StepTwo = ({ nextStep }) => {
 						overflow: isSm ? "scroll" : "visible" // Apply overflow: scroll when isSm is true
 					}}
 				>
-					{newData?.map((dta) => (
-						<button
-							key={dta._id}
-							type="button"
-							className="select-option sonic-btn"
-							onClick={() => handleClick(dta._id)}
-						>
-							{dta.name}
-						</button>
-					))}
+					{loading
+						? "Loading categpries.."
+						: newData?.map((dta) => (
+								<button
+									key={dta._id}
+									type="button"
+									className="select-option sonic-btn"
+									onClick={() => handleClick(dta._id)}
+								>
+									{dta.name}
+								</button>
+						  ))}
 				</div>
 			</div>
 		</div>

@@ -41,7 +41,6 @@ function StepperElementFour() {
 
 	function changeDivStyle(div) {
 		div.style.backgroundColor = "#F9FAFB";
-		// Change the background color to red
 	}
 
 	const dispatch = useDispatch();
@@ -247,7 +246,7 @@ function StepperElementFour() {
 								className="icon-component icon-component--logo-stacked-horizontal "
 								style={{ color: "#fff" }}
 								src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
-								width="36"
+								width="106"
 								height="36"
 								fill="#fff"
 								role="img"
@@ -258,7 +257,7 @@ function StepperElementFour() {
 						<div className="py-2 divide-x px-4 flex flex-wrap justify-center">
 							<a
 								className="px-2 text-xs text-white font-bold hover:text-white"
-								href="#"
+								href="/policy"
 								target="_blank"
 							>
 								Privacy Policy

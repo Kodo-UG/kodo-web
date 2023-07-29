@@ -100,7 +100,7 @@ const [baseState, setBaseState] = useState({
 
       getCurrencyConverter();
     }
-  }, [amount, base, convertTo]);
+  }, [amount, base, baseState, convertTo]);
 
   return baseState;
 };

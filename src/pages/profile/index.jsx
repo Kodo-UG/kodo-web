@@ -72,8 +72,10 @@ function Profile() {
 			});
 
 			if (res?.data.data) {
-				alert(res?.data.data);
+				displaySuccessNotification(res?.data.data);
 			}
+
+			fetchUser(id);
 		} catch (error) {
 			console.log(error);
 		} finally {
@@ -81,8 +83,7 @@ function Profile() {
 		}
 	};
 
-	const handleEditPassword = async (e) => {
-		e.preventDefault();
+	const handleEditPassword = async () => {
 		setLoading(true);
 		try {
 			const res = await axiosInstance.patch("/user/profile", {
@@ -90,7 +91,7 @@ function Profile() {
 			});
 
 			if (res?.data.data) {
-				alert(res?.data.data);
+				displaySuccessNotification(res?.data.data);
 			}
 		} catch (error) {
 		} finally {
@@ -124,8 +125,7 @@ function Profile() {
 			setScholarship(res.data.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
-			// Handle   error here
-			throw error;
+			console.log(error);
 		} finally {
 			setLoading(false);
 		}
@@ -146,7 +146,6 @@ function Profile() {
 		try {
 			let response = await axiosInstance.get("/user/favourites");
 			setFavData(response?.data?.data);
-			// console.log(response.data.data, "heyyyyy");
 		} catch (error) {
 			console.log(error);
 		} finally {
@@ -169,7 +168,6 @@ function Profile() {
 	return (
 		<div className="app-content main-content mt-0">
 			<div className="side-app">
-				{/* CONTAINER */}
 				<div
 					style={{
 						width: "80%",
@@ -178,15 +176,26 @@ function Profile() {
 					}}
 					className="main-container container-fluid"
 				>
-					{/* PAGE-HEADER */}
-
-					{/* PAGE-HEADER END */}
-
-					{/* ROW-1 OPEN */}
 					<div className="row" id="user-profile">
 						{loading ? (
-							<div style={{ textAlign: "center", fontSize: "2rem" }}>
-								Loading User profile...
+							<div
+								style={{
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									marginTop: "9rem"
+								}}
+							>
+								<img
+									style={{
+										width: "7rem ",
+										height: "7rem",
+										justifyContent: "center",
+										alignItems: "center"
+									}}
+									src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
+									alt="middle"
+								/>{" "}
 							</div>
 						) : (
 							<div className="col-lg-12">
