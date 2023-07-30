@@ -19,7 +19,6 @@ const MapCardData = () => {
 			const res = await axiosInstance.get("/scholarship");
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
-			// setLoading(false); // Set loading to false once the data is fetched
 		} catch (error) {
 			throw error;
 		} finally {
@@ -37,7 +36,6 @@ const MapCardData = () => {
 			} else {
 				displayErrorNotification(`${res.data.message}`);
 			}
-			console.log(res.data.message, "===");
 		} catch (error) {
 			console.log(error);
 		}
@@ -57,7 +55,6 @@ const MapCardData = () => {
 	}, []);
 
 	if (loading) {
-		// Render a loading state while data is being fetched
 		return (
 			<div
 				style={{
