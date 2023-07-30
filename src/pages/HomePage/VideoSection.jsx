@@ -33,7 +33,7 @@ function VideoSection() {
 					<div className="col-lg-4">
 						<div className="s-video-content">
 							<a
-								href="http://www.youtube.com/watch?v=2aKza6Zsk68&t=1429s"
+								href="https://www.youtube.com/watch?v=avyjReTWgdY&ab_channel=KodoScholarships"
 								class="popup-video mb-50"
 							>
 								<img

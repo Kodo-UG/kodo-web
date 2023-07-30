@@ -23,7 +23,7 @@ function Accordion() {
 								<div className="s-video-content text-center">
 									<h6>
 										<a
-											href="https://www.youtube.com/watch?v=7e90gBu4pas"
+											href="https://www.youtube.com/watch?v=avyjReTWgdY&ab_channel=KodoScholarships"
 											className="popup-video mb-50"
 										>
 											<img
@@ -55,8 +55,8 @@ function Accordion() {
 													data-bs-toggle="collapse"
 													data-bs-target="#collapseThree"
 												>
-													01 When is the best time to apply for
-													a scholarship?
+													01 When is the best time to apply for a
+													scholarship?
 												</button>
 											</h2>
 										</div>
@@ -66,8 +66,8 @@ function Accordion() {
 											data-bs-parent="#accordionExample"
 										>
 											<div className="card-body">
-												The best time to apply for a scholarship
-												is within the application period set by the
+												The best time to apply for a scholarship is
+												within the application period set by the
 												scholarship provider/University. Usually,
 												scholarship applications (as well as
 												admissions) should be done 6 months to one
@@ -97,8 +97,8 @@ function Accordion() {
 										>
 											<div className="card-body">
 												Did the scholarship provider provide any
-												format? If they did, you should follow
-												that. If they have not specified a specific
+												format? If they did, you should follow that.
+												If they have not specified a specific
 												format, then you can follow this simple
 												outline when making your
 												application/motivation letter: (1)
@@ -159,9 +159,8 @@ function Accordion() {
 													data-bs-toggle="collapse"
 													data-bs-target="#collapseFour"
 												>
-													04 Are there scholarships for
-													[specific field of study] or
-													[nationality]?
+													04 Are there scholarships for [specific
+													field of study] or [nationality]?
 												</button>
 											</h2>
 										</div>
