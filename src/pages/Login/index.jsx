@@ -183,7 +183,7 @@ export default function Login() {
 									<div className="fxt-transformY-50 fxt-transition-delay-3">
 										<div className="fxt-content-between">
 											<button className="fxt-btn-fill" type="submit">
-												Log in
+												{loading ? "loading..." : "Log in"}
 											</button>
 											<Link
 												to="/forgot/password"
