@@ -16,7 +16,7 @@ function StepperCard({ list }) {
 								fontFamily: "Jost, sans-serif",
 								fontWeight: 600,
 								fontSize: "2rem",
-								marginTop: isSm ? "6rem" : ""
+								marginTop: isSm ? "9rem" : ""
 							}}
 							className="welcome-title"
 						>

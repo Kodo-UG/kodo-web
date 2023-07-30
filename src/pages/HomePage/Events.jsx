@@ -34,9 +34,9 @@ const Events = () => {
 							data-delay=".4s"
 						>
 							<div className="blog-thumb2">
-								<a href="https://kodoscholarships.com/blog">
+								<a href="/blog">
 									<img
-										src="https://kodoscholarships.com/img/blog/muslim.jpg"
+										src="https://res.cloudinary.com/itgenius/image/upload/v1690692704/muslim_jbicas.jpg"
 										alt="img"
 									/>
 								</a>
@@ -58,7 +58,7 @@ const Events = () => {
 									</div>
 								</div>
 								<h4>
-									<a href="https://kodoscholarships.com/blog">
+									<a href="/blog">
 										How to Write a Scholarship Essay and Win BIG [2022
 										Edition].
 									</a>
@@ -68,7 +68,7 @@ const Events = () => {
 									to get serious about searching for...{" "}
 								</p>
 								<div className="blog-btn">
-									<a href="https://kodoscholarships.com/blog">
+									<a href="/blog">
 										Read More{" "}
 										<i className="fal fa-long-arrow-right" />
 									</a>
@@ -83,9 +83,9 @@ const Events = () => {
 							data-delay=".4s"
 						>
 							<div className="blog-thumb2">
-								<a href="https://kodoscholarships.com/blog">
+								<a href="/blog">
 									<img
-										src="https://kodoscholarships.com/img/blog/gamers.jpg"
+										src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/gamers_z9cpsj.jpg"
 										alt="img"
 									/>
 								</a>
@@ -107,7 +107,7 @@ const Events = () => {
 									</div>
 								</div>
 								<h4>
-									<a href="https://kodoscholarships.com/blog">
+									<a href="/blog">
 										How To Know If You Qualify For Need Based
 										Financial Aid
 									</a>
@@ -117,7 +117,7 @@ const Events = () => {
 									intimidating. Which is why it’s important...
 								</p>
 								<div className="blog-btn">
-									<a href="https://kodoscholarships.com/blog">
+									<a href="/blog">
 										Read More{" "}
 										<i className="fal fa-long-arrow-right" />
 									</a>
@@ -132,9 +132,9 @@ const Events = () => {
 							data-delay=".4s"
 						>
 							<div className="blog-thumb2">
-								<a href="https://kodoscholarships.com/blog">
+								<a href="/blog">
 									<img
-										src="https://kodoscholarships.com/img/blog/interracial.jpg"
+										src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/interracial_qodm9k.jpg"
 										alt="img"
 									/>
 								</a>
@@ -156,7 +156,7 @@ const Events = () => {
 									</div>
 								</div>
 								<h4>
-									<a href="https://kodoscholarships.com/blog">
+									<a href="/blog">
 										5 Expert Tips on How to Apply for Scholarships
 										[2022 Edition]
 									</a>
@@ -166,7 +166,7 @@ const Events = () => {
 									financial aid. They’re free money to pay for college!
 								</p>
 								<div className="blog-btn">
-									<a href="https://kodoscholarships.com/blog">
+									<a href="/blog">
 										Read More{" "}
 										<i className="fal fa-long-arrow-right" />
 									</a>

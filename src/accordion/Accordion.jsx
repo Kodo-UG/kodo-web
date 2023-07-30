@@ -1,6 +1,4 @@
 import React from "react";
-import { accordionData } from "./AccordionData.js";
-import AccordionCard from "./AccordionCard.jsx";
 
 function Accordion() {
 	return (
@@ -57,7 +55,7 @@ function Accordion() {
 													data-bs-toggle="collapse"
 													data-bs-target="#collapseThree"
 												>
-													01 When is the best time to apply htmlFor
+													01 When is the best time to apply for
 													a scholarship?
 												</button>
 											</h2>
@@ -68,7 +66,7 @@ function Accordion() {
 											data-bs-parent="#accordionExample"
 										>
 											<div className="card-body">
-												The best time to apply htmlFor a scholarship
+												The best time to apply for a scholarship
 												is within the application period set by the
 												scholarship provider/University. Usually,
 												scholarship applications (as well as
@@ -99,7 +97,7 @@ function Accordion() {
 										>
 											<div className="card-body">
 												Did the scholarship provider provide any
-												htmlFormat? If they did, you should follow
+												format? If they did, you should follow
 												that. If they have not specified a specific
 												format, then you can follow this simple
 												outline when making your
@@ -161,7 +159,7 @@ function Accordion() {
 													data-bs-toggle="collapse"
 													data-bs-target="#collapseFour"
 												>
-													04 Are there scholarships htmlFor
+													04 Are there scholarships for
 													[specific field of study] or
 													[nationality]?
 												</button>
@@ -193,7 +191,7 @@ function Accordion() {
 													data-bs-toggle="collapse"
 													data-bs-target="#collapseFive"
 												>
-													05 How do I apply htmlFor a scholarship ?
+													05 How do I apply for a scholarship ?
 												</button>
 											</h2>
 										</div>

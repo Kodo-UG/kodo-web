@@ -15,11 +15,7 @@ const CustomForm = () => {
 								<div className="section-title center-align text-center mb-50">
 									<h2>Inquiry Form</h2>
 								</div>
-								<form
-									action="mail.php"
-									method="post"
-									className="contact-form mt-30 text-center"
-								>
+								<form className="contact-form mt-30 text-center">
 									<div className="row">
 										<div className="col-lg-4">
 											<div className="contact-field p-relative c-name mb-30">

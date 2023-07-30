@@ -164,6 +164,7 @@ const BackgroundCarousel = () => {
 								Jobs Now!
 							</h5>
 							<div style={{ width: "50%" }}>
+								<Link to="/jobStep1">
 								<button
 									type="button"
 									className="btn btn-lg btn-primary"
@@ -182,6 +183,8 @@ const BackgroundCarousel = () => {
 								>
 									Find Jobs Now <i class="fal fa-long-arrow-right"></i>
 								</button>
+								</Link>
+								
 							</div>
 						</div>
 					</div>
