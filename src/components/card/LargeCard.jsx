@@ -25,7 +25,7 @@ const LargeCard = ({
 		"only screen and (min-width : 700px) and (max-width : 1250px)"
 	);
 
-	const hanleModal = () => {
+	const handleModal = () => {
 		setVisible(!visible);
 	};
 
@@ -192,7 +192,6 @@ const LargeCard = ({
 								justifyContent: "space-between",
 								paddingLeft: "1rem",
 								paddingRight: "1rem",
-								// backgroundColor: "yellow",
 								height: "5rem"
 							}}
 						>
@@ -215,7 +214,6 @@ const LargeCard = ({
 							</div>
 							<div
 								style={{
-									// padding: ".1rem",
 									justifyContent: "center",
 									height: "100%",
 									alignItems: "center",
@@ -259,13 +257,11 @@ const LargeCard = ({
 								justifyContent: "space-between",
 								paddingLeft: "1rem",
 								paddingRight: "1rem",
-								// backgroundColor: "yellow",
 								height: "5rem"
 							}}
 						>
 							<div
 								style={{
-									// padding: ".1rem",
 									justifyContent: "center",
 									height: "100%",
 									alignItems: "center",
@@ -345,13 +341,11 @@ const LargeCard = ({
 						height: "100%",
 						width: "30%",
 						borderRadius: "5px"
-						// justifyItems:"stretch"
 					}}
 				>
 					<div
 						style={{
 							display: "flex",
-							// padding: ".3rem",
 							justifyContent: "flex-end",
 							marginBottom: "5rem",
 							marginTop: "1rem",
@@ -397,18 +391,17 @@ const LargeCard = ({
 					<Modal
 						open={visible}
 						footer={null}
-						onCancel={hanleModal}
-						maskClosable={false}
+						onCancel={handleModal}
+						maskClosable
 						bodyStyle={{
 							borderRadius: "1.5rem",
 							padding: "1rem"
 						}}
 						style={{
-							backdropFilter: "blur(10px)",
-							zIndex: 9999999,
-							width: "100%"
+							backdropFilter: "blur(16px)"
 						}}
 						width={900}
+						zIndex={1000}
 					>
 						<div
 							style={{

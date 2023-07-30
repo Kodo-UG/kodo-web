@@ -1,12 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const CustomLink = ({ route, children }) => {
-	// const handleClick = (e) => {
-	// 	onClick(); // Call the handleReloadPage function
-	// 	// e.stopPropagation(); // Prevent further propagation of the click event
-	// };
-
 	return (
 		<div>
 			<li
@@ -17,9 +11,8 @@ const CustomLink = ({ route, children }) => {
 				}}
 				className=""
 			>
-				{/* Attach the onClick event directly to the Link element */}
-				<Link
-					to={`${route}`}
+				<a
+					href={`${route}`}
 					style={{
 						color: "#162542",
 						fontFamily: "Jost, sans-serif",
@@ -28,7 +21,7 @@ const CustomLink = ({ route, children }) => {
 					}}
 				>
 					{children}
-				</Link>
+				</a>
 			</li>
 		</div>
 	);
