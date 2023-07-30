@@ -114,6 +114,7 @@ const NavHeader = ({ open, setOpen }) => {
 			{open ? (
 				<div
 					style={{ zIndex: 99999 }}
+					onClick={() => setOpen(false)}
 					//   className="collapse navbar-collapse  "
 					// id="navbarTogglerDemo01"
 				>
@@ -127,12 +128,13 @@ const NavHeader = ({ open, setOpen }) => {
 						className={smallClass}
 					>
 						{routeData.map((dta) => (
-							<CustomLink
-								onClick={() => setOpen(false)}
-								key={dta.id}
-								route={dta.route}
-								children={dta.children}
-							/>
+							<div onClick={() => setOpen(false)}>
+								<CustomLink
+									key={dta.id}
+									route={dta.route}
+									children={dta.children}
+								/>
+							</div>
 						))}
 					</ul>
 
@@ -180,7 +182,7 @@ const NavHeader = ({ open, setOpen }) => {
 										fontSize: "16px"
 									}}
 								>
-									LOG IN
+									Log in
 								</button>
 							)}
 
