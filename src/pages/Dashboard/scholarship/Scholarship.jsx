@@ -198,8 +198,13 @@ const Scholarship = () => {
 								</div>
 							)}
 						</div>
-
-						{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
+						{loading ? (
+							"loading..."
+						) : isSm ? (
+							<CombinedScholarshipCard />
+						) : (
+							<MapCardData />
+						)}
 					</div>
 					{/* <div
             style={{
