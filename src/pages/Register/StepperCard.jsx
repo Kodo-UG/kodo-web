@@ -49,7 +49,7 @@ function StepperCard({ list }) {
 									}}
 								>
 									<img
-										src="https://www.kodoscholarships.com/logo.png"
+										src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
 										style={{
 											width: "80px",
 											height: "auto",
