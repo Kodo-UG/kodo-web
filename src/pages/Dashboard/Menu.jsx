@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const Menu = () => {
+const Menu = ({setShowContent}) => {
 	const [activeButton, setActiveButton] = useState(null);
 	const [data, setData] = useState();
 	const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -79,7 +79,7 @@ const Menu = () => {
 								role="menu"
 								data-accordion="false"
 							>
-								<li className="nav-item ">
+								<li className="nav-item " onClick={() =>setShowContent(0)}>
 									<Link
 										onClick={() => handleActive("scholarships")}
 										to="/scholars"
@@ -108,7 +108,7 @@ const Menu = () => {
 									</Link>
 								</li>
 
-								<li className="nav-item">
+								<li className="nav-item" onClick={() =>setShowContent(0)}>
 									<Link
 										onClick={() => handleActive("dashboard")}
 										to="/scholars"
@@ -132,10 +132,10 @@ const Menu = () => {
 									</Link>
 								</li>
 
-								<li className="nav-item">
+								<li className="nav-item" onClick={() => setShowContent(1)}>
 									<Link
 										onClick={() => handleActive("favorites")}
-										to="/favorite"
+										to="/scholars"
 										className={`nav-link ${
 											isButtonActive("favorites") ? "active" : ""
 										}`}
@@ -159,10 +159,10 @@ const Menu = () => {
 									</Link>
 								</li>
 
-								<li className="nav-item">
+								<li className="nav-item" onClick={() => setShowContent(2)}>
 									<Link
 										onClick={() => handleActive("jobs")}
-										to="/jobs"
+										to="/scholars"
 										className={`nav-link ${
 											isButtonActive("jobs") ? "active" : ""
 										}`}

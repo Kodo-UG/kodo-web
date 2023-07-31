@@ -7,6 +7,8 @@ import axiosInstance from "../../../api/axiosInstance";
 import { MdArrowForwardIos } from "react-icons/md";
 import { SiFiles } from "react-icons/si";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { BiRefresh } from "react-icons/bi";
 
 const Scholarship = () => {
 	const [data, setData] = useState([]);
@@ -37,35 +39,6 @@ const Scholarship = () => {
 	useEffect(() => {
 		getScholarship();
 	}, []);
-
-	// let handleFetchMore = async () => {
-	//   setLoading(true);
-	//   setCount(count + 1);
-	//   try {
-	//     const token = localStorage.getItem("token");
-	//     const headers = {
-	//       Authorization: `Bearer ${token}`,
-	//     };
-
-	//     let res = await axios.get(
-	//       `https://demo.kodoscholarships.com/api/v1/scholarship?page=${count}`,
-	//       {
-	//         headers,
-	//       }
-	//     );
-
-	//     setTotalPages(res.data.totalPages);
-
-	//     // setData((prev) => [...prev, res.data.data]);
-	//     setData(res.data.data);
-	//     setSubscription(res.data.subscription);
-	//   } catch (error) {
-	//     // Handle   error here
-	//     throw error;
-	//   } finally {
-	//     setLoading(false);
-	//   }
-	// };
 
 	return (
 		<div>
@@ -194,7 +167,22 @@ const Scholarship = () => {
 										fontSize: isSm ? "1.6rem" : ""
 									}}
 								>
-									Latest Scholarships
+									Latest Scholarships <br />
+									<span
+										style={{
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+											cursor: "pointer",
+											color: "#fff",
+											backgroundColor: "#1c2755",
+											fontSize: "1.5rem"
+										}}
+										onClick={() => window.location.reload()}
+									>
+										{" "}
+										Refresh <BiRefresh />
+									</span>
 								</div>
 							)}
 						</div>

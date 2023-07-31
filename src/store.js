@@ -17,12 +17,14 @@ import storage from "redux-persist/lib/storage"; // Defaults to localStorage for
 import userReducer from "./toolkit/userReducer";
 import formReducer from "./toolkit/formReducer";
 import jobReducer from "./toolkit/jobReducer";
+import scholarshipReducer from "./toolkit/scholarshipReducer";
 
 // Combine reducers
 const rootReducer = combineReducers({
 	user: userReducer,
 	formData: formReducer,
-	jobData: jobReducer
+	jobData: jobReducer,
+	scholarship:scholarshipReducer
 });
 
 // Configure persistence options

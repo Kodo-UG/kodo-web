@@ -53,8 +53,8 @@ const LargeCardFavourite = ({
 						boxShadow: "0 5px 10px rgba(0,0,0,0.10)",
 						cursor: "pointer",
 						padding: "1rem",
-						width: isMd ? "70%" : "50%",
-						marginLeft: isMd ? "" : "20rem",
+						width: isMd ? "70%" : "57%",
+						marginLeft: isMd ? "" : "14rem",
 
 						justifyContent: "center",
 						alignItems: "center"

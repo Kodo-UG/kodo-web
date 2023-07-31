@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
 import PrivateRoute from "./utils/PrivateRoute";
@@ -7,6 +7,9 @@ import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
 import { Spin } from "antd";
 import Policy from "./pages/policyPage/Policy";
+import axiosInstance from "./api/axiosInstance";
+import { useDispatch } from "react-redux";
+import { fetchScholarship } from "./toolkit/scholarshipReducer";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
@@ -14,7 +17,7 @@ const AboutUs = lazy(() => import("./pages/AboutUs/index"));
 const Blog = lazy(() => import("./pages/Blog"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 // const Scholarships = lazy(() => import("./pages/Scholarships"));
-const Jobs = lazy(() => import("./pages/Dashboard/jobs"));
+// const Jobs = lazy(() => import("./pages/Dashboard/jobs"));
 const Testimonals = lazy(() => import("./pages/Testimonals"));
 const Stepper = lazy(() => import("./pages/Register/Scholarships"));
 const FindScholarship = lazy(() => import("./pages/Register"));
@@ -48,6 +51,31 @@ const Index = lazy(() => import("../src/pages/profile/index"));
 const Favorite = lazy(() => import("./pages/favorite"));
 
 const App = () => {
+	const [data, setData] = useState([]);
+	const [subscription, setSubscription] = useState(false);
+	const [loading, setLoading] = useState(false);
+	const dispatch = useDispatch();
+
+	const getScholarship = async () => {
+		setLoading(true);
+		try {
+			let res = await axiosInstance.get("/scholarship");
+
+			setData(res.data.data);
+			dispatch(fetchScholarship(res.data.data));
+			setSubscription(res.data.subscription);
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoading(false);
+		}
+	};
+
+
+	useEffect(() => {
+		getScholarship();
+	}, []);
+
 	return (
 		<Suspense
 			fallback={
@@ -89,7 +117,7 @@ const App = () => {
 				<Route exact path="/JobStep2" component={JobStep2} />
 				<Route exact path="/JobStep3" component={JobStep3} />
 				<Route exact path="/policy" component={Policy} />
-				<Route exact path="/jobs" component={Jobs} />
+				{/* <Route exact path="/jobs" component={Jobs} /> */}
 
 				<Route
 					exact

@@ -106,6 +106,7 @@ const MapCardData = () => {
 							type="Award"
 						/>
 				  ))}
+			{!data ? <button>Reload now</button> : null}
 		</div>
 	);
 };

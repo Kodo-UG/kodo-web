@@ -102,7 +102,7 @@ const Favorite = () => {
 	return (
 		<>
 			<div
-				class="wrapper "
+				class=""
 				style={
 					isSm
 						? smallScreenStyle
@@ -114,8 +114,7 @@ const Favorite = () => {
 						  }
 				}
 			>
-				<MyHeader />
-				<Menu />
+				
 				<div
 					style={{
 						marginTop: "6rem",
