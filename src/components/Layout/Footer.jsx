@@ -89,14 +89,14 @@ const Footer = () => {
 									<a href="#">
 										<img
 											style={{ width: 140 }}
-											src="https://kodoscholarships.com/img/playstore.png"
+											src="https://res.cloudinary.com/itgenius/image/upload/v1688916294/playstore_dhgusr.png"
 											alt="Google Playstore"
 										/>
 									</a>
 									<a href="#">
 										<img
 											style={{ width: 130 }}
-											src="https://kodoscholarships.com/img/appstore.png"
+											src="https://res.cloudinary.com/itgenius/image/upload/v1688916298/appstore_rrkppm.png"
 											alt="Appstore"
 										/>
 									</a>
@@ -112,7 +112,6 @@ const Footer = () => {
 			>
 				<div className="container">
 					<div className="row align-items-center">
-						
 						<div
 							style={{ color: "#d2d4d7", textAlign: "center" }}
 							className="col-lg-4 text-center mx-auto"
