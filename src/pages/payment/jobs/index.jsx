@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import PaymentCardJobs from "../../../components/PaymentPlans/jobs";
+import axiosInstance from "../../../api/axiosInstance";
 
 export default function PaymentJobs() {
 	const [plans, setPlans] = useState();
@@ -12,9 +12,7 @@ export default function PaymentJobs() {
 	const getPlans = async () => {
 		setLoading(true);
 		try {
-			const { data } = await axios.get(
-				"https://demo.kodoscholarships.com/api/v1/payment/plans"
-			);
+			const { data } = await axiosInstance.get("/payment/plans");
 			setPlans(data.data);
 		} catch (error) {
 			throw error;
@@ -68,8 +66,8 @@ export default function PaymentJobs() {
 								className=""
 								style={{
 									display: "flex",
-									flexWrap: "nowrap", // Prevent cards from wrapping to a new line
-									margin: isSm ? "10px 0" : "", // Apply margin to this container
+									flexWrap: "nowrap", 
+									margin: isSm ? "10px 0" : "", 
 									overflowX: isSm ? "auto" : ""
 								}}
 							>

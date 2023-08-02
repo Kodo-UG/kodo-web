@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateFormData } from "../../../toolkit/formReducer";
@@ -9,6 +8,7 @@ import { Select } from "antd";
 import { AiOutlineDown } from "react-icons/ai";
 import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { useHistory } from "react-router-dom";
+import axiosInstance from "../../../api/axiosInstance";
 const { Option } = Select;
 
 const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
@@ -20,11 +20,10 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 	const history = useHistory();
 	const dispatch = useDispatch();
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const fetchData = async () => {
 		try {
-			const { data } = await axios.get(
-				`https://demo.kodoscholarships.com/api/v1/scholarship/categories/${scholarshipcategory}`
+			const { data } = await axiosInstance.get(
+				`/scholarship/categories/${scholarshipcategory}`
 			);
 			setData(data.data.categories);
 		} catch (error) {
@@ -161,12 +160,9 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 									style={{
 										border: "none",
 										borderRadius: "2rem",
-										// fontSize: "40px",
 										display: "block",
-										// fontSize: "16px",
 										fontWeight: "500",
 										letterSpacing: "0",
-										// lineHeight: "28px",
 										padding: "5px",
 										textAlign: "left",
 										textTransform: "capitalize",
@@ -176,7 +172,6 @@ const StepThree = ({ nextStep, prevStep, formData, setFormData }) => {
 									<h4
 										style={{ color: "#00234a", borderRadius: "2rem" }}
 										className="text"
-										// onClick={history.push("/educationlevel")}
 									>
 										<Link to="/educationlevel">{option}</Link>
 									</h4>

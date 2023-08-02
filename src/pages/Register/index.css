@@ -16,9 +16,7 @@
     .pr{
         font-size: .9rem;
     }
-    /* .slide{
-        margin-top: 5rem;
-    } */
+    
 }
 
 @media (min-width: 795px){
@@ -215,26 +213,7 @@ padding: 1.188rem;
         padding-left: 0;
         padding-right: 0;
       }
-    /* .mobile-menu-list {
-      height: 380px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .mobile-menu-list li {
-      text-transform: lowercase;
-      padding-top: 0;
-      margin-bottom: 1px;
-      padding-bottom: 0;
-      color: grey;
-    } */
-  
+   
   }
   
-  /* @media (max-width: 991px) {
-    .second-menu {
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-    }
-  } */
+  

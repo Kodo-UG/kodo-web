@@ -86,15 +86,12 @@ const Jobs = () => {
 							</div>
 							<div
 								style={{
-									// height: "100%",
 
 									width: "100rem",
 									padding: "0.5rem",
 									display: "flex",
 									flexDirection: "column",
-									//   alignItems: "center",
 									justifyContent: "center"
-									//   background: "red",
 								}}
 							>
 								<p
@@ -105,7 +102,6 @@ const Jobs = () => {
 										fontWeight: "bold",
 										marginTop: isSm ? "1rem" : "",
 										marginBottom: isSm ? "-0.1rem" : ""
-										// letterSpacing: "1px"
 									}}
 								>
 									1,500 Jobs In Matches
@@ -120,7 +116,6 @@ const Jobs = () => {
 										fontWeight: 500,
 										textAlign: "justify",
 										color: "#000",
-										// marginBottom: isSm ? "" : "-0.8rem",
 										justifyContent: "space-between"
 									}}
 								>
@@ -141,14 +136,12 @@ const Jobs = () => {
 							</div>
 						</div>
 
-						{/* end of card */}
 						<div
 							style={{
 								fontWeight: 300,
 								fontSize: "30px",
 								margin: "5px",
 								padding: "10px",
-								// width: "100%",
 								fontFamily: "Poppins",
 								lineHeight: "45px"
 							}}

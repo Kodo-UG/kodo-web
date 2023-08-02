@@ -9,7 +9,7 @@ function LoginComponent() {
 				marginTop: "10px",
 				marginBottom: "40px",
 				justifyContent: "space-between",
-				flexDirection: "row",
+				flexDirection: "row"
 			}}
 		>
 			<div>
@@ -25,6 +25,7 @@ function LoginComponent() {
 					alignItems: "center",
 					justifyContent: "space-between",
 					flexDirection: "row",
+					cursor: "pointer"
 				}}
 			>
 				<Link
@@ -34,7 +35,7 @@ function LoginComponent() {
 						transition:
 							"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
 						fontFamily: "Arial, sans-serif",
-						fontSize: "24px",
+						fontSize: "24px"
 					}}
 				>
 					Login |{" "}
@@ -46,7 +47,7 @@ function LoginComponent() {
 						transition:
 							"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
 						fontFamily: "Arial, sans-serif",
-						fontSize: "24px",
+						fontSize: "24px"
 					}}
 				>
 					Sign up

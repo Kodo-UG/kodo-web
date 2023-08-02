@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import "./custom.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BiEnvelope } from "react-icons/bi";
 import { CiLock } from "react-icons/ci";
+import axiosInstance from "../../api/axiosInstance";
 export default function Login() {
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
@@ -21,10 +21,10 @@ export default function Login() {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			const data = await axios.post(
-				"https://demo.kodoscholarships.com/api/v1/auth/login",
-				{ email, password }
-			);
+			const data = await axiosInstance.post("/auth/login", {
+				email,
+				password
+			});
 			if (data.status == "201") {
 				localStorage.setItem("userData", JSON.stringify(data.data));
 				displaySuccessMessage("Login successful");

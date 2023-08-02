@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 function CardSection() {
   return (
     <section>
-      <div class="container ">
-        <div class="row " style={{
+      <div className="container ">
+        <div className="row " style={{
 			marginTop: "0.5rem"
 		}}>
-          <div class="col-lg-4 col-md-12 col-sm-12">
-            <div class="services-box07">
-              <div class="sr-contner">
-                <div class="icon">
+          <div className="col-lg-4 col-md-12 col-sm-12">
+            <div className="services-box07">
+              <div className="sr-contner">
+                <div className="icon">
                   <img
                     style={{ width: "30px", marginLeft: "15px" }}
                     src="https://res.cloudinary.com/itgenius/image/upload/v1688910165/sve-icon4_wj25fd.png"
                     alt="icon01"
                   />
                 </div>
-                <div class="text">
+                <div className="text">
                   <h5 style={{ fontSize: "23px" }}>
                     <a href="/aboutus">Start Your New Career</a>
                   </h5>
@@ -34,23 +34,23 @@ function CardSection() {
                     their dreams and reach their full potential.
                   </p>
                   <Link to="/aboutus">
-                    Read More <i class="fal fa-long-arrow-right"></i>
+                    Read More <i className="fal fa-long-arrow-right"></i>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-12 col-sm-12">
-            <div class="services-box07 active">
-              <div class="sr-contner">
-                <div class="icon">
+          <div className="col-lg-4 col-md-12 col-sm-12">
+            <div className="services-box07 active">
+              <div className="sr-contner">
+                <div className="icon">
                   <img
                     style={{ width: "30px", marginLeft: "15px" }}
                     src="https://res.cloudinary.com/itgenius/image/upload/v1688910165/sve-icon5_isymhj.png"
                     alt="icon01"
                   />
                 </div>
-                <div class="text">
+                <div className="text">
                   <h5>
                     <Link to="/aboutus">Scholarship Programs</Link>
                   </h5>
@@ -66,24 +66,24 @@ function CardSection() {
                     today and start matching with scholarships in minutes.
                   </p>
                   <Link to="/aboutus">
-                    Read More <i class="fal fa-long-arrow-right"></i>
+                    Read More <i className="fal fa-long-arrow-right"></i>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-12 col-sm-12">
-            <div class="services-box07">
-              <div class="sr-contner">
-                <div class="icon">
+          <div className="col-lg-4 col-md-12 col-sm-12">
+            <div className="services-box07">
+              <div className="sr-contner">
+                <div className="icon">
                   <img
                     style={{ width: "30px", marginLeft: "15px" }}
                     src="https://res.cloudinary.com/itgenius/image/upload/v1688910165/sve-icon6_xunnnu.png"
                     alt="icon01"
                   />
                 </div>
-                <div class="text">
+                <div className="text">
                   <h5>
                     <Link to="/aboutus">Career Opportunities</Link>
                   </h5>
@@ -99,7 +99,7 @@ function CardSection() {
                     career with global remote job opportunities
                   </p>
                   <a href="/">
-                    Read More <i class="fal fa-long-arrow-right"></i>
+                    Read More <i className="fal fa-long-arrow-right"></i>
                   </a>
                 </div>
               </div>

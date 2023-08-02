@@ -8,7 +8,6 @@ const CombinedJobs = ({ path }) => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [newPath, setNewPath] = useState("");
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const getJobs = async () => {
@@ -92,31 +91,6 @@ const CombinedJobs = ({ path }) => {
 						/>
 					)
 				)}
-
-				{/* {!subscription &&
-					data?.map((dta) => (
-						<CardScholarship
-							key={dta.id}
-							award={dta.award}
-							deadline={dta.deadline}
-							subscription={subscription}
-							text="jobs"
-							type="Salary"
-						/>
-					))}
-				{subscription &&
-					data?.map((dta) => (
-						<CardScholarshipSubscribed
-							key={dta.id}
-							award={dta.award}
-							deadline={dta.deadline}
-							subscription={subscription}
-							cardTitle={dta.title}
-							id={dta._id}
-							link={dta.link}
-							about={dta.about}
-						/>
-					))} */}
 			</div>
 		</div>
 	);

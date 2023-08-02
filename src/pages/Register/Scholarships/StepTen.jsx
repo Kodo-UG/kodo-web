@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearFormData, updateFormData } from "../../../toolkit/formReducer";
 import api from "../../../api/apiClient";
 import { Input } from "antd";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
 import {
 	displayErrorMessage,
-	displaySuccessMessage,
+	displaySuccessMessage
 } from "../../../utils/Toast";
+import axiosInstance from "../../../api/axiosInstance";
 const { TextArea } = Input;
 
 const StepTen = ({ nextStep, prevStep }) => {
@@ -20,21 +20,16 @@ const StepTen = ({ nextStep, prevStep }) => {
 
 	const handleCodeChange = (e) => {
 		const { name, value } = e.target;
-		
-		
+
 		setCode(value);
-		// Dispatch an action to update the form data in the Redux store
 	};
 
 	const verifyEmail = async () => {
 		try {
-			let response = await axios.post(
-				"https://demo.kodoscholarships.com/api/v1/auth/account/verification",
-				{
-					id: userID,
-					code: code,
-				}
-			);
+			let response = await axiosInstance.post("/auth/account/verification", {
+				id: userID,
+				code: code
+			});
 			if (response.status == "201") {
 				displaySuccessMessage("Account verified successfully");
 				history.push("/signin");
@@ -42,8 +37,7 @@ const StepTen = ({ nextStep, prevStep }) => {
 				displayErrorMessage("Invalid code ");
 			}
 		} catch (error) {
-			throw error 
-
+			throw error;
 		}
 	};
 
@@ -56,7 +50,7 @@ const StepTen = ({ nextStep, prevStep }) => {
 				marginTop: "10px",
 				marginBottom: "20px",
 				justifyContent: "center",
-				flexDirection: "column",
+				flexDirection: "column"
 			}}
 		>
 			<span
@@ -73,7 +67,7 @@ const StepTen = ({ nextStep, prevStep }) => {
 					justifyContent: "space-between",
 					marginTop: "10px",
 					marginBottom: "40px",
-					alignItems: "center",
+					alignItems: "center"
 				}}
 			>
 				<div style={{ marginTop: "20px", marginBottom: "20px" }}>
@@ -95,7 +89,7 @@ const StepTen = ({ nextStep, prevStep }) => {
 								fontSize: "16px",
 								lineHeight: "1.5",
 								color: "#333",
-								backgroundColor: "#fff",
+								backgroundColor: "#fff"
 							}}
 						/>
 					</div>
@@ -119,10 +113,10 @@ const StepTen = ({ nextStep, prevStep }) => {
 						lineHeight: "1.5",
 						color: "#fff",
 						cursor: "pointer",
-						marginBottom: "4px",
+						marginBottom: "4px"
 					}}
 				>
-					{loading ? "Verifying...." : "Verify Email"}
+					{loading ? "Verifying..." : "Verify Email"}
 				</button>
 			</div>
 		</div>

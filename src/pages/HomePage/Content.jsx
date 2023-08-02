@@ -13,19 +13,11 @@ function Content() {
 				<div className="row">
 					<div className="col-lg-7 col-md-7 slide">
 						<div className="p-4 text-white" style={{ opacity: "0.9" }}>
-							{/* <h5
-								data-animation="fadeInUp"
-								data-delay=".4s"
-								className="mb-4"
-								style={{ fontSize: "1.5rem" }}
-							>
-								Welcome To Kodo
-							</h5> */}
+						
 							<h2
 								data-animation="fadeInUp"
 								data-delay=".4s"
 								className="font-weight-bold  mb-4 h"
-								// style={{ fontSize: "3rem", color: "#fff" }}
 							>
 								Find Life Changing Scholarships Made For You
 							</h2>

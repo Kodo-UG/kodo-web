@@ -4,7 +4,6 @@ import apiClient from "../../api/apiClient";
 import axios from "axios";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import CustomInput from "../../components/input";
-// import LoginComponent from "../Login/LoginComponent ";
 import LoginComponent from "../Login/LoginComponent";
 import Forgot from "./Forgot";
 import { BiEnvelope } from "react-icons/bi";
@@ -119,21 +118,7 @@ export default function ForgotPassword() {
 									</div>
 								</div>
 
-								{/* 
-
-                <div className="form-group">
-                  <div className="fxt-transformY-50 fxt-transition-delay-1">
-                    <input
-                      id="email"
-                      type="email"
-                      className="form-control"
-                      placeholder="Email Address"
-                      name="email"
-                      onChange={handleChange(setEmail)}
-                    />
-                    <i className="flaticon-envelope"></i>
-                  </div>
-                </div> */}
+							
 
 								<div className="form-group">
 									<div className="fxt-transformY-50 fxt-transition-delay-3">
