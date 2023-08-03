@@ -9,6 +9,8 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BiRefresh } from "react-icons/bi";
 import axiosInstance from "../../../api/axiosInstance";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const CombinedScholarshipCard = React.lazy(() =>
 	import("./CombinedScholarshipCard")
@@ -19,11 +21,22 @@ const Scholarship = () => {
 	const history = useHistory();
 	const ifnx = JSON.parse(localStorage.getItem("userData"));
 
-	console.log(ifnx.user.appType);
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const isMd = useMediaQuery(
 		"only screen and (min-width : 700px) and (max-width : 1250px)"
 	);
+
+	const [jobCount, setJobCount] = useState(20800);
+
+	useEffect(() => {
+		const updateJobCount = () => {
+			setJobCount((prevCount) => prevCount + 1);
+		};
+
+		const intervalId = setInterval(updateJobCount, 3600000); // 1 hour = 3600000 milliseconds
+
+		return () => clearInterval(intervalId);
+	}, []);
 
 	const { data, isLoading, isError, refetch } = useQuery(
 		"/scholarship",
@@ -99,7 +112,7 @@ const Scholarship = () => {
 										marginBottom: isSm ? "-0.1rem" : ""
 									}}
 								>
-									$20,500 In Matches
+									{jobCount.toLocaleString()} In Matches
 								</p>
 								<p
 									style={{

@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { AiOutlineLogout, AiOutlineBell } from "react-icons/ai";
-import moment from "moment";
 import { Dropdown, Affix, Space } from "antd";
 import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
 import { HiMenuAlt1 } from "react-icons/hi";
 import axiosInstance from "../../api/axiosInstance";
 import { useQuery, useQueryClient } from "react-query"; // Import React Query hooks
-
+import { useDispatch } from "react-redux";
+import { clearScholarships } from "../../toolkit/scholarshipReducer";
 const MyHeader = () => {
   const history = useHistory();
   const queryClient = useQueryClient(); // Get the queryClient instance
   const [isPushMenuVisible, setPushMenuVisible] = useState(false);
-
+   const dispatch = useDispatch()
   const togglePushMenu = () => {
     setPushMenuVisible(!isPushMenuVisible);
   };
@@ -81,6 +81,7 @@ const MyHeader = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userData");
     queryClient.clear(); // Clear the entire cache
+    dispatch(clearScholarships())
     history.push("/login");
   };
 

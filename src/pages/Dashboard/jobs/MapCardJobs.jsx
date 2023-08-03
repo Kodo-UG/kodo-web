@@ -30,9 +30,7 @@ const MapCardJobs = ({ path }) => {
 	}, []);
 
 	const handleClick = () => {
-		// Implement the logic for registering for jobs here
-		// For example, you can navigate to a registration page or handle the registration logic directly.
-		alert("You are now registering for jobs!");
+		console.log("You are now registering for jobs!");
 	};
 
 	const truncateText = (text, maxWords) => {
@@ -47,8 +45,9 @@ const MapCardJobs = ({ path }) => {
 	return (
 		<div style={{ width: "100%", marginBottom: "20rem" }}>
 			{newJob === false ? (
-				<button onClick={handleClick}>Register for Jobs</button>
+				""
 			) : (
+				// <button onClick={handleClick}>Register for Jobs</button>
 				<>
 					{loading ? (
 						<div
