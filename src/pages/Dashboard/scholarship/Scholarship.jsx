@@ -1,44 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { Suspense, lazy } from "react";
+import { useQuery } from "react-query";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import CombinedScholarshipCard from "./CombinedScholarshipCard";
-import MapCardData from "./MapCardData";
+
 import { Button } from "antd";
-import axiosInstance from "../../../api/axiosInstance";
 import { MdArrowForwardIos } from "react-icons/md";
 import { SiFiles } from "react-icons/si";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { BiRefresh } from "react-icons/bi";
+import axiosInstance from "../../../api/axiosInstance";
+
+const CombinedScholarshipCard = React.lazy(() =>
+	import("./CombinedScholarshipCard")
+);
+const MapCardData = React.lazy(() => import("./MapCardData"));
 
 const Scholarship = () => {
-	const [data, setData] = useState([]);
-	const [subscription, setSubscription] = useState(false);
-	const [loading, setLoading] = useState(false);
-
 	const history = useHistory();
+	const ifnx = JSON.parse(localStorage.getItem("userData"));
 
+	console.log(ifnx.user.appType);
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const isMd = useMediaQuery(
 		"only screen and (min-width : 700px) and (max-width : 1250px)"
 	);
 
-	const getScholarship = async () => {
-		setLoading(true);
+	const { data, isLoading, isError, refetch } = useQuery(
+		"/scholarship",
+		getScholarship
+	);
+
+	async function getScholarship() {
 		try {
-			let res = await axiosInstance.get("/scholarship");
-
-			setData(res.data.data);
-			setSubscription(res.data.subscription);
+			const res = await axiosInstance.get("/scholarship");
+			return res?.data;
 		} catch (error) {
-			console.log(error);
-		} finally {
-			setLoading(false);
+			throw new Error(error.message || "Failed to fetch scholarships");
 		}
-	};
-
-	useEffect(() => {
-		getScholarship();
-	}, []);
+	}
 
 	return (
 		<div>
@@ -57,7 +56,7 @@ const Scholarship = () => {
 						<div
 							onClick={() => history.push("/profile")}
 							style={{
-								width: isSm ? "100%" : "" | isMd ? "50%" : "35%",
+								width: isSm ? "100%" : isMd ? "50%" : "35%",
 								background: "white",
 								display: "flex",
 								marginTop: "4rem",
@@ -83,15 +82,11 @@ const Scholarship = () => {
 							</div>
 							<div
 								style={{
-									// height: "100%",
-
 									width: "100rem",
 									padding: "0.5rem",
 									display: "flex",
 									flexDirection: "column",
-									//   alignItems: "center",
 									justifyContent: "center"
-									//   background: "red",
 								}}
 							>
 								<p
@@ -102,10 +97,9 @@ const Scholarship = () => {
 										fontWeight: "bold",
 										marginTop: isSm ? "1rem" : "",
 										marginBottom: isSm ? "-0.1rem" : ""
-										// letterSpacing: "1px"
 									}}
 								>
-									$14,500 In Matches
+									$20,500 In Matches
 								</p>
 								<p
 									style={{
@@ -117,13 +111,12 @@ const Scholarship = () => {
 										fontWeight: 500,
 										textAlign: "justify",
 										color: "#000",
-										// marginBottom: isSm ? "" : "-0.8rem",
 										justifyContent: "space-between"
 									}}
 								>
 									Update your profile to match to more
 									<MdArrowForwardIos />
-								</p>{" "}
+								</p>
 								<p
 									style={{
 										fontFamily: "Poppins",
@@ -138,26 +131,33 @@ const Scholarship = () => {
 							</div>
 						</div>
 
-						{/* end of card */}
 						<div
 							style={{
 								fontWeight: 300,
 								fontSize: "30px",
 								margin: "5px",
 								padding: "10px",
-								// marginTop: "3rem",
 								fontFamily: "Poppins",
 								lineHeight: "45px"
 							}}
 						>
-							{data.length < 0 ? (
+							{isError ? (
 								<div
 									style={{
 										letterSpacing: "2px",
 										color: "rgb(74,74,74)"
 									}}
 								>
-									No Available scholarships for this program
+									Error: Failed to fetch scholarships
+								</div>
+							) : isLoading ? (
+								<div
+									style={{
+										letterSpacing: "2px",
+										color: "rgb(74,74,74)"
+									}}
+								>
+									Loading...
 								</div>
 							) : (
 								<div
@@ -167,50 +167,49 @@ const Scholarship = () => {
 										fontSize: isSm ? "1.6rem" : ""
 									}}
 								>
-									Latest Scholarships <br />
-									<span
-										style={{
-											display: "flex",
-											justifyContent: "center",
-											alignItems: "center",
-											cursor: "pointer",
-											color: "#fff",
-											backgroundColor: "#1c2755",
-											fontSize: "1.5rem"
-										}}
-										onClick={() => window.location.reload()}
-									>
-										{" "}
-										Refresh <BiRefresh />
-									</span>
+									{!ifnx.user.appType ||
+									ifnx.user.appType !== "scholarship"
+										? " "
+										: "Latest Scholarships"}
+									<br />
+									{!ifnx.user.appType ||
+									ifnx.user.appType !== "scholarship" ? (
+										<span
+											style={{
+												display: "flex",
+												justifyContent: "center",
+												alignItems: "center",
+												cursor: "pointer",
+												color: "#fff",
+												backgroundColor: "#1c2755",
+												fontSize: "1.5rem",
+												padding: "0 9px"
+											}}
+											onClick={() => history.push("/stepper")}
+										>
+											Register for scholarships
+										</span>
+									) : (
+										<span
+											style={{
+												display: "flex",
+												justifyContent: "center",
+												alignItems: "center",
+												cursor: "pointer",
+												color: "#fff",
+												backgroundColor: "#1c2755",
+												fontSize: "1.5rem"
+											}}
+											onClick={() => refetch()}
+										>
+											Refresh <BiRefresh />
+										</span>
+									)}
 								</div>
 							)}
 						</div>
 						{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
 					</div>
-					{/* <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: "1rem",
-            }}
-          >
-            {count < totalPages && (
-              <Button
-                style={{
-                  width: "12rem",
-                  backgroundColor: "#1d2755",
-                  color: "#fff",
-                  fontWeight: "bold",
-                  marginBottom: "3rem",
-                }}
-                onClick={() => handleFetchMore()}
-              >
-                {loading ? "loading...." : "Load More"}
-              </Button>
-            )}
-          </div> */}
 				</section>
 			</div>
 		</div>

@@ -20,11 +20,11 @@ const Jobs = () => {
 		"only screen and (min-width : 700px) and (max-width : 1250px)"
 	);
 
-	const getScholarship = async () => {
+	const fetchJobs = async () => {
 		setLoading(true);
 		try {
-			let res = await axiosInstance.get("/scholarship");
-
+			const res = await axiosInstance.get("/job");
+			console.log(res, "+++++++");
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
@@ -35,12 +35,12 @@ const Jobs = () => {
 	};
 
 	useEffect(() => {
-		const currentPath = window.location.pathname;
-		setNewPath(currentPath);
+		fetchJobs();
 	}, []);
 
 	useEffect(() => {
-		getScholarship();
+		const currentPath = window.location.pathname;
+		setNewPath(currentPath);
 	}, []);
 
 	return (
@@ -86,7 +86,6 @@ const Jobs = () => {
 							</div>
 							<div
 								style={{
-
 									width: "100rem",
 									padding: "0.5rem",
 									display: "flex",
@@ -104,7 +103,7 @@ const Jobs = () => {
 										marginBottom: isSm ? "-0.1rem" : ""
 									}}
 								>
-									1,500 Jobs In Matches
+									15,500 Jobs In Matches
 								</p>
 								<p
 									style={{
@@ -131,7 +130,7 @@ const Jobs = () => {
 										marginTop: isSm ? "-1rem" : ""
 									}}
 								>
-									Jobs.
+									Jobs
 								</p>
 							</div>
 						</div>
@@ -153,7 +152,7 @@ const Jobs = () => {
 										color: "rgb(74,74,74)"
 									}}
 								>
-									No Available scholarships for this program
+									No Available Jobs
 								</div>
 							) : (
 								<div
