@@ -12,7 +12,7 @@ import "./index.css";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
-persistor.purge();
+// persistor.purge();
 
 const queryClient = new QueryClient();
 ReactDOM.render(
