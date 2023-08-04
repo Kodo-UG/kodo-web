@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
+import {IoMdClose} from "react-icons/io";
 
 const Menu = ({ setShowContent }) => {
 	const [activeButton, setActiveButton] = useState(null);
@@ -38,7 +39,15 @@ const Menu = ({ setShowContent }) => {
 					}`}
 					style={{ backgroundColor: "#1c2755" }}
 				>
-					<Link to="/" className="brand-link ">
+					<div className="" style={{
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "space-between",
+						paddingLeft: "2rem",
+						paddingRight: "2rem",
+					}}>
+					<div>
+					<Link to="/" className="brand-lin bg-primar">
 						<img
 							style={{
 								width: "4rem",
@@ -50,7 +59,7 @@ const Menu = ({ setShowContent }) => {
 							alt="kodo Logo"
 							className="brand-image"
 						/>
-						<span
+						{/* <span
 							style={{
 								fontSize: "15px",
 								color: "#125875",
@@ -59,8 +68,11 @@ const Menu = ({ setShowContent }) => {
 							className="brand-text font-weight-light"
 						>
 							.{" "}
-						</span>
+						</span> */}
 					</Link>
+					</div>
+					<IoMdClose size={20} style={{color: "red"}} data-widget="pushmenu"/>
+					</div>
 					<div style={{ backgroundColor: "#1c2755" }} className="sidebar">
 						<nav className="mt-2">
 							<ul
