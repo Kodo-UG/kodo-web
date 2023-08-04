@@ -90,7 +90,7 @@ const MapCardJobs = ({ path }) => {
 									award={dta.salary}
 									formatDate={dta.deadline}
 									type="Salary"
-									path={path}
+									path="/jobs"
 								/>
 							)
 						)

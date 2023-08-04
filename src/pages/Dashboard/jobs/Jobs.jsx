@@ -21,7 +21,7 @@ const Jobs = () => {
 			setJobCount((prevCount) => prevCount + 1);
 		};
 
-		const intervalId = setInterval(updateJobCount, 3600000); // 1 hour = 3600000 milliseconds
+		const intervalId = setInterval(updateJobCount, 36000); // 1 hour = 3600000 milliseconds
 
 		return () => clearInterval(intervalId);
 	}, []);
