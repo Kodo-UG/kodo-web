@@ -13,17 +13,8 @@ const PaymentCardJobs = ({ data }) => {
 	const { details } = data;
 	const history = useHistory();
 	const [dataUser, setDataUser] = useState();
-	// const [amount, setAmount] = useState();
-	// const [curr, setCurr] = useState("USD");
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
-	// const isMd = useMediaQuery(
-	//   "only screen and (min-width : 700px) and (max-width : 1250px)"
-	// );
-	// const isLg = useMediaQuery(
-	//   "only screen and (min-width : 993px) and (max-width : 1200px)"
-	// );
-	// const isXl = useMediaQuery("only screen and (min-width : 1201px)");
 
 	useEffect(() => {
 		setDataUser(JSON.parse(localStorage.getItem("userData")));
@@ -36,7 +27,7 @@ const PaymentCardJobs = ({ data }) => {
 		tx_ref: Date.now(),
 		amount: dataInfo.result,
 		currency: dataInfo.convertTo,
-		payment_options: "card,mobilemoney,ussd",
+		payment_options: "card,mobilemoney,ussd,banktransfer,barter,visaqrcode,masterpassqrcode,bankaccount",
 		customer: {
 			email: `${dataUser?.user.email}`,
 			phone_number: `${dataUser?.user.phone}`,
@@ -70,10 +61,10 @@ const PaymentCardJobs = ({ data }) => {
 
 			if (response.status == "201" && status == "successful") {
 				displaySuccessMessage("Subscription successful");
-				history.push("/jobs");
+				history.push("/scholars");
 			} else {
 				displayErrorMessage("Subscription failed try again later");
-				history.push("/jobs");
+				history.push("/scholars");
 			}
 		} catch (error) {
 			throw error;
