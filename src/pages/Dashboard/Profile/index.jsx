@@ -6,8 +6,7 @@ import Menu from "../Menu";
 const MainProfile = () => {
 	return (
 		<>
-			<MyHeader />
-			<Menu />
+		
 			<Profile />
 		</>
 	);
