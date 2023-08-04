@@ -46,9 +46,9 @@ function CardScholarshipSubscribed({
 				justifyContent: "space-between",
 				background: "white",
 				borderRadius: "0.5rem",
-				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
 				cursor: "pointer",
-				marginLeft: isSm ? "-5rem" : "",
+				marginLeft: isSm ? "-3rem" : "",
 				marginBottom: "3rem",
 				fontFamily: "Arial, sans-serif"
 			}}
@@ -302,7 +302,7 @@ function CardScholarshipSubscribed({
 						justifyContent: "center"
 					}}
 				>
-					<div
+					<a
 						href={`${link}`}
 						style={{
 							backgroundColor: "#ec1d64",
@@ -314,7 +314,7 @@ function CardScholarshipSubscribed({
 						}}
 					>
 						Apply
-					</div>
+					</a>
 				</div>
 			</Modal>
 		</div>

@@ -43,11 +43,9 @@ const LargeCardNotPaid = ({
 					backgroundColor: "#fff",
 					height: "12rem",
 					borderRadius: ".3rem",
-					// marginTop: "1rem",
 
 					boxShadow: "0 5px 10px rgba(0,0,0,0.10)",
 					cursor: "pointer",
-					// padding: "4px",
 					width: isMd ? "70%" : "65%",
 					marginLeft: isLg
 						? "16rem"
@@ -60,7 +58,6 @@ const LargeCardNotPaid = ({
 				}}
 				onClick={() => destinationPath()}
 			>
-				{/* left div */}
 				<div
 					style={{
 						height: "100%",

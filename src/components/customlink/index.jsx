@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom"
 const CustomLink = ({ route, children }) => {
 	return (
 		<div>
@@ -11,8 +11,8 @@ const CustomLink = ({ route, children }) => {
 				}}
 				className=""
 			>
-				<a
-					href={`${route}`}
+				<Link
+					to={`${route}`}
 					style={{
 						color: "#162542",
 						fontFamily: "Jost, sans-serif",
@@ -21,7 +21,7 @@ const CustomLink = ({ route, children }) => {
 					}}
 				>
 					{children}
-				</a>
+				</Link>
 			</li>
 		</div>
 	);

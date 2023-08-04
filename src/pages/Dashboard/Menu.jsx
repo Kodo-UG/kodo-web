@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../api/axiosInstance";
 
-const Menu = ({setShowContent}) => {
+const Menu = ({ setShowContent }) => {
 	const [activeButton, setActiveButton] = useState(null);
 	const [data, setData] = useState();
 	const [sidebarVisible, setSidebarVisible] = useState(true);
@@ -15,19 +15,8 @@ const Menu = ({setShowContent}) => {
 		return activeButton === buttonName;
 	};
 
-	const token = localStorage.getItem("token");
-
 	const fetchNotifications = async () => {
-		const headers = {
-			Authorization: `Bearer ${token}`
-		};
-
-		let res = await axios.get(
-			"https://demo.kodoscholarships.com/api/v1/user/notifications",
-			{
-				headers
-			}
-		);
+		let res = await axiosInstance.get("/user/notifications");
 
 		setData(res.data.data);
 	};
@@ -54,7 +43,8 @@ const Menu = ({setShowContent}) => {
 							style={{
 								width: "4rem",
 								height: "4rem",
-								objectFit: "contain"
+								objectFit: "contain",
+								marginLeft: "-.1rem"
 							}}
 							src="https://res.cloudinary.com/itgenius/image/upload/v1688915710/logo-urayana_ap1o8i.png"
 							alt="kodo Logo"
@@ -79,7 +69,10 @@ const Menu = ({setShowContent}) => {
 								role="menu"
 								data-accordion="false"
 							>
-								<li className="nav-item " onClick={() =>setShowContent(0)}>
+								<li
+									className="nav-item "
+									onClick={() => setShowContent(0)}
+								>
 									<Link
 										onClick={() => handleActive("scholarships")}
 										to="/scholars"
@@ -108,7 +101,10 @@ const Menu = ({setShowContent}) => {
 									</Link>
 								</li>
 
-								<li className="nav-item" onClick={() =>setShowContent(0)}>
+								<li
+									className="nav-item"
+									onClick={() => setShowContent(0)}
+								>
 									<Link
 										onClick={() => handleActive("dashboard")}
 										to="/scholars"
@@ -132,7 +128,10 @@ const Menu = ({setShowContent}) => {
 									</Link>
 								</li>
 
-								<li className="nav-item" onClick={() => setShowContent(1)}>
+								<li
+									className="nav-item"
+									onClick={() => setShowContent(1)}
+								>
 									<Link
 										onClick={() => handleActive("favorites")}
 										to="/scholars"
@@ -159,7 +158,10 @@ const Menu = ({setShowContent}) => {
 									</Link>
 								</li>
 
-								<li className="nav-item" onClick={() => setShowContent(2)}>
+								<li
+									className="nav-item"
+									onClick={() => setShowContent(2)}
+								>
 									<Link
 										onClick={() => handleActive("jobs")}
 										to="/scholars"
@@ -187,9 +189,7 @@ const Menu = ({setShowContent}) => {
 								</li>
 							</ul>
 						</nav>
-						{/* /.sidebar-menu */}
 					</div>
-					{/* /.sidebar */}
 				</aside>
 			</div>
 		</div>

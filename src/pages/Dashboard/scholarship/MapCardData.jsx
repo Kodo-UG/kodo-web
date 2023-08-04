@@ -11,18 +11,14 @@ import { Spin } from "antd";
 const MapCardData = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
-	const [loading, setLoading] = useState(false); // Add loading state here
 
 	const getScholarship = async () => {
-		setLoading(true);
 		try {
 			const res = await axiosInstance.get("/scholarship");
-			setData(res.data.data);
+			setData(res?.data?.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
-			throw error;
-		} finally {
-			setLoading(false);
+			console.log(error);
 		}
 	};
 
@@ -31,7 +27,7 @@ const MapCardData = () => {
 			const res = await axiosInstance.post("/user/favourites", {
 				id: fav
 			});
-			if (res.status === 201) {
+			if (res.status == 201) {
 				displaySuccessNotification(`${res.data.message}`);
 			} else {
 				displayErrorNotification(`${res.data.message}`);
@@ -54,29 +50,20 @@ const MapCardData = () => {
 		getScholarship();
 	}, []);
 
-	if (loading) {
-		return (
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					marginTop: "9rem"
-				}}
-			>
-				<img
-					style={{
-						width: "7rem ",
-						height: "7rem",
-						justifyContent: "center",
-						alignItems: "center"
-					}}
-					src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
-					alt="middle"
-				/>{" "}
-			</div>
-		);
-	}
+	// if (data.length == 0) {
+	// 	return (
+	// 		<div
+	// 			style={{
+	// 				display: "flex",
+	// 				justifyContent: "center",
+	// 				alignItems: "center",
+	// 				marginTop: "9rem"
+	// 			}}
+	// 		>
+	// 			<Spin size="large" />
+	// 		</div>
+	// 	);
+	// }
 
 	return (
 		<div style={{ width: "100%", marginBottom: "20rem" }}>
@@ -106,7 +93,6 @@ const MapCardData = () => {
 							type="Award"
 						/>
 				  ))}
-			{!data ? <button>Reload now</button> : null}
 		</div>
 	);
 };
