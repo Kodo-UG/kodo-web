@@ -26,13 +26,10 @@ const RootScholarship = () => {
   };
   console.log(showContent);
   return (
-    <div className="wrappe" >
+    <div className="wrappe">
       <MyHeader setShowContent={setShowContent} />
       <Menu setShowContent={setShowContent} />
-	  <div data-widget="pushmenu">
-	  {renderContent()}
-	  </div>
-     
+      <div data-widget="pushmenu">{renderContent()}</div>
 
       <Footer />
     </div>
