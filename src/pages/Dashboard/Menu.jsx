@@ -115,7 +115,11 @@ const Menu = ({ setShowContent }) => {
                 role="menu"
                 data-accordion="false"
               >
-                <li className="nav-item " onClick={() => setShowContent(0)}>
+                <li
+                  className="nav-item "
+                  onClick={() => setShowContent(0)}
+                  data-widget="pushmenu"
+                >
                   <Link
                     onClick={() => handleActive("scholarships")}
                     to="/scholars"
@@ -139,7 +143,11 @@ const Menu = ({ setShowContent }) => {
                   </Link>
                 </li>
 
-                <li className="nav-item" onClick={() => setShowContent(0)}>
+                <li
+                  className="nav-item"
+                  onClick={() => setShowContent(0)}
+                  data-widget="pushmenu"
+                >
                   <Link
                     onClick={() => handleActive("dashboard")}
                     to="/scholars"
@@ -160,7 +168,11 @@ const Menu = ({ setShowContent }) => {
                   </Link>
                 </li>
 
-                <li className="nav-item" onClick={() => setShowContent(1)}>
+                <li
+                  className="nav-item"
+                  onClick={() => setShowContent(1)}
+                  data-widget="pushmenu"
+                >
                   <Link
                     onClick={() => handleActive("favorites")}
                     to="/scholars"
@@ -187,7 +199,11 @@ const Menu = ({ setShowContent }) => {
                   </Link>
                 </li>
 
-                <li className="nav-item" onClick={() => setShowContent(2)}>
+                <li
+                  className="nav-item"
+                  onClick={() => setShowContent(2)}
+                  data-widget="pushmenu"
+                >
                   <Link
                     onClick={() => handleActive("jobs")}
                     to="/scholars"
