@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
-import {IoMdClose} from "react-icons/io";
+import {BsArrowLeft} from "react-icons/bs";
 
 const Menu = ({ setShowContent }) => {
 	const [activeButton, setActiveButton] = useState(null);
@@ -71,7 +71,7 @@ const Menu = ({ setShowContent }) => {
 						</span> */}
 					</Link>
 					</div>
-					<IoMdClose size={20} style={{color: "red"}} data-widget="pushmenu"/>
+					<BsArrowLeft size={20} style={{color: "red"}} data-widget="pushmenu"/>
 					</div>
 					<div style={{ backgroundColor: "#1c2755" }} className="sidebar">
 						<nav className="mt-2">
