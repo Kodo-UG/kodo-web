@@ -51,7 +51,6 @@ const Index = lazy(() => import("../src/pages/profile/index"));
 const Favorite = lazy(() => import("./pages/favorite"));
 
 const App = () => {
-
 	return (
 		<Suspense
 			fallback={
@@ -93,7 +92,7 @@ const App = () => {
 				<Route exact path="/JobStep2" component={JobStep2} />
 				<Route exact path="/JobStep3" component={JobStep3} />
 				<Route exact path="/policy" component={Policy} />
-				 {/* /<Route exact path="/jobs" component={Jobs} />  */}
+				{/* /<Route exact path="/jobs" component={Jobs} />  */}
 
 				<Route
 					exact
