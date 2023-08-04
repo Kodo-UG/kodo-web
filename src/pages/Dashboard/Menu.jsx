@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
 import {BsArrowLeft} from "react-icons/bs";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const Menu = ({ setShowContent }) => {
 	const [activeButton, setActiveButton] = useState(null);
@@ -29,7 +30,7 @@ const Menu = ({ setShowContent }) => {
 	const toggleSidebar = () => {
 		setSidebarVisible(!sidebarVisible);
 	};
-
+	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 	return (
 		<div>
 			<div>
@@ -43,17 +44,20 @@ const Menu = ({ setShowContent }) => {
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "space-between",
-						paddingLeft: "2rem",
-						paddingRight: "2rem",
+						paddingLeft: "1rem",
+						paddingRight: "1rem",
+						margin: "1rem"
 					}}>
 					<div>
 					<Link to="/" className="brand-lin bg-primar">
 						<img
 							style={{
-								width: "4rem",
-								height: "4rem",
+								width: "75px",
+								height: "",
 								objectFit: "contain",
-								marginLeft: "-.1rem"
+								marginLeft: "-.1rem",
+								
+
 							}}
 							src="https://res.cloudinary.com/itgenius/image/upload/v1688915710/logo-urayana_ap1o8i.png"
 							alt="kodo Logo"
@@ -71,7 +75,7 @@ const Menu = ({ setShowContent }) => {
 						</span> */}
 					</Link>
 					</div>
-					<BsArrowLeft size={20} style={{color: "red"}} data-widget="pushmenu"/>
+					{isSmallDevice ? (<BsArrowLeft size={20} style={{color: "red"}} data-widget="pushmenu"/>): (null)}
 					</div>
 					<div style={{ backgroundColor: "#1c2755" }} className="sidebar">
 						<nav className="mt-2">
