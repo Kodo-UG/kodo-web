@@ -29,7 +29,7 @@ const RootScholarship = () => {
     <div className="wrappe">
       <MyHeader setShowContent={setShowContent} />
       <Menu setShowContent={setShowContent} />
-      <div data-widget="pushmenu">{renderContent()}</div>
+      <div >{renderContent()}</div>
 
       <Footer />
     </div>
