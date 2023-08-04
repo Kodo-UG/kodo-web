@@ -46,7 +46,6 @@ const Favorite = () => {
 			} else {
 				displayErrorNotification(`${deleteRes.data.message}`);
 			}
-			// console.log(deleteRes);
 		} catch (error) {
 			console.log(error);
 		} finally {
@@ -75,7 +74,6 @@ const Favorite = () => {
 	};
 
 	if (loading) {
-		// Render a loading state while data is being fetched
 		return (
 			<div
 				style={{
@@ -114,7 +112,6 @@ const Favorite = () => {
 						  }
 				}
 			>
-				
 				<div
 					style={{
 						marginTop: "6rem",
@@ -144,16 +141,7 @@ const Favorite = () => {
 							marginLeft: isSm ? "" : "1rem"
 						}}
 					>
-						<h4
-							style={{
-								fontSize: "18px",
-								letterSpacing: "1.6px",
-								fontWeight: "300",
-								lineHeight: "27px"
-							}}
-						>
-							Start saving scholarships now!
-						</h4>
+						
 						<p
 							onClick={() => history.push("/scholars")}
 							style={{
@@ -164,7 +152,7 @@ const Favorite = () => {
 								color: "rgb(74,74,74)"
 							}}
 						>
-							Back to matches
+							You Have No! Favorites
 						</p>
 					</div>
 				) : (

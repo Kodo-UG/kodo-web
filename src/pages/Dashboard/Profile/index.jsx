@@ -1,13 +1,14 @@
 import React from "react";
-import MainDashboard from "../MainDash";
 import Profile from "../../profile";
+import MyHeader from "../Header";
+import Menu from "../Menu";
 
 const MainProfile = () => {
 	return (
 		<>
-			<MainDashboard>
-				<Profile />
-			</MainDashboard>
+			<MyHeader />
+			<Menu />
+			<Profile />
 		</>
 	);
 };
