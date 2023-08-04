@@ -10,7 +10,7 @@ const JobStep1 = ({ nextStep }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [onClickStyle, setOnClickStyle] = useState(false);
-  const [active, setActive] = useState(2)
+  const [active, setActive] = useState(2);
   const dispatch = useDispatch();
   const fetchJobCategories = async () => {
     setLoading(true);
@@ -28,14 +28,13 @@ const JobStep1 = ({ nextStep }) => {
     dispatch(updateJobData({ field: "jobcategory", value: id }));
 
     console.log(id);
-	// setActive(id)
+    // setActive(id)
     // try {
     // 	const res = await axiosInstance.post("");
     // } catch (error) {}
   };
   const handleStyle = (id) => {
-	setActive(id)
-
+    setActive(id);
   };
 
   useMemo(() => {
@@ -111,7 +110,7 @@ const JobStep1 = ({ nextStep }) => {
                   >
                     <path
                       d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"
-                      fill="white"
+                      fill="black"
                     ></path>
                   </svg>
                   <span className="_buttonText_pmptr_41">Back</span>
@@ -137,11 +136,13 @@ const JobStep1 = ({ nextStep }) => {
                         >
                           <div
                             className={`_optionInner_9bife_23  ${
-                              active === data._id ? "border border-secondary" : ""
+                              active === data._id
+                                ? "border border-secondary"
+                                : ""
                             }`}
-                            onClick={()=>{
-								
-								handleStyle(data._id)}}
+                            onClick={() => {
+                              handleStyle(data._id);
+                            }}
                           >
                             <input
                               id="As soon as possible"
