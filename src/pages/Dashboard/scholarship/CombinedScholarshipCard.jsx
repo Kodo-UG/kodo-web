@@ -17,7 +17,6 @@ const CombinedScholarshipCard = () => {
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
-			// Handle   error here
 			throw error;
 		} finally {
 			setLoading(false);
@@ -29,7 +28,6 @@ const CombinedScholarshipCard = () => {
 	}, []);
 
 	if (loading) {
-		// Render a loading state while data is being fetched
 		return (
 			<div
 				style={{
@@ -65,7 +63,6 @@ const CombinedScholarshipCard = () => {
 					alignItems: "center",
 					marginLeft: "2.5rem",
 					marginBottom: isSm ? "20rem" : ""
-					// width:"100%"
 				}}
 			>
 				{!subscription &&

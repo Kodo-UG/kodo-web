@@ -12,19 +12,32 @@ const Jobs = () => {
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [newPath, setNewPath] = useState("");
-
 	const history = useHistory();
+
+	const [jobCount, setJobCount] = useState(10700);
+
+	useEffect(() => {
+		const updateJobCount = () => {
+			setJobCount((prevCount) => prevCount + 1);
+		};
+
+		const intervalId = setInterval(updateJobCount, 36000); // 1 hour = 3600000 milliseconds
+
+		return () => clearInterval(intervalId);
+	}, []);
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const isMd = useMediaQuery(
 		"only screen and (min-width : 700px) and (max-width : 1250px)"
 	);
 
-	const getScholarship = async () => {
+	const job = JSON.parse(localStorage.getItem("userData"));
+	const newJob = job.user.jobAppType;
+
+	const fetchJobs = async () => {
 		setLoading(true);
 		try {
-			let res = await axiosInstance.get("/scholarship");
-
+			const res = await axiosInstance.get("/job");
 			setData(res.data.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
@@ -35,12 +48,12 @@ const Jobs = () => {
 	};
 
 	useEffect(() => {
-		const currentPath = window.location.pathname;
-		setNewPath(currentPath);
+		fetchJobs();
 	}, []);
 
 	useEffect(() => {
-		getScholarship();
+		const currentPath = window.location.pathname;
+		setNewPath(currentPath);
 	}, []);
 
 	return (
@@ -86,7 +99,6 @@ const Jobs = () => {
 							</div>
 							<div
 								style={{
-
 									width: "100rem",
 									padding: "0.5rem",
 									display: "flex",
@@ -104,7 +116,7 @@ const Jobs = () => {
 										marginBottom: isSm ? "-0.1rem" : ""
 									}}
 								>
-									1,500 Jobs In Matches
+									20,700 Jobs In Matches
 								</p>
 								<p
 									style={{
@@ -119,7 +131,7 @@ const Jobs = () => {
 										justifyContent: "space-between"
 									}}
 								>
-									Update your profile to match to more
+									{jobCount.toLocaleString()} Jobs In Matches
 									<MdArrowForwardIos />
 								</p>{" "}
 								<p
@@ -131,7 +143,7 @@ const Jobs = () => {
 										marginTop: isSm ? "-1rem" : ""
 									}}
 								>
-									Jobs.
+									Jobs
 								</p>
 							</div>
 						</div>
@@ -153,7 +165,7 @@ const Jobs = () => {
 										color: "rgb(74,74,74)"
 									}}
 								>
-									No Available scholarships for this program
+									No Available Jobs
 								</div>
 							) : (
 								<div
@@ -163,7 +175,19 @@ const Jobs = () => {
 										fontSize: isSm ? "1.6rem" : ""
 									}}
 								>
-									Latest Jobs
+									{newJob === false ? (
+										<div
+											style={{
+												cursor: "pointer",
+												fontSize: "1.2rem"
+											}}
+											onClick={() => history.push("/jobStep1")}
+										>
+											Register for jobs
+										</div>
+									) : (
+										"Latest Jobs"
+									)}
 								</div>
 							)}
 						</div>

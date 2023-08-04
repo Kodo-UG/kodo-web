@@ -4,6 +4,8 @@ import "./index.css";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useState } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
+import { clearScholarships } from "../../toolkit/scholarshipReducer";
+import { useDispatch } from "react-redux";
 
 const NavHeader = ({ open, setOpen }) => {
 	const history = useHistory();
@@ -11,6 +13,7 @@ const NavHeader = ({ open, setOpen }) => {
 	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
 
 	const smallClass = isSm ? "navbar-nav  ul" : "navbar-nav ml-auto ul";
+	const dispatch = useDispatch()
 
 	const handleReloadPage = () => {
 		window.location.reload();
@@ -257,6 +260,8 @@ const NavHeader = ({ open, setOpen }) => {
 										e.preventDefault();
 										localStorage.removeItem("token");
 										localStorage.removeItem("userData");
+										dispatch(clearScholarships())
+
 										history.push("/login");
 									}}
 								>
