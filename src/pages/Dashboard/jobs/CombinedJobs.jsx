@@ -87,7 +87,7 @@ const CombinedJobs = ({ path }) => {
 							deadline={dta.deadline}
 							text="jobs"
 							type="Salary"
-							path={path}
+							path="/jobs"
 						/>
 					)
 				)}
