@@ -6,12 +6,12 @@ const Testimonals = () => {
 	return (
 		<section
 			style={{
-				display: "flex",
-				justifyContent: "center",
+
 				margin: "auto",
-				alignItems: "center",
-				padding: "4rem",
-				marginTop: "5rem"
+	
+				// padding: "4rem",
+				marginTop: "5rem",
+				
 			}}
 			className="testimonial-section "
 		>
@@ -22,8 +22,9 @@ const Testimonals = () => {
 					flexDirection: "column",
 					alignItems: "center",
 					justifyContent: "center",
-					paddingLeft: "4rem",
-					paddingRight: "4rem"
+					
+					// paddingLeft: "4rem",
+					// paddingRight: "4rem"
 				}}
 			>
 				<h3
@@ -36,7 +37,7 @@ const Testimonals = () => {
 					Testimonials
 				</h3>
 				<div className="testimonial-carousel ">
-					<div className="testimonial-item ">
+					<div className="testimonial-item " >
 						<div className="testimonial-image">
 							<img
 								src="https://res.cloudinary.com/itgenius/image/upload/v1688928366/samantha_orwf70.jpg"
