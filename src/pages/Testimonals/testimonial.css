@@ -129,15 +129,15 @@
     align-items: center;
     justify-content: center;
     width: "100vw";
+
     
    
   }
   
   .testimonial-item {
     flex-basis: calc(33.33% - 30px);
+    padding: 1rem;
     margin-bottom: 60px;
-  
-
   }
   
   .testimonial-image {
@@ -258,3 +258,14 @@
     margin: 0 auto;
   }
   
+    @media (max-width: 767px) {
+      .testimonial-content {
+        background: #ffffff;
+        width: 18rem;
+        border-radius: 8px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        position: relative;
+        }
+    }
+
