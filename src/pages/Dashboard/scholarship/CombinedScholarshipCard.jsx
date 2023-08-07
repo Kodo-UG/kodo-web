@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import CardScholarship from "../../../components/card/CardScholarship";
 import CardScholarshipSubscribed from "../../../components/card/CardScholarshipSubscribed";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import axiosInstance from "../../../api/axiosInstance";
 import InfiniteScroll from "react-infinite-scroll-component";
+import axios from "axios";
 
 const CombinedScholarshipCard = () => {
   const [data, setData] = useState([]);
@@ -12,9 +12,16 @@ const CombinedScholarshipCard = () => {
   const [pageNumber, setPageNumber] = useState(1);
 
   const isSm = useMediaQuery("only screen and (max-width : 700px)");
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
   const getScholarship = async () => {
     try {
-      const res = await axiosInstance.get(`/scholarship?page=${pageNumber}`);
+      const res = await axios.get(`https://demo.kodoscholarships.com/api/v1/scholarship?page=${pageNumber}`,config);
       setData(res?.data?.data);
       setSubscription(res.data.subscription);
     } catch (error) {
@@ -25,7 +32,7 @@ const CombinedScholarshipCard = () => {
   const fetchData = async () => {
     setPageNumber(pageNumber + 1);
     try {
-      const res = await axiosInstance.get(`/scholarship?page=${pageNumber}`);
+      const res = await axios.get(`https://demo.kodoscholarships.com/api/v1/scholarship?page=${pageNumber}`,config);
       setData(data.concat(res?.data?.data));
       setSubscription(res.data.subscription);
     } catch (error) {

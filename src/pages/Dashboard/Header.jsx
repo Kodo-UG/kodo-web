@@ -8,6 +8,8 @@ import axiosInstance from "../../api/axiosInstance";
 import { useQuery, useQueryClient } from "react-query"; // Import React Query hooks
 import { useDispatch } from "react-redux";
 import { clearScholarships } from "../../toolkit/scholarshipReducer";
+import axios from "axios";
+
 const MyHeader = ({ setShowContent }) => {
   const history = useHistory();
   const queryClient = useQueryClient(); // Get the queryClient instance
@@ -18,6 +20,12 @@ const MyHeader = ({ setShowContent }) => {
   };
 
   const info = JSON.parse(localStorage.getItem("userData"));
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
 
   // Fetch notifications data using React Query
   const { data: notifications } = useQuery(
@@ -27,7 +35,7 @@ const MyHeader = ({ setShowContent }) => {
 
   async function fetchNotifications() {
     try {
-      const res = await axiosInstance.get("/user/notifications");
+      const res = await axios.get("https://demo.kodoscholarships.com/api/v1/user/notifications",config);
       return res.data.data;
     } catch (error) {
       throw new Error(error.message || "Failed to fetch notifications");

@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
 import { BsArrowLeft } from "react-icons/bs";
 import { useMediaQuery } from "@uidotdev/usehooks";
+import axios from "axios";
 
 const Menu = ({ setShowContent }) => {
   const [activeButton, setActiveButton] = useState(null);
   const [data, setData] = useState();
   const [sidebarVisible, setSidebarVisible] = useState(true);
-
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
   const handleActive = (buttonName) => {
     setActiveButton(buttonName);
   };
@@ -18,7 +24,7 @@ const Menu = ({ setShowContent }) => {
   };
 
   const fetchNotifications = async () => {
-    let res = await axiosInstance.get("/user/notifications");
+    let res = await axios.get("https://demo.kodoscholarships.com/api/v1/user/notifications",config);
 
     setData(res.data.data);
   };
