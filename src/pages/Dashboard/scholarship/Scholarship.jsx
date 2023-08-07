@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { useQuery } from "react-query";
 import { useMediaQuery } from "@uidotdev/usehooks";
+import axios from "axios";
 
 import { Button } from "antd";
 import { MdArrowForwardIos } from "react-icons/md";
@@ -28,6 +29,13 @@ const Scholarship = () => {
 
 	const [jobCount, setJobCount] = useState(20800);
 
+	const config = {
+		headers: {
+		  "Content-Type": "application/json",
+		  Authorization: `Bearer ${localStorage.getItem("token")}`,
+		},
+	  };
+
 	useEffect(() => {
 		const updateJobCount = () => {
 			setJobCount((prevCount) => prevCount + 1);
@@ -45,13 +53,12 @@ const Scholarship = () => {
 
 	async function getScholarship() {
 		try {
-			const res = await axiosInstance.get("/scholarship");
+			const res = await axios.get("https://demo.kodoscholarships.com/api/v1/scholarship",config);
 			return res?.data;
 		} catch (error) {
 			throw new Error(error.message || "Failed to fetch scholarships");
 		}
 	}
-
 	return (
 		<div>
 			<div className="content-wrapper">

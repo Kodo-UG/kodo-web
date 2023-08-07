@@ -8,15 +8,24 @@ import {
 } from "../../../utils/Toast";
 import { Spin } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
+import axios from "axios";
 
 const MapCardData = () => {
   const [data, setData] = useState([]);
   const [subscription, setSubscription] = useState(false);
   const [pageNumber, setPageNumber] = useState(1);
 
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+  
+
   const getScholarship = async () => {
     try {
-      const res = await axiosInstance.get(`/scholarship?page=${pageNumber}`);
+      const res = await axios.get(`https://demo.kodoscholarships.com/api/v1/scholarship?page=${pageNumber}`,config);
       setData(res?.data?.data);
       setSubscription(res.data.subscription);
     } catch (error) {
@@ -42,7 +51,7 @@ const MapCardData = () => {
   const fetchData = async () => {
     setPageNumber(pageNumber + 1);
     try {
-      const res = await axiosInstance.get(`/scholarship?page=${pageNumber}`);
+      const res = await axios.get(`https://demo.kodoscholarships.com/api/v1/scholarship?page=${pageNumber}`,config);
       setData(data.concat(res?.data?.data));
       setSubscription(res.data.subscription);
     } catch (error) {

@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { Modal } from "antd";
 import { useHistory } from "react-router-dom";
 import { displaySuccessNotification } from "../../utils/Toast";
+import axios from "axios";
 
 function Profile() {
 	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
@@ -30,29 +31,23 @@ function Profile() {
 	const history = useHistory();
 	const info = JSON.parse(localStorage.getItem("userData"));
 
+	const config = {
+		headers: {
+		  "Content-Type": "application/json",
+		  Authorization: `Bearer ${localStorage.getItem("token")}`,
+		},
+	  };
+
 	const handleTabClick = (tab) => {
 		setActiveTab(tab);
 	};
 
-	useEffect(() => {
-		const fetchUserData = async () => {
-			try {
-				const userDataPromise = localStorage.getItem("userData");
-				const userData = await userDataPromise;
-				const parsedUserData = JSON.parse(userData);
-				const userId = parsedUserData.user._id;
-				setId(userId);
-			} catch (error) {
-				throw error;
-			}
-		};
+	const userDataPromise = localStorage.getItem("userData");
+	const userInfo = JSON.parse(userDataPromise);
 
-		fetchUserData();
-	}, []);
-
-	const fetchUser = async (id) => {
+	const fetchUser = async () => {
 		try {
-			const response = await axiosInstance.get(`/user/profile/${id}`);
+			const response = await axios.get(`https://demo.kodoscholarships.com/api/v1/user/profile/${userInfo.user._id}`,config);
 			setData(response.data.data);
 		} catch (error) {
 			throw error;
@@ -118,11 +113,11 @@ function Profile() {
 	const getScholarship = async () => {
 		setLoading(true);
 		try {
-			let res = await axiosInstance.get(
-				"https://demo.kodoscholarships.com/api/v1/scholarship"
+			let res = await axios.get(
+				"https://demo.kodoscholarships.com/api/v1/scholarship",config
 			);
 
-			setScholarship(res.data.data);
+			setScholarship(res.data.count);
 			setSubscription(res.data.subscription);
 		} catch (error) {
 			console.log(error);
@@ -134,7 +129,7 @@ function Profile() {
 
 	const getApplied = async () => {
 		try {
-			const res = await axiosInstance.get("/user/applications");
+			const res = await axios.get("https://demo.kodoscholarships.com/api/v1/user/applications",config);
 			setAppliedCount(res.data.data);
 		} catch (error) {
 			console.log(error);
@@ -144,7 +139,7 @@ function Profile() {
 	const fetchFavorites = async () => {
 		setLoading(true);
 		try {
-			let response = await axiosInstance.get("/user/favourites");
+			let response = await axios.get("https://demo.kodoscholarships.com/api/v1/user/favourites",config);
 			setFavData(response?.data?.data);
 		} catch (error) {
 			console.log(error);
@@ -157,13 +152,11 @@ function Profile() {
 		getScholarship();
 		fetchFavorites();
 		getApplied();
+		fetchUser();
+
 	}, []);
 
-	useMemo(() => {
-		if (id) {
-			fetchUser(id);
-		}
-	}, [id]);
+	console.log(scholarship,"ppppppppppppppppppppppppppppp")
 
 	return (
 		<div className="app-content main-content mt-0">
@@ -265,7 +258,7 @@ function Profile() {
 																}}
 																className="fw-semibold fs-25"
 															>
-																{scholarship.length}
+																{scholarship}
 															</div>
 														</div>
 													</div>
