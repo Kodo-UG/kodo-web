@@ -1796,7 +1796,12 @@ function Policy() {
 							<button className="butonCancel">cancel</button>
 						</Link>
 						<Link to="/">
-							<button className="butonContinue">continue</button>
+							<button
+								style={{ color: "#fff" }}
+								className="butonContinue"
+							>
+								continue
+							</button>
 						</Link>
 					</div>
 				</div>

@@ -1,11 +1,10 @@
 // export default index
-import React, { useCallback } from "react";
+import React from "react";
 import "./index2.css";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useState } from "react";
 import { useEffect } from "react";
 import axiosInstance from "../../api/axiosInstance";
-import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "antd";
 import { useHistory } from "react-router-dom";
@@ -21,7 +20,6 @@ function Profile() {
 	const [scholarship, setScholarship] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [loading, setLoading] = useState(false);
-	const [count, setCount] = useState(1);
 	const [firstname, setFirstName] = useState();
 	const [lastname, setLastName] = useState();
 	const [password, setPassword] = useState();
@@ -156,7 +154,6 @@ function Profile() {
 
 	}, []);
 
-	console.log(scholarship,"ppppppppppppppppppppppppppppp")
 
 	return (
 		<div className="app-content main-content mt-0">
@@ -240,7 +237,6 @@ function Profile() {
 																display: "flex",
 																alignItems: "center",
 																justifyContent: "center"
-																// borderRadius: "26%",
 															}}
 															className="media-icon bg-primary me-3 mt-1"
 														>
@@ -362,7 +358,7 @@ function Profile() {
 																	activeTab === "profileMain"
 																		? "2px solid red"
 																		: "none",
-																display: "inline" // Set the li to display inline
+																display: "inline" 
 															}}
 														>
 															<a
