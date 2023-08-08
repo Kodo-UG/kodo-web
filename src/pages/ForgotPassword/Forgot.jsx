@@ -3,7 +3,6 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 const Forgot = () => {
-
 	return (
 		<div>
 			<section className="contact-area pt-60 pb-120 p-relative fix">
@@ -15,21 +14,20 @@ const Forgot = () => {
 									<span className="card-title">Forgot Password</span>
 								</div>
 								<div className="card-body">
-									<form >
+									<form>
 										<div
 											style={{ paddingBottom: 30 }}
 											className="form-group"
 										>
-											{/* <label for="email">Email address</label> */}
 											<input
 												style={{ border: "none" }}
 												type="email"
 												className="form-control"
 												id="email"
 												name="email"
-												required
 												autofocus
 												placeholder="Enter email"
+												required
 											/>
 										</div>
 										<button

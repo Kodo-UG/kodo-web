@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Events = () => {
 	return (
@@ -34,12 +35,12 @@ const Events = () => {
 							data-delay=".4s"
 						>
 							<div className="blog-thumb2">
-								<a href="/blog">
+								<Link to="/blog">
 									<img
 										src="https://res.cloudinary.com/itgenius/image/upload/v1690692704/muslim_jbicas.jpg"
 										alt="img"
 									/>
-								</a>
+								</Link>
 								<div className="date-home">
 									<i className="fal fa-calendar-alt" /> 24th March 2023
 								</div>
@@ -58,20 +59,20 @@ const Events = () => {
 									</div>
 								</div>
 								<h4>
-									<a href="/blog">
+									<Link to="/blog">
 										How to Write a Scholarship Essay and Win BIG [2022
 										Edition].
-									</a>
+									</Link>
 								</h4>
 								<p>
 									With a new school year here, now’s the perfect time
 									to get serious about searching for...{" "}
 								</p>
 								<div className="blog-btn">
-									<a href="/blog">
+									<Link to="/blog">
 										Read More{" "}
 										<i className="fal fa-long-arrow-right" />
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -83,12 +84,12 @@ const Events = () => {
 							data-delay=".4s"
 						>
 							<div className="blog-thumb2">
-								<a href="/blog">
+								<Link to="/blog">
 									<img
 										src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/gamers_z9cpsj.jpg"
 										alt="img"
 									/>
-								</a>
+								</Link>
 								<div className="date-home">
 									<i className="fal fa-calendar-alt" /> 24th March 2023
 								</div>
@@ -107,20 +108,20 @@ const Events = () => {
 									</div>
 								</div>
 								<h4>
-									<a href="/blog">
+									<Link to="/blog">
 										How To Know If You Qualify For Need Based
 										Financial Aid
-									</a>
+									</Link>
 								</h4>
 								<p>
 									The cost of your college education can be
 									intimidating. Which is why it’s important...
 								</p>
 								<div className="blog-btn">
-									<a href="/blog">
+									<Link to="/blog">
 										Read More{" "}
 										<i className="fal fa-long-arrow-right" />
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -132,12 +133,12 @@ const Events = () => {
 							data-delay=".4s"
 						>
 							<div className="blog-thumb2">
-								<a href="/blog">
+								<Link to="/blog">
 									<img
 										src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/interracial_qodm9k.jpg"
 										alt="img"
 									/>
-								</a>
+								</Link>
 								<div className="date-home">
 									<i className="fal fa-calendar-alt" /> 24th March 2023
 								</div>
@@ -150,26 +151,26 @@ const Events = () => {
 												<i className="fal fa-user" /> By Admin{" "}
 											</li>
 											<li>
-												<i className="fal fa-comments" /> 3 Comments
+												<i className="fal fa-comments" /> 7 Comments
 											</li>
 										</ul>
 									</div>
 								</div>
 								<h4>
-									<a href="/blog">
+									<Link to="/blog">
 										5 Expert Tips on How to Apply for Scholarships
 										[2022 Edition]
-									</a>
+									</Link>
 								</h4>
 								<p>
 									Scholarships are, undoubtedly, the best form of
 									financial aid. They’re free money to pay for college!
 								</p>
 								<div className="blog-btn">
-									<a href="/blog">
+									<Link to="/blog">
 										Read More{" "}
 										<i className="fal fa-long-arrow-right" />
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>

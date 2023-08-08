@@ -17,6 +17,18 @@ export default function Login() {
 		setState(e.target.value);
 	};
 
+	const inputStyles = {
+		borderRadius: "0",
+		minHeight: "40px",
+		WebkitBoxShadow: "none",
+		boxShadow: "none",
+		border: "0",
+		borderBottom: "1px solid #e7e7e7",
+		padding: "10px 30px 10px 0",
+		color: "#111111",
+		backgroundColor: "#ffffff"
+	};
+
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		setLoading(true);
@@ -102,17 +114,7 @@ export default function Login() {
 											value={email}
 											placeholder="Email Address"
 											required="required"
-											style={{
-												borderRadius: "0",
-												minHeight: "40px",
-												WebkitBoxShadow: "none",
-												boxShadow: "none",
-												border: "0",
-												borderBottom: "1px solid #e7e7e7",
-												padding: "10px 30px 10px 0",
-												color: "#111111",
-												backgroundColor: "#ffffff"
-											}}
+											style={inputStyles}
 											onChange={handleChange(setEmail)}
 										/>
 
@@ -153,17 +155,7 @@ export default function Login() {
 											value={password}
 											placeholder="password"
 											required="required"
-											style={{
-												borderRadius: "0",
-												minHeight: "40px",
-												WebkitBoxShadow: "none",
-												boxShadow: "none",
-												border: "0",
-												borderBottom: "1px solid #e7e7e7",
-												padding: "10px 30px 10px 0",
-												color: "#111111",
-												backgroundColor: "#ffffff"
-											}}
+											style={inputStyles}
 											onChange={handleChange(setPassword)}
 										/>
 
@@ -172,7 +164,8 @@ export default function Login() {
 											<CiLock
 												style={{
 													fontSize: "17px",
-													color: "#a1a1a1"
+													color: "#a1a1a1",
+													cursor: "pointer"
 												}}
 											/>
 										</i>

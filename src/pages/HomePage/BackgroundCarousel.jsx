@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const BackgroundCarousel = () => {
 	return (
-		<Carousel style={{ zIndex: 0 }} interval={9900} slide={true}>
+		<Carousel  interval={9900} slide={true}>
 			<Carousel.Item>
 				<div
 					className="d-block w-100"
@@ -44,7 +44,7 @@ const BackgroundCarousel = () => {
 									color: "#fff",
 									marginTop: "4.5rem",
 									fontFamily: "Jost, sans-serif",
-									lineHeight: "72px",
+									lineHeight: "71px",
 									fontStyle: "normal"
 								}}
 								data-swiper-animation="fadeInUp"
@@ -91,7 +91,7 @@ const BackgroundCarousel = () => {
 										}}
 									>
 										Find Scholarships Now{" "}
-										<i class="fal fa-long-arrow-right"></i>
+										<i className="fal fa-long-arrow-right"></i>
 									</button>
 								</Link>
 							</div>
@@ -109,7 +109,7 @@ const BackgroundCarousel = () => {
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						filter: "brightness(95%)",
-						height: "91vh" // Increased height
+						height: "91vh" 
 					}}
 				>
 					<div
@@ -181,7 +181,7 @@ const BackgroundCarousel = () => {
 										padding: "0.8rem"
 									}}
 								>
-									Find Jobs Now <i class="fal fa-long-arrow-right"></i>
+									Find Jobs Now <i className="fal fa-long-arrow-right"></i>
 								</button>
 								</Link>
 								
