@@ -38,7 +38,7 @@ function LoginComponent() {
 						fontSize: "24px"
 					}}
 				>
-					Login |{" "}
+					Login | {" "}
 				</Link>
 				<Link
 					to="/admissions"

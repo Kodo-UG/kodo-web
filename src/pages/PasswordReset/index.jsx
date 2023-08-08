@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import apiClient from "../../api/apiClient";
 import axios from "axios";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 
@@ -34,7 +33,7 @@ export default function PasswordReset() {
 	return (
 		<section className=" fxt-template-layout1" >
 			<div className="container-fluid " style={{ display: "flex", }}>
-				<div className="col-md-6 col-12 fxt-bg-color b" style={{ background: "white" }}>
+				<div className="col-md-6 col-12 fxt-bg-color b" style={{ backgroundColor: "#fff" }}>
 					<div className="fxt-content">
 						<div className="fxt-header">
 							<Link href="/" className="fxt-logo">

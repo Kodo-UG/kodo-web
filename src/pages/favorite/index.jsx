@@ -1,6 +1,4 @@
 import React from "react";
-import MyHeader from "../Dashboard/Header";
-import Menu from "../Dashboard/Menu";
 import Footer from "../Dashboard/Footer";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useHistory } from "react-router-dom";
@@ -12,7 +10,6 @@ import {
 	displayErrorNotification,
 	displaySuccessNotification
 } from "../../utils/Toast";
-import { Spin } from "antd";
 
 const Favorite = () => {
 	const [loading, setLoading] = useState(false);
@@ -100,7 +97,7 @@ const Favorite = () => {
 	return (
 		<>
 			<div
-				class=""
+				className=""
 				style={
 					isSm
 						? smallScreenStyle

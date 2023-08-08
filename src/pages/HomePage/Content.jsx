@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Content() {
 	return (
@@ -13,7 +14,6 @@ function Content() {
 				<div className="row">
 					<div className="col-lg-7 col-md-7 slide">
 						<div className="p-4 text-white" style={{ opacity: "0.9" }}>
-						
 							<h2
 								data-animation="fadeInUp"
 								data-delay=".4s"
@@ -37,8 +37,8 @@ function Content() {
 								className="second-header-btn btn-sm"
 								style={{ display: "flex" }}
 							>
-								<a
-									href="/"
+								<Link
+									to="/"
 									className="btn ss-btn mr-2"
 									data-animation="fadeInLeft"
 									data-delay=".4s"
@@ -55,7 +55,7 @@ function Content() {
 								>
 									Find Scholarships Now
 									<i className="fal fa-long-arrow-right"></i>
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>

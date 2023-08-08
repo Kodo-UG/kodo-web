@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import apiClient from "../../api/apiClient";
-import axios from "axios";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
-import CustomInput from "../../components/input";
-import LoginComponent from "../Login/LoginComponent";
-import Forgot from "./Forgot";
 import { BiEnvelope } from "react-icons/bi";
 import axiosInstance from "../../api/axiosInstance";
 
@@ -91,7 +86,7 @@ export default function ForgotPassword() {
 											name="email"
 											value={email}
 											placeholder="Email Address"
-											required="required"
+											required
 											style={{
 												borderRadius: "0",
 												minHeight: "40px",
@@ -117,8 +112,6 @@ export default function ForgotPassword() {
 										</i>
 									</div>
 								</div>
-
-							
 
 								<div className="form-group">
 									<div className="fxt-transformY-50 fxt-transition-delay-3">
