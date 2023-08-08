@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./stepperFourCss.css";
-import "./../pages/Register/Scholarships/stepper4.css"
+
 
 function StepperCard({ item, handleClick, selectedCard }) {
 	
