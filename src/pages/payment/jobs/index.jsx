@@ -36,7 +36,7 @@ export default function PaymentJobs() {
 		},
 		{
 			id: 3,
-			text: "More Than $10 Million Won To Date"
+			text: "More Than $10 Million Won To  Date "
 		}
 	];
 
@@ -66,8 +66,8 @@ export default function PaymentJobs() {
 								className=""
 								style={{
 									display: "flex",
-									flexWrap: "nowrap", 
-									margin: isSm ? "10px 0" : "", 
+									flexWrap: "nowrap",
+									margin: isSm ? "10px 0" : "",
 									overflowX: isSm ? "auto" : ""
 								}}
 							>
