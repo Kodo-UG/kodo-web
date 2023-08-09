@@ -26,8 +26,8 @@ const PaymentCardJobs = ({ data }) => {
 	const config = {
 		public_key: "FLWPUBK-f4cfb0edd79ff0b03bbffc5012173fa1-X",
 		tx_ref: Date.now(),
-		amount: dataInfo.result,
-		currency: dataInfo.convertTo,
+		amount: dataInfo.convertTo ? dataInfo.result : data.amount,
+		currency: dataInfo.convertTo ? dataInfo.convertTo : "USD",
 		payment_options:
 			"card,mobilemoney,ussd,banktransfer,barter,visaqrcode,masterpassqrcode,bankaccount",
 		customer: {
