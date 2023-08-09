@@ -60,7 +60,7 @@ const MapCardData = () => {
 			);
 
 			if (res?.data?.data.length === 0) {
-				setHasMore(false); // Update hasMore based on whether more data is available
+				setHasMore(false); 
 			}
 			setData(data.concat(res?.data?.data));
 			setSubscription(res.data.subscription);
