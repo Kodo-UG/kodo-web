@@ -22,7 +22,8 @@ const Footer = () => {
 										style={{
 											marginRight: 10,
 											width: 130,
-											marginTop: 40
+											marginTop: 40,
+											marginLeft: 10
 										}}
 									/>
 								</div>

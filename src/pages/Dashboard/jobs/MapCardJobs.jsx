@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import LargeCard from "../../../components/card/LargeCard";
 import LargeCardNotPaid from "../../../components/card/LargeCardNotPaid";
-import axiosInstance from "../../../api/axiosInstance";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { BASE_URL } from "../../../constants/api";
 
 const MapCardJobs = ({ path }) => {
 	const [data, setData] = useState([]);
@@ -16,24 +16,13 @@ const MapCardJobs = ({ path }) => {
 	const job = JSON.parse(localStorage.getItem("userData"));
 	const newJob = job.user.jobAppType;
 
-	// const  = async () => {
-	// 	setLoading(true);
-	// 	try {
-	// 		const res = await axiosInstance.get("/job");
-	// 		setData(res.data.data);
-	// 		setSubscription(res.data.subscription);
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	} finally {
-	// 		setLoading(false);
-	// 	}
-	// };
+	
 
 	const fetchJobs = async () => {
 		setLoading(true);
 		try {
 			const res = await axios.get(
-				`https://demo.kodoscholarships.com/api/v1/job?page=${pageNumber}`,
+				`${BASE_URL}/job?page=${pageNumber}`,
 				config
 			);
 			setData(res?.data?.data);
@@ -55,7 +44,7 @@ const MapCardJobs = ({ path }) => {
 		setPageNumber(pageNumber + 1);
 		try {
 			const res = await axios.get(
-				`https://demo.kodoscholarships.com/api/v1/job?page=${pageNumber}`,
+				`${BASE_URL}/job?page=${pageNumber}`,
 				config
 			);
 

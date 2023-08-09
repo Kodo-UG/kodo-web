@@ -44,7 +44,7 @@ const Footer = ({ nextStep, prevStep, step }) => {
 					<a href="/policy" style={{ color: "#EC1D64" }}>
 						Privacy Policy
 					</a>
-					<a href="#" style={{ color: "#EC1D64" }}>
+					<a href="/" style={{ color: "#EC1D64" }}>
 						Advertising Disclosures
 					</a>
 				</div>

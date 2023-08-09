@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import useCurrencyConverter from "../../utils/converter";
+import { BASE_URL } from "../../constants/api";
 
 const PaymentCard = ({ data }) => {
 	const { details } = data;
@@ -47,8 +48,7 @@ const PaymentCard = ({ data }) => {
 				status: status
 			});
 
-			const url =
-				"https://demo.kodoscholarships.com/api/v1/payment/subscription";
+			const url = `${BASE_URL}/payment/subscription`;
 
 			const headers = {
 				"Content-Type": "application/json",

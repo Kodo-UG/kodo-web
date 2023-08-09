@@ -6,9 +6,9 @@ import {
 	displayErrorNotification,
 	displaySuccessNotification
 } from "../../../utils/Toast";
-import { Spin } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
+import { BASE_URL } from "../../../constants/api";
 
 const MapCardData = () => {
 	const [data, setData] = useState([]);
@@ -26,7 +26,7 @@ const MapCardData = () => {
 	const getScholarship = async () => {
 		try {
 			const res = await axios.get(
-				`https://demo.kodoscholarships.com/api/v1/scholarship?page=${pageNumber}`,
+				`${BASE_URL}/scholarship?page=${pageNumber}`,
 				config
 			);
 			setData(res?.data?.data);
@@ -55,12 +55,12 @@ const MapCardData = () => {
 		setPageNumber(pageNumber + 1);
 		try {
 			const res = await axios.get(
-				`https://demo.kodoscholarships.com/api/v1/scholarship?page=${pageNumber}`,
+				`${BASE_URL}/scholarship?page=${pageNumber}`,
 				config
 			);
 
 			if (res?.data?.data.length === 0) {
-				setHasMore(false); 
+				setHasMore(false);
 			}
 			setData(data.concat(res?.data?.data));
 			setSubscription(res.data.subscription);

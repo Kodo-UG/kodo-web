@@ -8,6 +8,7 @@ import {
 	displayErrorMessage,
 	displaySuccessMessage
 } from "../../../utils/Toast";
+import { BASE_URL } from "../../../constants/api";
 
 const PaymentCardJobs = ({ data }) => {
 	const { details } = data;
@@ -27,7 +28,8 @@ const PaymentCardJobs = ({ data }) => {
 		tx_ref: Date.now(),
 		amount: dataInfo.result,
 		currency: dataInfo.convertTo,
-		payment_options: "card,mobilemoney,ussd,banktransfer,barter,visaqrcode,masterpassqrcode,bankaccount",
+		payment_options:
+			"card,mobilemoney,ussd,banktransfer,barter,visaqrcode,masterpassqrcode,bankaccount",
 		customer: {
 			email: `${dataUser?.user.email}`,
 			phone_number: `${dataUser?.user.phone}`,
@@ -49,8 +51,7 @@ const PaymentCardJobs = ({ data }) => {
 				status: status
 			});
 
-			const url =
-				"https://demo.kodoscholarships.com/api/v1/payment/jobs/subscription";
+			const url = `${BASE_URL}/payment/jobs/subscription`;
 
 			const headers = {
 				"Content-Type": "application/json",

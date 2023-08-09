@@ -68,62 +68,7 @@ const Stepper = () => {
 						setFormData={setFormData}
 					/>
 				);
-			// case 4:
-			// 	return (
-			// 		<StepSix
-			// 			nextStep={nextStep}
-			// 			prevStep={prevStep}
-			// 			formData={formData}
-			// 			setFormData={setFormData}
-			// 		/>
-			// 	);
-			// case 5:
-			// 	return (
-			// 		<StepSix
-			// 			nextStep={nextStep}
-			// 			prevStep={prevStep}
-			// 			formData={formData}
-			// 			setFormData={setFormData}
-			// 		/>
-			// 	);
-			// case 4:
-			// 	return (
-			// 		<StepSeven
-			// 			nextStep={nextStep}
-			// 			prevStep={prevStep}
-			// 			formData={formData}
-			// 			setFormData={setFormData}
-			// 		/>
-			// 	);
-
-			// case 7:
-			// 	return (
-			// 		<StepEight
-			// 			nextStep={nextStep}
-			// 			prevStep={prevStep}
-			// 			formData={formData}
-			// 			setFormData={setFormData}
-			// 		/>
-			// 	);
-
-			// case 4:
-			// 	return (
-			// 		<StepNine
-			// 			nextStep={nextStep}
-			// 			prevStep={prevStep}
-			// 			formData={formData}
-			// 			setFormData={setFormData}
-			// 		/>
-			// 	);
-			// case 5:
-			// 	return (
-			// 		<StepTen
-			// 			nextStep={nextStep}
-			// 			prevStep={prevStep}
-			// 			formData={formData}
-			// 			setFormData={setFormData}
-			// 		/>
-			// 	);
+			
 			default:
 				return (
 					<StepOne

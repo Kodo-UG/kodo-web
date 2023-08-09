@@ -204,7 +204,6 @@ const NavHeader = ({ open, setOpen }) => {
 				<div
 					style={{ zIndex: 99999 }}
 					className="collapse navbar-collapse  "
-					// id="navbarTogglerDemo01"
 				>
 					<ul
 						style={{
@@ -217,7 +216,6 @@ const NavHeader = ({ open, setOpen }) => {
 					>
 						{routeData.map((dta) => (
 							<CustomLink
-								// onClick={handleReloadPage}
 								key={dta.id}
 								route={dta.route}
 								children={dta.children}
