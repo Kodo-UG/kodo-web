@@ -23,7 +23,7 @@ const PaymentCardJobs = ({ data }) => {
 	const dataInfo = useCurrencyConverter(data.amount);
 
 	const config = {
-		public_key: "FLWPUBK_TEST-02518ab938416219120df2c5cf3e056c-X",
+		public_key: "FLWPUBK-f4cfb0edd79ff0b03bbffc5012173fa1-X",
 		tx_ref: Date.now(),
 		amount: dataInfo.result,
 		currency: dataInfo.convertTo,
