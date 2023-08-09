@@ -45,7 +45,6 @@ const LargeCardFavourite = ({
 				<div
 					style={{
 						backgroundColor: "#fff",
-						// height: "12rem",
 						borderRadius: "5px",
 						marginTop: "1rem",
 						display: "flex",
@@ -55,7 +54,6 @@ const LargeCardFavourite = ({
 						padding: "1rem",
 						width: isMd ? "70%" : "57%",
 						marginLeft: isMd ? "" : "14rem",
-
 						justifyContent: "center",
 						alignItems: "center"
 					}}

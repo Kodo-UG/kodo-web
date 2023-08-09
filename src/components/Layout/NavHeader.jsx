@@ -2,7 +2,6 @@ import { Link, useHistory } from "react-router-dom";
 import CustomLink from "../customlink";
 import "./index.css";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import { useState } from "react";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { clearScholarships } from "../../toolkit/scholarshipReducer";
 import { useDispatch } from "react-redux";
@@ -15,9 +14,7 @@ const NavHeader = ({ open, setOpen }) => {
 	const smallClass = isSm ? "navbar-nav  ul" : "navbar-nav ml-auto ul";
 	const dispatch = useDispatch()
 
-	const handleReloadPage = () => {
-		window.location.reload();
-	};
+	
 
 	const routeData = [
 		{
@@ -67,7 +64,6 @@ const NavHeader = ({ open, setOpen }) => {
 		>
 			<div
 				style={{
-					// background: "orange",
 					width: isSm ? "100%" : "",
 					display: isSm ? "flex" : "",
 					alignItems: "center",
@@ -91,13 +87,8 @@ const NavHeader = ({ open, setOpen }) => {
 
 				{isSm && (
 					<button
-						// className="navbar-toggler"
 						type="button"
-						// data-toggle="collapse"
-						// data-target="#navbarTogglerDemo01"
-						// aria-controls="navbarTogglerDemo01"
-						// aria-expanded="false"
-						// aria-label="Toggle navigation"
+					
 						onClick={() => setOpen(!open)}
 					>
 						<HiMenuAlt1
@@ -110,7 +101,6 @@ const NavHeader = ({ open, setOpen }) => {
 							}}
 						/>
 
-						{/* <span className="navbar-toggler-icon"></span> */}
 					</button>
 				)}
 			</div>
@@ -118,8 +108,7 @@ const NavHeader = ({ open, setOpen }) => {
 				<div
 					style={{ zIndex: 99999 }}
 					onClick={() => setOpen(false)}
-					//   className="collapse navbar-collapse  "
-					// id="navbarTogglerDemo01"
+					
 				>
 					<ul
 						style={{

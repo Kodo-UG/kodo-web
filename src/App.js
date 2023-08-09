@@ -1,15 +1,11 @@
-import React, { Suspense, lazy, useState, useEffect } from "react";
+import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
 import PrivateRoute from "./utils/PrivateRoute";
 import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
 import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
-import { Spin } from "antd";
 import Policy from "./pages/policyPage/Policy";
-import axiosInstance from "./api/axiosInstance";
-import { useDispatch } from "react-redux";
-import { fetchScholarship } from "./toolkit/scholarshipReducer";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
