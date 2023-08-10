@@ -5,7 +5,6 @@ const CustomCard = ({ total, text, link , bg }) => {
 	return (
 		<div>
 			<div className="col-lg-3 col-6">
-				{/* small box */}
 				<div className={`small-box  ${bg}`}>
 					<div className="inner">
 						<h3>{total}</h3>

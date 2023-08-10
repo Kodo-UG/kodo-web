@@ -8,6 +8,7 @@ import {
 	displayErrorMessage,
 	displaySuccessMessage
 } from "../../../utils/Toast";
+import { BASE_URL } from "../../../constants/api";
 
 const PaymentCardJobs = ({ data }) => {
 	const { details } = data;
@@ -23,11 +24,12 @@ const PaymentCardJobs = ({ data }) => {
 	const dataInfo = useCurrencyConverter(data.amount);
 
 	const config = {
-		public_key: "FLWPUBK_TEST-02518ab938416219120df2c5cf3e056c-X",
+		public_key: "FLWPUBK-f4cfb0edd79ff0b03bbffc5012173fa1-X",
 		tx_ref: Date.now(),
-		amount: dataInfo.result,
-		currency: dataInfo.convertTo,
-		payment_options: "card,mobilemoney,ussd,banktransfer,barter,visaqrcode,masterpassqrcode,bankaccount",
+		amount: dataInfo.convertTo ? dataInfo.result : data.amount,
+		currency: dataInfo.convertTo ? dataInfo.convertTo : "USD",
+		payment_options:
+			"card,mobilemoney,ussd,banktransfer,barter,visaqrcode,masterpassqrcode,bankaccount",
 		customer: {
 			email: `${dataUser?.user.email}`,
 			phone_number: `${dataUser?.user.phone}`,
@@ -49,8 +51,7 @@ const PaymentCardJobs = ({ data }) => {
 				status: status
 			});
 
-			const url =
-				"https://demo.kodoscholarships.com/api/v1/payment/jobs/subscription";
+			const url = `${BASE_URL}/payment/jobs/subscription`;
 
 			const headers = {
 				"Content-Type": "application/json",

@@ -46,14 +46,14 @@ const LargeCardNotPaid = ({
 
 					boxShadow: "0 5px 10px rgba(0,0,0,0.10)",
 					cursor: "pointer",
-					width: isMd ? "70%" : "65%",
+					width: isMd ? "75%" : "55%",
 					marginLeft: isLg
-						? "16rem"
+						? "20rem"
 						: "" | isMd
 						? "10rem"
 						: "" | isXl
-						? "18rem"
-						: "20rem",
+						? "27rem"
+						: "27rem",
 					marginBottom: "2rem"
 				}}
 				onClick={() => destinationPath()}

@@ -1,23 +1,17 @@
-import React, { Suspense, lazy, useState, useEffect } from "react";
+import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
 import PrivateRoute from "./utils/PrivateRoute";
 import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
 import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
-import { Spin } from "antd";
 import Policy from "./pages/policyPage/Policy";
-import axiosInstance from "./api/axiosInstance";
-import { useDispatch } from "react-redux";
-import { fetchScholarship } from "./toolkit/scholarshipReducer";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
 const AboutUs = lazy(() => import("./pages/AboutUs/index"));
 const Blog = lazy(() => import("./pages/Blog"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
-// const Scholarships = lazy(() => import("./pages/Scholarships"));
-//const Jobs = lazy(() => import("./pages/Dashboard/jobs"));
 const Testimonals = lazy(() => import("./pages/Testimonals"));
 const Stepper = lazy(() => import("./pages/Register/Scholarships"));
 const FindScholarship = lazy(() => import("./pages/Register"));
@@ -92,7 +86,6 @@ const App = () => {
         <Route exact path="/JobStep2" component={JobStep2} />
         <Route exact path="/JobStep3" component={JobStep3} />
         <Route exact path="/policy" component={Policy} />
-        {/* /<Route exact path="/jobs" component={Jobs} />  */}
 
         <Route exact path="/educationlevel" component={StepperElementFour} />
         <PrivateRoute exact path="/applications" component={RootApplication} />

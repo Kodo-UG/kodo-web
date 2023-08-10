@@ -24,7 +24,6 @@ const RootScholarship = () => {
       default:
     }
   };
-  console.log(showContent);
   return (
     <div className="wrappe">
       <MyHeader setShowContent={setShowContent} />

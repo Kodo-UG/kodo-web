@@ -1,27 +1,60 @@
 import React, { useEffect, useState } from "react";
 import LargeCard from "../../../components/card/LargeCard";
 import LargeCardNotPaid from "../../../components/card/LargeCardNotPaid";
-import axiosInstance from "../../../api/axiosInstance";
-import { Spin } from "antd";
+import axios from "axios";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { BASE_URL } from "../../../constants/api";
 
 const MapCardJobs = ({ path }) => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
+	const [pageNumber, setPageNumber] = useState(1);
+	const [hasMore, setHasMore] = useState(true);
+
 	const [loading, setLoading] = useState(false);
 
 	const job = JSON.parse(localStorage.getItem("userData"));
 	const newJob = job.user.jobAppType;
 
+	
+
 	const fetchJobs = async () => {
 		setLoading(true);
 		try {
-			const res = await axiosInstance.get("/job");
-			setData(res.data.data);
+			const res = await axios.get(
+				`${BASE_URL}/job?page=${pageNumber}`,
+				config
+			);
+			setData(res?.data?.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
 			console.log(error);
 		} finally {
 			setLoading(false);
+		}
+	};
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${localStorage.getItem("token")}`
+		}
+	};
+
+	const fetchData = async () => {
+		setPageNumber(pageNumber + 1);
+		try {
+			const res = await axios.get(
+				`${BASE_URL}/job?page=${pageNumber}`,
+				config
+			);
+
+			if (res?.data?.data.length === 0) {
+				setHasMore(false);
+			}
+			setData(data.concat(res?.data?.data));
+			setSubscription(res.data.subscription);
+		} catch (error) {
+			console.log(error);
 		}
 	};
 
@@ -47,54 +80,71 @@ const MapCardJobs = ({ path }) => {
 			{newJob === false ? (
 				""
 			) : (
-				// <button onClick={handleClick}>Register for Jobs</button>
 				<>
-					{loading ? (
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-								marginTop: "9rem"
-							}}
-						>
-							<img
+					<InfiniteScroll
+						dataLength={data.length}
+						next={fetchData}
+						hasMore={hasMore}
+						loader={
+							<h4 style={{ textAlign: "center", padding: "1rem" }}>
+								Loading...
+							</h4>
+						}
+						endMessage={
+							<h4 style={{ textAlign: "center", padding: "1rem" }}>
+								<b>Thats all we have for you</b>
+							</h4>
+						}
+					>
+						{loading ? (
+							<div
 								style={{
-									width: "7rem",
-									height: "7rem",
+									display: "flex",
 									justifyContent: "center",
-									alignItems: "center"
+									alignItems: "center",
+									marginTop: "9rem"
 								}}
-								src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
-								alt="middle"
-							/>
-						</div>
-					) : data.length === 0 ? (
-						<div style={{ textAlign: "center" }}>No Jobs Currently</div>
-					) : (
-						data.map((dta) =>
-							subscription ? (
-								<LargeCard
-									key={dta.id}
-									award={dta.salary}
-									title={truncateText(dta.title, 4)}
-									formatDate={dta.deadline}
-									type="Salary"
-									subText={truncateText(dta.about, 5)}
-									about={dta.about}
-									link={dta.link}
+							>
+								<img
+									style={{
+										width: "7rem",
+										height: "7rem",
+										justifyContent: "center",
+										alignItems: "center"
+									}}
+									src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
+									alt="middle"
 								/>
-							) : (
-								<LargeCardNotPaid
-									key={dta.id}
-									award={dta.salary}
-									formatDate={dta.deadline}
-									type="Salary"
-									path="/jobs"
-								/>
+							</div>
+						) : data.length === 0 ? (
+							<div style={{ textAlign: "center" }}>
+								No Jobs Currently
+							</div>
+						) : (
+							data.map((dta) =>
+								subscription ? (
+									<LargeCard
+										key={dta.id}
+										award={dta.salary}
+										title={truncateText(dta.title, 4)}
+										formatDate={dta.deadline}
+										type="Salary"
+										subText={truncateText(dta.about, 5)}
+										about={dta.about}
+										link={dta.link}
+									/>
+								) : (
+									<LargeCardNotPaid
+										key={dta.id}
+										award={dta.salary}
+										formatDate={dta.deadline}
+										type="Salary"
+										path="/jobs"
+									/>
+								)
 							)
-						)
-					)}
+						)}
+					</InfiniteScroll>
 				</>
 			)}
 		</div>

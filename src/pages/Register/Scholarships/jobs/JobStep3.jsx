@@ -85,7 +85,6 @@ function StepElement8() {
 
 	const handleGenderChange = (e) => {
 		setGender(e.target.value);
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateJobData({ field: "sex", value: e.target.value }));
 	};
 

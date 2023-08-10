@@ -60,8 +60,8 @@ const LargeCard = ({
 					boxShadow: "0 5px 10px rgba(0,0,0,0.10)",
 					cursor: "pointer",
 					padding: "8px",
-					width: isMd ? "80%" : "60%",
-					marginLeft: isMd ? "6rem" : "20rem",
+					width: isMd ? "80%" : "65%",
+					marginLeft: isMd ? "6rem" : "17rem",
 					justifyContent: "center",
 					alignItems: "center"
 				}}
@@ -149,7 +149,6 @@ const LargeCard = ({
 							</div>
 							<div
 								style={{
-									// padding: ".1rem",
 									justifyContent: "center",
 									height: "100%",
 									alignItems: "center",
