@@ -33,7 +33,7 @@ const CardScholarship = ({
 				// height: "13rem",
 				borderRadius: "0.5rem",
 				cursor: "pointer",
-				marginLeft: "-1.9rem",
+				// marginLeft: "-1.9rem",
 				marginBottom: "3rem"
 			}}
 			onClick={() => destinationPath()}
