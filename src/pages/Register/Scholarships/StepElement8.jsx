@@ -25,12 +25,11 @@ function StepElement8() {
 	const dispatch = useDispatch();
 	const handleEmailChange = (e) => {
 		const { name, value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "email", value: value }));
 	};
 	const handlePasswordChange = (e) => {
 		const { name, value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
+		// Dispatch an ction to update the form data in the Redux store
 		dispatch(updateFormData({ field: "password", value: value }));
 	};
 	const handlePhoneChange = (e) => {
@@ -62,13 +61,14 @@ function StepElement8() {
 
 		try {
 			const res = await axiosInstance.post("/auth/user/signup", formData);
+			console.log(res)
 			localStorage.setItem("userID", res.data.id);
 
 			if (res.data.id) {
 				displaySuccessMessage(
 					"Registration successful verification email sent to your email"
 				);
-				history.push("/verify");
+				history.push("/signin");
 				// nextStep();
 			} else {
 				displayErrorMessage(res.data.message);
