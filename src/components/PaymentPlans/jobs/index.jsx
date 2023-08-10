@@ -141,8 +141,6 @@ const PaymentCardJobs = ({ data }) => {
 						onClick={() => {
 							handleFlutterPayment({
 								callback: async (response) => {
-									console.log(response); // Log the tx_ref value
-
 									await subscribe(response.status, data._id);
 									closePaymentModal(); // this will close the modal programmatically
 								},

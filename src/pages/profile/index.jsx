@@ -156,7 +156,7 @@ function Profile() {
 
 
 	return (
-		<div className="app-content main-content mt-0">
+		<div className="app-content main-content mt-0 ">
 			<div className="side-app">
 				<div
 					style={{

@@ -11,7 +11,7 @@ const Jobs = () => {
 	return (
 		<div>
 			<div className="content-wrapper">
-				<section style={{ marginBottom: "3rem" }} className="content">
+				<section style={{ marginBottom: "3rem"}} className="content">
 					<div
 						style={{
 							display: "flex ",
@@ -19,7 +19,8 @@ const Jobs = () => {
 							width: "100%",
 							alignItems: "center",
 							padding: "2px",
-							justifyContent: "center"
+							justifyContent: "center",
+							// background: "red"
 						}}
 					>
 						<MatchedCard title="jobs" total={3600000} />
