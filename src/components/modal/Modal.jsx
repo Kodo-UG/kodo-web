@@ -1,7 +1,6 @@
 import {  Modal } from "antd";
 
 const CustomModal = ({  setModalOPen,modalOpen }) => {
-	// const [modalOpen, setModalOpen] = useState(false);
 	return (
 		<>
 			<Modal
