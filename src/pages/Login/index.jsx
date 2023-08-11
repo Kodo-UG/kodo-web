@@ -192,7 +192,11 @@ export default function Login() {
 								<div className="form-group">
 									<div className="fxt-transformY-50 fxt-transition-delay-3">
 										<div className="fxt-content-between">
-											<button className="fxt-btn-fill" type="submit">
+											<button
+												style={{ backgroundColor: "#EC1D64" }}
+												className="fxt-btn-fill"
+												type="submit"
+											>
 												{loading ? "loading..." : "Log in"}
 											</button>
 											<Link
