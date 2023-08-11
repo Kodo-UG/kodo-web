@@ -90,7 +90,7 @@ const MapCardData = () => {
 				hasMore={hasMore}
 				loader={
 					<h4 style={{ textAlign: "center", padding: "1rem" }}>
-						Loading...
+						{data.length < 1 ? " " : "Loading..."}
 					</h4>
 				}
 				endMessage={
