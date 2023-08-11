@@ -8,7 +8,7 @@ const ShowTitle = () => {
 	const ifnx = JSON.parse(localStorage.getItem("userData"));
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
-	const { data, isLoading, isError, refetch } = useQuery("/scholarship");
+	const {  isLoading, isError } = useQuery("/scholarship");
 
 	return (
 		<div
