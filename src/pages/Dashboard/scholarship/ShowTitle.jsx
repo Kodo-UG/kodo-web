@@ -1,14 +1,24 @@
 import React from "react";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useHistory } from "react-router-dom";
-import { useQuery } from "react-query";
+import { QueryClient, useQuery } from "react-query";
+import { useDispatch } from "react-redux";
+import { clearScholarships } from "../../../toolkit/scholarshipReducer";
 
 const ShowTitle = () => {
 	const history = useHistory();
 	const ifnx = JSON.parse(localStorage.getItem("userData"));
-
+	const dispatch = useDispatch();
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
-	const {  isLoading, isError } = useQuery("/scholarship");
+	const { isLoading, isError } = useQuery("/scholarship");
+
+	const handleRegister = () => {
+		localStorage.removeItem("token");
+		localStorage.removeItem("userData");
+		QueryClient.clear();
+		dispatch(clearScholarships());
+		history.push("/stepper");
+	};
 
 	return (
 		<div
@@ -45,7 +55,7 @@ const ShowTitle = () => {
 								fontSize: "1.5rem",
 								padding: "0 9px"
 							}}
-							onClick={() => history.push("/stepper")}
+							onClick={() => handleRegister()}
 						>
 							Register for scholarships
 						</span>
