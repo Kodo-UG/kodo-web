@@ -1,7 +1,7 @@
 import React from "react";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useHistory } from "react-router-dom";
-import { QueryClient, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import { useDispatch } from "react-redux";
 import { clearScholarships } from "../../../toolkit/scholarshipReducer";
 
@@ -15,7 +15,6 @@ const ShowTitle = () => {
 	const handleRegister = () => {
 		localStorage.removeItem("token");
 		localStorage.removeItem("userData");
-		QueryClient.clear();
 		dispatch(clearScholarships());
 		history.push("/stepper");
 	};
@@ -55,7 +54,7 @@ const ShowTitle = () => {
 								fontSize: "1.5rem",
 								padding: "0 9px"
 							}}
-							onClick={() => handleRegister()}
+							onClick={handleRegister}
 						>
 							Register for scholarships
 						</span>
