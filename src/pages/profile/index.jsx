@@ -31,10 +31,10 @@ function Profile() {
 
 	const config = {
 		headers: {
-		  "Content-Type": "application/json",
-		  Authorization: `Bearer ${localStorage.getItem("token")}`,
-		},
-	  };
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${localStorage.getItem("token")}`
+		}
+	};
 
 	const handleTabClick = (tab) => {
 		setActiveTab(tab);
@@ -45,7 +45,10 @@ function Profile() {
 
 	const fetchUser = async () => {
 		try {
-			const response = await axios.get(`https://demo.kodoscholarships.com/api/v1/user/profile/${userInfo.user._id}`,config);
+			const response = await axios.get(
+				`https://demo.kodoscholarships.com/api/v1/user/profile/${userInfo.user._id}`,
+				config
+			);
 			setData(response.data.data);
 		} catch (error) {
 			throw error;
@@ -112,7 +115,8 @@ function Profile() {
 		setLoading(true);
 		try {
 			let res = await axios.get(
-				"https://demo.kodoscholarships.com/api/v1/scholarship",config
+				"https://demo.kodoscholarships.com/api/v1/scholarship",
+				config
 			);
 
 			setScholarship(res.data.count);
@@ -127,7 +131,10 @@ function Profile() {
 
 	const getApplied = async () => {
 		try {
-			const res = await axios.get("https://demo.kodoscholarships.com/api/v1/user/applications",config);
+			const res = await axios.get(
+				"https://demo.kodoscholarships.com/api/v1/user/applications",
+				config
+			);
 			setAppliedCount(res.data.data);
 		} catch (error) {
 			console.log(error);
@@ -137,7 +144,10 @@ function Profile() {
 	const fetchFavorites = async () => {
 		setLoading(true);
 		try {
-			let response = await axios.get("https://demo.kodoscholarships.com/api/v1/user/favourites",config);
+			let response = await axios.get(
+				"https://demo.kodoscholarships.com/api/v1/user/favourites",
+				config
+			);
 			setFavData(response?.data?.data);
 		} catch (error) {
 			console.log(error);
@@ -151,9 +161,7 @@ function Profile() {
 		fetchFavorites();
 		getApplied();
 		fetchUser();
-
 	}, []);
-
 
 	return (
 		<div className="app-content main-content mt-0 ">
@@ -183,7 +191,7 @@ function Profile() {
 										justifyContent: "center",
 										alignItems: "center"
 									}}
-									src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
+									src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
 									alt="middle"
 								/>{" "}
 							</div>
@@ -358,7 +366,7 @@ function Profile() {
 																	activeTab === "profileMain"
 																		? "2px solid red"
 																		: "none",
-																display: "inline" 
+																display: "inline"
 															}}
 														>
 															<a
