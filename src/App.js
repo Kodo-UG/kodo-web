@@ -7,6 +7,9 @@ import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
 import Policy from "./pages/policyPage/Policy";
 
+import ShareLinkButton from "../src/pages/share";
+import RSSUsage from "./pages/share/RSSUsage";
+
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
 const AboutUs = lazy(() => import("./pages/AboutUs/index"));
@@ -56,6 +59,7 @@ const App = () => {
 						marginTop: "18rem"
 					}}
 				>
+					
 					<img
 						style={{
 							width: "7rem ",
@@ -86,6 +90,7 @@ const App = () => {
 				<Route exact path="/JobStep2" component={JobStep2} />
 				<Route exact path="/JobStep3" component={JobStep3} />
 				<Route exact path="/policy" component={Policy} />
+				<Route exact path="/share" component={RSSUsage} />
 
 				<Route
 					exact

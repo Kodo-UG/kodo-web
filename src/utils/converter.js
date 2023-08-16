@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import axios from "axios";
 
 const useCurrencyConverter = (fee) => {
@@ -50,13 +50,9 @@ const useCurrencyConverter = (fee) => {
 			country: "cameroon",
 			curr: "XOF"
 		},
+		
 		{
 			id: 10,
-			country: "gambia",
-			curr: "XOF"
-		},
-		{
-			id: 11,
 			country: "zimbabwe",
 			curr: "XOF"
 		}
