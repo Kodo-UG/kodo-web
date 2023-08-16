@@ -29,7 +29,7 @@ export default function RSSUsage() {
 			style={{
 				padding: "1rem",
 				marginTop: "12rem",
-				marginLeft: isLg ? "37rem" : isMd ? "18rem" : isSm ? "8rem" : "",
+				marginLeft: isLg ? "37rem" : isMd ? "18rem" : isSm ? "1rem" : "",
 				justifyContent: "center",
 				alignItems: "center"
 			}}
