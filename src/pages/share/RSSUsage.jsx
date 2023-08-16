@@ -34,6 +34,9 @@ export default function RSSUsage() {
 				alignItems: "center"
 			}}
 		>
+			<p style={{ marginLeft: "2rem", fontSize: isSm ? "1rem" : "2rem" }}>
+				Invite 5 Friends and get a free subscription
+			</p>
 			<ShareSocial
 				url="https://kodoscholarships.com/"
 				socialTypes={[
