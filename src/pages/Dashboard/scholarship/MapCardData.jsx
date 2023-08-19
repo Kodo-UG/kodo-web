@@ -38,9 +38,13 @@ const MapCardData = () => {
 
 	const handleClick = async (fav) => {
 		try {
-			const res = await axiosInstance.post("/user/favourites", {
-				id: fav
-			});
+			const res = await axios.post(
+				`${BASE_URL}/user/favourites`,
+				{
+					id: fav
+				},
+				config
+			);
 			if (res.status == 201) {
 				displaySuccessNotification(`${res.data.message}`);
 			} else {

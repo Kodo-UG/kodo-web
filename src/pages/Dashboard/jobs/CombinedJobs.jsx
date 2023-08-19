@@ -76,7 +76,7 @@ const CombinedJobs = ({ path }) => {
 						justifyContent: "center",
 						alignItems: "center"
 					}}
-					src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
+					src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
 					alt="middle"
 				/>{" "}
 			</div>
@@ -103,15 +103,14 @@ const CombinedJobs = ({ path }) => {
 				<div
 					style={{
 						padding: "1rem",
-						
+
 						display: "flex",
 						flexWrap: "wrap",
 						justifyContent: "center",
 						alignItems: "center",
 						// marginLeft: "2.5rem",
 						// marginBottom: isSm ? "10rem" : "",
-						width: "100%",
-				
+						width: "100%"
 					}}
 				>
 					{data.map((dta) =>

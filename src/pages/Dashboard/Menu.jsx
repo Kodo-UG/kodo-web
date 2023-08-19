@@ -200,6 +200,28 @@ const Menu = ({ setShowContent }) => {
 										<p style={pStyle}>Jobs</p>
 									</Link>
 								</li>
+
+								<li
+									className="nav-item"
+									onClick={() => setShowContent(4)}
+									data-widget="pushmenu"
+								>
+									<Link
+										onClick={() => handleActive("invite")}
+										to="/scholars"
+										className={`nav-link ${
+											isButtonActive("invite") ? "active" : ""
+										}`}
+									>
+										<i
+											style={{ marginLeft: "3px" }}
+											className="fa fa-share"
+											aria-hidden="true"
+										></i>
+
+										<p style={pStyle}>Invite Friends</p>
+									</Link>
+								</li>
 							</ul>
 						</nav>
 					</div>

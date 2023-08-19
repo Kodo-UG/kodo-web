@@ -10,16 +10,23 @@ import {
 	displaySuccessMessage
 } from "../../../utils/Toast";
 import axiosInstance from "../../../api/axiosInstance";
+import * as Yup from "yup"; // Import Yup for validation
+
+const validationSchema = Yup.object().shape({
+	email: Yup.string()
+		.email("Invalid email address")
+		.required("Email is required"),
+	phone: Yup.string().required("Phone is required"),
+	password: Yup.string().required("Password is required")
+});
 
 function StepElement8() {
 	const formData = useSelector((state) => state.formData);
 	const history = useHistory();
-	const [modalOpen, setModalOpen] = useState(true);
 	const [loading, setLoading] = useState(false);
 
 	const [gender, setGender] = useState("");
 
-	const [password, setPassword] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
 
 	const dispatch = useDispatch();
@@ -51,45 +58,32 @@ function StepElement8() {
 	const register = async (e) => {
 		e.preventDefault();
 		setLoading(true);
-		let data = JSON.stringify(formData);
-
-		if (!formData.email || !formData.phone || !formData.password || !gender) {
-			displayErrorMessage("Please fill in all the required fields");
-			setLoading(false);
-			return;
-		}
 
 		try {
+			await validationSchema.validate(formData, { abortEarly: false });
+
 			const res = await axiosInstance.post("/auth/user/signup", formData);
-			console.log(res)
-			localStorage.setItem("userID", res.data.id);
 
 			if (res.data.id) {
 				displaySuccessMessage(
 					"Registration successful verification email sent to your email"
 				);
 				history.push("/signin");
-				// nextStep();
 			} else {
 				displayErrorMessage(res.data.message);
 			}
-		} catch (error) {
-			console.log(error.message);
-			displayErrorMessage(
-				"Failed to register email  already exists or wrong "
+		} catch (validationError) {
+			const errorMessages = validationError.inner.map(
+				(error) => error.message
 			);
+			displayErrorMessage(errorMessages.join("\n"));
 		} finally {
 			setLoading(false);
 		}
 	};
 
-	const togglePasswordVisibility = () => {
-		setShowPassword(!showPassword);
-	};
-
 	const handleGenderChange = (e) => {
 		setGender(e.target.value);
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "sex", value: e.target.value }));
 	};
 
@@ -181,9 +175,10 @@ function StepElement8() {
 												className="_textField_fwd9c_1"
 												onChange={handleEmailChange}
 												name="email"
-												type="text"
+												type="email"
 												id="email"
 												placeholder="Your email"
+												required
 											/>
 										</div>
 									</div>
@@ -197,6 +192,7 @@ function StepElement8() {
 												type="text"
 												id="fname"
 												placeholder="First Name"
+												required
 											/>
 										</div>
 									</div>
@@ -209,6 +205,7 @@ function StepElement8() {
 												type="text"
 												id="lname"
 												placeholder="Last Name"
+												required
 											/>
 										</div>
 									</div>
@@ -222,6 +219,7 @@ function StepElement8() {
 												id="phone"
 												label="Phone Number"
 												placeholder="Phone"
+												required
 											/>
 										</div>
 									</div>
@@ -235,6 +233,7 @@ function StepElement8() {
 												id="password"
 												label="password"
 												placeholder="Password"
+												required
 											/>
 										</div>
 									</div>
@@ -245,6 +244,7 @@ function StepElement8() {
 												className="_textField_fwd9c_1"
 												value={gender}
 												onChange={handleGenderChange}
+												required
 											>
 												<option value="">Select gender</option>
 												<option value="male">Male</option>

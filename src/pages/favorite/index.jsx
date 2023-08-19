@@ -87,7 +87,7 @@ const Favorite = () => {
 						justifyContent: "center",
 						alignItems: "center"
 					}}
-					src="https://res.cloudinary.com/itgenius/image/upload/v1690434896/Kodo_Scholarship_Loader_rgev72.gif"
+					src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
 					alt="middle"
 				/>{" "}
 			</div>
@@ -138,7 +138,6 @@ const Favorite = () => {
 							marginLeft: isSm ? "" : "1rem"
 						}}
 					>
-						
 						<p
 							onClick={() => history.push("/scholars")}
 							style={{

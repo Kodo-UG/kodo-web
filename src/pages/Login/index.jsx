@@ -4,15 +4,17 @@ import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import "./custom.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BiEnvelope } from "react-icons/bi";
-import { CiLock } from "react-icons/ci";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 import axiosInstance from "../../api/axiosInstance";
+import axios from "axios";
+import { BASE_URL } from "../../constants/api";
 export default function Login() {
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
 	const [loading, setLoading] = useState(false);
 	const [showPassword, setShowPassword] = useState(false);
+	const [message, setMessage] = useState(null);
 
 	const togglePasswordVisibility = () => {
 		setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -40,20 +42,24 @@ export default function Login() {
 		e.preventDefault();
 		setLoading(true);
 		try {
-			const data = await axiosInstance.post("/auth/login", {
+			const data = await axios.post(`${BASE_URL}/auth/login`, {
 				email,
 				password
 			});
+
+			if (data) setMessage(data?.data?.message);
+
+			console.log(message);
 			if (data.status == "201") {
 				localStorage.setItem("userData", JSON.stringify(data.data));
 				displaySuccessMessage("Login successful");
 				localStorage.setItem("token", data.data.token);
 				history.push("/scholars");
 			} else {
-				displayErrorMessage("Login Failed");
+				displayErrorMessage(message);
 			}
 		} catch (error) {
-			displayErrorMessage("Invalid username or password", error);
+			displayErrorMessage(message);
 		} finally {
 			setLoading(false);
 		}
