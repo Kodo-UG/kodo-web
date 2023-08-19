@@ -98,7 +98,7 @@ const MatchedCard = ({ title, total }) => {
 							marginBottom: isSm ? "-0.1rem" : ""
 						}}
 					>
-						{jobCount.toLocaleString()} In Matches
+						${jobCount.toLocaleString()} In Matches
 					</p>
 					<p
 						style={{
