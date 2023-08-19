@@ -4,11 +4,8 @@ import React, { useEffect, useState } from "react";
 import { MdArrowForwardIos } from "react-icons/md";
 import { SiFiles } from "react-icons/si";
 import { useQuery } from "react-query";
-import { useHistory } from "react-router-dom";
 
 const MatchedCard = ({ title, total }) => {
-	const history = useHistory();
-	const ifnx = JSON.parse(localStorage.getItem("userData"));
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const isMd = useMediaQuery(
@@ -34,7 +31,7 @@ const MatchedCard = ({ title, total }) => {
 		return () => clearInterval(intervalId);
 	}, []);
 
-	const { data, isLoading, isError, refetch } = useQuery(
+	useQuery(
 		"/scholarship",
 		getScholarship
 	);
@@ -53,7 +50,6 @@ const MatchedCard = ({ title, total }) => {
 	return (
 		<>
 			<div
-				// onClick={() => history.push("/profile")}
 				style={{
 					width: isSm ? "100%" : isMd ? "50%" : "35%",
 					background: "white",
