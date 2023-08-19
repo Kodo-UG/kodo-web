@@ -5,13 +5,13 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 
 const LargeCardNotPaid = ({
 	formatDate,
-	title,
 	subText,
 	award,
 	link,
 	about,
 	path,
-	type
+	type,
+	text
 }) => {
 	const date = new Date(formatDate);
 	const formattedDate = date.toLocaleDateString();
@@ -127,7 +127,7 @@ const LargeCardNotPaid = ({
 										display: "flex"
 									}}
 								>
-									Access all matched Scholarships
+									Access all matched {text}
 									<span>
 										<IoIosArrowForward
 											size={25}

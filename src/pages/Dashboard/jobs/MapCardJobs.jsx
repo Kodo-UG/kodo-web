@@ -136,6 +136,7 @@ const MapCardJobs = ({ path }) => {
 										key={dta.id}
 										award={dta.salary}
 										formatDate={dta.deadline}
+										text="jobs"
 										type="Salary"
 										path="/jobs"
 									/>
