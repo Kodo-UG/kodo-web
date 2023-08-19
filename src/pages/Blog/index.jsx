@@ -50,7 +50,7 @@ const Blog = () => {
   ];
   return (
     <section
-      class="shop-area pt-120 pb-120 p-relative "
+      className="shop-area pt-120 pb-120 p-relative "
       data-animation="fadeInUp animated"
       data-delay=".2s"
     >
@@ -77,9 +77,10 @@ const Blog = () => {
           </div>
         </div>
 
-        <div class="row" style={{ overflow: "hidden" }}>
+        <div className="row" style={{ overflow: "hidden" }}>
           {blogData.map((data) => (
             <BlogCard
+             key={data.tittle}
               tittle={data.tittle}
               text={data.text}
               blogType={data.blogType}
@@ -87,34 +88,34 @@ const Blog = () => {
             />
           ))}
         </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="pagination-wrap mt-20 text-center">
+        <div className="row">
+          <div className="col-12">
+            <div className="pagination-wrap mt-20 text-center">
               <nav>
-                <ul class="pagination">
-                  <li class="page-item">
+                <ul className="pagination">
+                  <li className="page-item">
                     <a href="#">
-                      <i class="fas fa-angle-double-left" />
+                      <i className="fas fa-angle-double-left" />
                     </a>
                   </li>
-                  <li class="page-item active">
+                  <li className="page-item active">
                     <a href="#">1</a>
                   </li>
-                  <li class="page-item">
+                  <li className="page-item">
                     <a href="#">2</a>
                   </li>
-                  <li class="page-item">
+                  <li className="page-item">
                     <a href="#">3</a>
                   </li>
-                  <li class="page-item">
+                  <li className="page-item">
                     <a href="#">...</a>
                   </li>
-                  <li class="page-item">
+                  <li className="page-item">
                     <a href="#">10</a>
                   </li>
-                  <li class="page-item">
+                  <li className="page-item">
                     <a href="#">
-                      <i class="fas fa-angle-double-right" />
+                      <i className="fas fa-angle-double-right" />
                     </a>
                   </li>
                 </ul>

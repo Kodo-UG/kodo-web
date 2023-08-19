@@ -104,7 +104,6 @@ const MyHeader = ({ setShowContent }) => {
 	const handleLogout = () => {
 		localStorage.removeItem("token");
 		localStorage.removeItem("userData");
-		// persistor.purge();
 		queryClient.clear();
 		dispatch(clearScholarships());
 		history.push("/login");

@@ -53,7 +53,7 @@ const MatchedCard = ({ title, total }) => {
 	return (
 		<>
 			<div
-				onClick={() => history.push("/profile")}
+				// onClick={() => history.push("/profile")}
 				style={{
 					width: isSm ? "100%" : isMd ? "50%" : "35%",
 					background: "white",

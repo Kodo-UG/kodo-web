@@ -70,7 +70,7 @@ function StepElement8() {
 
 			if (res.status == 201) {
 				displaySuccessMessage(res.data.message);
-				history.push("/verify");
+				history.push("/signin");
 			}
 		} catch (error) {
 			displayErrorMessage("Failed to register");
@@ -79,9 +79,7 @@ function StepElement8() {
 		}
 	};
 
-	const togglePasswordVisibility = () => {
-		setShowPassword(!showPassword);
-	};
+	
 
 	const handleGenderChange = (e) => {
 		setGender(e.target.value);

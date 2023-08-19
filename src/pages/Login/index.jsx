@@ -5,11 +5,18 @@ import "./custom.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BiEnvelope } from "react-icons/bi";
 import { CiLock } from "react-icons/ci";
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+
 import axiosInstance from "../../api/axiosInstance";
 export default function Login() {
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
 	const [loading, setLoading] = useState(false);
+	const [showPassword, setShowPassword] = useState(false);
+
+	const togglePasswordVisibility = () => {
+		setShowPassword((prevShowPassword) => !prevShowPassword);
+	};
 
 	const history = useHistory();
 
@@ -149,7 +156,7 @@ export default function Login() {
 										}}
 									>
 										<input
-											type="password"
+											type={showPassword ? "text" : "password"}
 											className="form-control"
 											name="password"
 											value={password}
@@ -159,15 +166,25 @@ export default function Login() {
 											onChange={handleChange(setPassword)}
 										/>
 
-										<i>
+										<i onClick={togglePasswordVisibility}>
 											{" "}
-											<CiLock
-												style={{
-													fontSize: "17px",
-													color: "#a1a1a1",
-													cursor: "pointer"
-												}}
-											/>
+											{showPassword ? (
+												<AiFillEyeInvisible
+													style={{
+														fontSize: "17px",
+														color: "#a1a1a1",
+														cursor: "pointer"
+													}}
+												/>
+											) : (
+												<AiFillEye
+													style={{
+														fontSize: "17px",
+														color: "#a1a1a1",
+														cursor: "pointer"
+													}}
+												/>
+											)}
 										</i>
 									</div>
 								</div>
@@ -175,7 +192,11 @@ export default function Login() {
 								<div className="form-group">
 									<div className="fxt-transformY-50 fxt-transition-delay-3">
 										<div className="fxt-content-between">
-											<button className="fxt-btn-fill" type="submit">
+											<button
+												style={{ backgroundColor: "#EC1D64" }}
+												className="fxt-btn-fill"
+												type="submit"
+											>
 												{loading ? "loading..." : "Log in"}
 											</button>
 											<Link
