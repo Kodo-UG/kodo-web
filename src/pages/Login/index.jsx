@@ -26,6 +26,8 @@ export default function Login() {
 		setState(e.target.value);
 	};
 
+	
+
 	const inputStyles = {
 		borderRadius: "0",
 		minHeight: "40px",
@@ -49,12 +51,12 @@ export default function Login() {
 
 			if (data) setMessage(data?.data?.message);
 
-			console.log(message);
 			if (data.status == "201") {
 				localStorage.setItem("userData", JSON.stringify(data.data));
 				displaySuccessMessage("Login successful");
 				localStorage.setItem("token", data.data.token);
 				history.push("/scholars");
+
 			} else {
 				displayErrorMessage(message);
 			}
