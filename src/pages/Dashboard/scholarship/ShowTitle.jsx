@@ -6,11 +6,11 @@ import { useDispatch } from "react-redux";
 import { clearScholarships } from "../../../toolkit/scholarshipReducer";
 
 const ShowTitle = () => {
-	const history = useHistory();
-	const ifnx = JSON.parse(localStorage.getItem("userData"));
-	const dispatch = useDispatch();
-	const isSm = useMediaQuery("only screen and (max-width : 700px)");
-	const { isLoading, isError } = useQuery("/scholarship");
+  const history = useHistory();
+  const ifnx = JSON.parse(localStorage.getItem("userData"));
+  const dispatch = useDispatch();
+  const isSm = useMediaQuery("only screen and (max-width : 700px)");
+  const { isLoading, isError } = useQuery("/scholarship");
 
 	const handleRegister = () => {
 		localStorage.removeItem("token");
