@@ -33,7 +33,7 @@ const Scholarship = () => {
 							justifyContent: "center"
 						}}
 					>
-						<MatchedCard title="scholarships" total={302500} />
+						<MatchedCard title="scholarships" total="302,500" />
 
 						<ShowTitle />
 						{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
