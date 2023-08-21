@@ -20,12 +20,12 @@ const MyHeader = ({ setShowContent }) => {
   const [notify, setNotify] = useState([{}]);
   const deleteMessage = (ID) => {
     const newArray = notify.filter((data) => data._id != ID);
-	setNotify(newArray);
+    setNotify(newArray);
     return newArray;
   };
-//   useEffect(()=>{
-// 	setNotify()
-//   },[])
+  //   useEffect(()=>{
+  // 	setNotify()
+  //   },[])
   const togglePushMenu = () => {
     setPushMenuVisible(!isPushMenuVisible);
   };
@@ -145,12 +145,19 @@ const MyHeader = ({ setShowContent }) => {
         <ul className="navbar-nav ml-auto ">
           <li className=" ">
             <Link className="nav-link" data-toggle="dropdown" to="#">
-              <AiOutlineBell style={{ width: "20px", height: "20px" }} />{" "}
+              <img
+                src="https://res.cloudinary.com/itgenius/image/upload/v1692586498/Alert_Icon_-01_io86d7.png"
+                alt=""
+                style={{
+                  width: "40px",
+                  height: "40px",
+                }}
+              />
+              {/* <AiOutlineBell style={{ width: "20px", height: "20px" }} />{" "} */}
               <span className="badge badge-danger navbar-badge">
                 {notify?.length || 0}
               </span>
             </Link>
-            {/* ... */}
             <div
               style={{
                 cursor: "pointer",
@@ -173,7 +180,7 @@ const MyHeader = ({ setShowContent }) => {
               >
                 {notify.map((data) => (
                   <li
-                    onClick={()=> deleteMessage(data._id)}
+                    onClick={() => deleteMessage(data._id)}
                     style={{
                       marginBottom: "1rem",
                       display: "flex",
@@ -182,7 +189,7 @@ const MyHeader = ({ setShowContent }) => {
                       backgroundColor: "white",
                       borderRadius: "5px",
                       padding: "0.2rem",
-					  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+                      boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                     }}
                   >
                     <AiFillStar
@@ -193,51 +200,16 @@ const MyHeader = ({ setShowContent }) => {
                   </li>
                 ))}
               </ul>
-              {/* <div className="dropdown-divider" />
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-                className="dropdown-item"
-              >
-                <div style={{ width: "30px" }} className="">
-                  <img
-                    src="https://res.cloudinary.com/itgenius/image/upload/v1688438198/6_isfrng.png"
-                    className="img-circle elevation-2"
-                    alt=""
-                  />
-                </div>
-                <div className="info">
-                  <Link to="/profile">
-                    <div className="d-block">Profile</div>
-                  </Link>
-                </div>
-              </div>
-              <div className="dropdown-divider" />
-              <div
-                onClick={handleLogout}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  fontWeight: "bold",
-                  padding: "8px",
-                }}
-                className="dropdown-item"
-              >
-                <div data-widget="control-sidebar" data-slide="true">
-                  <AiOutlineLogout />
-                </div>
-                <div>Logout</div>
-              </div> */}
             </div>
           </li>
           {/* Notifications Dropdown Menu */}
 
           <li
-            style={{ marginLeft: "1rem", marginRight: ".1rem" }}
+            style={{
+              marginLeft: "1rem",
+              marginRight: ".1rem",
+              marginTop: ".8rem",
+            }}
             className="nav-item "
           >
             <Dropdown
