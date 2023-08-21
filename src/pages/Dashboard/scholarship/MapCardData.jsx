@@ -120,6 +120,7 @@ const MapCardData = () => {
 					: data.map((dta) => (
 							<LargeCardNotPaid
 								key={dta.id}
+								text="scholarships"
 								title={dta.title}
 								formatDate={dta.deadline}
 								award={dta.award}
