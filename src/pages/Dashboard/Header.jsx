@@ -118,6 +118,7 @@ const MyHeader = ({ setShowContent }) => {
     localStorage.removeItem("userData");
     queryClient.clear();
     dispatch(clearScholarships());
+    localStorage.setItem("modal2Open", "true");
     history.push("/login");
   };
 

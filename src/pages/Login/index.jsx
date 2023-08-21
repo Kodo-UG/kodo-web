@@ -40,19 +40,7 @@ export default function Login() {
     backgroundColor: "#ffffff",
   };
 
-  const showAds = () => {
-    <Modal
-      centered
-      open={modalOpen}
-      onOk={() => setModalOpen(false)}
-      onCancel={() => setModalOpen(false)}
-    >
-      <div>
-        <h1>bukenya kizaa</h1>
-        <img src="" alt="" />
-      </div>
-    </Modal>;
-  };
+  
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -103,7 +91,7 @@ export default function Login() {
             className="fxt-content"
           >
             <div className="fxt-header">
-              <Link href="/" className="fxt-logo">
+              <Link to="/" className="fxt-logo">
                 <img src="logo-kodo.png" alt="Logo" />
               </Link>
               <div className="fxt-page-switcher">
