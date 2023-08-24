@@ -103,12 +103,16 @@ import { Link, useHistory } from "react-router-dom";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import axiosInstance from "../../api/axiosInstance";
 import { useMediaQuery } from "@uidotdev/usehooks";
+import { useParams } from "react-router-dom";
 
 export default function PasswordReset() {
 	const [password, setPassword] = useState();
-	const token = new URLSearchParams(window.location.search).get("token");
+	// const token = new URLSearchParams(window.location.search).get("token");
 	const history = useHistory();
-		const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const params = useParams();
+
+	let token = params.token;
 
 	const handleChange = (setState) => (e) => {
 		setState(e.target.value);
@@ -166,6 +170,8 @@ export default function PasswordReset() {
 						>
 							<Link to="/" className="fxt-logo">
 								<img
+									height={90}
+									width={200}
 									src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
 									alt="Logo"
 								/>
@@ -174,15 +180,23 @@ export default function PasswordReset() {
 								style={{ color: "black", marginTop: "3rem" }}
 								className="fxt-page-switcher"
 							>
-								<Link to="/signin" className="switcher-text1 active">
+								<Link
+									to="/signin"
+									style={{ fontSize: ".9rem" }}
+									className="switcher-text1 active"
+								>
 									Log In
 								</Link>
 								<Link
-									style={{ paddingLeft: 2, color: "black" }}
+									style={{
+										paddingLeft: 2,
+										color: "black",
+										fontSize: ".9rem"
+									}}
 									to="/login"
 									className="switcher-text1"
 								>
-									| Sign Up
+									| SignUp
 								</Link>
 							</div>
 						</div>
@@ -271,16 +285,19 @@ export default function PasswordReset() {
 						</div>
 					</div>
 				</div>
-				{isSm ? "" : (<div
-					className="col-md-6 col-12 fxt-none-767 fxt-bg-img "
-					style={{
-						backgroundImage:
-							'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688935613/bg1-l_rvlan9.jpg")',
-						backgroundPosition: "center",
-						backgroundSize: "cover"
-					}}
-				></div>)}
-				
+				{isSm ? (
+					""
+				) : (
+					<div
+						className="col-md-6 col-12 fxt-none-767 fxt-bg-img "
+						style={{
+							backgroundImage:
+								'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688935613/bg1-l_rvlan9.jpg")',
+							backgroundPosition: "center",
+							backgroundSize: "cover"
+						}}
+					></div>
+				)}
 			</div>
 		</section>
 	);

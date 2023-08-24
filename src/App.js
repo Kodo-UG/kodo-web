@@ -76,7 +76,7 @@ const App = () => {
 				<Route exact path="/index" component={Index} />
 				<Route exact path="/signin" component={Signin} />
 				<Route exact path="/forgot/password" component={ForgotPassword} />
-				<Route path="/reset-password" component={PasswordReset} />
+				<Route path="/reset-password/:token" component={PasswordReset} />
 				<PrivateRoute exact path="/scholars" component={RootScholarship} />
 				<PrivateRoute exact path="/favorite" component={Favorite} />
 				<PrivateRoute exact path="/profile" component={MainProfile} />
