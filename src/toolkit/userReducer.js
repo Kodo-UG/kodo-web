@@ -13,6 +13,7 @@ const initialState = {
 	phone: "",
 	appType: "",
 	scholarshipcategory: "",
+	refer:""
 };
 const userSlice = createSlice({
 	name: "user",
@@ -35,6 +36,7 @@ const userSlice = createSlice({
 				phone: "",
 				appType: "",
 				scholarshipcategory: "",
+				refer:"",
 			};
 		},
 	},

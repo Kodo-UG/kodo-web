@@ -63,6 +63,8 @@ function StepElement8() {
 			await validationSchema.validate(formData, { abortEarly: false });
 
 			const res = await axiosInstance.post("/auth/user/signup", formData);
+			console.log(res.data.id);
+			localStorage.setItem("userID",res.data.id)
 
 			if (res.data.id) {
 				displaySuccessMessage(

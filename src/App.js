@@ -59,7 +59,6 @@ const App = () => {
 						marginTop: "18rem"
 					}}
 				>
-					
 					<img
 						style={{
 							width: "7rem ",
@@ -86,6 +85,7 @@ const App = () => {
 				<Route exact path="/verify" component={StepComfirmation} />
 				<Route exact path="/final" component={StepElement8} />
 				<Route exact path="/stepper" component={Stepper} />
+				<Route exact path="/stepper/:userId" component={Stepper} />
 				<Route exact path="/JobStep1" component={JobStep1} />
 				<Route exact path="/JobStep2" component={JobStep2} />
 				<Route exact path="/JobStep3" component={JobStep3} />

@@ -3,14 +3,11 @@ import React, { useEffect, useState } from "react";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
-// import StepperFour from "./StepperFour";
-import StepSix from "./StepSix";
-import StepSeven from "./StepSeven";
-import StepEight from "./StepEight";
-import StepNine from "./StepNine";
-import StepTen from "./StepTen";
 import HeaderLayout from "../../../components/Layout/steeperLayout";
 import Footer from "../../../components/Layout/steeperLayout/Footer";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { updateFormData } from "../../../toolkit/formReducer";
 
 const Stepper = () => {
 	const [step, setStep] = useState(1);
@@ -29,6 +26,11 @@ const Stepper = () => {
 		appType: "",
 		scholarshipcategory: ""
 	});
+	const dispatch = useDispatch();
+
+	const params = useParams();
+	const userId = params.userId;
+	console.log(userId);
 
 	const nextStep = () =>
 		setStep((step) => (step < 4 && step > 0 ? step + 1 : 1));
@@ -36,8 +38,8 @@ const Stepper = () => {
 		setStep((step) => (step < 4 && step > 0 ? step - 1 : 1));
 
 	useEffect(() => {
-		console.log("step: ", step);
-	}, [step]);
+		dispatch(updateFormData({ field: "refer", value: userId }));
+	}, []);
 
 	const renderStepContent = () => {
 		switch (step) {
@@ -68,7 +70,7 @@ const Stepper = () => {
 						setFormData={setFormData}
 					/>
 				);
-			
+
 			default:
 				return (
 					<StepOne
