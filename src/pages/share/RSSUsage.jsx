@@ -1,4 +1,5 @@
 import { useMediaQuery } from "@uidotdev/usehooks";
+import { useEffect } from "react";
 import { ShareSocial } from "react-share-social";
 
 export default function RSSUsage() {
@@ -24,6 +25,11 @@ export default function RSSUsage() {
 			fontStyle: "italic"
 		}
 	};
+
+	useEffect(() => {}, []);
+	const userId = localStorage.getItem("userID");
+
+	let URL = `https://kodoscholarships.com/stepper/${userId}`;
 	return (
 		<div
 			style={{
@@ -38,7 +44,7 @@ export default function RSSUsage() {
 				Invite 5 Friends and get a free subscription
 			</p>
 			<ShareSocial
-				url="https://kodoscholarships.com/"
+				url={URL}
 				socialTypes={[
 					"whatsapp",
 					"facebook",
