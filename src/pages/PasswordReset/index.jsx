@@ -102,14 +102,19 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import axiosInstance from "../../api/axiosInstance";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 export default function PasswordReset() {
 	const [password, setPassword] = useState();
 	const token = new URLSearchParams(window.location.search).get("token");
 	const history = useHistory();
+		const isSm = useMediaQuery("only screen and (max-width : 700px)");
+
 	const handleChange = (setState) => (e) => {
 		setState(e.target.value);
 	};
+
+	console.log(token, "==");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -182,7 +187,13 @@ export default function PasswordReset() {
 							</div>
 						</div>
 						<div style={{ marginTop: "6rem" }} className="fxt-form">
-							<h2 style={{ textAlign: "start", fontSize: "2rem" }}>
+							<h2
+								style={{
+									textAlign: "start",
+									fontSize: "2rem",
+									fontWeight: "bold"
+								}}
+							>
 								Reset PassWord
 							</h2>
 							<p>Proceed With Password Reset</p>
@@ -260,7 +271,7 @@ export default function PasswordReset() {
 						</div>
 					</div>
 				</div>
-				<div
+				{isSm ? "" : (<div
 					className="col-md-6 col-12 fxt-none-767 fxt-bg-img "
 					style={{
 						backgroundImage:
@@ -268,7 +279,8 @@ export default function PasswordReset() {
 						backgroundPosition: "center",
 						backgroundSize: "cover"
 					}}
-				></div>
+				></div>)}
+				
 			</div>
 		</section>
 	);
