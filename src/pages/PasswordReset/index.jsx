@@ -101,8 +101,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
-import { BiEnvelope } from "react-icons/bi";
-import axios from "axios";
 import axiosInstance from "../../api/axiosInstance";
 
 export default function PasswordReset() {
