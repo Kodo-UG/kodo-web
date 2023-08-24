@@ -42,7 +42,7 @@ export default function ForgotPassword() {
 						style={{ background: "#ffff", height: "100%" }}
 					>
 						<div className="fxt-header">
-							<Link href="/" className="fxt-logo">
+							<Link to="/" className="fxt-logo">
 								<img
 									src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
 									alt="Logo"
