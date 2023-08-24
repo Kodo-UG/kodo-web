@@ -111,11 +111,13 @@ export default function PasswordReset() {
 		setState(e.target.value);
 	};
 
+	console.log("==", token, "====");
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
 			const data = await axiosInstance.post(
-				`/auth/password/reset/${token}`,
+				`/auth/password/reset?${token}`,
 				{
 					password
 				}
