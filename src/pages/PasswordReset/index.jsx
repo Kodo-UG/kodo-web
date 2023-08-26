@@ -107,7 +107,6 @@ import { useParams } from "react-router-dom";
 
 export default function PasswordReset() {
 	const [password, setPassword] = useState();
-	// const token = new URLSearchParams(window.location.search).get("token");
 	const history = useHistory();
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 	const params = useParams();
