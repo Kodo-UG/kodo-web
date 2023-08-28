@@ -25,7 +25,7 @@ function StepperElementFour() {
 		{
 			id: 4,
 			text: "Bachelor's",
-			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal3"
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal2"
 		},
 		{
 			id: 5,
@@ -35,6 +35,11 @@ function StepperElementFour() {
 		{
 			id: 6,
 			text: "Doctorate",
+			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal5"
+		},
+		{
+			id: 7,
+			text: "Diploma",
 			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal5"
 		}
 	];
