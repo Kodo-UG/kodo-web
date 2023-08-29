@@ -9,10 +9,10 @@ function Policy() {
 		setIsChecked((prevChecked) => !prevChecked);
 	};
 	return (
-		<div className="policyBox">
+		<div className="policyBox fixed">
 			<div className="policy">
 				<div className="content">
-					<div>
+					{/* <div>
 						<img
 							src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
 							alt=""
@@ -20,7 +20,7 @@ function Policy() {
 								width: "100px"
 							}}
 						/>
-					</div>
+					</div> */}
 					<h1 style={{ color: "#1c2755" }}>Privacy Policy</h1>
 					<div className="text">
 						<h2>Overview</h2>
@@ -1796,10 +1796,7 @@ function Policy() {
 							<button className="butonCancel">cancel</button>
 						</Link>
 						<Link to="/">
-							<button
-								style={{ color: "#fff" }}
-								className="butonContinue"
-							>
+							<button style={{ color: "red" }} className="butonContinue">
 								continue
 							</button>
 						</Link>
