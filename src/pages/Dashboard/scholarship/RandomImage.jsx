@@ -71,7 +71,10 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 						width: "5rem"
 					}}
 				>
-					{window.location.pathname === "/" ? "Register" : "Next"}
+					{window.location.pathname === "/" &&
+					currentImageIndex === images.length - 1
+						? "Register"
+						: "Next"}
 				</Button>
 				<Button
 					type="primary"

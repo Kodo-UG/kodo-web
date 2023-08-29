@@ -7,7 +7,12 @@ import VideoSection from "./VideoSection";
 import RandomImageModal from "../Dashboard/scholarship/RandomImage";
 
 const images = [
-	"https://res.cloudinary.com/itgenius/image/upload/v1693029283/Kodo_Home_Pop_Up_Ad-01_ydskot.jpg"
+	"https://res.cloudinary.com/itgenius/image/upload/v1693281465/New_Kodo_Pop_Up_Ads-01_h2fhhz.jpg",
+	"https://res.cloudinary.com/itgenius/image/upload/v1693281465/New_Kodo_Pop_Up_Ads-02_q42t2p.jpg",
+	"https://res.cloudinary.com/itgenius/image/upload/v1693281465/New_Kodo_Pop_Up_Ads-03_gzvizf.jpg",
+	"https://res.cloudinary.com/itgenius/image/upload/v1693281465/New_Kodo_Pop_Up_Ads-06_jupph2.jpg",
+	"https://res.cloudinary.com/itgenius/image/upload/v1693281464/New_Kodo_Pop_Up_Ads-05_ju8yba.jpg",
+	"https://res.cloudinary.com/itgenius/image/upload/v1693281464/New_Kodo_Pop_Up_Ads-04_qeb5hm.jpg"
 ];
 
 const HomePage = () => {
