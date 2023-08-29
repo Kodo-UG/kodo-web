@@ -16,7 +16,10 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 	};
 
 	const handleClick = () => {
-		if (window.location.pathname === "/") {
+		if (
+			window.location.pathname === "/" &&
+			currentImageIndex === images.length - 1
+		) {
 			history.push("/stepper");
 		} else {
 			history.push("#");
