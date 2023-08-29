@@ -21,8 +21,6 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 			currentImageIndex === images.length - 1
 		) {
 			history.push("/stepper");
-		} else {
-			history.push("#");
 		}
 	};
 
@@ -62,7 +60,8 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 				<Button
 					type="primary"
 					onClick={
-						window.location.pathname === "/"
+						window.location.pathname === "/" &&
+						currentImageIndex === images.length - 1
 							? handleClick
 							: showRandomImage
 					}
