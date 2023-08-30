@@ -10,7 +10,15 @@ function Policy() {
 	};
 	return (
 		<div style={{ display: "flex", justifyContent: "center" }} className=" ">
-			<div style={{ width: "75%", padding: "2rem" }} className="">
+			<div
+				style={{
+					width: "75%",
+					padding: "2rem",
+					fontSize: "1.5rem",
+					textAlign: "justify"
+				}}
+				className=""
+			>
 				<div className="content">
 					<h1 style={{ color: "#1c2755" }}>Privacy Policy</h1>
 					<div className="text">
