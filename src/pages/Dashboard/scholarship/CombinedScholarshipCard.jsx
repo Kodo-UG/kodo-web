@@ -94,14 +94,13 @@ const CombinedScholarshipCard = () => {
 			>
 				<div
 					style={{
-						//
 						padding: "1rem",
+
 						display: "flex",
 						flexWrap: "wrap",
 						justifyContent: "center",
 						alignItems: "center",
-						marginLeft: "2.5rem",
-						marginBottom: isSm ? "20rem" : ""
+						width: "100%"
 					}}
 				>
 					{!subscription &&

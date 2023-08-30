@@ -30,11 +30,10 @@ const CardScholarship = ({
 			className="shadow-xl"
 			style={{
 				width: "100%",
-				// height: "13rem",
 				borderRadius: "0.5rem",
 				cursor: "pointer",
-				// marginLeft: "-1.9rem",
-				marginBottom: "3rem"
+				marginBottom: "3rem",
+				// marginLeft: "-1rem"
 			}}
 			onClick={() => destinationPath()}
 		>
@@ -43,12 +42,18 @@ const CardScholarship = ({
 				style={{
 					background: "#1c2755",
 					color: "white",
-					padding: "0.2rem",
+					// padding: "0.2rem",
 					borderTopLeftRadius: "0.5rem",
 					borderTopRightRadius: "0.5rem"
 				}}
 			>
-				<div className="d-flex align-items-center justify-content-between">
+				<div
+					style={{
+						borderTopLeftRadius: "0.5rem",
+						borderTopRightRadius: "0.5rem"
+					}}
+					className="d-flex align-items-center justify-content-between"
+				>
 					<div className="w-25">
 						<img
 							src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1689711758/Screenshot_from_2023-07-18_23-19-08-removebg-preview_kavcdq.png"
@@ -68,7 +73,6 @@ const CardScholarship = ({
 							style={{
 								fontWeight: "bold",
 								color: "white",
-								// background: "red",
 								width: "100%",
 
 								fontSize: "14px",
