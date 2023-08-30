@@ -9,18 +9,9 @@ function Policy() {
 		setIsChecked((prevChecked) => !prevChecked);
 	};
 	return (
-		<div className="policyBox fixed">
-			<div className="policy">
+		<div style={{ display: "flex", justifyContent: "center" }} className=" ">
+			<div style={{ width: "75%", padding: "2rem" }} className="">
 				<div className="content">
-					{/* <div>
-						<img
-							src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
-							alt=""
-							style={{
-								width: "100px"
-							}}
-						/>
-					</div> */}
 					<h1 style={{ color: "#1c2755" }}>Privacy Policy</h1>
 					<div className="text">
 						<h2>Overview</h2>
@@ -1791,16 +1782,12 @@ function Policy() {
 							policies and agree by the above terms and policies
 						</label>
 					</div>
-					<div className="btnz">
+					{/* <div className="btnz">
+						
 						<Link to="/">
-							<button className="butonCancel">cancel</button>
+							<button className="butonCancel">continue</button>
 						</Link>
-						<Link to="/">
-							<button  className="butonCancel">
-								continue
-							</button>
-						</Link>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
