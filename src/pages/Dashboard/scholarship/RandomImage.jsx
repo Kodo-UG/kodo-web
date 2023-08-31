@@ -26,6 +26,8 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 	const handleClick = () => {
 		if (window.location.pathname === "/") {
 			history.push("/stepper");
+		} else {
+			history.push("/stepper");
 		}
 	};
 
@@ -62,19 +64,24 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 					padding: 4
 				}}
 			>
-				<Button
-					type="primary"
-					onClick={window.location.pathname === "/" && handleClick}
-					style={{
-						background: "none",
-						border: `2px solid #ec1d64`,
-						color: "#ec1d64",
-						padding: 2,
-						width: "8rem"
-					}}
-				>
-					{window.location.pathname === "/" && "Register Now"}
-				</Button>
+				{window.location.pathname === "/scholars" ? (
+					""
+				) : (
+					<Button
+						type="primary"
+						onClick={window.location.pathname === "/" && handleClick}
+						style={{
+							background: "none",
+							border: `2px solid #ec1d64`,
+							color: "#ec1d64",
+							padding: 2,
+							width: "8rem"
+						}}
+					>
+						{window.location.pathname === "/" && "Register Now"}
+					</Button>
+				)}
+
 				<Button
 					type="primary"
 					onClick={closeModal}
