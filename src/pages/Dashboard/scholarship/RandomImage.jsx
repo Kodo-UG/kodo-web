@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button } from "antd";
 import { useHistory } from "react-router-dom";
 
-const RandomImageModal = ({ visible, closeModal, images }) => {
+const RandomImageModal = ({ visible, closeModal, images, show }) => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const history = useHistory();
 
@@ -27,7 +27,7 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 		if (window.location.pathname === "/") {
 			history.push("/stepper");
 		} else {
-			history.push("/stepper");
+			show();
 		}
 	};
 
@@ -64,24 +64,20 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 					padding: 4
 				}}
 			>
-				{window.location.pathname === "/scholars" ? (
-					""
-				) : (
-					<Button
-						type="primary"
-						onClick={window.location.pathname === "/" && handleClick}
-						style={{
-							background: "none",
-							border: `2px solid #ec1d64`,
-							color: "#ec1d64",
-							padding: 2,
-							width: "8rem"
-						}}
-					>
-						{window.location.pathname === "/" && "Register Now"}
-					</Button>
-				)}
-
+				<Button
+					type="primary"
+					onClick={handleClick}
+					style={{
+						background: "none",
+						border: `2px solid #ec1d64`,
+						color: "#ec1d64",
+						padding: 2,
+						width: "8rem"
+					}}
+				>
+					{window.location.pathname === "/" && "Register Now"}
+					{window.location.pathname === "/scholars" && "Invite Friend"}
+				</Button>
 				<Button
 					type="primary"
 					onClick={closeModal}
