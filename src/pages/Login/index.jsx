@@ -6,10 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BiEnvelope } from "react-icons/bi";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
-import axiosInstance from "../../api/axiosInstance";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
-import { Modal } from "antd";
 export default function Login() {
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
