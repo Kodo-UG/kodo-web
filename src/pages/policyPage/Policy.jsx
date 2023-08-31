@@ -1,24 +1,34 @@
 import React, { useState } from "react";
 import "./policy.css";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function Policy() {
 	const [isChecked, setIsChecked] = useState(false);
+
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const isMd = useMediaQuery(
+		"only screen and (min-width : 700px) and (max-width : 1250px)"
+	);
 
 	const handleCheckboxChange = () => {
 		setIsChecked((prevChecked) => !prevChecked);
 	};
 	return (
-		<div style={{ display: "flex", justifyContent: "center" }} className=" ">
+		<div
+			style={{
+				display: "flex",
+				justifyContent: "center"
+			}}
+		>
 			<div
 				style={{
-					width: "75%",
-					padding: "2rem",
-					fontSize: "1.5rem",
+					width: isSm | isMd ? "100%" : "75%",
+					padding: isSm | isMd ? "1rem" : "1.5rem",
+					fontSize: isSm | isMd ? "1rem" : "1.5rem",
 					textAlign: "justify"
 				}}
-				className=""
 			>
-				<div className="content">
+				<div className="">
 					<h1 style={{ color: "#1c2755" }}>Privacy Policy</h1>
 					<div className="text">
 						<h2>Overview</h2>
@@ -1783,18 +1793,12 @@ function Policy() {
 								type="checkbox"
 								checked={isChecked}
 								onChange={handleCheckboxChange}
-								style={{ marginRight: "1rem" }}
+								// style={{ marginRight: "1rem" }}
 							/>
-							I have successfully read through the above terms and
+							I have successfully read through the aboveterms and
 							policies and agree by the above terms and policies
 						</label>
 					</div>
-					{/* <div className="btnz">
-						
-						<Link to="/">
-							<button className="butonCancel">continue</button>
-						</Link>
-					</div> */}
 				</div>
 			</div>
 		</div>

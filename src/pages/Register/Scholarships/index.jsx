@@ -112,23 +112,3 @@ const Stepper = () => {
 };
 
 export default Stepper;
-
-// 	return (
-// 		<HeaderLayout>
-// 			<div
-// 				style={{
-// 					backgroundColor: "red",
-// 					height: "80vh",
-// 					display: "flex",
-// 					justifyContent: "center",
-// 					alignItems: "center"
-// 				}}
-// 				className=""
-// 			>
-// 				{renderStepContent()}
-// 			</div>
-// 		</HeaderLayout>
-// 	);
-// };
-
-// export default Stepper;

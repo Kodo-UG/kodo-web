@@ -5,7 +5,7 @@ import Policy from "./Policy";
 const Privacy = () => {
 	return (
 		<Layout>
-			<div style={{ marginTop: "6rem" }}>
+			<div style={{ marginTop: "6rem", width: "100%", display: "flex" }}>
 				<Policy />
 			</div>
 		</Layout>
