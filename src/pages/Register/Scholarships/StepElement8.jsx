@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./stepperElement.css";
 import { useDispatch, useSelector } from "react-redux";
-import { updateFormData } from "../../../toolkit/formReducer";
+import { clearFormData, updateFormData } from "../../../toolkit/formReducer";
 import { useHistory } from "react-router-dom";
 
 import { Link } from "react-router-dom";
@@ -10,7 +10,9 @@ import {
 	displaySuccessMessage
 } from "../../../utils/Toast";
 import axiosInstance from "../../../api/axiosInstance";
-import * as Yup from "yup"; // Import Yup for validation
+import * as Yup from "yup";
+import { DatePicker, Space } from "antd";
+import moment from "moment";
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string()
@@ -24,9 +26,7 @@ function StepElement8() {
 	const formData = useSelector((state) => state.formData);
 	const history = useHistory();
 	const [loading, setLoading] = useState(false);
-
 	const [gender, setGender] = useState("");
-
 	const [showPassword, setShowPassword] = useState(false);
 
 	const dispatch = useDispatch();
@@ -35,12 +35,10 @@ function StepElement8() {
 		dispatch(updateFormData({ field: "email", value: value }));
 	};
 
-	
-
-	const handleDobChange = (e) => {
-		const { name, value } = e.target;
-		dispatch(updateFormData({ field: "dob", value: value }));
+	const handleDobChange = (date, dateString) => {
+		dispatch(updateFormData({ field: "dob", value: dateString }));
 	};
+
 	const handlePasswordChange = (e) => {
 		const { name, value } = e.target;
 		dispatch(updateFormData({ field: "password", value: value }));
@@ -72,6 +70,7 @@ function StepElement8() {
 
 			if (res.data.id) {
 				displaySuccessMessage("Registration successful ");
+				clearFormData();
 				history.push("/signin");
 			} else {
 				displayErrorMessage(res.data.message);
@@ -230,15 +229,31 @@ function StepElement8() {
 									</div>
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
-											<input
+											<DatePicker
 												className="_textField_fwd9c_1"
 												onChange={handleDobChange}
 												name="dob"
-												type="date"
-												id="dob"
-												label="Date of birth"
-												placeholder="Date Of Birth"
-												required
+												value={
+													formData.dob
+														? moment(formData.dob, "YYYY-MM-DD")
+														: null
+												}
+												// Add the custom cellRender function
+												dateRender={(current) => {
+													const style = {};
+													if (current.date() === 1) {
+														style.border = "1px solid #1677ff";
+														style.borderRadius = "50%";
+													}
+													return (
+														<div
+															className="ant-picker-cell-inner"
+															style={style}
+														>
+															{current.date()}
+														</div>
+													);
+												}}
 											/>
 										</div>
 									</div>
@@ -256,6 +271,7 @@ function StepElement8() {
 											</select>
 										</div>
 									</div>
+
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
 											<input
@@ -271,7 +287,6 @@ function StepElement8() {
 										</div>
 									</div>
 
-									
 									<div className="_pageActions_pmptr_26">
 										<button
 											type="submit"
