@@ -321,7 +321,7 @@ function StepElement8() {
 					<div className="py-2 divide-x px-4 flex flex-wrap justify-center">
 						<Link
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							to="#"
+							to="/policy"
 							target="_blank"
 						>
 							Privacy Policy

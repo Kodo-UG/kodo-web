@@ -71,7 +71,7 @@ const StepTwo = ({ nextStep }) => {
 					}}
 				>
 					{loading
-						? "Loading categpries.."
+						? "Loading categories..."
 						: newData?.map((dta) => (
 								<button
 									key={dta._id}
