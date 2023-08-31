@@ -5,9 +5,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
 import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
-import Policy from "./pages/policyPage/Policy";
 
-import ShareLinkButton from "../src/pages/share";
 import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
 
