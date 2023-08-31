@@ -1,26 +1,34 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./policy.css";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function Policy() {
 	const [isChecked, setIsChecked] = useState(false);
+
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const isMd = useMediaQuery(
+		"only screen and (min-width : 700px) and (max-width : 1250px)"
+	);
 
 	const handleCheckboxChange = () => {
 		setIsChecked((prevChecked) => !prevChecked);
 	};
 	return (
-		<div className="policyBox">
-			<div className="policy">
-				<div className="content">
-					<div>
-						<img
-							src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
-							alt=""
-							style={{
-								width: "100px"
-							}}
-						/>
-					</div>
+		<div
+			style={{
+				display: "flex",
+				justifyContent: "center"
+			}}
+		>
+			<div
+				style={{
+					width: isSm | isMd ? "100%" : "75%",
+					padding: isSm | isMd ? "1rem" : "1.5rem",
+					fontSize: isSm | isMd ? "1rem" : "1.5rem",
+					textAlign: "justify"
+				}}
+			>
+				<div className="">
 					<h1 style={{ color: "#1c2755" }}>Privacy Policy</h1>
 					<div className="text">
 						<h2>Overview</h2>
@@ -1785,24 +1793,11 @@ function Policy() {
 								type="checkbox"
 								checked={isChecked}
 								onChange={handleCheckboxChange}
-								style={{ marginRight: "1rem" }}
+								// style={{ marginRight: "1rem" }}
 							/>
-							I have successfully read through the above terms and
+							I have successfully read through the aboveterms and
 							policies and agree by the above terms and policies
 						</label>
-					</div>
-					<div className="btnz">
-						<Link to="/">
-							<button className="butonCancel">cancel</button>
-						</Link>
-						<Link to="/">
-							<button
-								style={{ color: "#fff" }}
-								className="butonContinue"
-							>
-								continue
-							</button>
-						</Link>
 					</div>
 				</div>
 			</div>

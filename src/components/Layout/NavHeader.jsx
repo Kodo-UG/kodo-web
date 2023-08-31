@@ -12,9 +12,16 @@ const NavHeader = ({ open, setOpen }) => {
 	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
 
 	const smallClass = isSm ? "navbar-nav  ul" : "navbar-nav ml-auto ul";
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
-	
+	const handleClick = (e) => {
+		e.preventDefault();
+		if (token) {
+			history.push("/scholars");
+		} else {
+			history.push("/admissions");
+		}
+	};
 
 	const routeData = [
 		{
@@ -86,11 +93,7 @@ const NavHeader = ({ open, setOpen }) => {
 				</Link>
 
 				{isSm && (
-					<button
-						type="button"
-					
-						onClick={() => setOpen(!open)}
-					>
+					<button type="button" onClick={() => setOpen(!open)}>
 						<HiMenuAlt1
 							style={{
 								color: "red",
@@ -100,16 +103,11 @@ const NavHeader = ({ open, setOpen }) => {
 								marginTop: "1rem"
 							}}
 						/>
-
 					</button>
 				)}
 			</div>
 			{open ? (
-				<div
-					style={{ zIndex: 99999 }}
-					onClick={() => setOpen(false)}
-					
-				>
+				<div style={{ zIndex: 99999 }} onClick={() => setOpen(false)}>
 					<ul
 						style={{
 							color: "#202F4A",
@@ -190,10 +188,7 @@ const NavHeader = ({ open, setOpen }) => {
 									fontFamily: "Roboto, sans-serif",
 									fontSize: "16px"
 								}}
-								onClick={(e) => {
-									e.preventDefault();
-									history.push("/admissions");
-								}}
+								onClick={handleClick}
 							>
 								FIND SCHOLARSHIPS
 							</button>
@@ -247,8 +242,7 @@ const NavHeader = ({ open, setOpen }) => {
 										e.preventDefault();
 										localStorage.removeItem("token");
 										localStorage.removeItem("userData");
-										dispatch(clearScholarships())
-
+										dispatch(clearScholarships());
 										history.push("/login");
 									}}
 								>

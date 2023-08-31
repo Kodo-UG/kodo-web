@@ -15,7 +15,8 @@ const initialState = {
 	phone: "",
 	appType: "",
 	scholarshipcategory: "",
-	subject:""
+	subject:"",
+	dob:""
 };
 const formDataSlice = createSlice({
 	name: "formData",

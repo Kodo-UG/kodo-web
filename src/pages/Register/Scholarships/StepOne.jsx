@@ -88,52 +88,6 @@ const StepOne = ({ nextStep, setFormData }) => {
 			</div>
 		</div>
 
-		// <div className="app-container">
-		// 	<div style={{ marginTop: "" }} className="app-wrapper">
-		// 		<div
-		// 			className="selections-container"
-		// 			style={{
-		// 				transform: "none",
-		// 				transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms"
-		// 			}}
-		// 		>
-		// 			<h2>What degree level are you looking for?</h2>
-		// 			<div className="option-list">
-		// 				{myList.map((list) => (
-		// 					<MyButton
-		// 						key={list.id}
-		// 						text={list.text}
-		// 						isSelected={selectedButtonId === list.id}
-		// 						onClick={() => handleButtonClick(list.id)}
-		// 					/>
-		// 				))}
-		// 			</div>
-		// 		</div>
-		// 	</div>
-		// 	<div
-		// 		className="d-flex"
-		// 		style={{ display: "flex", justifyContent: "center" }}
-		// 	>
-		// 		<button
-		// 			className="select-option sonic-btn"
-		// 			onClick={nextStep}
-		// 			style={{
-		// 				padding: "10px 20px",
-		// 				border: "none",
-		// 				outline: "none",
-		// 				transition:
-		// 					"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
-		// 				fontFamily: "Arial, sans-serif",
-		// 				fontSize: "16px",
-		// 				lineHeight: "1.5",
-		// 				color: "#fff",
-		// 				cursor: "pointer"
-		// 			}}
-		// 		>
-		// 			Next
-		// 		</button>
-		// 	</div>
-		// </div>
 	);
 };
 

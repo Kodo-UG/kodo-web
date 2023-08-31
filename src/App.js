@@ -9,6 +9,7 @@ import Policy from "./pages/policyPage/Policy";
 
 import ShareLinkButton from "../src/pages/share";
 import RSSUsage from "./pages/share/RSSUsage";
+import Privacy from "./pages/policyPage";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
@@ -76,7 +77,7 @@ const App = () => {
 				<Route exact path="/index" component={Index} />
 				<Route exact path="/signin" component={Signin} />
 				<Route exact path="/forgot/password" component={ForgotPassword} />
-				<Route path="/reset-password" component={PasswordReset} />
+				<Route path="/reset-password/:token" component={PasswordReset} />
 				<PrivateRoute exact path="/scholars" component={RootScholarship} />
 				<PrivateRoute exact path="/favorite" component={Favorite} />
 				<PrivateRoute exact path="/profile" component={MainProfile} />
@@ -89,7 +90,7 @@ const App = () => {
 				<Route exact path="/JobStep1" component={JobStep1} />
 				<Route exact path="/JobStep2" component={JobStep2} />
 				<Route exact path="/JobStep3" component={JobStep3} />
-				<Route exact path="/policy" component={Policy} />
+				<Route exact path="/policy" component={Privacy} />
 				<Route exact path="/share" component={RSSUsage} />
 
 				<Route

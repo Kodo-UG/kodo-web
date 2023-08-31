@@ -34,19 +34,23 @@ function StepElement8() {
 		const { name, value } = e.target;
 		dispatch(updateFormData({ field: "email", value: value }));
 	};
+
+	
+
+	const handleDobChange = (e) => {
+		const { name, value } = e.target;
+		dispatch(updateFormData({ field: "dob", value: value }));
+	};
 	const handlePasswordChange = (e) => {
 		const { name, value } = e.target;
-		// Dispatch an ction to update the form data in the Redux store
 		dispatch(updateFormData({ field: "password", value: value }));
 	};
 	const handlePhoneChange = (e) => {
 		const { name, value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "phone", value: value }));
 	};
 	const handleFirstNameChange = (e) => {
 		const { name, value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "fname", value: value }));
 	};
 	const handleLastNameChange = (e) => {
@@ -64,12 +68,10 @@ function StepElement8() {
 
 			const res = await axiosInstance.post("/auth/user/signup", formData);
 			console.log(res.data.id);
-			localStorage.setItem("userID",res.data.id)
+			localStorage.setItem("userID", res.data.id);
 
 			if (res.data.id) {
-				displaySuccessMessage(
-					"Registration successful verification email sent to your email"
-				);
+				displaySuccessMessage("Registration successful ");
 				history.push("/signin");
 			} else {
 				displayErrorMessage(res.data.message);
@@ -211,6 +213,7 @@ function StepElement8() {
 											/>
 										</div>
 									</div>
+
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
 											<input
@@ -229,17 +232,16 @@ function StepElement8() {
 										<div className="_fieldGroup_1g3ja_1">
 											<input
 												className="_textField_fwd9c_1"
-												onChange={handlePasswordChange}
-												name={showPassword ? "text" : "password"}
-												type="password"
-												id="password"
-												label="password"
-												placeholder="Password"
+												onChange={handleDobChange}
+												name="dob"
+												type="date"
+												id="dob"
+												label="Date of birth"
+												placeholder="Date Of Birth"
 												required
 											/>
 										</div>
 									</div>
-
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
 											<select
@@ -254,6 +256,22 @@ function StepElement8() {
 											</select>
 										</div>
 									</div>
+									<div>
+										<div className="_fieldGroup_1g3ja_1">
+											<input
+												className="_textField_fwd9c_1"
+												onChange={handlePasswordChange}
+												name={showPassword ? "text" : "password"}
+												type="password"
+												id="password"
+												label="password"
+												placeholder="Password"
+												required
+											/>
+										</div>
+									</div>
+
+									
 									<div className="_pageActions_pmptr_26">
 										<button
 											type="submit"
@@ -312,8 +330,8 @@ function StepElement8() {
 							className="icon-component icon-component--logo-stacked-horizontal"
 							style={{ color: "#fff" }}
 							src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
-							width="36"
-							height="36"
+							width="76"
+							height="76"
 							fill="#fff"
 							role="img"
 							viewBox="0 0 350 105"
@@ -323,7 +341,7 @@ function StepElement8() {
 					<div className="py-2 divide-x px-4 flex flex-wrap justify-center">
 						<Link
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							to="#"
+							to="/policy"
 							target="_blank"
 						>
 							Privacy Policy

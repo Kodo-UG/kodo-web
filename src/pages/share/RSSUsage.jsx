@@ -26,7 +26,6 @@ export default function RSSUsage() {
 		}
 	};
 
-	useEffect(() => {}, []);
 	const userId = localStorage.getItem("userID");
 
 	let URL = `https://kodoscholarships.com/stepper/${userId}`;

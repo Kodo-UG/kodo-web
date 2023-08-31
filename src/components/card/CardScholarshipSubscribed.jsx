@@ -26,6 +26,11 @@ function CardScholarshipSubscribed({
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
+	const today = new Date();
+	const deadlineDate = new Date(deadline);
+	const timeDifference = deadlineDate.getTime() - today.getTime();
+	const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
 	const truncateText = (text, maxWords) => {
 		const wordsArray = text.split(" ");
 		if (wordsArray.length > maxWords) {
@@ -40,17 +45,16 @@ function CardScholarshipSubscribed({
 			onClick={() => setVisible(!visible)}
 			className=" shadow-3xl "
 			style={{
-				width: "23rem",
+				width: "24rem",
 				display: "flex",
 				flexDirection: "column",
 				justifyContent: "space-between",
 				background: "white",
 				borderRadius: "0.5rem",
-				boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
+				boxShadow: "2px 2px 6px rgba(0, 0, 0, 0.4)",
 				cursor: "pointer",
-				marginLeft: isSm ? "-3rem" : "",
-				marginBottom: "3rem",
-				fontFamily: "Arial, sans-serif"
+				marginBottom: "3rem"
+				// fontFamily: "Arial, sans-serif",
 			}}
 		>
 			<div
@@ -70,7 +74,8 @@ function CardScholarshipSubscribed({
 						width: "75%",
 						padding: "0.4rem",
 						alignItems: "center",
-						justifyContent: "center"
+						justifyContent: "center",
+						background: ""
 					}}
 				>
 					<h4
@@ -78,9 +83,9 @@ function CardScholarshipSubscribed({
 						style={{
 							marginLeft: "0.4rem",
 							fontWeight: "bold",
-							fontFamily: "Roboto ",
+							// fontFamily: "Roboto ",
 							letterSpacing: "2px",
-							fontSize: "1.34rem"
+							fontSize: "1.25rem"
 						}}
 					>
 						{" "}
@@ -94,8 +99,7 @@ function CardScholarshipSubscribed({
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "space-evenly",
-						fontWeight: "bold",
-						opacity: 0.5
+						fontWeight: "bold"
 					}}
 				>
 					<span
@@ -115,7 +119,9 @@ function CardScholarshipSubscribed({
 							fontWeight: "bolder"
 						}}
 					/>
-					<BsThreeDotsVertical style={{ height: "20px", width: "20px" }} />
+					<BsThreeDotsVertical
+						style={{ height: "20px", width: "20px", opacity: "0.5" }}
+					/>
 				</div>
 			</div>
 
@@ -317,6 +323,43 @@ function CardScholarshipSubscribed({
 					</a>
 				</div>
 			</Modal>
+			<div
+				style={{
+					// height: "3rem",
+					display: "flex",
+					alignItems: "center",
+					marginBottom: "0.2rem",
+					paddingLeft: "1rem"
+				}}
+			>
+				{daysDifference === 1 ? (
+					<div
+						style={{
+							width: "8.2rem",
+							background: "#ec1d64",
+							paddingLeft: "0.3rem",
+							color: "white",
+							borderRadius: "3px",
+							fontWeight: "bold"
+						}}
+					>
+						Deadline Today
+					</div>
+				) : daysDifference === 2 ? (
+					<div
+						style={{
+							width: "8.2rem",
+							background: "#ed64",
+							paddingLeft: "0.3rem",
+							color: "white",
+							borderRadius: "3px",
+							fontWeight: "bold"
+						}}
+					>
+						{daysDifference} days left
+					</div>
+				) : null}
+			</div>
 		</div>
 	);
 }

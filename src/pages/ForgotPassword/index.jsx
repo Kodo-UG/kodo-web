@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import { BiEnvelope } from "react-icons/bi";
 import axiosInstance from "../../api/axiosInstance";
+import '../Login/custom.css'
 
 export default function ForgotPassword() {
 	const [email, setEmail] = useState();
