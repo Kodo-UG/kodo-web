@@ -91,8 +91,6 @@ function StepComfirmation() {
 				<section id="voyager-blocks">
 					<section>
 						<section
-							// style={{ padding: "2rem", marginTop: "12rem" }}
-							className=""
 						>
 							<div
 								data-testid="progress-bar"
@@ -125,7 +123,6 @@ function StepComfirmation() {
 								</button>
 							</Link>
 							<div
-								// style={{ padding: "10rem" }}
 								className="_notAnimated_pmptr_10"
 							>
 								<span
@@ -206,7 +203,7 @@ function StepComfirmation() {
 					<div className="py-2 divide-x px-4 flex flex-wrap justify-center">
 						<Link
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							to="#"
+							to="/policy"
 							target="_blank"
 						>
 							Privacy Policy
