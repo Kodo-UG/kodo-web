@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button } from "antd";
 import { useHistory } from "react-router-dom";
 
 const RandomImageModal = ({ visible, closeModal, images }) => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const history = useHistory();
+
+	useEffect(() => {
+		const interval = setInterval(showRandomImage, 50000); // Change image every 5 seconds
+
+		return () => {
+			clearInterval(interval);
+		};
+	}, [currentImageIndex]); // Only re-run the effect if currentImageIndex changes
 
 	const getRandomIndex = () => {
 		return Math.floor(Math.random() * images.length);
@@ -16,10 +24,7 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 	};
 
 	const handleClick = () => {
-		if (
-			window.location.pathname === "/" &&
-			currentImageIndex === images.length - 1
-		) {
+		if (window.location.pathname === "/") {
 			history.push("/stepper");
 		}
 	};
@@ -59,24 +64,16 @@ const RandomImageModal = ({ visible, closeModal, images }) => {
 			>
 				<Button
 					type="primary"
-					onClick={
-						window.location.pathname === "/" &&
-						currentImageIndex === images.length - 1
-							? handleClick
-							: showRandomImage
-					}
+					onClick={window.location.pathname === "/" && handleClick}
 					style={{
 						background: "none",
 						border: `2px solid #ec1d64`,
 						color: "#ec1d64",
 						padding: 2,
-						width: "5rem"
+						width: "8rem"
 					}}
 				>
-					{window.location.pathname === "/" &&
-					currentImageIndex === images.length - 1
-						? "Register"
-						: "Next"}
+					{window.location.pathname === "/" && "Register Now"}
 				</Button>
 				<Button
 					type="primary"
