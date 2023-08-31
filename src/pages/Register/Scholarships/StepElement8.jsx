@@ -64,12 +64,10 @@ function StepElement8() {
 
 			const res = await axiosInstance.post("/auth/user/signup", formData);
 			console.log(res.data.id);
-			localStorage.setItem("userID",res.data.id)
+			localStorage.setItem("userID", res.data.id);
 
 			if (res.data.id) {
-				displaySuccessMessage(
-					"Registration successful verification email sent to your email"
-				);
+				displaySuccessMessage("Registration successful ");
 				history.push("/signin");
 			} else {
 				displayErrorMessage(res.data.message);
