@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const BackgroundCarousel = () => {
 	return (
-		<Carousel  interval={9900} slide={true}>
+		<Carousel interval={9900} slide={true}>
 			<Carousel.Item>
 				<div
 					className="d-block w-100"
@@ -79,7 +79,7 @@ const BackgroundCarousel = () => {
 										className="btn btn-lg btn-primary"
 										style={{
 											borderRadius: "2rem",
-											background: "#ec1d64",
+											background: "#EB1E5E",
 											border: "none",
 											fontSize: "16px",
 											fontWeight: "bold",
@@ -109,7 +109,7 @@ const BackgroundCarousel = () => {
 						backgroundSize: "cover",
 						backgroundPosition: "center",
 						filter: "brightness(95%)",
-						height: "91vh" 
+						height: "91vh"
 					}}
 				>
 					<div
@@ -165,26 +165,26 @@ const BackgroundCarousel = () => {
 							</h5>
 							<div style={{ width: "50%" }}>
 								<Link to="/jobStep1">
-								<button
-									type="button"
-									className="btn btn-lg btn-primary"
-									style={{
-										borderRadius: "2rem",
-										background: "#ec1d64",
-										border: "none",
-										fontSize: "16px",
-										fontWeight: "bold",
-										color: "#fff",
-										fontFamily: "Roboto, sans-serif;",
-										lineHeight: "16px",
-										fontStyle: "normal",
-										padding: "0.8rem"
-									}}
-								>
-									Find Jobs Now <i className="fal fa-long-arrow-right"></i>
-								</button>
+									<button
+										type="button"
+										className="btn btn-lg btn-primary"
+										style={{
+											borderRadius: "2rem",
+											background: "#EB1E5E",
+											border: "none",
+											fontSize: "16px",
+											fontWeight: "bold",
+											color: "#fff",
+											fontFamily: "Roboto, sans-serif;",
+											lineHeight: "16px",
+											fontStyle: "normal",
+											padding: "0.8rem"
+										}}
+									>
+										Find Jobs Now{" "}
+										<i className="fal fa-long-arrow-right"></i>
+									</button>
 								</Link>
-								
 							</div>
 						</div>
 					</div>

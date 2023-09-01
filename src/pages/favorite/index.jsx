@@ -121,7 +121,7 @@ const Favorite = () => {
 						fontSize: "2rem",
 						border: "2px",
 						fontFamily: "poppins; serif",
-						marginBottom: ".1rem",
+						marginBottom: "2rem",
 						marginLeft: isLg ? "19rem" : ""
 					}}
 				>
@@ -133,7 +133,7 @@ const Favorite = () => {
 						style={{
 							textAlign: "center",
 							marginTop: ".4rem",
-							fontFamily: "Poppins",
+							fontFamily: "Montserrat, sans-serif",
 							cursor: "pointer",
 							marginLeft: isSm ? "" : "1rem"
 						}}

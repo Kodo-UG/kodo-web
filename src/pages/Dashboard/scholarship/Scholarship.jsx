@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React from "react";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import MatchedCard from "./MatchedCard";
 import ShowTitle from "./ShowTitle";
@@ -6,14 +6,11 @@ import CombinedScholarshipCard from "./CombinedScholarshipCard";
 import MapCardData from "./MapCardData";
 import "./modal.css";
 
-
-
 const Scholarship = () => {
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
-	
 
 	return (
-		<div>
+		<div style={{ background: "white" }}>
 			<div className="content-wrapper">
 				<section style={{ marginBottom: "3rem" }} className="content">
 					<div
@@ -30,7 +27,6 @@ const Scholarship = () => {
 
 						<ShowTitle />
 						{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
-						
 					</div>
 				</section>
 			</div>

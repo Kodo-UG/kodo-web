@@ -10,9 +10,9 @@ const ProfileComponent = ({
 	city,
 	country,
 	lname,
-	fname,
+	fname
 }) => {
-	const [bg, setBg] = useState("#ec1d64");
+	const [bg, setBg] = useState("#EB1E5E");
 	const [first_name, setName] = useState(fname);
 	const [last_name, setLastName] = useState(lname);
 	const [ncity, setCity] = useState(city);
@@ -30,7 +30,7 @@ const ProfileComponent = ({
 				city: ncity,
 				country: ncountry,
 				phone: newPhone,
-				email: newEmail,
+				email: newEmail
 			});
 
 			setCity("");
@@ -40,13 +40,11 @@ const ProfileComponent = ({
 			setNewEmail("");
 			setNewPhone("");
 
-			
 			if (res?.data.data) {
 				alert(res?.data.data);
 			}
 		} catch (error) {
-			throw error 
-
+			throw error;
 		} finally {
 			setLoading(false);
 		}
@@ -62,7 +60,7 @@ const ProfileComponent = ({
 				style={{
 					padding: "20px",
 					justifyContent: "center",
-					alignItems: "center",
+					alignItems: "center"
 				}}
 				className="main-body"
 			>
@@ -87,7 +85,7 @@ const ProfileComponent = ({
 										<button
 											style={{
 												backgroundColor: "#EC1D64",
-												color: "white",
+												color: "white"
 											}}
 											className="btn "
 										>
@@ -155,7 +153,7 @@ const ProfileComponent = ({
 												padding: "8px",
 												width: "90px",
 												marginTop: "8px",
-												color: "white",
+												color: "white"
 											}}
 											type="button"
 											class="btn "
@@ -262,7 +260,7 @@ const ProfileComponent = ({
 											onClick={handleEditUserInfo}
 											style={{
 												backgroundColor: "#EC1D64",
-												color: "white",
+												color: "white"
 											}}
 											type="button"
 											class="btn "
