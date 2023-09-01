@@ -69,8 +69,8 @@ const RandomImageModal = ({ visible, closeModal, images, show }) => {
 					onClick={handleClick}
 					style={{
 						background: "none",
-						border: `2px solid #ec1d64`,
-						color: "#ec1d64",
+						border: `2px solid #EB1E5E`,
+						color: "#EB1E5E",
 						padding: 2,
 						width: "8rem"
 					}}
@@ -83,8 +83,8 @@ const RandomImageModal = ({ visible, closeModal, images, show }) => {
 					onClick={closeModal}
 					style={{
 						background: "none",
-						border: `2px solid #ec1d64`,
-						color: "#ec1d64",
+						border: `2px solid #EB1E5E`,
+						color: "#EB1E5E",
 						padding: 2,
 						width: "5rem",
 						marginLeft: "1rem"

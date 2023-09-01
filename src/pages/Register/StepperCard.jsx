@@ -85,8 +85,8 @@ function StepperCard({ list }) {
 										className="btn ss-btn w-100"
 										style={{
 											height: "55px",
-											backgroundColor: "#ec1d64",
-											border: "2px solid #ec1d64",
+											backgroundColor: "#EB1E5E",
+											border: "2px solid #EB1E5E",
 											color: "#fff",
 											fontWeight: "400",
 											fontSize: "16px",

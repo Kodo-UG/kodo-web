@@ -31,14 +31,14 @@ function LoginComponent() {
 				<Link
 					to="/login"
 					style={{
-						color: "#ec1d64",
+						color: "#EB1E5E",
 						transition:
 							"background-color 0.3s ease-in-out, color 0.3s ease-in-out",
 						fontFamily: "Arial, sans-serif",
 						fontSize: "24px"
 					}}
 				>
-					Login | {" "}
+					Login |{" "}
 				</Link>
 				<Link
 					to="/admissions"

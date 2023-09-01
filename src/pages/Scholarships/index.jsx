@@ -56,13 +56,13 @@
 // 												<h6 class="font-weight-light">MONTHLY</h6>
 // 												<Link
 // 													style={{
-// 														backgroundColor: "#ec1d64",
+// 														backgroundColor: "#EB1E5E",
 // 													}}
 // 													class="btn btn-info-gradiant font-14 border-0 text-white p-3 btn-block mt-3"
 // 													onClick={() =>
 // 														handleFlutterPayment({
 // 															callback: (response) => {
-																
+
 // 																closePaymentModal();
 // 															},
 // 															onClose: () => {},

@@ -55,7 +55,7 @@ const RootScholarship = () => {
 		}
 	};
 	return (
-		<div className="wrappe">
+		<div style={{ background: "white" }} className="wrappe">
 			<MyHeader setShowContent={setShowContent} />
 			<Menu setShowContent={setShowContent} />
 			<div>{renderContent()}</div>

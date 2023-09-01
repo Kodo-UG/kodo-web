@@ -7,9 +7,8 @@ const ScholarshipCard = ({
 	text,
 	award,
 	deadline,
-	subscription,
+	subscription
 }) => {
-	
 	const date = new Date(deadline);
 	const formattedDate = date.toLocaleDateString();
 	return (
@@ -27,7 +26,7 @@ const ScholarshipCard = ({
 						style={{
 							display: "flex",
 							alignItems: "center",
-							justifyContent: "space-between",
+							justifyContent: "space-between"
 						}}
 						className="upgrade-section"
 					>
@@ -35,7 +34,7 @@ const ScholarshipCard = ({
 							style={{
 								display: "flex",
 								justifyContent: "center",
-								alignItems: "center",
+								alignItems: "center"
 							}}
 						>
 							<LockOutlined className="padlock-icon" />
@@ -46,7 +45,7 @@ const ScholarshipCard = ({
 
 						<Link to="/payment">
 							<Button
-								style={{ backgroundColor: "#ec1d64" }}
+								style={{ backgroundColor: "#EB1E5E" }}
 								type="primary"
 								className=""
 							>

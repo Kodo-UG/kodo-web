@@ -540,7 +540,7 @@ const LargeCard = ({
 							<a
 								href={`${link}`}
 								style={{
-									backgroundColor: "#ec1d64",
+									backgroundColor: "#EB1E5E",
 									border: "none",
 									color: "white",
 									padding: "1rem",

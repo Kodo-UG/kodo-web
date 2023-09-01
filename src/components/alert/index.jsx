@@ -28,7 +28,7 @@ const CustomAlert = () => {
 
 			<button
 				style={{
-					backgroundColor: "#ec1d64",
+					backgroundColor: "#EB1E5E",
 					fontWeight: "bold",
 					color: "white",
 					borderRadius: "7px",

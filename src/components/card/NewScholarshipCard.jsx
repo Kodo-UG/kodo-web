@@ -6,7 +6,7 @@ const NewScholarshipCard = ({
 	currency,
 	amount,
 	period,
-	description,
+	description
 }) => {
 	return (
 		<div>
@@ -23,7 +23,7 @@ const NewScholarshipCard = ({
 									<span class="text-dark display-5">{amount}</span>
 									<h6 class="font-weight-light">{period}</h6>
 									<Link
-										style={{ backgroundColor: "#ec1d64" }}
+										style={{ backgroundColor: "#EB1E5E" }}
 										class="btn btn-info-gradiant border-0 font-14 text-white p-3 btn-block mt-3"
 										to="/"
 									>
