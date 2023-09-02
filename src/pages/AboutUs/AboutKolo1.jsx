@@ -23,7 +23,7 @@ function AboutKodo() {
 						>
 							<img
 								src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688676545/graduate_amiewj.jpg"
-								alt="class image"
+								alt=""
 							/>
 						</div>
 					</div>

@@ -66,13 +66,19 @@ const AboutUs1 = () => {
 											<li>
 												<div className="abcontent">
 													{" "}
-													<div class="text">
+													<div
+														style={{
+															textAlign: "justify",
+															marginRight: "2rem"
+														}}
+														class="text"
+													>
 														<h3>Our Mission</h3>{" "}
 														<p>
 															Our mission is to ensure that we
 															build a Scholarship System that
 															will operate in the whole of world
-															; a company that will boast of
+															, a company that will boast of
 															having some of the best and
 															reliable scholarships .
 														</p>
@@ -82,8 +88,11 @@ const AboutUs1 = () => {
 											<li>
 												<div class="abcontent">
 													{" "}
-													<div class="text">
-														<h3>Our Programs</h3>{" "}
+													<div
+														style={{ textAlign: "justify" }}
+														class="text"
+													>
+														<h3>Our Vission</h3>{" "}
 														<p>
 															Our Vision is to become one of the
 															most preferred choices of
