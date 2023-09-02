@@ -58,7 +58,9 @@ const RootScholarship = () => {
 		<div style={{ background: "white" }} className="wrappe">
 			<MyHeader setShowContent={setShowContent} />
 			<Menu setShowContent={setShowContent} />
-			<div>{renderContent()}</div>
+			<div
+		
+			>{renderContent()}</div>
 			<RandomImageModal
 				visible={modal2Open}
 				closeModal={closeModal}
