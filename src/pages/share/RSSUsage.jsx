@@ -10,7 +10,7 @@ export default function RSSUsage() {
 	const isLg = useMediaQuery("only screen and (min-width : 1250px)");
 	const style = {
 		root: {
-			background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+			background: "linear-gradient(45deg, #EB1E5E 30%, #F7972090%)",
 			borderRadius: 3,
 			border: 0,
 			boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
@@ -33,15 +33,22 @@ export default function RSSUsage() {
 		<div
 			style={{
 				padding: "1rem",
-				marginTop: "12rem",
+				// marginTop: "12rem",
 				marginLeft: isLg ? "37rem" : isMd ? "18rem" : isSm ? "1rem" : "",
 				justifyContent: "center",
-				alignItems: "center"
+				alignItems: "center",
+				width: "40%"
 			}}
 		>
-			<p style={{ marginLeft: "2rem", fontSize: isSm ? "1rem" : "2rem" }}>
+			<img
+				//  width={30}
+				height={60}
+				src="https://res.cloudinary.com/itgenius/image/upload/v1693529925/Invite_Page_Icon_Image-01_mjvsjb.png"
+				alt=""
+			/>
+			{/* <p style={{ marginLeft: "2rem", fontSize: isSm ? "1rem" : "2rem" }}>
 				Invite 5 Friends and get a free subscription
-			</p>
+			</p> */}
 			<ShareSocial
 				url={URL}
 				socialTypes={[
@@ -53,7 +60,7 @@ export default function RSSUsage() {
 					"telegram",
 					"reddit"
 				]}
-				// style={style}
+				style={{ marginBottom: "2rem" }}
 			/>
 		</div>
 	);
