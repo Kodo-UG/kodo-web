@@ -10,8 +10,7 @@ export default function RSSUsage() {
   const isLg = useMediaQuery("only screen and (min-width : 1250px)");
 
   const userId = localStorage.getItem("userID");
-  const URL = `https://kodoscholarships.com/`;
-  const useURL = `https://kodoscholarships.com/${userId}`;
+  const URL = `https://kodoscholarships.com/stepper/${userId}`;
 
   return (
     <div
@@ -78,7 +77,7 @@ export default function RSSUsage() {
           </div>
         </div>
         <button className="w-100 p-1 bg-black text-white d-flex align-items-center justify-content-center">
-          <a href={URL} style={{ fontWeight: "bold", color: "white" }}>INVITE A FRIEND</a>
+          <a style={{ fontWeight: "bold" }}>INVITE A FRIEND</a>
         </button>
         <div className="w-100 d-flex align-items-center justify-content-center p-2">
           <a>Or Copy Your Link</a>
@@ -89,7 +88,7 @@ export default function RSSUsage() {
             border: "2px solid black",
           }}
         >
-          <input id="urlInput" name="url" type="text" value={useURL} required />
+          <a>Copy Link</a>
         </button>
       </div>
     </div>
