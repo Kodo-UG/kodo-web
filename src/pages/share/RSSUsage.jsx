@@ -11,6 +11,7 @@ export default function RSSUsage() {
 
   const userId = localStorage.getItem("userID");
   const URL = `https://kodoscholarships.com/`;
+  const useURL = `https://kodoscholarships.com/${userId}`;
 
   return (
     <div
@@ -88,7 +89,7 @@ export default function RSSUsage() {
             border: "2px solid black",
           }}
         >
-          <input id="urlInput" name="url" type="text" value={URL} required />
+          <input id="urlInput" name="url" type="text" value={useURL} required />
         </button>
       </div>
     </div>
