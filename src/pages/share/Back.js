@@ -77,7 +77,7 @@ export default function RSSUsage() {
           </div>
         </div>
         <button className="w-100 p-1 bg-black text-white d-flex align-items-center justify-content-center">
-          <a style={{ fontWeight: "bold" }}>INVITE A FRIEND</a>
+          <a style={{ fontWeight: "bold" }}>INVITE  FRIENDS</a>
         </button>
         <div className="w-100 d-flex align-items-center justify-content-center p-2">
           <a>Or Copy Your Link</a>
