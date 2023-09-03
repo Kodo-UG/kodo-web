@@ -33,7 +33,7 @@ const CardScholarship = ({
 				borderRadius: "0.5rem",
 				cursor: "pointer",
 				marginBottom: "3rem",
-				// marginLeft: "-1rem"
+				
 			}}
 			onClick={() => destinationPath()}
 		>
@@ -42,7 +42,7 @@ const CardScholarship = ({
 				style={{
 					background: "#1c2755",
 					color: "white",
-					// padding: "0.2rem",
+					
 					borderTopLeftRadius: "0.5rem",
 					borderTopRightRadius: "0.5rem"
 				}}
