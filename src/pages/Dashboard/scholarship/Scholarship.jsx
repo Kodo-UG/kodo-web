@@ -12,7 +12,7 @@ const Scholarship = () => {
 	return (
 		<div style={{ background: "white" }}>
 			<div className="content-wrapper">
-				<section style={{ marginBottom: "3rem" }} className="content">
+				<section style={{ marginBottom: "2rem" }} className="content">
 					<div
 						style={{
 							display: "flex ",
@@ -23,10 +23,12 @@ const Scholarship = () => {
 							justifyContent: "center"
 						}}
 					>
-						<MatchedCard title="scholarships" total="302,500" />
+						<MatchedCard title="scholarships" total="702,500" />
 
 						<ShowTitle />
-						{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
+						<div style={{ padding: isSm ? "2rem" : "", width: "100%" }}>
+							{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
+						</div>
 					</div>
 				</section>
 			</div>
