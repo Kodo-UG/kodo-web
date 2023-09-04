@@ -9,7 +9,7 @@ export default function RSSUsage() {
 	const isLg = useMediaQuery("only screen and (min-width : 1250px)");
 
 	const userId = localStorage.getItem("userID");
-	const URL = `https://kodoscholarships.com/`;
+	const URL = `https://kodoscholarships.com/admissions/${userId}`;
 	const useURL = `https://kodoscholarships.com/admissions/${userId}`;
 
 	return (
