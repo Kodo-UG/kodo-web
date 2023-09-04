@@ -238,22 +238,34 @@ function StepElement8() {
 														? moment(formData.dob, "YYYY-MM-DD")
 														: null
 												}
-												// Add the custom cellRender function
 												dateRender={(current) => {
 													const style = {};
-													if (current.date() === 1) {
+													if (
+														current.date() ===
+														moment(
+															formData.dob,
+															"YYYY-MM-DD"
+														).date()
+													) {
 														style.border = "1px solid #1677ff";
 														style.borderRadius = "50%";
 													}
 													return (
 														<div
-															className="ant-picker-cell-inner"
+															className={`ant-picker-cell-inner ${
+																current.year() > moment().year()
+																	? "disabled"
+																	: ""
+															}`}
 															style={style}
 														>
 															{current.date()}
 														</div>
 													);
 												}}
+												disabledDate={(current) =>
+													current.year() > moment().year()
+												}
 											/>
 										</div>
 									</div>

@@ -10,9 +10,13 @@ import {
 	displaySuccessMessage
 } from "../../../../utils/Toast";
 import axiosInstance from "../../../../api/axiosInstance";
+import { updateFormData } from "../../../../toolkit/formReducer";
+import { DatePicker } from "antd";
+import moment from "moment";
 
 function StepElement8() {
 	const jobData = useSelector((state) => state.jobData);
+
 	const history = useHistory();
 	const [loading, setLoading] = useState(false);
 
@@ -23,13 +27,15 @@ function StepElement8() {
 	const dispatch = useDispatch();
 	const handleEmailChange = (e) => {
 		const { name, value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateJobData({ field: "email", value: value }));
 	};
 	const handlePasswordChange = (e) => {
 		const { name, value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateJobData({ field: "password", value: value }));
+	};
+
+	const handleDobChange = (date, dateString) => {
+		dispatch(updateJobData({ field: "dob", value: dateString }));
 	};
 	const handlePhoneChange = (e) => {
 		const { name, value } = e.target;
@@ -215,6 +221,48 @@ function StepElement8() {
 												id="phone"
 												label="Phone Number"
 												placeholder="Phone"
+											/>
+										</div>
+									</div>
+									<div>
+										<div className="_fieldGroup_1g3ja_1">
+											<DatePicker
+												className="_textField_fwd9c_1"
+												onChange={handleDobChange}
+												name="dob"
+												value={
+													jobData.dob
+														? moment(jobData.dob, "YYYY-MM-DD")
+														: null
+												}
+												dateRender={(current) => {
+													const style = {};
+													if (
+														current.date() ===
+														moment(
+															jobData.dob,
+															"YYYY-MM-DD"
+														).date()
+													) {
+														style.border = "1px solid #1677ff";
+														style.borderRadius = "50%";
+													}
+													return (
+														<div
+															className={`ant-picker-cell-inner ${
+																current.year() > moment().year()
+																	? "disabled"
+																	: ""
+															}`}
+															style={style}
+														>
+															{current.date()}
+														</div>
+													);
+												}}
+												disabledDate={(current) =>
+													current.year() > moment().year()
+												}
 											/>
 										</div>
 									</div>
