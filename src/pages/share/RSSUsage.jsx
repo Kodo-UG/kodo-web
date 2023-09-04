@@ -20,7 +20,7 @@ export default function RSSUsage() {
 			}}
 		>
 			<div
-				className={`w-35 bg-white h-100  mb-5 px-4 py-4`}
+				className={`w-50 bg-white h-100  mb-5 px-4 py-4`}
 				style={{
 					width: isSm ? "100%" : "30%",
 					marginLeft: isLg ? "20rem" : isMd ? "18rem" : isSm ? "1rem" : "",
@@ -93,7 +93,11 @@ export default function RSSUsage() {
 					}}
 				>
 					<input
-						style={{ width: "100%" }}
+						style={{
+							width: "100%",
+							justifyContent: "center",
+							alignItems: "center"
+						}}
 						id="urlInput"
 						name="url"
 						type="text"
