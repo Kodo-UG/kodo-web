@@ -10,7 +10,7 @@ export default function RSSUsage() {
 
 	const userId = localStorage.getItem("userID");
 	const URL = `https://kodoscholarships.com/`;
-	const useURL = `https://kodoscholarships.com/${userId}`;
+	const useURL = `https://kodoscholarships.com/admissions/${userId}`;
 
 	return (
 		<div
@@ -93,6 +93,7 @@ export default function RSSUsage() {
 					}}
 				>
 					<input
+						style={{ width: "100%" }}
 						id="urlInput"
 						name="url"
 						type="text"

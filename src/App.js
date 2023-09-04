@@ -74,6 +74,8 @@ const App = () => {
 			<Switch>
 				<Route exact path="/index" component={Index} />
 				<Route exact path="/signin" component={Signin} />
+				<Route exact path="/login/:userId" component={Login} />
+
 				<Route exact path="/forgot/password" component={ForgotPassword} />
 				<Route path="/reset-password/:token" component={PasswordReset} />
 				<PrivateRoute exact path="/scholars" component={RootScholarship} />
@@ -84,7 +86,7 @@ const App = () => {
 				<Route exact path="/verify" component={StepComfirmation} />
 				<Route exact path="/final" component={StepElement8} />
 				<Route exact path="/stepper" component={Stepper} />
-				<Route exact path="/stepper/:userId" component={Stepper} />
+				{/* <Route exact path="/stepper/:userId" component={Stepper} /> */}
 				<Route exact path="/JobStep1" component={JobStep1} />
 				<Route exact path="/JobStep2" component={JobStep2} />
 				<Route exact path="/JobStep3" component={JobStep3} />
@@ -106,8 +108,14 @@ const App = () => {
 					<PrivateRoute path="/payment" component={Payment} />
 					<Route exact path="/aboutus" component={AboutUs} />
 					<Route exact path="/login" component={Login} />
+
 					<Route exact path="/blog" component={Blog} />
 					<Route exact path="/admissions" component={FindScholarship} />
+					<Route
+						exact
+						path="/admissions/:userId"
+						component={FindScholarship}
+					/>
 					<Route exact path="/payjobs" component={PaymentJobs} />
 					<Route exact path="/contactus" component={ContactUs} />
 					<Route exact path="/scholarships" component={Accordion} />
