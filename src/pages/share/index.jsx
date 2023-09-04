@@ -13,15 +13,13 @@ const ShareLinkButton = () => {
 					url: url
 				});
 			} else {
-				// Fallback for browsers that do not support Web Share API
-				// Try sharing via WhatsApp
+				
 				const isWhatsAppSupported = /WhatsApp/.test(navigator.userAgent);
 
 				if (isWhatsAppSupported) {
 					console.log(isWhatsAppSupported, "here");
 					shareViaWhatsApp(url);
 				} else {
-					// Fallback for browsers that do not support WhatsApp sharing
 					copyToClipboard(url);
 					setCopied(true);
 				}

@@ -84,7 +84,7 @@ export default function RSSUsage() {
 					</a>
 				</button>
 				<div className="w-100 d-flex align-items-center justify-content-center p-2">
-					<a href="#">Or Copy Your Link</a>
+					<div>Or Copy Your Link</div>
 				</div>
 				<button
 					className="w-100 p-1  d-flex align-items-center justify-content-center"

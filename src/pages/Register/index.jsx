@@ -1,8 +1,16 @@
 import React, { useEffect } from "react";
 
 import StepperCard from "./StepperCard";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { updateFormData } from "../../toolkit/formReducer";
 
 const FindScholarship = () => {
+
+	const dispatch = useDispatch();
+
+	const params = useParams();
+	const userId = params.userId;
 	const object = [
 		{
 			id: 1,
@@ -19,6 +27,11 @@ const FindScholarship = () => {
 			Button: "Sign Up"
 		}
 	];
+
+
+	useEffect(() => {
+		dispatch(updateFormData({ field: "refer", value: userId }));
+	}, []);
 
 	useEffect(() => {
 		const urlParams = new URLSearchParams(window.location.search);

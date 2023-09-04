@@ -24,7 +24,6 @@ const CustomShareComponent = ({ url, title }) => {
           style={{
             borderRadius: "50%",
             background: "white",
-            // padding: "0.5rem",
             height: "50px",
             width: "50px",
             display: "flex",
@@ -43,7 +42,6 @@ const CustomShareComponent = ({ url, title }) => {
           style={{
             borderRadius: "50%",
             background: "white",
-            // padding: "0.5rem",
             height: "50px",
             width: "50px",
             display: "flex",
@@ -103,7 +101,6 @@ const CustomShareComponent = ({ url, title }) => {
           style={{
             borderRadius: "50%",
             background: "white",
-            // padding: "0.5rem",
             height: "50px",
             width: "50px",
             display: "flex",

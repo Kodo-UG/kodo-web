@@ -30,7 +30,6 @@ const Stepper = () => {
 
 	const params = useParams();
 	const userId = params.userId;
-	console.log(userId);
 
 	const nextStep = () =>
 		setStep((step) => (step < 4 && step > 0 ? step + 1 : 1));
