@@ -43,7 +43,7 @@ function CardScholarshipSubscribed({
 	return (
 		<div
 			onClick={() => setVisible(!visible)}
-			className="shadow-lg"
+			className="shadow-md"
 			style={{
 				width: "24rem",
 				display: "flex",

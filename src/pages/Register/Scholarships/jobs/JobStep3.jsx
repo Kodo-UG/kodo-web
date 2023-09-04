@@ -22,15 +22,15 @@ function StepElement8() {
 
 	const [gender, setGender] = useState("");
 
-	const [showPassword, setShowPassword] = useState(false);
+	const [showPassword] = useState(false);
 
 	const dispatch = useDispatch();
 	const handleEmailChange = (e) => {
-		const { name, value } = e.target;
+		const { value } = e.target;
 		dispatch(updateJobData({ field: "email", value: value }));
 	};
 	const handlePasswordChange = (e) => {
-		const { name, value } = e.target;
+		const { value } = e.target;
 		dispatch(updateJobData({ field: "password", value: value }));
 	};
 
@@ -38,17 +38,17 @@ function StepElement8() {
 		dispatch(updateJobData({ field: "dob", value: dateString }));
 	};
 	const handlePhoneChange = (e) => {
-		const { name, value } = e.target;
+		const { value } = e.target;
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateJobData({ field: "phone", value: value }));
 	};
 	const handleFirstNameChange = (e) => {
-		const { name, value } = e.target;
+		const { value } = e.target;
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateJobData({ field: "fname", value: value }));
 	};
 	const handleLastNameChange = (e) => {
-		const { name, value } = e.target;
+		const { value } = e.target;
 		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateJobData({ field: "lname", value: value }));
 	};
@@ -56,7 +56,6 @@ function StepElement8() {
 	const register = async (e) => {
 		e.preventDefault();
 		setLoading(true);
-		let data = JSON.stringify(jobData);
 
 		if (!jobData.email || !jobData.phone || !jobData.password) {
 			displayErrorMessage("Please fill in all the required fields");
