@@ -370,7 +370,6 @@ const LargeCard = ({
 							{daysDifference === -1 ? (
 								<div
 									style={{
-										// width: "8.2rem",
 										background: "#F79720",
 										paddingLeft: "0.3rem",
 										color: "white",
