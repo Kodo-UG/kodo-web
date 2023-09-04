@@ -21,6 +21,11 @@ const LargeCard = ({
 
 	const [visible, setVisible] = useState(false);
 
+	const today = new Date();
+	const deadlineDate = new Date(formatDate);
+	const timeDifference = deadlineDate.getTime() - today.getTime();
+	const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
 	const isMd = useMediaQuery(
 		"only screen and (min-width : 700px) and (max-width : 1250px)"
 	);
@@ -352,6 +357,60 @@ const LargeCard = ({
 							color: "#4e4b66"
 						}}
 					>
+						<div
+							style={{
+								width: "70%",
+								padding: "2px",
+								marginRight: "1rem",
+								justifyContent: "center",
+								alignItems: "center"
+								// top: 0
+							}}
+						>
+							{daysDifference === -1 ? (
+								<div
+									style={{
+										// width: "8.2rem",
+										background: "#F79720",
+										paddingLeft: "0.3rem",
+										color: "white",
+										borderRadius: "3px",
+										fontWeight: "bold",
+										justifyContent: "center",
+										alignItems: "center"
+									}}
+								>
+									Past Deadline
+								</div>
+							) : daysDifference === 1 ? (
+								<div
+									style={{
+										// width: "8.2rem",
+										background: "#F79720",
+										paddingLeft: "0.3rem",
+										color: "white",
+										borderRadius: "3px",
+										justifyContent: "center",
+										alignItems: "center"
+									}}
+								>
+									Deadline Today
+								</div>
+							) : daysDifference === 2 ? (
+								<div
+									style={{
+										width: "8.2rem",
+										background: "#F79720",
+										paddingLeft: "0.3rem",
+										color: "white",
+										borderRadius: "3px",
+										fontWeight: "bold"
+									}}
+								>
+									{daysDifference} days left
+								</div>
+							) : null}
+						</div>
 						<BsBookmark
 							onClick={onClick}
 							style={{
@@ -368,6 +427,7 @@ const LargeCard = ({
 							}}
 						/>
 					</div>
+
 					<div
 						style={{
 							display: "flex",
