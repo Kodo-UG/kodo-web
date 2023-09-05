@@ -8,6 +8,8 @@ import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
 
 import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
+import ScholarshipDetails from "./pages/Dashboard/scholarship/ScholarshipDetails";
+import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
@@ -86,7 +88,11 @@ const App = () => {
 				<Route exact path="/verify" component={StepComfirmation} />
 				<Route exact path="/final" component={StepElement8} />
 				<Route exact path="/stepper" component={Stepper} />
-				{/* <Route exact path="/stepper/:userId" component={Stepper} /> */}
+				<Route
+					exact
+					path="/details/:id"
+					component={ScholarshipDetailsPage}
+				/>
 				<Route exact path="/JobStep1" component={JobStep1} />
 				<Route exact path="/JobStep2" component={JobStep2} />
 				<Route exact path="/JobStep3" component={JobStep3} />
