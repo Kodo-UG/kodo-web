@@ -47,6 +47,8 @@ export default function Login() {
 				password
 			});
 
+			console.log(data.data.user, "=");
+
 			if (data) setMessage(data?.data?.message);
 			localStorage.setItem("userID", data.data.user._id);
 

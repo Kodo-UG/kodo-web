@@ -1,17 +1,14 @@
 import React from "react";
-import "./testimonial.css"; 
+import "./testimonial.css";
 
 const Testimonals = () => {
-	
 	return (
 		<section
 			style={{
-
 				margin: "auto",
-	
+
 				// padding: "4rem",
-				marginTop: "5rem",
-				
+				marginTop: "5rem"
 			}}
 			className="testimonial-section "
 		>
@@ -21,8 +18,8 @@ const Testimonals = () => {
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "center",
-					justifyContent: "center",
-					
+					justifyContent: "center"
+
 					// paddingLeft: "4rem",
 					// paddingRight: "4rem"
 				}}
@@ -37,7 +34,7 @@ const Testimonals = () => {
 					Testimonials
 				</h3>
 				<div className="testimonial-carousel ">
-					<div className="testimonial-item " >
+					<div className="testimonial-item ">
 						<div className="testimonial-image">
 							<img
 								src="https://res.cloudinary.com/itgenius/image/upload/v1688928366/samantha_orwf70.jpg"
@@ -118,7 +115,7 @@ const Testimonals = () => {
 					<div className="testimonial-item">
 						<div className="testimonial-image">
 							<img
-								src="https://res.cloudinary.com/itgenius/image/upload/v1689358592/robin_t5ce9s.jpg"
+								src="https://res.cloudinary.com/itgenius/image/upload/v1634199048/samples/people/smiling-man.jpg"
 								alt="testimonial-1"
 							/>
 							<div className="testimonial-icon">

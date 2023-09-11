@@ -9,12 +9,14 @@ import {
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
 import { BASE_URL } from "../../../constants/api";
+import { useHistory } from "react-router-dom";
 
 const MapCardData = () => {
 	const [data, setData] = useState([]);
 	const [subscription, setSubscription] = useState(false);
 	const [pageNumber, setPageNumber] = useState(1);
 	const [hasMore, setHasMore] = useState(true);
+	const history = useHistory();
 
 	const config = {
 		headers: {
@@ -29,6 +31,7 @@ const MapCardData = () => {
 				`${BASE_URL}/scholarship?page=${pageNumber}`,
 				config
 			);
+			console.log(res?.data?.data, "==");
 			setData(res?.data?.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {
@@ -82,6 +85,10 @@ const MapCardData = () => {
 		}
 	};
 
+	const handleRoute = (id) => {
+		history.push(`/details/${id}`);
+	};
+
 	useEffect(() => {
 		getScholarship();
 	}, []);
@@ -115,6 +122,7 @@ const MapCardData = () => {
 								id={dta._id}
 								link={dta.link}
 								onClick={() => handleClick(dta._id)}
+								handleRoute={() => handleRoute(dta._id)}
 							/>
 					  ))
 					: data.map((dta) => (

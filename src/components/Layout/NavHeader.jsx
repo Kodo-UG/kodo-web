@@ -180,7 +180,7 @@ const NavHeader = ({ open, setOpen }) => {
 								className="btn btn-lg"
 								style={{
 									background: "#EC1D64",
-									borderRadius: "0",
+									borderRadius: 20,
 									color: "white",
 									height: "4rem",
 									marginTop: "0px",
@@ -190,7 +190,7 @@ const NavHeader = ({ open, setOpen }) => {
 								}}
 								onClick={handleClick}
 							>
-								FIND SCHOLARSHIPS
+								Find Scholarships
 							</button>
 						</form>
 					</div>
@@ -271,7 +271,7 @@ const NavHeader = ({ open, setOpen }) => {
 								className="btn btn-lg"
 								style={{
 									background: "#EC1D64",
-									borderRadius: "0",
+									borderRadius: 70,
 									color: "white",
 									height: "4rem",
 									marginTop: "0px",
@@ -279,12 +279,9 @@ const NavHeader = ({ open, setOpen }) => {
 									fontFamily: "Roboto, sans-serif",
 									fontSize: "16px"
 								}}
-								onClick={(e) => {
-									e.preventDefault();
-									history.push("/admissions");
-								}}
+								onClick={handleClick}
 							>
-								FIND SCHOLARSHIPS
+								Find Scholarships
 							</button>
 						</form>
 					</div>
