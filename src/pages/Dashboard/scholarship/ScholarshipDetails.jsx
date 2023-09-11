@@ -51,7 +51,9 @@ const ScholarshipDetails = () => {
 				height: "auto",
 				// background: "orange",
 				marginBottom: "8rem", // marginRight: "1rem",
-				padding: "1rem"
+				padding: "1rem",
+				fontFamily: "Montserrat, sans-serif",
+				color: "#1c2755"
 			}}
 			className=" shadow-md "
 		>
@@ -310,13 +312,15 @@ const ScholarshipDetails = () => {
 								paddingBottom: "2rem",
 								borderBottom: isSm ? "2px solid gray" : "",
 								width: "100%",
-								marginBottom: "1rem"
+								marginBottom: "1rem",
+								color: "#1c2755"
 							}}
 						>
 							<h3
 								style={{
 									fontWeight: "bold",
-									fontSize: isSm ? "1rem" : "1.3rem"
+									fontSize: isSm ? "1rem" : "1.3rem",
+									color: "#1c2755"
 								}}
 							>
 								Status
@@ -332,7 +336,7 @@ const ScholarshipDetails = () => {
 									alignItems: "center",
 									justifyContent: "space-between",
 									padding: "1rem",
-									color: "gray",
+									// color: "gray",
 									cursor: "pointer",
 									width: "100%"
 								}}
@@ -354,7 +358,8 @@ const ScholarshipDetails = () => {
 								padding: "2rem",
 								display: "flex",
 								flexDirection: "column",
-								justifyContent: "center"
+								justifyContent: "center",
+								color: "#1c2755"
 							}}
 						>
 							<h3
@@ -367,7 +372,8 @@ const ScholarshipDetails = () => {
 							</h3>
 							<div
 								style={{
-									height: "70%"
+									height: "70%",
+									marginBottom: "2rem"
 								}}
 							>
 								<img
@@ -385,10 +391,13 @@ const ScholarshipDetails = () => {
 								from our blog site .
 							</p>
 							<button
+								className="shadow-sm"
 								style={{
-									border: "2px solid blue",
+									border: "2px solid #1c2755",
 									borderRadius: "5px",
-									padding: "0.6rem"
+									padding: "0.6rem",
+									fontWeight: "bold",
+									color: "#1c2755"
 								}}
 								onClick={() => {
 									history.push("/blog");

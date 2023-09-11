@@ -14,7 +14,8 @@ function CardScholarshipSubscribed({
 	about,
 	id,
 	days,
-	type
+	type,
+	handleRoute
 }) {
 	const date = new Date(deadline);
 	const formattedDate = date.toLocaleDateString();
@@ -42,7 +43,7 @@ function CardScholarshipSubscribed({
 
 	return (
 		<div
-			onClick={() => setVisible(!visible)}
+			onClick={() => handleRoute()}
 			className="shadow-md"
 			style={{
 				width: "24rem",

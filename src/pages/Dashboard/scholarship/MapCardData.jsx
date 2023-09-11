@@ -31,7 +31,7 @@ const MapCardData = () => {
 				`${BASE_URL}/scholarship?page=${pageNumber}`,
 				config
 			);
-			console.log(res?.data?.data, "==");
+			console.log(res?.data, "==");
 			setData(res?.data?.data);
 			setSubscription(res.data.subscription);
 		} catch (error) {

@@ -11,7 +11,7 @@ const ScholarshipDetailsPage = () => {
 	// );
 	return (
 		<>
-			<div style={{ background: "white" }} className="wrapper">
+			<div style={{ background: "#f4f6f9" }} className="wrapper">
 				<MyHeader />
 				<Menu />
 				<div
