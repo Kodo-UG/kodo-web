@@ -51,7 +51,6 @@ const MyHeader = ({ setShowContent }) => {
         config
       );
       console.log(res.data.data);
-      setNotify(res.data.data);
       return res.data.data;
     } catch (error) {
       throw new Error(error.message || "Failed to fetch notifications");

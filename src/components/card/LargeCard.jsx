@@ -14,7 +14,8 @@ const LargeCard = ({
 	link,
 	about,
 	id,
-	onClick
+	onClick,
+	handleRoute
 }) => {
 	const date = new Date(formatDate);
 	const formattedDate = date.toLocaleDateString();
@@ -49,7 +50,7 @@ const LargeCard = ({
 				id: id
 			});
 		} catch (err) {
-			console.log(err, "====");
+			throw err;
 		}
 	};
 
@@ -364,7 +365,6 @@ const LargeCard = ({
 								marginRight: "1rem",
 								justifyContent: "center",
 								alignItems: "center"
-								// top: 0
 							}}
 						>
 							{daysDifference === -1 ? (
@@ -397,7 +397,6 @@ const LargeCard = ({
 							) : daysDifference === 2 ? (
 								<div
 									style={{
-										width: "8.2rem",
 										background: "#F79720",
 										paddingLeft: "0.3rem",
 										color: "white",
@@ -405,7 +404,9 @@ const LargeCard = ({
 										fontWeight: "bold"
 									}}
 								>
-									{daysDifference} days left
+									<div style={{ marginLeft: "2rem" }}>
+										{daysDifference} days left
+									</div>
 								</div>
 							) : null}
 						</div>
@@ -436,7 +437,7 @@ const LargeCard = ({
 					>
 						{" "}
 						<Button
-							onClick={() => setVisible(!visible)}
+							onClick={() => handleRoute()}
 							style={{ backgroundColor: "#EC1D64", width: "80%" }}
 							type="primary"
 							block

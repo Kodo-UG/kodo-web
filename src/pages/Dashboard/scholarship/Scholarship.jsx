@@ -23,7 +23,7 @@ const Scholarship = () => {
 							justifyContent: "center"
 						}}
 					>
-						<MatchedCard title="scholarships" total="702,500" />
+						<MatchedCard title="scholarships" total="702,531" />
 
 						<ShowTitle />
 						<div style={{ padding: isSm ? "2rem" : "", width: "100%" }}>

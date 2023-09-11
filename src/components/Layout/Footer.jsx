@@ -17,13 +17,14 @@ const Footer = () => {
 							<div className="footer-widget mb-30">
 								<div className="f-widget-title">
 									<img
-										src="https://res.cloudinary.com/itgenius/image/upload/v1688915710/logo-urayana_ap1o8i.png"
+										src="https://res.cloudinary.com/itgenius/image/upload/v1693975723/Kodo_Colour_Variations-02-2_h9mxdk.png"
 										alt="img"
 										style={{
 											marginRight: 10,
-											width: 130,
-											marginTop: 40,
-											marginLeft: 10
+											width: 230,
+											marginTop: -50,
+											marginLeft: 10,
+											height: 230
 										}}
 									/>
 								</div>
