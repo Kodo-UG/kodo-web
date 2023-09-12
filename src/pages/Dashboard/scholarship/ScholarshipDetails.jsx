@@ -220,38 +220,39 @@ const ScholarshipDetails = () => {
 								</div>
 							</div>
 						</div>
-
-						<div
-							style={{
-								textAlign: "center",
-								marginTop: "1rem",
-								width: "100%",
-								height: "4rem",
-								color: "white",
-								fontWeight: "bolder",
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "center",
-								fontSize: "14px"
-							}}
-						>
-							<a
-								href={`${data.link}`}
+						{isSm ? null : (
+							<div
 								style={{
-									backgroundColor: "#EB1E5E",
-									border: "none",
-									color: "white",
-									padding: "1rem",
+									textAlign: "center",
+									marginTop: "1rem",
 									width: "100%",
-									borderRadius: "5px",
+									height: "4rem",
+									color: "white",
 									fontWeight: "bolder",
-									fontSize: "16px"
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+									fontSize: "14px"
 								}}
-								// onClick={() => handleApply(id)}
 							>
-								Apply
-							</a>
-						</div>
+								<a
+									href={`${data.link}`}
+									style={{
+										backgroundColor: "#EB1E5E",
+										border: "none",
+										color: "white",
+										padding: "1rem",
+										width: "100%",
+										borderRadius: "5px",
+										fontWeight: "bolder",
+										fontSize: "16px"
+									}}
+									// onClick={() => handleApply(id)}
+								>
+									Apply
+								</a>
+							</div>
+						)}
 
 						<div>
 							<h4
@@ -414,7 +415,7 @@ const ScholarshipDetails = () => {
 						style={{
 							background: "white",
 							height: "15vh",
-							borderRadius: "20px 20px 0px 0px",
+							borderRadius: "5px 5px 0px 0px",
 							boxShadow: "4px 0px 4px 4px rgba(0, 0, 0, 0.1)",
 							display: "flex",
 							justifyContent: "center",
@@ -444,7 +445,7 @@ const ScholarshipDetails = () => {
 									border: "none",
 									color: "white",
 									padding: "1rem",
-									width: "100%",
+									width: "70%",
 									borderRadius: "5px",
 									fontWeight: "bolder",
 									fontSize: "16px"
@@ -457,7 +458,7 @@ const ScholarshipDetails = () => {
 
 						<div
 							style={{
-								width: "16%",
+								width: "14%",
 								justifyContent: "center",
 								alignItems: "center",
 								marginLeft: "4rem",
