@@ -8,6 +8,10 @@ import { useParams, useHistory } from "react-router-dom";
 
 import { BASE_URL } from "../../../constants/api";
 import "react-spring-bottom-sheet/dist/style.css";
+import {
+	displayErrorNotification,
+	displaySuccessNotification
+} from "../../../utils/Toast";
 
 const ScholarshipDetails = () => {
 	const { id } = useParams();
@@ -36,6 +40,25 @@ const ScholarshipDetails = () => {
 		}
 	};
 
+	const handleClick = async (fav) => {
+		try {
+			const res = await axios.post(
+				`${BASE_URL}/user/favourites`,
+				{
+					id: fav
+				},
+				config
+			);
+			if (res.status == 201) {
+				displaySuccessNotification(`${res.data.message}`);
+			} else {
+				displayErrorNotification(`${res.data.message}`);
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	useEffect(() => {
 		getScholarship();
 	}, []);
@@ -49,7 +72,6 @@ const ScholarshipDetails = () => {
 				width: isSm ? "100%" : "80%",
 				marginTop: "4rem",
 				height: "auto",
-				// background: "orange",
 				marginBottom: "8rem", // marginRight: "1rem",
 				padding: "1rem",
 				fontFamily: "Montserrat, sans-serif",
@@ -68,7 +90,6 @@ const ScholarshipDetails = () => {
 
 					width: "100%",
 					height: "100%"
-					// background: "green"
 				}}
 			>
 				<div
@@ -82,9 +103,8 @@ const ScholarshipDetails = () => {
 							fontWeight: "bold",
 							display: "flex",
 							alignItems: "center",
-							// background: "yellow",
 							// justifyContent: "space-between",
-							marginBottom: "4rem"
+							marginBottom: isSm ? null : "4rem"
 						}}
 					>
 						<div
@@ -118,7 +138,7 @@ const ScholarshipDetails = () => {
 								</h5>
 							</div>
 							{isSm ? null : (
-								<div>
+								<div onClick={() => handleClick(data._id)}>
 									<BsBookmark
 										// onClick={onClick}
 										style={{
@@ -415,8 +435,8 @@ const ScholarshipDetails = () => {
 						style={{
 							background: "white",
 							height: "15vh",
-							borderRadius: "5px 5px 0px 0px",
-							boxShadow: "4px 0px 4px 4px rgba(0, 0, 0, 0.1)",
+							borderRadius: "9px 9px 0px 0px",
+							boxShadow: "4px 0px 4px 4px rgba(0, 0, 0, 0.01)",
 							display: "flex",
 							justifyContent: "center",
 							alignItems: "center",
@@ -434,7 +454,7 @@ const ScholarshipDetails = () => {
 								fontWeight: "bolder",
 								display: "flex",
 								alignItems: "center",
-								justifyContent: "center",
+								justifyContent: "space-between",
 								fontSize: "14px"
 							}}
 						>
@@ -444,7 +464,7 @@ const ScholarshipDetails = () => {
 									backgroundColor: "#EB1E5E",
 									border: "none",
 									color: "white",
-									padding: "1rem",
+									padding: ".8rem",
 									width: "70%",
 									borderRadius: "5px",
 									fontWeight: "bolder",
@@ -461,15 +481,15 @@ const ScholarshipDetails = () => {
 								width: "14%",
 								justifyContent: "center",
 								alignItems: "center",
-								marginLeft: "4rem",
+								// marginLeft: "4rem",
 								marginTop: ".9rem"
 							}}
+							onClick={() => handleClick(data._id)}
 						>
 							<BsBookmark
-								// onClick={onClick}
 								style={{
-									height: "35px",
-									width: "35px",
+									height: "28px",
+									width: "28px",
 									fontWeight: "bolder"
 								}}
 							/>
