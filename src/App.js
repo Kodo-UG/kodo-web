@@ -91,7 +91,7 @@ const App = () => {
 				<Route
 					exact
 					path="/details/:id"
-					component={ScholarshipDetailsPage}
+					component={ ScholarshipDetailsPage }
 				/>
 				<Route exact path="/JobStep1" component={JobStep1} />
 				<Route exact path="/JobStep2" component={JobStep2} />
