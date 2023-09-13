@@ -10,6 +10,7 @@ import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
 import ScholarshipDetails from "./pages/Dashboard/scholarship/ScholarshipDetails";
 import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
+import BlogDetails from "./pages/Blog/BlogDetails";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
@@ -116,6 +117,7 @@ const App = () => {
 					<Route exact path="/login" component={Login} />
 
 					<Route exact path="/blog" component={Blog} />
+					<Route exact path="/blog/:id" component={BlogDetails} />
 					<Route exact path="/admissions" component={FindScholarship} />
 					<Route
 						exact
