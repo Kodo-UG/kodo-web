@@ -1,7 +1,19 @@
 import React from "react";
 import BlogCard from "./BlogCard";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const Blog = () => {
+
+  const isSm = useMediaQuery("only screen and (max-width : 700px)");
+
+  const isMd = useMediaQuery(
+		"only screen and (min-width : 700px) and (max-width : 1250px)"
+	);
+
+	const isLg = useMediaQuery(
+		"only screen and (min-width : 1250px) and (max-width : 1300px)"
+	);
+
   const blogData = [
     {
       text: " With a new school year here, now’s the perfect time to get serious about searching for and winning scholarships to pay for college! Since many applications for scholarships require an essay, you’ll want to know how to write one that persuades the scholarship program board that you’re the right person to receive the money available! If done right, your scholarship essay is a window into your world. Similar to your personal statement for college applications, these essays should give the readers a sense of you as a dimensional person—beyond what your high school GPA and test scores alone can reflect. At Scholly, we’ve collectively written and read TONS of scholarship essays. And, in this post, we’re sharing our favorite tips and strategies to help you write winning scholarship essays and drastically improve your chances of graduating debt free!",
@@ -77,8 +89,13 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="row" style={{ overflow: "hidden" }}>
-          {blogData.map((data) => (
+        <div  style={{ 
+          overflow: "hidden",
+           display: "grid",
+           gap: 10,
+           gridTemplateColumns: isSm ? "1fr": "" || isMd ? "1fr 1fr" : "" || isLg ? "1fr 1fr 1fr" : "1fr 1fr 1fr"
+        }}>
+          { blogData.map((data) => (
             <BlogCard
              key={data.tittle}
               tittle={data.tittle}
