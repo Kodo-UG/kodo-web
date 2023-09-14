@@ -25,7 +25,7 @@ function BlogCard({ image, blogType, tittle, text, id }) {
           <h3>
             <a href="#">{truncateText(tittle, 8)}</a>
           </h3>
-          <p>{truncateText(text, 30)}</p>
+          <p>{truncateText(text, 25)}</p>
 
           <div
             style={{
