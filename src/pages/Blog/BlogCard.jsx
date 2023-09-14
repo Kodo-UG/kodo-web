@@ -16,19 +16,14 @@ function BlogCard({ image, blogType, tittle, text, id }) {
     <div class="">
       <div class="courses-item mb-30 hover-zoomin " style={{ height: "38rem" }}>
         <div class="thumb fix">
-          {/* <a href="#">
-            <img src={image} alt="contact-bg-an-01" />
-          </a> */}
-
           <KodoImageLoader src={image} alt="blogImage" />
-
         </div>
         <div class="courses-content bg-red-600" style={{ height: "45rem" }}>
           <div class="cat">
             <i class="fal fa-graduation-cap"></i> {blogType}
           </div>
           <h3>
-            <a href="#">{ truncateText(tittle, 8) }</a>
+            <a href="#">{truncateText(tittle, 8)}</a>
           </h3>
           <p>{truncateText(text, 30)}</p>
 

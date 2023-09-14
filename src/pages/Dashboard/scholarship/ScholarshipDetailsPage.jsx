@@ -6,32 +6,31 @@ import Footer from "../Footer";
 // import { useMediaQuery } from "@uidotdev/usehooks";
 
 const ScholarshipDetailsPage = () => {
-	// const isMd = useMediaQuery(
-	// 	"only screen and (min-width : 700px) and (max-width : 1250px)"
-	// );
-	return (
-		<>
-			<div style={{ background: "#f4f6f9" }} className="wrapper">
-				<MyHeader />
-				<Menu />
-				<div
-					className="w-100 "
-					style={{
-						// background: "red",
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "end",
-						height: "auto",
-					
-					}}
-				>
-					<ScholarshipDetails />
-				</div>
+  // const isMd = useMediaQuery(
+  // 	"only screen and (min-width : 700px) and (max-width : 1250px)"
+  // );
+  return (
+    <>
+      <div style={{ background: "#f4f6f9" }} className="wrapper">
+        <MyHeader />
+        <Menu />
+        <div
+          className="w-100 "
+          style={{
+            // background: "red",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "end",
+            height: "auto",
+          }}
+        >
+          <ScholarshipDetails />
+        </div>
 
-				<Footer />
-			</div>
-		</>
-	);
+        <Footer />
+      </div>
+    </>
+  );
 };
 
 export default ScholarshipDetailsPage;
