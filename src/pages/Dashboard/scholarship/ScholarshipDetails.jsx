@@ -49,7 +49,7 @@ const ScholarshipDetails = () => {
 				},
 				config
 			);
-			if (res.status == 201) {
+			if (res.status === 201) {
 				displaySuccessNotification(`${res.data.message}`);
 			} else {
 				displayErrorNotification(`${res.data.message}`);
@@ -63,7 +63,7 @@ const ScholarshipDetails = () => {
 		getScholarship();
 	}, []);
 
-	const date = new Date(data.deadline);
+	const date = new Date(data?.deadline);
 	const deadline = date.toLocaleDateString();
 
 	return (
@@ -134,11 +134,11 @@ const ScholarshipDetails = () => {
 										// letterSpacing: "2px"
 									}}
 								>
-									{data.title}
+									{data?.title}
 								</h5>
 							</div>
 							{isSm ? null : (
-								<div onClick={() => handleClick(data._id)}>
+								<div onClick={() => handleClick(data?._id)}>
 									<BsBookmark
 										// onClick={onClick}
 										style={{
@@ -183,7 +183,7 @@ const ScholarshipDetails = () => {
 											letterSpacing: "2px"
 										}}
 									>
-										{data.award}
+										{data?.award}
 									</p>
 								</div>
 								<div className="d-flex flex-column align-items-center">
@@ -256,7 +256,7 @@ const ScholarshipDetails = () => {
 								}}
 							>
 								<a
-									href={`${data.link}`}
+									href={`${data?.link}`}
 									style={{
 										backgroundColor: "#EB1E5E",
 										border: "none",
@@ -302,7 +302,7 @@ const ScholarshipDetails = () => {
 										fontSize: isSm ? "1rem" : "1.3rem"
 									}}
 								>
-									{data.about}
+									{data?.about}
 								</p>
 							</div>
 						</div>
@@ -459,7 +459,7 @@ const ScholarshipDetails = () => {
 							}}
 						>
 							<a
-								href={`${data.link}`}
+								href={`${data?.link}`}
 								style={{
 									backgroundColor: "#EB1E5E",
 									border: "none",
@@ -484,7 +484,7 @@ const ScholarshipDetails = () => {
 								// marginLeft: "4rem",
 								marginTop: ".9rem"
 							}}
-							onClick={() => handleClick(data._id)}
+							onClick={() => handleClick(data?._id)}
 						>
 							<BsBookmark
 								style={{
