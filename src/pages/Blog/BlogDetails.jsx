@@ -240,7 +240,7 @@ const BlogDetails = () => {
               <div
                 style={{
                   textAlign: "justify",
-                  lineHeight: "2rem",
+                  lineHeight: isSm ? "1.5rem" :"2rem",
                 }}
                 className="mt-5"
               >
