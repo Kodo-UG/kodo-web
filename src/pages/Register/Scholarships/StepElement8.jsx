@@ -11,8 +11,9 @@ import {
 } from "../../../utils/Toast";
 import axiosInstance from "../../../api/axiosInstance";
 import * as Yup from "yup";
-import { DatePicker, Space } from "antd";
-import moment from "moment";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string()
@@ -28,6 +29,15 @@ function StepElement8() {
 	const [loading, setLoading] = useState(false);
 	const [gender, setGender] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
+	const [selectedDate, setSelectedDate] = useState(null);
+	const isSm = useMediaQuery("only screen and (max-width : 900px)");
+
+	const isMd = useMediaQuery(
+		"only screen and (min-width : 900px) and (max-width : 1250px)"
+	);
+	const isLg = useMediaQuery(
+		"only screen and (min-width : 1250px) and (max-width : 2250px)"
+	);
 
 	const dispatch = useDispatch();
 	const handleEmailChange = (e) => {
@@ -35,7 +45,9 @@ function StepElement8() {
 		dispatch(updateFormData({ field: "email", value: value }));
 	};
 
-	const handleDobChange = (date, dateString) => {
+	const handleDobChange = (date) => {
+		const dateString = date ? date.toISOString().split("T")[0] : "";
+
 		dispatch(updateFormData({ field: "dob", value: dateString }));
 	};
 
@@ -53,7 +65,6 @@ function StepElement8() {
 	};
 	const handleLastNameChange = (e) => {
 		const { name, value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateFormData({ field: "lname", value: value }));
 	};
 
@@ -230,42 +241,13 @@ function StepElement8() {
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
 											<DatePicker
-												className="_textField_fwd9c_1"
-												onChange={handleDobChange}
-												name="dob"
-												value={
-													formData.dob
-														? moment(formData.dob, "YYYY-MM-DD")
-														: null
-												}
-												dateRender={(current) => {
-													const style = {};
-													if (
-														current.date() ===
-														moment(
-															formData.dob,
-															"YYYY-MM-DD"
-														).date()
-													) {
-														style.border = "1px solid #1677ff";
-														style.borderRadius = "50%";
-													}
-													return (
-														<div
-															className={`ant-picker-cell-inner ${
-																current.year() > moment().year()
-																	? "disabled"
-																	: ""
-															}`}
-															style={style}
-														>
-															{current.date()}
-														</div>
-													);
-												}}
-												disabledDate={(current) =>
-													current.year() > moment().year()
-												}
+												className={` ${
+													isSm ? "date-pic" : "date-picker"
+												}`}
+												selected={selectedDate}
+												onChange={handleDobChange} // Call the modified function here
+												placeholderText="Select date of birth"
+												required
 											/>
 										</div>
 									</div>
