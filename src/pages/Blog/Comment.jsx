@@ -6,6 +6,7 @@ import React, { useState } from "react";
 const Comment = ({ image, username, timestamp, text }) => {
 	const [replyText, setReplyText] = useState("");
 	const [reply, setReply] = useState(false);
+	const [hover, setHover] = useState(false);
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
@@ -20,10 +21,18 @@ const Comment = ({ image, username, timestamp, text }) => {
 	const commentStyle = {
 		display: "flex",
 		width: "100%",
-		justifyContent: "space-between",
 		padding: "10px",
 		marginBottom: "20px",
 		backgroundColor: "#fff",
+		borderRadius: "5px"
+	};
+
+	const hovered = {
+		display: "flex",
+		width: "100%",
+		padding: "10px",
+		marginBottom: "20px",
+		backgroundColor: "red",
 		borderRadius: "5px"
 	};
 
@@ -50,7 +59,6 @@ const Comment = ({ image, username, timestamp, text }) => {
 	const userImageStyle = {
 		width: "50px",
 		height: "50px",
-		marginRight: "10px",
 		borderRadius: "50%",
 		objectFit: "cover"
 	};
@@ -65,26 +73,23 @@ const Comment = ({ image, username, timestamp, text }) => {
 	};
 
 	return (
-		<div style={commentStyle}>
+		<div className="comment">
+			<div
+				style={{
+					marginRight: "1rem"
+				}}
+			>
+				<img
+					src={
+						image ||
+						`https://ui-avatars.com/api/name=${username}&background=random`
+					}
+					alt="User"
+					style={userImageStyle}
+				/>
+			</div>
+
 			<div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
-				<div
-					style={{
-						width: "100%",
-						height: "100%",
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center"
-					}}
-				>
-					<img
-						src={
-							image ||
-							`https://ui-avatars.com/api/name=${username}&background=random`
-						}
-						alt="User"
-						style={userImageStyle}
-					/>
-				</div>
 				<div style={headerStyle}>
 					<strong style={usernameStyle}>{username}</strong>
 					<span style={spanStyle}> {timestamp}</span>
@@ -107,9 +112,9 @@ const Comment = ({ image, username, timestamp, text }) => {
 					<button
 						onClick={toggleReply}
 						style={{
-							backgroundColor: "#D3D3D3",
-							color: "white",
-							fontWeight: "bold",
+							backgroundColor: "#f2f2f2",
+							color: "black",
+							fontWeight: "normal",
 							cursor: "pointer",
 							paddingRight: ".5rem",
 							paddingLeft: ".5rem",
@@ -136,9 +141,9 @@ const Comment = ({ image, username, timestamp, text }) => {
 
 					<button
 						style={{
-							backgroundColor: "#D3D3D3",
-							color: "white",
-							fontWeight: "bold",
+							backgroundColor: "#f2f2f2",
+							color: "black",
+							fontWeight: "normal",
 							cursor: "pointer",
 							paddingRight: "1rem",
 							paddingLeft: "1rem",
@@ -196,7 +201,18 @@ const Comment = ({ image, username, timestamp, text }) => {
 								cursor: "pointer"
 							}}
 						>
-							reply
+							<span
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center"
+								}}
+							>
+								<span style={{ marginRight: ".5rem" }}>
+									<FaReply />
+								</span>
+								<span style={{ marginRight: ".5rem" }}>reply</span>
+							</span>
 						</button>
 
 						<button
