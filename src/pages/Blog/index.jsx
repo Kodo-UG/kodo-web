@@ -133,7 +133,6 @@ const Blog = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                marginTop: "18rem",
               }}
             >
               <img

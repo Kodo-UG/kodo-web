@@ -6,11 +6,42 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { useHistory } from "react-router-dom";
 import moment from "moment";
 import "./blog.css";
+import CommentForm from "./CommentForm";
+import CommentsList from "./CommentsList";
 
 const BlogDetails = () => {
   // Access the id parameter from the URL.
   const { id } = useParams();
+
   const [blog, setBlog] = useState("");
+
+  const [comments, setComments] = useState([
+    {
+      username: "Muwonge Lawrence",
+      timestamp: "3 minutes ago",
+      text: "This is a nice blog Keep posting more nice content like this.",
+    },
+    {
+      username: "Muwonge Lawrence",
+      timestamp: "4 hours ago",
+      text: "This is a nice blog.",
+    },
+    {
+      username: "Muwonge Lawrence",
+      timestamp: "a day ago",
+      text: "This is a nice blog.",
+    },
+    {
+      username: "Muwonge Lawrence",
+      timestamp: "a month ago",
+      text: "This is a nice blog.",
+    },
+    {
+      username: "Muwonge Lawrence",
+      timestamp: "3 months ago",
+      text: "This is a nice blog.",
+    },
+  ]);
 
   const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
@@ -26,12 +57,16 @@ const BlogDetails = () => {
   const getBlog = async () => {
     try {
       const res = await axiosInstance.get(`/blogs/${id}`);
-      console.log(res.data.data);
+      // console.log(res.data.data);
       setBlog(res.data.data);
     } catch (error) {}
   };
 
-  //   console.log("BLOG:", blog);
+  const handleCommentSubmit = (newComment) => {
+    setComments([...comments, newComment]);
+  };
+
+  // console.log("BLOG:", blog);
 
   useEffect(() => {
     getBlog();
@@ -158,7 +193,7 @@ const BlogDetails = () => {
                         opacity: "0.7",
                       }}
                     >
-                      {moment(blog?.creator?.createdAt).format("MM-DD-YYYY")}
+                      { moment(blog?.creator?.createdAt).format("MM-DD-YYYY") }
                     </span>
                   </button>
                 </div>
@@ -191,6 +226,31 @@ const BlogDetails = () => {
               >
                 {blog?.description}
               </div>
+
+              <div
+                style={{
+                  width: "100%",
+                }}
+                className="mt-5"
+              >
+                <p
+                  style={{
+                    fontSize: isSm
+                      ? "1rem"
+                      : "" || isMd
+                      ? "2rem"
+                      : "" || isLg
+                      ? "2.3rem"
+                      : "2.3rem",
+                  }}
+                  className="font-weight-bold"
+                >
+                  Comments 
+                </p>
+
+                <CommentForm onCommentSubmit={handleCommentSubmit} />
+                <CommentsList comments={comments} />
+              </div>
             </div>
 
             <div
@@ -198,12 +258,12 @@ const BlogDetails = () => {
                 marginLeft: "3rem",
                 display: isSm ? "none" : "" || isMd ? "none" : "flex",
                 width: "2000px",
+                height: "700px",
               }}
             >
               <div
                 style={{
                   height: "70%",
-
                   background: "white",
                   boxShadow:
                     "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
@@ -270,7 +330,6 @@ const BlogDetails = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              // marginTop: "8rem",
             }}
           >
             <img
