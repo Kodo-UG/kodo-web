@@ -15,7 +15,6 @@ import {
 
 const ScholarshipDetails = () => {
   const { id } = useParams();
-  console.log(id);
   const [data, setData] = useState([]);
   const history = useHistory();
 
@@ -35,10 +34,9 @@ const ScholarshipDetails = () => {
   const getScholarship = async () => {
     try {
       const res = await axios.get(`${BASE_URL}/scholarship/${id}`, config);
-      console.log(res);
       setData(res.data.data);
     } catch (error) {
-      console.log(error);
+      displayErrorNotification(`${error.response.data.message}`);
     }
   };
 
