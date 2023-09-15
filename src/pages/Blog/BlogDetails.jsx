@@ -203,13 +203,13 @@ const BlogDetails = () => {
 
                 <button
                   style={{
-                    display: isSm && "none",
+                    // display: isSm && "none",
                     backgroundColor: "#EC1D64",
                     color: "white",
                     fontWeight: "bold",
                     cursor: "pointer",
-                    paddingRight: "1rem",
-                    paddingLeft: "1rem",
+                    paddingRight: ".5rem",
+                    paddingLeft: ".5rem",
                     paddingTop: ".1rem",
                     paddingBottom: ".1rem",
                     borderRadius: 10,

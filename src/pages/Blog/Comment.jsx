@@ -4,7 +4,6 @@ import { BiLike, BiDislike } from "react-icons/bi";
 import React, { useState } from "react";
 
 const Comment = ({ image, username, timestamp, text }) => {
-  
   const [replyText, setReplyText] = useState("");
   const [reply, setReply] = useState(false);
 
@@ -21,7 +20,6 @@ const Comment = ({ image, username, timestamp, text }) => {
   const commentStyle = {
     display: "flex",
     width: "100%",
-    justifyContent: "space-between",
     padding: "10px",
     marginBottom: "20px",
     backgroundColor: "#fff",
@@ -51,7 +49,6 @@ const Comment = ({ image, username, timestamp, text }) => {
   const userImageStyle = {
     width: "50px",
     height: "50px",
-    marginRight: "10px",
     borderRadius: "50%",
     objectFit: "cover",
   };
@@ -69,11 +66,7 @@ const Comment = ({ image, username, timestamp, text }) => {
     <div style={commentStyle}>
       <div
         style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          marginRight: "1rem",
         }}
       >
         <img
@@ -85,6 +78,7 @@ const Comment = ({ image, username, timestamp, text }) => {
           style={userImageStyle}
         />
       </div>
+
       <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
         <div style={headerStyle}>
           <strong style={usernameStyle}>{username}</strong>
@@ -197,7 +191,18 @@ const Comment = ({ image, username, timestamp, text }) => {
                 cursor: "pointer",
               }}
             >
-              reply
+              <span
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <span style={{ marginRight: ".5rem" }}>
+                  <FaReply />
+                </span>
+                <span style={{ marginRight: ".5rem" }}>reply</span>
+              </span>
             </button>
 
             <button
