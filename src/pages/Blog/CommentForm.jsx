@@ -67,7 +67,7 @@ const CommentForm = ({ onCommentSubmit }) => {
         <button
           onClick={handleCommentSubmit}
           style={{
-            backgroundColor: "#007bff",
+            backgroundColor: "#EC1D64",
             color: "#fff",
             border: "none",
             borderRadius: "5px",

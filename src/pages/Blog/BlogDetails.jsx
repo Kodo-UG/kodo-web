@@ -18,7 +18,7 @@ const BlogDetails = () => {
   const [comments, setComments] = useState([
     {
       username: "Muwonge Lawrence",
-      timestamp: "3 minutes ago",
+      timestamp: "3 hours ago",
       text: "This is a nice blog Keep posting more nice content like this.",
     },
     {
@@ -38,7 +38,7 @@ const BlogDetails = () => {
     },
     {
       username: "Muwonge Lawrence",
-      timestamp: "3 months ago",
+      timestamp: "a year ago",
       text: "This is a nice blog.",
     },
   ]);
