@@ -165,10 +165,7 @@ const Favorite = () => {
               subText={truncateText(dta.favourite?.about, 8)}
               award={dta.favourite?.award}
               link={dta.favourite?.link}
-              onClick={() => {
-                console.log("am unbooked");
-                setUnBookMarked(!unbookMarked);
-              }}
+              onClick={() => handleDelete(dta._id)}
               about={dta.favourite?.about}
               handleRoute={() => handleRoute(dta._id)}
               unbookMarked={unbookMarked}

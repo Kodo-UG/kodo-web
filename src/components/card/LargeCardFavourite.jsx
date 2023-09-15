@@ -2,7 +2,6 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { Button } from "antd";
 import React from "react";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
-import { FcBookmark } from "react-icons/fc";
 import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
 import SmallScreen from "./SmallScreen";
 
@@ -16,7 +15,6 @@ const LargeCardFavourite = ({
   onClick,
   loading,
   handleRoute,
-  unbookMarked,
 }) => {
   const date = new Date(formatDate);
   const formattedDate = date.toLocaleDateString();
@@ -348,25 +346,15 @@ const LargeCardFavourite = ({
                 color: "#4e4b66",
               }}
             >
-              {unbookMarked ? (
-                <BsBookmark
-                  onClick={onClick}
-                  style={{
-                    height: "20px",
-                    width: "20px",
-                    fontWeight: "bolder",
-                  }}
-                />
-              ) : (
-                <FcBookmark
-                  onClick={onClick}
-                  style={{
-                    height: "22px",
-                    width: "22px",
-                    fontWeight: "bolder",
-                  }}
-                />
-              )}
+              <BsBookmark
+                onClick={onClick}
+                style={{
+                  height: "20px",
+                  width: "20px",
+                  fontWeight: "bolder",
+                }}
+              />
+
               <BsThreeDotsVertical
                 style={{
                   height: "20px",
