@@ -69,7 +69,7 @@ const ScholarshipDetails = () => {
         width: isSm ? "100%" : "80%",
         marginTop: "4rem",
         height: "auto",
-        marginBottom: "8rem", // marginRight: "1rem",
+        marginBottom: "8rem", 
         padding: "1rem",
         fontFamily: "Montserrat, sans-serif",
         color: "#1c2755",
