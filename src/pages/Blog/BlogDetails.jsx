@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
+import { FaShare } from "react-icons/fa";
 import KodoImageLoader from "../../components/KodoImageLoader";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useHistory } from "react-router-dom";
@@ -74,7 +75,7 @@ const BlogDetails = () => {
 
   return (
     <>
-      {blog?.title ? (
+      { blog?.title ? (
         <div
           style={{
             // height: "100vh",
@@ -99,14 +100,8 @@ const BlogDetails = () => {
             >
               <div
                 style={{
-                  height: "300px",
-                  marginBottom: isSm
-                    ? "80px"
-                    : "" || isMd
-                    ? "130px"
-                    : "" || isLg
-                    ? "135px"
-                    : "135px",
+                  overflow: "hidden",
+                  marginBottom: "1rem"
                 }}
                 className=""
               >
@@ -123,9 +118,17 @@ const BlogDetails = () => {
                   className="font-weight-bold"
                 >
                   {" "}
-                  {blog?.title}
+                  { blog?.title }
                 </p>
-                <KodoImageLoader src={blog?.image} alt="blogImage" />
+
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                >
+                  <KodoImageLoader src={blog?.image} alt="blogImage" />
+                </div>
               </div>
 
               <div
@@ -193,7 +196,7 @@ const BlogDetails = () => {
                         opacity: "0.7",
                       }}
                     >
-                      { moment(blog?.creator?.createdAt).format("MM-DD-YYYY") }
+                      {moment(blog?.creator?.createdAt).format("MM-DD-YYYY")}
                     </span>
                   </button>
                 </div>
@@ -213,7 +216,24 @@ const BlogDetails = () => {
                   }}
                   className="mr-6"
                 >
-                  Apply
+                  <span
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {" "}
+                    <span
+                      style={{
+                        marginRight: "3px",
+                      }}
+                    >
+                      {" "}
+                      <FaShare />
+                    </span>
+                    <span>share</span>
+                  </span>
                 </button>
               </div>
 
@@ -245,7 +265,7 @@ const BlogDetails = () => {
                   }}
                   className="font-weight-bold"
                 >
-                  Comments 
+                  Comments
                 </p>
 
                 <CommentForm onCommentSubmit={handleCommentSubmit} />

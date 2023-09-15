@@ -47,7 +47,7 @@ const NavHeader = ({ open, setOpen }) => {
     {
       id: 5,
       route: "/blog",
-      children: "Blog",
+      children: "Blogs",
     },
     {
       id: 6,
@@ -229,9 +229,11 @@ const NavHeader = ({ open, setOpen }) => {
                 <button
                   className="btn btn-lg"
                   style={{
-                    height: "4rem",
-                    marginTop: "0px",
-                    marginBottom: "0px",
+                    borderRadius: 20,
+                    height: "3rem",
+                    marginRight: "5px",
+                    paddingLeft: "20px",
+                    paddingRight: "20px",
                     fontFamily: "Roboto, sans-serif",
                     fontSize: "16px",
                   }}
