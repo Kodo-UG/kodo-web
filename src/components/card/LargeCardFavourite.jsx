@@ -15,6 +15,8 @@ const LargeCardFavourite = ({
   onClick,
   loading,
   handleRoute,
+  data,
+  id,
 }) => {
   const date = new Date(formatDate);
   const formattedDate = date.toLocaleDateString();
@@ -37,6 +39,7 @@ const LargeCardFavourite = ({
         />
       ) : (
         <div
+          key={id}
           style={{
             backgroundColor: "#fff",
             borderRadius: "5px",

@@ -13,9 +13,7 @@ import {
 
 const Favorite = () => {
   const [loading, setLoading] = useState(false);
-  const [unbookMarked, setUnBookMarked] = useState(false);
   const [data, setData] = useState(null);
-  console.log(data);
   const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
   const isLg = useMediaQuery(
@@ -160,6 +158,7 @@ const Favorite = () => {
         ) : (
           data?.map((dta) => (
             <LargeCardFavourite
+              id={dta.favourite._id}
               title={truncateText(dta.favourite?.title, 4)}
               formatDate={dta.favourite?.deadline}
               subText={truncateText(dta.favourite?.about, 8)}
@@ -167,8 +166,7 @@ const Favorite = () => {
               link={dta.favourite?.link}
               onClick={() => handleDelete(dta._id)}
               about={dta.favourite?.about}
-              handleRoute={() => handleRoute(dta._id)}
-              unbookMarked={unbookMarked}
+              handleRoute={() => handleRoute(dta.favourite._id)}
             />
           ))
         )}
