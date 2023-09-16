@@ -84,7 +84,7 @@ const RootScholarship = () => {
 			<Menu setShowContent={setShowContent} />
 			<div>{renderContent()}</div>
 
-			{subscription ? null : (
+			{!subscription ? null : (
 				<RandomImageModal
 					visible={modal2Open}
 					closeModal={closeModal}
