@@ -53,6 +53,11 @@ const BlogDetails = () => {
   const isLg = useMediaQuery(
     "only screen and (min-width : 1250px) and (max-width : 1300px)"
   );
+
+  const isExtraLg = useMediaQuery(
+    "only screen and (min-width : 1300px)"
+  );
+
   const history = useHistory();
 
   const getBlog = async () => {
@@ -124,9 +129,15 @@ const BlogDetails = () => {
                 <div
                   style={{
                     width: "100%",
-                    height: "100%",
+                    backgroundColor: "red",
+                    height: "auto",
+                    maxHeight: isSm ? "100%" : "" || isMd ? "100%" : "" || isLg ? "100%" : "" || isExtraLg ? "20rem": "5px",
+                    display: "flex", 
+                    alignItems: "center", 
+                    justifyContent: "center",
                   }}
                 >
+                
                   <KodoImageLoader src={blog?.image} alt="blogImage" />
                 </div>
               </div>
