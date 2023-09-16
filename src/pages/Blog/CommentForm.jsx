@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import axiosInstance from "../../api/axiosInstance";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
 
-const CommentForm = ({ onCommentSubmit, blogID }) => {
+const CommentForm = ({ onCommentSubmit }) => {
+
 	const [text, setText] = useState("");
 	const [loading, setLoading] = useState(false);
 	const { id } = useParams();
@@ -20,16 +20,6 @@ const CommentForm = ({ onCommentSubmit, blogID }) => {
 		}
 	};
 
-	const handleCommentSubmit = () => {
-		if (text) {
-			const newComment = {
-				timestamp: new Date().toLocaleString(),
-				text
-			};
-			onCommentSubmit(newComment);
-			setText("");
-		}
-	};
 
 	const postComment = async () => {
 		setLoading(true);
@@ -88,7 +78,6 @@ const CommentForm = ({ onCommentSubmit, blogID }) => {
 					placeholder="Your Comment"
 					value={text}
 					onChange={handleInputChange(setText)}
-					// onFocus={(e) => (e.target.style.borderColor = "#EC1D64")}
 					style={{
 						width: "100%",
 						height: "7rem",

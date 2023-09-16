@@ -4,6 +4,7 @@ import { BiLike, BiDislike } from "react-icons/bi";
 import React, { useState } from "react";
 
 const Comment = ({ image, username, timestamp, text }) => {
+	
 	const [replyText, setReplyText] = useState("");
 	const [reply, setReply] = useState(false);
 	const [hover, setHover] = useState(false);

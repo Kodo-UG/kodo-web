@@ -6,17 +6,6 @@
     scrollbar-width: none;
   }
 
- 
-	/* const commentStyle = {
-		display: "flex",
-		width: "100%",
-		padding: "10px",
-		marginBottom: "20px",
-		backgroundColor: "#fff",
-		borderRadius: "5px"
-	}; */
-
-
 
   .comment {
     display: flex;
@@ -30,4 +19,5 @@
   
   .comment:hover {
     background-color: #f2f2f2; 
+    cursor: pointer;
   }
