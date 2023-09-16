@@ -16,33 +16,9 @@ const BlogDetails = () => {
 
 	const [blog, setBlog] = useState("");
 
-	const [comments, setComments] = useState([
-		{
-			username: "Muwonge Lawrence",
-			timestamp: "3 hours ago",
-			text: "This is a nice blog Keep posting more nice content like this."
-		},
-		{
-			username: "Muwonge Lawrence",
-			timestamp: "4 hours ago",
-			text: "This is a nice blog."
-		},
-		{
-			username: "Muwonge Lawrence",
-			timestamp: "a day ago",
-			text: "This is a nice blog."
-		},
-		{
-			username: "Muwonge Lawrence",
-			timestamp: "a month ago",
-			text: "This is a nice blog."
-		},
-		{
-			username: "Muwonge Lawrence",
-			timestamp: "a year ago",
-			text: "This is a nice blog."
-		}
-	]);
+	const [comments, setComments] = useState([]);
+
+	const reversedArray = comments.sort();
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
@@ -58,7 +34,7 @@ const BlogDetails = () => {
 	const getBlog = async () => {
 		try {
 			const res = await axiosInstance.get(`/blogs/${id}`);
-			// console.log(res.data.data);
+			setComments(res.data.data.comments);
 			setBlog(res.data.data);
 		} catch (error) {}
 	};
@@ -67,7 +43,7 @@ const BlogDetails = () => {
 		setComments([...comments, newComment]);
 	};
 
-	// console.log("BLOG:", blog);
+	console.log("BLOG:", comments);
 
 	useEffect(() => {
 		getBlog();
@@ -282,7 +258,7 @@ const BlogDetails = () => {
 								</p>
 
 								<CommentForm onCommentSubmit={handleCommentSubmit} />
-								<CommentsList comments={comments} />
+								<CommentsList comments={reversedArray} />
 							</div>
 						</div>
 

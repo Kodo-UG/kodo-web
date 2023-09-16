@@ -1,5 +1,7 @@
 import React from "react";
 import Comment from "./Comment";
+import TimeAgo from './TimeAgo';
+
 
 const CommentsList = ({ comments }) => {
 	return (
@@ -7,8 +9,8 @@ const CommentsList = ({ comments }) => {
 			{comments.map((comment, index) => (
 				<Comment
 					key={index}
-					username={comment.username}
-					timestamp={comment.timestamp}
+					username={comment.user.fname + " " + comment.user.lname}
+					timestamp={<TimeAgo dateString={comment.commentedAt} />}
 					text={comment.text}
 				/>
 			))}

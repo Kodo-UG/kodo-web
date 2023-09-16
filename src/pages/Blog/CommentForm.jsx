@@ -1,7 +1,24 @@
 import React, { useState } from "react";
+import axiosInstance from "../../api/axiosInstance";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { BASE_URL } from "../../constants/api";
 
-const CommentForm = ({ onCommentSubmit }) => {
+const CommentForm = ({ onCommentSubmit, blogID }) => {
 	const [text, setText] = useState("");
+	const [loading, setLoading] = useState(false);
+	const { id } = useParams();
+
+	const handleInputChange = (setState) => (event) => {
+		setState(event.target.value);
+	};
+
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${localStorage.getItem("token")}`
+		}
+	};
 
 	const handleCommentSubmit = () => {
 		if (text) {
@@ -14,7 +31,25 @@ const CommentForm = ({ onCommentSubmit }) => {
 		}
 	};
 
-	// Styles...
+	const postComment = async () => {
+		setLoading(true);
+		try {
+			const res = await axios.post(
+				`${BASE_URL}/user/add/comment`,
+				{
+					id,
+					comment: text
+				},
+				config
+			);
+			//getBlogs
+		} catch (error) {
+			console.log(error);
+		} finally {
+			setLoading(false);
+		}
+	};
+
 	const commentStyle = {
 		display: "flex",
 		width: "100%",
@@ -52,8 +87,8 @@ const CommentForm = ({ onCommentSubmit }) => {
 				<textarea
 					placeholder="Your Comment"
 					value={text}
-					onChange={(e) => setText(e.target.value)}
-					//   onFocus={(e) => (e.target.style.borderColor = "#EC1D64")}
+					onChange={handleInputChange(setText)}
+					// onFocus={(e) => (e.target.style.borderColor = "#EC1D64")}
 					style={{
 						width: "100%",
 						height: "7rem",
@@ -65,7 +100,7 @@ const CommentForm = ({ onCommentSubmit }) => {
 					}}
 				/>
 				<button
-					onClick={handleCommentSubmit}
+					onClick={() => postComment()}
 					style={{
 						backgroundColor: "#EC1D64",
 						color: "#fff",
@@ -75,7 +110,7 @@ const CommentForm = ({ onCommentSubmit }) => {
 						cursor: "pointer"
 					}}
 				>
-					Comment
+					{loading ? "loading..." : "comment"}
 				</button>
 			</div>
 		</div>

@@ -52,7 +52,7 @@ const Comment = ({ image, username, timestamp, text }) => {
 	};
 
 	const bodyStyle = {
-		fontSize: "16px",
+		fontSize: "13px",
 		width: "100%"
 	};
 
@@ -73,7 +73,7 @@ const Comment = ({ image, username, timestamp, text }) => {
 	};
 
 	return (
-		<div className="comment">
+		<div style={{ fontFamily: "montserrat,san-serif" }} className="comment">
 			<div
 				style={{
 					marginRight: "1rem"
