@@ -11,373 +11,351 @@ import CommentForm from "./CommentForm";
 import CommentsList from "./CommentsList";
 
 const BlogDetails = () => {
-  // Access the id parameter from the URL.
-  const { id } = useParams();
+	// Access the id parameter from the URL.
+	const { id } = useParams();
 
-  const [blog, setBlog] = useState("");
+	const [blog, setBlog] = useState("");
 
-  const [comments, setComments] = useState([
-    {
-      username: "Muwonge Lawrence",
-      timestamp: "3 hours ago",
-      text: "This is a nice blog Keep posting more nice content like this.",
-    },
-    {
-      username: "Muwonge Lawrence",
-      timestamp: "4 hours ago",
-      text: "This is a nice blog.",
-    },
-    {
-      username: "Muwonge Lawrence",
-      timestamp: "a day ago",
-      text: "This is a nice blog.",
-    },
-    {
-      username: "Muwonge Lawrence",
-      timestamp: "a month ago",
-      text: "This is a nice blog.",
-    },
-    {
-      username: "Muwonge Lawrence",
-      timestamp: "a year ago",
-      text: "This is a nice blog.",
-    },
-  ]);
+	const [comments, setComments] = useState([]);
 
-  const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const reversedArray = comments.sort();
 
-  const isMd = useMediaQuery(
-    "only screen and (min-width : 700px) and (max-width : 1250px)"
-  );
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
-  const isLg = useMediaQuery(
-    "only screen and (min-width : 1250px) and (max-width : 1300px)"
-  );
+	const isMd = useMediaQuery(
+		"only screen and (min-width : 700px) and (max-width : 1250px)"
+	);
 
-  const isExtraLg = useMediaQuery(
-    "only screen and (min-width : 1300px)"
-  );
+	const isLg = useMediaQuery(
+		"only screen and (min-width : 1250px) and (max-width : 1300px)"
+	);
+	const history = useHistory();
 
-  const history = useHistory();
+	const getBlog = async () => {
+		try {
+			const res = await axiosInstance.get(`/blogs/${id}`);
+			setComments(res.data.data.comments);
+			setBlog(res.data.data);
+		} catch (error) {}
+	};
 
-  const getBlog = async () => {
-    try {
-      const res = await axiosInstance.get(`/blogs/${id}`);
-      // console.log(res.data.data);
-      setBlog(res.data.data);
-    } catch (error) {}
-  };
+	const handleCommentSubmit = (newComment) => {
+		setComments([...comments, newComment]);
+	};
 
-  const handleCommentSubmit = (newComment) => {
-    setComments([...comments, newComment]);
-  };
+	console.log("BLOG:", comments);
 
-  // console.log("BLOG:", blog);
+	useEffect(() => {
+		getBlog();
+	}, []);
 
-  useEffect(() => {
-    getBlog();
-  }, []);
+	return (
+		<>
+			{blog?.title ? (
+				<div
+					style={{
+						// height: "100vh",
+						marginTop: isSm ? "6rem" : "5rem",
+						paddingLeft: isSm ? "2rem" : "5rem",
+						paddingRight: isSm ? "2rem" : "5rem"
+						// fontFamily: "montserrat, san-serif"
+					}}
+				>
+					<div
+						style={{
+							height: "100%",
+							width: "100%"
+						}}
+						className="p-3 p-md-4  d-flex flex-column flex-md-row"
+					>
+						<div
+							// style={{
+							//   overflow: "scroll",
+							//   overflowX: "hidden",
+							// }}
+							className=""
+						>
+							<div
+								style={{
+									overflow: "hidden",
+									marginBottom: "1rem"
+								}}
+								className=""
+							>
+								<p
+									style={{
+										fontSize: isSm
+											? "1.4rem"
+											: "" || isMd
+											? "2.1rem"
+											: "" || isLg
+											? "2.4rem"
+											: "2.4rem"
+									}}
+									className="font-weight-bold"
+								>
+									{" "}
+									{blog?.title}
+								</p>
 
-  return (
-    <>
-      { blog?.title ? (
-        <div
-          style={{
-            // height: "100vh",
-            marginTop: isSm ? "6rem" : "5rem",
-            paddingLeft: isSm ? "2rem" : "5rem",
-            paddingRight: isSm ? "2rem" : "5rem",
-          }}
-        >
-          <div
-            style={{
-              height: "100%",
-              width: "100%",
-            }}
-            className="p-3 p-md-4  d-flex flex-column flex-md-row"
-          >
-            <div
-              // style={{
-              //   overflow: "scroll",
-              //   overflowX: "hidden",
-              // }}
-              className=""
-            >
-              <div
-                style={{
-                  overflow: "hidden",
-                  marginBottom: "1rem"
-                }}
-                className=""
-              >
-                <p
-                  style={{
-                    fontSize: isSm
-                      ? "1rem"
-                      : "" || isMd
-                      ? "2rem"
-                      : "" || isLg
-                      ? "2.3rem"
-                      : "2.3rem",
-                  }}
-                  className="font-weight-bold"
-                >
-                  {" "}
-                  { blog?.title }
-                </p>
+								<div
+									style={{
+										width: "100%",
+										height: "100%"
+									}}
+								>
+									<KodoImageLoader src={blog?.image} alt="blogImage" />
+								</div>
+							</div>
 
-                <div
-                  style={{
-                    width: "100%",
-                    backgroundColor: "red",
-                    height: "auto",
-                    maxHeight: isSm ? "100%" : "" || isMd ? "100%" : "" || isLg ? "100%" : "" || isExtraLg ? "20rem": "5px",
-                    display: "flex", 
-                    alignItems: "center", 
-                    justifyContent: "center",
-                  }}
-                >
-                
-                  <KodoImageLoader src={blog?.image} alt="blogImage" />
-                </div>
-              </div>
+							<div
+								style={{
+									backgroundColor: "#1c2755",
+									alignItems: "center",
+									justifyContent: "space-between",
+									borderRadius: 6
+								}}
+								className={`w-100 d-flex flex-row p-2 ${
+									isLg ? "px-4" : ""
+								}`}
+							>
+								<div
+									style={{
+										display: "flex",
+										alignItems: "center",
+										width: isSm ? "100%" : "" || isMd ? "50%" : ""
+									}}
+									className=""
+								>
+									<div
+										style={{
+											width: "36px",
+											height: "36px",
+											borderRadius: "18px",
+											overflow: "hidden",
+											border: "2px solid #EC1D64"
+										}}
+										className="me-4"
+									>
+										<KodoImageLoader
+											src={blog?.image}
+											alt="blogImage"
+										/>
+									</div>
 
-              <div
-                style={{
-                  backgroundColor: "#1c2755",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  borderRadius: 6,
-                }}
-                className="w-100 d-flex flex-row p-2 px-4  "
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    width: isSm ? "100%" : "" || isMd ? "50%" : "",
-                  }}
-                  className=""
-                >
-                  <div
-                    style={{
-                      width: "36px",
-                      height: "36px",
-                      borderRadius: "18px",
-                      overflow: "hidden",
-                      border: "2px solid #EC1D64",
-                    }}
-                    className="me-4"
-                  >
-                    <KodoImageLoader src={blog?.image} alt="blogImage" />
-                  </div>
+									<button
+										style={{
+											textAlign: "left",
+											marginRight: "1rem",
+											fontSize: "10px"
+										}}
+										className=" text-white"
+									>
+										<span style={{ fontWeight: "bold" }}>
+											Posted By
+										</span>
 
-                  <button
-                    style={{
-                      textAlign: "left",
-                      marginRight: "1rem",
-                      fontSize: "10px",
-                    }}
-                    className=" text-white"
-                  >
-                    <span style={{ fontWeight: "bold" }}>Posted By</span>
+										<br />
+										<span
+											style={{
+												opacity: "0.7"
+											}}
+										>
+											{blog?.creator?.fname}
+										</span>
+									</button>
 
-                    <br />
-                    <span
-                      style={{
-                        opacity: "0.7",
-                      }}
-                    >
-                      {blog?.creator?.fname}
-                    </span>
-                  </button>
+									<button
+										style={{
+											textAlign: "left",
+											fontSize: "10px"
+										}}
+										className="text-white"
+									>
+										<span style={{ fontWeight: "bold" }}>
+											Posted On
+										</span>
 
-                  <button
-                    style={{
-                      textAlign: "left",
-                      fontSize: "10px",
-                    }}
-                    className="text-white"
-                  >
-                    <span style={{ fontWeight: "bold" }}>Posted On</span>
+										<br />
+										<span
+											style={{
+												opacity: "0.7"
+											}}
+										>
+											{moment(blog?.creator?.createdAt).format(
+												"MM-DD-YYYY"
+											)}
+										</span>
+									</button>
+								</div>
 
-                    <br />
-                    <span
-                      style={{
-                        opacity: "0.7",
-                      }}
-                    >
-                      {moment(blog?.creator?.createdAt).format("MM-DD-YYYY")}
-                    </span>
-                  </button>
-                </div>
+								<button
+									style={{
+										// display: isSm && "none",
+										backgroundColor: "#EC1D64",
+										color: "white",
+										fontWeight: "normal",
+										cursor: "pointer",
+										paddingRight: ".5rem",
+										paddingLeft: ".5rem",
+										paddingTop: ".1rem",
+										paddingBottom: ".1rem",
+										borderRadius: 20
+									}}
+									// className="mr-6"
+								>
+									<span
+										style={{
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "center"
+											// marginRight: isSm ? "1px" : "3px"
+										}}
+									>
+										{" "}
+										<span
+											style={{
+												marginRight: isSm ? "2px" : "3px"
+											}}
+										>
+											{" "}
+											<FaShare size={15} />
+										</span>
+										<span>share</span>
+									</span>
+								</button>
+							</div>
 
-                <button
-                  style={{
-                    // display: isSm && "none",
-                    backgroundColor: "#EC1D64",
-                    color: "white",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                    paddingRight: ".5rem",
-                    paddingLeft: ".5rem",
-                    paddingTop: ".1rem",
-                    paddingBottom: ".1rem",
-                    borderRadius: 10,
-                  }}
-                  className="mr-6"
-                >
-                  <span
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    {" "}
-                    <span
-                      style={{
-                        marginRight: "3px",
-                      }}
-                    >
-                      {" "}
-                      <FaShare />
-                    </span>
-                    <span>share</span>
-                  </span>
-                </button>
-              </div>
+							<div
+								style={{
+									textAlign: "justify",
+									lineHeight: isSm ? "1.6rem" : "2rem"
+								}}
+								className="mt-5"
+							>
+								{blog?.description}
+							</div>
 
-              <div
-                style={{
-                  textAlign: "justify",
-                  lineHeight: isSm ? "1.5rem" :"2rem",
-                }}
-                className="mt-5"
-              >
-                {blog?.description}
-              </div>
+							<div
+								style={{
+									width: "100%"
+								}}
+								className="mt-5"
+							>
+								<p
+									style={{
+										fontSize: isSm
+											? "1rem"
+											: "" || isMd
+											? "2rem"
+											: "" || isLg
+											? "2.3rem"
+											: "2.3rem"
+									}}
+									className="font-weight-bold"
+								>
+									Comments
+								</p>
 
-              <div
-                style={{
-                  width: "100%",
-                }}
-                className="mt-5"
-              >
-                <p
-                  style={{
-                    fontSize: isSm
-                      ? "1rem"
-                      : "" || isMd
-                      ? "2rem"
-                      : "" || isLg
-                      ? "2.3rem"
-                      : "2.3rem",
-                  }}
-                  className="font-weight-bold"
-                >
-                  Comments
-                </p>
+								<CommentForm onCommentSubmit={handleCommentSubmit} />
+								<CommentsList comments={reversedArray} />
+							</div>
+						</div>
 
-                <CommentForm onCommentSubmit={handleCommentSubmit} />
-                <CommentsList comments={comments} />
-              </div>
-            </div>
-
-            <div
-              style={{
-                marginLeft: "3rem",
-                display: isSm ? "none" : "" || isMd ? "none" : "flex",
-                width: "2000px",
-                height: "700px",
-              }}
-            >
-              <div
-                style={{
-                  height: "70%",
-                  background: "white",
-                  boxShadow:
-                    "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-                  borderRadius: "5px",
-                  padding: "2rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  color: "#1c2755",
-                }}
-              >
-                <h3
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: isSm ? "1rem" : "1.3rem",
-                  }}
-                >
-                  Resources
-                </h3>
-                <div
-                  style={{
-                    height: "70%",
-                    marginBottom: "2rem",
-                  }}
-                >
-                  <img
-                    src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/interracial_qodm9k.jpg"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                    alt="resource"
-                  />
-                </div>
-                <p>
-                  You can checkout more details about kodo scholarship from our
-                  blog site .
-                </p>
-                <button
-                  className="shadow-sm"
-                  style={{
-                    border: "2px solid #1c2755",
-                    borderRadius: "5px",
-                    padding: "0.6rem",
-                    fontWeight: "bold",
-                    color: "#1c2755",
-                  }}
-                  onClick={() => {
-                    history.push("/blog");
-                  }}
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <>
-          <div
-            style={{
-              height: "100vh",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img
-              style={{
-                width: "7rem ",
-                height: "7rem",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-              src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
-              alt="middle"
-            />{" "}
-          </div>
-        </>
-      )}
-    </>
-  );
+						<div
+							style={{
+								marginLeft: "3rem",
+								display: isSm ? "none" : "" || isMd ? "none" : "flex",
+								width: "2000px",
+								height: "700px"
+							}}
+						>
+							<div
+								style={{
+									height: "70%",
+									background: "white",
+									boxShadow:
+										"0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+									borderRadius: "5px",
+									padding: "2rem",
+									display: "flex",
+									flexDirection: "column",
+									justifyContent: "center",
+									color: "#1c2755"
+								}}
+							>
+								<h3
+									style={{
+										fontWeight: "bold",
+										fontSize: isSm ? "1rem" : "1.3rem"
+									}}
+								>
+									Resources
+								</h3>
+								<div
+									style={{
+										height: "70%",
+										marginBottom: "2rem"
+									}}
+								>
+									<img
+										src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/interracial_qodm9k.jpg"
+										style={{
+											width: "100%",
+											height: "100%",
+											objectFit: "cover"
+										}}
+										alt="resource"
+									/>
+								</div>
+								<p>
+									You can checkout more details about kodo scholarship
+									from our blog site .
+								</p>
+								<button
+									className="shadow-sm"
+									style={{
+										border: "2px solid #1c2755",
+										borderRadius: "5px",
+										padding: "0.6rem",
+										fontWeight: "bold",
+										color: "#1c2755"
+									}}
+									onClick={() => {
+										history.push("/blog");
+									}}
+								>
+									Learn More
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			) : (
+				<>
+					<div
+						style={{
+							height: "100vh",
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center"
+						}}
+					>
+						<img
+							style={{
+								width: "7rem ",
+								height: "7rem",
+								justifyContent: "center",
+								alignItems: "center"
+							}}
+							src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
+							alt="middle"
+						/>{" "}
+					</div>
+				</>
+			)}
+		</>
+	);
 };
 
 export default BlogDetails;
