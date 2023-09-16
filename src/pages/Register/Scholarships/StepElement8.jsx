@@ -46,10 +46,11 @@ function StepElement8() {
 	};
 
 	const handleDobChange = (date) => {
+		setSelectedDate(date);
+	  
 		const dateString = date ? date.toISOString().split("T")[0] : "";
-
 		dispatch(updateFormData({ field: "dob", value: dateString }));
-	};
+	  };
 
 	const handlePasswordChange = (e) => {
 		const { name, value } = e.target;
@@ -247,6 +248,7 @@ function StepElement8() {
 												selected={selectedDate}
 												onChange={handleDobChange} // Call the modified function here
 												placeholderText="Select date of birth"
+												maxDate={new Date(2009, 11, 31)}
 												required
 											/>
 										</div>
