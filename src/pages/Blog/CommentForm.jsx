@@ -67,7 +67,8 @@ const CommentForm = ({ onCommentSubmit }) => {
 		<div style={commentStyle}>
 			<div>
 				<img
-					src={`https://ui-avatars.com/api/name=Baluku Wilton&background=random`}
+					// src={`https://ui-avatars.com/api/name=Baluku Wilton&background=random`}
+					src="https://res.cloudinary.com/itgenius/image/upload/v1694959807/default-avatar-profile-icon-vector-18942381_ykvnuu.jpg"
 					alt="User"
 					style={userImageStyle}
 				/>

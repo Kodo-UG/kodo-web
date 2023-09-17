@@ -4,7 +4,6 @@ import { BiLike, BiDislike } from "react-icons/bi";
 import React, { useState } from "react";
 
 const Comment = ({ image, username, timestamp, text }) => {
-	
 	const [replyText, setReplyText] = useState("");
 	const [reply, setReply] = useState(false);
 	const [hover, setHover] = useState(false);
@@ -81,10 +80,11 @@ const Comment = ({ image, username, timestamp, text }) => {
 				}}
 			>
 				<img
-					src={
-						image ||
-						`https://ui-avatars.com/api/name=${username}&background=random`
-					}
+					// src={
+					// 	image ||
+					// 	`https://ui-avatars.com/api/name=${username}&background=random`
+					// }
+					src="https://res.cloudinary.com/itgenius/image/upload/v1694959807/default-avatar-profile-icon-vector-18942381_ykvnuu.jpg"
 					alt="User"
 					style={userImageStyle}
 				/>
