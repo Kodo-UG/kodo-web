@@ -9,6 +9,7 @@ import moment from "moment";
 import "./blog.css";
 import CommentForm from "./CommentForm";
 import CommentsList from "./CommentsList";
+import { displaySuccessNotification } from "../../utils/Toast";
 
 const BlogDetails = () => {
 	// Access the id parameter from the URL.
@@ -17,8 +18,6 @@ const BlogDetails = () => {
 	const [blog, setBlog] = useState("");
 
 	const [comments, setComments] = useState([]);
-
-	const reversedArray = comments.sort();
 
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
@@ -39,11 +38,23 @@ const BlogDetails = () => {
 		} catch (error) {}
 	};
 
-	const handleCommentSubmit = (newComment) => {
-		setComments([...comments, newComment]);
+	const handleShareClick = () => {
+		const blogUrl = window.location.href;
+		navigator.clipboard.writeText(blogUrl);
+		displaySuccessNotification("Blog URL copied to clipboard!");
 	};
 
-	console.log("BLOG:", comments);
+	const handleCommentSubmit = async () => {
+		try {
+			const res = await axiosInstance.get(`/blogs/${id}`);
+
+			setComments(res.data.data.comments);
+
+			// setComments("");
+		} catch (error) {}
+	};
+
+	// console.log("BLOG:", comments);
 
 	useEffect(() => {
 		getBlog();
@@ -203,6 +214,7 @@ const BlogDetails = () => {
 										paddingBottom: ".1rem",
 										borderRadius: 20
 									}}
+									onClick={handleShareClick}
 									// className="mr-6"
 								>
 									<span
@@ -210,7 +222,6 @@ const BlogDetails = () => {
 											display: "flex",
 											alignItems: "center",
 											justifyContent: "center"
-											// marginRight: isSm ? "1px" : "3px"
 										}}
 									>
 										{" "}
@@ -259,7 +270,7 @@ const BlogDetails = () => {
 								</p>
 
 								<CommentForm onCommentSubmit={handleCommentSubmit} />
-								<CommentsList comments={reversedArray} />
+								<CommentsList comments={comments} />
 							</div>
 						</div>
 

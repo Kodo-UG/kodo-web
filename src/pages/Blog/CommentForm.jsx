@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
+import { displaySuccessNotification } from "../../utils/Toast";
 
 const CommentForm = ({ onCommentSubmit }) => {
-
 	const [text, setText] = useState("");
 	const [loading, setLoading] = useState(false);
 	const { id } = useParams();
@@ -20,7 +20,6 @@ const CommentForm = ({ onCommentSubmit }) => {
 		}
 	};
 
-
 	const postComment = async () => {
 		setLoading(true);
 		try {
@@ -32,7 +31,12 @@ const CommentForm = ({ onCommentSubmit }) => {
 				},
 				config
 			);
-			//getBlogs
+			console.log(res.data);
+			if (res.status === 200) {
+				displaySuccessNotification(res.data.message);
+			}
+			setText("");
+			onCommentSubmit();
 		} catch (error) {
 			console.log(error);
 		} finally {

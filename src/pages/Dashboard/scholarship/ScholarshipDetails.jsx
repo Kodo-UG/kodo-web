@@ -6,7 +6,6 @@ import { BsBookmark } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import { useParams, useHistory } from "react-router-dom";
 import { BASE_URL } from "../../../constants/api";
-import "react-spring-bottom-sheet/dist/style.css";
 import {
 	displayErrorNotification,
 	displaySuccessNotification
