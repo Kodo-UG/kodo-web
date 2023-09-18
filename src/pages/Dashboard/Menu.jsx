@@ -7,6 +7,8 @@ import { useHistory } from "react-router-dom";
 import { useQueryClient } from "react-query";
 import { useDispatch } from "react-redux";
 import { clearScholarships } from "../../toolkit/scholarshipReducer";
+import { clearJobData } from "../../toolkit/jobReducer";
+import { clearFormData } from "../../toolkit/formReducer";
 
 const Menu = ({ setShowContent }) => {
 	const [activeButton, setActiveButton] = useState(null);
@@ -60,9 +62,12 @@ const Menu = ({ setShowContent }) => {
 	const handleLogout = () => {
 		localStorage.removeItem("token");
 		localStorage.removeItem("userData");
-		queryClient.clear();
-		dispatch(clearScholarships());
+		localStorage.removeItem("refer");
 		localStorage.setItem("modal2Open", "true");
+		dispatch(clearScholarships());
+		dispatch(clearFormData());
+		dispatch(clearJobData());
+		queryClient.clear();
 		history.push("/login");
 	};
 	return (

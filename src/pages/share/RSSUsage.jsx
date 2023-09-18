@@ -9,8 +9,8 @@ export default function RSSUsage() {
 	const isLg = useMediaQuery("only screen and (min-width : 1250px)");
 
 	const userId = localStorage.getItem("userID");
-	const URL = `https://kodoscholarships.com/admissions/${userId}`;
-	const useURL = `https://kodoscholarships.com/admissions/${userId}`;
+	const URL = `http://localhost:3000/admissions/${userId}`;
+	const useURL = `http://localhost:3000/admissions/${userId}`;
 
 	return (
 		<div

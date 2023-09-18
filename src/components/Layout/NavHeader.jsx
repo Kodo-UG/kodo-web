@@ -5,6 +5,8 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { clearScholarships } from "../../toolkit/scholarshipReducer";
 import { useDispatch } from "react-redux";
+import { clearFormData } from "../../toolkit/formReducer";
+import { clearJobData } from "../../toolkit/jobReducer";
 
 const NavHeader = ({ open, setOpen }) => {
   const history = useHistory();
@@ -153,6 +155,10 @@ const NavHeader = ({ open, setOpen }) => {
                     e.preventDefault();
                     localStorage.removeItem("token");
                     localStorage.removeItem("userData");
+                    localStorage.removeItem("refer")
+                    dispatch(clearScholarships());
+                    dispatch(clearFormData())
+                    dispatch(clearJobData())
                     history.push("/login");
                   }}
                 >
@@ -241,6 +247,9 @@ const NavHeader = ({ open, setOpen }) => {
                     e.preventDefault();
                     localStorage.removeItem("token");
                     localStorage.removeItem("userData");
+                    localStorage.removeItem("refer")
+                    dispatch(clearFormData())
+                    dispatch(clearJobData())
                     dispatch(clearScholarships());
                     history.push("/login");
                   }}
