@@ -5,9 +5,7 @@ import React, { useState, useEffect } from "react";
 import { BsBookmark } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import { useParams, useHistory } from "react-router-dom";
-
 import { BASE_URL } from "../../../constants/api";
-import "react-spring-bottom-sheet/dist/style.css";
 import {
 	displayErrorNotification,
 	displaySuccessNotification
@@ -36,7 +34,7 @@ const ScholarshipDetails = () => {
 			const res = await axios.get(`${BASE_URL}/scholarship/${id}`, config);
 			setData(res.data.data);
 		} catch (error) {
-			console.log(error);
+			displayErrorNotification(`${error.response.data.message}`);
 		}
 	};
 
@@ -49,13 +47,10 @@ const ScholarshipDetails = () => {
 				},
 				config
 			);
-			if (res.status == 201) {
-				displaySuccessNotification(`${res.data.message}`);
-			} else {
-				displayErrorNotification(`${res.data.message}`);
-			}
+
+			displaySuccessNotification(`${res.data.message}`);
 		} catch (error) {
-			console.log(error);
+			displayErrorNotification(`${error.response.data.message}`);
 		}
 	};
 
@@ -63,7 +58,7 @@ const ScholarshipDetails = () => {
 		getScholarship();
 	}, []);
 
-	const date = new Date(data.deadline);
+	const date = new Date(data?.deadline);
 	const deadline = date.toLocaleDateString();
 
 	return (
@@ -72,7 +67,7 @@ const ScholarshipDetails = () => {
 				width: isSm ? "100%" : "80%",
 				marginTop: "4rem",
 				height: "auto",
-				marginBottom: "8rem", // marginRight: "1rem",
+				marginBottom: "8rem",
 				padding: "1rem",
 				fontFamily: "Montserrat, sans-serif",
 				color: "#1c2755"
@@ -134,11 +129,11 @@ const ScholarshipDetails = () => {
 										// letterSpacing: "2px"
 									}}
 								>
-									{data.title}
+									{data?.title}
 								</h5>
 							</div>
 							{isSm ? null : (
-								<div onClick={() => handleClick(data._id)}>
+								<div onClick={() => handleClick(data?._id)}>
 									<BsBookmark
 										// onClick={onClick}
 										style={{
@@ -183,7 +178,7 @@ const ScholarshipDetails = () => {
 											letterSpacing: "2px"
 										}}
 									>
-										{data.award}
+										{data?.award}
 									</p>
 								</div>
 								<div className="d-flex flex-column align-items-center">
@@ -256,7 +251,7 @@ const ScholarshipDetails = () => {
 								}}
 							>
 								<a
-									href={`${data.link}`}
+									href={`${data?.link}`}
 									style={{
 										backgroundColor: "#EB1E5E",
 										border: "none",
@@ -302,7 +297,7 @@ const ScholarshipDetails = () => {
 										fontSize: isSm ? "1rem" : "1.3rem"
 									}}
 								>
-									{data.about}
+									{data?.about}
 								</p>
 							</div>
 						</div>
@@ -459,7 +454,7 @@ const ScholarshipDetails = () => {
 							}}
 						>
 							<a
-								href={`${data.link}`}
+								href={`${data?.link}`}
 								style={{
 									backgroundColor: "#EB1E5E",
 									border: "none",
@@ -482,9 +477,10 @@ const ScholarshipDetails = () => {
 								justifyContent: "center",
 								alignItems: "center",
 								// marginLeft: "4rem",
+								cursor: "pointer",
 								marginTop: ".9rem"
 							}}
-							onClick={() => handleClick(data._id)}
+							onClick={() => handleClick(data?._id)}
 						>
 							<BsBookmark
 								style={{

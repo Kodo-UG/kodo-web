@@ -3,6 +3,9 @@ import "../stepperElement.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateJobData } from "../../../../toolkit/jobReducer";
 import { useHistory } from "react-router-dom";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 import { Link } from "react-router-dom";
 import {
@@ -10,9 +13,7 @@ import {
 	displaySuccessMessage
 } from "../../../../utils/Toast";
 import axiosInstance from "../../../../api/axiosInstance";
-import { updateFormData } from "../../../../toolkit/formReducer";
-import { DatePicker } from "antd";
-import moment from "moment";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function StepElement8() {
 	const jobData = useSelector((state) => state.jobData);
@@ -23,6 +24,8 @@ function StepElement8() {
 	const [gender, setGender] = useState("");
 
 	const [showPassword] = useState(false);
+	const [selectedDate, setSelectedDate] = useState(null);
+	const isSm = useMediaQuery("only screen and (max-width : 900px)");
 
 	const dispatch = useDispatch();
 	const handleEmailChange = (e) => {
@@ -34,22 +37,23 @@ function StepElement8() {
 		dispatch(updateJobData({ field: "password", value: value }));
 	};
 
-	const handleDobChange = (date, dateString) => {
+	const handleDobChange = (date) => {
+		setSelectedDate(date);
+
+		const dateString = date ? date.toISOString().split("T")[0] : "";
 		dispatch(updateJobData({ field: "dob", value: dateString }));
 	};
+
 	const handlePhoneChange = (e) => {
 		const { value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateJobData({ field: "phone", value: value }));
 	};
 	const handleFirstNameChange = (e) => {
 		const { value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateJobData({ field: "fname", value: value }));
 	};
 	const handleLastNameChange = (e) => {
 		const { value } = e.target;
-		// Dispatch an action to update the form data in the Redux store
 		dispatch(updateJobData({ field: "lname", value: value }));
 	};
 
@@ -83,8 +87,6 @@ function StepElement8() {
 			setLoading(false);
 		}
 	};
-
-	
 
 	const handleGenderChange = (e) => {
 		setGender(e.target.value);
@@ -226,42 +228,14 @@ function StepElement8() {
 									<div>
 										<div className="_fieldGroup_1g3ja_1">
 											<DatePicker
-												className="_textField_fwd9c_1"
-												onChange={handleDobChange}
-												name="dob"
-												value={
-													jobData.dob
-														? moment(jobData.dob, "YYYY-MM-DD")
-														: null
-												}
-												dateRender={(current) => {
-													const style = {};
-													if (
-														current.date() ===
-														moment(
-															jobData.dob,
-															"YYYY-MM-DD"
-														).date()
-													) {
-														style.border = "1px solid #1677ff";
-														style.borderRadius = "50%";
-													}
-													return (
-														<div
-															className={`ant-picker-cell-inner ${
-																current.year() > moment().year()
-																	? "disabled"
-																	: ""
-															}`}
-															style={style}
-														>
-															{current.date()}
-														</div>
-													);
-												}}
-												disabledDate={(current) =>
-													current.year() > moment().year()
-												}
+												className={` ${
+													isSm ? "date-pic" : "date-picker"
+												}`}
+												selected={selectedDate}
+												onChange={handleDobChange} // Call the modified function here
+												placeholderText="Select date of birth"
+												maxDate={new Date(2009, 11, 31)}
+												required
 											/>
 										</div>
 									</div>

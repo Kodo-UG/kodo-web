@@ -15,14 +15,14 @@ const Login = () => {
 			title: "Scholarships",
 			text: "We’ve helped students win more than $10 million dollars in scholarships.",
 			link: "/signin",
-			Button: "log in"
+			Button: "login"
 		},
 		{
 			id: 2,
 			title: "Jobs",
 			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
 			link: "/signin",
-			Button: "log in"
+			Button: "login"
 		}
 	];
 

@@ -51,7 +51,7 @@ export default function ForgotPassword() {
 							</Link>
 							<div className="fxt-page-switcher">
 								<Link to="/signin" className="switcher-text1 active">
-									Log In
+									Login
 								</Link>
 								<Link to="/login" className="switcher-text1">
 									Sign Up

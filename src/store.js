@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
 	user: userReducer,
 	formData: formReducer,
 	jobData: jobReducer,
-	scholarship:scholarshipReducer
+	scholarship: scholarshipReducer
 });
 
 // Configure persistence options

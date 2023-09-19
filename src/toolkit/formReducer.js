@@ -15,8 +15,9 @@ const initialState = {
 	phone: "",
 	appType: "",
 	scholarshipcategory: "",
-	subject:"",
-	dob:""
+	subject: "",
+	dob: "",
+	refer: ""
 };
 const formDataSlice = createSlice({
 	name: "formData",
@@ -29,8 +30,8 @@ const formDataSlice = createSlice({
 			}
 		},
 
-		clearFormData: () => initialState,
-	},
+		clearFormData: () => initialState
+	}
 });
 
 export const { updateFormData, clearFormData } = formDataSlice.actions;

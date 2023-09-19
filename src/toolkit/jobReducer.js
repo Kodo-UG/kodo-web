@@ -12,7 +12,8 @@ const initialState = {
 	phone: "",
 	sex: "",
 	jobcategory: "",
-	dob: ""
+	dob: "",
+	refer:""
 };
 const jobDataSlice = createSlice({
 	name: "jobData",
