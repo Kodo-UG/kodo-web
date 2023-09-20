@@ -100,7 +100,6 @@ const App = () => {
 				<Route exact path="/JobStep3" component={JobStep3} />
 				<Route exact path="/policy" component={Privacy} />
 				<Route exact path="/share" component={RSSUsage} />
-				
 
 				<Route
 					exact
@@ -117,7 +116,6 @@ const App = () => {
 					<PrivateRoute path="/payment" component={Payment} />
 					<Route exact path="/aboutus" component={AboutUs} />
 					<Route exact path="/login" component={Login} />
-
 					<Route exact path="/blog" component={Blog} />
 					<Route exact path="/blog/:id" component={BlogDetails} />
 					<Route exact path="/admissions" component={FindScholarship} />
@@ -125,10 +123,11 @@ const App = () => {
 						exact
 						path="/admissions/:userId"
 						component={FindScholarship}
-					/>/
-          <Route exact path="/con" component={Main} />
+					/>
+					/
+					<Route exact path="/contactus" component={Main} />
 					<Route exact path="/payjobs" component={PaymentJobs} />
-					<Route exact path="/contactus" component={ContactUs} />
+					{/* <Route exact path="/contactus" component={ContactUs} /> */}
 					<Route exact path="/scholarships" component={Accordion} />
 					<Route exact path="/testimonals" component={Testimonals} />
 					<Route exact path="/" component={Home} />
