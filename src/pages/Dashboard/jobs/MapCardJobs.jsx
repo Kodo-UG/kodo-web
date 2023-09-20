@@ -4,6 +4,7 @@ import LargeCardNotPaid from "../../../components/card/LargeCardNotPaid";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { BASE_URL } from "../../../constants/api";
+import { useHistory } from "react-router-dom";
 
 const MapCardJobs = ({ path }) => {
 	const [data, setData] = useState([]);
@@ -12,6 +13,8 @@ const MapCardJobs = ({ path }) => {
 	const [hasMore, setHasMore] = useState(true);
 
 	const [loading, setLoading] = useState(false);
+
+	const history = useHistory();
 
 	const job = JSON.parse(localStorage.getItem("userData"));
 	const newJob = job.user.jobAppType;
@@ -71,6 +74,9 @@ const MapCardJobs = ({ path }) => {
 		} else {
 			return text;
 		}
+	};
+	const handleRoute = (link) => {
+		history.push(`link`);
 	};
 
 	return (
