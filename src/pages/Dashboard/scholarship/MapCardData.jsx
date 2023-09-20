@@ -83,7 +83,10 @@ const MapCardData = () => {
   };
 
   const handleRoute = (id) => {
-    history.push(`/details/${id}`);
+    const data = {
+      getJobs: false,
+    };
+    history.push(`/details/${id}`, data);
   };
 
   useEffect(() => {
@@ -124,7 +127,7 @@ const MapCardData = () => {
             ))
           : data.map((dta) => (
               <LargeCardNotPaid
-                key={dta.id}
+                key={dta._id}
                 text="scholarships"
                 title={dta.title}
                 formatDate={dta.deadline}

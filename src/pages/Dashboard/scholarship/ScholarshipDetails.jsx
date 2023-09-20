@@ -4,7 +4,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { BsBookmark } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, useLocation } from "react-router-dom";
 
 import { BASE_URL } from "../../../constants/api";
 import "react-spring-bottom-sheet/dist/style.css";
@@ -14,8 +14,13 @@ import {
 } from "../../../utils/Toast";
 
 const ScholarshipDetails = () => {
+  const location = useLocation();
+  const { getJobs } = location?.state;
+  // console.log(getJobs);
   const { id } = useParams();
+  // console.log(id);
   const [data, setData] = useState([]);
+  console.log(data);
   const history = useHistory();
 
   const config = {
@@ -40,6 +45,15 @@ const ScholarshipDetails = () => {
     }
   };
 
+  const getJob = async () => {
+    try {
+      const res = await axios.get(`${BASE_URL}/job/${id}`, config);
+      setData(res.data.data);
+    } catch (error) {
+      displayErrorNotification(`${error.response.data.message}`);
+    }
+  };
+
   const handleClick = async (fav) => {
     try {
       const res = await axios.post(
@@ -58,6 +72,7 @@ const ScholarshipDetails = () => {
 
   useEffect(() => {
     getScholarship();
+    getJob();
   }, []);
 
   const date = new Date(data?.deadline);
@@ -69,7 +84,7 @@ const ScholarshipDetails = () => {
         width: isSm ? "100%" : "80%",
         marginTop: "4rem",
         height: "auto",
-        marginBottom: "8rem", 
+        marginBottom: "8rem",
         padding: "1rem",
         fontFamily: "Montserrat, sans-serif",
         color: "#1c2755",
@@ -180,7 +195,7 @@ const ScholarshipDetails = () => {
                       letterSpacing: "2px",
                     }}
                   >
-                    {data?.award}
+                    {getJobs ? data?.salary : data?.award}
                   </p>
                 </div>
                 <div className="d-flex flex-column align-items-center">

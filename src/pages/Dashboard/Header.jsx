@@ -50,7 +50,6 @@ const MyHeader = ({ setShowContent }) => {
         "https://demo.kodoscholarships.com/api/v1/user/notifications",
         config
       );
-      console.log(res.data.data);
       return res.data.data;
     } catch (error) {
       throw new Error(error.message || "Failed to fetch notifications");
