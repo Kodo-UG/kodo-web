@@ -47,8 +47,9 @@ const LargeCard = ({
   const handleApply = async (id) => {
     try {
       let res = await axiosInstance.post("/user/apply", {
-        id: id,
+        id,
       });
+      console.log(res);
     } catch (err) {
       throw err;
     }
@@ -437,7 +438,7 @@ const LargeCard = ({
           >
             {" "}
             <Button
-              onClick={() => handleRoute()}
+              onClick={() => handleRoute(id)}
               style={{ backgroundColor: "#EC1D64", width: "80%" }}
               type="primary"
               block

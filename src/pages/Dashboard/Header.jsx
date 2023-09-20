@@ -44,18 +44,17 @@ const MyHeader = ({ setShowContent }) => {
 		fetchNotifications
 	);
 
-	async function fetchNotifications() {
-		try {
-			const res = await axios.get(
-				"https://demo.kodoscholarships.com/api/v1/user/notifications",
-				config
-			);
-			console.log(res.data.data);
-			return res.data.data;
-		} catch (error) {
-			throw new Error(error.message || "Failed to fetch notifications");
-		}
-	}
+  async function fetchNotifications() {
+    try {
+      const res = await axios.get(
+        "https://demo.kodoscholarships.com/api/v1/user/notifications",
+        config
+      );
+      return res.data.data;
+    } catch (error) {
+      throw new Error(error.message || "Failed to fetch notifications");
+    }
+  }
 
 	const HandleClick = async (id) => {
 		try {
