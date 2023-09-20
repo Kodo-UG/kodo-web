@@ -55,17 +55,17 @@ const Contact = () => {
 					padding: isSm ? "1rem" : "",
 
 					alignItems: "center",
-					justifyContent: "space-between",
-					// gap: "2rem",
+					justifyContent: "end",
+					gap: isSm ? "2rem" : "6rem",
 					gridTemplateColumns: "1fr"
 				}}
 			>
 				<div
 					style={{
-						width: isSm ? "100%" : "35%",
+						width: isSm ? "100%" : "",
 						// height: "50%",
 						// background: "red",
-						padding: "2rem",
+						padding: "1.5rem",
 						display: "grid",
 						gridTemplateColumns: "1fr", // Create a single column of equal width
 						gap: "2rem",
@@ -136,7 +136,7 @@ const Contact = () => {
 								<p
 									style={{
 										fontWeight: "normal",
-										fontSize: isSm ? "" : "",
+										// fontSize: isSm ? "" : "1.rem",
 										lineHeight: isSm ? "" : "25px"
 									}}
 								>
@@ -186,7 +186,7 @@ const Contact = () => {
 						/>
 					</div>
 				</div>
-				{/* img */}
+				
 			</div>
 		</div>
 	);

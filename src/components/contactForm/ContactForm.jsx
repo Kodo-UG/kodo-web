@@ -154,7 +154,7 @@ const ContactForm = () => {
 						fontWeight: "bold",
 						color: "white"
 					}}
-					onClick={() => formSubmit()}
+					// onClick={() => formSubmit()}
 				>
 					Send Message{" "}
 					<IoIosSend
