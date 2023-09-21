@@ -19,7 +19,7 @@ const ScholarshipDetails = () => {
   const { id } = useParams();
   // console.log(id);
   const [data, setData] = useState([]);
-  console.log(data);
+//   console.log(data);
   const history = useHistory();
 
 	const config = {
