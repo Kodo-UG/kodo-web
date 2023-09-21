@@ -15,12 +15,9 @@ import {
 
 const ScholarshipDetails = () => {
   const location = useLocation();
-  const { getJobs } = location?.state;
-  // console.log(getJobs);
+  const { getJobs } = location?.state || {};
   const { id } = useParams();
-  // console.log(id);
   const [data, setData] = useState([]);
-  console.log(data);
   const history = useHistory();
 
   const config = {
@@ -32,23 +29,15 @@ const ScholarshipDetails = () => {
 
   const isSm = useMediaQuery("only screen and (max-width : 1000px)");
 
-  const isMd = useMediaQuery(
-    "only screen and (min-width : 700px) and (max-width : 1250px)"
-  );
-
   const getScholarship = async () => {
     try {
-      const res = await axios.get(`${BASE_URL}/scholarship/${id}`, config);
-      setData(res.data.data);
-    } catch (error) {
-      displayErrorNotification(`${error.response.data.message}`);
-    }
-  };
-
-  const getJob = async () => {
-    try {
-      const res = await axios.get(`${BASE_URL}/job/${id}`, config);
-      setData(res.data.data);
+      if (getJobs) {
+        const res = await axios.get(`${BASE_URL}/job/${id}`, config);
+        setData(res.data.data);
+      } else {
+        const res = await axios.get(`${BASE_URL}/scholarship/${id}`, config);
+        setData(res.data.data);
+      }
     } catch (error) {
       displayErrorNotification(`${error.response.data.message}`);
     }
@@ -72,7 +61,6 @@ const ScholarshipDetails = () => {
 
   useEffect(() => {
     getScholarship();
-    getJob();
   }, []);
 
   const date = new Date(data?.deadline);
@@ -115,7 +103,6 @@ const ScholarshipDetails = () => {
               fontWeight: "bold",
               display: "flex",
               alignItems: "center",
-              // justifyContent: "space-between",
               marginBottom: isSm ? null : "4rem",
             }}
           >
@@ -124,7 +111,6 @@ const ScholarshipDetails = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                // background: "red",
                 width: "100%",
                 padding: "2rem",
               }}
@@ -134,7 +120,6 @@ const ScholarshipDetails = () => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  // background: "green"
                 }}
               >
                 <h5
@@ -142,8 +127,6 @@ const ScholarshipDetails = () => {
                     marginTop: "0px",
                     fontWeight: "bold",
                     fontSize: isSm ? "1.3rem" : "1.9rem",
-                    // fontFamily: "Poppins",
-                    // letterSpacing: "2px"
                   }}
                 >
                   {data?.title}
@@ -152,7 +135,6 @@ const ScholarshipDetails = () => {
               {isSm ? null : (
                 <div onClick={() => handleClick(data?._id)}>
                   <BsBookmark
-                    // onClick={onClick}
                     style={{
                       height: "20px",
                       width: "20px",
@@ -165,8 +147,6 @@ const ScholarshipDetails = () => {
           </div>
           <div
             style={{
-              // width: "60%",
-              // marginLeft: "4rem",
               backgroundColor: "yellow",
               justifyContent: "center",
               background: "white",
@@ -279,7 +259,6 @@ const ScholarshipDetails = () => {
                     fontWeight: "bolder",
                     fontSize: "16px",
                   }}
-                  // onClick={() => handleApply(id)}
                 >
                   Apply
                 </a>
@@ -482,7 +461,6 @@ const ScholarshipDetails = () => {
                   fontWeight: "bolder",
                   fontSize: "16px",
                 }}
-                // onClick={() => handleApply(id)}
               >
                 Apply
               </a>
@@ -493,7 +471,6 @@ const ScholarshipDetails = () => {
                 width: "14%",
                 justifyContent: "center",
                 alignItems: "center",
-                // marginLeft: "4rem",
                 marginTop: ".9rem",
               }}
               onClick={() => handleClick(data?._id)}
