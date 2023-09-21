@@ -145,7 +145,7 @@ const ContactForm = () => {
 				<button
 					style={{
 						width: isSm ? "90%" : "75%",
-						height: "5rem",
+						height: "4rem",
 						background: "#1c2755",
 						marginTop: "4rem",
 						borderRadius: "10px",
@@ -158,7 +158,7 @@ const ContactForm = () => {
 					}}
 					// onClick={() => formSubmit()}
 				>
-					Send Message{" "}
+					Send Message {" "}
 					<IoIosSend
 						size={25}
 						style={{ color: "white", marginLeft: "1rem" }}
