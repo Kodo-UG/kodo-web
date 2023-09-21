@@ -63,11 +63,9 @@ const Contact = () => {
 				<div
 					style={{
 						width: isSm ? "100%" : "",
-						// height: "50%",
-						// background: "red",
 						padding: "1.5rem",
 						display: "grid",
-						gridTemplateColumns: "1fr", // Create a single column of equal width
+						gridTemplateColumns: "1fr",
 						gap: "2rem",
 						marginRight: "1rem"
 					}}
@@ -168,7 +166,7 @@ const Contact = () => {
 							height: "90%",
 							marginLeft: isSm ? "" : "-17rem" || isMd ? "-10vw" : "",
 							borderRadius: isSm ? "" : " 0px 25px 25px 0px",
-
+							marginTop: "2rem",
 							boxShadow: ""
 						}}
 					>
@@ -177,16 +175,15 @@ const Contact = () => {
 							// height={`${isSm? "100%" : "550"}`}
 							style={{
 								width: "100%",
-								height: "100%",
-								// objectFit: "cover",
-								borderRadius: isSm ? "" : " 0px 25px 25px 0px"
+								height: "90%",
+								objectFit: "cover",
+								borderRadius: isSm ? "" : " 25px 25px 25px 25px"
 							}}
-							src="https://script.viserlab.com/paymenthub/assets/images/frontend/contact_us/64185bc2bc6111679317954.png"
+							src="https://res.cloudinary.com/itgenius/image/upload/v1695225476/pexels-jep-gambardella-7690079_wjdbgz.jpg"
 							alt=""
 						/>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	);

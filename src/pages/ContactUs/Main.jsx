@@ -28,7 +28,7 @@ function Main() {
 					gridTemplateColumns: "1fr", // Create a single column of equal width
 					gap: "2rem",
 					width: isSm ? "100%" : "75%",
-					padding: isSm ? "2rem" : "4rem",
+					padding: isSm ? "1rem" : "4rem",
 					marginTop: isSm ? "4rem" : ""
 				}}
 			>

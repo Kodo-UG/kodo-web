@@ -63,13 +63,15 @@ const ContactForm = () => {
 				width: "100%",
 				// height: "100vh",
 				display: isSm ? "grid" : "flex",
+				
 				gridTemplateColumns: "1fr"
 			}}
 		>
 			<div
 				style={{
 					display: "flex",
-
+					alignItems: "center",
+					justifyContent: "center",
 					flexDirection: "column",
 					// alignItems: "center",
 					// justifyContent: "center",
@@ -96,7 +98,7 @@ const ContactForm = () => {
 					size="normal"
 					onChange={handleInputChange(setName)}
 					style={{
-						width: isSm ? "100%" : "75%",
+						width: isSm ? "90%" : "75%",
 						marginBottom: "1rem"
 					}}
 				/>
@@ -108,7 +110,7 @@ const ContactForm = () => {
 					onChange={handleInputChange(setEmail)}
 					size="normal"
 					style={{
-						width: isSm ? "100%" : "75%",
+						width: isSm ? "90%" : "75%",
 						marginBottom: "1rem"
 					}}
 				/>
@@ -120,7 +122,7 @@ const ContactForm = () => {
 					onChange={handleInputChange(setPhone)}
 					size="normal"
 					style={{
-						width: isSm ? "100%" : "75%",
+						width: isSm ? "90%" : "75%",
 						marginBottom: "1rem"
 					}}
 				/>
@@ -136,13 +138,13 @@ const ContactForm = () => {
 					// maxRows={6}
 					rows={6}
 					style={{
-						width: isSm ? "100%" : "75%",
+						width: isSm ? "90%" : "75%",
 						marginBottom: "1rem"
 					}}
 				/>
 				<button
 					style={{
-						width: isSm ? "100%" : "75%",
+						width: isSm ? "90%" : "75%",
 						height: "5rem",
 						background: "#1c2755",
 						marginTop: "4rem",
