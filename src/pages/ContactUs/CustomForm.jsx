@@ -105,6 +105,7 @@ const CustomForm = () => {
                           cols={30}
                           rows={50}
                           placeholder="Write comments"
+                          style={{ resize: "none" , padding: "5px" }} // Add this style attribute
                           onChange={handleInputChange(setMessage)}
                           defaultValue={""}
                         />

@@ -5,11 +5,13 @@ import PrivateRoute from "./utils/PrivateRoute";
 import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
 import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
+import Main from "./pages/ContactUs/Main";
 
 import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
-import ScholarshipDetails from "./pages/Dashboard/scholarship/ScholarshipDetails";
 import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
+import BlogDetails from "./pages/Blog/BlogDetails";
+import Contact from "./pages/ContactUs/Contact";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
@@ -114,16 +116,18 @@ const App = () => {
 					<PrivateRoute path="/payment" component={Payment} />
 					<Route exact path="/aboutus" component={AboutUs} />
 					<Route exact path="/login" component={Login} />
-
 					<Route exact path="/blog" component={Blog} />
+					<Route exact path="/blog/:id" component={BlogDetails} />
 					<Route exact path="/admissions" component={FindScholarship} />
 					<Route
 						exact
 						path="/admissions/:userId"
 						component={FindScholarship}
 					/>
+					/
+					<Route exact path="/contactus" component={Main} />
 					<Route exact path="/payjobs" component={PaymentJobs} />
-					<Route exact path="/contactus" component={ContactUs} />
+					{/* <Route exact path="/contactus" component={ContactUs} /> */}
 					<Route exact path="/scholarships" component={Accordion} />
 					<Route exact path="/testimonals" component={Testimonals} />
 					<Route exact path="/" component={Home} />

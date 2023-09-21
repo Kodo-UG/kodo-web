@@ -102,6 +102,62 @@
   margin-bottom: 1rem;
   max-width: 32rem;
 }
+.date-picker-container {
+  width: 22.3vw;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(228 228 231 / var(--tw-border-opacity));
+  padding: 1rem 1.5rem;
+}
+
+.date-picker {
+  width: 24rem;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(228 228 231 / var(--tw-border-opacity));
+  padding: 1rem 1.5rem;
+}
+
+.custom-input {
+  display: flex;
+  align-items: center;
+}
+
+.custom-input input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 0.5rem; /* Adjust the padding as needed */
+}
+
+.custom-input img {
+  cursor: pointer;
+  margin-left: 0.5rem; /* Adjust the margin as needed */
+}
+
+.date-pick {
+  width: 45vw;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(228 228 231 / var(--tw-border-opacity));
+  padding: 1rem 1.5rem;
+}
+
+.date-pic {
+  width: 24.6rem;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(228 228 231 / var(--tw-border-opacity));
+  padding: 1rem 1.5rem;
+}
 
 ._pill_fa1qv_8 {
   margin-right: 0.5rem;

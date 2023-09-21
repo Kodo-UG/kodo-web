@@ -24,12 +24,13 @@ const Stepper = () => {
 		degree: "",
 		phone: "",
 		appType: "",
-		scholarshipcategory: ""
+		scholarshipcategory: "",
+		refer: ""
 	});
 	const dispatch = useDispatch();
 
 	const params = useParams();
-	const userId = params.userId;
+	const userId = localStorage.getItem("refer");
 
 	const nextStep = () =>
 		setStep((step) => (step < 4 && step > 0 ? step + 1 : 1));

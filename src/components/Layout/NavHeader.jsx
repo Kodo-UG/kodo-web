@@ -5,6 +5,8 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { clearScholarships } from "../../toolkit/scholarshipReducer";
 import { useDispatch } from "react-redux";
+import { clearFormData } from "../../toolkit/formReducer";
+import { clearJobData } from "../../toolkit/jobReducer";
 
 const NavHeader = ({ open, setOpen }) => {
 	const history = useHistory();
@@ -47,7 +49,7 @@ const NavHeader = ({ open, setOpen }) => {
 		{
 			id: 5,
 			route: "/blog",
-			children: "Blog"
+			children: "Blogs"
 		},
 		{
 			id: 6,
@@ -106,6 +108,7 @@ const NavHeader = ({ open, setOpen }) => {
 					</button>
 				)}
 			</div>
+
 			{open ? (
 				<div style={{ zIndex: 99999 }} onClick={() => setOpen(false)}>
 					<ul
@@ -146,16 +149,21 @@ const NavHeader = ({ open, setOpen }) => {
 										marginTop: "0px",
 										marginBottom: "0px",
 										fontFamily: "Roboto, sans-serif",
-										fontSize: "16px"
+										fontSize: "16px",
+										textTransform: "lowercase"
 									}}
 									onClick={(e) => {
 										e.preventDefault();
 										localStorage.removeItem("token");
 										localStorage.removeItem("userData");
+										localStorage.removeItem("refer");
+										dispatch(clearScholarships());
+										dispatch(clearFormData());
+										dispatch(clearJobData());
 										history.push("/login");
 									}}
 								>
-									Log out
+									logout
 								</button>
 							) : (
 								<button
@@ -165,14 +173,16 @@ const NavHeader = ({ open, setOpen }) => {
 										history.push("/login");
 									}}
 									style={{
-										height: "4rem",
-										marginTop: "0px",
-										marginBottom: "0px",
+										borderRadius: 20,
+										height: "3rem",
+										paddingLeft: "20px",
+										paddingRight: "20px",
 										fontFamily: "Roboto, sans-serif",
-										fontSize: "16px"
+										fontSize: "16px",
+										textTransform: "lowercase"
 									}}
 								>
-									Log in
+									login
 								</button>
 							)}
 
@@ -182,9 +192,7 @@ const NavHeader = ({ open, setOpen }) => {
 									background: "#EC1D64",
 									borderRadius: 20,
 									color: "white",
-									height: "4rem",
-									marginTop: "0px",
-									marginBottom: "0px",
+									height: "3rem",
 									fontFamily: "Roboto, sans-serif",
 									fontSize: "16px"
 								}}
@@ -211,7 +219,6 @@ const NavHeader = ({ open, setOpen }) => {
 					>
 						{routeData.map((dta) => (
 							<CustomLink
-								
 								key={dta.id}
 								route={dta.route}
 								children={dta.children}
@@ -233,21 +240,27 @@ const NavHeader = ({ open, setOpen }) => {
 								<button
 									className="btn btn-lg"
 									style={{
-										height: "4rem",
-										marginTop: "0px",
-										marginBottom: "0px",
+										borderRadius: 20,
+										height: "3rem",
+										marginRight: "5px",
+										paddingLeft: "20px",
+										paddingRight: "20px",
 										fontFamily: "Roboto, sans-serif",
-										fontSize: "16px"
+										fontSize: "16px",
+										textTransform: "lowercase"
 									}}
 									onClick={(e) => {
 										e.preventDefault();
 										localStorage.removeItem("token");
 										localStorage.removeItem("userData");
+										localStorage.removeItem("refer");
+										dispatch(clearFormData());
+										dispatch(clearJobData());
 										dispatch(clearScholarships());
 										history.push("/login");
 									}}
 								>
-									Log out
+									log out
 								</button>
 							) : (
 								<button
@@ -257,14 +270,16 @@ const NavHeader = ({ open, setOpen }) => {
 										history.push("/login");
 									}}
 									style={{
-										height: "4rem",
-										marginTop: "0px",
-										marginBottom: "0px",
+										borderRadius: 20,
+										height: "3rem",
+										paddingLeft: "20px",
+										paddingRight: "20px",
 										fontFamily: "Roboto, sans-serif",
-										fontSize: "16px"
+										fontSize: "16px",
+										textTransform: "lowercase"
 									}}
 								>
-									Log in
+									login
 								</button>
 							)}
 
@@ -272,11 +287,9 @@ const NavHeader = ({ open, setOpen }) => {
 								className="btn btn-lg"
 								style={{
 									background: "#EC1D64",
-									borderRadius: 70,
+									borderRadius: 20,
 									color: "white",
-									height: "4rem",
-									marginTop: "0px",
-									marginBottom: "0px",
+									height: "3rem",
 									fontFamily: "Roboto, sans-serif",
 									fontSize: "16px"
 								}}

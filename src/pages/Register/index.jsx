@@ -6,11 +6,15 @@ import { useParams } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
 
 const FindScholarship = () => {
-
 	const dispatch = useDispatch();
 
 	const params = useParams();
 	const userId = params.userId;
+
+	useEffect(() => {
+		localStorage.setItem("refer", userId);
+	}, []);
+
 	const object = [
 		{
 			id: 1,
@@ -27,7 +31,6 @@ const FindScholarship = () => {
 			Button: "Sign Up"
 		}
 	];
-
 
 	useEffect(() => {
 		dispatch(updateFormData({ field: "refer", value: userId }));
