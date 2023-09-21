@@ -14,12 +14,9 @@ import {
 
 const ScholarshipDetails = () => {
   const location = useLocation();
-  const { getJobs } = location?.state;
-  // console.log(getJobs);
+  const { getJobs } = location?.state || {};
   const { id } = useParams();
-  // console.log(id);
   const [data, setData] = useState([]);
-  console.log(data);
   const history = useHistory();
 
 	const config = {
@@ -31,23 +28,15 @@ const ScholarshipDetails = () => {
 
 	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
 
-	const isMd = useMediaQuery(
-		"only screen and (min-width : 700px) and (max-width : 1250px)"
-	);
-
-	const getScholarship = async () => {
-		try {
-			const res = await axios.get(`${BASE_URL}/scholarship/${id}`, config);
-			setData(res.data.data);
-		} catch (error) {
-			displayErrorNotification(`${error.response.data.message}`);
-		}
-	};
-
-  const getJob = async () => {
+  const getScholarship = async () => {
     try {
-      const res = await axios.get(`${BASE_URL}/job/${id}`, config);
-      setData(res.data.data);
+      if (getJobs) {
+        const res = await axios.get(`${BASE_URL}/job/${id}`, config);
+        setData(res.data.data);
+      } else {
+        const res = await axios.get(`${BASE_URL}/scholarship/${id}`, config);
+        setData(res.data.data);
+      }
     } catch (error) {
       displayErrorNotification(`${error.response.data.message}`);
     }
@@ -71,7 +60,6 @@ const ScholarshipDetails = () => {
 
   useEffect(() => {
     getScholarship();
-    getJob();
   }, []);
 
 	const date = new Date(data?.deadline);
@@ -114,7 +102,6 @@ const ScholarshipDetails = () => {
               fontWeight: "bold",
               display: "flex",
               alignItems: "center",
-              // justifyContent: "space-between",
               marginBottom: isSm ? null : "4rem",
             }}
           >
@@ -123,7 +110,6 @@ const ScholarshipDetails = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                // background: "red",
                 width: "100%",
                 padding: "2rem",
               }}
@@ -133,7 +119,6 @@ const ScholarshipDetails = () => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  // background: "green"
                 }}
               >
                 <h5
@@ -141,8 +126,6 @@ const ScholarshipDetails = () => {
                     marginTop: "0px",
                     fontWeight: "bold",
                     fontSize: isSm ? "1.3rem" : "1.9rem",
-                    // fontFamily: "Poppins",
-                    // letterSpacing: "2px"
                   }}
                 >
                   {data?.title}
@@ -151,7 +134,6 @@ const ScholarshipDetails = () => {
               {isSm ? null : (
                 <div onClick={() => handleClick(data?._id)}>
                   <BsBookmark
-                    // onClick={onClick}
                     style={{
                       height: "20px",
                       width: "20px",
@@ -164,8 +146,6 @@ const ScholarshipDetails = () => {
           </div>
           <div
             style={{
-              // width: "60%",
-              // marginLeft: "4rem",
               backgroundColor: "yellow",
               justifyContent: "center",
               background: "white",
@@ -278,7 +258,6 @@ const ScholarshipDetails = () => {
                     fontWeight: "bolder",
                     fontSize: "16px",
                   }}
-                  // onClick={() => handleApply(id)}
                 >
                   Apply
                 </a>
@@ -383,134 +362,131 @@ const ScholarshipDetails = () => {
 							style={{
 								height: "70%",
 
-								background: "white",
-								boxShadow:
-									"0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-								borderRadius: "5px",
-								padding: "2rem",
-								display: "flex",
-								flexDirection: "column",
-								justifyContent: "center",
-								color: "#1c2755"
-							}}
-						>
-							<h3
-								style={{
-									fontWeight: "bold",
-									fontSize: isSm ? "1rem" : "1.3rem"
-								}}
-							>
-								Resources
-							</h3>
-							<div
-								style={{
-									height: "70%",
-									marginBottom: "2rem"
-								}}
-							>
-								<img
-									src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/interracial_qodm9k.jpg"
-									style={{
-										width: "100%",
-										height: "100%",
-										objectFit: "cover"
-									}}
-									alt="resource"
-								/>
-							</div>
-							<p>
-								You can checkout more details about kodo scholarship
-								from our blog site .
-							</p>
-							<button
-								className="shadow-sm"
-								style={{
-									border: "2px solid #1c2755",
-									borderRadius: "5px",
-									padding: "0.6rem",
-									fontWeight: "bold",
-									color: "#1c2755"
-								}}
-								onClick={() => {
-									history.push("/blog");
-								}}
-							>
-								Learn More
-							</button>
-						</div>
-					)}
-				</div>
-				{isSm && (
-					<div
-						className="fixed-bottom"
-						style={{
-							background: "white",
-							height: "15vh",
-							borderRadius: "9px 9px 0px 0px",
-							boxShadow: "4px 0px 4px 4px rgba(0, 0, 0, 0.01)",
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-							bottom: 0,
-							zIndex: 3434154154231652
-						}}
-					>
-						<div
-							style={{
-								textAlign: "center",
-								marginTop: "1rem",
-								width: "70%",
-								height: "4rem",
-								color: "white",
-								fontWeight: "bolder",
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "space-between",
-								fontSize: "14px"
-							}}
-						>
-							<a
-								href={`${data?.link}`}
-								style={{
-									backgroundColor: "#EB1E5E",
-									border: "none",
-									color: "white",
-									padding: ".8rem",
-									width: "70%",
-									borderRadius: "5px",
-									fontWeight: "bolder",
-									fontSize: "16px"
-								}}
-								// onClick={() => handleApply(id)}
-							>
-								Apply
-							</a>
-						</div>
+                background: "white",
+                boxShadow:
+                  "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+                borderRadius: "5px",
+                padding: "2rem",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                color: "#1c2755",
+              }}
+            >
+              <h3
+                style={{
+                  fontWeight: "bold",
+                  fontSize: isSm ? "1rem" : "1.3rem",
+                }}
+              >
+                Resources
+              </h3>
+              <div
+                style={{
+                  height: "70%",
+                  marginBottom: "2rem",
+                }}
+              >
+                <img
+                  src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/interracial_qodm9k.jpg"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                  alt="resource"
+                />
+              </div>
+              <p>
+                You can checkout more details about kodo scholarship from our
+                blog site .
+              </p>
+              <button
+                className="shadow-sm"
+                style={{
+                  border: "2px solid #1c2755",
+                  borderRadius: "5px",
+                  padding: "0.6rem",
+                  fontWeight: "bold",
+                  color: "#1c2755",
+                }}
+                onClick={() => {
+                  history.push("/blog");
+                }}
+              >
+                Learn More
+              </button>
+            </div>
+          )}
+        </div>
+        {isSm && (
+          <div
+            className="fixed-bottom"
+            style={{
+              background: "white",
+              height: "15vh",
+              borderRadius: "9px 9px 0px 0px",
+              boxShadow: "4px 0px 4px 4px rgba(0, 0, 0, 0.01)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              bottom: 0,
+              zIndex: 3434154154231652,
+            }}
+          >
+            <div
+              style={{
+                textAlign: "center",
+                marginTop: "1rem",
+                width: "70%",
+                height: "4rem",
+                color: "white",
+                fontWeight: "bolder",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                fontSize: "14px",
+              }}
+            >
+              <a
+                href={`${data?.link}`}
+                style={{
+                  backgroundColor: "#EB1E5E",
+                  border: "none",
+                  color: "white",
+                  padding: ".8rem",
+                  width: "70%",
+                  borderRadius: "5px",
+                  fontWeight: "bolder",
+                  fontSize: "16px",
+                }}
+              >
+                Apply
+              </a>
+            </div>
 
-						<div
-							style={{
-								width: "14%",
-								justifyContent: "center",
-								alignItems: "center",
-								// marginLeft: "4rem",
-								cursor: "pointer",
-								marginTop: ".9rem"
-							}}
-							onClick={() => handleClick(data?._id)}
-						>
-							<BsBookmark
-								style={{
-									height: "28px",
-									width: "28px",
-									fontWeight: "bolder"
-								}}
-							/>
-						</div>
-					</div>
-				)}
-			</div>
-		</div>
-	);
+            <div
+              style={{
+                width: "14%",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: ".9rem",
+              }}
+              onClick={() => handleClick(data?._id)}
+            >
+              <BsBookmark
+                style={{
+                  height: "28px",
+                  width: "28px",
+                  fontWeight: "bolder",
+                }}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default ScholarshipDetails;
