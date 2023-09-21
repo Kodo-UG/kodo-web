@@ -36,11 +36,10 @@ const Contact = () => {
         minHeight: "90vh",
         width: "100%",
         display: "flex",
-        // background: "green",
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: "2rem",
-        paddingBottom: "2rem",
+        // paddingTop: "2rem",
+        // paddingBottom: "2rem",
 
         // Create a single column of equal width
       }}
@@ -50,7 +49,6 @@ const Contact = () => {
         style={{
           background: "#1c2755",
           minHeight: "75vh",
-          // width: "75vw",
           width: "100%",
           borderRadius: isSm ? "25px" : "55px",
           display: isSm ? "grid" : "flex",
@@ -146,7 +144,7 @@ const Contact = () => {
             height: isSm ? "" : "75vh",
             width: isSm ? "100%" : "45%",
             // float: "right",
-            borderRadius: isSm ? "" : " 25px 25px 25px 25px",
+            borderRadius: isSm ? "" : " 0px 25px 25px 0px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -160,7 +158,7 @@ const Contact = () => {
               maxHeight: "90%",
               marginLeft: isSm ? "" : "-17rem" || isMd ? "-10vw" : "",
               borderRadius: "25px",
-              marginTop: "2rem",
+              marginTop: ".6rem",
               overflow: "hidden",
             }}
           >

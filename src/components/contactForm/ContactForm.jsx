@@ -145,7 +145,7 @@ const ContactForm = () => {
 				<button
 					style={{
 						width: isSm ? "90%" : "75%",
-						height: "4rem",
+						height: "5rem",
 						background: "#1c2755",
 						marginTop: "4rem",
 						borderRadius: "10px",
