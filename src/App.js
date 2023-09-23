@@ -17,6 +17,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const Testimonals = lazy(() => import("./pages/Testimonals"));
 const Stepper = lazy(() => import("./pages/Register/Scholarships"));
+const Sports = lazy(() => import("./pages/Register/Scholarships/Sports"));
 const FindScholarship = lazy(() => import("./pages/Register"));
 const Login = lazy(() => import("./pages/Scholarships/Login"));
 const Signin = lazy(() => import("./pages/Login"));
@@ -93,6 +94,7 @@ const App = () => {
         <Route exact path="/JobStep3" component={JobStep3} />
         <Route exact path="/policy" component={Privacy} />
         <Route exact path="/share" component={RSSUsage} />
+        <Route exact path="/player" component={Sports} />
 
         <Route exact path="/educationlevel" component={StepperElementFour} />
         <PrivateRoute exact path="/applications" component={RootApplication} />
