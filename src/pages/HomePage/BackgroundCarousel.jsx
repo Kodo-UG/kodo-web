@@ -17,7 +17,7 @@ const BackgroundCarousel = () => {
 	);
 	return (
 		<Carousel interval={9900} slide={true}>
-			{/* <Carousel.Item>
+			<Carousel.Item>
 				<div
 					className="d-block w-100"
 					style={{
@@ -200,7 +200,7 @@ const BackgroundCarousel = () => {
 						</div>
 					</div>
 				</div>
-			</Carousel.Item> */}
+			</Carousel.Item>
 
 			<Carousel.Item>
 				<div
