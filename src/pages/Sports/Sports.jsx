@@ -92,7 +92,7 @@ const Sports = () => {
 								<div
 									style={{
 										padding: ".1rem",
-										marginTop: isSmallDevice ? "2rem" : "",
+										marginTop: isSmallDevice ? "1.5rem" : "",
 										display: isMediumDevice ? "flex" : "",
 										alignItems: "center",
 										justifyContent: "space-between"
