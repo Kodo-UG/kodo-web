@@ -56,11 +56,19 @@ const NavHeader = ({ open, setOpen }) => {
 			route: "/contactus",
 			children: "Contact us"
 		},
+		
 		{
 			id: 7,
+			route: "/sports",
+			children: "Sports"
+		},
+
+		{
+			id: 8,
 			route: "/scholars",
 			children: token ? "Dashboard" : ""
 		}
+
 	];
 
 	return (

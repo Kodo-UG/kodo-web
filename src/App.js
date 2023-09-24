@@ -6,12 +6,14 @@ import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
 import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
 import Main from "./pages/ContactUs/Main";
+import Sports from "./pages/Sports/Sports";
 
 import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
 import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
 import BlogDetails from "./pages/Blog/BlogDetails";
 import Contact from "./pages/ContactUs/Contact";
+import PlayerProfile from "./pages/sports/FormOne";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
@@ -87,6 +89,7 @@ const App = () => {
 				<PrivateRoute exact path="/profile" component={MainProfile} />
 				<Route exact path="/route1" component={StepperElementSix} />
 				<Route exact path="/route2" component={StepperElement7} />
+				<Route exact path="/player" component={PlayerProfile} />
 				<Route exact path="/verify" component={StepComfirmation} />
 				<Route exact path="/final" component={StepElement8} />
 				<Route exact path="/stepper" component={Stepper} />
@@ -114,6 +117,7 @@ const App = () => {
 
 				<Layout>
 					<PrivateRoute path="/payment" component={Payment} />
+					<Route exact path="/sports" component={Sports} />
 					<Route exact path="/aboutus" component={AboutUs} />
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/blog" component={Blog} />
@@ -124,7 +128,7 @@ const App = () => {
 						path="/admissions/:userId"
 						component={FindScholarship}
 					/>
-					/
+					
 					<Route exact path="/contactus" component={Main} />
 					<Route exact path="/payjobs" component={PaymentJobs} />
 					{/* <Route exact path="/contactus" component={ContactUs} /> */}
