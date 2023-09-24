@@ -17,7 +17,8 @@ const initialState = {
 	scholarshipcategory: "",
 	subject: "",
 	dob: "",
-	refer: ""
+	refer: "",
+	preferedCountry:""
 };
 const formDataSlice = createSlice({
 	name: "formData",
