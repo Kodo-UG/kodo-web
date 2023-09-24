@@ -29,6 +29,13 @@ const FindScholarship = () => {
 			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
 			link: "/JobStep1",
 			Button: "Sign Up"
+		},
+		{
+			id: 3,
+			title: "Sports",
+			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
+			link: "/JobStep1",
+			Button: "Sign Up"
 		}
 	];
 
@@ -48,11 +55,14 @@ const FindScholarship = () => {
 	const changeButtons = (action) => {
 		const button1 = document.getElementById("button1");
 		const button2 = document.getElementById("button2");
+		const button3 = document.getElementById("button3");
 
 		button1.textContent = "Sign Up";
 		button1.href = "/signin";
 		button2.textContent = "Sign Up";
 		button2.href = "/signin";
+		button3.textContent = "Sign Up";
+		button3.href = "/signin";
 	};
 
 	return (
