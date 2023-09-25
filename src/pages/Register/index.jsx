@@ -10,11 +10,6 @@ const FindScholarship = () => {
 
 	const params = useParams();
 	const userId = params.userId;
-
-	useEffect(() => {
-		localStorage.setItem("refer", userId);
-	}, []);
-
 	const object = [
 		{
 			id: 1,
@@ -28,6 +23,13 @@ const FindScholarship = () => {
 			title: "Jobs",
 			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
 			link: "/JobStep1",
+			Button: "Sign Up"
+		},
+		{
+			id: 3,
+			title: "Sports",
+			text: "Sign up for sports scholarship",
+			link: "/player",
 			Button: "Sign Up"
 		}
 	];
