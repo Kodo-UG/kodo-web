@@ -6,7 +6,7 @@ import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
 import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
 import Main from "./pages/ContactUs/Main";
-import Sports from "./pages/Sports/Sports";
+// import Sports from "./pages/Sports/Sports";
 
 import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
@@ -22,6 +22,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const Testimonals = lazy(() => import("./pages/Testimonals"));
 const Stepper = lazy(() => import("./pages/Register/Scholarships"));
+const Sports = lazy(() => import("./pages/Register/Scholarships/Sports"));
 const FindScholarship = lazy(() => import("./pages/Register"));
 const Login = lazy(() => import("./pages/Scholarships/Login"));
 const Signin = lazy(() => import("./pages/Login"));
@@ -82,27 +83,22 @@ const App = () => {
 				<Route exact path="/signin" component={Signin} />
 				<Route exact path="/login/:userId" component={Login} />
 
-				<Route exact path="/forgot/password" component={ForgotPassword} />
-				<Route path="/reset-password/:token" component={PasswordReset} />
-				<PrivateRoute exact path="/scholars" component={RootScholarship} />
-				<PrivateRoute exact path="/favorite" component={Favorite} />
-				<PrivateRoute exact path="/profile" component={MainProfile} />
-				<Route exact path="/route1" component={StepperElementSix} />
-				<Route exact path="/route2" component={StepperElement7} />
-				<Route exact path="/player" component={PlayerProfile} />
-				<Route exact path="/verify" component={StepComfirmation} />
-				<Route exact path="/final" component={StepElement8} />
-				<Route exact path="/stepper" component={Stepper} />
-				<Route
-					exact
-					path="/details/:id"
-					component={ScholarshipDetailsPage}
-				/>
-				<Route exact path="/JobStep1" component={JobStep1} />
-				<Route exact path="/JobStep2" component={JobStep2} />
-				<Route exact path="/JobStep3" component={JobStep3} />
-				<Route exact path="/policy" component={Privacy} />
-				<Route exact path="/share" component={RSSUsage} />
+        <Route exact path="/forgot/password" component={ForgotPassword} />
+        <Route path="/reset-password/:token" component={PasswordReset} />
+        <PrivateRoute exact path="/scholars" component={RootScholarship} />
+        <PrivateRoute exact path="/favorite" component={Favorite} />
+        <PrivateRoute exact path="/profile" component={MainProfile} />
+        <Route exact path="/route1" component={StepperElementSix} />
+        <Route exact path="/route2" component={StepperElement7} />
+        <Route exact path="/verify" component={StepComfirmation} />
+        <Route exact path="/final" component={StepElement8} />
+        <Route exact path="/stepper" component={Stepper} />
+        <Route exact path="/details/:id" component={ScholarshipDetailsPage} />
+        <Route exact path="/JobStep1" component={JobStep1} />
+        <Route exact path="/JobStep2" component={JobStep2} />
+        <Route exact path="/JobStep3" component={JobStep3} />
+        <Route exact path="/policy" component={Privacy} />
+        <Route exact path="/share" component={RSSUsage} />
 
 				<Route
 					exact
