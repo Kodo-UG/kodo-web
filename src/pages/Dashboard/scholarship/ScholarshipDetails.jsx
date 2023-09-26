@@ -7,10 +7,9 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useParams, useHistory, useLocation } from "react-router-dom";
 
 import { BASE_URL } from "../../../constants/api";
-import "react-spring-bottom-sheet/dist/style.css";
 import {
-  displayErrorNotification,
-  displaySuccessNotification,
+	displayErrorNotification,
+	displaySuccessNotification
 } from "../../../utils/Toast";
 
 const ScholarshipDetails = () => {
@@ -20,14 +19,14 @@ const ScholarshipDetails = () => {
   const [data, setData] = useState([]);
   const history = useHistory();
 
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  };
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${localStorage.getItem("token")}`
+		}
+	};
 
-  const isSm = useMediaQuery("only screen and (max-width : 1000px)");
+	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
 
   const getScholarship = async () => {
     try {
@@ -53,18 +52,18 @@ const ScholarshipDetails = () => {
         config
       );
 
-      displaySuccessNotification(`${res.data.message}`);
-    } catch (error) {
-      displayErrorNotification(`${error.response.data.message}`);
-    }
-  };
+			displaySuccessNotification(`${res.data.message}`);
+		} catch (error) {
+			displayErrorNotification(`${error.response.data.message}`);
+		}
+	};
 
   useEffect(() => {
     getScholarship();
   }, []);
 
-  const date = new Date(data?.deadline);
-  const deadline = date.toLocaleDateString();
+	const date = new Date(data?.deadline);
+	const deadline = date.toLocaleDateString();
 
   return (
     <div
@@ -265,103 +264,103 @@ const ScholarshipDetails = () => {
               </div>
             )}
 
-            <div>
-              <h4
-                style={{
-                  fontWeight: "600",
-                  fontSize: isSm ? "1.7rem" : "2rem",
-                  letterSpacing: "1px",
-                  textAlign: "left",
-                  color: "#1c2755",
-                  marginTop: "1rem",
-                }}
-              >
-                About
-              </h4>
-              <div
-                className="scrollable-container"
-                style={{
-                  paddingBottom: "1rem",
-                  borderBottom: isSm ? "2px solid gray" : "",
-                }}
-              >
-                <p
-                  style={{
-                    color: "#4e4b66",
-                    textAlign: "justify",
-                    letterSpacing: "1.2px",
-                    fontSize: isSm ? "1rem" : "1.3rem",
-                  }}
-                >
-                  {data?.about}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className={`${isSm ? "w-100" : "col-12 col-md-4"}`}
-          style={{
-            padding: isSm ? "" : "4rem",
-          }}
-        >
-          <div
-            style={{
-              height: "25%",
-              marginBottom: "2rem",
-              background: "white",
-              boxShadow:
-                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-              borderRadius: isSm ? "" : "5px",
-              padding: "2rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              style={{
-                paddingBottom: "2rem",
-                borderBottom: isSm ? "2px solid gray" : "",
-                width: "100%",
-                marginBottom: "1rem",
-                color: "#1c2755",
-              }}
-            >
-              <h3
-                style={{
-                  fontWeight: "bold",
-                  fontSize: isSm ? "1rem" : "1.3rem",
-                  color: "#1c2755",
-                }}
-              >
-                Status
-              </h3>
-              <button
-                style={{
-                  background: "white",
-                  height: isSm ? "1rem" : "3rem",
-                  borderRadius: "5px",
-                  boxShadow:
-                    "0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "1rem",
-                  // color: "gray",
-                  cursor: "pointer",
-                  width: "100%",
-                }}
-              >
-                Have you Applied or Won?
-                <IoIosArrowDown />
-              </button>
-            </div>
-          </div>
-          {isSm ? null : (
-            <div
-              style={{
-                height: "70%",
+						<div>
+							<h4
+								style={{
+									fontWeight: "600",
+									fontSize: isSm ? "1.7rem" : "2rem",
+									letterSpacing: "1px",
+									textAlign: "left",
+									color: "#1c2755",
+									marginTop: "1rem"
+								}}
+							>
+								About
+							</h4>
+							<div
+								className="scrollable-container"
+								style={{
+									paddingBottom: "1rem",
+									borderBottom: isSm ? "2px solid gray" : ""
+								}}
+							>
+								<p
+									style={{
+										color: "#4e4b66",
+										textAlign: "justify",
+										letterSpacing: "1.2px",
+										fontSize: isSm ? "1rem" : "1.3rem"
+									}}
+								>
+									{data?.about}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					className={`${isSm ? "w-100" : "col-12 col-md-4"}`}
+					style={{
+						padding: isSm ? "" : "4rem"
+					}}
+				>
+					<div
+						style={{
+							height: "25%",
+							marginBottom: "2rem",
+							background: "white",
+							boxShadow:
+								"0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+							borderRadius: isSm ? "" : "5px",
+							padding: "2rem",
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center"
+						}}
+					>
+						<div
+							style={{
+								paddingBottom: "2rem",
+								borderBottom: isSm ? "2px solid gray" : "",
+								width: "100%",
+								marginBottom: "1rem",
+								color: "#1c2755"
+							}}
+						>
+							<h3
+								style={{
+									fontWeight: "bold",
+									fontSize: isSm ? "1rem" : "1.3rem",
+									color: "#1c2755"
+								}}
+							>
+								Status
+							</h3>
+							<button
+								style={{
+									background: "white",
+									height: isSm ? "1rem" : "3rem",
+									borderRadius: "5px",
+									boxShadow:
+										"0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "space-between",
+									padding: "1rem",
+									// color: "gray",
+									cursor: "pointer",
+									width: "100%"
+								}}
+							>
+								Have you Applied or Won?
+								<IoIosArrowDown />
+							</button>
+						</div>
+					</div>
+					{isSm ? null : (
+						<div
+							style={{
+								height: "70%",
 
                 background: "white",
                 boxShadow:

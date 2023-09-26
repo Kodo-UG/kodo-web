@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import axiosInstance from "../../../../api/axiosInstance";
@@ -6,23 +6,29 @@ import { useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { updateJobData } from "../../../../toolkit/jobReducer";
 
-const JobStep1 = ({ nextStep }) => {
+const JobStep1 = () => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [onClickStyle, setOnClickStyle] = useState(false);
 	const [active, setActive] = useState(2);
 	const dispatch = useDispatch();
+
+	const userId = localStorage.getItem("refer");
 	const fetchJobCategories = async () => {
 		setLoading(true);
 		try {
 			const res = await axiosInstance.get("/job/categories");
 			setData(res.data.data);
 		} catch (error) {
-			console.log(error, "====");
+			// console.log(error, "====");
 		} finally {
 			setLoading(false);
 		}
 	};
+
+	useEffect(() => {
+		dispatch(updateJobData({ field: "refer", value: userId }));
+	}, []);
 
 	const pickId = (id) => {
 		dispatch(updateJobData({ field: "jobcategory", value: id }));
@@ -39,7 +45,7 @@ const JobStep1 = ({ nextStep }) => {
 	useMemo(() => {
 		fetchJobCategories();
 	}, []);
-	console.log(active);
+
 	return (
 		<main
 			className="voyager-main "
@@ -132,7 +138,7 @@ const JobStep1 = ({ nextStep }) => {
 								) : (
 									<div className="">
 										<div className="_optionGroup_9bife_5 _optionGroupCols3_9bife_64">
-											{data.map((data, index) => (
+											{data.map((data) => (
 												<div
 													key={data._id}
 													className="_option_9bife_5"

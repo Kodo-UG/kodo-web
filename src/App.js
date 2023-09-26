@@ -5,11 +5,14 @@ import PrivateRoute from "./utils/PrivateRoute";
 import JobStep1 from "./pages/Register/Scholarships/jobs/JobStep1";
 import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
+import Main from "./pages/ContactUs/Main";
 
 import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
 import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
 import { googleTranslateElementInit } from "./googleTranslate";
+import BlogDetails from "./pages/Blog/BlogDetails";
+import Contact from "./pages/ContactUs/Contact";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));

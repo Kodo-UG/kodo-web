@@ -6,46 +6,35 @@ import { useParams } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
 
 const FindScholarship = () => {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  const params = useParams();
-  const userId = params.userId;
-  const object = [
-    {
-      id: 1,
-      title: "Scholarships",
-      text: "We’ve helped students win more than $10 million dollars in scholarships.",
-      link: "/stepper",
-      Button: "Sign Up",
-    },
-    {
-      id: 2,
-      title: "Jobs",
-      text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
-      link: "/JobStep1",
-      Button: "Sign Up",
-    },
-    {
-      id: 3,
-      title: "Sports",
-      text: "Sign up for sports scholarship",
-      link: "/player",
-      Button: "Sign Up",
-    },
-  ];
+	const params = useParams();
+	const userId = params.userId;
 
-  useEffect(() => {
-    dispatch(updateFormData({ field: "refer", value: userId }));
-  }, []);
+	useEffect(() => {
+		localStorage.setItem("refer", userId);
+	}, []);
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const action = urlParams.get("action");
+	const object = [
+		{
+			id: 1,
+			title: "Scholarships",
+			text: "We’ve helped students win more than $10 million dollars in scholarships.",
+			link: "/stepper",
+			Button: "Sign Up"
+		},
+		{
+			id: 2,
+			title: "Jobs",
+			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
+			link: "/JobStep1",
+			Button: "Sign Up"
+		}
+	];
 
-    if (action) {
-      changeButtons(action);
-    }
-  }, []);
+	useEffect(() => {
+		dispatch(updateFormData({ field: "refer", value: userId }));
+	}, []);
 
   const changeButtons = (action) => {
     const button1 = document.getElementById("button1");

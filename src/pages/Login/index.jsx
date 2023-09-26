@@ -206,7 +206,7 @@ export default function Login() {
 												className="fxt-btn-fill"
 												type="submit"
 											>
-												{loading ? "loading..." : "Log in"}
+												{loading ? "loading..." : "Login"}
 											</button>
 											<Link
 												to="/forgot/password"
