@@ -89,7 +89,7 @@ function FinalStepperElement() {
       localStorage.setItem("userID", res.data.id);
 
       if (res.data.id) {
-        displaySuccessMessage("Registration successful ");
+        displaySuccessMessage("Registration successful");
         clearFormData();
         history.push("/signin");
       } else {
