@@ -34,6 +34,7 @@ function StepperElementSix() {
 		}
 	];
 	const [active, setActive] = useState("");
+	
 	const isSm = useMediaQuery("only screen and (max-width : 800px)");
 
 	const dispatch = useDispatch();

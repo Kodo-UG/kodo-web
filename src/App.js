@@ -7,7 +7,6 @@ import JobStep2 from "./pages/Register/Scholarships/jobs/JobStep2";
 import JobStep3 from "./pages/Register/Scholarships/jobs/JobStep3";
 import Main from "./pages/ContactUs/Main";
 import SportsUI from "./pages/Sports/Sports";
-
 import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
 import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
@@ -30,11 +29,17 @@ const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const PasswordReset = lazy(() => import("./pages/PasswordReset"));
 const Payment = lazy(() => import("./pages/payment"));
 const PaymentJobs = lazy(() => import("./pages/payment/jobs"));
-
 const RootScholarship = lazy(() => import("./pages/Dashboard/scholarship"));
 const MainProfile = lazy(() => import("./pages/Dashboard/Profile"));
 const Accordion = lazy(() => import("./accordion/Accordion"));
 const RootApplication = lazy(() => import("./pages/Dashboard/applications"));
+const StepperElementTwo = lazy(() =>
+	import("./pages/Register/Scholarships/sports/StepperElementTwo")
+);
+const StepperElementThree = lazy(() => import("./pages/Register/Scholarships/sports/StepperElementThree."));
+
+const FinalStepperElement = lazy(() => import("./pages/Register/Scholarships/sports/FinalStepperElement"));
+
 const StepperElementFour = lazy(() =>
   import("./pages/Register/Scholarships/StepperElementFour")
 );
@@ -54,6 +59,7 @@ const Index = lazy(() => import("../src/pages/profile/index"));
 const Favorite = lazy(() => import("./pages/favorite"));
 
 const App = () => {
+<<<<<<< HEAD
   return (
     <Suspense
       fallback={
@@ -100,6 +106,61 @@ const App = () => {
         <Route exact path="/policy" component={Privacy} />
         <Route exact path="/share" component={RSSUsage} />
         <Route exact path="/player" component={Sports} />
+=======
+	return (
+		<Suspense
+			fallback={
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						marginTop: "18rem"
+					}}
+				>
+					<img
+						style={{
+							width: "7rem ",
+							height: "7rem",
+							justifyContent: "center",
+							alignItems: "center"
+						}}
+						src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
+						alt="middle"
+					/>{" "}
+				</div>
+			}
+		>
+			<Switch>
+				<Route exact path="/index" component={Index} />
+				<Route exact path="/signin" component={Signin} />
+				<Route exact path="/login/:userId" component={Login} />
+				<Route exact path="/forgot/password" component={ForgotPassword} />
+				<Route path="/reset-password/:token" component={PasswordReset} />
+				<PrivateRoute exact path="/scholars" component={RootScholarship} />
+				<PrivateRoute exact path="/favorite" component={Favorite} />
+				<PrivateRoute exact path="/profile" component={MainProfile} />
+				<Route exact path="/route1" component={StepperElementSix} />
+				<Route exact path="/route2" component={StepperElement7} />
+				<Route exact path="/verify" component={StepComfirmation} />
+				<Route exact path="/final" component={StepElement8} />
+				<Route exact path="/stepper" component={Stepper} />
+				<Route exact path="/starting" component={StepperElementTwo} />
+				<Route exact path="/residence" component={StepperElementThree} />
+				<Route exact path="/sportsfinal" component={FinalStepperElement} />
+				
+				<Route
+					exact
+					path="/details/:id"
+					component={ScholarshipDetailsPage}
+				/>
+				<Route exact path="/JobStep1" component={JobStep1} />
+				<Route exact path="/JobStep2" component={JobStep2} />
+				<Route exact path="/JobStep3" component={JobStep3} />
+				<Route exact path="/policy" component={Privacy} />
+				<Route exact path="/share" component={RSSUsage} />
+				<Route exact path="/player" component={Sports} />
+>>>>>>> 2c0d6ea29dc0d5b6609a9213c6ea0b8c7350f29d
 
         <Route exact path="/educationlevel" component={StepperElementFour} />
         <PrivateRoute exact path="/applications" component={RootApplication} />

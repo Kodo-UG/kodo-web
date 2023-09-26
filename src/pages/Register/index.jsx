@@ -10,6 +10,7 @@ const FindScholarship = () => {
 
 	const params = useParams();
 	const userId = params.userId;
+	
 	const object = [
 		{
 			id: 1,
@@ -48,6 +49,7 @@ const FindScholarship = () => {
 	}, []);
 
 	const changeButtons = (action) => {
+
 		const button1 = document.getElementById("button1");
 		const button2 = document.getElementById("button2");
 
