@@ -15,7 +15,7 @@ import Contact from "./pages/ContactUs/Contact";
 import PlayerProfile from "./pages/sports/FormOne";
 import { googleTranslateElementInit } from "./googleTranslate";
 
-// Lazy-loaded components
+// Lazy-loaded componentss
 const Home = lazy(() => import("./pages/HomePage"));
 const AboutUs = lazy(() => import("./pages/AboutUs/index"));
 const Blog = lazy(() => import("./pages/Blog"));
