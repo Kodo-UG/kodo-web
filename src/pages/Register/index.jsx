@@ -36,37 +36,28 @@ const FindScholarship = () => {
 		dispatch(updateFormData({ field: "refer", value: userId }));
 	}, []);
 
-	useEffect(() => {
-		const urlParams = new URLSearchParams(window.location.search);
-		const action = urlParams.get("action");
+  const changeButtons = (action) => {
+    const button1 = document.getElementById("button1");
+    const button2 = document.getElementById("button2");
 
-		if (action) {
-			changeButtons(action);
-		}
-	}, []);
+    button1.textContent = "Sign Up";
+    button1.href = "/signin";
+    button2.textContent = "Sign Up";
+    button2.href = "/signin";
+  };
 
-	const changeButtons = (action) => {
-		const button1 = document.getElementById("button1");
-		const button2 = document.getElementById("button2");
-
-		button1.textContent = "Sign Up";
-		button1.href = "/signin";
-		button2.textContent = "Sign Up";
-		button2.href = "/signin";
-	};
-
-	return (
-		<div
-			style={{
-				height: "90vh",
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center"
-			}}
-		>
-			<StepperCard list={object} />
-		</div>
-	);
+  return (
+    <div
+      style={{
+        height: "90vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <StepperCard list={object} />
+    </div>
+  );
 };
 
 export default FindScholarship;
