@@ -1,58 +1,111 @@
-/* eslint-disable no-script-url */
 import React, { useState } from "react";
-import "./stepperElement.css";
+import "../stepperElement.css";
 import { useDispatch, useSelector } from "react-redux";
-import { updateFormData } from "../../../toolkit/formReducer";
 import { useHistory } from "react-router-dom";
-
-import { countries } from "../../../constants/countries";
-
 import { Link } from "react-router-dom";
-import { displayErrorMessage } from "../../../utils/Toast";
+import {
+  displayErrorMessage,
+  displaySuccessMessage,
+} from "../../../../utils/Toast";
+import axiosInstance from "../../../../api/axiosInstance";
 import * as Yup from "yup";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useMediaQuery } from "@uidotdev/usehooks";
+import {
+  selectSportsData,
+  updateSportsData,
+  clearFormData
+} from "../../../../toolkit/sportsReducer";
 
 const validationSchema = Yup.object().shape({
-  country: Yup.string().required("Country is required"),
-  city: Yup.string().required("City is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  phone: Yup.string().required("Phone is required"),
+  password: Yup.string().required("Password is required"),
 });
 
-function StepperElement7() {
-  
-  const dispatch = useDispatch();
-  const formData = useSelector((state) => state.formData);
+function FinalStepperElement() {
+
+  const formData = useSelector(selectSportsData);
+  console.log("Sports Registration Data:", formData);
+
   const history = useHistory();
-  const [country, setCountry] = useState("");
-  const [preferedCountry, setPreferedCountry] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [gender, setGender] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
 
-  const handleCountryChange = (e) => {
-    setCountry(e.target.value);
-    dispatch(updateFormData({ field: "country", value: e.target.value }));
-  };
+  const isSm = useMediaQuery("only screen and (max-width : 900px)");
 
+  const isMd = useMediaQuery(
+    "only screen and (min-width : 900px) and (max-width : 1250px)"
+  );
+  const isLg = useMediaQuery(
+    "only screen and (min-width : 1250px) and (max-width : 2250px)"
+  );
 
-  const handlePreferedCountryChange = (e) => {
-    setPreferedCountry(e.target.value);
-    dispatch(updateFormData({ field: "preferedCountry", value: e.target.value }));
-  };
-  const handleCityChange = (e) => {
+  const dispatch = useDispatch();
+
+  const handleEmailChange = (e) => {
     const { name, value } = e.target;
-
-    dispatch(updateFormData({ field: "city", value: value }));
+    dispatch(updateSportsData({ field: "email", value: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleDobChange = (date) => {
+    setSelectedDate(date);
+
+    const dateString = date ? date.toISOString().split("T")[0] : "";
+    dispatch(updateSportsData({ field: "dob", value: dateString }));
+  };
+
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    dispatch(updateSportsData({ field: "password", value: value }));
+  };
+  const handlePhoneChange = (e) => {
+    const { name, value } = e.target;
+    dispatch(updateSportsData({ field: "phone", value: value }));
+  };
+  const handleFirstNameChange = (e) => {
+    const { name, value } = e.target;
+    dispatch(updateSportsData({ field: "fname", value: value }));
+  };
+  const handleLastNameChange = (e) => {
+    const { name, value } = e.target;
+    dispatch(updateSportsData({ field: "lname", value: value }));
+  };
+
+  const register = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       await validationSchema.validate(formData, { abortEarly: false });
 
-      history.push("/final");
-    } catch (validationErrors) {
-      const errorMessages = validationErrors.inner.map(
-        (error) => error.message
-      );
+      const res = await axiosInstance.post("/auth/user/signup", formData);
+      console.log(res.data.id);
+      localStorage.setItem("userID", res.data.id);
+
+      if (res.data.id) {
+        displaySuccessMessage("Registration successful ");
+        clearFormData();
+        history.push("/signin");
+      } else {
+        displayErrorMessage(res.data.message);
+      }
+    } catch (validationError) {
+      const errorMessages = validationError.inner.map((error) => error.message);
       displayErrorMessage(errorMessages.join("\n"));
+    } finally {
+      setLoading(false);
     }
+  };
+
+  const handleGenderChange = (e) => {
+    setGender(e.target.value);
+    dispatch(updateSportsData({ field: "sex", value: e.target.value }));
   };
 
   return (
@@ -77,8 +130,8 @@ function StepperElement7() {
         <Link to="/">
           <style type="text/css">
             {`svg.icon-component.icon-component--logo-horizontal:hover {
-                    fill: var(--secondary-700);
-                }`}
+fill: var(--secondary-700);
+}`}
           </style>
           <img
             className="icon-component icon-component--logo-horizontal"
@@ -99,14 +152,14 @@ function StepperElement7() {
       >
         <section id="voyager-blocks">
           <section>
-            <section style={{ padding: "3rem" }} className="">
+            <section className="">
               <div data-testid="progress-bar" className="_progressBar_63yfq_1">
                 <div
                   className="_progress_63yfq_1"
                   style={{ width: "50%" }}
                 ></div>
               </div>
-              <Link to="/route1">
+              <Link to="/route2">
                 <button
                   data-testid="button-previous"
                   type="button"
@@ -129,39 +182,18 @@ function StepperElement7() {
               </Link>
               <div className="_notAnimated_pmptr_10">
                 <span className="_headingContainer_1fpvz_1">
-                  <h2 className="_soloHeading_1fpvz_8">
-                    Where do you currently live?
-                  </h2>
+                  <h2 className="_soloHeading_1fpvz_8">Create Your Account</h2>
                 </span>
-                <form onSubmit={handleSubmit}>
-                  <div>
-                    <div className="_fieldGroup_1g3ja_1">
-                      <select
-                        className="_textField_fwd9c_1"
-                        value={country}
-                        onChange={handleCountryChange}
-                        required
-                      >
-                        <option value="">Select country</option>
-                        {countries.map((country) => (
-                          <option key={country.id} value={country.name}>
-                            {country.name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                  
+                <form onSubmit={register}>
                   <div>
                     <div className="_fieldGroup_1g3ja_1">
                       <input
                         className="_textField_fwd9c_1"
-                        onChange={handleCityChange}
-                        name="city"
-                        type="text"
-                        id="city"
-                        label="city"
-                        placeholder="City"
+                        onChange={handleEmailChange}
+                        name="email"
+                        type="email"
+                        id="email"
+                        placeholder="Your email"
                         required
                       />
                     </div>
@@ -169,21 +201,84 @@ function StepperElement7() {
 
                   <div>
                     <div className="_fieldGroup_1g3ja_1">
+                      <input
+                        className="_textField_fwd9c_1"
+                        onChange={handleFirstNameChange}
+                        name="fname"
+                        type="text"
+                        id="fname"
+                        placeholder="First Name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="_fieldGroup_1g3ja_1">
+                      <input
+                        className="_textField_fwd9c_1"
+                        onChange={handleLastNameChange}
+                        name="lname"
+                        type="text"
+                        id="lname"
+                        placeholder="Last Name"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="_fieldGroup_1g3ja_1">
+                      <input
+                        className="_textField_fwd9c_1"
+                        onChange={handlePhoneChange}
+                        name="phone"
+                        type="text"
+                        id="phone"
+                        label="Phone Number"
+                        placeholder="Phone"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="_fieldGroup_1g3ja_1">
+                      <DatePicker
+                        className={` ${isSm ? "date-pic" : "date-picker"}`}
+                        selected={selectedDate}
+                        onChange={handleDobChange} // Call the modified function here
+                        placeholderText="Select date of birth"
+                        maxDate={new Date(2009, 11, 31)}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="_fieldGroup_1g3ja_1">
                       <select
                         className="_textField_fwd9c_1"
-                        value={preferedCountry}
-                        onChange={handlePreferedCountryChange}
+                        value={gender}
+                        onChange={handleGenderChange}
                         required
                       >
-                        <option value="">
-                          Where do you want to study from?
-                        </option>
-                        {countries.map((country) => (
-                          <option key={country.id} value={country.name}>
-                            {country.name}
-                          </option>
-                        ))}
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
                       </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="_fieldGroup_1g3ja_1">
+                      <input
+                        className="_textField_fwd9c_1"
+                        onChange={handlePasswordChange}
+                        name={showPassword ? "text" : "password"}
+                        type="password"
+                        id="password"
+                        label="password"
+                        placeholder="Password"
+                        required
+                      />
                     </div>
                   </div>
 
@@ -193,7 +288,7 @@ function StepperElement7() {
                       className="_buttonContinue_pmptr_46 _button_pmptr_30"
                       data-testid="continue"
                     >
-                      <span>Continue</span>
+                      <span>{loading ? "loading.." : "Register"}</span>
                       <svg
                         width="26"
                         height="16"
@@ -212,7 +307,7 @@ function StepperElement7() {
                   </div>
                 </form>
                 <div className="_pageActions_pmptr_26"></div>
-                <p style={{ color: "black" }} className="_disclaimer_icov9_1">
+                <p className="_disclaimer_icov9_1">
                   <svg
                     width="18"
                     height="20"
@@ -235,15 +330,15 @@ function StepperElement7() {
           </section>
         </section>
       </div>
-      <footer className="flex justify-center fixed-bottom items-center bg-primary-900 mt-4 py-5">
+      <footer className="flex justify-center items-center bg-primary-900 mt-4 py-5">
         <div className="flex flex-col items-center justify-center md:flex-row flex-wrap">
           <Link to="/">
             <img
               className="icon-component icon-component--logo-stacked-horizontal"
               style={{ color: "#fff" }}
               src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
-              width="120px"
-              height="120px"
+              width="76"
+              height="76"
               fill="#fff"
               role="img"
               viewBox="0 0 350 105"
@@ -253,7 +348,7 @@ function StepperElement7() {
           <div className="py-2 divide-x px-4 flex flex-wrap justify-center">
             <Link
               className="px-2 text-xs text-white font-bold hover:text-white"
-              to="#"
+              to="/policy"
               target="_blank"
             >
               Privacy Policy
@@ -279,4 +374,4 @@ function StepperElement7() {
   );
 }
 
-export default StepperElement7;
+export default FinalStepperElement;

@@ -29,11 +29,17 @@ const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const PasswordReset = lazy(() => import("./pages/PasswordReset"));
 const Payment = lazy(() => import("./pages/payment"));
 const PaymentJobs = lazy(() => import("./pages/payment/jobs"));
-
 const RootScholarship = lazy(() => import("./pages/Dashboard/scholarship"));
 const MainProfile = lazy(() => import("./pages/Dashboard/Profile"));
 const Accordion = lazy(() => import("./accordion/Accordion"));
 const RootApplication = lazy(() => import("./pages/Dashboard/applications"));
+const StepperElementTwo = lazy(() =>
+	import("./pages/Register/Scholarships/sports/StepperElementTwo")
+);
+const StepperElementThree = lazy(() => import("./pages/Register/Scholarships/sports/StepperElementThree."));
+
+const FinalStepperElement = lazy(() => import("./pages/Register/Scholarships/sports/FinalStepperElement"));
+
 const StepperElementFour = lazy(() =>
 	import("./pages/Register/Scholarships/StepperElementFour")
 );
@@ -81,7 +87,6 @@ const App = () => {
 				<Route exact path="/index" component={Index} />
 				<Route exact path="/signin" component={Signin} />
 				<Route exact path="/login/:userId" component={Login} />
-
 				<Route exact path="/forgot/password" component={ForgotPassword} />
 				<Route path="/reset-password/:token" component={PasswordReset} />
 				<PrivateRoute exact path="/scholars" component={RootScholarship} />
@@ -92,6 +97,10 @@ const App = () => {
 				<Route exact path="/verify" component={StepComfirmation} />
 				<Route exact path="/final" component={StepElement8} />
 				<Route exact path="/stepper" component={Stepper} />
+				<Route exact path="/starting" component={StepperElementTwo} />
+				<Route exact path="/residence" component={StepperElementThree} />
+				<Route exact path="/sportsfinal" component={FinalStepperElement} />
+				
 				<Route
 					exact
 					path="/details/:id"

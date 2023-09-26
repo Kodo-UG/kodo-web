@@ -1,29 +1,12 @@
 import React, { useEffect, useState } from "react";
-
-import HeaderLayout from "../../../components/Layout/steeperLayout";
-import Footer from "../../../components/Layout/steeperLayout/Footer";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { updateFormData } from "../../../toolkit/formReducer";
-import StepperElementFour from "./StepperElementFour";
+import StepperElementOne from "./sports/StepperElementOne";
 
 const Sports = () => {
+
   const [step, setStep] = useState(1);
 
-  const [formData, setFormData] = useState({
-    lname: "",
-    fname: "",
-    email: "",
-    password: "",
-    country: "",
-    city: "",
-    scholarshipStart: "",
-    educationlevel: "",
-    degree: "",
-    phone: "",
-    appType: "",
-    scholarshipcategory: "",
-  });
   const dispatch = useDispatch();
 
   const params = useParams();
@@ -34,9 +17,9 @@ const Sports = () => {
   const prevStep = () =>
     setStep((step) => (step < 4 && step > 0 ? step - 1 : 1));
 
-  useEffect(() => {
-    dispatch(updateFormData({ field: "refer", value: userId }));
-  }, []);
+  // useEffect(() => {
+  //   dispatch(updateFormData({ field: "refer", value: userId }));
+  // }, []);
 
   return (
     <div
@@ -59,7 +42,7 @@ const Sports = () => {
           alignItems: "center",
         }}
       >
-        <StepperElementFour />
+        <StepperElementOne/>
       </div>
     </div>
   );
