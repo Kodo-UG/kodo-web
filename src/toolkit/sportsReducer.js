@@ -1,4 +1,3 @@
-// formDataSlice.js
 
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -11,29 +10,30 @@ const initialState = {
 	password: "",
 	scholarshipStart: "",
 	educationlevel: "",
-	degree: "",
 	phone: "",
 	appType: "",
-	scholarshipcategory: "",
-	subject: "",
+	sportcategory: "",
+	sex: "",
 	dob: "",
-	refer: "",
-	preferedCountry:""
 };
-const formDataSlice = createSlice({
-	name: "formData",
+const sportsDataSlice = createSlice({
+	name: "sportsData",
 	initialState,
 	reducers: {
-		updateFormData: (state, action) => {
+		updateSportsData: (state, action) => {
 			const { field, value } = action.payload;
 			if (field !== "") {
 				state[field] = value;
 			}
+            
 		},
 
 		clearFormData: () => initialState
 	}
 });
 
-export const { updateFormData, clearFormData } = formDataSlice.actions;
-export default formDataSlice.reducer;
+export const { updateSportsData , clearFormData } = sportsDataSlice.actions;
+
+export const selectSportsData = (state) => state.sportsData;
+
+export default sportsDataSlice.reducer;

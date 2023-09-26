@@ -10,11 +10,7 @@ const FindScholarship = () => {
 
 	const params = useParams();
 	const userId = params.userId;
-
-	useEffect(() => {
-		localStorage.setItem("refer", userId);
-	}, []);
-
+	
 	const object = [
 		{
 			id: 1,
@@ -29,6 +25,13 @@ const FindScholarship = () => {
 			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
 			link: "/JobStep1",
 			Button: "Sign Up"
+		},
+		{
+			id: 3,
+			title: "Sports",
+			text: "Sign up for sports scholarship",
+			link: "/player",
+			Button: "Sign Up"
 		}
 	];
 
@@ -36,28 +39,38 @@ const FindScholarship = () => {
 		dispatch(updateFormData({ field: "refer", value: userId }));
 	}, []);
 
-  const changeButtons = (action) => {
-    const button1 = document.getElementById("button1");
-    const button2 = document.getElementById("button2");
+	useEffect(() => {
+		const urlParams = new URLSearchParams(window.location.search);
+		const action = urlParams.get("action");
 
-    button1.textContent = "Sign Up";
-    button1.href = "/signin";
-    button2.textContent = "Sign Up";
-    button2.href = "/signin";
-  };
+		if (action) {
+			changeButtons(action);
+		}
+	}, []);
 
-  return (
-    <div
-      style={{
-        height: "90vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <StepperCard list={object} />
-    </div>
-  );
+	const changeButtons = (action) => {
+
+		const button1 = document.getElementById("button1");
+		const button2 = document.getElementById("button2");
+
+		button1.textContent = "Sign Up";
+		button1.href = "/signin";
+		button2.textContent = "Sign Up";
+		button2.href = "/signin";
+	};
+
+	return (
+		<div
+			style={{
+				height: "90vh",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center"
+			}}
+		>
+			<StepperCard list={object} />
+		</div>
+	);
 };
 
 export default FindScholarship;

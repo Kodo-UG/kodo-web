@@ -1,69 +1,54 @@
-import React, { useState } from "react";
-import "./stepperElement.css";
-import { useDispatch } from "react-redux";
-import { updateFormData } from "../../../toolkit/formReducer";
+/* eslint-disable no-script-url */
+import React from "react";
+
 import { Link } from "react-router-dom";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMemo } from "react";
+import { BASE_URL } from "../../constants/api";
+import axios from "axios";
+import { useState } from "react";
 
-function StepperElementSix() {
-	const list = [
-		{
-			id: 1,
-			text: "As soon as possible",
-			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/fire"
-		},
-		{
-			id: 2,
-			text: "In the next 3 months",
-			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/hourglass"
-		},
-		{
-			id: 3,
-			text: "3 - 6 months",
-			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/clock"
-		},
-		{
-			id: 4,
-			text: " 6 - 12 months",
-			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/calendar"
-		},
-		{
-			id: 5,
-			text: "  12 or more months",
-			link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/calendarPlus"
+
+
+function PlayerProfile() {
+	const [data, setData] = useState([]);
+	const fetchSports = async () => {
+		try {
+			const res = await axios.get(`${BASE_URL}/admin/sports/categories`);
+			setData(res.data.data);
+		} catch (error) {
+			console.log(error);
 		}
-	];
-	const [active, setActive] = useState("");
-	
-	const isSm = useMediaQuery("only screen and (max-width : 800px)");
-
-	const dispatch = useDispatch();
-	const handleClick = (text) => {
-		dispatch(updateFormData({ field: "scholarshipStart", value: text }));
 	};
+
+	// console.log(data, "====");
+	useMemo(() => {
+		fetchSports();
+	}, []);
+
 	return (
 		<main
-			className="voyager-main flex flex-col min-h-screen bg-gray-50"
 			role="main"
 			style={{
 				display: "flex",
-				flexDirection: "column"
+				flexDirection: "column",
+				minHeight: "100vh",
+				backgroundColor: "gray-50"
 			}}
 		>
 			<header
-				className="w-full f py-4 bg-white"
 				style={{
+					width: "100%",
 					display: "flex",
-					justifyContent: "center"
+					justifyContent: "center",
+					paddingTop: "4px",
+					backgroundColor: "white"
 				}}
 			>
 				<Link to="/">
 					<style type="text/css">
-						{`
-        svg.icon-component.icon-component--logo-horizontal:hover {
-          fill: var(--secondary-700);
-        }
-        `}
+						{`svg.icon-component.icon-component--logo-horizontal:hover {
+                    fill: var(--secondary-700);
+                }`}
 					</style>
 					<img
 						className="icon-component icon-component--logo-horizontal"
@@ -84,17 +69,17 @@ function StepperElementSix() {
 			>
 				<section id="voyager-blocks">
 					<section>
-						<section className="">
+						<section style={{ padding: "3rem" }} className="">
 							<div
 								data-testid="progress-bar"
 								className="_progressBar_63yfq_1"
 							>
 								<div
 									className="_progress_63yfq_1"
-									style={{ width: "16.6667%" }}
+									style={{ width: "50%" }}
 								></div>
 							</div>
-							<Link to="/educationlevel">
+							<Link to="/route1">
 								<button
 									data-testid="button-previous"
 									type="button"
@@ -117,94 +102,88 @@ function StepperElementSix() {
 							</Link>
 							<div className="_notAnimated_pmptr_10">
 								<span className="_headingContainer_1fpvz_1">
-									<p>Thanks for sharing! Let's keep going!</p>
 									<h2 className="_soloHeading_1fpvz_8">
-										How soon were you looking to start this new
-										program?
+										Create Your Athlete Profile
 									</h2>
 								</span>
-								<div>
-									<div className="_optionGroup_9bife_5 _optionGroupCols3_9bife_64">
-										{/* start */}
-										{list.map((data) => (
-											<div
-												key={data.id}
-												onClick={() => {
-													setActive(data.id);
-													// handleCardClick(data.id)
-													handleClick(data.text);
-												}}
-												className="_option_9bife_5"
+								<form>
+									<div>
+										<div className="_fieldGroup_1g3ja_1">
+											<input
+												className="_textField_fwd9c_1"
+												// onChange={handleCityChange}
+												name="fname"
+												type="text"
+												id="fname"
+												placeholder="Athelete First Name"
+												required
+											/>
+										</div>
+									</div>
+									<div>
+										<div className="_fieldGroup_1g3ja_1">
+											<input
+												className="_textField_fwd9c_1"
+												// onChange={handleCityChange}
+												name="lname"
+												type="text"
+												id="lname"
+												placeholder="Athelete Last Name"
+												required
+											/>
+										</div>
+									</div>
+									<div>
+										<div className="_fieldGroup_1g3ja_1">
+											<input
+												className="_textField_fwd9c_1"
+												// onChange={handleCityChange}
+												name="email"
+												type="email"
+												id="email"
+												placeholder="Email"
+												required
+											/>
+										</div>
+									</div>
+
+									<div>
+										<div className="_fieldGroup_1g3ja_1">
+											<select
+												className="_textField_fwd9c_1"
+												// value={country}
+												// onChange={handleCountryChange}
+												required
 											>
-												<div
-													className={`${
-														data.id === active
-															? "clicked"
-															: "_optionInner_9bife_23"
-													}`}
-												>
-													<input
-														id="As soon as possible"
-														type="checkbox"
-														className="_optionCheckmark_9bife_94"
-														data-testid="starttime-0"
-														value="0"
-													/>
-													<label
-														htmlFor="As soon as possible"
-														className="_optionBody_9bife_90"
-														style={{
-															marginLeft: isSm ? "-1rem" : "",
-															display: isSm ? "flex" : "",
-															width: isSm ? "80%" : ""
-														}}
-													>
-														<span className="_optionIcon_9bife_48">
-															<div
-																style={{
-																	height: "1.5rem",
-																	width: "1.5rem"
-																}}
-															>
-																<img
-																	loading="lazy"
-																	src={data.link}
-																	alt="fire"
-																/>
-															</div>
-														</span>
-														<div>
-															<span
-																style={{ color: "black" }}
-																className="_optionLabel_9bife_106 _normal_9bife_137"
-															>
-																{data.text}
-															</span>
-														</div>
-													</label>
-												</div>
-											</div>
-										))}
-										{/* end */}
+												<option value="">
+													Select sport category
+												</option>
+												{data.map((sp) => (
+													<option key={sp.id} value={sp.name}>
+														{sp.name}
+													</option>
+												))}
+											</select>
+										</div>
 									</div>
-								</div>
-								<div>
-									<div
-										data-testid="callout-field"
-										className="_callout_1qfey_1"
-									>
-										<p>
-											<strong>
-												Majority of our programs are online,{" "}
-											</strong>
-											which means you can start ASAP!
-										</p>
+
+									<div>
+										<div className="_fieldGroup_1g3ja_1">
+											<input
+												className="_textField_fwd9c_1"
+												// onChange={handleCityChange}
+												name="password"
+												type="password"
+												id="password"
+												placeholder="Password"
+												required
+											/>
+										</div>
 									</div>
-								</div>
-								<div className="_pageActions_pmptr_26">
-									<Link to="/route2">
+
+									<div className="_pageActions_pmptr_26">
 										<button
-											type="button"
+											type="submit"
 											className="_buttonContinue_pmptr_46 _button_pmptr_30"
 											data-testid="continue"
 										>
@@ -224,9 +203,13 @@ function StepperElementSix() {
 												></path>
 											</svg>
 										</button>
-									</Link>
-								</div>
-								<p className="_disclaimer_icov9_1">
+									</div>
+								</form>
+								<div className="_pageActions_pmptr_26"></div>
+								<p
+									style={{ color: "black" }}
+									className="_disclaimer_icov9_1"
+								>
 									<svg
 										width="18"
 										height="20"
@@ -250,15 +233,15 @@ function StepperElementSix() {
 					</section>
 				</section>
 			</div>
-			<footer className="flex justify-center items-center bg-primary-900 mt-4 py-5">
+			<footer className="flex justify-center fixed-bottom items-center bg-primary-900 mt-4 py-5">
 				<div className="flex flex-col items-center justify-center md:flex-row flex-wrap">
 					<Link to="/">
 						<img
 							className="icon-component icon-component--logo-stacked-horizontal"
 							style={{ color: "#fff" }}
 							src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
-							width="106"
-							height="36"
+							width="120px"
+							height="120px"
 							fill="#fff"
 							role="img"
 							viewBox="0 0 350 105"
@@ -268,7 +251,7 @@ function StepperElementSix() {
 					<div className="py-2 divide-x px-4 flex flex-wrap justify-center">
 						<Link
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							to="/policy"
+							to="#"
 							target="_blank"
 						>
 							Privacy Policy
@@ -282,7 +265,7 @@ function StepperElementSix() {
 						</Link>
 						<Link
 							className="px-2 text-xs text-white font-bold hover:text-white"
-							to="/policy"
+							to="#"
 							target="_blank"
 						>
 							Do Not Sell My Info
@@ -294,4 +277,4 @@ function StepperElementSix() {
 	);
 }
 
-export default StepperElementSix;
+export default PlayerProfile;
