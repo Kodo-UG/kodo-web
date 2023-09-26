@@ -39,30 +39,29 @@ const Sports = () => {
   }, []);
 
   return (
-    <HeaderLayout>
+    <div
+      style={{
+        height: "90vh",
+        width: "100%",
+        overflow: "auto",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#E6E6E6",
+      }}
+    >
       <div
+        id="school-search-container"
         style={{
-          height: "80vh",
           width: "100%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "#E6E6E6",
         }}
       >
-        <div
-          id="school-search-container"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <StepperElementFour />
-        </div>
+        <StepperElementFour />
       </div>
-      <Footer step={step} nextStep={nextStep} prevStep={prevStep} />
-    </HeaderLayout>
+    </div>
   );
 };
 

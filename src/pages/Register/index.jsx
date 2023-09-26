@@ -6,52 +6,11 @@ import { useParams } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
 
 const FindScholarship = () => {
-<<<<<<< HEAD
-  const dispatch = useDispatch();
-
-  const params = useParams();
-  const userId = params.userId;
-  const object = [
-    {
-      id: 1,
-      title: "Scholarships",
-      text: "We’ve helped students win more than $10 million dollars in scholarships.",
-      link: "/stepper",
-      Button: "Sign Up",
-    },
-    {
-      id: 2,
-      title: "Jobs",
-      text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
-      link: "/JobStep1",
-      Button: "Sign Up",
-    },
-    {
-      id: 3,
-      title: "Sports",
-      text: "Sign up for sports scholarship",
-      link: "/player",
-      Button: "Sign Up",
-    },
-  ];
-
-  useEffect(() => {
-    dispatch(updateFormData({ field: "refer", value: userId }));
-  }, []);
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const action = urlParams.get("action");
-
-    if (action) {
-      changeButtons(action);
-    }
-  }, []);
-=======
 	const dispatch = useDispatch();
 
 	const params = useParams();
 	const userId = params.userId;
+	
 	const object = [
 		{
 			id: 1,
@@ -79,7 +38,6 @@ const FindScholarship = () => {
 	useEffect(() => {
 		dispatch(updateFormData({ field: "refer", value: userId }));
 	}, []);
->>>>>>> c143e3f8f70d8638af2e796611201dfee751eadf
 
 	useEffect(() => {
 		const urlParams = new URLSearchParams(window.location.search);
@@ -91,6 +49,7 @@ const FindScholarship = () => {
 	}, []);
 
 	const changeButtons = (action) => {
+
 		const button1 = document.getElementById("button1");
 		const button2 = document.getElementById("button2");
 
