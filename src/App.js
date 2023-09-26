@@ -53,9 +53,19 @@ const Index = lazy(() => import("../src/pages/profile/index"));
 const Favorite = lazy(() => import("./pages/favorite"));
 
 const App = () => {
-
+  useEffect(() => {
+    var addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, []);
 
   return (
+    <>
+    <div id="google_translate_element">
       <Suspense
         fallback={
           <div
@@ -129,6 +139,8 @@ const App = () => {
           </Layout>
         </Switch>
       </Suspense>
+    </div>
+    </>
   );
 };
 
