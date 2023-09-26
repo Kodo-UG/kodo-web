@@ -57,11 +57,11 @@ const NavHeader = ({ open, setOpen }) => {
 			children: "Contact us"
 		},
 		
-		{
-			id: 7,
-			route: "/sports",
-			children: "Sports"
-		},
+		// {
+		// 	id: 7,
+		// 	route: "/sports",
+		// 	children: "Sports"
+		// },
 
 		{
 			id: 8,
