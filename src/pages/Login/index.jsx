@@ -52,7 +52,7 @@ export default function Login() {
 			if (data) setMessage(data?.data?.message);
 			localStorage.setItem("userID", data.data.user._id);
 
-			if (data.status == "201") {
+			if (data.status === "201") {
 				localStorage.setItem("userData", JSON.stringify(data.data));
 				displaySuccessMessage("Login successful");
 				localStorage.setItem("token", data.data.token);
