@@ -1,6 +1,5 @@
 /* eslint-disable no-script-url */
 import React from "react";
-import { useDispatch } from "react-redux";
 
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
@@ -8,12 +7,7 @@ import { BASE_URL } from "../../constants/api";
 import axios from "axios";
 import { useState } from "react";
 
-const sport = [
-	{
-		id: 1,
-		name: "football"
-	}
-];
+
 
 function PlayerProfile() {
 	const [data, setData] = useState([]);

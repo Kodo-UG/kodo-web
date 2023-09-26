@@ -212,4 +212,42 @@ const countries = [
   { id: 194, name: "Zimbabwe", population: 14862924, area: 390757 },
 ];
 
-export { countries };
+const listArray = [
+  {
+    id: 1,
+    text: "High School",
+    link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1",
+  },
+  {
+    id: 2,
+    text: "GED",
+    link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal1",
+  },
+  {
+    id: 3,
+    text: "Associate",
+    link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal2",
+  },
+  {
+    id: 4,
+    text: "Bachelor's",
+    link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal2",
+  },
+  {
+    id: 5,
+    text: "Master's",
+    link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal4",
+  },
+  {
+    id: 6,
+    text: "Doctorate",
+    link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal5",
+  },
+  {
+    id: 7,
+    text: "Diploma",
+    link: "https://res.cloudinary.com/highereducation/image/upload/co_rgb:e22944,e_colorize:100,f_auto,fl_lossy,q_auto,h_48,w_48/v1/Voyager/signal5",
+  },
+];
+
+export { countries, listArray };
