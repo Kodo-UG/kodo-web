@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
 
 const FindScholarship = () => {
+<<<<<<< HEAD
   const dispatch = useDispatch();
 
   const params = useParams();
@@ -46,29 +47,71 @@ const FindScholarship = () => {
       changeButtons(action);
     }
   }, []);
+=======
+	const dispatch = useDispatch();
 
-  const changeButtons = (action) => {
-    const button1 = document.getElementById("button1");
-    const button2 = document.getElementById("button2");
+	const params = useParams();
+	const userId = params.userId;
+	const object = [
+		{
+			id: 1,
+			title: "Scholarships",
+			text: "We’ve helped students win more than $10 million dollars in scholarships.",
+			link: "/stepper",
+			Button: "Sign Up"
+		},
+		{
+			id: 2,
+			title: "Jobs",
+			text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
+			link: "/JobStep1",
+			Button: "Sign Up"
+		},
+		{
+			id: 3,
+			title: "Sports",
+			text: "Sign up for sports scholarship",
+			link: "/player",
+			Button: "Sign Up"
+		}
+	];
 
-    button1.textContent = "Sign Up";
-    button1.href = "/signin";
-    button2.textContent = "Sign Up";
-    button2.href = "/signin";
-  };
+	useEffect(() => {
+		dispatch(updateFormData({ field: "refer", value: userId }));
+	}, []);
+>>>>>>> c143e3f8f70d8638af2e796611201dfee751eadf
 
-  return (
-    <div
-      style={{
-        height: "90vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <StepperCard list={object} />
-    </div>
-  );
+	useEffect(() => {
+		const urlParams = new URLSearchParams(window.location.search);
+		const action = urlParams.get("action");
+
+		if (action) {
+			changeButtons(action);
+		}
+	}, []);
+
+	const changeButtons = (action) => {
+		const button1 = document.getElementById("button1");
+		const button2 = document.getElementById("button2");
+
+		button1.textContent = "Sign Up";
+		button1.href = "/signin";
+		button2.textContent = "Sign Up";
+		button2.href = "/signin";
+	};
+
+	return (
+		<div
+			style={{
+				height: "90vh",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center"
+			}}
+		>
+			<StepperCard list={object} />
+		</div>
+	);
 };
 
 export default FindScholarship;
