@@ -27,12 +27,51 @@
 
 	<title>Kodo Scholarships</title>
 
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7678216190504211"
-     crossorigin="anonymous"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7678216190504211" crossorigin="anonymous"></script>
+	<style>
+		/* Style for the Google Translate widget container */
+		.google-translate-widget {
+			position: fixed;
+  			top: calc(53px + 16px);
+  			right: 16px!important;
+		  	z-index:9999999999 
+		}
+		/* Style for the Google Translate widget container */
+		/* Style for the Google Translate select field */
+		.google-translate-widget select.goog-te-combo {
+			font-size: 16px; /* Adjust the font size */
+			padding: 10px; /* Adjust the padding */
+			background-color: #fff; /* Background color */
+			border: 1px solid #ccc; /* Border style */
+			border-radius: 5px; /* Rounded corners */
+			outline: none; /* Remove the default outline */
+			cursor: pointer; /* Change cursor on hover */
+			appearance: none; /* Remove default styles (for some browsers) */
+		}
+
+		/* Style for the Google Translate dropdown arrow */
+		.google-translate-widget select.goog-te-combo-arrow {
+			background-color: transparent; /* Transparent background for the arrow */
+			border-left: 1px solid #ccc; /* Add a border next to the arrow */
+			padding: 10px; /* Adjust padding to align the arrow properly */
+		}
+
+		/* Style for the options in the Google Translate dropdown */
+		.google-translate-widget select.goog-te-combo option {
+			background-color: #fff; /* Background color for options */
+			color: #333; /* Text color for options */
+		}
+
+		/* Style for the hover effect on options in the Google Translate dropdown */
+		.google-translate-widget select.goog-te-combo option:hover {
+			background-color: #f0f0f0; /* Background color on hover */
+		}
+	</style>
 	 
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+	<div id="google_translate_element" class="google-translate-widget"></div>
 	<!--Start of Tawk.to Script-->
 	<script type="text/javascript">
 		var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -45,6 +84,36 @@
 			s0.parentNode.insertBefore(s1, s0);
 		})();
 	</script>
+	<script type="text/javascript">
+		// (function googleTranslateElementInit(){
+		// 	new google.translate.TranslateElement(
+		// 		{pageLanguage:'en'},
+		// 		'google_translate_element'
+		// 	)
+		// })()
+		function loadGoogleTranslate() {
+    		var googleTranslateScript = document.createElement("script");
+    		googleTranslateScript.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    		googleTranslateScript.type = "text/javascript";
+    		googleTranslateScript.async = true;
+    		document.head.appendChild(googleTranslateScript);
+  		}
+
+  // Callback function to initialize the widget
+  		function googleTranslateElementInit() {
+    		new google.translate.TranslateElement(
+      			{
+        			pageLanguage: "en", // Source language
+        			autoDisplay: false, // Do not automatically display the widget
+      			},
+		  		"google_translate_element"
+    		);
+		}
+
+ 		 // Load the Google Translate script
+  		loadGoogleTranslate();
+	</script>
+	<!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 	<!--End of Tawk.to Script-->	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

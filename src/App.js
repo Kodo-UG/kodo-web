@@ -15,7 +15,7 @@ import BlogDetails from "./pages/Blog/BlogDetails";
 import Contact from "./pages/ContactUs/Contact";
 import PlayerProfile from "./pages/sports/FormOne";
 
-// Lazy-loaded components
+// Lazy-loaded componentss
 const Home = lazy(() => import("./pages/HomePage"));
 const AboutUs = lazy(() => import("./pages/AboutUs/index"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -35,11 +35,12 @@ const MainProfile = lazy(() => import("./pages/Dashboard/Profile"));
 const Accordion = lazy(() => import("./accordion/Accordion"));
 const RootApplication = lazy(() => import("./pages/Dashboard/applications"));
 const StepperElementTwo = lazy(() =>
-	import("./pages/Register/Scholarships/sports/StepperElementTwo")
+  import("./pages/Register/Scholarships/sports/StepperElementTwo")
 );
 const StepperElementThree = lazy(() =>
-	import("./pages/Register/Scholarships/sports/StepperElementThree.")
+  import("./pages/Register/Scholarships/sports/StepperElementThree.")
 );
+
 
 const FinalStepperElement = lazy(() =>
 	import("./pages/Register/Scholarships/sports/FinalStepperElement")
