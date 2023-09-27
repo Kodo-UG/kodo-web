@@ -7,6 +7,7 @@ import { clearScholarships } from "../../toolkit/scholarshipReducer";
 import { useDispatch } from "react-redux";
 import { clearFormData } from "../../toolkit/formReducer";
 import { clearJobData } from "../../toolkit/jobReducer";
+import { useEffect } from "react";
 
 const NavHeader = ({ open, setOpen }) => {
 	const history = useHistory();
@@ -57,11 +58,11 @@ const NavHeader = ({ open, setOpen }) => {
 			children: "Contact us"
 		},
 		
-		{
-			id: 7,
-			route: "/sports",
-			children: "Sports"
-		},
+		// {
+		// 	id: 7,
+		// 	route: "/sports",
+		// 	children: "Sports"
+		// },
 
 		{
 			id: 8,
@@ -71,14 +72,48 @@ const NavHeader = ({ open, setOpen }) => {
 
 	];
 
+// 	useEffect(() => {
+// 		var addScript = document.createElement("script");
+// 		addScript.setAttribute(
+// 		  "src",
+// 		  "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+// 		);
+// 		document.body.appendChild(addScript);
+// 		window.googleTranslateElementInit = googleTranslateElementInit;
+// 	  }, []);
+	
+// 	  const googleTranslateElementInit = () => {
+// 		new window.google.translate.TranslateElement(
+// 			{
+// 			  pageLanguage: "en",
+// 			  includedLanguages: 'en,ms,ta,zh-CN,fr,es,pt,sw,lg', 
+// 			  autoDisplay: false,
+// 			  gaTrack: true, // Add this to track translations
+// 			  multilanguagePage: true,
+// 			  disableAutoTranslation: true,
+// 			},
+// 			"google_translate_element"
+// 		  );
+
+//   const googleTranslateWidget = document.querySelector('.goog-te-menu-frame.skiptranslate');
+//   if (googleTranslateWidget) {
+//     googleTranslateWidget.style.zIndex = '999';
+//   }
+// 	  };
+	
+
 	return (
 		<nav
 			className="navbar fixed-top navbar-expand-lg navbar-light "
 			style={{
 				boxShadow: "0px 6px 13px rgba(0, 0, 0, 0.2)",
-				backgroundColor: "white"
+				backgroundColor: "white",
+				position: 'fixed',
+				zIndex: '1000'
 			}}
 		>
+
+
 			<div
 				style={{
 					width: isSm ? "100%" : "",
@@ -305,10 +340,15 @@ const NavHeader = ({ open, setOpen }) => {
 							>
 								Find Scholarships
 							</button>
+
 						</form>
 					</div>
 				</div>
 			)}
+
+{/* <div id="google_translate_element" style={{ position: 'relative', zIndex: '9999', top: '10px', right: '20px' }}>
+</div> */}
+
 		</nav>
 	);
 };
