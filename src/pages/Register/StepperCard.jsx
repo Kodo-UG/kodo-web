@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function StepperCard({ list }) {
+  
   const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
   const isMd = useMediaQuery(
