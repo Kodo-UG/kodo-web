@@ -1,59 +1,60 @@
-/* eslint-disable no-script-url */
 import React, { useState } from "react";
-import "./stepperElement.css";
+import "../stepperElement.css";
 import { useDispatch, useSelector } from "react-redux";
-import { updateFormData } from "../../../toolkit/formReducer";
 import { useHistory } from "react-router-dom";
-
-import { countries } from "../../../constants/countries";
-
+import { countries } from "../../../../constants/countries";
 import { Link } from "react-router-dom";
-import { displayErrorMessage } from "../../../utils/Toast";
+import { displayErrorMessage } from "../../../../utils/Toast";
 import * as Yup from "yup";
+import { selectSportsData, updateSportsData } from "../../../../toolkit/sportsReducer";
 
 const validationSchema = Yup.object().shape({
   country: Yup.string().required("Country is required"),
   city: Yup.string().required("City is required"),
 });
 
-function StepperElement7() {
+function StepperElementThree () {
+
+    const sportRegistration = useSelector(selectSportsData);
+    console.log("Sports Registration Data:", sportRegistration);
+
+    const dispatch = useDispatch();
+    const formData = useSelector((state) => state.formData);
+    const history = useHistory();
+    const [country, setCountry] = useState("");
+    const [preferedCountry, setPreferedCountry] = useState("");
   
-  const dispatch = useDispatch();
-  const formData = useSelector((state) => state.formData);
-  const history = useHistory();
-  const [country, setCountry] = useState("");
-  const [preferedCountry, setPreferedCountry] = useState("");
+    const handleCountryChange = (e) => {
+      setCountry(e.target.value);
+      dispatch(updateSportsData({ field: "country", value: e.target.value }));
+    };
+  
+    const handlePreferedCountryChange = (e) => {
+      setPreferedCountry(e.target.value);
+      dispatch(updateSportsData({ field: "preferedCountry", value: e.target.value }));
+    };
 
-  const handleCountryChange = (e) => {
-    setCountry(e.target.value);
-    dispatch(updateFormData({ field: "country", value: e.target.value }));
-  };
+    const handleCityChange = (e) => {
 
-
-  const handlePreferedCountryChange = (e) => {
-    setPreferedCountry(e.target.value);
-    dispatch(updateFormData({ field: "preferedCountry", value: e.target.value }));
-  };
-  const handleCityChange = (e) => {
-    const { name, value } = e.target;
-
-    dispatch(updateFormData({ field: "city", value: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      await validationSchema.validate(formData, { abortEarly: false });
-
-      history.push("/final");
-    } catch (validationErrors) {
-      const errorMessages = validationErrors.inner.map(
-        (error) => error.message
-      );
-      displayErrorMessage(errorMessages.join("\n"));
-    }
-  };
+      const { name, value } = e.target;
+  
+      dispatch(updateSportsData({ field: "city", value: value }));
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      try {
+        await validationSchema.validate(formData, { abortEarly: false });
+  
+        history.push("/sportsfinal");
+      } catch (validationErrors) {
+        const errorMessages = validationErrors.inner.map(
+          (error) => error.message
+        );
+        displayErrorMessage(errorMessages.join("\n"));
+      }
+    };
 
   return (
     <main
@@ -279,4 +280,4 @@ function StepperElement7() {
   );
 }
 
-export default StepperElement7;
+export default StepperElementThree;

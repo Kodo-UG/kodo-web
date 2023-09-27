@@ -5,7 +5,7 @@ import ScholarshipDetails from "./ScholarshipDetails";
 import Footer from "../Footer";
 
 const ScholarshipDetailsPage = () => {
-  
+
   return (
     <>
       <div style={{ background: "#f4f6f9" }} className="wrapper">
@@ -31,3 +31,5 @@ const ScholarshipDetailsPage = () => {
 };
 
 export default ScholarshipDetailsPage;
+/* eslint-disable jsx-a11y/anchor-is-valid */
+

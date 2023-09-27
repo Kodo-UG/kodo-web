@@ -56,12 +56,50 @@ const NavHeader = ({ open, setOpen }) => {
 			route: "/contactus",
 			children: "Contact us"
 		},
+		
+		// {
+		// 	id: 7,
+		// 	route: "/sports",
+		// 	children: "Sports"
+		// },
+
 		{
-			id: 7,
+			id: 8,
 			route: "/scholars",
 			children: token ? "Dashboard" : ""
 		}
+
 	];
+
+// 	useEffect(() => {
+// 		var addScript = document.createElement("script");
+// 		addScript.setAttribute(
+// 		  "src",
+// 		  "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+// 		);
+// 		document.body.appendChild(addScript);
+// 		window.googleTranslateElementInit = googleTranslateElementInit;
+// 	  }, []);
+	
+// 	  const googleTranslateElementInit = () => {
+// 		new window.google.translate.TranslateElement(
+// 			{
+// 			  pageLanguage: "en",
+// 			  includedLanguages: 'en,ms,ta,zh-CN,fr,es,pt,sw,lg', 
+// 			  autoDisplay: false,
+// 			  gaTrack: true, // Add this to track translations
+// 			  multilanguagePage: true,
+// 			  disableAutoTranslation: true,
+// 			},
+// 			"google_translate_element"
+// 		  );
+
+//   const googleTranslateWidget = document.querySelector('.goog-te-menu-frame.skiptranslate');
+//   if (googleTranslateWidget) {
+//     googleTranslateWidget.style.zIndex = '999';
+//   }
+// 	  };
+	
 
 	return (
 		<nav
@@ -301,6 +339,10 @@ const NavHeader = ({ open, setOpen }) => {
 					</div>
 				</div>
 			)}
+
+{/* <div id="google_translate_element" style={{ position: 'relative', zIndex: '9999', top: '10px', right: '20px' }}>
+</div> */}
+
 		</nav>
 	);
 };

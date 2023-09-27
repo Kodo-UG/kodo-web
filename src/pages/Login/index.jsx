@@ -48,6 +48,7 @@ export default function Login() {
 			});
 
 			console.log(data.data.user, "=");
+			// console.log(localStorage.getItem("token"))
 
 			if (data) setMessage(data?.data?.message);
 			localStorage.setItem("userID", data.data.user._id);

@@ -1,5 +1,3 @@
-
-
 import { Fragment } from "react";
 import BackgroundCarousel from "./BackgroundCarousel";
 import CardSection from "./CardSection";
@@ -7,12 +5,18 @@ import CardSection from "./CardSection";
 const Slidder = () => {
 	return (
 		<Fragment>
-			<section id="home" className="slider-area fix p-relative">
+			<section
+				// style={{ background: "black", opacity: 0.9 }}
+				id="home"
+				className="slider-area fix p-relative "
+			>
 				<BackgroundCarousel />
-				<section className="content-section">
-					
+				<section
+					style={{ background: "#eff7ff", paddingTop: ".6rem" }}
+					className="content-section"
+				>
+					<CardSection />
 				</section>
-				<CardSection />
 			</section>
 		</Fragment>
 	);

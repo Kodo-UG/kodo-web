@@ -1,14 +1,15 @@
 import { useState } from "react";
-import "./stepperElement.css";
-import { useDispatch } from "react-redux";
+import "../stepperElement.css";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import { updateFormData } from "../../../toolkit/formReducer";
+import { selectSportsData, updateSportsData } from "../../../../toolkit/sportsReducer";
 
 
-import { listArray as list } from "../../../constants/countries";
-
-function StepperElementFour() {
+function StepperElementOne() {
+  
+  const sportRegistration = useSelector(selectSportsData);
+  console.log("Sports Registration Data:", sportRegistration);
 
   const list = [
     {
@@ -67,7 +68,7 @@ function StepperElementFour() {
   );
 
   const handleClick = (text) => {
-    dispatch(updateFormData({ field: "educationlevel", value: text }));
+    dispatch(updateSportsData({ field: "educationlevel", value: text }));
   };
 
   return (
@@ -215,7 +216,7 @@ function StepperElementFour() {
                     </span>
                   </div>
                   <div className="_pageActions_pmptr_26">
-                    <Link to="/route1">
+                    <Link to="/starting">
                       <button
                         type="button"
                         className="_buttonContinue_pmptr_46 _button_pmptr_30"
@@ -308,4 +309,4 @@ function StepperElementFour() {
   );
 }
 
-export default StepperElementFour;
+export default StepperElementOne;

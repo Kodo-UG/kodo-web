@@ -3,6 +3,7 @@ import {
 	combineReducers,
 	getDefaultMiddleware
 } from "@reduxjs/toolkit";
+
 import {
 	persistStore,
 	persistReducer,
@@ -16,6 +17,7 @@ import {
 import storage from "redux-persist/lib/storage"; // Defaults to localStorage for web
 import userReducer from "./toolkit/userReducer";
 import formReducer from "./toolkit/formReducer";
+import sportsReducer from "./toolkit/sportsReducer";
 import jobReducer from "./toolkit/jobReducer";
 import scholarshipReducer from "./toolkit/scholarshipReducer";
 
@@ -23,6 +25,7 @@ import scholarshipReducer from "./toolkit/scholarshipReducer";
 const rootReducer = combineReducers({
 	user: userReducer,
 	formData: formReducer,
+	sportsData: sportsReducer,
 	jobData: jobReducer,
 	scholarship: scholarshipReducer
 });
