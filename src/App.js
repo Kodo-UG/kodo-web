@@ -114,6 +114,7 @@ const App = () => {
 				<Route exact path="/policy" component={Privacy} />
 				<Route exact path="/share" component={RSSUsage} />
 				<Route exact path="/player" component={Sports} />
+				<Route exact path="/create" component={PlayerProfile} />
 
 				<Route
 					exact
@@ -127,6 +128,10 @@ const App = () => {
 				/>
 
 				<Route exact path="/sports" component={Sports} />
+				<Route exact path="/starting" component={StepperElementTwo} />
+				<Route exact path="/residence" component={StepperElementThree} />
+				<Route exact path="/sportsfinal" component={FinalStepperElement} />
+
 				<Layout>
 					<PrivateRoute path="/payment" component={Payment} />
 					<Route exact path="/aboutus" component={AboutUs} />
