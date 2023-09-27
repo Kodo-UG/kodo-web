@@ -37,99 +37,120 @@ const RootApplication = lazy(() => import("./pages/Dashboard/applications"));
 const StepperElementTwo = lazy(() =>
 	import("./pages/Register/Scholarships/sports/StepperElementTwo")
 );
-const StepperElementThree = lazy(() => import("./pages/Register/Scholarships/sports/StepperElementThree."));
+const StepperElementThree = lazy(() =>
+	import("./pages/Register/Scholarships/sports/StepperElementThree.")
+);
 
-const FinalStepperElement = lazy(() => import("./pages/Register/Scholarships/sports/FinalStepperElement"));
+const FinalStepperElement = lazy(() =>
+	import("./pages/Register/Scholarships/sports/FinalStepperElement")
+);
 
 const StepperElementFour = lazy(() =>
-  import("./pages/Register/Scholarships/StepperElementFour")
+	import("./pages/Register/Scholarships/StepperElementFour")
 );
 const StepperElementSix = lazy(() =>
-  import("./pages/Register/Scholarships/StepperElementSix")
+	import("./pages/Register/Scholarships/StepperElementSix")
 );
 const StepperElement7 = lazy(() =>
-  import("./pages/Register/Scholarships/StepperElement7")
+	import("./pages/Register/Scholarships/StepperElement7")
 );
 const StepElement8 = lazy(() =>
-  import("./pages/Register/Scholarships/StepElement8")
+	import("./pages/Register/Scholarships/StepElement8")
 );
 const StepComfirmation = lazy(() =>
-  import("./pages/Register/Scholarships/StepComfirmation")
+	import("./pages/Register/Scholarships/StepComfirmation")
 );
 const Index = lazy(() => import("../src/pages/profile/index"));
 const Favorite = lazy(() => import("./pages/favorite"));
 
 const App = () => {
-  return (
-    <Suspense
-      fallback={
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: "18rem",
-          }}
-        >
-          <img
-            style={{
-              width: "7rem ",
-              height: "7rem",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-            src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
-            alt="middle"
-          />{" "}
-        </div>
-      }
-    >
-      <Switch>
-        <Route exact path="/index" component={Index} />
-        <Route exact path="/signin" component={Signin} />
-        <Route exact path="/login/:userId" component={Login} />
+	return (
+		<Suspense
+			fallback={
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						marginTop: "18rem"
+					}}
+				>
+					<img
+						style={{
+							width: "7rem ",
+							height: "7rem",
+							justifyContent: "center",
+							alignItems: "center"
+						}}
+						src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
+						alt="middle"
+					/>{" "}
+				</div>
+			}
+		>
+			<Switch>
+				<Route exact path="/index" component={Index} />
+				<Route exact path="/signin" component={Signin} />
+				<Route exact path="/login/:userId" component={Login} />
 
-        <Route exact path="/forgot/password" component={ForgotPassword} />
-        <Route path="/reset-password/:token" component={PasswordReset} />
-        <PrivateRoute exact path="/scholars" component={RootScholarship} />
-        <PrivateRoute exact path="/favorite" component={Favorite} />
-        <PrivateRoute exact path="/profile" component={MainProfile} />
-        <Route exact path="/route1" component={StepperElementSix} />
-        <Route exact path="/route2" component={StepperElement7} />
-        <Route exact path="/verify" component={StepComfirmation} />
-        <Route exact path="/final" component={StepElement8} />
-        <Route exact path="/stepper" component={Stepper} />
-        <Route exact path="/details/:id" component={ScholarshipDetailsPage} />
-        <Route exact path="/JobStep1" component={JobStep1} />
-        <Route exact path="/JobStep2" component={JobStep2} />
-        <Route exact path="/JobStep3" component={JobStep3} />
-        <Route exact path="/policy" component={Privacy} />
-        <Route exact path="/share" component={RSSUsage} />
-        <Route exact path="/player" component={Sports} />
+				<Route exact path="/forgot/password" component={ForgotPassword} />
+				<Route path="/reset-password/:token" component={PasswordReset} />
+				<PrivateRoute exact path="/scholars" component={RootScholarship} />
+				<PrivateRoute exact path="/favorite" component={Favorite} />
+				<PrivateRoute exact path="/profile" component={MainProfile} />
+				<Route exact path="/route1" component={StepperElementSix} />
+				<Route exact path="/route2" component={StepperElement7} />
+				<Route exact path="/verify" component={StepComfirmation} />
+				<Route exact path="/final" component={StepElement8} />
+				<Route exact path="/stepper" component={Stepper} />
+				<Route
+					exact
+					path="/details/:id"
+					component={ScholarshipDetailsPage}
+				/>
+				<Route exact path="/JobStep1" component={JobStep1} />
+				<Route exact path="/JobStep2" component={JobStep2} />
+				<Route exact path="/JobStep3" component={JobStep3} />
+				<Route exact path="/policy" component={Privacy} />
+				<Route exact path="/share" component={RSSUsage} />
+				<Route exact path="/player" component={Sports} />
 
-        <Route exact path="/educationlevel" component={StepperElementFour} />
-        <PrivateRoute exact path="/applications" component={RootApplication} />
+				<Route
+					exact
+					path="/educationlevel"
+					component={StepperElementFour}
+				/>
+				<PrivateRoute
+					exact
+					path="/applications"
+					component={RootApplication}
+				/>
 
-        <Layout>
-          <PrivateRoute path="/payment" component={Payment} />
-          <Route exact path="/sports" component={Sports} />
-          <Route exact path="/aboutus" component={AboutUs} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/blog" component={Blog} />
-          <Route exact path="/blog/:id" component={BlogDetails} />
-          <Route exact path="/admissions" component={FindScholarship} />
-          <Route exact path="/admissions/:userId" component={FindScholarship} />
+				<Route exact path="/sports" component={Sports} />
+				<Layout>
+					<PrivateRoute path="/payment" component={Payment} />
+					<Route exact path="/aboutus" component={AboutUs} />
+					<Route exact path="/login" component={Login} />
+					<Route exact path="/blog" component={Blog} />
+					<Route exact path="/blog/:id" component={BlogDetails} />
+					<Route exact path="/admissions" component={FindScholarship} />
+					<Route exact path="/sport" component={SportsUI} />
+					<Route
+						exact
+						path="/admissions/:userId"
+						component={FindScholarship}
+					/>
 
-          <Route exact path="/contactus" component={Main} />
-          <Route exact path="/payjobs" component={PaymentJobs} />
-          {/* <Route exact path="/contactus" component={ContactUs} /> */}
-          <Route exact path="/scholarships" component={Accordion} />
-          <Route exact path="/testimonals" component={Testimonals} />
-          <Route exact path="/" component={Home} />
-        </Layout>
-      </Switch>
-    </Suspense>
-  );
+					<Route exact path="/contactus" component={Main} />
+					<Route exact path="/payjobs" component={PaymentJobs} />
+					{/* <Route exact path="/contactus" component={ContactUs} /> */}
+					<Route exact path="/scholarships" component={Accordion} />
+					<Route exact path="/testimonals" component={Testimonals} />
+					<Route exact path="/" component={Home} />
+				</Layout>
+			</Switch>
+		</Suspense>
+	);
 };
 
 export default App;
