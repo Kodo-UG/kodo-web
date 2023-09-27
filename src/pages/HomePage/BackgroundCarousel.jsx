@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./bg.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 const BackgroundCarousel = () => {
@@ -15,6 +15,7 @@ const BackgroundCarousel = () => {
 	const isExtraLargeDevice = useMediaQuery(
 		"only screen and (min-width : 1201px)"
 	);
+
 	return (
 		<Carousel interval={9900} slide={true}>
 			<Carousel.Item>
@@ -241,7 +242,7 @@ const BackgroundCarousel = () => {
 									fontSize: isSmallDevice ? "40px" : "55px",
 									fontWeight: "bolder",
 									color: "#1c2755",
-									marginTop:isSmallDevice ? "18rem" : "",
+									marginTop: isSmallDevice ? "18rem" : "",
 									fontFamily: "Jost, sans-serif",
 									lineHeight: isSmallDevice ? "50px" : "72px",
 									fontStyle: "normal"
@@ -272,14 +273,15 @@ const BackgroundCarousel = () => {
 							</h5>
 							<div
 								style={{
-									width: isSmallDevice || isMediumDevice ? "100%" : "50%",
+									width:
+										isSmallDevice || isMediumDevice ? "100%" : "50%",
 									padding: ".1rem",
-									marginTop:isSmallDevice ? "18rem" : "",
-									display:"flex"
+									marginTop: isSmallDevice ? "18rem" : "",
+									display: "flex"
 								}}
 							>
 								{/* <div></div> */}
-								<Link to="/jobStep1">
+								<Link to="#">
 									<button
 										type="button"
 										className="btn btn-lg btn-primary"
@@ -300,7 +302,7 @@ const BackgroundCarousel = () => {
 										{/* <i className="fal fa-long-arrow-right"></i> */}
 									</button>
 								</Link>
-								<Link to="/jobStep1">
+								<Link to="/player">
 									<button
 										type="button"
 										className="btn btn-lg btn-primary"
