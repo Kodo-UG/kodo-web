@@ -262,6 +262,7 @@ const BackgroundCarousel = () => {
 								UNLOCK YOUR <br />
 								POTENTIAL
 							</h1>
+
 							<h5
 								style={{
 									color: "#1c2755",
@@ -285,11 +286,11 @@ const BackgroundCarousel = () => {
 									width:
 										isSmallDevice || isMediumDevice ? "100%" : "50%",
 									padding: ".1rem",
-									marginTop: isSmallDevice ? "18rem" : "",
+									marginTop: isSmallDevice ? "1rem" : "",
 									display: "flex"
 								}}
 							>
-								{/* <div></div> */}
+							
 								<Link to="#">
 									<button
 										type="button"
