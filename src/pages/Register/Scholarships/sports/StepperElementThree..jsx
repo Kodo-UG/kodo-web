@@ -28,7 +28,7 @@ function StepperElementThree() {
 	const [country, setCountry] = useState("");
 	const [preferedCountry, setPreferedCountry] = useState("");
 	const [data, setData] = useState([]);
-	const [sportcategory, setSportCategory] = useState("");
+	const [sportcategory, setSportCategory] = useState(null);
 
 	const fetchSports = async () => {
 		try {
@@ -50,9 +50,10 @@ function StepperElementThree() {
 	};
 
 	const handleSportCatChange = (e) => {
-		setSportCategory(e.target.value);
+		const selectedCategoryId = e.target.value;
+		setSportCategory(selectedCategoryId);
 		dispatch(
-			updateSportsData({ field: "sportcategory", value: e.target.value })
+			updateSportsData({ field: "sportcategory", value: selectedCategoryId })
 		);
 	};
 
@@ -214,7 +215,7 @@ function StepperElementThree() {
 													Select sport category
 												</option>
 												{data.map((sp) => (
-													<option key={sp.id} value={sp.name}>
+													<option key={sp._id} value={sp._id}>
 														{sp.name}
 													</option>
 												))}

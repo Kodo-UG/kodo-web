@@ -47,12 +47,12 @@ export default function Login() {
 				password
 			});
 
-			console.log(data.data.user, "=");
 
 			if (data) setMessage(data?.data?.message);
 			localStorage.setItem("userID", data.data.user._id);
 
-			if (data.status === "201") {
+			if (data.status === 201) {
+				console.log(data.data.user,"am")
 				localStorage.setItem("userData", JSON.stringify(data.data));
 				displaySuccessMessage("Login successful");
 				localStorage.setItem("token", data.data.token);

@@ -29,7 +29,7 @@ const validationSchema = Yup.object().shape({
 function FinalStepperElement() {
 
   const formData = useSelector(selectSportsData);
-  console.log("Sports Registration Data:", formData);
+  // console.log("Sports Registration Data:", formData);
 
   const history = useHistory();
   const [loading, setLoading] = useState(false);
