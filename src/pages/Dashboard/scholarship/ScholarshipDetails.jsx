@@ -11,6 +11,7 @@ import {
   displaySuccessNotification,
 } from "../../../utils/Toast";
 import { Link } from "react-router-dom";
+import truncateText from "../../../utils/truncate";
 
 const ScholarshipDetails = () => {
   const location = useLocation();
@@ -70,14 +71,6 @@ const ScholarshipDetails = () => {
     }
   };
 
-  const truncateText = (text, maxWords) => {
-    const wordsArray = text.split(" ");
-    if (wordsArray.length > maxWords) {
-      return wordsArray.slice(0, maxWords).join(" ") + "...";
-    } else {
-      return text;
-    }
-  };
 
   useEffect(() => {
     getScholarship();

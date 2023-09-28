@@ -114,6 +114,7 @@ const Contact = () => {
                 <p
                   style={{
                     fontWeight: "normal",
+                    color: "white",
                     fontSize: isSm ? "" : "1.5rem",
                     lineHeight: isSm ? "" : "25px",
                   }}
@@ -125,6 +126,7 @@ const Contact = () => {
                   style={{
                     width: "auto",
                     maxWidth: "15rem",
+                    color: "white",
                     fontWeight: "normal",
                     lineHeight: isSm ? "" : "25px",
                   }}

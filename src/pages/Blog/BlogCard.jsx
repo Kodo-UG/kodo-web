@@ -1,16 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import KodoImageLoader from "../../components/KodoImageLoader";
+import truncateText from "../../utils/truncate";
 
 function BlogCard({ image, blogType, tittle, text, id ,data}) {
-  const truncateText = (text, maxWords) => {
-    const wordsArray = text.split(" ");
-    if (wordsArray.length > maxWords) {
-      return wordsArray.slice(0, maxWords).join(" ") + "...";
-    } else {
-      return text;
-    }
-  };
 
   return (
     <div class="">

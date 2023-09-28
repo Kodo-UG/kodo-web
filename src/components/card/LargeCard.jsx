@@ -5,6 +5,7 @@ import { useState } from "react";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
 import axiosInstance from "../../api/axiosInstance";
+import truncateText from "../../utils/truncate";
 
 const LargeCard = ({
   formatDate,
@@ -35,14 +36,6 @@ const LargeCard = ({
     setVisible(!visible);
   };
 
-  const truncateText = (text, maxWords) => {
-    const wordsArray = text.split(" ");
-    if (wordsArray.length > maxWords) {
-      return wordsArray.slice(0, maxWords).join(" ") + "...";
-    } else {
-      return text;
-    }
-  };
 
   const handleApply = async (id) => {
     try {

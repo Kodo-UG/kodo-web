@@ -17,7 +17,7 @@ const CustomLink = ({ route, children }) => {
 						color: "#162542",
 						fontFamily: "Jost, sans-serif",
 						fontWeight: "600",
-						fontSize: "1rem"
+						fontSize: "1.5rem"
 					}}
 				>
 					{children}
