@@ -3,6 +3,7 @@ import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
 import { Modal } from "antd";
 import { useMediaQuery } from "@uidotdev/usehooks";
+import truncateText from "../../utils/truncate";
 
 function SmallAcreen({
 	cardTitle,
@@ -31,14 +32,7 @@ function SmallAcreen({
 	const timeDifference = deadlineDate.getTime() - today.getTime();
 	const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
 
-	const truncateText = (text, maxWords) => {
-		const wordsArray = text?.split(" ");
-		if (wordsArray?.length > maxWords) {
-			return wordsArray.slice(0, maxWords).join(" ") + "...";
-		} else {
-			return text;
-		}
-	};
+	
 
 	return (
 		<div

@@ -5,7 +5,9 @@ import { Link, useHistory } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 const BackgroundCarousel = () => {
+
 	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+
 	const isMediumDevice = useMediaQuery(
 		"only screen and (min-width : 769px) and (max-width : 992px)"
 	);
@@ -15,6 +17,9 @@ const BackgroundCarousel = () => {
 	const isExtraLargeDevice = useMediaQuery(
 		"only screen and (min-width : 1201px)"
 	);
+
+	
+
 
 	return (
 		<Carousel interval={9900} slide={true}>
@@ -99,7 +104,7 @@ const BackgroundCarousel = () => {
 											fontFamily: "Roboto, sans-serif;",
 											lineHeight: "16px",
 											fontStyle: "normal",
-											padding: "0.8rem"
+											padding: "1.5rem"
 										}}
 									>
 										Find Scholarships Now{" "}
@@ -190,7 +195,7 @@ const BackgroundCarousel = () => {
 											fontFamily: "Roboto, sans-serif;",
 											lineHeight: "16px",
 											fontStyle: "normal",
-											padding: "0.8rem"
+											padding: "1.5rem"
 										}}
 									>
 										Find Jobs Now{" "}
@@ -241,7 +246,9 @@ const BackgroundCarousel = () => {
 								style={{
 									fontSize: isSmallDevice ? "40px" : "55px",
 									fontWeight: "bolder",
-									color: "#1c2755",
+									width: "auto",
+									maxWidth: isMediumDevice ? "100%":"600px",
+									padding: "20px",
 									marginTop: isSmallDevice ? "18rem" : "",
 									fontFamily: "Jost, sans-serif",
 									lineHeight: isSmallDevice ? "50px" : "72px",
@@ -249,6 +256,8 @@ const BackgroundCarousel = () => {
 								}}
 								data-swiper-animation="fadeInUp"
 								data-delay=".4s"
+
+								className="carousel-text"
 							>
 								UNLOCK YOUR <br />
 								POTENTIAL
@@ -302,7 +311,7 @@ const BackgroundCarousel = () => {
 										{/* <i className="fal fa-long-arrow-right"></i> */}
 									</button>
 								</Link>
-								<Link to="/player">
+								<Link to="#">
 									<button
 										type="button"
 										className="btn btn-lg btn-primary"
