@@ -5,7 +5,6 @@ import { Link, useHistory } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 const BackgroundCarousel = () => {
-
 	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 
 	const isMediumDevice = useMediaQuery(
@@ -17,9 +16,6 @@ const BackgroundCarousel = () => {
 	const isExtraLargeDevice = useMediaQuery(
 		"only screen and (min-width : 1201px)"
 	);
-
-	
-
 
 	return (
 		<Carousel interval={9900} slide={true}>
@@ -207,138 +203,139 @@ const BackgroundCarousel = () => {
 					</div>
 				</div>
 			</Carousel.Item>
-
-			<Carousel.Item>
-				<div
-					className="d-block "
-					style={{
-						backgroundImage:
-							'url("https://res.cloudinary.com/itgenius/image/upload/v1695301943/h3-rev-img-2_wrcet7.png")',
-						backgroundSize: "contain",
-						backgroundPosition: "right",
-						filter: "brightness(95%)",
-						height: "90vh",
-						backgroundRepeat: "no-repeat",
-						width: "100%"
-					}}
-				>
-					<div
-						className="container h-100"
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							alignItems: "start",
-							// background: "black",
-							// opacity: 0.2,
-							width: "100%"
-						}}
-					>
-						<div
-							className="h-100 textContainer"
-							style={{
-								width: "75%",
-								display: "flex",
-								flexDirection: "column",
-								justifyContent: "center"
-							}}
-						>
-							<h1
-								style={{
-									fontSize: isSmallDevice ? "40px" : "55px",
-									fontWeight: "bolder",
-									width: "auto",
-									maxWidth: isMediumDevice ? "100%":"600px",
-									padding: "20px",
-									marginTop: isSmallDevice ? "18rem" : "",
-									fontFamily: "Jost, sans-serif",
-									lineHeight: isSmallDevice ? "50px" : "72px",
-									fontStyle: "normal"
-								}}
-								data-swiper-animation="fadeInUp"
-								data-delay=".4s"
-
-								className="carousel-text"
-							>
-								UNLOCK YOUR <br />
-								POTENTIAL
-							</h1>
-							<h5
-								style={{
-									color: "#1c2755",
-									width: "60%",
-									marginBottom: "4rem",
-									fontSize: "16px",
-									fontWeight: "bold",
-									// fontFamily: "Jost, sans-serif",
-									lineHeight: "22px",
-									fontStyle: "normal"
-								}}
-								data-swiper-animation="fadeInUp"
-								data-delay=".4s"
-								className="d-md-block d-none"
-							>
-								We help high school athletes get recruited to play the
-								sports they love in college.
-							</h5>
-							<div
-								style={{
-									width:
-										isSmallDevice || isMediumDevice ? "100%" : "50%",
-									padding: ".1rem",
-									marginTop: isSmallDevice ? "18rem" : "",
-									display: "flex"
-								}}
-							>
-								{/* <div></div> */}
-								<Link to="#">
-									<button
-										type="button"
-										className="btn btn-lg btn-primary"
-										style={{
-											borderRadius: "2rem",
-											background: "#EB1E5E",
-											border: "none",
-											fontSize: "16px",
-											fontWeight: "bold",
-											color: "#fff",
-											fontFamily: "Roboto, sans-serif;",
-											lineHeight: "16px",
-											fontStyle: "normal",
-											padding: "1.5rem"
-										}}
-									>
-										Parents Start Here{" "}
-										{/* <i className="fal fa-long-arrow-right"></i> */}
-									</button>
-								</Link>
-								<Link to="#">
-									<button
-										type="button"
-										className="btn btn-lg btn-primary"
-										style={{
-											borderRadius: "2rem",
-											background: "#1c2755",
-											border: "none",
-											fontSize: "16px",
-											fontWeight: "bold",
-											color: "#fff",
-											fontFamily: "Roboto, sans-serif;",
-											lineHeight: "16px",
-											fontStyle: "normal",
-											padding: "1.5rem",
-											marginLeft: "1rem"
-										}}
-									>
-										Atheletes Start Here{" "}
-									</button>
-								</Link>
-							</div>
-						</div>
-					</div>
-				</div>
-			</Carousel.Item>
 		</Carousel>
 	);
 };
 
 export default BackgroundCarousel;
+
+// <Carousel.Item>
+// 	<div
+// 		className="d-block "
+// 		style={{
+// 			backgroundImage:
+// 				'url("https://res.cloudinary.com/itgenius/image/upload/v1695301943/h3-rev-img-2_wrcet7.png")',
+// 			backgroundSize: "contain",
+// 			backgroundPosition: "right",
+// 			filter: "brightness(95%)",
+// 			height: "90vh",
+// 			backgroundRepeat: "no-repeat",
+// 			width: "100%"
+// 		}}
+// 	>
+// 		<div
+// 			className="container h-100"
+// 			style={{
+// 				display: "flex",
+// 				flexDirection: "column",
+// 				alignItems: "start",
+// 				// background: "black",
+// 				// opacity: 0.2,
+// 				width: "100%"
+// 			}}
+// 		>
+// 			<div
+// 				className="h-100 textContainer"
+// 				style={{
+// 					width: "75%",
+// 					display: "flex",
+// 					flexDirection: "column",
+// 					justifyContent: "center"
+// 				}}
+// 			>
+// 				<h1
+// 					style={{
+// 						fontSize: isSmallDevice ? "40px" : "55px",
+// 						fontWeight: "bolder",
+// 						width: "auto",
+// 						maxWidth: isMediumDevice ? "100%":"600px",
+// 						padding: "20px",
+// 						marginTop: isSmallDevice ? "18rem" : "",
+// 						fontFamily: "Jost, sans-serif",
+// 						lineHeight: isSmallDevice ? "50px" : "72px",
+// 						fontStyle: "normal"
+// 					}}
+// 					data-swiper-animation="fadeInUp"
+// 					data-delay=".4s"
+
+// 					className="carousel-text"
+// 				>
+// 					UNLOCK YOUR <br />
+// 					POTENTIAL
+// 				</h1>
+
+// 				<h5
+// 					style={{
+// 						color: "#1c2755",
+// 						width: "60%",
+// 						marginBottom: "4rem",
+// 						fontSize: "16px",
+// 						fontWeight: "bold",
+// 						// fontFamily: "Jost, sans-serif",
+// 						lineHeight: "22px",
+// 						fontStyle: "normal"
+// 					}}
+// 					data-swiper-animation="fadeInUp"
+// 					data-delay=".4s"
+// 					className="d-md-block d-none"
+// 				>
+// 					We help high school athletes get recruited to play the
+// 					sports they love in college.
+// 				</h5>
+// 				<div
+// 					style={{
+// 						width:
+// 							isSmallDevice || isMediumDevice ? "100%" : "50%",
+// 						padding: ".1rem",
+// 						marginTop: isSmallDevice ? "1rem" : "",
+// 						display: "flex"
+// 					}}
+// 				>
+
+// 					<Link to="#">
+// 						<button
+// 							type="button"
+// 							className="btn btn-lg btn-primary"
+// 							style={{
+// 								borderRadius: "2rem",
+// 								background: "#EB1E5E",
+// 								border: "none",
+// 								fontSize: "16px",
+// 								fontWeight: "bold",
+// 								color: "#fff",
+// 								fontFamily: "Roboto, sans-serif;",
+// 								lineHeight: "16px",
+// 								fontStyle: "normal",
+// 								padding: "1.5rem"
+// 							}}
+// 						>
+// 							Parents Start Here{" "}
+// 							{/* <i className="fal fa-long-arrow-right"></i> */}
+// 						</button>
+// 					</Link>
+// 					<Link to="#">
+// 						<button
+// 							type="button"
+// 							className="btn btn-lg btn-primary"
+// 							style={{
+// 								borderRadius: "2rem",
+// 								background: "#1c2755",
+// 								border: "none",
+// 								fontSize: "16px",
+// 								fontWeight: "bold",
+// 								color: "#fff",
+// 								fontFamily: "Roboto, sans-serif;",
+// 								lineHeight: "16px",
+// 								fontStyle: "normal",
+// 								padding: "1.5rem",
+// 								marginLeft: "1rem"
+// 							}}
+// 						>
+// 							Atheletes Start Here{" "}
+// 						</button>
+// 					</Link>
+// 				</div>
+// 			</div>
+// 		</div>
+// 	</div>
+// </Carousel.Item>
