@@ -189,7 +189,7 @@ const NavHeader = ({ open, setOpen }) => {
 										marginBottom: "0px",
 										fontFamily: "Roboto, sans-serif",
 										fontSize: "16px",
-										textTransform: "lowercase"
+										
 									}}
 									onClick={(e) => {
 										e.preventDefault();
@@ -202,7 +202,7 @@ const NavHeader = ({ open, setOpen }) => {
 										history.push("/login");
 									}}
 								>
-									logout
+									log out
 								</button>
 							) : (
 								<button
@@ -218,7 +218,7 @@ const NavHeader = ({ open, setOpen }) => {
 										paddingRight: "20px",
 										fontFamily: "Roboto, sans-serif",
 										fontSize: "16px",
-										textTransform: "lowercase"
+										
 									}}
 								>
 									login
@@ -315,7 +315,7 @@ const NavHeader = ({ open, setOpen }) => {
 										paddingRight: "20px",
 										fontFamily: "Roboto, sans-serif",
 										fontSize: "16px",
-										textTransform: "lowercase"
+										
 									}}
 								>
 									login

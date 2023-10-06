@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect } from "react";
+import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout";
 import PrivateRoute from "./utils/PrivateRoute";
@@ -10,9 +10,7 @@ import SportsUI from "./pages/Sports/Sports";
 import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
 import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
-import { googleTranslateElementInit } from "./googleTranslate";
 import BlogDetails from "./pages/Blog/BlogDetails";
-import Contact from "./pages/ContactUs/Contact";
 import PlayerProfile from "./pages/sports/FormOne";
 
 // Lazy-loaded componentss
