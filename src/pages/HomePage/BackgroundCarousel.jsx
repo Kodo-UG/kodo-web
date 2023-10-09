@@ -1,24 +1,24 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./bg.css";
-import { Link, useHistory } from "react-router-dom";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { Link } from "react-router-dom";
+// import { useMediaQuery } from "@uidotdev/usehooks";
 
 const BackgroundCarousel = () => {
-	const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+	// const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 
-	const isMediumDevice = useMediaQuery(
-		"only screen and (min-width : 769px) and (max-width : 992px)"
-	);
-	const isLargeDevice = useMediaQuery(
-		"only screen and (min-width : 993px) and (max-width : 1200px)"
-	);
-	const isExtraLargeDevice = useMediaQuery(
-		"only screen and (min-width : 1201px)"
-	);
+	// const isMediumDevice = useMediaQuery(
+	// 	"only screen and (min-width : 769px) and (max-width : 992px)"
+	// );
+	// const isLargeDevice = useMediaQuery(
+	// 	"only screen and (min-width : 993px) and (max-width : 1200px)"
+	// );
+	// const isExtraLargeDevice = useMediaQuery(
+	// 	"only screen and (min-width : 1201px)"
+	// );
 
 	return (
-		<Carousel interval={9900} slide={true}>
+		<Carousel  interval={9900} slide={true}>
 			<Carousel.Item>
 				<div
 					className="d-block w-100"
