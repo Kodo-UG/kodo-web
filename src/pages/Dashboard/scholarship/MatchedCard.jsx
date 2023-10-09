@@ -77,20 +77,22 @@ const MatchedCard = ({ title, total }) => {
                                 alignItems: "center",
                                 width: "100%",
                                 display: "flex",
+                            
                                
                             }}
                         >
                             {" "}
                             <div
                                 className="card"
-                                style={{ width: isMd ? "84%" : "65%", marginTop: "6rem" }}
+                                style={{ width: isMd ? "84%" : ""|| isSm? "100%": "65%", marginTop: "6rem",  }}
                             >
                                 <div
                                     style={{
-                                        display: "flex",
+                                        display: isSm? "": "flex",
                                         justifyContent: "space-between",
                                         
-                                        alignItems:"center"
+                                        alignItems:"center",
+                                
                                       
                                     }}
                                     className="card-body"
@@ -124,7 +126,7 @@ const MatchedCard = ({ title, total }) => {
                                             display: "flex",
                                             flexDirection: "column",
                                             justifyContent: "space-between",
-                                            width: "60%",
+                                            width: isSm? "": "60%",
                                             background:"white"
                                         }}
                                     >
