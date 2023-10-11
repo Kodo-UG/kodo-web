@@ -25,7 +25,6 @@ const FindScholarship = () => {
   const [freeScholarships, setFreeScholarships] = useState([]);
   const [apply, setApply] = useState(false);
   const [pageNumber, setPageNumber] = useState(1);
-  const history = useHistory();
 
   const getFreeScholarships = async () => {
     try {
@@ -33,7 +32,7 @@ const FindScholarship = () => {
         `${BASE_URL}/scholarship/free/scholarships?page=${pageNumber}`,
         config
       );
-      console.log(res?.data.data, "==-----");
+      // console.log(res?.data.data, "==-----");
 
       setFreeScholarships(res.data.data);
     } catch (error) {
