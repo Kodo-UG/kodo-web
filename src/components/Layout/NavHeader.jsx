@@ -19,11 +19,9 @@ const NavHeader = ({ open, setOpen }) => {
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		if (token) {
+		if (token || !token) {
 			history.push("/scholars");
-		} else {
-			history.push("/admissions");
-		}
+		} 
 	};
 
 	const routeData = [
