@@ -1,7 +1,10 @@
-function truncateText(text, maxLength) {
-  if (text && typeof text === "string") {
-    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+const truncateText = (text, maxWords) => {
+  const wordsArray = text.split(" ");
+  if (wordsArray.length > maxWords) {
+    return wordsArray.slice(0, maxWords).join(" ") + "...";
+  } else {
+    return text;
   }
-  return ""; // Handle undefined or null text gracefully
-}
+};
+
 export default truncateText;
