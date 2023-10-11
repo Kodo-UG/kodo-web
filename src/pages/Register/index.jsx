@@ -11,6 +11,7 @@ import MapCardData from "../Dashboard/scholarship/MapCardData";
 import { useHistory } from "react-router-dom";
 import FreeScholarshipLarge from "../../components/card/FreeScholarshipLarge";
 import FreeScholarship from "../../components/card/FreeScholarship";
+import truncateText from "../../utils/truncate";
 
 const config = {
   headers: {
@@ -121,7 +122,7 @@ const FindScholarship = () => {
                   cardTitle={dta.title}
                   id={dta._id}
                   link={dta.link}
-                  about={dta.about}
+                  about={truncateText(dta.about, 10)}
                   type="Award"
                   handleRoute={handleRoute}
                 />
@@ -134,7 +135,7 @@ const FindScholarship = () => {
                   cardTitle={dta.title}
                   id={dta._id}
                   link={dta.link}
-                  about={dta.about}
+                  about={truncateText(dta.about, 10)}
                   type="Award"
                   handleRoute={handleRoute}
                 />
