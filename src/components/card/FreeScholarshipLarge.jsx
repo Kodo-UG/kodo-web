@@ -6,21 +6,20 @@ import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
 import truncateText from "../../utils/truncate";
 
 const FreeScholarshipLarge = ({
-  formatDate,
   cardTitle,
-  subText,
   award,
   link,
   about,
   id,
   onClick,
+  days,
   handleRoute,
+  deadline,
 }) => {
-  const date = new Date(formatDate);
+  const date = new Date(deadline);
   const formattedDate = date.toLocaleDateString();
-
   const today = new Date();
-  const deadlineDate = new Date(formatDate);
+  const deadlineDate = new Date(deadline);
   const timeDifference = deadlineDate.getTime() - today.getTime();
   const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
 

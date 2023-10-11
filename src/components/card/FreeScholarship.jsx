@@ -15,7 +15,6 @@ export default function FreeScholarship({
 }) {
   const date = new Date(deadline);
   const formattedDate = date.toLocaleDateString();
-  const [visible, setVisible] = useState(false);
   const today = new Date();
   const deadlineDate = new Date(deadline);
   const timeDifference = deadlineDate.getTime() - today.getTime();
