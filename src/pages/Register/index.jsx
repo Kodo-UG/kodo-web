@@ -121,7 +121,7 @@ const FindScholarship = () => {
                   cardTitle={dta.title}
                   id={dta._id}
                   link={dta.link}
-                  about={truncateText(dta.about, 10)}
+                  about={truncateText(dta.about, 7)}
                   type="Award"
                   handleRoute={handleRoute}
                 />
@@ -134,7 +134,7 @@ const FindScholarship = () => {
                   cardTitle={dta.title}
                   id={dta._id}
                   link={dta.link}
-                  about={truncateText(dta.about, 10)}
+                  about={truncateText(dta.about, 7)}
                   type="Award"
                   handleRoute={handleRoute}
                 />

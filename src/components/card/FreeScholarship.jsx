@@ -138,7 +138,7 @@ export default function FreeScholarship({
                 fontSize: "1.3rem",
               }}
             >
-              {truncateText(award)}
+              {award}
             </p>
           </div>
           <div className="d-flex flex-column align-items-center">
