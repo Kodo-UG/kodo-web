@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import truncateText from "../../utils/truncate";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 

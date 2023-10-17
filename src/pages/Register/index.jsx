@@ -6,12 +6,10 @@ import { updateFormData } from "../../toolkit/formReducer";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import CombinedScholarshipCard from "../Dashboard/scholarship/CombinedScholarshipCard";
-import MapCardData from "../Dashboard/scholarship/MapCardData";
-import { useHistory } from "react-router-dom";
 import FreeScholarshipLarge from "../../components/card/FreeScholarshipLarge";
 import FreeScholarship from "../../components/card/FreeScholarship";
 import truncateText from "../../utils/truncate";
+import { useHistory } from "react-router-dom";
 
 const config = {
   headers: {
@@ -22,6 +20,7 @@ const config = {
 const FindScholarship = () => {
   const isSm = useMediaQuery("only screen and (max-width : 700px)");
   const dispatch = useDispatch();
+  const history = useHistory();
   const [freeScholarships, setFreeScholarships] = useState([]);
   const [apply, setApply] = useState(false);
   const [pageNumber, setPageNumber] = useState(1);
@@ -95,7 +94,8 @@ const FindScholarship = () => {
   };
 
   const handleRoute = () => {
-    setApply(true);
+    setApply(false);
+    history.push("/stepper");
   };
 
   return (

@@ -3,16 +3,12 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { Button } from "antd";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
-import truncateText from "../../utils/truncate";
 
 const FreeScholarshipLarge = ({
   cardTitle,
   award,
-  link,
   about,
-  id,
   onClick,
-  days,
   handleRoute,
   deadline,
 }) => {
