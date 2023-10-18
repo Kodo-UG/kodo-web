@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import StepperCard from "./StepperCard";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
@@ -9,7 +8,6 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import FreeScholarshipLarge from "../../components/card/FreeScholarshipLarge";
 import FreeScholarship from "../../components/card/FreeScholarship";
 import truncateText from "../../utils/truncate";
-import { useHistory } from "react-router-dom";
 
 const config = {
   headers: {
@@ -18,11 +16,10 @@ const config = {
 };
 
 const FindScholarship = () => {
+  const history = useHistory();
   const isSm = useMediaQuery("only screen and (max-width : 700px)");
   const dispatch = useDispatch();
-  const history = useHistory();
   const [freeScholarships, setFreeScholarships] = useState([]);
-  const [apply, setApply] = useState(false);
   const [pageNumber, setPageNumber] = useState(1);
 
   const getFreeScholarships = async () => {
@@ -42,29 +39,29 @@ const FindScholarship = () => {
   const params = useParams();
   const userId = params.userId;
 
-  const object = [
-    {
-      id: 1,
-      title: "Scholarships",
-      text: "We’ve helped students win more than $10 million dollars in scholarships.",
-      link: "/stepper",
-      Button: "Sign Up",
-    },
-    {
-      id: 2,
-      title: "Jobs",
-      text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
-      link: "/JobStep1",
-      Button: "Sign Up",
-    },
-    // {
-    // 	id: 3,
-    // 	title: "Sports",
-    // 	text: "Sign up for sports scholarship",
-    // 	link: "/player",
-    // 	Button: "Sign Up"
-    // }
-  ];
+  // const object = [
+  //   {
+  //     id: 1,
+  //     title: "Scholarships",
+  //     text: "We’ve helped students win more than $10 million dollars in scholarships.",
+  //     link: "/stepper",
+  //     Button: "Sign Up",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Jobs",
+  //     text: "Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo",
+  //     link: "/JobStep1",
+  //     Button: "Sign Up",
+  //   },
+  //   // {
+  //   // 	id: 3,
+  //   // 	title: "Sports",
+  //   // 	text: "Sign up for sports scholarship",
+  //   // 	link: "/player",
+  //   // 	Button: "Sign Up"
+  //   // }
+  // ];
 
   useEffect(() => {
     dispatch(updateFormData({ field: "refer", value: userId }));
@@ -94,7 +91,6 @@ const FindScholarship = () => {
   };
 
   const handleRoute = () => {
-    setApply(false);
     history.push("/stepper");
   };
 
@@ -108,39 +104,35 @@ const FindScholarship = () => {
         justifyContent: "center",
       }}
     >
-      {apply ? (
-        <StepperCard list={object} />
-      ) : (
-        <div style={{ padding: isSm ? "2rem" : "", width: "100%" }}>
-          {isSm
-            ? freeScholarships?.map((dta) => (
-                <FreeScholarship
-                  key={dta._id}
-                  award={dta.award}
-                  deadline={dta.deadline}
-                  cardTitle={dta.title}
-                  id={dta._id}
-                  link={dta.link}
-                  about={truncateText(dta.about, 7)}
-                  type="Award"
-                  handleRoute={handleRoute}
-                />
-              ))
-            : freeScholarships?.map((dta) => (
-                <FreeScholarshipLarge
-                  key={dta._id}
-                  award={dta.award}
-                  deadline={dta.deadline}
-                  cardTitle={dta.title}
-                  id={dta._id}
-                  link={dta.link}
-                  about={truncateText(dta.about, 7)}
-                  type="Award"
-                  handleRoute={handleRoute}
-                />
-              ))}
-        </div>
-      )}
+      <div style={{ padding: isSm ? "2rem" : "", width: "100%" }}>
+        {isSm
+          ? freeScholarships?.map((dta) => (
+              <FreeScholarship
+                key={dta._id}
+                award={dta.award}
+                deadline={dta.deadline}
+                cardTitle={dta.title}
+                id={dta._id}
+                link={dta.link}
+                about={truncateText(dta.about, 7)}
+                type="Award"
+                handleRoute={handleRoute}
+              />
+            ))
+          : freeScholarships?.map((dta) => (
+              <FreeScholarshipLarge
+                key={dta._id}
+                award={dta.award}
+                deadline={dta.deadline}
+                cardTitle={dta.title}
+                id={dta._id}
+                link={dta.link}
+                about={truncateText(dta.about, 7)}
+                type="Award"
+                handleRoute={handleRoute}
+              />
+            ))}
+      </div>
     </div>
   );
 };
