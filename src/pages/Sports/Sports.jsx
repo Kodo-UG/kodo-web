@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./sports.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
 const Sports = () => {
@@ -15,6 +15,8 @@ const Sports = () => {
 	const isExtraLargeDevice = useMediaQuery(
 		"only screen and (min-width : 1201px)"
 	);
+
+	const history = useHistory();
 	return (
 		<div>
 			<Carousel interval={9900} slide={true}>
@@ -99,7 +101,7 @@ const Sports = () => {
 									}}
 								>
 									{/* <div></div> */}
-									<Link to="/jobStep1">
+									<Link to="#">
 										<button
 											type="button"
 											className="btn btn-lg btn-primary"
@@ -116,7 +118,7 @@ const Sports = () => {
 											{/* <i className="fal fa-long-arrow-right"></i> */}
 										</button>
 									</Link>
-									<Link to="/jobStep1">
+									<Link to="/player">
 										<button
 											type="button"
 											className="btn btn-lg btn-primary"
@@ -127,8 +129,6 @@ const Sports = () => {
 												fontFamily: "Roboto, sans-serif",
 												padding: "1rem",
 												margin: "0.5rem"
-
-											
 											}}
 										>
 											Atheletes Start Here{" "}

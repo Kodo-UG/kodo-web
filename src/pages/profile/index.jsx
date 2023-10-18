@@ -183,6 +183,7 @@ function Profile() {
 
 	return (
 		<div className="app-content main-content mt-0 ">
+			<div id="google_translate_element"></div>
 			<div className="side-app">
 				<div
 					style={{

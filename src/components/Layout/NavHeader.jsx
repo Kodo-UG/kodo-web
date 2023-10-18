@@ -56,10 +56,10 @@ const NavHeader = ({ open, setOpen }) => {
 			route: "/contactus",
 			children: "Contact us"
 		},
-		
+
 		// {
 		// 	id: 7,
-		// 	route: "/sports",
+		// 	route: "/sport",
 		// 	children: "Sports"
 		// },
 
@@ -68,45 +68,45 @@ const NavHeader = ({ open, setOpen }) => {
 			route: "/scholars",
 			children: token ? "Dashboard" : ""
 		}
-
 	];
 
-// 	useEffect(() => {
-// 		var addScript = document.createElement("script");
-// 		addScript.setAttribute(
-// 		  "src",
-// 		  "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-// 		);
-// 		document.body.appendChild(addScript);
-// 		window.googleTranslateElementInit = googleTranslateElementInit;
-// 	  }, []);
-	
-// 	  const googleTranslateElementInit = () => {
-// 		new window.google.translate.TranslateElement(
-// 			{
-// 			  pageLanguage: "en",
-// 			  includedLanguages: 'en,ms,ta,zh-CN,fr,es,pt,sw,lg', 
-// 			  autoDisplay: false,
-// 			  gaTrack: true, // Add this to track translations
-// 			  multilanguagePage: true,
-// 			  disableAutoTranslation: true,
-// 			},
-// 			"google_translate_element"
-// 		  );
+	// 	useEffect(() => {
+	// 		var addScript = document.createElement("script");
+	// 		addScript.setAttribute(
+	// 		  "src",
+	// 		  "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+	// 		);
+	// 		document.body.appendChild(addScript);
+	// 		window.googleTranslateElementInit = googleTranslateElementInit;
+	// 	  }, []);
 
-//   const googleTranslateWidget = document.querySelector('.goog-te-menu-frame.skiptranslate');
-//   if (googleTranslateWidget) {
-//     googleTranslateWidget.style.zIndex = '999';
-//   }
-// 	  };
-	
+	// 	  const googleTranslateElementInit = () => {
+	// 		new window.google.translate.TranslateElement(
+	// 			{
+	// 			  pageLanguage: "en",
+	// 			  includedLanguages: 'en,ms,ta,zh-CN,fr,es,pt,sw,lg',
+	// 			  autoDisplay: false,
+	// 			  gaTrack: true, // Add this to track translations
+	// 			  multilanguagePage: true,
+	// 			  disableAutoTranslation: true,
+	// 			},
+	// 			"google_translate_element"
+	// 		  );
+
+	//   const googleTranslateWidget = document.querySelector('.goog-te-menu-frame.skiptranslate');
+	//   if (googleTranslateWidget) {
+	//     googleTranslateWidget.style.zIndex = '999';
+	//   }
+	// 	  };
 
 	return (
 		<nav
 			className="navbar fixed-top navbar-expand-lg navbar-light "
 			style={{
 				boxShadow: "0px 6px 13px rgba(0, 0, 0, 0.2)",
-				backgroundColor: "white"
+				backgroundColor: "white",
+				position: "fixed",
+				zIndex: "1000"
 			}}
 		>
 			<div
@@ -188,7 +188,7 @@ const NavHeader = ({ open, setOpen }) => {
 										marginBottom: "0px",
 										fontFamily: "Roboto, sans-serif",
 										fontSize: "16px",
-										textTransform: "lowercase"
+										
 									}}
 									onClick={(e) => {
 										e.preventDefault();
@@ -201,7 +201,7 @@ const NavHeader = ({ open, setOpen }) => {
 										history.push("/login");
 									}}
 								>
-									logout
+									log out
 								</button>
 							) : (
 								<button
@@ -217,7 +217,7 @@ const NavHeader = ({ open, setOpen }) => {
 										paddingRight: "20px",
 										fontFamily: "Roboto, sans-serif",
 										fontSize: "16px",
-										textTransform: "lowercase"
+										
 									}}
 								>
 									login
@@ -314,7 +314,7 @@ const NavHeader = ({ open, setOpen }) => {
 										paddingRight: "20px",
 										fontFamily: "Roboto, sans-serif",
 										fontSize: "16px",
-										textTransform: "lowercase"
+										
 									}}
 								>
 									login
@@ -340,9 +340,8 @@ const NavHeader = ({ open, setOpen }) => {
 				</div>
 			)}
 
-{/* <div id="google_translate_element" style={{ position: 'relative', zIndex: '9999', top: '10px', right: '20px' }}>
+			{/* <div id="google_translate_element" style={{ position: 'relative', zIndex: '9999', top: '10px', right: '20px' }}>
 </div> */}
-
 		</nav>
 	);
 };

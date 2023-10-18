@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-
 import StepperCard from "./StepperCard";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { updateFormData } from "../../toolkit/formReducer";
 
 const FindScholarship = () => {
+
 	const dispatch = useDispatch();
 
 	const params = useParams();
@@ -26,14 +26,16 @@ const FindScholarship = () => {
 			link: "/JobStep1",
 			Button: "Sign Up"
 		},
-		{
-			id: 3,
-			title: "Sports",
-			text: "Sign up for sports scholarship",
-			link: "/player",
-			Button: "Sign Up"
-		}
+		// {
+		// 	id: 3,
+		// 	title: "Sports",
+		// 	text: "Sign up for sports scholarship",
+		// 	link: "/player",
+		// 	Button: "Sign Up"
+		// }
 	];
+
+
 
 	useEffect(() => {
 		dispatch(updateFormData({ field: "refer", value: userId }));
@@ -65,7 +67,7 @@ const FindScholarship = () => {
 				height: "90vh",
 				display: "flex",
 				alignItems: "center",
-				justifyContent: "center"
+				justifyContent: "center",
 			}}
 		>
 			<StepperCard list={object} />

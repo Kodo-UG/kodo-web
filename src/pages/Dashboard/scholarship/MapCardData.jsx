@@ -9,6 +9,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
 import { BASE_URL } from "../../../constants/api";
 import { useHistory } from "react-router-dom";
+import truncateText from "../../../utils/truncate";
 
 const MapCardData = () => {
   const [data, setData] = useState([]);
@@ -73,14 +74,7 @@ const MapCardData = () => {
     }
   };
 
-  const truncateText = (text, maxWords) => {
-    const wordsArray = text.split(" ");
-    if (wordsArray.length > maxWords) {
-      return wordsArray.slice(0, maxWords).join(" ") + "...";
-    } else {
-      return text;
-    }
-  };
+
 
   const handleRoute = (id) => {
     const data = {

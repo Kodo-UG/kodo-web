@@ -5,6 +5,7 @@ import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { BASE_URL } from "../../../constants/api";
 import { useHistory } from "react-router-dom";
+import truncateText from "../../../utils/truncate";
 
 const MapCardJobs = ({ path }) => {
   const [data, setData] = useState([]);
@@ -52,14 +53,7 @@ const MapCardJobs = ({ path }) => {
     }
   };
 
-  const truncateText = (text, maxWords) => {
-    const wordsArray = text.split(" ");
-    if (wordsArray.length > maxWords) {
-      return wordsArray.slice(0, maxWords).join(" ") + "...";
-    } else {
-      return text;
-    }
-  };
+ 
   const handleRoute = (id) => {
     if (id) {
       const data = {
