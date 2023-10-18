@@ -1,3 +1,14 @@
 {
-    "editor.tabSize": 4
+  "editor.tabSize": 4,
+  "cSpell.words": [
+    "aboutus",
+    "contactus",
+    "customlink",
+    "reduxjs",
+    "signin",
+    "Slidder",
+    "testimonals",
+    "uidotdev",
+    "usehooks"
+  ]
 }
