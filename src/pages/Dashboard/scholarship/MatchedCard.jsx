@@ -6,6 +6,7 @@ import { SiFiles } from "react-icons/si";
 import { useQuery } from "react-query";
 import { Carousel } from "react-bootstrap";
 import { BASE_URL } from "../../../constants/api";
+import truncateText from "../../../utils/truncate";
 
 const MatchedCard = ({ title, total }) => {
     const [ads, setAds] = useState([]);
@@ -77,8 +78,8 @@ const MatchedCard = ({ title, total }) => {
                                 alignItems: "center",
                                 width: "100%",
                                 display: "flex",
-                            
-                               
+
+
                             }}
                         >
                             {" "}
@@ -134,7 +135,7 @@ const MatchedCard = ({ title, total }) => {
                                             style={{ textAlign: "justify" }}
                                             className="card-text"
                                         >
-                                            {ad.description}
+                                            {truncateText(ad.description, 9)}
                                         </p>
                                         <a
                                             href={`https:/${ad?.company?.website}`}
@@ -149,8 +150,42 @@ const MatchedCard = ({ title, total }) => {
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
+
+                            {/* <div
+                                className="card"
+                                style={{ width: isMd ? "84%" : "" || isSm ? "100%" : "65%", marginTop: "6rem", }}
+                            >
+
+                                <div className="jumbotron" style={{
+                                    backgroundImage: `url(${ad.visuals})`, 
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    color: 'white' 
+                                    
+                                }}>
+                                    <div className="container">
+                                        <h5 style={
+                                            {
+                                                textAlign: "justify",
+                                                color: "#1C2755"
+                                            }
+                                        }>{ad.title}</h5>
+                                        <p className="card-text"
+                                        style={
+                                            {
+                                                textAlign: "justify",
+                                                color: "#1C2755"
+                                            }
+                                        }
+                                        >
+                                            {truncateText(ad.description, 9)}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> */}
                         </div>
+
                     </Carousel.Item>
                 ))}
             </Carousel>
