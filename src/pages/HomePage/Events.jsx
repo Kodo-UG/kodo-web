@@ -37,7 +37,7 @@ const Events = () => {
 							<div className="blog-thumb2">
 								<Link to="/blog">
 									<img
-										src="https://res.cloudinary.com/itgenius/image/upload/v1690692704/muslim_jbicas.jpg"
+										src="/images/muslim.jpg"
 										alt="img"
 									/>
 								</Link>
@@ -86,7 +86,7 @@ const Events = () => {
 							<div className="blog-thumb2">
 								<Link to="/blog">
 									<img
-										src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/gamers_z9cpsj.jpg"
+										src="/images/gamers.jpg"
 										alt="img"
 									/>
 								</Link>
@@ -135,7 +135,7 @@ const Events = () => {
 							<div className="blog-thumb2">
 								<Link to="/blog">
 									<img
-										src="https://res.cloudinary.com/itgenius/image/upload/v1690692705/interracial_qodm9k.jpg"
+										src="/images/interracial.jpg"
 										alt="img"
 									/>
 								</Link>

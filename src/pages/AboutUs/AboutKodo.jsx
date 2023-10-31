@@ -11,7 +11,7 @@ function AboutKodo() {
     >
       <div class="animations-02">
         <img
-          src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688930170/an-img-20_ojaurs.png"
+          src="/images/w.svg"
           alt="an-img-01"
         />
       </div>
@@ -33,7 +33,7 @@ function AboutKodo() {
                   }}
                 >
                   <img
-                    src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688929716/fea-icon01_1_lyxxuc.png"
+                    src="/images/ico.png"
                     alt="icon"
                   />
                 </div>
@@ -58,7 +58,7 @@ function AboutKodo() {
               data-delay=".4s"
             >
               <img
-                src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688929720/lecturer-professor-with-students-2022-04-14-08-02-34-utc_fmbvk9.jpg"
+                src="/images/Picture2.png"
                 alt="class image"
               />
             </div>

@@ -7,7 +7,7 @@ function VideoSection() {
 			class="cta-area cta-bg pt-160 pb-160"
 			style={{
 				backgroundImage:
-					'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688930701/video_ixczq2.jpg")'
+					'url("/images/lady.jpeg")'
 			}}
 		>
 			<div className="container">
@@ -37,7 +37,7 @@ function VideoSection() {
 								className="popup-video mb-50"
 							>
 								<img
-									src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688920197/play-button_x1mykn.png"
+									src="/images/p.png"
 									alt="circle_right"
 								/>
 							</a>

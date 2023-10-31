@@ -7,7 +7,7 @@ function Cta() {
 			class="cta-area cta-bg pt-50 pb-50 mb-100"
 			style={{
 				backgroundImage:
-					'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688964119/Screenshot_2023-04-17_at_07.27.50_sryg1m.png")'
+					'url("/images/bb.jpeg")'
 			}}
 		>
 			<div className="container">
