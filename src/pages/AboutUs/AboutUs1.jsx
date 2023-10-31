@@ -7,7 +7,9 @@ const AboutUs1 = () => {
         <section className="about-area about-p pt-120 pb-120 p-relative fix">
             <div class="animations-02">
                 <img
-                    src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688708283/an-img-02_ayedyx.png"
+				   width={100}
+				   height={100}
+                    src="/images/react.png"
                     alt="contact-bg-an-01"
                 />
             </div>
