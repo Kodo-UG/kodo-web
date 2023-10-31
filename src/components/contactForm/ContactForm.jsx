@@ -174,7 +174,7 @@ const ContactForm = () => {
 				}}
 			>
 				<img
-					src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1695113522/64185bc2ea0b01679317954_t4ckbu.png"
+					src="/images/map.png"
 					style={{
 						width: "100%",
 						height: "100%",
