@@ -148,7 +148,7 @@ const MyHeader = ({ setShowContent }) => {
 					<li className=" ">
 						<Link className="nav-link" data-toggle="dropdown" to="#">
 							<img
-								src="https://res.cloudinary.com/itgenius/image/upload/v1692586498/Alert_Icon_-01_io86d7.png"
+								src="/images/alert.png"
 								alt=""
 								style={{
 									width: "40px",

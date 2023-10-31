@@ -81,7 +81,7 @@ const App = () => {
                             alignItems: "center",
                         }}
                         src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
-                        alt="middle"
+                        alt="loading..."
                     />{" "}
                 </div>
             }
