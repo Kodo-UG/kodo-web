@@ -153,7 +153,7 @@ const Features = () => {
               data-delay=".4s"
             >
               <img
-                src="/images/portifolio.jpg"
+                src="/images/man.jpg"
                 alt=""
               />
             </div>

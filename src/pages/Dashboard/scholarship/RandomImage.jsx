@@ -173,7 +173,7 @@ const RandomImageModal = ({ visible, closeModal, images, show }) => {
                     padding: 2,
                 }}
                 src={images[currentImageIndex]}
-                alt=""
+                alt="ads section"
             />
             <div
                 style={{
