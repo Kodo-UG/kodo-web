@@ -120,7 +120,7 @@ const NavHeader = ({ open, setOpen }) => {
         <Link to="/">
           <div className="logo">
             <img
-              src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
+              src="/images/logo1.svg"
               alt="logo"
               style={{
                 width: "180px",
