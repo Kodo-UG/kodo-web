@@ -10,7 +10,7 @@ const HeaderStepper = () => {
             to="/"
           >
             <img
-              src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688759275/logo-kodo-removebg-preview_zz6r2w.png"
+              src="/images/logo1.svg"
               alt="Logomark"
             />
           </Link>

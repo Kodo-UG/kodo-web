@@ -19,7 +19,6 @@ const ScholarshipDetails = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   const [ads, setAds] = useState([]);
-  const history = useHistory();
   const [newWindow, setNewWindow] = useState(null);
 
   const config = {
@@ -79,7 +78,6 @@ const ScholarshipDetails = () => {
 
   const date = new Date(data?.deadline);
   const deadline = date.toLocaleDateString();
-
   return (
     <div
       style={{
@@ -426,7 +424,7 @@ const ScholarshipDetails = () => {
 
                       // onClick={()=>history.push()}
                     >
-                      <Link to={`${data?.company?.website}`}>Learn More</Link>
+                      <a href={`https:/${data?.company?.website}`}>Learn More</a>
                     </button>
                   </div>
                 </Carousel.Item>

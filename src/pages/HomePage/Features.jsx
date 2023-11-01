@@ -12,7 +12,7 @@ const Features = () => {
     >
       <div className="animations-10 ">
         <img
-          src="https://res.cloudinary.com/itgenius/image/upload/v1688241999/an-img-10_g61hnh.png"
+          src="/images/react.png"
           alt="an-img-01"
         />
       </div>
@@ -47,7 +47,7 @@ const Features = () => {
                       }}
                     >
                       <img
-                        src="https://res.cloudinary.com/itgenius/image/upload/v1688241848/fea-icon01_wzszas.png"
+                        src="/images/ico.png"
                         alt="icon"
                       />
                     </div>
@@ -85,7 +85,7 @@ const Features = () => {
                       }}
                     >
                       <img
-                        src="https://res.cloudinary.com/itgenius/image/upload/v1688241848/fea-icon02_eyvyv9.png"
+                        src="/images/ico1.png"
                         alt="icon"
                       />
                     </div>
@@ -122,7 +122,7 @@ const Features = () => {
                       }}
                     >
                       <img
-                        src="https://res.cloudinary.com/itgenius/image/upload/v1688241848/fea-icon03_loll6n.png"
+                        src="/images/ico2.png"
                         alt="icon"
                       />
                     </div>
@@ -153,7 +153,7 @@ const Features = () => {
               data-delay=".4s"
             >
               <img
-                src="https://res.cloudinary.com/itgenius/image/upload/v1688241561/man-woman-students-with-documents_xuy7jp.jpg"
+                src="/images/man.jpg"
                 alt=""
               />
             </div>

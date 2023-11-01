@@ -10,7 +10,7 @@ function AboutKodo() {
 			<div className="container">
 				<div className="animations-08">
 					<img
-						src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688930170/an-img-20_ojaurs.png"
+						src="/images/react.png"
 						alt="contact-bg-an-01"
 					/>
 				</div>
@@ -22,7 +22,7 @@ function AboutKodo() {
 							data-delay=".4s"
 						>
 							<img
-								src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688676545/graduate_amiewj.jpg"
+								src="/images/Picture3.png"
 								alt=""
 							/>
 						</div>
@@ -43,7 +43,7 @@ function AboutKodo() {
 									}}
 								>
 									<img
-										src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688932803/fea-icon03_1_crtd7b.png"
+										src="/images/ico2.png"
 										alt="icon"
 									/>
 								</div>

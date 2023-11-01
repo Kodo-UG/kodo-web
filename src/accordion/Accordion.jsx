@@ -15,7 +15,7 @@ function Accordion() {
 								className="s-video-wrap2"
 								style={{
 									backgroundImage:
-										'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688930513/faq_ufbxqd.jpg")',
+										'url("/images/pass.jpg")',
 									backgroundPosition: "center",
 									backgroundSize: "cover"
 								}}
@@ -27,7 +27,7 @@ function Accordion() {
 											className="popup-video mb-50"
 										>
 											<img
-												src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688920197/play-button_x1mykn.png"
+												src="/images/p.png"
 												alt="circle_right"
 											/>
 										</a>

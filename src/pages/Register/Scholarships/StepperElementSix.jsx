@@ -67,7 +67,7 @@ function StepperElementSix() {
 					</style>
 					<img
 						className="icon-component icon-component--logo-horizontal"
-						src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
+						src="/images/logo1.svg"
 						width="232"
 						height="36"
 						fill="var(--secondary-600)"
@@ -256,7 +256,7 @@ function StepperElementSix() {
 						<img
 							className="icon-component icon-component--logo-stacked-horizontal"
 							style={{ color: "#fff" }}
-							src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
+							src="/images/logo1.svg"
 							width="106"
 							height="36"
 							fill="#fff"

@@ -7,7 +7,7 @@ const Footer = () => {
 			style={{
 				backgroundColor: "#125875",
 				backgroundImage:
-					"url(https://res.cloudinary.com/itgenius/image/upload/v1690514657/footer-bg_slropl.png)"
+					"url(/images/footer.png)"
 			}}
 		>
 			<div className="footer-top pb-70">
@@ -17,7 +17,7 @@ const Footer = () => {
 							<div className="footer-widget mb-30">
 								<div className="f-widget-title">
 									<img
-										src="https://res.cloudinary.com/itgenius/image/upload/v1693975723/Kodo_Colour_Variations-02-2_h9mxdk.png"
+										src="/images/logo1.png"
 										alt="img"
 										style={{
 											marginRight: 10,
@@ -91,14 +91,14 @@ const Footer = () => {
 									<a href="#">
 										<img
 											style={{ width: 140 }}
-											src="https://res.cloudinary.com/itgenius/image/upload/v1688916294/playstore_dhgusr.png"
+											src="/images/playstore.png"
 											alt="Google Playstore"
 										/>
 									</a>
 									<a href="#">
 										<img
 											style={{ width: 130 }}
-											src="https://res.cloudinary.com/itgenius/image/upload/v1688916298/appstore_rrkppm.png"
+											src="/images/appstore.png"
 											alt="Appstore"
 										/>
 									</a>
