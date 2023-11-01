@@ -225,7 +225,7 @@ export default function Login() {
 					className="col-md-6 col-12 fxt-none-767 fxt-bg-img"
 					style={{
 						backgroundImage:
-							'url("/images/wo.jpg")',
+							'url("/images/login.jpg")',
 						backgroundPosition: "center",
 						backgroundSize: "cover"
 					}}
