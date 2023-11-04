@@ -33,7 +33,7 @@ const CustomShareComponent = ({ url, title }) => {
         >
           <FacebookShareButton url={url} quote={title}>
             <img
-              src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693652975/icons8-facebook-48_x1lj3l.png"
+              src="/images/fb.png"
               alt="Facebook Share"
             />
           </FacebookShareButton>
@@ -51,7 +51,7 @@ const CustomShareComponent = ({ url, title }) => {
         >
              <TwitterShareButton url={url} title={title}>
           <img
-            src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653219/icons8-twitter-48_whz99n.png"
+            src="/images/x.png"
             alt="Twitter Share"
           />
         </TwitterShareButton>
@@ -72,7 +72,7 @@ const CustomShareComponent = ({ url, title }) => {
         >
             <WhatsappShareButton url={url} title={title} separator=":: ">
           <img
-            src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653219/icons8-whatsapp-48_p3sygf.png"
+            src="/images/wh.png"
             alt="WhatsApp Share"
           />
         </WhatsappShareButton>
@@ -91,7 +91,7 @@ const CustomShareComponent = ({ url, title }) => {
         >
            <EmailShareButton url={url} subject={title}>
           <img
-            src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653218/icons8-email-50_ko7p4v.png"
+            src="/images/em.png"
             alt="Email Share"
           />
         </EmailShareButton>
@@ -110,7 +110,7 @@ const CustomShareComponent = ({ url, title }) => {
         >
          <LinkedinShareButton url={url} title={title}>
           <img
-            src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653687/icons8-linkedin-48_pev0jo.png"
+            src="/images/linkd.png"
             alt="LinkedIn Share"
           />
         </LinkedinShareButton>
@@ -129,31 +129,12 @@ const CustomShareComponent = ({ url, title }) => {
         >
          <TelegramShareButton url={url} title={title}>
           <img
-            src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653687/icons8-telegram-48_jliedh.png"
+            src="/images/tel.png"
             alt="Telegram Share"
           />
         </TelegramShareButton>
         </div>
-        <div
-          style={{
-            borderRadius: "50%",
-            background: "white",
-            // padding: "0.5rem",
-            height: "50px",
-            width: "50px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-            
-            <RedditShareButton url={url} title={title}>
-          <img
-            src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653687/icons8-reddit-100_lww9m8.png"
-            alt="Reddit Share"
-          />
-        </RedditShareButton>
-        </div>
+       
 
         {/* Add more social media icons and buttons as needed */}
       </div>

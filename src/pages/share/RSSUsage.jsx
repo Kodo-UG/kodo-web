@@ -34,7 +34,7 @@ export default function RSSUsage() {
 				<div className=" w-100 " style={{ height: "16rem" }}>
 					<img
 						className="w-100 h-100 object-cover"
-						src="https://res.cloudinary.com/itgenius/image/upload/v1693529925/Invite_Page_Icon_Image-01_mjvsjb.png"
+						src="/images/inv.png"
 						alt=""
 						style={{
 							height: "100%",

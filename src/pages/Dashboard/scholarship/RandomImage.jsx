@@ -70,7 +70,7 @@ const RandomImageModal = ({ visible, closeModal, images, show }) => {
             children: (
                 <FacebookShareButton url={URL}>
                     <img
-                        src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693652975/icons8-facebook-48_x1lj3l.png"
+                        src="/images/fb.png"
                         alt="Facebook Share"
                     />
                 </FacebookShareButton>
@@ -82,7 +82,7 @@ const RandomImageModal = ({ visible, closeModal, images, show }) => {
             children: (
                 <TwitterShareButton url={URL}>
                     <img
-                        src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653219/icons8-twitter-48_whz99n.png"
+                        src="/images/x.png"
                         alt="Twitter Share"
                     />
                 </TwitterShareButton>
@@ -94,7 +94,7 @@ const RandomImageModal = ({ visible, closeModal, images, show }) => {
             children: (
                 <WhatsappShareButton url={URL}>
                     <img
-                        src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653219/icons8-whatsapp-48_p3sygf.png"
+                        src="/images/wh.png"
                         alt="WhatsApp Share"
                     />
                 </WhatsappShareButton>
@@ -106,7 +106,7 @@ const RandomImageModal = ({ visible, closeModal, images, show }) => {
             children: (
                 <EmailShareButton url={URL}>
                     <img
-                        src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653218/icons8-email-50_ko7p4v.png"
+                        src="/images/em.png"
                         alt="Email Share"
                     />
                 </EmailShareButton>
@@ -118,7 +118,7 @@ const RandomImageModal = ({ visible, closeModal, images, show }) => {
             children: (
                 <LinkedinShareButton url={URL}>
                     <img
-                        src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653687/icons8-linkedin-48_pev0jo.png"
+                        src="/images/linkd.png"
                         alt="LinkedIn Share"
                     />
                 </LinkedinShareButton>
@@ -130,24 +130,13 @@ const RandomImageModal = ({ visible, closeModal, images, show }) => {
             children: (
                 <TelegramShareButton url={URL}>
                     <img
-                        src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653687/icons8-telegram-48_jliedh.png"
+                        src="/images/tel.png"
                         alt="Telegram Share"
                     />
                 </TelegramShareButton>
             ),
         },
-        {
-            key: "7",
-            label: "Linkedin",
-            children: (
-                <RedditShareButton url={URL}>
-                    <img
-                        src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1693653687/icons8-reddit-100_lww9m8.png"
-                        alt="Reddit Share"
-                    />
-                </RedditShareButton>
-            ),
-        },
+       
     ];
 
     return (
