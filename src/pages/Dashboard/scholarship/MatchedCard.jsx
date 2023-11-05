@@ -4,125 +4,193 @@ import React, { useEffect, useState } from "react";
 import { MdArrowForwardIos } from "react-icons/md";
 import { SiFiles } from "react-icons/si";
 import { useQuery } from "react-query";
+import { Carousel } from "react-bootstrap";
+import { BASE_URL } from "../../../constants/api";
+import truncateText from "../../../utils/truncate";
 
 const MatchedCard = ({ title, total }) => {
-  const isSm = useMediaQuery("only screen and (max-width : 700px)");
-  const isMd = useMediaQuery(
-    "only screen and (min-width : 700px) and (max-width : 1250px)"
-  );
+    const [ads, setAds] = useState([]);
 
-  const [jobCount, setJobCount] = useState(`${total}`);
+    const isSm = useMediaQuery("only screen and (max-width : 700px)");
+    const isMd = useMediaQuery(
+        "only screen and (min-width : 700px) and (max-width : 1250px)"
+    );
 
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  };
+    const [jobCount, setJobCount] = useState(`${total}`);
 
-  useEffect(() => {
-    const updateJobCount = () => {
-      setJobCount((prevCount) => prevCount + 5);
+    const config = {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
     };
 
-    const intervalId = setInterval(updateJobCount, 32400000); // 9 hour = 3600000 milliseconds
+    const getAds = async () => {
+        try {
+            const res = await axios.get(`${BASE_URL}/admin/ads`);
+            console.log(res.data.data, "-----");
+            setAds(res.data.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
-    return () => clearInterval(intervalId);
-  }, []);
+    useEffect(() => {
+        getAds();
+    }, []);
 
-  useQuery("/scholarship", getScholarship);
+    useEffect(() => {
+        const updateJobCount = () => {
+            setJobCount((prevCount) => prevCount + 5);
+        };
 
-  async function getScholarship() {
-    try {
-      const res = await axios.get(
-        "https://demo.kodoscholarships.com/api/v1/scholarship",
-        config
-      );
-      return res?.data;
-    } catch (error) {
-      throw new Error(error.message || "Failed to fetch scholarships");
+        const intervalId = setInterval(updateJobCount, 32400000); // 9 hour = 3600000 milliseconds
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    useQuery("/scholarship", getScholarship);
+
+    async function getScholarship() {
+        try {
+            const res = await axios.get(
+                "https://demo.kodoscholarships.com/api/v1/scholarship",
+                config
+            );
+            return res?.data;
+        } catch (error) {
+            throw new Error(error.message || "Failed to fetch scholarships");
+        }
     }
-  }
-  return (
-    <>
-      <div
-        style={{
-          width: isSm ? "100%" : isMd ? "50%" : "35%",
-          background: "white",
-          display: "flex",
-          marginTop: "4rem",
-          boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
-          justifyContent: "center",
-          alignItems: "center",
-          cursor: "pointer",
-          borderRadius: "4px",
-        }}
-      >
-        <div
-          style={{
-            width: isSm ? "" : "100%",
-          }}
-        >
-          <SiFiles
-            size={60}
-            style={{
-              color: "#1c2755",
-              padding: isSm ? "1rem" : "0.5rem",
-            }}
-          />
-        </div>
-        <div
-          style={{
-            width: "100rem",
-            padding: "0.5rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "Poppins",
-              fontSize: isSm ? "16px" : "24px",
-              color: "#1c2755",
-              fontWeight: "bold",
-              marginTop: isSm ? "1rem" : "",
-              marginBottom: isSm ? "-0.1rem" : "",
-            }}
-          >
-            ${jobCount.toLocaleString()} In Matches
-          </p>
-          <p
-            style={{
-              fontFamily: "Poppins",
-              fontSize: isSm ? "14px" : "16px",
-              display: "flex",
-              alignItems: "center",
-              lineHeight: "1px",
-              fontWeight: 500,
-              textAlign: "justify",
-              color: "#000",
-              justifyContent: "space-between",
-            }}
-          >
-            Update your profile to match to more
-            <MdArrowForwardIos />
-          </p>
-          <p
-            style={{
-              fontFamily: "Poppins",
-              fontSize: isSm ? "14px" : "16px",
-              fontWeight: 500,
-              color: "#000",
-              marginTop: isSm ? "-1rem" : "",
-            }}
-          >
-            {title}
-          </p>
-        </div>
-      </div>
-    </>
-  );
+    return (
+        <>
+            <Carousel
+                style={{ height: "50vh" }}
+                interval={9900}
+                slide={true}
+                controls={false}
+            >
+                {ads.map((ad) => (
+                    <Carousel.Item>
+                        <div
+                            style={{
+                                justifyContent: "center",
+                                alignItems: "center",
+                                width: "100%",
+                                display: "flex",
+
+
+                            }}
+                        >
+                            {" "}
+                            <div
+                                className="card"
+                                style={{ width: isMd ? "84%" : ""|| isSm? "100%": "65%", marginTop: "6rem",  }}
+                            >
+                                <div
+                                    style={{
+                                        display: isSm? "": "flex",
+                                        justifyContent: "space-between",
+                                        
+                                        alignItems:"center",
+                                
+                                      
+                                    }}
+                                    className="card-body"
+                                >
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            
+                                        }}
+                                    >
+                                        <h5 className="card-title">
+                                            {ad.title}
+                                        </h5>
+                                        <img
+                                            style={{
+                                                height: "13rem",
+                                                width: "25rem",
+                                                objectFit: "contain",
+                                            }}
+                                            src={ad.visuals}
+                                            alt=""
+                                        />
+                                    </div>
+
+
+
+
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "space-between",
+                                            width: isSm? "": "60%",
+                                            background:"white"
+                                        }}
+                                    >
+                                        <p
+                                            style={{ textAlign: "justify" }}
+                                            className="card-text"
+                                        >
+                                            {truncateText(ad.description, 9)}
+                                        </p>
+                                        <a
+                                            href={`https:/${ad?.company?.website}`}
+                                            style={{
+                                                backgroundColor: "#EC1D64",
+                                                color: "#fff",
+                                                fontWeight: "bold",
+                                            }}
+                                            className="btn "
+                                        >
+                                            Learn more
+                                        </a>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            {/* <div
+                                className="card"
+                                style={{ width: isMd ? "84%" : "" || isSm ? "100%" : "65%", marginTop: "6rem", }}
+                            >
+
+                                <div className="jumbotron" style={{
+                                    backgroundImage: `url(${ad.visuals})`, 
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    color: 'white' 
+                                    
+                                }}>
+                                    <div className="container">
+                                        <h5 style={
+                                            {
+                                                textAlign: "justify",
+                                                color: "#1C2755"
+                                            }
+                                        }>{ad.title}</h5>
+                                        <p className="card-text"
+                                        style={
+                                            {
+                                                textAlign: "justify",
+                                                color: "#1C2755"
+                                            }
+                                        }
+                                        >
+                                            {truncateText(ad.description, 9)}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> */}
+                        </div>
+
+                    </Carousel.Item>
+                ))}
+            </Carousel>
+        </>
+    );
 };
 
 export default MatchedCard;

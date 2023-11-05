@@ -16,17 +16,17 @@ const Contact = () => {
     {
       tittle: "Phone Number",
       value: "+46 72 848 83 13",
-      icon: "https://res.cloudinary.com/itgenius/image/upload/v1695107550/contact-icon1_gdvdso.png",
+      icon: "/images/contact.png",
     },
     {
       tittle: "Email Address",
       value: "info@kodoscholarships.com",
-      icon: "https://res.cloudinary.com/itgenius/image/upload/v1695107550/contact-icon2_yoi7is.png",
+      icon: "/images/email.png",
     },
     {
       tittle: "Office Address",
       value: "Oppegårdsstråket 5 A,lgh 1804, 191 60 Sollentuna",
-      icon: "https://res.cloudinary.com/itgenius/image/upload/v1695107550/contact-icon3_dgt9su.png",
+      icon: "/images/location.png",
     },
   ];
 
@@ -170,8 +170,8 @@ const Contact = () => {
                 height: "100%",
                 objectFit: "contain",
               }}
-              src="https://res.cloudinary.com/itgenius/image/upload/v1695225476/pexels-jep-gambardella-7690079_wjdbgz.jpg"
-              alt=""
+              src="/images/cs.jpg"
+              alt="nk"
             />
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./testimonial.css";
 
+
 const Testimonals = () => {
 	return (
 		<section
@@ -37,7 +38,7 @@ const Testimonals = () => {
 					<div className="testimonial-item ">
 						<div className="testimonial-image">
 							<img
-								src="https://res.cloudinary.com/itgenius/image/upload/v1688928366/samantha_orwf70.jpg"
+								src='/images/samantha_orwf70.jpg'
 								alt="testimonial-1"
 							/>
 							<div className="testimonial-icon">
@@ -62,7 +63,7 @@ const Testimonals = () => {
 					<div className="testimonial-item">
 						<div className="testimonial-image">
 							<img
-								src="https://res.cloudinary.com/itgenius/image/upload/v1688928367/ayesha_gt7ndr.jpg"
+								src="/images/ayesha_gt7ndr.jpg"
 								alt="testimonial-1"
 							/>
 							<div className="testimonial-icon">
@@ -91,7 +92,7 @@ const Testimonals = () => {
 					<div className="testimonial-item">
 						<div className="testimonial-image">
 							<img
-								src="https://res.cloudinary.com/itgenius/image/upload/v1688928366/thomas_l2spzs.jpg"
+								src="/images/thomas.jpg"
 								alt="testimonial-1"
 							/>
 							<div className="testimonial-icon">
@@ -115,7 +116,7 @@ const Testimonals = () => {
 					<div className="testimonial-item">
 						<div className="testimonial-image">
 							<img
-								src="https://res.cloudinary.com/itgenius/image/upload/v1634199048/samples/people/smiling-man.jpg"
+								src="/images/robin_t5ce9s.jpg"
 								alt="testimonial-1"
 							/>
 							<div className="testimonial-icon">
@@ -140,7 +141,7 @@ const Testimonals = () => {
 					<div className="testimonial-item">
 						<div className="testimonial-image">
 							<img
-								src="https://res.cloudinary.com/itgenius/image/upload/v1688928960/marvin_gdcwua.jpg"
+								src="/images/marvin.jpg"
 								alt="testimonial-2"
 							/>
 							<div className="testimonial-icon">
@@ -164,7 +165,7 @@ const Testimonals = () => {
 					<div className="testimonial-item">
 						<div className="testimonial-image">
 							<img
-								src="https://res.cloudinary.com/itgenius/image/upload/v1688928367/maria_wi2bnt.jpg"
+								src="/images/maria.jpg"
 								alt="testimonial-3"
 							/>
 							<div className="testimonial-icon">

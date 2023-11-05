@@ -91,7 +91,7 @@ export default function Login() {
 					>
 						<div className="fxt-header">
 							<Link to="/" className="fxt-logo">
-								<img src="logo-kodo.png" alt="Logo" />
+								<img src="/images/logo1.svg" alt="Logo" />
 							</Link>
 							<div className="fxt-page-switcher">
 								<p className="switcher-text1 active">Log In</p>
@@ -225,7 +225,7 @@ export default function Login() {
 					className="col-md-6 col-12 fxt-none-767 fxt-bg-img"
 					style={{
 						backgroundImage:
-							'url("https://res.cloudinary.com/dmhsf5hqd/image/upload/v1688935613/bg1-l_rvlan9.jpg")',
+							'url("/images/login.jpg")',
 						backgroundPosition: "center",
 						backgroundSize: "cover"
 					}}

@@ -75,7 +75,7 @@ function StepperCard({ list }) {
                 }}
               >
                 <img
-                  src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
+                  src="/images/logo1.svg"
                   style={{
                     width: "80px",
                     height: "auto",
