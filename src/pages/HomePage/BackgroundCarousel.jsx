@@ -23,7 +23,7 @@ const BackgroundCarousel = () => {
                 <div
                     className="d-block w-100"
                     style={{
-                        backgroundImage: 'url("/images/banner2.jpeg")',
+                        backgroundImage: 'url("/images/banner2.jpg")',
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         filter: "brightness(97%)",
