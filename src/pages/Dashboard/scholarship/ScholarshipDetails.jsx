@@ -3,14 +3,13 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { BsBookmark } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
-import { useParams, useHistory, useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
 import { BASE_URL } from "../../../constants/api";
 import {
   displayErrorNotification,
   displaySuccessNotification,
 } from "../../../utils/Toast";
-import { Link } from "react-router-dom";
 import truncateText from "../../../utils/truncate";
 
 const ScholarshipDetails = () => {
@@ -47,7 +46,6 @@ const ScholarshipDetails = () => {
   const getAds = async () => {
     try {
       const res = await axios.get(`${BASE_URL}/admin/ads`);
-      console.log(res.data.data, "-----");
       setAds(res.data.data);
     } catch (error) {
       console.log(error);
