@@ -42,12 +42,10 @@ jobs:
       with:
         host: ${{ secrets.SERVER_HOST }}
         username: ${{ secrets.SERVER_USERNAME }}
-        password: ${{ secrets.SERVER_PASSWORD }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
         port: ${{ secrets.SERVER_PORT }}
         script: |
           docker pull ${{ secrets.DOCKER_USERNAME }}/kodo:latest
           docker stop kodoFE || true
           docker rm kodoFE || true
           docker run -d --name kodoFE -p 3001:3000 ${{ secrets.DOCKER_USERNAME }}/kodo:latest
-
-   
