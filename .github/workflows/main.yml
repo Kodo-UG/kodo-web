@@ -48,6 +48,6 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/kodo:latest
           docker stop kodoFE || true
           docker rm kodoFE || true
-          docker run -d --name kodoFE -p 3001:3000 ${{ secrets.DOCKER_USERNAME }}/kodo:latest
+          docker run -d --name kodoFE -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/kodo:latest
 
    
