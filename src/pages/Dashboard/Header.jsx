@@ -44,17 +44,17 @@ const MyHeader = ({ setShowContent }) => {
 		fetchNotifications
 	);
 
-  async function fetchNotifications() {
-    try {
-      const res = await axios.get(
-        "https://demo.kodoscholarships.com/api/v1/user/notifications",
-        config
-      );
-      return res.data.data;
-    } catch (error) {
-      throw new Error(error.message || "Failed to fetch notifications");
-    }
-  }
+	async function fetchNotifications() {
+		try {
+			const res = await axios.get(
+				"https://api.kodoscholarship.com/api/v1/user/notifications",
+				config
+			);
+			return res.data.data;
+		} catch (error) {
+			throw new Error(error.message || "Failed to fetch notifications");
+		}
+	}
 
 	const HandleClick = async (id) => {
 		try {
@@ -115,7 +115,7 @@ const MyHeader = ({ setShowContent }) => {
 		localStorage.removeItem("token");
 		localStorage.setItem("modal2Open", "true");
 		localStorage.removeItem("userData");
-    localStorage.removeItem("refer")
+		localStorage.removeItem("refer")
 		dispatch(clearFormData());
 		dispatch(clearJobData());
 		queryClient.clear();
@@ -126,9 +126,8 @@ const MyHeader = ({ setShowContent }) => {
 	return (
 		<div>
 			<nav
-				className={`main-header navbar fixed-top navbar-expand navbar-white navbar-light  ${
-					isPushMenuVisible ? "sidebar-open" : ""
-				}`}
+				className={`main-header navbar fixed-top navbar-expand navbar-white navbar-light  ${isPushMenuVisible ? "sidebar-open" : ""
+					}`}
 			>
 				<ul className="navbar-nav">
 					<li className="nav-item">

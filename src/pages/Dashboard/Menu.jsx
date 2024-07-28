@@ -33,7 +33,7 @@ const Menu = ({ setShowContent }) => {
 
     const fetchNotifications = async () => {
         let res = await axios.get(
-            "https://demo.kodoscholarships.com/api/v1/user/notifications",
+            "https://api.kodoscholarship.com/api/v1/user/notifications",
             config
         );
 
@@ -74,9 +74,8 @@ const Menu = ({ setShowContent }) => {
         <div>
             <div>
                 <aside
-                    className={`main-sidebar sidebar-dark-primary elevation-4  ${
-                        !sidebarVisible ? "sidebar-closed" : ""
-                    }`}
+                    className={`main-sidebar sidebar-dark-primary elevation-4  ${!sidebarVisible ? "sidebar-closed" : ""
+                        }`}
                     style={{ backgroundColor: "#1c2755" }}
                 >
                     <div className="" style={myStyle}>
@@ -147,11 +146,10 @@ const Menu = ({ setShowContent }) => {
                                             handleActive("scholarships")
                                         }
                                         to="/scholars"
-                                        className={`nav-link ${
-                                            isButtonActive("scholarships")
+                                        className={`nav-link ${isButtonActive("scholarships")
                                                 ? "active"
                                                 : ""
-                                        }`}
+                                            }`}
                                     >
                                         <i
                                             className="fa fa-graduation-cap"
@@ -178,11 +176,10 @@ const Menu = ({ setShowContent }) => {
                                             handleActive("dashboard")
                                         }
                                         to="/scholars"
-                                        className={`nav-link ${
-                                            isButtonActive("dashboard")
+                                        className={`nav-link ${isButtonActive("dashboard")
                                                 ? "active"
                                                 : ""
-                                        }`}
+                                            }`}
                                     >
                                         <i
                                             className="fa fa-trophy"
@@ -204,11 +201,10 @@ const Menu = ({ setShowContent }) => {
                                             handleActive("favorites")
                                         }
                                         to="/scholars"
-                                        className={`nav-link ${
-                                            isButtonActive("favorites")
+                                        className={`nav-link ${isButtonActive("favorites")
                                                 ? "active"
                                                 : ""
-                                        }`}
+                                            }`}
                                     >
                                         <i
                                             style={{ marginLeft: "3px" }}
@@ -228,11 +224,10 @@ const Menu = ({ setShowContent }) => {
                                     <Link
                                         onClick={() => handleActive("jobs")}
                                         to="/scholars"
-                                        className={`nav-link ${
-                                            isButtonActive("jobs")
+                                        className={`nav-link ${isButtonActive("jobs")
                                                 ? "active"
                                                 : ""
-                                        }`}
+                                            }`}
                                     >
                                         <i
                                             style={{ marginLeft: "3px" }}
@@ -252,11 +247,10 @@ const Menu = ({ setShowContent }) => {
                                     <Link
                                         onClick={() => handleActive("invite")}
                                         to="/scholars"
-                                        className={`nav-link ${
-                                            isButtonActive("invite")
+                                        className={`nav-link ${isButtonActive("invite")
                                                 ? "active"
                                                 : ""
-                                        }`}
+                                            }`}
                                     >
                                         <i
                                             style={{ marginLeft: "3px" }}
@@ -275,11 +269,10 @@ const Menu = ({ setShowContent }) => {
                                     <Link
                                         onClick={() => handleLogout()}
                                         to=""
-                                        className={`nav-link ${
-                                            isButtonActive("log")
+                                        className={`nav-link ${isButtonActive("log")
                                                 ? "active"
                                                 : ""
-                                        }`}
+                                            }`}
                                     >
                                         <i
                                             style={{

@@ -17,7 +17,7 @@ const StepTwo = ({ nextStep }) => {
 		setLoading(true);
 		try {
 			const response = await fetch(
-				"https://demo.kodoscholarships.com/api/v1/scholarship/categories"
+				"https://api.kodoscholarship.com/api/v1/scholarship/categories"
 			);
 			const data = await response.json();
 			return data;
@@ -73,15 +73,15 @@ const StepTwo = ({ nextStep }) => {
 					{loading
 						? "Loading categories..."
 						: newData?.map((dta) => (
-								<button
-									key={dta._id}
-									type="button"
-									className="select-option sonic-btn"
-									onClick={() => handleClick(dta._id)}
-								>
-									{dta.name}
-								</button>
-						  ))}
+							<button
+								key={dta._id}
+								type="button"
+								className="select-option sonic-btn"
+								onClick={() => handleClick(dta._id)}
+							>
+								{dta.name}
+							</button>
+						))}
 				</div>
 			</div>
 		</div>
