@@ -33,7 +33,7 @@ const Menu = ({ setShowContent }) => {
 
     const fetchNotifications = async () => {
         let res = await axios.get(
-            "https://api.kodoscholarship.com/api/v1/user/notifications",
+            "http://api.kodoscholarship.com/api/v1/user/notifications",
             config
         );
 
@@ -147,8 +147,8 @@ const Menu = ({ setShowContent }) => {
                                         }
                                         to="/scholars"
                                         className={`nav-link ${isButtonActive("scholarships")
-                                                ? "active"
-                                                : ""
+                                            ? "active"
+                                            : ""
                                             }`}
                                     >
                                         <i
@@ -177,8 +177,8 @@ const Menu = ({ setShowContent }) => {
                                         }
                                         to="/scholars"
                                         className={`nav-link ${isButtonActive("dashboard")
-                                                ? "active"
-                                                : ""
+                                            ? "active"
+                                            : ""
                                             }`}
                                     >
                                         <i
@@ -202,8 +202,8 @@ const Menu = ({ setShowContent }) => {
                                         }
                                         to="/scholars"
                                         className={`nav-link ${isButtonActive("favorites")
-                                                ? "active"
-                                                : ""
+                                            ? "active"
+                                            : ""
                                             }`}
                                     >
                                         <i
@@ -225,8 +225,8 @@ const Menu = ({ setShowContent }) => {
                                         onClick={() => handleActive("jobs")}
                                         to="/scholars"
                                         className={`nav-link ${isButtonActive("jobs")
-                                                ? "active"
-                                                : ""
+                                            ? "active"
+                                            : ""
                                             }`}
                                     >
                                         <i
@@ -248,8 +248,8 @@ const Menu = ({ setShowContent }) => {
                                         onClick={() => handleActive("invite")}
                                         to="/scholars"
                                         className={`nav-link ${isButtonActive("invite")
-                                                ? "active"
-                                                : ""
+                                            ? "active"
+                                            : ""
                                             }`}
                                     >
                                         <i
@@ -270,8 +270,8 @@ const Menu = ({ setShowContent }) => {
                                         onClick={() => handleLogout()}
                                         to=""
                                         className={`nav-link ${isButtonActive("log")
-                                                ? "active"
-                                                : ""
+                                            ? "active"
+                                            : ""
                                             }`}
                                     >
                                         <i

@@ -54,7 +54,7 @@ const MatchedCard = ({ title, total }) => {
     async function getScholarship() {
         try {
             const res = await axios.get(
-                "https://api.kodoscholarship.com/api/v1/scholarship",
+                "http://api.kodoscholarship.com/api/v1/scholarship",
                 config
             );
             return res?.data;
