@@ -54,7 +54,7 @@ const MatchedCard = ({ title, total }) => {
     async function getScholarship() {
         try {
             const res = await axios.get(
-                "https://demo.kodoscholarships.com/api/v1/scholarship",
+                "http://api.kodoscholarship.com/api/v1/scholarship",
                 config
             );
             return res?.data;
@@ -85,16 +85,16 @@ const MatchedCard = ({ title, total }) => {
                             {" "}
                             <div
                                 className="card"
-                                style={{ width: isMd ? "84%" : ""|| isSm? "100%": "65%", marginTop: "6rem",  }}
+                                style={{ width: isMd ? "84%" : "" || isSm ? "100%" : "65%", marginTop: "6rem", }}
                             >
                                 <div
                                     style={{
-                                        display: isSm? "": "flex",
+                                        display: isSm ? "" : "flex",
                                         justifyContent: "space-between",
-                                        
-                                        alignItems:"center",
-                                
-                                      
+
+                                        alignItems: "center",
+
+
                                     }}
                                     className="card-body"
                                 >
@@ -102,7 +102,7 @@ const MatchedCard = ({ title, total }) => {
                                         style={{
                                             display: "flex",
                                             flexDirection: "column",
-                                            
+
                                         }}
                                     >
                                         <h5 className="card-title">
@@ -127,8 +127,8 @@ const MatchedCard = ({ title, total }) => {
                                             display: "flex",
                                             flexDirection: "column",
                                             justifyContent: "space-between",
-                                            width: isSm? "": "60%",
-                                            background:"white"
+                                            width: isSm ? "" : "60%",
+                                            background: "white"
                                         }}
                                     >
                                         <p
@@ -150,7 +150,7 @@ const MatchedCard = ({ title, total }) => {
                                         </a>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
 
                     </Carousel.Item>

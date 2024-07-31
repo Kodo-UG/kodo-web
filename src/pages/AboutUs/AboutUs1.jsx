@@ -7,8 +7,8 @@ const AboutUs1 = () => {
         <section className="about-area about-p pt-120 pb-120 p-relative fix">
             <div class="animations-02">
                 <img
-				   width={100}
-				   height={100}
+                    width={100}
+                    height={100}
                     src="/images/react.png"
                     alt="contact-bg-an-01"
                 />
@@ -21,7 +21,10 @@ const AboutUs1 = () => {
                             data-animation="fadeInLeft"
                             data-delay=".4s"
                         >
-                            <img src="/images/Picture1.png" alt="img" />
+                            <img
+                                src="https://kodofiles.s3.eu-north-1.amazonaws.com/images/Picture1.png"
+                                alt="img"
+                            />
                             <div className="about-text second-about three-about">
                                 <span>
                                     25 <sub>+</sub>

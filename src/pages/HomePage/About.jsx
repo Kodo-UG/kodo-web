@@ -9,8 +9,8 @@ const About = () => {
         >
             <div className="animations-02">
                 <img
-                  width={200}
-                  height={200}
+                    width={200}
+                    height={200}
                     src="/images/ico2.png"
                     alt="contact-bg-an-01"
                 />
@@ -26,7 +26,7 @@ const About = () => {
                             <img
                                 width={700}
                                 height={700}
-                                src="/images/Picture12.png"
+                                src="https://kodofiles.s3.eu-north-1.amazonaws.com/images/Picture12.png"
                                 alt="img"
                             />
                             <div
