@@ -41,14 +41,14 @@ function BlogCard({ image, blogType, tittle, text, id, data }) {
                         <div
                             style={{
                                 marginTop: ".5rem",
-                                heigh:50,
-                                width:50
+                                heigh: 50,
+                                width: 50
                             }}
                             className="icon"
                         >
                             <KodoImageLoader
-                                 
-                                src="https://kodofiles.s3.eu-north-1.amazonaws.com/book.png"
+
+                                src="/book.png"
                                 alt="blookImage"
                             />
                         </div>

@@ -22,7 +22,7 @@ const AboutUs1 = () => {
                             data-delay=".4s"
                         >
                             <img
-                                src="https://kodofiles.s3.eu-north-1.amazonaws.com/images/Picture1.png"
+                                src="/images/Picture1.png"
                                 alt="img"
                             />
                             <div className="about-text second-about three-about">

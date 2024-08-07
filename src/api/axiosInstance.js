@@ -2,7 +2,7 @@ import axios from "axios";
 
 const token = localStorage.getItem("token");
 
-const baseURL = "http://api.kodoscholarship.com/api/v1";
+const baseURL = "https://api.kodoscholarship.com/api/v1";
 
 const axiosInstance = axios.create({
 	baseURL,

@@ -24,7 +24,7 @@ const BackgroundCarousel = () => {
                     className="d-block w-100"
                     style={{
                         backgroundImage:
-                            'url("https://kodofiles.s3.eu-north-1.amazonaws.com/images/banner2.jpg")',
+                            'url("/images/banner2.jpg")',
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         filter: "brightness(97%)",
@@ -118,7 +118,7 @@ const BackgroundCarousel = () => {
                     className="d-block w-100"
                     style={{
                         backgroundImage:
-                            'url("https://kodofiles.s3.eu-north-1.amazonaws.com/images/banner1.jpg")',
+                            'url("/images/banner3.jpg")',
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         filter: "brightness(95%)",

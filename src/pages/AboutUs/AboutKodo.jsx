@@ -60,7 +60,7 @@ function AboutKodo() {
                             data-delay=".4s"
                         >
                             <img
-                                src="https://kodofiles.s3.eu-north-1.amazonaws.com/images/Picture2.png"
+                                src="/images/Picture2.png"
                                 alt="class image"
                             />
                         </div>

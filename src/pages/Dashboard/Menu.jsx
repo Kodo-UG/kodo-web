@@ -33,7 +33,7 @@ const Menu = ({ setShowContent }) => {
 
     const fetchNotifications = async () => {
         let res = await axios.get(
-            "http://api.kodoscholarship.com/api/v1/user/notifications",
+            "https://api.kodoscholarship.com/api/v1/user/notifications",
             config
         );
 

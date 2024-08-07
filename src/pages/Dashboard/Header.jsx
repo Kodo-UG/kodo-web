@@ -47,7 +47,7 @@ const MyHeader = ({ setShowContent }) => {
 	async function fetchNotifications() {
 		try {
 			const res = await axios.get(
-				"http://api.kodoscholarship.com/api/v1/user/notifications",
+				"https://api.kodoscholarship.com/api/v1/user/notifications",
 				config
 			);
 			return res.data.data;

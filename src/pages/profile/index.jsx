@@ -47,7 +47,7 @@ function Profile() {
 	const fetchUser = async () => {
 		try {
 			const response = await axios.get(
-				`http://api.kodoscholarship.com/api/v1/user/profile/${userInfo.user._id}`,
+				`https://api.kodoscholarship.com/api/v1/user/profile/${userInfo.user._id}`,
 				config
 			);
 			setData(response.data.data);
@@ -99,7 +99,7 @@ function Profile() {
 	const handleDelete = async () => {
 		try {
 			const data = await axiosInstance.delete(
-				"http://api.kodoscholarship.com/api/v1/user"
+				"https://api.kodoscholarship.com/api/v1/user"
 			);
 			if (data) {
 				localStorage.removeItem("token");
@@ -116,7 +116,7 @@ function Profile() {
 		setLoading(true);
 		try {
 			let res = await axios.get(
-				"http://api.kodoscholarship.com/api/v1/scholarship",
+				"https://api.kodoscholarship.com/api/v1/scholarship",
 				config
 			);
 
@@ -133,7 +133,7 @@ function Profile() {
 	const getApplied = async () => {
 		try {
 			const res = await axios.get(
-				"http://api.kodoscholarship.com/api/v1/user/applications",
+				"https://api.kodoscholarship.com/api/v1/user/applications",
 				config
 			);
 			setAppliedCount(res.data.data);
@@ -146,7 +146,7 @@ function Profile() {
 		setLoading(true);
 		try {
 			let response = await axios.get(
-				`http://api.kodoscholarship.com/api/v1/auth/account/referals/${userInfo.user._id}`,
+				`https://api.kodoscholarship.com/api/v1/auth/account/referals/${userInfo.user._id}`,
 				config
 			);
 			setReferCount(response.data.data.referals);
@@ -162,7 +162,7 @@ function Profile() {
 		setLoading(true);
 		try {
 			let response = await axios.get(
-				"http://api.kodoscholarship.com/api/v1/user/favourites",
+				"https://api.kodoscholarship.com/api/v1/user/favourites",
 				config
 			);
 			setFavData(response?.data?.data);

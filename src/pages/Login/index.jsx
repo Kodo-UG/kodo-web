@@ -235,7 +235,7 @@ export default function Login() {
                     className="col-md-6 col-12 fxt-none-767 fxt-bg-img"
                     style={{
                         backgroundImage:
-                            'url("https://kodofiles.s3.eu-north-1.amazonaws.com/images/login.jpg")',
+                            'url("/images/login.jpg")',
                         backgroundPosition: "center",
                         backgroundSize: "cover",
                     }}

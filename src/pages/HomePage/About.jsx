@@ -26,7 +26,7 @@ const About = () => {
                             <img
                                 width={700}
                                 height={700}
-                                src="https://kodofiles.s3.eu-north-1.amazonaws.com/images/Picture12.png"
+                                src="/images/im.png"
                                 alt="img"
                             />
                             <div

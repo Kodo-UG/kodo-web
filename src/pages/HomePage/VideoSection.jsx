@@ -36,7 +36,7 @@ function VideoSection() {
                                 className="popup-video mb-50"
                             >
                                 <img
-                                    src="https://kodofiles.s3.eu-north-1.amazonaws.com/images/p.png"
+                                    src="/images/p.png"
                                     alt="circle_right"
                                 />
                             </a>

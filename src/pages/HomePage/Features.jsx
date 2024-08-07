@@ -166,7 +166,7 @@ const Features = () => {
                             data-delay=".4s"
                         >
                             <img
-                                src="https://kodofiles.s3.eu-north-1.amazonaws.com/images/man.jpg"
+                                src="/images/man.jpg"
                                 alt=""
                             />
                         </div>

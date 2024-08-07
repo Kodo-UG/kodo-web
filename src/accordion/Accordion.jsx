@@ -15,7 +15,7 @@ function Accordion() {
                                 className="s-video-wrap2"
                                 style={{
                                     backgroundImage:
-                                        'url("https://kodofiles.s3.eu-north-1.amazonaws.com/images/pass.jpg")',
+                                        'url("/images/pass.jpg")',
                                     backgroundPosition: "center",
                                     backgroundSize: "cover",
                                 }}

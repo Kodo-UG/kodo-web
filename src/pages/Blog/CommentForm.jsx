@@ -68,7 +68,7 @@ const CommentForm = ({ onCommentSubmit }) => {
 			<div>
 				<img
 					// src={`https://ui-avatars.com/api/name=Baluku Wilton&background=random`}
-					src="https://kodofiles.s3.eu-north-1.amazonaws.com/images.png"
+					src="/images.png"
 					alt="User"
 					style={userImageStyle}
 				/>

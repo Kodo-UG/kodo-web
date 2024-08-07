@@ -165,8 +165,7 @@ const App = () => {
 
                     <Route exact path="/contactus" component={Main} />
                     <Route exact path="/payjobs" component={PaymentJobs} />
-                    {/* <Route exact path="/contactus" component={ContactUs} /> */}
-                     {/* Deployment Testing */}
+                 
                     <Route exact path="/scholarships" component={Accordion} />
                     <Route exact path="/testimonals" component={Testimonals} />
                     <Route exact path="/" component={Home} />

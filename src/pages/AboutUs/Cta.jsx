@@ -7,7 +7,7 @@ function Cta() {
             class="cta-area cta-bg pt-50 pb-50 mb-100"
             style={{
                 backgroundImage:
-                    'url("https://kodofiles.s3.eu-north-1.amazonaws.com/images/bb.jpeg")',
+                    'url("/images/bb.jpeg")',
             }}
         >
             <div className="container">

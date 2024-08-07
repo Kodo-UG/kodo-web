@@ -35,7 +35,7 @@ const BlogDetails = () => {
             const res = await axiosInstance.get(`/blogs/${id}`);
             setComments(res.data.data.comments);
             setBlog(res.data.data);
-        } catch (error) {}
+        } catch (error) { }
     };
 
     const handleShareClick = () => {
@@ -51,7 +51,7 @@ const BlogDetails = () => {
             setComments(res.data.data.comments);
 
             // setComments("");
-        } catch (error) {}
+        } catch (error) { }
     };
 
     // console.log("BLOG:", comments);
@@ -98,10 +98,10 @@ const BlogDetails = () => {
                                         fontSize: isSm
                                             ? "1.4rem"
                                             : "" || isMd
-                                            ? "2.1rem"
-                                            : "" || isLg
-                                            ? "2.4rem"
-                                            : "2.4rem",
+                                                ? "2.1rem"
+                                                : "" || isLg
+                                                    ? "2.4rem"
+                                                    : "2.4rem",
                                     }}
                                     className="font-weight-bold"
                                 >
@@ -130,9 +130,8 @@ const BlogDetails = () => {
                                     justifyContent: "space-between",
                                     borderRadius: 6,
                                 }}
-                                className={`w-100 d-flex flex-row p-2 ${
-                                    isLg ? "px-4" : ""
-                                }`}
+                                className={`w-100 d-flex flex-row p-2 ${isLg ? "px-4" : ""
+                                    }`}
                             >
                                 <div
                                     style={{
@@ -141,8 +140,8 @@ const BlogDetails = () => {
                                         width: isSm
                                             ? "100%"
                                             : "" || isMd
-                                            ? "50%"
-                                            : "",
+                                                ? "50%"
+                                                : "",
                                     }}
                                     className=""
                                 >
@@ -222,7 +221,7 @@ const BlogDetails = () => {
                                         borderRadius: 20,
                                     }}
                                     onClick={handleShareClick}
-                                    // className="mr-6"
+                                // className="mr-6"
                                 >
                                     <span
                                         style={{
@@ -268,10 +267,10 @@ const BlogDetails = () => {
                                         fontSize: isSm
                                             ? "1rem"
                                             : "" || isMd
-                                            ? "2rem"
-                                            : "" || isLg
-                                            ? "2.3rem"
-                                            : "2.3rem",
+                                                ? "2rem"
+                                                : "" || isLg
+                                                    ? "2.3rem"
+                                                    : "2.3rem",
                                     }}
                                     className="font-weight-bold"
                                 >
@@ -291,8 +290,8 @@ const BlogDetails = () => {
                                 display: isSm
                                     ? "none"
                                     : "" || isMd
-                                    ? "none"
-                                    : "flex",
+                                        ? "none"
+                                        : "flex",
                                 width: "2000px",
                                 height: "700px",
                             }}
@@ -326,7 +325,7 @@ const BlogDetails = () => {
                                     }}
                                 >
                                     <img
-                                        src="https://kodofiles.s3.eu-north-1.amazonaws.com/images/interracial.jpg"
+                                        src="/images/interracial.jpg"
                                         style={{
                                             width: "100%",
                                             height: "100%",
@@ -375,7 +374,7 @@ const BlogDetails = () => {
                                 justifyContent: "center",
                                 alignItems: "center",
                             }}
-                            src="https://kodofiles.s3.eu-north-1.amazonaws.com/images/loader.gif"
+                            src="/images/loader.gif"
                             alt="middle"
                         />{" "}
                     </div>
