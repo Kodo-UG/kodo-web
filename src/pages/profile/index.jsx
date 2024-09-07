@@ -116,7 +116,7 @@ function Profile() {
 		setLoading(true);
 		try {
 			let res = await axios.get(
-				"https://api.kodoscholarship.com/api/v1/scholarship",
+				"https://api.kodoscholarshipwere.com/api/v1/scholarship",
 				config
 			);
 
@@ -162,7 +162,7 @@ function Profile() {
 		setLoading(true);
 		try {
 			let response = await axios.get(
-				"https://api.kodoscholarship.com/api/v1/user/favourites",
+				"https://api.kodoscholarshipwere.com/api/v1/user/favourites",
 				config
 			);
 			setFavData(response?.data?.data);

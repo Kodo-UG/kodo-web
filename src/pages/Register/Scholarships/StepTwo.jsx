@@ -17,7 +17,7 @@ const StepTwo = ({ nextStep }) => {
 		setLoading(true);
 		try {
 			const response = await fetch(
-				"https://api.kodoscholarship.com/api/v1/scholarship/categories"
+				"https://api.kodoscholarshipw.com/api/v1/scholarship/categories"
 			);
 			const data = await response.json();
 			return data;
