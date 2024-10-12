@@ -1,15 +1,16 @@
 {
-  "editor.tabSize": 4,
-  "cSpell.words": [
-    "aboutus",
-    "contactus",
-    "customlink",
-    "reduxjs",
-    "signin",
-    "Slidder",
-    "testimonals",
-    "uidotdev",
-    "usehooks"
-  ],
-  "jira-plugin.workingProject": ""
+	"editor.tabSize": 4,
+	"cSpell.words": [
+		"aboutus",
+		"Comfirmation",
+		"contactus",
+		"customlink",
+		"reduxjs",
+		"signin",
+		"Slidder",
+		"testimonals",
+		"uidotdev",
+		"usehooks"
+	],
+	"jira-plugin.workingProject": ""
 }

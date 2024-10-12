@@ -17,7 +17,7 @@ const StepTwo = ({ nextStep }) => {
 		setLoading(true);
 		try {
 			const response = await fetch(
-				"https://api.kodoscholarshipw.com/api/v1/scholarship/categories"
+				"https://api.kodoscholarship.com/api/v1/scholarship/categories"
 			);
 			const data = await response.json();
 			return data;
@@ -66,8 +66,8 @@ const StepTwo = ({ nextStep }) => {
 				<div
 					className="option-list"
 					style={{
-						height: isSm ? "28rem" : "auto", // Apply overflow: scroll when isSm is true
-						overflow: isSm ? "scroll" : "visible" // Apply overflow: scroll when isSm is true
+						height: isSm ? "28rem" : "auto", 
+						overflow: isSm ? "scroll" : "visible"
 					}}
 				>
 					{loading
