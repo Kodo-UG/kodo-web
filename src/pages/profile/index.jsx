@@ -33,8 +33,8 @@ function Profile() {
 	const config = {
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: `Bearer ${localStorage.getItem("token")}`
-		}
+			Authorization: `Bearer ${localStorage.getItem("token")}`,
+		},
 	};
 
 	const handleTabClick = (tab) => {
@@ -65,7 +65,7 @@ function Profile() {
 		try {
 			const res = await axiosInstance.patch("/user/profile", {
 				fname: firstname,
-				lname: lastname
+				lname: lastname,
 			});
 
 			if (res?.data.data) {
@@ -84,7 +84,7 @@ function Profile() {
 		setLoading(true);
 		try {
 			const res = await axiosInstance.patch("/user/profile", {
-				password: password
+				password: password,
 			});
 
 			if (res?.data.data) {
@@ -116,7 +116,7 @@ function Profile() {
 		setLoading(true);
 		try {
 			let res = await axios.get(
-				"https://api.kodoscholarshipwere.com/api/v1/scholarship",
+				"https://api.kodoscholarship.com/api/v1/scholarship",
 				config
 			);
 
@@ -162,7 +162,7 @@ function Profile() {
 		setLoading(true);
 		try {
 			let response = await axios.get(
-				"https://api.kodoscholarshipwere.com/api/v1/user/favourites",
+				"https://api.kodoscholarship.com/api/v1/user/favourites",
 				config
 			);
 			setFavData(response?.data?.data);
@@ -189,18 +189,21 @@ function Profile() {
 					style={{
 						width: "80%",
 						marginTop: "5rem",
-						marginLeft: isSm ? "" : "19rem"
+						marginLeft: isSm ? "" : "19rem",
 					}}
 					className="main-container container-fluid"
 				>
-					<div className="row" id="user-profile">
+					<div
+						className="row"
+						id="user-profile"
+					>
 						{loading ? (
 							<div
 								style={{
 									display: "flex",
 									justifyContent: "center",
 									alignItems: "center",
-									marginTop: "9rem"
+									marginTop: "9rem",
 								}}
 							>
 								<img
@@ -208,7 +211,7 @@ function Profile() {
 										width: "7rem ",
 										height: "7rem",
 										justifyContent: "center",
-										alignItems: "center"
+										alignItems: "center",
 									}}
 									src="https://res.cloudinary.com/itgenius/image/upload/v1692167806/Kodo-Scholarship-Loader2-1_b89na9.gif"
 									alt="middle"
@@ -225,24 +228,30 @@ function Profile() {
 														<img
 															style={{
 																padding: "",
-																cursor: "pointer"
+																cursor: "pointer",
 															}}
 															class="rounded-circle header-profile-user"
 															src={`https://ui-avatars.com/api/name=${info.user.fname}&background=random`}
 															alt="User"
-															width={68}
+															width={
+																68
+															}
 														/>
 													</div>
 													<div className="ms-4 ">
 														<h4
 															style={{
-																color: "black"
+																color: "black",
 															}}
 														>
-															{data.fname + " " + data.lname}
+															{data.fname +
+																" " +
+																data.lname}
 														</h4>
 														<p className="text-muted mb-2">
-															{data.email}
+															{
+																data.email
+															}
 														</p>
 													</div>
 												</div>
@@ -253,17 +262,25 @@ function Profile() {
 														<div
 															style={{
 																padding: "1rem",
-																borderRadius: "10px",
-																marginBottom: "1rem",
+																borderRadius:
+																	"10px",
+																marginBottom:
+																	"1rem",
 																width: "3rem",
 																height: "3rem",
-																position: "relative",
-																lineHeight: " 3rem",
-																textAlign: "center",
-																fontSize: "1.43rem",
+																position:
+																	"relative",
+																lineHeight:
+																	" 3rem",
+																textAlign:
+																	"center",
+																fontSize:
+																	"1.43rem",
 																display: "flex",
-																alignItems: "center",
-																justifyContent: "center"
+																alignItems:
+																	"center",
+																justifyContent:
+																	"center",
 															}}
 															className="media-icon bg-primary me-3 mt-1"
 														>
@@ -275,13 +292,17 @@ function Profile() {
 															</span>
 															<div
 																style={{
-																	fontSize: "2rem",
-																	marginRight: "2px",
-																	color: "#707070"
+																	fontSize:
+																		"2rem",
+																	marginRight:
+																		"2px",
+																	color: "#707070",
 																}}
 																className="fw-semibold fs-25"
 															>
-																{scholarship}
+																{
+																	scholarship
+																}
 															</div>
 														</div>
 													</div>
@@ -289,17 +310,25 @@ function Profile() {
 														<div
 															style={{
 																padding: "1rem",
-																borderRadius: "10px",
-																marginBottom: "1rem",
+																borderRadius:
+																	"10px",
+																marginBottom:
+																	"1rem",
 																width: "3rem",
 																height: "3rem",
-																position: "relative",
-																lineHeight: " 3rem",
-																textAlign: "center",
-																fontSize: "1.43rem",
+																position:
+																	"relative",
+																lineHeight:
+																	" 3rem",
+																textAlign:
+																	"center",
+																fontSize:
+																	"1.43rem",
 																display: "flex",
-																alignItems: "center",
-																justifyContent: "center"
+																alignItems:
+																	"center",
+																justifyContent:
+																	"center",
 															}}
 															className="media-icon bg-info me-3 mt-1"
 														>
@@ -311,13 +340,17 @@ function Profile() {
 															</span>
 															<div
 																style={{
-																	fontSize: "1.7rem",
-																	marginRight: "2px",
-																	color: "#707070"
+																	fontSize:
+																		"1.7rem",
+																	marginRight:
+																		"2px",
+																	color: "#707070",
 																}}
 																className="fw-semibold fs-25"
 															>
-																{appliedCount.length}
+																{
+																	appliedCount.length
+																}
 															</div>
 														</div>
 													</div>
@@ -325,17 +358,25 @@ function Profile() {
 														<div
 															style={{
 																padding: "1rem",
-																borderRadius: "10px",
-																marginBottom: "1rem",
+																borderRadius:
+																	"10px",
+																marginBottom:
+																	"1rem",
 																width: "3rem",
 																height: "3rem",
-																position: "relative",
-																lineHeight: " 3rem",
-																textAlign: "center",
-																fontSize: "1.43rem",
+																position:
+																	"relative",
+																lineHeight:
+																	" 3rem",
+																textAlign:
+																	"center",
+																fontSize:
+																	"1.43rem",
 																display: "flex",
-																alignItems: "center",
-																justifyContent: "center"
+																alignItems:
+																	"center",
+																justifyContent:
+																	"center",
 															}}
 															className="media-icon bg-warning me-3 mt-1"
 														>
@@ -347,13 +388,17 @@ function Profile() {
 															</span>
 															<div
 																style={{
-																	fontSize: "1.7rem",
-																	marginRight: "2px",
-																	color: "#707070"
+																	fontSize:
+																		"1.7rem",
+																	marginRight:
+																		"2px",
+																	color: "#707070",
 																}}
 																className="fw-semibold fs-25"
 															>
-																{favData.length}
+																{
+																	favData.length
+																}
 															</div>
 														</div>
 													</div>
@@ -361,17 +406,25 @@ function Profile() {
 														<div
 															style={{
 																padding: "1rem",
-																borderRadius: "10px",
-																marginBottom: "1rem",
+																borderRadius:
+																	"10px",
+																marginBottom:
+																	"1rem",
 																width: "3rem",
 																height: "3rem",
-																position: "relative",
-																lineHeight: " 3rem",
-																textAlign: "center",
-																fontSize: "1.43rem",
+																position:
+																	"relative",
+																lineHeight:
+																	" 3rem",
+																textAlign:
+																	"center",
+																fontSize:
+																	"1.43rem",
 																display: "flex",
-																alignItems: "center",
-																justifyContent: "center"
+																alignItems:
+																	"center",
+																justifyContent:
+																	"center",
 															}}
 															className="media-icon bg-success  me-3 mt-1"
 														>
@@ -386,13 +439,16 @@ function Profile() {
 															</span>
 															<div
 																style={{
-																	fontSize: "1.7rem",
-																	marginRight: "2px",
-																	color: "#707070"
+																	fontSize:
+																		"1.7rem",
+																	marginRight:
+																		"2px",
+																	color: "#707070",
 																}}
 																className="fw-semibold fs-25"
 															>
-																{referCount || 0}
+																{referCount ||
+																	0}
 															</div>
 														</div>
 													</div>
@@ -406,41 +462,48 @@ function Profile() {
 												<div
 													style={{
 														display: "flex",
-														flexDirection: "row"
+														flexDirection:
+															"row",
 													}}
 													className="tabs-menu1 "
 												>
 													<ul
 														style={{
-															padding: "1rem"
+															padding: "1rem",
 														}}
 														className="nav"
 													>
 														<li
 															style={{
 																color: "black",
-																marginRight: "1rem",
+																marginRight:
+																	"1rem",
 																borderBottom:
-																	activeTab === "profileMain"
+																	activeTab ===
+																	"profileMain"
 																		? "2px solid red"
 																		: "none",
-																display: "inline"
+																display: "inline",
 															}}
 														>
 															<a
 																href="#profileMain"
 																className={
-																	activeTab === "profileMain"
+																	activeTab ===
+																	"profileMain"
 																		? "active show"
 																		: ""
 																}
 																data-bs-toggle="tab"
 																onClick={() =>
-																	handleTabClick("profileMain")
+																	handleTabClick(
+																		"profileMain"
+																	)
 																}
 																style={{
 																	color: "black",
-																	fontWeight: "bold"
+																	fontWeight:
+																		"bold",
 																}}
 															>
 																Profile
@@ -450,10 +513,10 @@ function Profile() {
 															style={{
 																borderBottom:
 																	activeTab ===
-																		"accountSettings"
+																	"accountSettings"
 																		? "2px solid red"
 																		: "none",
-																display: "inline"
+																display: "inline",
 															}}
 														>
 															<a
@@ -466,10 +529,12 @@ function Profile() {
 																}
 																style={{
 																	color: "black",
-																	fontWeight: "bold"
+																	fontWeight:
+																		"bold",
 																}}
 															>
-																Account Settings
+																Account
+																Settings
 															</a>
 														</li>
 													</ul>
@@ -488,61 +553,101 @@ function Profile() {
 												<div
 													className="table-responsive px-5  "
 													style={{
-														fontFamily: "Poppins, sans-serif"
+														fontFamily:
+															"Poppins, sans-serif",
 													}}
 												>
 													<h3
 														className="card-titl  mx-3"
 														style={{
-															fontFamily: "Poppins, sans-serif",
+															fontFamily:
+																"Poppins, sans-serif",
 															color: "gray",
-															fontSize: "18px",
-															lineHeight: "20px",
-															fontWeight: "bold",
+															fontSize:
+																"18px",
+															lineHeight:
+																"20px",
+															fontWeight:
+																"bold",
 															margin: "1rem",
-															marginBottom: "2rem"
+															marginBottom:
+																"2rem",
 														}}
 													>
-														Personal Info
+														Personal
+														Info
 													</h3>
 													<table className="table row table-borderless">
 														<tbody className="col-lg-12 col-xl-6 p-0 ">
 															<tr>
 																<td>
-																	<strong>First Name :</strong>{" "}
-																	{data.fname}
+																	<strong>
+																		First
+																		Name
+																		:
+																	</strong>{" "}
+																	{
+																		data.fname
+																	}
 																</td>
 															</tr>
 															<tr>
 																<td>
-																	<strong>Location :</strong>{" "}
-																	{(data.city, data.country)}
+																	<strong>
+																		Location
+																		:
+																	</strong>{" "}
+																	{
+																		(data.city,
+																		data.country)
+																	}
 																</td>
 															</tr>
 															<tr>
 																<td>
-																	<strong>Subject :</strong>{" "}
-																	{data.subject}
+																	<strong>
+																		Subject
+																		:
+																	</strong>{" "}
+																	{
+																		data.subject
+																	}
 																</td>
 															</tr>
 														</tbody>
 														<tbody className="col-lg-12 col-xl-6 p-0 ">
 															<tr>
 																<td>
-																	<strong>Last Name :</strong>{" "}
-																	{data.lname}
+																	<strong>
+																		Last
+																		Name
+																		:
+																	</strong>{" "}
+																	{
+																		data.lname
+																	}
 																</td>
 															</tr>
 															<tr>
 																<td>
-																	<strong>Email :</strong>{" "}
-																	{data.email}
+																	<strong>
+																		Email
+																		:
+																	</strong>{" "}
+																	{
+																		data.email
+																	}
 																</td>
 															</tr>
 															<tr>
 																<td>
-																	<strong>Phone :</strong>{" "}
-																	{data.phone}
+																	<strong>
+																		Phone
+																		:
+																	</strong>{" "}
+																	{
+																		data.phone
+																	}
 																</td>
 															</tr>
 														</tbody>
@@ -555,7 +660,10 @@ function Profile() {
 										</div>
 									</div>
 
-									<div className="tab-pane" id="accountSettings">
+									<div
+										className="tab-pane"
+										id="accountSettings"
+									>
 										<div className="card">
 											<div className="card-body">
 												<form className="form-horizontal">
@@ -569,7 +677,8 @@ function Profile() {
 																	htmlFor="userName"
 																	className="form-label"
 																>
-																	First Name
+																	First
+																	Name
 																</label>
 															</div>
 															<div className="col-md-9">
@@ -578,7 +687,9 @@ function Profile() {
 																	className="form-control"
 																	id="userName"
 																	placeholder="First Name"
-																	defaultValue={data.fname}
+																	defaultValue={
+																		data.fname
+																	}
 																	onChange={handleInputChange(
 																		setFirstName
 																	)}
@@ -593,7 +704,8 @@ function Profile() {
 																	htmlFor="userName"
 																	className="form-label"
 																>
-																	Last Name
+																	Last
+																	Name
 																</label>
 															</div>
 															<div className="col-md-9">
@@ -602,7 +714,9 @@ function Profile() {
 																	className="form-control"
 																	id="userName"
 																	placeholder="Last Name"
-																	defaultValue={data.lname}
+																	defaultValue={
+																		data.lname
+																	}
 																	onChange={handleInputChange(
 																		setLastName
 																	)}
@@ -622,7 +736,7 @@ function Profile() {
 																	style={{
 																		backgroundColor:
 																			"#EC1D64",
-																		color: "#fff"
+																		color: "#fff",
 																	}}
 																	className="btn  my-1 float-end"
 																	to="#"
@@ -636,11 +750,14 @@ function Profile() {
 													</div>
 												</form>
 												<form
-													onSubmit={handleEditPassword}
+													onSubmit={
+														handleEditPassword
+													}
 													className="form-horizontal"
 												>
 													<div className="mb-4 main-content-label">
-														Change Password
+														Change
+														Password
 													</div>
 													<div className="form-group ">
 														<div className="row row-sm">
@@ -649,7 +766,8 @@ function Profile() {
 																	htmlFor="current_password"
 																	className="form-label"
 																>
-																	Current Password
+																	Current
+																	Password
 																</label>
 															</div>
 															<div className="col-md-9">
@@ -671,7 +789,8 @@ function Profile() {
 																	htmlFor="password"
 																	className="form-label"
 																>
-																	New Password
+																	New
+																	Password
 																</label>
 															</div>
 															<div className="col-md-9">
@@ -698,10 +817,11 @@ function Profile() {
 																	style={{
 																		backgroundColor:
 																			"#EC1D64",
-																		color: "#fff"
+																		color: "#fff",
 																	}}
 																>
-																	Change Password
+																	Change
+																	Password
 																</button>
 															</div>
 														</div>
@@ -711,11 +831,13 @@ function Profile() {
 												<div
 													className="form-horizontal"
 													style={{
-														marginTop: "60px"
+														marginTop:
+															"60px",
 													}}
 												>
 													<div className="mt-20 main-content-label">
-														Delete Account
+														Delete
+														Account
 													</div>
 
 													<div className="form-group ">
@@ -729,7 +851,8 @@ function Profile() {
 																		)
 																	}
 																>
-																	Delete Account
+																	Delete
+																	Account
 																</button>
 															</div>
 														</div>
@@ -738,19 +861,34 @@ function Profile() {
 														title="Delete Account Confirmation"
 														okButtonProps={{
 															style: {
-																backgroundColor: "#1C2755",
-																borderColor: "#1C2755"
-															}
+																backgroundColor:
+																	"#1C2755",
+																borderColor:
+																	"#1C2755",
+															},
 														}}
-														open={isModalOpen}
-														onOk={handleDelete}
+														open={
+															isModalOpen
+														}
+														onOk={
+															handleDelete
+														}
 														onCancel={() =>
-															setIsModalOpen(!isModalOpen)
+															setIsModalOpen(
+																!isModalOpen
+															)
 														}
 													>
 														<p>
-															Are you sure you want to delete
-															your account?
+															Are
+															you
+															sure
+															you
+															want
+															to
+															delete
+															your
+															account?
 														</p>
 													</Modal>
 												</div>
