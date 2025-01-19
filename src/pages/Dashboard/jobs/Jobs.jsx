@@ -23,7 +23,7 @@ const Jobs = () => {
 							// background: "red"
 						}}
 					>
-						<MatchedCard title="jobs" total="360,0000" />
+						{/* <MatchedCard title="jobs" total="360,0000" /> */}
 						<TitleContent />
 
 						{isSm ? (

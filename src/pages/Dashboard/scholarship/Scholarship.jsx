@@ -12,7 +12,10 @@ const Scholarship = () => {
 	return (
 		<div style={{ background: "white" }}>
 			<div className="content-wrapper">
-				<section style={{ marginBottom: "2rem" }} className="content">
+				<section
+					style={{ marginBottom: "2rem" }}
+					className="content"
+				>
 					<div
 						style={{
 							display: "flex ",
@@ -20,14 +23,34 @@ const Scholarship = () => {
 							width: "100%",
 							alignItems: "center",
 							padding: "2px",
-							justifyContent: "center"
+							justifyContent: "center",
 						}}
 					>
-						<MatchedCard title="scholarships" total="702,531" />
+						{/* <MatchedCard title="scholarships" total="702,531" /> */}
+						<div style={{ marginTop: "100px" }}></div>
 
 						<ShowTitle />
-						<div style={{ padding: isSm ? "2rem" : "", width: "100%" }}>
-							{isSm ? <CombinedScholarshipCard /> : <MapCardData />}
+						<div
+							style={{
+								padding: isSm ? "2rem" : "",
+								width: "100%",
+							}}
+						>
+							<div
+								style={{
+									textAlign: "center",
+									letterSpacing: "2px",
+									color: "#1c2755",
+									fontSize: isSm ? "1.45rem" : "2.5rem",
+								}}
+							>
+								Latest Scholarships
+							</div>
+							{isSm ? (
+								<CombinedScholarshipCard />
+							) : (
+								<MapCardData />
+							)}
 						</div>
 					</div>
 				</section>

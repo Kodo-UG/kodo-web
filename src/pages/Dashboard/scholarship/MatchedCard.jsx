@@ -9,68 +9,68 @@ import { BASE_URL } from "../../../constants/api";
 import truncateText from "../../../utils/truncate";
 
 const MatchedCard = ({ title, total }) => {
-    const [ads, setAds] = useState([]);
+	const [ads, setAds] = useState([]);
 
-    const isSm = useMediaQuery("only screen and (max-width : 700px)");
-    const isMd = useMediaQuery(
-        "only screen and (min-width : 700px) and (max-width : 1250px)"
-    );
+	const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const isMd = useMediaQuery(
+		"only screen and (min-width : 700px) and (max-width : 1250px)"
+	);
 
-    const [jobCount, setJobCount] = useState(`${total}`);
+	const [jobCount, setJobCount] = useState(`${total}`);
 
-    const config = {
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-    };
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${localStorage.getItem("token")}`,
+		},
+	};
 
-    const getAds = async () => {
-        try {
-            const res = await axios.get(`${BASE_URL}/admin/ads`);
-            console.log(res.data.data, "-----");
-            setAds(res.data.data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+	const getAds = async () => {
+		try {
+			const res = await axios.get(`${BASE_URL}/admin/ads`);
 
-    useEffect(() => {
-        getAds();
-    }, []);
+			setAds(res.data.data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-    useEffect(() => {
-        const updateJobCount = () => {
-            setJobCount((prevCount) => prevCount + 5);
-        };
+	useEffect(() => {
+		getAds();
+	}, []);
 
-        const intervalId = setInterval(updateJobCount, 32400000); // 9 hour = 3600000 milliseconds
+	useEffect(() => {
+		const updateJobCount = () => {
+			setJobCount((prevCount) => prevCount + 5);
+		};
 
-        return () => clearInterval(intervalId);
-    }, []);
+		const intervalId = setInterval(updateJobCount, 32400000); // 9 hour = 3600000 milliseconds
 
-    useQuery("/scholarship", getScholarship);
+		return () => clearInterval(intervalId);
+	}, []);
 
-    async function getScholarship() {
-        try {
-            const res = await axios.get(
-                "https://api.kodoscholarship.com/api/v1/scholarship",
-                config
-            );
-            return res?.data;
-        } catch (error) {
-            throw new Error(error.message || "Failed to fetch scholarships");
-        }
-    }
-    return (
-        <>
-            <Carousel
-                style={{ height: "50vh" }}
-                interval={9900}
-                slide={true}
-                controls={false}
-            >
-                {ads.map((ad) => (
+	useQuery("/scholarship", getScholarship);
+
+	async function getScholarship() {
+		try {
+			const res = await axios.get(
+				"https://api.kodoscholarship.com/api/v1/scholarship",
+				config
+			);
+			return res?.data;
+		} catch (error) {
+			throw new Error(error.message || "Failed to fetch scholarships");
+		}
+	}
+	return (
+		<>
+			<Carousel
+				style={{ height: "50vh" }}
+				interval={9900}
+				slide={true}
+				controls={false}
+			>
+				{ads.map((ad) => (
                     <Carousel.Item>
                         <div
                             style={{
@@ -155,9 +155,9 @@ const MatchedCard = ({ title, total }) => {
 
                     </Carousel.Item>
                 ))}
-            </Carousel>
-        </>
-    );
+			</Carousel>
+		</>
+	);
 };
 
 export default MatchedCard;

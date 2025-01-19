@@ -41,7 +41,7 @@ const LargeCard = ({
             let res = await axiosInstance.post("/user/apply", {
                 id,
             });
-            console.log(res);
+          
         } catch (err) {
             throw err;
         }

@@ -134,9 +134,8 @@ const PaymentCard = ({ data }) => {
             onClick={() => {
               handleFlutterPayment({
                 callback: async (response) => {
-                  console.log("clicked sir");
                   await subscribe(response.status, data._id);
-                  closePaymentModal(); // this will close the modal programmatically
+                  closePaymentModal(); 
                 },
                 onClose: (data) => {},
               });
@@ -147,7 +146,7 @@ const PaymentCard = ({ data }) => {
           </button>
         </div>
       </div>
-      {/* </div> */}
+      
     </div>
   );
 };
