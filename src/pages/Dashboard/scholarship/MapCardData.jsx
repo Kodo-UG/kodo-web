@@ -35,6 +35,7 @@ const MapCardData = () => {
       // console.log(res?.data, "==");
       setData(res?.data?.data);
       setSubscription(res.data.subscription);
+
     } catch (error) {
       console.log(error);
     }
@@ -69,6 +70,7 @@ const MapCardData = () => {
       }
       setData(data.concat(res?.data?.data));
       setSubscription(res.data.subscription);
+
     } catch (error) {
       console.log(error);
     }
@@ -84,9 +86,9 @@ const MapCardData = () => {
   };
 
   useEffect(() => {
-    getScholarship();
+   getScholarship();
   }, []);
-
+  
   return (
     <div style={{ width: "100%", marginBottom: "20rem" }}>
       <InfiniteScroll
