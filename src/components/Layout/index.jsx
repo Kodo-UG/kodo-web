@@ -2,20 +2,28 @@ import React, { Fragment, useState } from "react";
 import NavHeader from "./NavHeader";
 import Footer from "./Footer";
 
+
 const Layout = ({ children }) => {
 	const [open, setOpen] = useState(false);
 	return (
-		<Fragment>
-			<header className="header-area header-three">
-				<NavHeader open={open} setOpen={setOpen} />
-			</header>
-
-			<main style={{ height: "100%" }} onClick={() => setOpen(false)}>
-				{children}
-			</main>
-
+		<>
+		<div
+			style={{
+				width: '90%',
+				margin: 'auto',
+				backgroundColor: 'white'
+			}}
+		>
+			<NavHeader />
+			<main
+				style={{
+					flex: 1,
+  					minHeight: '100vh'
+				}}
+			>{children}</main>
 			<Footer />
-		</Fragment>
+		</div>
+		</>
 	);
 };
 

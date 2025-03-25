@@ -1,129 +1,40 @@
-import React from "react";
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Footer = () => {
-	return (
-		<footer
-			className="footer-bg   footer-p pt-90  "
-			style={{
-				backgroundColor: "#125875",
-				backgroundImage:
-					"url(/images/footer.png)"
-			}}
-		>
-			<div className="footer-top pb-70">
-				<div className="container">
-					<div className="row justify-content-between">
-						<div className="col-xl-4 col-lg-4 col-sm-6">
-							<div className="footer-widget mb-30">
-								<div className="f-widget-title">
-									<img
-										src="/images/logo1.png"
-										alt="img"
-										style={{
-											marginRight: 10,
-											width: 230,
-											marginTop: -50,
-											marginLeft: 10,
-											height: 230
-										}}
-									/>
-								</div>
-							</div>
-						</div>
-						<div className="col-xl-5 col-lg-5 col-md-8 col-sm-12">
-							<div className="footer-link">
-								<div className="row">
-									<div className="col-lg-6 col-md-6 col-sm-6">
-										<ul
-											className="link-list"
-											style={{ fontWeight: "bold" }}
-										>
-											<li>
-												<a href="/aboutus">About Us</a>
-											</li>
-											<li>
-												<a href="/scholarships">FAQ</a>
-											</li>
-											<li>
-												<a href="/scholarships">Scholarships</a>
-											</li>
-											<li>
-												<a href="/policy">Privacy Policy</a>
-											</li>
-										</ul>
-									</div>
-									<div className="col-lg-6 col-md-6 col-sm-6">
-										<ul
-											className="link-list"
-											style={{ fontWeight: "bold" }}
-										>
-											<li>
-												<a href="/testimonial">Testimonials</a>
-											</li>
-											<li>
-												<a href="/policy">Terms of Service</a>
-											</li>
-											<li>
-												<a href="/blog">Blog</a>
-											</li>
-											<li>
-												<a href="/contactus">Contact Us</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="col-xl-3 col-lg-3 col-sm-6">
-							<div className="footer-widget mb-30">
-								<div className="footer-social mt-10">
-									<a href="https://www.facebook.com/people/Kodo-Scholarships/100064161548720/">
-										<i className="fab fa-facebook-f" />
-									</a>
-									<a href="https://www.instagram.com/kodoscholarships/">
-										<i className="fab fa-instagram" />
-									</a>
-									<a href="https://twitter.com/kodoscholarship">
-										<i className="fab fa-twitter" />
-									</a>
-								</div>
-								<div className="app-download mt-20">
-									<a href="#">
-										<img
-											style={{ width: 140 }}
-											src="/images/playstore.png"
-											alt="Google Playstore"
-										/>
-									</a>
-									<a href="#">
-										<img
-											style={{ width: 130 }}
-											src="/images/appstore.png"
-											alt="Appstore"
-										/>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div
-				className="desktop-footer-bottom"
-				style={{ backgroundColor: "#125875" }}
-			>
-				<div className="container">
-					<div className="row align-items-center">
-						<div
-							style={{ color: "#d2d4d7", textAlign: "center" }}
-							className="col-lg-4 text-center mx-auto"
+  return (
+    <footer>
+      <div>
+        <div>
+          <Link
+							to="/"
+							style={{
+                marginBottom: 4
+              }}
+              
 						>
-							Copyright © Kodo Scholarships 2023
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-	);
-};
-export default Footer;
+							<img
+								src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kodo%20Schools%20Logo-20%201-m9kSeX93hpeGI06AhwmlhwK4gwv3sw.png"
+								alt="Kodo"
+                width={80}
+                height={24}
+                style={{
+                  width: 'auto'
+                }}
+							/>
+						</Link>
+        </div>
+        <div>
+          <div>
+
+          </div>
+          <div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
