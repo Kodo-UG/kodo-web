@@ -1,32 +1,7 @@
-.iconW{
-    padding: 1rem;
-
+.w-full {
+  width: 100%;
 }
 
-@media (min-width: 992px) {
-    .slider {
-      height: 75vh;
-    }
-  }
-  
-  /* Medium desktop view */
-  @media (max-width: 991px) and (min-width: 768px) {
-    .slider {
-      height: 780px;
-    }
-  }
-  
-  /* Tablet view */
-  @media (max-width: 767px) and (min-width: 576px) {
-    .slider {
-      height: 680px;
-    }
-  }
-  
-  /* Mobile view */
-  @media (max-width: 575px) {
-    .slider {
-      height: 580px;
-    }
-  }
-  
+.min-h-screen {
+  min-height: 100vh;
+}

@@ -1,56 +1,203 @@
-.main-container {
-    display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+/* Header Styling */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  height: 66px;
 }
 
-.shadow {
-    box-shadow: 4px 30px 0px rgba(0, 0, 0, 0.8);
-  }
+.header.scrolled {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-.flex-container {
-    display: flex;
-    align-items: center;
-    gap: 16px; /* Default gap (4 * 4px) */
+.container {
+  width: 95%;
+  margin: 'auto';
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+/* Logo */
+.logo-Container {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+}
+
+
+
+.nav-link {
+  color: #6b7280;
+  font-size: 16px;
+  transition: color 0.2s ease-in-out;
+}
+
+@media (min-width: 1280px) {
+  .nav-link {
+    font-size: 14px;
   }
-  
-  @media (min-width: 768px) { /* Matches `md` breakpoint in Tailwind */
-    .flex-container {
-      gap: 32px; /* 8 * 4px */
-    }
-  }
-  
-  .hidden-sm {
+}
+
+.nav-link:hover {
+  color: #111827;
+}
+
+/* Right Section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .login-link,
+  .cta-button {
     display: none;
   }
-  
-  @media (min-width: 640px) { /* Matches `sm` breakpoint in Tailwind */
-    .hidden-sm {
+
+  .menu-button {
+    display: block;
+  }
+}
+
+.login-link {
+  color: #111827;
+  font-size: 14px;
+  transition: color 0.2s ease-in-out;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  border-radius: 50px;
+  width: 75px;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button {
+  background-color: #00D6DD;
+  color: #1a1f36;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 9999px;
+  font-weight: 500;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.7);
+  transition: background-color 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+/* Mobile Menu */
+.menu-button {
+  display: none;
+  padding: 8px;
+  border-radius: 6px;
+  background: none;
+  border: none;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menu-button:hover {
+  background-color: #f3f4f6;
+}
+
+@media (max-width: 950px) {
+  .nav-links {
+      display: none;
+  }
+  .menu-button {
       display: block;
-    }
   }
-  
-  .login-link {
-    color: #111827; /* Tailwind's text-gray-500 */
-    transition: color 0.2s ease-in-out;
-    border: '1px solid  black';
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 40;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 57px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 50;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #e5e7eb;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.mobile-menu-content {
+  padding: 8px 16px;
+}
+
+.mobile-menu-item {
+  display: block;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.mobile-menu-item:hover {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* Mobile CTA Button */
+.mobile-menu-button-container {
+  padding: 16px 0;
+}
+
+.mobile-cta-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  background-color: #00D6DD;
+  color: #1a1f36;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Utility Classes */
+.sm-hidden {
+  display: none;
+}
+
+@media (min-width: 644px) {
+  .sm-hidden {
+      display: hidden;
   }
-  
-  .scholarship-link {
-    background-color: #00D6DD;
-    color: #1a1f36;
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 9999px; /* Makes it fully rounded */
-    font-weight: 500;
-    transition: background-color 0.2s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .sm-hidden {
+    display: block;
   }
-  
-  @media (min-width: 640px) { /* `sm` breakpoint */
-    .scholarship-link {
-      padding: 12px 24px;
-      font-size: 16px;
-    }
-  }
+}

@@ -1,0 +1,153 @@
+footer {
+    width: 100%;
+    background-color: white;
+  }
+  
+  .container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 32px 16px;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      padding: 48px 16px;
+    }
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-content {
+      flex-direction: row;
+    }
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+  }
+  
+  .logo-container img {
+    height: 32px;
+    width: auto;
+  }
+  
+  .links-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  @media (min-width: 1024px) {
+    .links-container {
+      width: 50%;
+    }
+  }
+  
+  .link-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+  }
+  
+  @media (min-width: 768px) {
+    .link-column {
+      align-items: flex-start;
+    }
+  }
+  
+  .link-column a {
+    color: #1D2855;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .link-column a:hover {
+    color: #00e5c9;
+  }
+  
+  .app-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  @media (min-width: 768px) {
+    .app-buttons {
+      align-items: flex-end;
+    }
+  }
+  
+  .app-buttons img {
+    width: 128px;
+    height: auto;
+  }
+  
+  @media (min-width: 640px) {
+    .app-buttons img {
+      width: 144px;
+    }
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    background-color: #EEEFF7;
+    padding: 16px 0;
+  }
+  
+  .footer-bottom .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  @media (min-width: 640px) {
+    .footer-bottom .container {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  @media (min-width: 200px) {
+    .footer-bottom {
+      width: 100%
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-bottom {
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+  }
+  
+  .footer-bottom-links {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .footer-bottom-links a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .footer-bottom-links a:hover {
+    color: #1D2855;
+  }
+  

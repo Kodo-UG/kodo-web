@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from "react";
 import NavHeader from "./NavHeader";
 import Footer from "./Footer";
+import {Link} from 'react-router-dom';
+import './footer.css';
 
 
 const Layout = ({ children }) => {
@@ -8,11 +10,9 @@ const Layout = ({ children }) => {
 	return (
 		<>
 		<div
-			style={{
-				width: '90%',
-				margin: 'auto',
+		 	 style={{
 				backgroundColor: 'white'
-			}}
+			 }}		
 		>
 			<NavHeader />
 			<main
@@ -22,6 +22,30 @@ const Layout = ({ children }) => {
 				}}
 			>{children}</main>
 			<Footer />
+		</div>
+		<div className="footer-bottom">
+			<div
+				style={{
+					width: '95%',
+					margin: 'auto'
+				}}
+			>
+				<div
+					style={{
+						display: 'flex',
+						flexDirection: 'row',
+						justifyContent: 'space-between',
+						alignItems: 'center'
+					}}
+				>
+					<div>© {new Date().getFullYear()} Kodo Scholarships | All Rights Reserved</div>
+					<div className="footer-bottom-links">
+					<Link to="/cookies">Cookies</Link>
+					<span>|</span>
+					<Link to="/sitemap">Site Map</Link>
+					</div>
+				</div>
+			</div>
 		</div>
 		</>
 	);
