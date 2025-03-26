@@ -18,7 +18,7 @@ const HomePage = () => {
 
 				<FeaturesGrid />
 				<AboutSection />
-				{/* <VideoSection /> */}
+				<VideoSection />
 
 			</div>
     	</div>

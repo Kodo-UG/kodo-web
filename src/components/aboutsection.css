@@ -19,6 +19,13 @@
     background-color:#00D6DD ;
     border-radius: 48px;
     padding: 20px;
+    margin-top: -240px;
+  }
+
+  @media (max-width: 1024px) {
+    .about-section-box {
+      margin-top: -250px;
+    }
   }
   
   .about-section-grid {
