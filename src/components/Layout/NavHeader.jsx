@@ -9,11 +9,11 @@ import './NavHeader.css';
 export default function NavHeader() {
   const navigationItems = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
+    { href: "/aboutus", label: "About" },
     { href: "/scholarships", label: "Scholarships" },
-    { href: "/testimonial", label: "Testimonials" },
+    { href: "/testimonials", label: "Testimonials" },
     { href: "/blog", label: "Blogs" },
-    { href: "/contact", label: "Contact" },
+    { href: "/contactus", label: "Contact" },
   ]
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
