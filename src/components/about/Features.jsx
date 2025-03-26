@@ -1,17 +1,18 @@
 import React from 'react';
-import './featuressection.css';
+import '../featuressection.css';
+import FindScholarships from './FindScholarships';
 
 function FeaturesSection() {
   return (
     <div className="features-section">
       <div className="features-header">
-        <h2>Our Best Features</h2>
+        <h2>What we’re all about</h2>
         <p
             style={{
                 paddingLeft: '10px',
                 paddingRight: '10px'
             }}
-        >We have developed ground-breaking features to help you find and secure scholarships.</p>
+        >Kodo Search reduces the scholarship search process from months to minutes by matching students with opportunities made them.</p>
       </div>
       <div className="features-grid">
         {[
@@ -51,6 +52,7 @@ function FeaturesSection() {
           </div>
         ))}
       </div>
+      <FindScholarships />
     </div>
   );
 }
