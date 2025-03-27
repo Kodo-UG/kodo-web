@@ -1,7 +1,6 @@
 /* Parent container */
 .find-scholarships-container {
     width: 100%;
-    position: relative;
     color: #1d2855;
   }
   
@@ -20,13 +19,10 @@
   
   /* CTA Container */
   .cta-container {
-    position: absolute;
     max-width: 64rem; /* Equivalent to max-w-4xl */
     margin-left: auto;
     margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: -14rem; /* Equivalent to -bottom-60 */
+    /* padding: 10px; */
   }
   
   /* CTA Box */
@@ -53,20 +49,27 @@
   /* Responsive Padding */
   @media (min-width: 640px) {
     .cta-box {
-      padding: 2rem; /* Equivalent to sm:p-8 */
+      padding: 2rem; 
     }
   }
   
   @media (min-width: 768px) {
     .cta-box {
-      padding: 5rem; /* Equivalent to md:p-20 */
+      padding: 5rem; 
     }
   }
   
   /* Heading */
   .cta-box h2 {
-    font-size: 2rem; /* Equivalent to text-responsive-3xl */
+    font-size: 1.4rem; /* Equivalent to text-responsive-3xl */
     margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+  }
+
+  @media(min-width:400px){
+    .cta-box h2{
+      font-size: 2rem; /* Equivalent to text-responsive-3xl */
+      margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+    }
   }
   
   /* Button */

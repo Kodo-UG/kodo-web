@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import "./findscholarships.css"; // Import the CSS file
 
 const CTA = () => (
-  <div className="cta-container">
+  <div className="cta-container"
+    style={{
+      color: '#1d2855'
+    }}
+  >
     <div className="cta-box">
         <div
             className='cta-box-container'
@@ -29,15 +33,17 @@ const CTA = () => (
 
 function FindScholarships() {
   return (
-    <div className="find-scholarships-container">
-      <div className="image-container">
-        <img
-          src="https://res.cloudinary.com/digrh1wj1/image/upload/v1742426808/Frame_40_wnrd5o.png"
-          alt="Students"
-          loading="lazy"
-        />
+    <div>
+      <div className="find-scholarships-container">
+        <div className="image-container">
+          <img
+            src="https://res.cloudinary.com/digrh1wj1/image/upload/v1742426808/Frame_40_wnrd5o.png"
+            alt="Students"
+            loading="lazy"
+          />
+        </div>
       </div>
-      <CTA />
+        <CTA />
     </div>
   );
 }

@@ -68,7 +68,7 @@ export default function Login() {
     };
 
     return (
-        <section
+        <section 
             className="fxt-template-layout1 "
             style={{ backgroundColor: "#fff", width: "100%" }}
         >

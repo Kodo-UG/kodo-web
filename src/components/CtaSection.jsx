@@ -4,8 +4,14 @@ import "./cta.css";
 
 function CtaSection() {
   return (
-    <section className="cta-section">
-      <div className="cta-container">
+    <section className="cta-section"
+    >
+      <div className="cta-container"
+        style={{
+          width: '100%',
+          marginTop: '-380px'
+        }}
+      >
         <div className="cta-content">
           <h2>Take your next step with Kodo</h2>
           <p>

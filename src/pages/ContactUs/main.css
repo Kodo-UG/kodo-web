@@ -100,6 +100,17 @@
   }
 }
 
+.mb-10{
+  margin-top: 20px;
+}
+
+.lg-grid-cols-4 {
+  /* Applies on medium (md) screens and above */
+  @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -317,6 +328,10 @@
 
 .aspect-1\.85\/1 {
   aspect-ratio: 1.85 / 1;
+}
+
+.aspect {
+  aspect-ratio: 1.2 / 1;
 }
 
 .w-full {

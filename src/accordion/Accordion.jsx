@@ -8,11 +8,11 @@ export default function Accordion() {
     <>
       <section className="accordion-section"
         style={{
-            color: '#1d2855'
+            color: '#1d2855' 
         }}
       >
         <CustomContainer>
-          <div className="accordion-container">
+          <div className="accordion-container"> 
             <h1 className="accordion-title">
               Find the right
               <br />

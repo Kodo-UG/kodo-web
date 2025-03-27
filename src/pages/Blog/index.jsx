@@ -4,8 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import FindScholarships from "../../components/about/FindScholarships";
 import CustomContainer from "../../components/ShredComponents/CustomerContainer";
 // import "./blog.css";
-import '../Testimonals/testimonial.css';
-import '../ContactUs/main.css';
+import './blog.css';
 
 const blogPosts = [
   {
@@ -39,8 +38,8 @@ export default function BlogPage() {
               key={index}
               className={`rounded-full px-6 py-2 text-sm font-medium ${
                 index === 0
-                  ? "bg-[#00d6dd] shadow-3xl text-[#1D2855]"
-                  : "border border-[#E5E5E5] text-[#666666] hover:bg-[#F5F4FA]"
+                  ? "bg-bg shadow-3xl text-custom"
+                  : "border border-border text-text hover-bg"
               }`}
             >
               {filter}
@@ -48,38 +47,38 @@ export default function BlogPage() {
           ))}
         </div>
 
-        <div className="mb-10 grid gap-6 md:grid-cols-3 lg:grid-cols-4">
+        <div className="mb-10 grid gap-6 md-grid-cols-3 lg-grid-cols-4">
           {blogPosts.map((post) => (
             <Link
               key={post.id}
-              href={`/blog/${post.id}`}
+              to={`/blog/${post.id}`}
               className="group overflow-hidden "
             >
-              <div className="aspect-[1.2/1] relative overflow-hidden rounded-2xl">
+              <div className="aspect-1-2-1 relative overflow-hidden rounded-2xl">
                 <img
                   src={post.image || "/placeholder.svg"}
                   alt={post.title}
                   fill
-                  className="object-cover transition duration-300 group-hover:scale-105"
+                  className="object-cover transition duration-300 group-hover-scale-105"
                 />
               </div>
               <div className="p-6">
-                <h2 className="mb-2 text-lg font-medium leading-tight text-[#1A1060] group-hover:text-[#00D2C1]">
+                <h2 className="mb-2 text-lg font-medium leading-tight text-color group-hover-text">
                   {post.title}
                 </h2>
-                <p className="text-sm text-[#666666]">{post.date}</p>
+                <p className="text-sm text">{post.date}</p>
               </div>
             </Link>
           ))}
         </div>
 
         <div className="flex items-center justify-center gap-4">
-          <button className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E5E5E5] hover:bg-[#F5F4FA]">
-            <ChevronLeft className="h-5 w-5 text-[#666666]" />
+          <button className="flex h-10 w-10 items-center justify-center rounded-full border border-1 hover-bg-1">
+            <ChevronLeft className="h-5 w-5 text-1" />
           </button>
-          <span className="text-sm text-[#666666]">1 of 226</span>
-          <button className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E5E5E5] hover:bg-[#F5F4FA]">
-            <ChevronRight className="h-5 w-5 text-[#666666]" />
+          <span className="text-sm text-1">1 of 226</span>
+          <button className="flex h-10 w-10 items-center justify-center rounded-full border border-1 hover-bg-1">
+            <ChevronRight className="h-5 w-5 text-1" />
           </button>
         </div>
       </main>

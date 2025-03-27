@@ -15,7 +15,11 @@ function Testimonials() {
           </p>
           <div className="testimonials-grid">
             {data.map((d, i) => (
-              <div key={i} className="testimonial-card">
+              <div key={i} className="testimonial-card"
+                style={{
+                  backgroundColor: `${d.color}`
+                }}
+              >
                 <div className="testimonial-content">
                   <img
                     src="https://res.cloudinary.com/dfdswxx7x/image/upload/v1740086145/h0edbkykpylvisrmbzvg.png"
