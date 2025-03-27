@@ -91,6 +91,7 @@
 /* Experience Section */
 .about-about-experience-section {
   padding: 1rem;
+  margin-top: -200px;
 }
 
 @media (min-width: 768px) {

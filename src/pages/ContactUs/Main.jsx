@@ -24,36 +24,32 @@ export default function Main() {
   ];
 
   return (
-    <div className="main-container">
-      {/* Contact Section */}
-      <div className="contact-section">
-        <CustomContainer>
-          <div style={{ position: "absolute", top: 0, right: 0, height: "16rem", width: "16rem" }}>
-            <img
-              src="https://res.cloudinary.com/digrh1wj1/image/upload/v1742433295/Kodo-image-2-2we_1_op5x1b.png"
-              alt="vector"
-              style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "right" }}
-            />
+    <div className="min-h-screen flex flex-col justify-center ">
+      <CustomContainer className="bg-eeeef7  rounded-4xl  relative -mb-16">
+          <div className="absolute top-0 right-0 h-64 w-64">
+            <div className="relative w-full h-full"><img src="https://res.cloudinary.com/digrh1wj1/image/upload/v1742433295/Kodo-image-2-2we_1_op5x1b.png" 
+          alt="vector" fill objectFit="contain" objectPosition="right"/></div>
           </div>
+            <div className=" ">
+            <h1 className="mb-8 text-[32px] font-bold leading-tight text-[#1A1060]">Reach Out to us</h1>
 
-          <h1 className="contact-header">Reach Out to Us</h1>
-
-          <div className="contact-grid">
-            {contactInfo.map((item, index) => (
-              <div key={index} className="contact-card">
-                <div className="contact-icon">
-                  <img src={item.icon} alt={item.title} width={24} height={24} />
+                <div className="mb-16 grid gap-6 md:grid-cols-3 z-20">
+                  {contactInfo.map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex flex-col items-center rounded-4xl bg-white text-center p-8"
+                      >
+                        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan">
+                          <img src={item.icon} alt="" width={24} height={24} />
+                        </div>
+                        <h3 className="mb-2 text-base font-medium text-[#1A1060]">{item.title}</h3>
+                        <p className="text-sm text-[#666666]">{item.value}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="contact-title">{item.title}</h3>
-                <p className="contact-value">{item.value}</p>
-              </div>
-            ))}
-          </div>
-        </CustomContainer>
-      </div>
-
-      {/* Contact Form */}
-      <div className="form-section">
+              </CustomContainer>
+              <div className="form-section">
 		<div
 			className="form-section-container"
 		>
@@ -70,23 +66,27 @@ export default function Main() {
 				<button className="send-button">Send Message</button>
 			</form>
 
-			{/* Scholarship World Map Section */}
-			<h2 className="scholarship-header">Scholarships all around the world</h2>
-
-			<div className="scholarship-map">
-				<img src={mapImage} alt="World Map" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "16px" }} />
-			</div>
 			</CustomContainer>
 		</div>
       </div>
+              <div className='map'>
+                  <h2 className="mb-8 text-center text-[28px] font-bold leading-tight text-[#1A1060]">
+                    Scholarships all around the world
+                  </h2>
+                  <div className="relative aspect-[1.85/1] w-full overflow-hidden rounded-[32px] ">
+                    <img src={mapImage} alt="World Map" fill className="object-cover  rounded-lg" />
+                  </div>
+              </div>
 
-      {/* Find Scholarships Section */}
-      <section>
-        <div>
-          <FindScholarships />
+              <section className="" style={{
+                width: '90%',
+                margin: 'auto'
+              }}>
+                <div className=" rounded-4xl pb-24  relative">
+                  <FindScholarships />
+                </div>
+                <div className="h-60 w-full"/>
+              </section>
         </div>
-        <div style={{ height: "15rem", width: "100%" }} />
-      </section>
-    </div>
   );
 }

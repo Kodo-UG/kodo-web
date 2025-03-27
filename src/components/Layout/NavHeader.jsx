@@ -74,7 +74,10 @@ export default function NavHeader() {
         {/* Navigation links */}
         <div className="nav-links">
           {navigationItems.map((item) => (
-            <Link key={item.href} to={item.href} className="nav-link">
+            <Link style={{
+              textDecoration: 'none',
+              color: '#1d2855'
+            }} key={item.href} to={item.href} className="nav-link">
               {item.label}
             </Link>
           ))}
