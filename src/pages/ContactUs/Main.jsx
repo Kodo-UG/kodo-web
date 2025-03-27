@@ -2,34 +2,23 @@ import React from "react";
 import FindScholarships from "../../components/about/FindScholarships";
 import CustomContainer from "../../components/ShredComponents/CustomerContainer";
 import mapImage from "./map.jpg";
-import { PiPhoneCallFill } from "react-icons/pi";
-import { MdEmail } from "react-icons/md";
-import { TiPinOutline } from "react-icons/ti";
-import { useEffect } from "react";
 import "./main.css"; // Import CSS file
 
 export default function Main() {
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     window.location.reload();
-  //   }, 50); 
-  // },[])
-
   const contactInfo = [
     {
       title: "Phone Number",
-      icon: <PiPhoneCallFill />,
+      icon: "https://res.cloudinary.com/digrh1wj1/image/upload/v1742433873/ic_baseline-phone_dcixhz.png",
       value: "+46 72 848 83 13",
     },
     {
       title: "Email Address",
-      icon: <MdEmail />,
+      icon: "https://res.cloudinary.com/digrh1wj1/image/upload/v1742433873/mynaui_envelope-solid_l1mphe.png",
       value: "info@kodoscholarships.com",
     },
     {
       title: "Office Address",
-      icon: <TiPinOutline />,
+      icon: "https://res.cloudinary.com/digrh1wj1/image/upload/v1742433873/mage_pin-fill_mlegus.png",
       value: "Oppegårdsstråket 5 A, lgh 1B04, 191 60 Sollentuna",
     },
   ];
@@ -51,9 +40,7 @@ export default function Main() {
                         className="flex flex-col items-center rounded-4xl bg-white text-center p-8"
                       >
                         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan">
-                          <div>
-                            {item.icon}
-                          </div>
+                          <img src={item.icon} alt="" width={24} height={24} />
                         </div>
                         <h3 className="mb-2 text-base font-medium text-[#1A1060]">{item.title}</h3>
                         <p className="text-sm text-[#666666]">{item.value}</p>
