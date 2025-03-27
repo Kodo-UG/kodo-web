@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import NavHeader from "./NavHeader";
 import Footer from "./Footer";
 import {Link} from 'react-router-dom';
-import './footer.css';
+// import './footer.css';
 
 
 const Layout = ({ children }) => {

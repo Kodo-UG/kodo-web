@@ -11,7 +11,7 @@ export default function NavHeader() {
     { href: "/", label: "Home" },
     { href: "/aboutus", label: "About" },
     { href: "/scholarships", label: "Scholarships" },
-    { href: "/testimonials", label: "Testimonials" },
+    { href: "/testimonals", label: "Testimonials" },
     { href: "/blog", label: "Blogs" },
     { href: "/contactus", label: "Contact" },
   ]
@@ -102,7 +102,9 @@ export default function NavHeader() {
     <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
       <div className="mobile-menu-content">
         {navigationItems.map((item) => (
-          <Link key={item.href} to={item.href} className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link style={{
+            color: '#1d2855'
+          }} key={item.href} to={item.href} className="mobile-menu-item" onClick={() => setIsMobileMenuOpen(false)}>
             {item.label}
           </Link>
         ))}

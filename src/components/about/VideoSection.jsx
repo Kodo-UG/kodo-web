@@ -4,7 +4,8 @@ import "./video.css"; // Import CSS file
 
 export default function VideoSection() {
   return (
-    <section className="video-video-container">
+    <section className="video-video-container"
+    >
       <div className="video-video-content">
         <div className="video-video-text">
           <h2 className="video-video-heading">Well, Play Reel</h2>

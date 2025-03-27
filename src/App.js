@@ -13,7 +13,7 @@ import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDet
 import BlogDetails from "./pages/Blog/BlogDetails";
 // import FormOne from "./pages/Sports/FormOne";
 
-// Lazy-loaded componentss
+// Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
 const AboutUs = lazy(() => import("./pages/AboutUs/index"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -32,7 +32,7 @@ const RootScholarship = lazy(() => import("./pages/Dashboard/scholarship"));
 const MainProfile = lazy(() => import("./pages/Dashboard/Profile"));
 const Accordion = lazy(() => import("./accordion/Accordion"));
 const RootApplication = lazy(() => import("./pages/Dashboard/applications"));
-const StepperElementTwo = lazy(() =>
+const StepperElementTwo = lazy(() =>         
     import("./pages/Register/Scholarships/sports/StepperElementTwo")
 );
 const StepperElementThree = lazy(() =>
