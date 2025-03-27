@@ -11,7 +11,7 @@ import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
 import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
 import BlogDetails from "./pages/Blog/BlogDetails";
-import PlayerProfile from "./pages/Sports/FormOne";
+// import PlayerProfile from "./pages/Sports/FormOne";
 
 // Lazy-loaded componentss
 const Home = lazy(() => import("./pages/HomePage"));

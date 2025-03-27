@@ -9,7 +9,7 @@ import { useState } from "react";
 
 
 
-function PlayerProfile() {
+function FormOne() {
 	const [data, setData] = useState([]);
 	const fetchSports = async () => {
 		try {
@@ -277,4 +277,4 @@ function PlayerProfile() {
 	);
 }
 
-export default PlayerProfile;
+export default FormOne;
