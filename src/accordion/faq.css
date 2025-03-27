@@ -4,8 +4,21 @@
     flex-direction: column;
     justify-content: center;
     padding: 1rem; /* Equivalent to p-4 */
+    /* margin-top: -150px; */
   }
-  
+/* 
+  @media(min-width:300px){
+    .faq-container{
+        margin-top: -200px;
+    }
+  }
+
+  @media(max-width:767px){
+    .faq-container{
+        margin-top: -10px;
+    }
+  }
+   */
   /* FAQ Title */
   .faq-title {
     font-size: 3.75rem; /* Equivalent to text-6xl */

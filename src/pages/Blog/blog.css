@@ -1,23 +1,154 @@
-::-webkit-scrollbar {
-    display: none;
-  }
+/* Main Blog Container */
+.blog-container {
+  padding: 1rem;
+  color: #1d2855;
+  margin-top: -80px;
+}
 
-  * {
-    scrollbar-width: none;
-  }
+/* Blog Title */
+.blog-title {
+  font-size: 2.5rem; /* Equivalent to text-responsive-4xl */
+  margin-bottom: 1rem; /* Equivalent to mb-4 */
+  font-weight: bold;
+}
 
+/* Filter Buttons */
+.blog-filters {
+  margin-bottom: 2.5rem; /* Equivalent to mb-10 */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem; /* Equivalent to gap-3 */
+}
 
-  .comment {
-    display: flex;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.5s ease-in-out; 
+.blog-filter-button {
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  padding: 0.5rem 1.5rem; /* Equivalent to px-6 py-2 */
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  font-weight: 500; /* Equivalent to font-medium */
+  border: 1px solid #e5e5e5;
+  color: #666666;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.blog-filter-button:hover {
+  background-color: #f5f4fa;
+}
+
+.blog-filter-button.active {
+  background-color: #00d6dd;
+  box-shadow: 0px 10px 30px rgba(0, 214, 221, 0.3); /* Equivalent to shadow-3xl */
+  color: #1d2855;
+}
+
+/* Blog Post Grid */
+.blog-grid {
+  margin-bottom: 2.5rem; /* Equivalent to mb-10 */
+  display: grid;
+  gap: 1.5rem; /* Equivalent to gap-6 */
+}
+
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr); /* Equivalent to md:grid-cols-3 */
   }
-  
-  .comment:hover {
-    background-color: #f2f2f2; 
-    cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(4, 1fr); /* Equivalent to lg:grid-cols-4 */
   }
+}
+
+/* Blog Post Card */
+.blog-card {
+  display: block;
+  overflow: hidden;
+  border-radius: 1rem; /* Equivalent to rounded-2xl */
+  transition: transform 0.3s ease-in-out;
+}
+
+.blog-card:hover .blog-image {
+  transform: scale(1.05);
+}
+
+/* Blog Image */
+.blog-image-container {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.2 / 1;
+  border-radius: 1rem; /* Equivalent to rounded-2xl */
+}
+
+.blog-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Blog Content */
+.blog-content {
+  padding: 1.5rem; /* Equivalent to p-6 */
+}
+
+.blog-title-link {
+  display: block;
+  font-size: 1.125rem; /* Equivalent to text-lg */
+  font-weight: 500; /* Equivalent to font-medium */
+  line-height: 1.4;
+  color: #1a1060;
+  transition: color 0.3s ease-in-out;
+}
+
+.blog-title-link:hover {
+  color: #00d2c1;
+}
+
+.blog-date {
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  color: #666666;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* Equivalent to gap-4 */
+}
+
+.pagination-button {
+  display: flex;
+  height: 2.5rem; /* Equivalent to h-10 */
+  width: 2.5rem; /* Equivalent to w-10 */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pagination-button:hover {
+  background-color: #f5f4fa;
+}
+
+.pagination-text {
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  color: #666666;
+}
+
+/* Find Scholarships Section */
+.scholarship-section {
+  position: relative;
+  border-radius: 2rem; /* Equivalent to rounded-4xl */
+  margin-top: 2rem;
+}
+
+.scholarship-placeholder {
+  height: 15rem; /* Equivalent to h-60 */
+  width: 100%;
+}

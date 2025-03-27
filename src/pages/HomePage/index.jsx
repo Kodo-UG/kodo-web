@@ -3,6 +3,7 @@ import HeroSection from "../../components/Hero";
 import FeaturesGrid from "../../components/FeaturesGrid";
 import AboutSection from "../../components/AboutSection";
 import VideoSection from "../../components/VideoSection";
+import Footer from "../../components/Layout/Footer";
 import './index.css';
 
 
@@ -19,8 +20,8 @@ const HomePage = () => {
 				<FeaturesGrid />
 				<AboutSection />
 				<VideoSection />
-
 			</div>
+			<Footer />
     	</div>
 	);
 };
