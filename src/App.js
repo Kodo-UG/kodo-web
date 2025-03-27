@@ -11,7 +11,7 @@ import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
 import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
 import BlogDetails from "./pages/Blog/BlogDetails";
-// import PlayerProfile from "./pages/Sports/FormOne";
+import FormOne from "./pages/Sports/FormOne";
 
 // Lazy-loaded componentss
 const Home = lazy(() => import("./pages/HomePage"));
@@ -119,7 +119,7 @@ const App = () => {
                 <Route exact path="/policy" component={Privacy} />
                 <Route exact path="/share" component={RSSUsage} />
                 <Route exact path="/player" component={Sports} />
-                <Route exact path="/create" component={PlayerProfile} />
+                <Route exact path="/create" component={FormOne} />
 
                 <Route
                     exact
