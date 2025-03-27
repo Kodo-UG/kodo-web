@@ -76,7 +76,6 @@
 }
 .rounded-2xl {
   border-radius: 1rem;
-  border:1px solid red;
   margin-top: -100px;
 }
 .md\:rounded-4xl {
