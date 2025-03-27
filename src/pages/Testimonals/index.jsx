@@ -28,7 +28,11 @@ function Testimonals() {
                             <div className="container mx-auto px-6 flex items-center justify-center flex-col mb-12">
                                 <div className="grid md-grid-cols-3 gap-8">
 								{data.map((d, i) => (
-									<div key={i} className="bg-white shadow-lg rounded-[24px]">
+									<div key={i} className="shadow-lg rounded-[24px]"
+										style={{
+											backgroundColor: `${d.color}`
+										}}
+									>
 										<div className="p-8">
 										<img
 											src="https://res.cloudinary.com/dfdswxx7x/image/upload/v1740086145/h0edbkykpylvisrmbzvg.png"

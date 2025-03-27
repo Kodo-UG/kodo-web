@@ -38,8 +38,8 @@ function FeaturesSection() {
             <div className={`feature-icon ${feature.color}`}>
               <img
                 src="https://res.cloudinary.com/dfdswxx7x/image/upload/v1740085647/mingcute_ai-line_xwgbqs.png"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 alt="star"
               />
             </div>

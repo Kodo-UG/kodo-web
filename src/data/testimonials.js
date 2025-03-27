@@ -9,27 +9,31 @@ export const data = [
         school: 'Coastal Carolina University',
         description: 'Our kodo scholarship AI will compare your profile to thousands of active scholarships to create a prioritized list of opportunities. You’ll be able to sort by level effort, due dates and award amount.',
         name: 'John Doe',
-        image: image1
+        image: image1,
+        color: '#EAF9FF'
     },
     {
         id: '2',
         school: 'Coastal Carolina University',
         description: 'Our kodo scholarship AI will compare your profile to thousands of active scholarships to create a prioritized list of opportunities. You’ll be able to sort by level effort, due dates and award amount.',
         name: 'John Doe',
-        image: image2
+        image: image2,
+        color: '#FFF1C0'
     },
     {
         id: '4',
         school: 'Coastal Carolina University',
         description: 'Our kodo scholarship AI will compare your profile to thousands of active scholarships to create a prioritized list of opportunities. You’ll be able to sort by level effort, due dates and award amount.',
         name: 'John Doe',
-        image: image4
+        image: image4,
+        color: '#ffffff'
     },
     {
         id: '5',
         school: 'Coastal Carolina University',
         description: 'Our kodo scholarship AI will compare your profile to thousands of active scholarships to create a prioritized list of opportunities. You’ll be able to sort by level effort, due dates and award amount.',
         name: 'John Doe',
-        image: image4
+        image: image4,
+        color: '#EAF9FF'
     }
 ]

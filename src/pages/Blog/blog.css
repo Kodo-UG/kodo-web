@@ -1,154 +1,274 @@
-/* Main Blog Container */
-.blog-container {
-  padding: 1rem;
-  color: #1d2855;
-  margin-top: -80px;
-}
-
-/* Blog Title */
-.blog-title {
-  font-size: 2.5rem; /* Equivalent to text-responsive-4xl */
-  margin-bottom: 1rem; /* Equivalent to mb-4 */
+.text-responsive-4xl {
+  font-size: 1.875rem; /* 30px (default for text-3xl) */
   font-weight: bold;
+  color: #1D2855;
 }
 
-/* Filter Buttons */
-.blog-filters {
-  margin-bottom: 2.5rem; /* Equivalent to mb-10 */
+@media (min-width: 640px) { /* sm */
+  .text-responsive-4xl{
+    font-size: 2.25rem; /* 36px (text-4xl) */
+  }
+}
+
+@media (min-width: 768px) { /* md */
+  .text-responsive-4xl{
+    font-size: 3rem; /* 48px (text-5xl) */
+  }
+}
+
+@media (min-width: 1280px) { /* xl */
+  .text-responsive-4xl{
+    font-size: 3.75rem; /* 60px (text-6xl) */
+  }
+}
+
+.mb-4 {
+  margin-bottom: 1rem; /* 16px */
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem; /* 40px */
+}
+
+.flex {
   display: flex;
+}
+
+.flex-wrap {
   flex-wrap: wrap;
-  gap: 0.75rem; /* Equivalent to gap-3 */
 }
 
-.blog-filter-button {
-  border-radius: 9999px; /* Equivalent to rounded-full */
-  padding: 0.5rem 1.5rem; /* Equivalent to px-6 py-2 */
-  font-size: 0.875rem; /* Equivalent to text-sm */
-  font-weight: 500; /* Equivalent to font-medium */
-  border: 1px solid #e5e5e5;
+.gap-3 {
+  gap: 0.75rem; /* 12px */
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.px-6 {
+  padding-left: 1.5rem; /* 24px */
+  padding-right: 1.5rem; /* 24px */
+}
+
+.py-2 {
+  padding-top: 0.5rem; /* 8px */
+  padding-bottom: 0.5rem; /* 8px */
+}
+
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.shadow-3xl {
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15); /* Custom large shadow */
+}
+
+.bg-bg {
+    background-color: #00d6dd;
+}
+
+.text-custom {
+  color: #1D2855;
+}
+
+.border-border {
+  border-color: #E5E5E5;
+}
+
+.text-text {
   color: #666666;
-  background-color: transparent;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
 }
 
-.blog-filter-button:hover {
-  background-color: #f5f4fa;
+.hover-bg:hover {
+  background-color: #F5F4FA;
 }
 
-.blog-filter-button.active {
-  background-color: #00d6dd;
-  box-shadow: 0px 10px 30px rgba(0, 214, 221, 0.3); /* Equivalent to shadow-3xl */
-  color: #1d2855;
+.mb-10 {
+  margin-bottom: 2.5rem; /* 40px */
 }
 
-/* Blog Post Grid */
-.blog-grid {
-  margin-bottom: 2.5rem; /* Equivalent to mb-10 */
+.grid {
   display: grid;
-  gap: 1.5rem; /* Equivalent to gap-6 */
 }
 
-@media (min-width: 768px) {
-  .blog-grid {
-    grid-template-columns: repeat(3, 1fr); /* Equivalent to md:grid-cols-3 */
+.gap-6 {
+  gap: 1.5rem; /* 24px */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .md-grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
-  .blog-grid {
-    grid-template-columns: repeat(4, 1fr); /* Equivalent to lg:grid-cols-4 */
+@media (min-width: 1024px) { /* lg breakpoint */
+  .lg-grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* Blog Post Card */
-.blog-card {
-  display: block;
+.group {
+  /* Tailwind's `group` is used for styling child elements when their parent has this class */
+}
+
+.overflow-hidden {
   overflow: hidden;
-  border-radius: 1rem; /* Equivalent to rounded-2xl */
-  transition: transform 0.3s ease-in-out;
 }
 
-.blog-card:hover .blog-image {
+.aspect-1-2-1 {
+  aspect-ratio: 1.2 / 1;
+}
+
+.relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.rounded-2xl {
+  border-radius: 1rem; /* 16px */
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.group:hover .group-hover-scale-105 {
   transform: scale(1.05);
 }
 
-/* Blog Image */
-.blog-image-container {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 1.2 / 1;
-  border-radius: 1rem; /* Equivalent to rounded-2xl */
+.p-6 {
+  padding: 1.5rem; /* 24px */
 }
 
-.blog-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
+.mb-2 {
+  margin-bottom: 0.5rem; /* 8px */
 }
 
-/* Blog Content */
-.blog-content {
-  padding: 1.5rem; /* Equivalent to p-6 */
+.text-lg {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5rem; /* 24px */
 }
 
-.blog-title-link {
-  display: block;
-  font-size: 1.125rem; /* Equivalent to text-lg */
-  font-weight: 500; /* Equivalent to font-medium */
-  line-height: 1.4;
-  color: #1a1060;
-  transition: color 0.3s ease-in-out;
+.font-medium {
+  font-weight: 500;
 }
 
-.blog-title-link:hover {
-  color: #00d2c1;
+.leading-tight {
+  line-height: 1.25;
 }
 
-.blog-date {
-  font-size: 0.875rem; /* Equivalent to text-sm */
+.text-color {
+  color: #1A1060;
+}
+
+.group:hover .group-hover-text {
+  color: #00D2C1;
+}
+
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+}
+
+.text {
   color: #666666;
 }
 
-/* Pagination */
-.pagination-container {
+.flex {
   display: flex;
+}
+.items-center {
   align-items: center;
+}
+.justify-center {
   justify-content: center;
-  gap: 1rem; /* Equivalent to gap-4 */
+}
+.gap-4 {
+  gap: 1rem; /* 16px */
 }
 
-.pagination-button {
+.flex {
   display: flex;
-  height: 2.5rem; /* Equivalent to h-10 */
-  width: 2.5rem; /* Equivalent to w-10 */
+}
+.h-10 {
+  height: 2.5rem; /* 40px */
+}
+.w-10 {
+  width: 2.5rem; /* 40px */
+}
+.items-center {
   align-items: center;
+}
+.justify-center {
   justify-content: center;
+}
+.rounded-full {
   border-radius: 50%;
-  border: 1px solid #e5e5e5;
-  background-color: transparent;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+}
+.border {
+  border-width: 1px;
+}
+.border-1 {
+  border-color: #E5E5E5;
+}
+.hover-bg-1:hover {
+  background-color: #F5F4FA;
 }
 
-.pagination-button:hover {
-  background-color: #f5f4fa;
+.h-5 {
+  height: 1.25rem; /* 20px */
 }
-
-.pagination-text {
-  font-size: 0.875rem; /* Equivalent to text-sm */
+.w-5 {
+  width: 1.25rem; /* 20px */
+}
+.text-1 {
   color: #666666;
 }
 
-/* Find Scholarships Section */
-.scholarship-section {
-  position: relative;
-  border-radius: 2rem; /* Equivalent to rounded-4xl */
-  margin-top: 2rem;
+.rounded-4xl {
+  border-radius: 32px; /* Adjust based on your design */
 }
 
-.scholarship-placeholder {
-  height: 15rem; /* Equivalent to h-60 */
+.relative {
+  position: relative;
+}
+
+.h-60 {
+  height: 15rem; /* 240px */
+}
+
+.w-full {
   width: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
