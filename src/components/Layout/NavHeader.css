@@ -54,7 +54,7 @@
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 21px;
 }
 
 @media (max-width: 600px) {

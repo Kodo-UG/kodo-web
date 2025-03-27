@@ -93,7 +93,7 @@
   gap: 1.5rem; /* 6 * 0.25rem */
 }
 
-.md\:grid-cols-3 {
+.md-grid-cols-3 {
   /* Applies on medium (md) screens and above */
   @media (min-width: 768px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));

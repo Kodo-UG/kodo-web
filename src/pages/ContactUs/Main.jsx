@@ -33,13 +33,17 @@ export default function Main() {
             <div className=" ">
             <h1 className="mb-8 text-[32px] font-bold leading-tight text-[#1A1060]">Reach Out to us</h1>
 
-                <div className="mb-16 grid gap-6 md:grid-cols-3 z-20">
+                <div className="mb-16 grid gap-6 md-grid-cols-3 z-20">
                   {contactInfo.map((item, index) => (
                       <div
                         key={index}
                         className="flex flex-col items-center rounded-4xl bg-white text-center p-8"
                       >
-                        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan">
+                        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan"
+                          style={{
+                            marginTop: 20
+                          }}
+                        >
                           <img src={item.icon} alt="" width={24} height={24} />
                         </div>
                         <h3 className="mb-2 text-base font-medium text-[#1A1060]">{item.title}</h3>
