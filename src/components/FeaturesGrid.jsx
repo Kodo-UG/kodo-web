@@ -6,7 +6,11 @@ import "./featuresgrid.css";
 
 function FeaturesGrid() {
   return (
-    <div className="features-grid-container">
+    <div className="features-grid-container"
+      style={{
+        backgroundColor: '#eeeef7'
+      }}
+    >
       <CustomContainer>
         <div className="features-grid">
           {[

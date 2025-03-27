@@ -5,7 +5,11 @@ import './hero.css';
 
 function HeroSection() {
   return (
-    <div className="hero-section">
+    <div className="hero-section"
+      style={{
+        backgroundColor: '#eeeef7'
+      }}
+    >
       <CustomContainer>
         <div className="hero-grid">
           <div className="hero-text-container">
