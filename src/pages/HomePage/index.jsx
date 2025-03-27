@@ -21,7 +21,6 @@ const HomePage = () => {
 				<AboutSection />
 				<VideoSection />
 			</div>
-			<Footer />
     	</div>
 	);
 };

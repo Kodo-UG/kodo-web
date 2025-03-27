@@ -8,53 +8,65 @@ import "./videosection.css"; // Importing CSS file
 
 function VideoSection() {
   return (
-    <section className="video-section">
-      <div className="video-section-bg">
-        <div className="video-section-img-container">
-          <img
-            src="https://res.cloudinary.com/dfdswxx7x/image/upload/v1740083635/Kodo-image-2-2wewe_1_1_hm4nbe.png"
-            alt="vector"
-            className="video-section-img"
-          />
+    <div>
+      <section className="video-section">
+        <div className="video-section-bg">
+          <div className="video-section-img-container">
+            <img
+              src="https://res.cloudinary.com/dfdswxx7x/image/upload/v1740083635/Kodo-image-2-2wewe_1_1_hm4nbe.png"
+              alt="vector"
+              className="video-section-img"
+            />
+          </div>
         </div>
-      </div>
 
-      <CustomContainer>
-        <div className="video-section-content">
-          <div className="video-section-text">
-            <h2 className='video-header-text'>
-              We're Kodo & We're Different</h2>
-            <div className="video-section-description">
-              <p>
-                Kodo Search reduces the scholarship search process from months
-                to minutes by matching students with opportunities made for
-                them.
-              </p>
+        <CustomContainer>
+          <div className="video-section-content">
+            <div className="video-section-text">
+              <h2 className='video-header-text'>
+                We're Kodo & We're Different</h2>
+              <div className="video-section-description">
+                <p>
+                  Kodo Search reduces the scholarship search process from months
+                  to minutes by matching students with opportunities made for
+                  them.
+                </p>
+              </div>
+            </div>
+            <div className="video-section-video">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Frame%2021-YJJ5UGOQR6DziKVbrlkt3vWMOQluMi.png"
+                alt="Students in classroom"
+                className="video-section-video-img"
+              />
+              {/* <button className="video-section-play-btn">
+                <Play className="video-section-play-icon" />
+              </button> */}
+            </div>
+            <div className="video-section-image-container">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kodo-image-2%202-Lv1OosmFOfi4RU0BP7E90DWtZZ4p9P.png"
+                alt="Student with colorful background"
+                className="video-section-main-img"
+              />
+            </div>
+            <div>
+              <FeaturesSection />
+            </div>
+            <div
+              style={{
+                marginTop: 350
+              }}
+            >
+              <CtaSection />
             </div>
           </div>
-          <div className="video-section-video">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Frame%2021-YJJ5UGOQR6DziKVbrlkt3vWMOQluMi.png"
-              alt="Students in classroom"
-              className="video-section-video-img"
-            />
-            {/* <button className="video-section-play-btn">
-              <Play className="video-section-play-icon" />
-            </button> */}
-          </div>
-          <div className="video-section-image-container">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kodo-image-2%202-Lv1OosmFOfi4RU0BP7E90DWtZZ4p9P.png"
-              alt="Student with colorful background"
-              className="video-section-main-img"
-            />
-          </div>
-          <FeaturesSection />
-          <CtaSection />
+        </CustomContainer>
+      </section>
+        <div>
+          <Testimonials />
         </div>
-      </CustomContainer>
-      <Testimonials />
-    </section>
+    </div>
   );
 }
 
