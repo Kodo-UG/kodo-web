@@ -1,6 +1,12 @@
 .features-grid-container {
     background-color: #EEEEF7;
-    margin-top: -7rem;
+    margin-top: -10rem;
+  }
+
+  @media(min-width: 768px){
+    .features-grid-container{
+      margin-top: 10rem;
+    }
   }
   
   @media (min-width: 1024px) {
@@ -14,6 +20,13 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 3.5rem;
+    margin-top: -100px;
+  }
+
+  @media(min-width: 768px){
+    .features-grid{
+      margin-top: 100px;
+    }
   }
 
   @media (min-width: 1280px) {

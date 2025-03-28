@@ -13,6 +13,13 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     justify-content: space-between;
+    margin-top: -100px;
+  }  
+  
+  @media(min-width: 768px){
+    .hero-grid{
+        margin-top: 30px;
+    }
   }
   
   @media (min-width: 1024px) {
@@ -30,8 +37,14 @@
     font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: bold;
     margin-bottom: 1.5rem;
-    margin-top: -4rem;
+    margin-top: 4rem;
     color: #1D2855;
+  }
+
+  @media(min-width: 768px){
+    .hero-title{
+      margin-top: 4rem;
+    }
   }
   
   @media (min-width: 1024px) {
