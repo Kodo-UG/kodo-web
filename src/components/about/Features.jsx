@@ -14,7 +14,8 @@ function FeaturesSection() {
             }}
         >Kodo Search reduces the scholarship search process from months to minutes by matching students with opportunities made them.</p>
       </div>
-      <div className="features-grid">
+      <div className="features-grid"
+      >
         {[
           {
             title: "Kodo AI",

@@ -86,12 +86,12 @@
 }
 
 .pt{
-  margin-top: -60px;
+  margin-top: 60px;
 }
 
 @media(min-width: 768px){
   .pt{
-    margin-top: -80px
+    margin-top: 80px
   }
 }
 

@@ -17,6 +17,22 @@
     }
 }
 
+.img-fix{
+    margin-top: -150px;
+}
+
+@media(min-width:768px){
+    .img-fix{
+        margin-top: 100px;
+    }
+}
+
+@media(min-width: 1024px){
+    .img-fix{ 
+        margin-top: 0px;
+    }
+}
+
 .mx-auto {
     margin-left: auto;
     margin-right: auto;
