@@ -36,11 +36,14 @@ export default function BlogPage() {
           {["All", "Recent", "Last Month", "Last Year"].map((filter, index) => (
             <button
               key={index}
-              className={`rounded-full px-6 py-2 text-sm font-medium ${
+              className={`px-6 py-2 text-sm font-medium ${
                 index === 0
                   ? "bg-bg shadow-3xl text-custom"
                   : "border border-border text-text hover-bg"
               }`}
+              style={{
+                borderRadius: 40
+              }}
             >
               {filter}
             </button>

@@ -66,6 +66,16 @@
     height: auto;
     object-fit: cover;
   }
+
+  .error-fix {
+    margin-top: 80px;
+  }
+
+  @media(min-width: 1024px){
+    .error-fix{
+      margin-top: 40px;
+    }
+  }
   
   /* Floating Circles */
   .hero-circle {

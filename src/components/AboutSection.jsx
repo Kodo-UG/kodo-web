@@ -18,7 +18,11 @@ function AboutSection() {
                       width: '100%'
                     }}
                   >
-                    <h2 className="about-section-title">
+                    <h2 className="about-section-title"
+                      // style={{
+                      //   fontSize: 33
+                      // }}
+                    >
                       A Few Words About Kodo Scholarships
                     </h2>
                     <p className="about-section-description">
