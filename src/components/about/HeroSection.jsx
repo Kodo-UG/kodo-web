@@ -33,11 +33,15 @@ export default function HeroSection() {
             <div className="hero-container-grid">
               <div className="hero-text-content">
                 <p className="hero-badge">About Kodo</p>
-                <h1 className="hero-title">We&apos;re Kodo & We&apos;re Different</h1>
-                <p className="hero-description">
-                  Kodo Scholarships provides a free, up-to-date, comprehensive list of scholarships, grants, and jobs available to international students worldwide. 
-                  Our goal is to help you find opportunities for higher education and become agents of development in your own countries and the rest of the world.
-                </p>
+                <div
+                  className='error-fix'
+                >
+                  <h1 className="hero-title">We&apos;re Kodo & We&apos;re Different</h1>
+                  <p className="hero-description">
+                    Kodo Scholarships provides a free, up-to-date, comprehensive list of scholarships, grants, and jobs available to international students worldwide. 
+                    Our goal is to help you find opportunities for higher education and become agents of development in your own countries and the rest of the world.
+                  </p>
+                </div>
               </div>
             </div>
           </CustomContainer>
