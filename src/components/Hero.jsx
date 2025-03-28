@@ -11,7 +11,8 @@ function HeroSection() {
       }}
     >
       <CustomContainer>
-        <div className="hero-grid">
+        <div className="hero-grid"
+        >
           <div className="hero-text-container">
             <h1 className="hero-title">
               Find Life-changing Scholarships made for you
