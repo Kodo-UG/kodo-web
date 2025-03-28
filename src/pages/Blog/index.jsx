@@ -59,9 +59,9 @@ export default function BlogPage() {
             <Link
               key={post.id}
               to={`/blog/${post.id}`}
-              className="group overflow-hidden "
+              className="group overflow-hidden"
             >
-              <div className="aspect-1-2-1 relative overflow-hidden rounded-2xl">
+              <div className="aspect-1-2-1 relative overflow-hidden">
                 <img
                   src={post.image || "/placeholder.svg"}
                   alt={post.title}

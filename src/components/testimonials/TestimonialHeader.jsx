@@ -51,7 +51,7 @@ export default function TestimonialsSection() {
   ]
 
   return (
-    <section className="py-16 md-py-24">
+    <section className="header-fix">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-responsive-4xl">

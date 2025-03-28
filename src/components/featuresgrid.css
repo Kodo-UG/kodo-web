@@ -20,7 +20,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 3.5rem;
-    margin-top: -100px;
+    margin-top: -30px;
   }
 
   @media(min-width: 768px){

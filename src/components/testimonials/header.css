@@ -21,7 +21,7 @@
 }
 
 .object-contain {
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .mt-2 {
@@ -64,6 +64,22 @@
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+.header-fix{
+    margin-top: -250px;
+}
+
+@media(min-width:768px){
+    .header-fix{
+        margin-top: 100px;
+    }
+}
+
+@media(min-width:1024px){
+    .header-fix{
+        margin-top: 0px;
+    }
 }
 
 .rounded-full {

@@ -74,6 +74,14 @@
   background-color: white;
 }
 
+.sm-absolute{
+  position: absolute;
+}
+
+.sm-bottom-0 {
+  bottom: 0;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
