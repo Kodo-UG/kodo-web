@@ -49,6 +49,13 @@
   .card-container {
     position: relative;
     border-radius: 40px;
+    margin-top: 30px;
+  }
+
+  @media(min-width:640px){
+    .card-container{
+      margin-top: 0px;
+    }
   }
   
   .card-custom {
