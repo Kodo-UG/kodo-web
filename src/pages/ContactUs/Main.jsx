@@ -24,13 +24,14 @@ export default function Main() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col justify-center ">
+    <div className="min-h-screen flex flex-col justify-center bg-eee">
       <CustomContainer className="bg-eeeef7  rounded-4xl  relative -mb-16">
           <div className="absolute top-0 right-0 h-64 w-64">
             <div className="relative w-full h-full"><img src="https://res.cloudinary.com/digrh1wj1/image/upload/v1742433295/Kodo-image-2-2we_1_op5x1b.png" 
           alt="vector" fill objectFit="contain" objectPosition="right"/></div>
           </div>
-            <div className=" ">
+            <div className=""
+            >
             <h1 className="mb-8 text-[32px] font-bold leading-tight text-[#1A1060]">Reach Out to us</h1>
 
                 <div className="mb-16 grid gap-6 md-grid-cols-3 z-20">

@@ -12,7 +12,8 @@ export default function Accordion() {
         }}
       >
         <CustomContainer>
-          <div className="accordion-container"> 
+          <div className="accordion-container"
+          > 
             <h1 className="accordion-title">
               Find the right
               <br />
@@ -25,7 +26,8 @@ export default function Accordion() {
               <button className="filter-button secondary">Sports</button>
             </div>
           </div>
-          <div className="scholarship-list">
+          <div className="scholarship-list" 
+          >
             {Array(7)
               .fill(null)
               .map((_, i) => (

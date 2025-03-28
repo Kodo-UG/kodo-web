@@ -39,6 +39,7 @@
   /* Image Container */
   .hero-image-container {
     position: relative;
+    top: -100px;
     width: 100%;
     max-width: 600px;
     height: 500px;
@@ -58,6 +59,7 @@
     .hero-image-container {
       width: 500px;
       min-height: 500px;
+      top: 0px;
     }
   }
   
@@ -73,7 +75,7 @@
 
   @media(min-width: 1024px){
     .error-fix{
-      margin-top: 40px;
+      margin-top: 20px;
     }
   }
   

@@ -28,6 +28,8 @@
 .logo-Container {
   display: flex;
   align-items: center;
+  /* width: 65px;
+  height: 65px; */
 }
 
 /* Navigation Links */

@@ -69,8 +69,18 @@
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15); /* Custom large shadow */
 }
 
+.width-main{ 
+  width: 200px;
+}
+
+.blog-margin{
+  margin-top: -100px;
+}
+
 .bg-bg {
     background-color: #00d6dd;
+    padding: 25px;
+    color: #1D2855;
 }
 
 .text-custom {

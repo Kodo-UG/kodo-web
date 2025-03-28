@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import './NavHeader.css';
+import logo from '../../assets/logo.png';
 
 
 export default function NavHeader() {
@@ -62,11 +63,15 @@ export default function NavHeader() {
         <div className="logo-Container">
           <Link to="/" className="logo-link">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kodo%20Schools%20Logo-20%201-m9kSeX93hpeGI06AhwmlhwK4gwv3sw.png"
+              src={logo}
               alt="Kodo"
-              width={80}
+              width={120}
               height={24}
               className="logo-img"
+              style={{
+                width: 'full',
+                height: 'full'
+              }}
             />
           </Link>
         </div>
