@@ -96,7 +96,8 @@ export default function MissionSection() {
       </div>
     </div>
 
-    <div className="missions-grid">
+    <div className="missions-grid mission-error"
+    >
       {missons.map((mission, index) => (
         <div key={index} className="mission-card">
           <div

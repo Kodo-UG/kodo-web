@@ -28,6 +28,9 @@ export default function BlogPage() {
   return (
     <div className="">
     <CustomContainer>  <main className="">
+      <div
+        className="blog-margin"
+      >
         <h1 className="text-responsive-4xl mb-4">
           Blog
         </h1>
@@ -38,17 +41,18 @@ export default function BlogPage() {
               key={index}
               className={`px-6 py-2 text-sm font-medium ${
                 index === 0
-                  ? "bg-bg shadow-3xl text-custom"
+                  ? "bg-bg"
                   : "border border-border text-text hover-bg"
               }`}
               style={{
-                borderRadius: 40
+                borderRadius: 30
               }}
             >
               {filter}
             </button>
           ))}
         </div>
+      </div>
 
         <div className="mb-10 grid gap-6 md-grid-cols-3 lg-grid-cols-4">
           {blogPosts.map((post) => (

@@ -18,6 +18,24 @@
   background-color: #eeeef7;
 }
 
+.bg-eee{
+  margin-top: -120px;
+}
+
+@media(min-width: 768px){
+  .bg-eee{
+      margin-top: 200px;
+  }
+}
+
+@media(min-width: 1024px){
+  .bg-eee{
+    margin-top: 50px;
+  }
+}
+
+
+
 .rounded-4xl {
   border-radius: 32px; /* Tailwind typically uses 2rem (32px) for 4xl */
 }
@@ -332,6 +350,10 @@
 
 .aspect {
   aspect-ratio: 1.2 / 1;
+}
+
+.contact-error{
+
 }
 
 .w-full {
