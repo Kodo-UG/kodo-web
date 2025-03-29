@@ -3,6 +3,7 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { Button } from "antd";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
+import './fontstyle.css';
 
 const FreeScholarshipLarge = ({
   cardTitle,
@@ -59,26 +60,27 @@ const FreeScholarshipLarge = ({
             >
               <h2
                 style={{
-                  fontSize: isMd ? "1" : "1.46rem",
-                  color: "#125875",
+                  fontSize: isMd ? "1rem" : "1.46rem",
+                  color: "#1d2855",
                   lineHeight: 1.2,
                   fontWeight: 700,
-                  fontFamily: "poppins",
+                  fontFamily: "'Archivo', sans-serif",  // ✅ Apply Archivio font
                   whiteSpace: "break-spaces",
-                  letterSpacing: "2px",
+                  letterSpacing: "1px",
                   textAlign: "left",
                 }}
               >
                 {cardTitle}
               </h2>
+
               <p
                 style={{
-                  letterSpacing: "1.3px",
+                  letterSpacing: "1px",
                   textAlign: "left",
-                  fontFamily: "Poppins,san-serif",
+                  fontFamily: "Archivo,san-serif",
                   marginLeft: ".1rem",
                   color: "#4e4b66",
-                  fontSize: "14px",
+                  fontSize: "12.5px",
                   lineHeight: "22px",
                   fontWeight: 500,
                 }}
@@ -149,10 +151,10 @@ const FreeScholarshipLarge = ({
                     style={{
                       marginTop: "0px",
                       fontWeight: "bold",
-                      color: "#125875",
+                      color: "#1d2855",
                       fontSize: isMd ? "1.1" : "1.2rem",
-                      fontFamily: "Poppins",
-                      letterSpacing: "2px",
+                      fontFamily: "Archivo",
+                      letterSpacing: "1px",
                     }}
                   >
                     {award}
@@ -213,11 +215,11 @@ const FreeScholarshipLarge = ({
                     style={{
                       marginTop: "0px",
                       fontWeight: "bold",
-                      color: "#125875",
+                      color: "#1d2855",
                       lineHeight: "20px",
                       fontSize: "1.3rem",
-                      fontFamily: "Poppins",
-                      letterSpacing: "2px",
+                      fontFamily: "Archivo",
+                      letterSpacing: "1px",
                     }}
                   >
                     {formattedDate}
@@ -408,7 +410,7 @@ const FreeScholarshipLarge = ({
               <Button
                 onClick={handleRoute}
                 style={{
-                  backgroundColor: "#EC1D64",
+                  backgroundColor: "#00D6DD",
                   width: "80%",
                 }}
                 type="primary"

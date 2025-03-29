@@ -2,6 +2,7 @@ import React from "react";
 import FindScholarships from "../../components/about/FindScholarships";
 import CustomContainer from "../../components/ShredComponents/CustomerContainer";
 import mapImage from "./map.jpg";
+import { motion } from "framer-motion";
 import "./main.css"; // Import CSS file
 
 export default function Main() {
@@ -23,6 +24,11 @@ export default function Main() {
     },
   ];
 
+  const dropDownAnimation = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className="min-h-screen flex flex-col justify-center bg-eee">
       <CustomContainer className="bg-eeeef7  rounded-4xl  relative -mb-16">
@@ -34,24 +40,29 @@ export default function Main() {
             >
             <h1 className="mb-8 text-[32px] font-bold leading-tight text-[#1A1060]">Reach Out to us</h1>
 
-                <div className="mb-16 grid gap-6 md-grid-cols-3 z-20">
-                  {contactInfo.map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex flex-col items-center rounded-4xl bg-white text-center p-8"
-                      >
-                        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan"
-                          style={{
-                            marginTop: 20
-                          }}
-                        >
-                          <img src={item.icon} alt="" width={24} height={24} />
-                        </div>
-                        <h3 className="mb-2 text-base font-medium text-[#1A1060]">{item.title}</h3>
-                        <p className="text-sm text-[#666666]">{item.value}</p>
-                      </div>
-                    ))}
-                  </div>
+            <div className="mb-16 grid gap-6 md-grid-cols-3 z-20">
+  {contactInfo.map((item, index) => (
+    <motion.div
+      key={index}
+      className="flex flex-col items-center rounded-4xl bg-white text-center p-8"
+      initial="hidden"
+      animate="visible"
+      variants={dropDownAnimation}
+      transition={{ delay: index * 0.1 }} // Adds a stagger effect
+    >
+      <div
+        className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan"
+        style={{
+          marginTop: 20,
+        }}
+      >
+        <img src={item.icon} alt="" width={24} height={24} />
+      </div>
+      <h3 className="mb-2 text-base font-medium text-[#1A1060]">{item.title}</h3>
+      <p className="text-sm text-[#666666]">{item.value}</p>
+    </motion.div>
+  ))}
+</div>;
                 </div>
               </CustomContainer>
               <div className="form-section">

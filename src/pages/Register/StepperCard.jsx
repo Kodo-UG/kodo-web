@@ -34,6 +34,7 @@ function StepperCard({ list }) {
             fontWeight: 600,
             fontSize: "2rem",
             marginTop: isSm ? "9rem" : "",
+            color: '#1d2855'
           }}
           className="welcome-title"
         >
@@ -59,7 +60,7 @@ function StepperCard({ list }) {
                 backgroundColor: "#FFFFFF",
                 boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
                 borderRadius: "10px",
-                overflow: "hidden",
+                overflow: "hidden"
                 // marginBottom: "30px"
               }}
             >
@@ -69,9 +70,10 @@ function StepperCard({ list }) {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  height: "50px",
-                  padding: "0 20px",
+                  height: "70px",
+                  padding: "0px 20px",
                   backgroundColor: "#f6f6f6",
+                  paddingTop: 10
                 }}
               >
                 <img
@@ -111,15 +113,14 @@ function StepperCard({ list }) {
                   className="btn ss-btn w-100"
                   style={{
                     height: "55px",
-                    backgroundColor: "#EB1E5E",
-                    border: "2px solid #EB1E5E",
+                    backgroundColor: "#00D6DD",
                     color: "#fff",
                     fontWeight: "400",
                     fontSize: "16px",
                     lineHeight: "16px",
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "center"
                   }}
                 >
                   {data.Button}
