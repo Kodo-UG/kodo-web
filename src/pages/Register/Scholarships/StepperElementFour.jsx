@@ -122,7 +122,11 @@ function StepperElementFour() {
 											First things first, catch us up on your
 											education journey so far.
 										</p>
-										<h2 className="_soloHeading_1fpvz_8">
+										<h2 className="_soloHeading_1fpvz_8"
+											style={{
+												color: '#1d2855'
+											}}
+										>
 											What’s the highest level of education you’ve
 											completed?
 										</h2>
@@ -211,6 +215,10 @@ function StepperElementFour() {
 												type="button"
 												className="_buttonContinue_pmptr_46 _button_pmptr_30"
 												data-testid="continue"
+												style={{
+													backgroundColor: '#00D6DD',
+													color: '#1d2855'
+												}}
 												// onClick={() => history.push("/route1")}
 											>
 												<span>Continue</span>
@@ -225,7 +233,7 @@ function StepperElementFour() {
 														fill-rule="evenodd"
 														clip-rule="evenodd"
 														d="M16.6774 0.468629C17.3023 -0.15621 18.3153 -0.15621 18.9402 0.468629L25.3402 6.86863C25.965 7.49347 25.965 8.50653 25.3402 9.13137L18.9402 15.5314C18.3153 16.1562 17.3023 16.1562 16.6774 15.5314C16.0526 14.9065 16.0526 13.8935 16.6774 13.2686L20.346 9.6H1.80879C0.925131 9.6 0.208786 8.88366 0.208786 8C0.208786 7.11634 0.925131 6.4 1.80879 6.4H20.346L16.6774 2.73137C16.0526 2.10653 16.0526 1.09347 16.6774 0.468629Z"
-														fill="white"
+														fill="#1d2855"
 													/>
 												</svg>
 											</button>
