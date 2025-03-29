@@ -70,7 +70,7 @@ export default function Login() {
     return (
         <section 
             className="fxt-template-layout1 "
-            style={{ backgroundColor: "#fff", width: "100%" }}
+            style={{ backgroundColor: "#fff", width: "100%",color: '#1d2855' }}
         >
             <div
                 className="container-fluid "
@@ -209,7 +209,8 @@ export default function Login() {
                                         <div className="fxt-content-between">
                                             <button
                                                 style={{
-                                                    backgroundColor: "#EC1D64",
+                                                    backgroundColor: "#00D6DD",
+                                                    color: '#ffffff'
                                                 }}
                                                 className="fxt-btn-fill"
                                                 type="submit"
@@ -221,6 +222,9 @@ export default function Login() {
                                             <Link
                                                 to="/forgot/password"
                                                 className="switcher-text2"
+                                                style={{
+                                                    color: '#1d2855'
+                                                }}
                                             >
                                                 Forgot Password
                                             </Link>

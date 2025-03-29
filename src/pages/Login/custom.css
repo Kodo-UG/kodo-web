@@ -680,7 +680,7 @@ ul {
   outline: none;
 }
 .switcher-text2 {
-  color: #9f9f9f;
+  color: #1d2855;
   font-size: 15px;
   margin-top: 5px;
   display: block;
@@ -689,7 +689,7 @@ ul {
   transition: all 0.3s ease-in-out;
 }
 .switcher-text2:hover {
-  color: #666;
+  color: #00D6DD;
 }
 .switcher-text2.active {
   color: #666;
