@@ -70,7 +70,7 @@ const StepOne = ({ nextStep, setFormData }) => {
 				<h2 style={{
 					fontFamily: "Lexend Deca, Helvetica, Arial, sans-serif",
 					fontWeight: "700",
-					color: "#00234a",
+					color: "#1d2855",
 
 				}}>What degree level are you looking for?</h2>
 				<div className="option-list">
@@ -79,6 +79,11 @@ const StepOne = ({ nextStep, setFormData }) => {
 							type="button"
 							onClick={() => handleButtonClick(info.id, info.text)}
 							className="select-option sonic-btn"
+							style={{
+								backgroundColor: '#00D6DD',
+								color: 'black',
+								borderRadius: 10
+							}}
 							key={info.id}
 						>
 							{info.text}

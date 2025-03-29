@@ -57,7 +57,7 @@ const StepTwo = ({ nextStep }) => {
 				style={{
 					fontFamily: "Lexend Deca, Helvetica, Arial, sans-serif",
 					fontWeight: "700",
-					color: "#00234a"
+					color: "#1d2855"
 				}}
 			>
 				What school category interests you?
@@ -77,6 +77,11 @@ const StepTwo = ({ nextStep }) => {
 								key={dta._id}
 								type="button"
 								className="select-option sonic-btn"
+								style={{
+									backgroundColor: '#00D6DD',
+									color: 'black',
+									borderRadius: 10
+								}}
 								onClick={() => handleClick(dta._id)}
 							>
 								{dta.name}
