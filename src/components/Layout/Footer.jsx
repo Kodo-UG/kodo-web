@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './footer.css';
+import logo from '../../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -8,13 +9,24 @@ const Footer = () => {
 		className='footer'
 	>
 	<div className="container">
-	  <div className="footer-content">
+	  <div className="footer-content"
+	  	style={{
+			position: 'relative'
+		}}
+	  >
 		{/* Logo */}
 		<div className="logo-container">
 		  <Link to="/" className="inline-block">
 			<img
-			  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kodo%20Schools%20Logo-20%201-m9kSeX93hpeGI06AhwmlhwK4gwv3sw.png"
+			  src={logo}
 			  alt="Kodo Scholarships"
+			//   width={120}
+            //   height={24}
+              className="logo-img"
+              style={{
+                width: 'full',
+                height: 'full'
+			}}
 			/>
 		  </Link>
 		</div>

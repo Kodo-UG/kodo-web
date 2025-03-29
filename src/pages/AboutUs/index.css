@@ -40,6 +40,12 @@
   }
 }
 
+@media(min-width: 1024px){
+  .about-about-container{
+    top: -120px;
+  }
+}
+
 /* Video Section */
 .about-about-video-section {
   margin-top: 2rem;
@@ -79,6 +85,7 @@
   flex-direction: column;
   gap: 10rem;
   border-radius: 16px;
+  border: 1px solid red;
 }
 
 @media (min-width: 768px) {

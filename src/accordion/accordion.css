@@ -15,23 +15,25 @@
   /* Container Styling */
   .accordion-container {
     background-color: #f9fafb; /* Equivalent to bg-gray-50 */
-    padding: 8rem 0; /* Equivalent to py-32 */
+    padding-top: 5rem ; /* Equivalent to py-32 */
     border-radius: 2rem; /* Equivalent to rounded-4xl */
-    margin-top: -230px;
+    margin-top: -80px;
     margin-bottom: 60px;
+    padding-bottom: 20px;
   }
 
   @media(min-width:768px){
     .accordion-container{
-      margin-top: 50px;
+      margin-top: -50px;
       margin-bottom: -100px;
     }
   }
 
   @media(min-width: 1024px){
     .accordion-container{
-        margin-top: -100px;
+        margin-top: -130px;
         margin-bottom: -180px;
+        padding: 8rem 0;
     }
   }
   
@@ -76,13 +78,18 @@
   
   /* Scholarship List */
   .scholarship-list {
-    margin-top: -4rem; /* Equivalent to -mt-16 */
+    margin-top: -2rem; /* Equivalent to -mt-16 */
     display: flex;
     flex-direction: column;
-    gap: 3rem; /* Equivalent to space-y-4 */
+    gap: 4rem; /* Equivalent to space-y-4 */
     width: 100%;
   }
 
+  @media(min-width:768px){
+     .scholarship-list{
+       margin-top: 150px;
+     }
+  }
 
   /* @media(min-width:768px){
     .scholarship-list{
@@ -95,6 +102,7 @@
     .scholarship-list{
       width: 90%;
       margin: auto;
+      margin-top: 70px;
     }
   }
 
@@ -102,9 +110,9 @@
     .scholarship-list{
       width: 85%;
       margin: auto;
+      margin-top: 70px;
     }
   }
-  
   
   /* Pagination Controls */
   .pagination-controls {

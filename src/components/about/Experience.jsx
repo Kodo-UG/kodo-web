@@ -5,7 +5,7 @@ import '../../components/videosection.css';
 
 export default function Experience({background}) {
   return (
-    <div className={`container mx-auto ${background? 'bg': "bg-kodo-cyan"} rounded-2xl md-rounded-3xl relative`} >
+    <div className={`container mx-auto ${background? 'bg': "bg-kodo-cyan"} rounded-2xl md-rounded-3xl relative`}>
       <div className="grid grid-cols-1 md-grid-cols-2 items-center">
         <div className="relative p-6 md-p-12">
           <div className="inline-block bg-white px-3 md-px-4 py-1 text-sm mb-4 md-mb-6"

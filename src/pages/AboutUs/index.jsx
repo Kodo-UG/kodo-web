@@ -14,7 +14,8 @@ export default function About() {
           <HeroSection />
         </div>
         <div className="about-about-container">
-          <div className="about-about-video-section">
+          <div className="about-about-video-section"
+          >
             <VideoSection />
           </div>
           
