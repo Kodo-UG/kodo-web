@@ -13,11 +13,7 @@ export default function HeroSection() {
         <div className="hero-left"></div>
 
         {/* Right Image Container */}
-        <div className="hero-image-container"
-          style={{
-            border: '1px solid red'
-          }}
-        >
+        <div className="hero-image-container">
           <div className="hero-circle hero-circle-1"></div>
           <div className="hero-circle hero-circle-2"></div>
           <div className="hero-circle hero-circle-3"></div>
