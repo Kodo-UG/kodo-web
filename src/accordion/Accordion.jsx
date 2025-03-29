@@ -13,6 +13,7 @@ export default function Accordion() {
       >
         <CustomContainer>
           <div className="accordion-container"
+             
           > 
             <h1 className="accordion-title">
               Find the right
@@ -53,7 +54,8 @@ export default function Accordion() {
       </section>
 
       <CustomContainer>
-        <section className="faq-section">
+        <section className="faq-section"
+        >
           <div className="faq-grid">
             <div className="faq-image-container">
               <div className="faq-image">

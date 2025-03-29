@@ -11,6 +11,12 @@
     
   }
 
+  @media(min-width: 1024px){
+    .hero-section{
+      margin-top: -40px;
+    }
+  }
+
   @media(max-width: 600px){
     .hero-content{
         margin-top: -300px; 
@@ -57,9 +63,9 @@
   
   @media (min-width: 1024px) {
     .hero-image-container {
-      width: 500px;
+      width: 800px;
       min-height: 500px;
-      top: 0px;
+      top: -70px;
     }
   }
   

@@ -21,6 +21,20 @@ const blogPosts = [
     image:
       "https://res.cloudinary.com/digrh1wj1/image/upload/v1742432182/Rectangle_23_1_qechtr.png",
   },
+  {
+    id: 3,
+    title: "Scholarship Essay and Win BIG [2022 Edition]",
+    date: "12 December 2024",
+    image:
+      "https://res.cloudinary.com/digrh1wj1/image/upload/v1742432182/Rectangle_23_1_qechtr.png",
+  },
+  {
+    id: 4,
+    title: "Scholarship Essay and Win BIG [2022 Edition]",
+    date: "12 December 2024",
+    image:
+      "https://res.cloudinary.com/digrh1wj1/image/upload/v1742432182/Rectangle_23_1_qechtr.png",
+  },
   // Add the rest of the blogPosts...
 ];
 

@@ -14,6 +14,9 @@ export default function HeroSection() {
 
         {/* Right Image Container */}
         <div className="hero-image-container"
+          style={{
+            border: '1px solid red'
+          }}
         >
           <div className="hero-circle hero-circle-1"></div>
           <div className="hero-circle hero-circle-2"></div>
