@@ -210,7 +210,7 @@ export default function Login() {
                                             <button
                                                 style={{
                                                     backgroundColor: "#00D6DD",
-                                                    color: '#ffffff'
+                                                    color: '#1d2855'
                                                 }}
                                                 className="fxt-btn-fill"
                                                 type="submit"

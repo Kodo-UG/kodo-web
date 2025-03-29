@@ -85,7 +85,6 @@
   flex-direction: column;
   gap: 10rem;
   border-radius: 16px;
-  border: 1px solid red;
 }
 
 @media (min-width: 768px) {

@@ -50,7 +50,7 @@ function StepperElementSix() {
 				flexDirection: "column"
 			}}
 		>
-			<header
+			{/* <header
 				className="w-full f py-4 bg-white"
 				style={{
 					display: "flex",
@@ -76,7 +76,7 @@ function StepperElementSix() {
 						alt=""
 					/>
 				</Link>
-			</header>
+			</header> */}
 			<div
 				id="voyager"
 				data-basename="/voyager/experience"
@@ -84,7 +84,11 @@ function StepperElementSix() {
 			>
 				<section id="voyager-blocks">
 					<section>
-						<section className="">
+						<section className=""
+							style={{
+								marginTop: 20
+							}}
+						>
 							<div
 								data-testid="progress-bar"
 								className="_progressBar_63yfq_1"
@@ -118,7 +122,11 @@ function StepperElementSix() {
 							<div className="_notAnimated_pmptr_10">
 								<span className="_headingContainer_1fpvz_1">
 									<p>Thanks for sharing! Let's keep going!</p>
-									<h2 className="_soloHeading_1fpvz_8">
+									<h2 className="_soloHeading_1fpvz_8"
+										style={{
+											color: '#1d2855'
+										}}
+									>
 										How soon were you looking to start this new
 										program?
 									</h2>
@@ -206,6 +214,10 @@ function StepperElementSix() {
 										<button
 											type="button"
 											className="_buttonContinue_pmptr_46 _button_pmptr_30"
+											style={{
+												backgroundColor: '#00D6DD',
+												color: '#1d2855'
+											}}
 											data-testid="continue"
 										>
 											<span>Continue</span>
@@ -220,7 +232,7 @@ function StepperElementSix() {
 													fillRule="evenodd"
 													clipRule="evenodd"
 													d="M16.6774 0.468629C17.3023 -0.15621 18.3153 -0.15621 18.9402 0.468629L25.3402 6.86863C25.965 7.49347 25.965 8.50653 25.3402 9.13137L18.9402 15.5314C18.3153 16.1562 17.3023 16.1562 16.6774 15.5314C16.0526 14.9065 16.0526 13.8935 16.6774 13.2686L20.346 9.6H1.80879C0.925131 9.6 0.208786 8.88366 0.208786 8C0.208786 7.11634 0.925131 6.4 1.80879 6.4H20.346L16.6774 2.73137C16.0526 2.10653 16.0526 1.09347 16.6774 0.468629Z"
-													fill="white"
+													fill="#1d2855"
 												></path>
 											</svg>
 										</button>
@@ -250,7 +262,7 @@ function StepperElementSix() {
 					</section>
 				</section>
 			</div>
-			<footer className="flex justify-center items-center bg-primary-900 mt-4 py-5">
+			{/* <footer className="flex justify-center items-center bg-primary-900 mt-4 py-5">
 				<div className="flex flex-col items-center justify-center md:flex-row flex-wrap">
 					<Link to="/">
 						<img
@@ -289,7 +301,7 @@ function StepperElementSix() {
 						</Link>
 					</div>
 				</div>
-			</footer>
+			</footer> */}
 		</main>
 	);
 }
