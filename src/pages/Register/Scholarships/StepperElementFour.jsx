@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { updateFormData } from "../../../toolkit/formReducer";
+import Footer from "../../../components/Layout/Footer";
 
 import { listArray as list } from "../../../constants/countries";
 
@@ -78,7 +79,7 @@ function StepperElementFour() {
 					flexDirection: "column"
 				}}
 			>
-				<header className="w-full flex justify-center py-4 bg-white">
+				{/* <header className="w-full flex justify-center py-4 bg-white">
 					<Link to="/">
 						<style>
 							{`
@@ -98,7 +99,7 @@ function StepperElementFour() {
 							alt="logo"
 						/>
 					</Link>
-				</header>
+				</header> */}
 				<div
 					id="voyager"
 					data-basename="/voyager/experience"
@@ -107,7 +108,7 @@ function StepperElementFour() {
 					<section id="voyager-blocks">
 						<section>
 							<section className="">
-								<div
+								{/* <div
 									data-testid="progress-bar"
 									className="_progressBar_63yfq_1"
 								>
@@ -115,8 +116,12 @@ function StepperElementFour() {
 										className="_progress_63yfq_1"
 										style={{ width: "10%" }}
 									></div>
-								</div>
-								<div className="_notAnimated_pmptr_10">
+								</div> */}
+								<div className="_notAnimated_pmptr_10"
+									style={{
+										marginTop: 20
+									}}
+								>
 									<span className="_headingContainer_1fpvz_1">
 										<p>
 											First things first, catch us up on your
@@ -263,7 +268,7 @@ function StepperElementFour() {
 						</section>
 					</section>
 				</div>
-				<footer className="flex justify-center items-center bg-primary-900 mt-4 py-5">
+				{/* <footer className="flex justify-center items-center bg-primary-900 mt-4 py-5">
 					<div className="flex flex-col items-center justify-center md:flex-row flex-wrap">
 						<a href="https://www.kodoscholarships.com">
 							<img
@@ -302,7 +307,7 @@ function StepperElementFour() {
 							</a>
 						</div>
 					</div>
-				</footer>
+				</footer> */}
 			</main>
 		</div>
 	);

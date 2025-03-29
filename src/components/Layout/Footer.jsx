@@ -1,9 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link,useLocation} from 'react-router-dom';
 import './footer.css';
 import logo from '../../assets/logo.png';
 
 const Footer = () => {
+	const {pathname} = useLocation();
+	console.log(pathname);
+
   return (
 	<footer
 		className='footer'
@@ -15,7 +18,7 @@ const Footer = () => {
 		}}
 	  >
 		{/* Logo */}
-		<div className="logo-container">
+		<div className={`${pathname == '/aboutus' ? 'logo-container-about': 'logo-container'}`}>
 		  <Link to="/" className="inline-block">
 			<img
 			  src={logo}
@@ -31,7 +34,8 @@ const Footer = () => {
 		  </Link>
 		</div>
 
-		<div className="links-container">
+		<div className={`${pathname == '/aboutus' ? 'links-container-about' : 'links-container'}`}
+		>
 		  {/* Navigation Links - First Column */}
 		  <div className="link-column">
 			<Link to="/about">About</Link>

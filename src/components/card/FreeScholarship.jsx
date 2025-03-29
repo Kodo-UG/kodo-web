@@ -1,6 +1,7 @@
 import React from "react";
 import truncateText from "../../utils/truncate";
 import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
+import './fontstyle.css';
 
 export default function FreeScholarship({
   cardTitle,
@@ -32,7 +33,7 @@ export default function FreeScholarship({
         borderRadius: "0.5rem",
         cursor: "pointer",
         marginBottom: "3rem",
-        fontFamily: "Montserrat, sans-serif",
+        fontFamily: "Archivo, sans-serif",
         boxShadow: "0 5px 10px rgba(0,0,0,0.10)",
         backgroundColor: "#fff",
       }}
@@ -60,9 +61,10 @@ export default function FreeScholarship({
             style={{
               marginLeft: "0.4rem",
               fontWeight: "normal",
-              fontFamily: "Montserrat, sans-serif",
-              letterSpacing: "2px",
+              fontFamily: "Archivo, sans-serif",
+              letterSpacing: "1px",
               fontSize: "1.31rem",
+              color: '#1d2855'
             }}
           >
             {cardTitle}
@@ -71,10 +73,10 @@ export default function FreeScholarship({
             style={{
               letterSpacing: "1.3px",
               textAlign: "left",
-              fontFamily: "Poppins,san-serif",
+              fontFamily: "Archivo,san-serif",
               marginLeft: ".1rem",
-              color: "#4e4b66",
-              fontSize: "14px",
+              color: "#1d2855",
+              fontSize: "12.5px",
               lineHeight: "22px",
               fontWeight: 500,
             }}
@@ -119,7 +121,7 @@ export default function FreeScholarship({
         className="card-body"
         style={{
           height: "6rem",
-          fontFamily: "Montserrat, sans-serif",
+          fontFamily: "Archivo, sans-serif",
         }}
       >
         <div className="d-flex justify-content-between align-items-center">
@@ -129,12 +131,12 @@ export default function FreeScholarship({
             </p>
             <p
               style={{
-                color: "#1D2754",
+                color: "#1d2855",
                 fontWeight: "normal",
                 padding: ".1rem",
                 lineHeight: "1.5rem",
-                fontFamily: "Montserrat, sans-serif",
-                letterSpacing: "2.4px",
+                fontFamily: "Archivo, sans-serif",
+                letterSpacing: "1px",
                 fontSize: "1.3rem",
               }}
             >
@@ -150,13 +152,14 @@ export default function FreeScholarship({
             </p>
             <p
               style={{
-                color: "#1D2754",
+                color: "#1d2855",
                 fontWeight: "normal",
                 padding: ".1rem",
                 lineHeight: "1.5rem",
                 fontFamily: "Poppins",
                 letterSpacing: "2px",
                 fontSize: "1.3rem",
+                fontFamily: "Archivo,sans-serif"
               }}
             >
               {formattedDate}

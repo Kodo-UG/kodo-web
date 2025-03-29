@@ -412,6 +412,7 @@ const FreeScholarshipLarge = ({
                 style={{
                   backgroundColor: "#00D6DD",
                   width: "80%",
+                  color: '#1d2855'
                 }}
                 type="primary"
                 block

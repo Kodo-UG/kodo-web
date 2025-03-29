@@ -103,11 +103,7 @@ const App = () => {
                 <Route exact path="/scholars" component={RootScholarship} />
                 <Route exact path="/favorite" component={Favorite} />
                 <PrivateRoute exact path="/profile" component={MainProfile} />
-                <Route exact path="/route1" component={StepperElementSix} />
-                <Route exact path="/route2" component={StepperElement7} />
                 <Route exact path="/verify" component={StepComfirmation} />
-                <Route exact path="/final" component={StepElement8} />
-                <Route exact path="/stepper" component={Stepper} />
                 <Route
                     exact
                     path="/details/:id"
@@ -121,11 +117,6 @@ const App = () => {
                 <Route exact path="/player" component={Sports} />
                 {/* <Route exact path="/create" component={FormOne} /> */}
 
-                <Route
-                    exact
-                    path="/educationlevel"
-                    component={StepperElementFour}
-                />
                 <PrivateRoute
                     exact
                     path="/applications"
@@ -148,7 +139,16 @@ const App = () => {
                 <Layout>
                     <PrivateRoute path="/payment" component={Payment} />
                     <Route exact path="/aboutus" component={AboutUs} />
+                    <Route exact path="/stepper" component={Stepper} />
                     <Route exact path="/login" component={Login} />
+                    <Route
+                        exact
+                        path="/educationlevel"
+                        component={StepperElementFour}
+                    />
+                     <Route exact path="/route1" component={StepperElementSix} />
+                     <Route exact path="/route2" component={StepperElement7} />
+                     <Route exact path="/final" component={StepElement8} />
                     <Route exact path="/blog" component={Blog} />
                     <Route exact path="/blog/:id" component={BlogDetails} />
                     <Route

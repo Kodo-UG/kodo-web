@@ -5,7 +5,7 @@ import "./footer.css"
 const HeaderStepper = () => {
 	return (
 		<div className="">
-			  <Link
+			  {/* <Link
             className="navigation-container"
             to="/"
           >
@@ -13,7 +13,7 @@ const HeaderStepper = () => {
               src="/images/logo1.svg"
               alt="Logomark"
             />
-          </Link>
+          </Link> */}
 			
 		</div>
 	);
