@@ -735,7 +735,7 @@ function Profile() {
 																<Link
 																	style={{
 																		backgroundColor:
-																			"#EC1D64",
+																			"#00d6dd",
 																		color: "#fff",
 																	}}
 																	className="btn  my-1 float-end"
@@ -816,7 +816,7 @@ function Profile() {
 																	className="btn  my-1"
 																	style={{
 																		backgroundColor:
-																			"#EC1D64",
+																			"#00d6dd",
 																		color: "#fff",
 																	}}
 																>
