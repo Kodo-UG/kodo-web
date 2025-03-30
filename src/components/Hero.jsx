@@ -21,7 +21,7 @@ function HeroSection() {
               Kodo Scholarships is the #1 college scholarship app in the world 
               and has helped students win more than $1 million dollars
             </p>
-            <Link href="/scholarships" className="hero-button">
+            <Link to="/scholarships" className="hero-button">
               Find Scholarships →
             </Link>
           </div>

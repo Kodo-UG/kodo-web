@@ -31,7 +31,6 @@ export default function About() {
         <div className="cutsom-bg">
           <Features />
         </div>
-       
         <div className="about-spacer" />
       </main>
     </div>
