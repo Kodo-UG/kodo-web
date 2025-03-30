@@ -315,7 +315,7 @@ function SmallAcreen({
 					<a
 						href={`${link}`}
 						style={{
-							backgroundColor: "#EB1E5E",
+							backgroundColor: "#00d6dd",
 							border: "none",
 							color: "white",
 							padding: "1rem",

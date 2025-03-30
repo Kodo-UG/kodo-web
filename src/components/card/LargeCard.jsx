@@ -433,7 +433,7 @@ const LargeCard = ({
                             <Button
                                 onClick={() => handleRoute(id)}
                                 style={{
-                                    backgroundColor: "#EC1D64",
+                                    backgroundColor: "#00d6dd",
                                     width: "80%",
                                 }}
                                 type="primary"
@@ -599,13 +599,13 @@ const LargeCard = ({
                                 <a
                                     href={`${link}`}
                                     style={{
-                                        backgroundColor: "#EB1E5E",
+                                        backgroundColor: "#00d6dd",
                                         border: "none",
                                         color: "white",
                                         padding: "1rem",
                                         width: "100%",
                                         borderRadius: "5px",
-                                        fontWeight: "bolder",
+                                        fontWeight: "bold",
                                         fontSize: "16px",
                                     }}
                                     onClick={() => handleApply(id)}

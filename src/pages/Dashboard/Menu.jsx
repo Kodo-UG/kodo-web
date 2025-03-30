@@ -9,6 +9,8 @@ import { useDispatch } from "react-redux";
 import { clearScholarships } from "../../toolkit/scholarshipReducer";
 import { clearJobData } from "../../toolkit/jobReducer";
 import { clearFormData } from "../../toolkit/formReducer";
+import logo  from '../../assets/logo.png'
+import './menustyle.css';
 
 const Menu = ({ setShowContent }) => {
     const [activeButton, setActiveButton] = useState(null);
@@ -47,15 +49,27 @@ const Menu = ({ setShowContent }) => {
     const myStyle = {
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "space-between"
     };
 
     const pStyle = {
-        color: "#fff",
+        color: "#1d2855",
         fontWeight: "bold",
-        padding: ".9rem",
-        marginLeft: "4px",
+        // padding: ".9rem",
+        marginLeft: "4px"
     };
+
+    const bpstyle = {
+        color: "#ffffff",
+        fontWeight: "bold",
+        // padding: ".9rem",
+        marginLeft: "4px"
+    }
+
+    const bstyle={
+        backgroundColor: '#00D6DD',
+        color: '#ffffff'
+    }
 
     const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 
@@ -76,7 +90,7 @@ const Menu = ({ setShowContent }) => {
                 <aside
                     className={`main-sidebar sidebar-dark-primary elevation-4  ${!sidebarVisible ? "sidebar-closed" : ""
                         }`}
-                    style={{ backgroundColor: "#1c2755" }}
+                    style={{ backgroundColor: "#ffffff" }}
                 >
                     <div className="" style={myStyle}>
                         <div
@@ -93,12 +107,12 @@ const Menu = ({ setShowContent }) => {
                                 <Link to="/">
                                     <img
                                         style={{
-                                            width: "4rem",
-                                            height: "4rem",
+                                            width: "6rem",
+                                            height: "6rem",
                                             objectFit: "contain",
                                             marginLeft: "-.1rem",
                                         }}
-                                        src="/images/logo1.png"
+                                        src={logo}
                                         alt="kodo Logo"
                                         className="brand-imag"
                                     />
@@ -110,7 +124,7 @@ const Menu = ({ setShowContent }) => {
                                         width: "40%",
                                         display: "flex",
                                         alignItems: "center",
-                                        justifyContent: "end",
+                                        justifyContent: "end"
                                     }}
                                     data-widget="pushmenu"
                                 >
@@ -126,7 +140,7 @@ const Menu = ({ setShowContent }) => {
                         </div>
                     </div>
                     <div
-                        style={{ backgroundColor: "#1c2755" }}
+                        style={{ backgroundColor: "#ffffff"}}
                         className="sidebar"
                     >
                         <nav className="mt-2">
@@ -135,27 +149,33 @@ const Menu = ({ setShowContent }) => {
                                 data-widget="treeview"
                                 role="menu"
                                 data-accordion="false"
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: 15
+                                }}
                             >
                                 <li
                                     className="nav-item "
                                     onClick={() => setShowContent(0)}
                                     data-widget="pushmenu"
+                                    style={{
+                                    
+                                    }}
                                 >
                                     <Link
                                         onClick={() =>
                                             handleActive("scholarships")
                                         }
                                         to="/scholars"
-                                        className={`nav-link ${isButtonActive("scholarships")
-                                            ? "active"
-                                            : ""
-                                            }`}
+                                        className="nav-link"
+                                        style={isButtonActive("scholarships") ? bstyle : {}}
                                     >
                                         <i
                                             className="fa fa-graduation-cap"
                                             aria-hidden="true"
                                         ></i>{" "}
-                                        <p style={pStyle}>
+                                        <p style={isButtonActive("scholarships") ? bpstyle : pStyle}>
                                             Dashboard
                                             {data?.length > 0 ? (
                                                 <span className="right badge badge-danger">
@@ -176,16 +196,14 @@ const Menu = ({ setShowContent }) => {
                                             handleActive("dashboard")
                                         }
                                         to="/scholars"
-                                        className={`nav-link ${isButtonActive("dashboard")
-                                            ? "active"
-                                            : ""
-                                            }`}
+                                        className={`nav-link`}
+                                        style={isButtonActive("dashboard") ? bstyle : {}}
                                     >
                                         <i
                                             className="fa fa-trophy"
                                             aria-hidden="true"
                                         ></i>{" "}
-                                        <p style={pStyle}>
+                                        <p style={isButtonActive("dashboard") ? bpstyle : pStyle}>
                                             Matched Scholarship
                                         </p>
                                     </Link>
@@ -201,10 +219,8 @@ const Menu = ({ setShowContent }) => {
                                             handleActive("favorites")
                                         }
                                         to="/scholars"
-                                        className={`nav-link ${isButtonActive("favorites")
-                                            ? "active"
-                                            : ""
-                                            }`}
+                                        className={`nav-link`}
+                                        style={isButtonActive("favorites") ? bstyle : {}}
                                     >
                                         <i
                                             style={{ marginLeft: "3px" }}
@@ -212,7 +228,7 @@ const Menu = ({ setShowContent }) => {
                                             aria-hidden="true"
                                         ></i>
 
-                                        <p style={pStyle}>Favorites</p>
+                                        <p style={isButtonActive("favorites") ? bpstyle : pStyle}>Favorites</p>
                                     </Link>
                                 </li>
 
@@ -224,10 +240,8 @@ const Menu = ({ setShowContent }) => {
                                     <Link
                                         onClick={() => handleActive("jobs")}
                                         to="/scholars"
-                                        className={`nav-link ${isButtonActive("jobs")
-                                            ? "active"
-                                            : ""
-                                            }`}
+                                        className={`nav-link`}
+                                        style={isButtonActive("jobs") ? bstyle : {}}
                                     >
                                         <i
                                             style={{ marginLeft: "3px" }}
@@ -235,7 +249,7 @@ const Menu = ({ setShowContent }) => {
                                             aria-hidden="true"
                                         ></i>
 
-                                        <p style={pStyle}>Jobs</p>
+                                        <p style={isButtonActive("jobs") ? bpstyle : pStyle}>Jobs</p>
                                     </Link>
                                 </li>
 
@@ -247,10 +261,8 @@ const Menu = ({ setShowContent }) => {
                                     <Link
                                         onClick={() => handleActive("invite")}
                                         to="/scholars"
-                                        className={`nav-link ${isButtonActive("invite")
-                                            ? "active"
-                                            : ""
-                                            }`}
+                                        className={`nav-link`}
+                                        style={isButtonActive("invite") ? bstyle : {}}
                                     >
                                         <i
                                             style={{ marginLeft: "3px" }}
@@ -258,7 +270,7 @@ const Menu = ({ setShowContent }) => {
                                             aria-hidden="true"
                                         ></i>
 
-                                        <p style={pStyle}>Invite Friends</p>
+                                        <p style={isButtonActive("invite") ? bpstyle : pStyle}>Invite Friends</p>
                                     </Link>
                                 </li>
                                 <li

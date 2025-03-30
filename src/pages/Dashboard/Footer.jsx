@@ -10,8 +10,8 @@ const Footer = () => {
 					style={{ height: "50px", color: "black" }}
 				>
 					<strong>
-						&copy; 2023{" "}
-						<Link style={{ color: "#125875", padding: "3px" }} to="/">
+						&copy; 2025{" "}
+						<Link style={{ color: "#1d2855", padding: "3px" }} to="/">
 							Kodo scholarships
 						</Link>
 					</strong>
