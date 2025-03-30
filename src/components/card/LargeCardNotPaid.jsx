@@ -370,8 +370,8 @@ const LargeCardNotPaid = ({
 						>
 							<button
 								style={{
-									color: "gray",
-									background: "rgba(152,172,248,1)",
+									color: "white",
+									background: "#00d6dd",
 									borderRadius: "0.5rem",
 									width: "90%",
 									paddingTop: "0.5rem",

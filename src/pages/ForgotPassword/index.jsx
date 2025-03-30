@@ -73,7 +73,7 @@ export default function ForgotPassword() {
 							</div>
 						</div>
 						<div className="fxt-form">
-							<h2 style={{ textAlign: "start" }}>
+							<h2 style={{ textAlign: "start",color: '#1d2855' }}>
 								Forgot PassWord
 							</h2>
 							<p>Request for password reset</p>
@@ -144,12 +144,19 @@ export default function ForgotPassword() {
 											<button
 												type="submit"
 												className="fxt-btn-fill"
+												style={{
+													backgroundColor: '#00D6DD',
+													color: '#1d2855'
+												}}
 											>
 												Reset
 											</button>
 											<Link
 												to="/signin"
 												className="switcher-text2"
+												style={{
+													color: '#1d2855'
+												}}
 											>
 												Back to Login
 											</Link>

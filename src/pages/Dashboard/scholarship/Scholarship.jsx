@@ -10,7 +10,7 @@ const Scholarship = () => {
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
 
 	return (
-		<div style={{ background: "white" }}>
+		<div style={{ background: "white"}}>
 			<div className="content-wrapper">
 				<section
 					style={{ marginBottom: "2rem" }}
@@ -33,7 +33,7 @@ const Scholarship = () => {
 						<div
 							style={{
 								padding: isSm ? "2rem" : "",
-								width: "100%",
+								width: "100%"
 							}}
 						>
 							<div

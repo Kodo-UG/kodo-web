@@ -90,7 +90,7 @@ const MapCardData = () => {
   }, []);
   
   return (
-    <div style={{ width: "100%", marginBottom: "20rem" }}>
+    <div style={{ width: "100%", marginBottom: "20rem"}}>
       <InfiniteScroll
         dataLength={data.length}
         next={fetchData}
