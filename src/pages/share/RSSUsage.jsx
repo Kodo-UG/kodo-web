@@ -1,16 +1,63 @@
 import { useMediaQuery } from "@uidotdev/usehooks";
-import CustomShareComponent from "./CustomShareComponent";
+import { Share2, Copy, Check } from "lucide-react"
+import { useState } from "react";
+// import CustomShareComponent from "./CustomShareComponent";
+import './share.css';
+
+const CustomShareComponent = ({ url }) => {
+	const shareData = {
+	  title: "Join Kodo Scholarships",
+	  text: "Get access to exclusive scholarships and opportunities!",
+	  url: url,
+	}
+  
+	const handleShare = async () => {
+	  try {
+		if (navigator.share) {
+		  await navigator.share(shareData)
+		} else {
+		  // Fallback for browsers that don't support the Web Share API
+		  copyToClipboard(url)
+		}
+	  } catch (error) {
+		console.error("Error sharing:", error)
+	  }
+	}
+  
+	const copyToClipboard = (text) => {
+	  navigator.clipboard.writeText(text)
+	}
+  
+	return (
+	  <button onClick={handleShare} className="share-button"
+		style={{
+			backgroundColor: '#00d6dd'
+		}}
+	  >
+		<Share2 className="icon" />
+		Share Your Invite Link
+	  </button>
+	)
+  }
 
 export default function RSSUsage() {
 	const isSm = useMediaQuery("only screen and (max-width : 700px)");
+	const isLgMd = useMediaQuery("only screen and (min-width : 1023px)");
 	const isMd = useMediaQuery(
-		"only screen and (min-width : 700px) and (max-width : 1250px)"
+		"only screen and (min-width : 700px) and (max-width : 1022px)"
 	);
-	const isLg = useMediaQuery("only screen and (min-width : 1250px)");
+	const isLg = useMediaQuery("only screen and (min-width : 1200px)");
 
 	const userId = localStorage.getItem("userID");
 	const URL = `https://kodoscholarships.com/admissions/${userId}`;
-	const useURL = `https://kodoscholarships.com/admissions/${userId}`;
+	const useUrl = `https://kodoscholarships.com/admissions/${userId}`;
+
+	const [copied, setCopied] = useState(false)
+	const copyToClipboard = () => {
+		navigator.clipboard.writeText(useUrl);
+		setCopied(true)
+		setTimeout(() => setCopied(false), 2000)
+	  }
 
 	return (
 		<div
@@ -22,8 +69,8 @@ export default function RSSUsage() {
 			<div
 				className={` bg-white h-100  mb-5 px-4 py-4`}
 				style={{
-					width: isSm ? "100%" : "30%",
-					marginLeft: isLg ? "20rem" : isMd ? "18rem" : isSm ? "1rem" : "",
+					width: isSm ? "100%" : isMd ? "85%" : "50%",
+					marginLeft: isLg ? "20rem" : isLgMd ? '15rem' : isMd ? "0rem" : isSm ? "1rem" : "",
 					boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
 					display: "flex",
 					flexDirection: "column",
@@ -60,43 +107,60 @@ export default function RSSUsage() {
 				<div className="w-100  px-4">
 					<div className="w-90 p-4  h-25vh d-flex align-items-center justify-content-center flex-column mb-4">
 						<CustomShareComponent url={URL} />
-						<div className="d-flex align-items-center justify-content-center mt-4">
-							<div
-								style={{ width: "130px", backgroundColor: "#011f4b" }}
-								className="px-2 text-white d-flex flex-column align-items-center justify-content-center mr-1"
+										<div className="counters-container">
+							<div className="counter friends-counter"
+								style={{
+									backgroundColor: '#000000'
+								}}
 							>
-								<h1 style={{ fontWeight: "bold" }}>05</h1>
-								<p className="text-small">FRIENDS INVITED</p>
+								<p className="counter-number">05</p>
+								<p className="counter-label">FRIENDS INVITED</p>
 							</div>
-							<div
-								style={{ width: "130px", backgroundColor: "#ff9a00" }}
-								className="px-2 text-white d-flex flex-column align-items-center justify-content-center"
+							<div className="counter months-counter"
+								style={{
+									paddingTop: 20
+								}}
 							>
-								<h1 style={{ fontWeight: "bold" }}>01</h1>
-								<p className="text-small">MONTH FREE</p>
+								<p className="counter-number">01</p>
+								<p className="counter-label">MONTH FREE</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				<button className="w-100 p-1 bg-black text-white d-flex align-items-center justify-content-center">
-					<a href={useURL} style={{ fontWeight: "bold", color: "white" }}>
+				<button className="w-100 p-1 bg-black text-white d-flex align-items-center justify-content-center"
+					style={{
+						borderRadius: 5,
+						backgroundColor: '#1d2855'
+					}}
+				>
+					<a href={useUrl} style={{ fontWeight: "bold", color: "white",padding: 5 }}>
 						INVITE A FRIEND
 					</a>
 				</button>
-				<div className="w-100 d-flex align-items-center justify-content-center p-2">
+				<div className="w-100 d-flex align-items-center justify-content-center p-2"
+				>
 					<div>Or Copy Your Link</div>
 				</div>
-				<button
+				<div className="copy-link-container">
+					<input value={useUrl} readOnly className="link-input" />
+					<button className="copy-button" onClick={copyToClipboard}>
+					{copied ? <Check className="icon" /> : <Copy className="icon" />}
+					</button>
+				</div>
+				{/* <button
 					className="w-100 p-1  d-flex align-items-center justify-content-center"
 					style={{
-						border: "2px solid black"
+						border: "2px solid black",
+						padding: 10,
+						borderRadius: 5
 					}}
 				>
 					<input
 						style={{
 							width: "100%",
 							justifyContent: "center",
-							alignItems: "center"
+							alignItems: "center",
+							padding: 5
 						}}
 						id="urlInput"
 						name="url"
@@ -104,7 +168,7 @@ export default function RSSUsage() {
 						value={useURL}
 						required
 					/>
-				</button>
+				</button> */}
 			</div>
 		</div>
 	);
