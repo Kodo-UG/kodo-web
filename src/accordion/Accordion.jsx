@@ -10,6 +10,8 @@ export default function Accordion() {
   const [data,setData] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+  const [sports,setSports] = useState([]);
+  const [free,setFree] = useState([]);
 
   const scholarship_data = [
     {
@@ -70,8 +72,42 @@ export default function Accordion() {
 		}
 	};
 
+  const getFree = async() => {
+    try{
+      const res = await axios.get(`${BASE_URL}/scholarship/free/scholarships`);
+      console.log(res);
+      setData(res.data.data);
+    }catch(error){
+      console.log(error);
+    }
+  }
+
+  const getSports = async() => {
+    try{
+      const res = await axios.get(`${BASE_URL}/scholarship/sports`,config);
+      console.log(res);
+      setData(res.data.data);
+    }catch(error){
+      console.log(error);
+    }
+  }
+
+  const getSTEM = async() => {
+    try{
+
+    }catch(error){
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
-    getScholarship();
+    // getScholarship();
+ if(token){
+  getScholarship();
+ } else {
+  getFree();
+ }
+    // getSports();
   },[]);
 
   
@@ -102,7 +138,6 @@ export default function Accordion() {
       >
         <CustomContainer>
           <div className="accordion-container"
-             
           > 
             <h1 className="accordion-title">
               Find the right
@@ -113,22 +148,22 @@ export default function Accordion() {
               <button className="filter-button primary">All Scholarships</button>
               <button className="filter-button secondary">STEM</button>
               <button className="filter-button secondary">Women</button>
-              <button className="filter-button secondary">Sports</button>
+              <button className="filter-button secondary"
+                // onClick={async () => {
+                //   const res = await getSports();  // Wait for API call to complete
+                //   setData(res?.data?.data || []);
+                // }}
+              >Sports</button>
             </div>
           </div>
           <div className="scholarship-list" 
           >
-            {token ? currentData
+            {currentData
               .map((data, i) => (
                 <ScholarshipCard
                   key={i}
                   data={data}
                 />
-              )) : scholarship_data.map((data,i)=> (
-                <ScholarshipCard
-                key={i}
-                data={data}
-              />
               ))}
           </div>
           <div className="pagination-controls">
