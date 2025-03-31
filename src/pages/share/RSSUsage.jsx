@@ -118,7 +118,7 @@ export default function RSSUsage() {
 							</div>
 							<div className="counter months-counter"
 								style={{
-									paddingTop: 20
+									paddingTop: isLg ? 20 : isLgMd ? 20 : isMd ? 20 : 20, 
 								}}
 							>
 								<p className="counter-number">01</p>
