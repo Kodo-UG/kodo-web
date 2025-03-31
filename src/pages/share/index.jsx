@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './share.css';
 
 const ShareLinkButton = () => {
 	const url = "kodoscholarships.com";
