@@ -95,7 +95,7 @@ export default function NavHeader() {
         {/* Right section with login, CTA button, and menu toggle */}
         <div className="nav-right">
           {
-            location.pathname == '/signin'|| location.pathname == '/login' || location.pathname == '/forgot/password' ? '' : <Link to="/login" className="login-link">Login</Link>
+            location.pathname == '/signin'|| location.pathname == '/login' || location.pathname == '/forgot/password' || location.pathname == '/final' ? '' : <Link to="/login" className="login-link">Login</Link>
           }
           <Link to="/scholarships" className="cta-button">Find Scholarships →</Link>
   

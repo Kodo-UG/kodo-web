@@ -136,6 +136,7 @@ const App = () => {
                     component={FinalStepperElement}
                 />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/final" component={StepElement8} />
 
                 <Layout>
                     <PrivateRoute path="/payment" component={Payment} />
@@ -149,7 +150,6 @@ const App = () => {
                     />
                      <Route exact path="/route1" component={StepperElementSix} />
                      <Route exact path="/route2" component={StepperElement7} />
-                     <Route exact path="/final" component={StepElement8} />
                     <Route exact path="/blog" component={Blog} />
                     <Route exact path="/blog/:id" component={BlogDetails} />
                     <Route
