@@ -11,6 +11,8 @@ import axios from "axios";
 import { AiFillStar } from "react-icons/ai";
 import { clearFormData } from "../../toolkit/formReducer";
 import { clearJobData } from "../../toolkit/jobReducer";
+import { PiUser } from "react-icons/pi";
+import { IoNotificationsOutline } from "react-icons/io5";
 
 const MyHeader = ({ setShowContent }) => {
 	const history = useHistory();
@@ -134,7 +136,7 @@ const MyHeader = ({ setShowContent }) => {
 						<Link to="#" className="nav-link" data-widget="pushmenu">
 							<HiMenuAlt1
 								style={{
-									color: "red",
+									color: "#1d2855",
 									width: "3rem",
 									height: "2rem",
 									fontWeight: "bolder"
@@ -146,12 +148,17 @@ const MyHeader = ({ setShowContent }) => {
 				<ul className="navbar-nav ml-auto ">
 					<li className=" ">
 						<Link className="nav-link" data-toggle="dropdown" to="#">
-							<img
+							{/* <img
 								src="/images/alert.png"
 								alt=""
 								style={{
 									width: "40px",
 									height: "40px"
+								}}
+							/> */}
+							<IoNotificationsOutline size={25} 
+								style={{
+									color: '#1d2855'
 								}}
 							/>
 							{/* <AiOutlineBell style={{ width: "20px", height: "20px" }} />{" "} */}
@@ -218,17 +225,21 @@ const MyHeader = ({ setShowContent }) => {
 								items
 							}}
 							trigger={["click"]}
-							style={{ cursor: "pointer" }}
+							style={{ cursor: "pointer",paddingTop: -10 }}
 						>
 							<a href="#" onClick={(e) => e.preventDefault()}>
 								<Space>
-									<img
+									{/* <img
 										style={{ padding: "", cursor: "pointer" }}
 										class="rounded-circle header-profile-user"
 										src={`https://ui-avatars.com/api/name=${info?.user?.fname}&background=random`}
 										alt="User"
 										width={35}
-									/>
+									/> */}
+									<PiUser size={25} style={{
+										color: '#1d2855',
+										marginTop: -5
+									}}/>
 								</Space>
 							</a>
 						</Dropdown>

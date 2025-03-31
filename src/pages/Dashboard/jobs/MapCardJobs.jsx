@@ -6,6 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { BASE_URL } from "../../../constants/api";
 import { useHistory } from "react-router-dom";
 import truncateText from "../../../utils/truncate";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 const MapCardJobs = ({ path }) => {
   const [data, setData] = useState([]);
@@ -13,6 +14,10 @@ const MapCardJobs = ({ path }) => {
   const [subscription, setSubscription] = useState(false);
   const [pageNumber, setPageNumber] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+    const isSm = useMediaQuery("only screen and (max-width : 700px)");
+    const isLg = useMediaQuery(
+        "only screen and (min-width : 1250px) and (max-width : 1300px)"
+      );
 
   const [loading, setLoading] = useState(false);
 
@@ -68,9 +73,40 @@ const MapCardJobs = ({ path }) => {
   }, []);
 
   return (
-    <div style={{ width: "100%", marginBottom: "20rem" }}>
+    <div style={{ width: "100%", marginBottom: "20rem"}}>
       {newJob === false ? (
-        ""
+      <>
+          <div
+            style={{
+              textAlign: "center",
+              marginTop: ".4rem",
+              fontFamily: "Montserrat, sans-serif",
+              cursor: "pointer",
+              marginLeft: isSm ? "" : "1rem",
+            }}
+          >
+            <div
+              style={{
+                color: '#1d2855',
+                fontSize: 30
+              }}
+            >
+              Jobs Available
+            </div>
+            <p
+              onClick={() => history.push("/scholars")}
+              style={{
+                fontSize: "14px",
+                letterSpacing: "1.6px",
+                fontWeight: 400,
+                lineHeight: "20px",
+                color: "rgb(74,74,74)",
+              }}
+            >
+              You Have No! Jobs offer
+            </p>
+          </div>
+      </>
       ) : (
         <>
           <InfiniteScroll
