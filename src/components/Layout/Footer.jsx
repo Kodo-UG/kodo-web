@@ -83,7 +83,7 @@ const Footer = () => {
 		  {/* Navigation Links - Second Column */}
 		  <div className={`${pathname == '/aboutus' ? 'link-column-about' : 'link-column'}`}
 		  >
-			<Link to="/terms"
+			<Link to="/policy"
 				style={{
 					color: '#1d2855'
 				}}
@@ -93,7 +93,7 @@ const Footer = () => {
 					color: '#1d2855'
 				}}
 			>Blog</Link>
-			<Link to="/privacy"
+			<Link to="/policy"
 				style={{
 					color: '#1d2855'
 				}}

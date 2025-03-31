@@ -6,6 +6,12 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import './NavHeader.css';
 import logo from '../../assets/logo.png';
 import {useLocation} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useQueryClient } from 'react-query';
+import { clearFormData } from "../../toolkit/formReducer";
+import { clearJobData } from "../../toolkit/jobReducer";
+import { clearScholarships } from "../../toolkit/scholarshipReducer";
 
 
 export default function NavHeader() {
@@ -19,7 +25,7 @@ export default function NavHeader() {
   ]
 
   const location = useLocation();
-  console.log(location.pathname);
+ const token = localStorage.getItem('token');
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -56,11 +62,28 @@ export default function NavHeader() {
     return () => {
       window.removeEventListener("resize", handleResize)
     }
-  }, [])
+  }, []);
+
+  const history = useHistory();
+  const queryClient = useQueryClient(); // Get the queryClient instance
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+      localStorage.removeItem("token");
+      localStorage.setItem("modal2Open", "true");
+      localStorage.removeItem("userData");
+      localStorage.removeItem("refer")
+      dispatch(clearFormData());
+      dispatch(clearJobData());
+      queryClient.clear();
+      dispatch(clearScholarships());
+      history.push("/login");
+    };
  
 
   return (
-    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}
+    >
     <div className="container">
       <nav className="nav">
         {/* Logo section */}
@@ -95,7 +118,11 @@ export default function NavHeader() {
         {/* Right section with login, CTA button, and menu toggle */}
         <div className="nav-right">
           {
-            location.pathname == '/signin'|| location.pathname == '/login' || location.pathname == '/forgot/password' || location.pathname == '/final' ? '' : <Link to="/login" className="login-link">Login</Link>
+            location.pathname == '/signin'|| location.pathname == '/login' || location.pathname == '/forgot/password' || location.pathname == '/final' ? '' : <div>{
+              token ? <Link to="/signin" className="login-link"
+                onClick={handleLogout}
+              >Logout</Link> : <Link to="/login" className="login-link"> Login</Link>
+            }</div>
           }
           <Link to="/scholarships" className="cta-button">Find Scholarships →</Link>
   
@@ -113,8 +140,10 @@ export default function NavHeader() {
     )}
   
     {/* Mobile Menu */}
-    <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
-      <div className="mobile-menu-content">
+    <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}
+    >
+      <div className="mobile-menu-content"
+      >
         {navigationItems.map((item) => (
           <Link style={{
             color: '#1d2855'
@@ -124,9 +153,21 @@ export default function NavHeader() {
         ))}
   
         {/* Additional Mobile-only Links */}
-        <Link to="/login" className="mobile-menu-item sm-hidden" onClick={() => setIsMobileMenuOpen(false)}>
+        {
+            location.pathname == '/signin'|| location.pathname == '/login' || location.pathname == '/forgot/password' || location.pathname == '/final' ? '' : <div>{
+              token ? <Link to="/signin" 
+                className="mobile-menu-item sm-hidden" onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  handleLogout()
+                }}
+              >Logout</Link> : <Link to="/login" 
+                className="mobile-menu-item sm-hidden" onClick={() => setIsMobileMenuOpen(false)}
+              > Login</Link>
+            }</div>
+          }
+        {/* <Link to="/login" className="mobile-menu-item sm-hidden" onClick={() => setIsMobileMenuOpen(false)}>
           Login
-        </Link>
+        </Link> */}
         <div className="mobile-menu-button-container sm-hidden">
           <Link to="/scholarships" className="mobile-cta-button" onClick={() => setIsMobileMenuOpen(false)}>
             Find Scholarships →

@@ -79,7 +79,7 @@
 
 @media(min-width: 768px){
   .blog-margin{
-    margin-top: 50px;
+    margin-top: -40px;
   }
 }
 
@@ -125,7 +125,7 @@
 
 @media (min-width: 768px) { /* md breakpoint */
   .md-grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
