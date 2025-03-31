@@ -11,6 +11,7 @@ import { clearJobData } from "../../toolkit/jobReducer";
 import { clearFormData } from "../../toolkit/formReducer";
 import logo  from '../../assets/logo.png'
 import './menustyle.css';
+import { PiGraduationCap } from "react-icons/pi";
 
 const Menu = ({ setShowContent }) => {
     const [activeButton, setActiveButton] = useState(null);
@@ -66,9 +67,14 @@ const Menu = ({ setShowContent }) => {
         marginLeft: "4px"
     }
 
+    const iconstyle = {
+        color: '#ffffff'
+    }
+
     const bstyle={
         backgroundColor: '#00D6DD',
-        color: '#ffffff'
+        color: '#ffffff',
+        padding: 10
     }
 
     const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
@@ -171,9 +177,15 @@ const Menu = ({ setShowContent }) => {
                                         className="nav-link"
                                         style={isButtonActive("scholarships") ? bstyle : {}}
                                     >
+                                        
                                         <i
-                                            className="fa fa-graduation-cap"
+                                            className="far fa-graduation-cap"
                                             aria-hidden="true"
+                                            style={{
+                                                color: isButtonActive("scholarships") ? "#ffffff" : "#1d2855",
+                                                marginRight: 20,
+                                                fontSize: 16
+                                            }}
                                         ></i>{" "}
                                         <p style={isButtonActive("scholarships") ? bpstyle : pStyle}>
                                             Dashboard
@@ -200,8 +212,13 @@ const Menu = ({ setShowContent }) => {
                                         style={isButtonActive("dashboard") ? bstyle : {}}
                                     >
                                         <i
-                                            className="fa fa-trophy"
+                                            className="far fa-trophy"
                                             aria-hidden="true"
+                                            style={{
+                                                color: isButtonActive("dashboard") ? "#ffffff" : "#1d2855",
+                                                marginRight: 20,
+                                                fontSize: 16
+                                            }}
                                         ></i>{" "}
                                         <p style={isButtonActive("dashboard") ? bpstyle : pStyle}>
                                             Matched Scholarship
@@ -223,8 +240,8 @@ const Menu = ({ setShowContent }) => {
                                         style={isButtonActive("favorites") ? bstyle : {}}
                                     >
                                         <i
-                                            style={{ marginLeft: "3px" }}
-                                            className="fa fa-bookmark"
+                                            style={{ marginLeft: "3px",  color: isButtonActive("favorites") ? "#ffffff" : "#1d2855",marginRight: 23,fontSize: 20  }}
+                                            className="far fa-bookmark"
                                             aria-hidden="true"
                                         ></i>
 
@@ -241,11 +258,16 @@ const Menu = ({ setShowContent }) => {
                                         onClick={() => handleActive("jobs")}
                                         to="/scholars"
                                         className={`nav-link`}
-                                        style={isButtonActive("jobs") ? bstyle : {}}
+                                        style={isButtonActive("jobs") ? bstyle : {padding: 5}}
                                     >
                                         <i
-                                            style={{ marginLeft: "3px" }}
-                                            className="fa fa-briefcase"
+                                             style={{
+                                                marginLeft: 10,
+                                                color: isButtonActive("jobs") ? "#ffffff" : "#1d2855",
+                                                marginRight: 23,
+                                                fontSize: 16
+                                            }}
+                                            className="far fa-briefcase"
                                             aria-hidden="true"
                                         ></i>
 
@@ -265,18 +287,28 @@ const Menu = ({ setShowContent }) => {
                                         style={isButtonActive("invite") ? bstyle : {}}
                                     >
                                         <i
-                                            style={{ marginLeft: "3px" }}
-                                            className="fa fa-share"
+                                             style={{
+                                                marginLeft:3,
+                                                color: isButtonActive("invite") ? "#ffffff" : "#1d2855",
+                                                marginRight: 23,
+                                                fontSize: 16
+                                            }}
+                                            className="far fa-share"
                                             aria-hidden="true"
                                         ></i>
 
                                         <p style={isButtonActive("invite") ? bpstyle : pStyle}>Invite Friends</p>
                                     </Link>
                                 </li>
-                                <li
+                            </ul>
+                        </nav>
+                        <div
                                     className="nav-item"
                                     onClick={() => setShowContent(4)}
                                     data-widget="pushmenu"
+                                    style={{
+                                        marginTop: 100
+                                    }}
                                 >
                                     <Link
                                         onClick={() => handleLogout()}
@@ -285,11 +317,18 @@ const Menu = ({ setShowContent }) => {
                                             ? "active"
                                             : ""
                                             }`}
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'row'
+                                            }}
                                     >
                                         <i
                                             style={{
                                                 color: "#EB1E5E",
                                                 marginLeft: "3px",
+                                                marginTop: 0,
+                                                marginRight: 20,
+                                                fontSize: 20
                                             }}
                                             class="fa fa-sign-out"
                                             aria-hidden="true"
@@ -303,9 +342,7 @@ const Menu = ({ setShowContent }) => {
                                             Log out
                                         </p>
                                     </Link>
-                                </li>
-                            </ul>
-                        </nav>
+                                </div>
                     </div>
                 </aside>
             </div>
