@@ -182,9 +182,9 @@ export default function Login() {
 
                         <div className="signup-prompt">
                         Don't have an account?{" "}
-                        <a href="#" className="signup-link">
+                        <Link to="/stepper" className="signup-link">
                             Sign up!
-                        </a>
+                        </Link>
                         </div>
                     </form>
                   </div>
