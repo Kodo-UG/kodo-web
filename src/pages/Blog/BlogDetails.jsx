@@ -151,7 +151,7 @@ const BlogDetails = () => {
                                             height: "36px",
                                             borderRadius: "18px",
                                             overflow: "hidden",
-                                            border: "2px solid #EC1D64",
+                                            border: "2px solid #00d6dd",
                                         }}
                                         className="me-4"
                                     >
@@ -210,7 +210,7 @@ const BlogDetails = () => {
                                 <button
                                     style={{
                                         // display: isSm && "none",
-                                        backgroundColor: "#EC1D64",
+                                        backgroundColor: "#00d6dd",
                                         color: "white",
                                         fontWeight: "normal",
                                         cursor: "pointer",

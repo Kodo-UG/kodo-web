@@ -36,16 +36,16 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        "Our kodo scholarship AI will compare your profile to thousands of active scholarships to create a prioritized list of opportunities. You'll be able to sort by level effort, due dates and award amount.",
-      name: "John Doe",
-      university: "Coastal Carolina University",
+        "I love how Kodo Scholarship categorizes scholarships based on field of study. As a STEM student, I was able to find and apply for tech-related scholarships effortlessly. It’s an incredible tool!",
+      name: "Marcus D.",
+      university: "STEM Student",
       imageSrc: "https://ntrepidcorp.com/wp-content/uploads/2016/06/team-1.jpg",
     },
     {
       quote:
-        "Our kodo scholarship AI will compare your profile to thousands of active scholarships to create a prioritized list of opportunities. You'll be able to sort by level effort, due dates and award amount.",
-      name: "John Doe",
-      university: "Coastal Carolina University",
+        " was worried about paying for community college, but Kodo Scholarship helped me find grants and scholarships I was eligible for. Now, I can complete my associate degree without taking on debt!",
+      name: "Nathan E.",
+      university: "Community College Student",
       imageSrc: "https://ntrepidcorp.com/wp-content/uploads/2016/06/team-1.jpg",
     },
   ]

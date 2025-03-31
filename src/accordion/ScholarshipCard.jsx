@@ -1,26 +1,68 @@
 import React from "react";
 import "./scholarship.css";
+import { Link } from "react-router-dom";
 
-export function ScholarshipCard({ title, description, dueDate, amount }) {
+export function ScholarshipCard({ data}) {
+ const token = localStorage.getItem('token');
+
+//  const handleRoute = () => {
+//   if(token){
+//     window.open(data.link, "_blank");
+//   } else {
+//     history('/signin')
+//   }
+//  }
+
   return (
     <div className="scholarship-card">
       <div className="scholarship-content">
-        <h3 className="scholarship-title">{title}</h3>
-        <p className="scholarship-description">{description}</p>
+        <h3 className="scholarship-title">{data.title}</h3>
+        <p className="scholarship-description">{data.about}</p>
         <div className="scholarship-info">
           <div className="scholarship-due">
             <span>Due:</span>
-            <span>{dueDate}</span>
+            <span>{new Date(data.deadline).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}</span>
           </div>
           <div className="scholarship-award">
             <span>Award</span>
-            <p>{amount}</p>
+            <p>{data.award}</p>
           </div>
         </div>
       </div>
       <div className="scholarship-buttons">
-        <button className="scholarship-save-btn">Save</button>
-        <button className="scholarship-apply-btn">Apply Now →</button>
+      {
+          token ? <Link to={data.link} className="scholarship-save-btn"
+            style={{
+              backgroundColor: '#ffffff',
+              color: '#1d2855',
+              paddingTop: 5
+            }}
+          >
+            Save
+          </Link> : <Link to={'/signin'} className="scholarship-save-btn"
+            style={{
+              backgroundColor: '#ffffff',
+              color: '#1d2855',
+              paddingTop: 5
+            }}
+          >
+            Save
+          </Link>
+        }
+        {
+          token ? <Link to={data.link} className="scholarship-apply-btn">
+            Apply Now → 
+          </Link> : <Link to={'/signin'} className="scholarship-apply-btn">
+            Apply Now →
+          </Link>
+        }
+        {/* <button className="scholarship-apply-btn"
+          onClick={handleRoute}
+        >Apply Now →</button> */}
       </div>
     </div>
   );

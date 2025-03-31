@@ -68,13 +68,13 @@ export default function MissionSection() {
     {
       title: "Mission",
       description:
-        "To ensure that we build a Scholarship System that will operate in the whole of world, a company that will boast of having some of the best and reliable scholarships.",
+        "Our mission is to ensure that we build a Scholarship System that will operate in the whole of world , a company that will boast of having some of the best and reliable scholarships.",
       icon: <MissionIcon />,
     },
     {
       title: "Vision",
       description:
-        "To ensure that we build a Scholarship System that will operate in the whole of world, a company that will boast of having some of the best and reliable scholarships.",
+        "Our Vision is to become one of the most preferred choices of individuals and organization when it comes to the demand htmlFor Scholarships and Job offers in the whole of Africa and the rest of world.",
       icon: <MissionIcon2 />,
     },
   ];
