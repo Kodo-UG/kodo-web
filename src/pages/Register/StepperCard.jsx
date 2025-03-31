@@ -78,7 +78,7 @@ function StepperCard({ list }) {
          >
           <div
             style={{
-              borderRadius: 15
+              borderRadius: 20
             }}
           >
             <div
@@ -87,7 +87,7 @@ function StepperCard({ list }) {
                 backgroundColor: '#EEEEF7',
                 borderRadius: 20,
                 padding: 15,
-                paddingBottom: 15,
+                paddingBottom: 20,
                 
               }}
             >
@@ -113,7 +113,9 @@ function StepperCard({ list }) {
               </div>
               <h3 
                 style={{
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  marginTop: 15,
+                  marginBottom: 15
                 }}
               >Scholarships</h3>
               <p
@@ -170,7 +172,9 @@ function StepperCard({ list }) {
               </div>
               <h3 
                 style={{
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  marginTop: 15,
+                  marginBottom: 20
                 }}
               >Jobs</h3>
               <p
