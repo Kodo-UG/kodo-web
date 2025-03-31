@@ -1,6 +1,11 @@
 import { useMediaQuery } from "@uidotdev/usehooks";
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import logologin from '../../assets/logo-login.jpg'
+import './stepper.css';
+import { PiGraduationCap } from "react-icons/pi";
+import { HiOutlineBriefcase } from "react-icons/hi2";
+import Scholarship from './../Dashboard/scholarship/Scholarship';
 
 function StepperCard({ list }) {
 
@@ -17,118 +22,181 @@ function StepperCard({ list }) {
   return (
     <section
       style={{
-        height : isSm ? "100%" : "",
-        display: "flex",
-        flexDirection: "column",
-        overflowY : "auto",
-        paddingBottom: "3rem",
-        alignItems: "center",
-        justifyContent: "center",
+        height: 'auto'
       }}
     >
-      <div className="col-lg-12 text-center">
-        <h4
-          style={{
-            marginBottom: isSm ? "20px" : "60px",
-            fontFamily: "Jost, sans-serif",
-            fontWeight: 600,
-            fontSize: "2rem",
-            marginTop: isSm ? "9rem" : "",
-            color: '#1d2855'
-          }}
-          className="welcome-title"
-        >
-          Welcome Back
-        </h4>
-      </div>
-
       <div
         style={{
-          width: "100%",
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          overflowY: "auto",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          margin: 'auto',
+          width: isSm ? '90%' : '70%',
         }}
-        className="row"
       >
-        {list.map((data) => (
-          <div style={{ padding: "1rem" }} className="col-lg-6">
+        <div
+           style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <img 
+            src={logologin}
+            width={100}
+            height={100}
+          />
+          <h3
+            style={{
+              color: '#1d2855',
+              fontSize: 40,
+              fontWeight: 'bold',
+            }}
+          >
+            Welcome Back!
+          </h3>
+        
+          <div
+           style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+         <div
+             style={{
+              display: 'flex',
+              flexDirection: isSm ? 'column' : 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 30,
+              marginTop: 60
+            }}
+         >
+          <div
+            style={{
+              borderRadius: 15
+            }}
+          >
             <div
-              className="card custom-card"
               style={{
-                backgroundColor: "#FFFFFF",
-                boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
-                borderRadius: "10px",
-                overflow: "hidden"
-                // marginBottom: "30px"
+                width: '100%',
+                backgroundColor: '#EEEEF7',
+                borderRadius: 20,
+                padding: 15,
+                paddingBottom: 15,
+                
               }}
             >
               <div
-                className="card-header d-flex align-items-center justify-content-center"
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "70px",
-                  padding: "0px 20px",
-                  backgroundColor: "#f6f6f6",
-                  paddingTop: 10
+                  backgroundColor: '#FF7648',
+                  padding: 15,
+                  width: '20%',
+                  marginLeft: '38%',
+                  borderRadius: 17,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}
               >
-                <img
-                  src="/images/logo1.svg"
+                <PiGraduationCap 
+                  size={25}
                   style={{
-                    width: "80px",
-                    height: "auto",
-                    marginRight: "10px",
+                    color: '#ffffff'
                   }}
-                  alt="Logo"
-                  className="logo"
                 />
-                <span
-                  className="card-title"
-                  style={{
-                    fontSize: "16px",
-                    fontWeight: "bold",
-                    color: "#222",
-                  }}
-                >
-                  {data.title}
-                </span>
               </div>
-              <div className="card-body" style={{ padding: "20px" }}>
-                <p
-                  className="card-text text-center"
-                  style={{
-                    fontSize: "14px",
-                    color: "#555",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {data.text}
-                </p>
-                <Link
-                  to={`${data.link}`}
-                  className="btn ss-btn w-100"
-                  style={{
-                    height: "55px",
-                    backgroundColor: "#00D6DD",
-                    color: "#fff",
-                    fontWeight: "400",
-                    fontSize: "16px",
-                    lineHeight: "16px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}
-                >
-                  {data.Button}
-                </Link>
+              <h3 
+                style={{
+                  textAlign: 'center'
+                }}
+              >Scholarships</h3>
+              <p
+                style={{
+                  color: '#1d2855',
+                  textAlign: 'center'
+                }}
+              >We’ve helped students win more than $10 million dollars in scholarships.</p>
+              <div className=""
+                style={{
+                  marginLeft: '30%'
+                }}
+              >
+                  <Link to="/signin" className="mobile-cta-button">
+                      Login →
+                  </Link>
               </div>
             </div>
           </div>
-        ))}
+          <div
+            style={{
+              borderRadius: 20,
+            }}
+          >
+            <div
+              style={{
+                width: '100%',
+                backgroundColor: '#EEEEF7',
+                borderRadius: 20,
+                paddingTop: 15,
+                paddingBottom: 15,
+                
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: '#8F98FF',
+                  padding: 15,
+                  width: '20%',
+                  marginLeft: '38%',
+                  borderRadius: 17,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              > 
+                <HiOutlineBriefcase
+                  size={25}
+                  style={{
+                    color: '#ffffff'
+                  }}
+                />
+              </div>
+              <h3 
+                style={{
+                  textAlign: 'center'
+                }}
+              >Jobs</h3>
+              <p
+                style={{
+                  color: '#1d2855',
+                  textAlign: 'center'
+                }}
+              >Are you looking for a remote Job, find Life Changing Jobs Now !.Join Kodo</p>
+              <div className=""
+                style={{
+                  marginLeft: '30%'
+                }}
+              >
+                  <Link to="/signin" className="mobile-cta-button">
+                      Login →
+                  </Link>
+              </div>
+            </div>
+          </div>
+
+
+         </div>
+        </div>
+        </div>
+       
+
       </div>
     </section>
   );
