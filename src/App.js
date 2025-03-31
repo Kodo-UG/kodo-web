@@ -135,12 +135,13 @@ const App = () => {
                     path="/sportsfinal"
                     component={FinalStepperElement}
                 />
+                <Route exact path="/login" component={Login} />
 
                 <Layout>
                     <PrivateRoute path="/payment" component={Payment} />
                     <Route exact path="/aboutus" component={AboutUs} />
                     <Route exact path="/stepper" component={Stepper} />
-                    <Route exact path="/login" component={Login} />
+                   
                     <Route
                         exact
                         path="/educationlevel"

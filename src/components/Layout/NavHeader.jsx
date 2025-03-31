@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import './NavHeader.css';
 import logo from '../../assets/logo.png';
+import {useLocation} from 'react-router-dom';
 
 
 export default function NavHeader() {
@@ -16,6 +17,9 @@ export default function NavHeader() {
     { href: "/blog", label: "Blogs" },
     { href: "/contactus", label: "Contact" },
   ]
+
+  const location = useLocation();
+  console.log(location.pathname);
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -90,7 +94,9 @@ export default function NavHeader() {
   
         {/* Right section with login, CTA button, and menu toggle */}
         <div className="nav-right">
-          <Link to="/login" className="login-link">Login</Link>
+          {
+            location.pathname == '/signin'|| location.pathname == '/login' || location.pathname == '/forgot/password' ? '' : <Link to="/login" className="login-link">Login</Link>
+          }
           <Link to="/scholarships" className="cta-button">Find Scholarships →</Link>
   
           {/* Mobile menu toggle */}
