@@ -5,6 +5,10 @@ import "./custom.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BiEnvelope } from "react-icons/bi";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
+import NavHeader from "../../components/Layout/NavHeader";
+import { useMediaQuery } from "@uidotdev/usehooks";
+import logologin from '../../assets/logo-login.jpg';
+import ClipLoader from "react-spinners/ClipLoader";
 
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
@@ -26,13 +30,22 @@ export default function Login() {
         setState(e.target.value);
     };
 
+     const isSm = useMediaQuery("only screen and (max-width : 700px)");
+    
+      const isMd = useMediaQuery(
+        "only screen and (min-width : 700px) and (max-width : 1000px)"
+      );
+    
+      const isLg = useMediaQuery(
+        "only screen and (min-width : 1000px)"
+      );
+
     const inputStyles = {
         borderRadius: "0",
         minHeight: "40px",
         WebkitBoxShadow: "none",
         boxShadow: "none",
         border: "0",
-        borderBottom: "1px solid #e7e7e7",
         padding: "10px 30px 10px 0",
         color: "#111111",
         backgroundColor: "#ffffff",
@@ -56,6 +69,10 @@ export default function Login() {
                 displaySuccessMessage("Login successful");
                 localStorage.setItem("token", data.data.token);
                 setModalOpen(true);
+                setTimeout(() => {
+                    setLoading(false);
+                }, 2000);
+                
                 history.push("/scholars");
             } else {
                 displayErrorMessage(message);
@@ -68,183 +85,111 @@ export default function Login() {
     };
 
     return (
-        <section 
-            className="fxt-template-layout1 "
-            style={{ backgroundColor: "#fff", width: "100%",color: '#1d2855' }}
-        >
-            <div
-                className="container-fluid "
-                style={{ display: "flex", backgroundColor: "#fff" }}
-            >
-                <div
-                    className="col-md-6 col-12 "
-                    style={{
-                        backgroundColor: "#fff",
-                        width: "100%",
-                        height: "100vh",
-                    }}
+       <div>
+            <NavHeader />
+              <section
+                  style={{
+                    height: 'auto'
+                  }}
                 >
-                    <div
-                        style={{ backgroundColor: "#fff", height: "100%" }}
-                        className="fxt-content"
-                    >
-                        <div className="fxt-header">
-                            <Link to="/" className="fxt-logo">
-                                <img src="/images/logo1.svg" alt="Logo" />
-                            </Link>
-                            <div className="fxt-page-switcher">
-                                <p className="switcher-text1 active">Log In</p>
-                                <Link
-                                    to="/admissions"
-                                    className="switcher-text1"
-                                >
-                                    Sign Up
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="fxt-form">
-                            <h2 style={{ textAlign: "start" }}>Log In</h2>
-                            <p>Log in to continue to Kodo</p>
-                            <form onSubmit={handleLogin}>
-                                <div
-                                    className="form-group"
-                                    style={{
-                                        position: "relative",
-                                        zIndex: "1",
-                                        marginBottom: "15px",
-                                    }}
-                                >
-                                    <div
-                                        className="fxt-transformY-50 fxt-transition-delay-1 "
-                                        style={{
-                                            WebkitTransitionDelay: "1s",
-                                            OTransitionDelay: "1s",
-                                            transitionDelay: "1s",
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "space-between",
-                                        }}
-                                    >
-                                        <input
-                                            type="email"
-                                            className="form-control"
-                                            name="email"
-                                            value={email}
-                                            placeholder="Email Address"
-                                            required="required"
-                                            style={inputStyles}
-                                            onChange={handleChange(setEmail)}
-                                        />
-
-                                        <i>
-                                            {" "}
-                                            <BiEnvelope
-                                                style={{
-                                                    fontSize: "17px",
-                                                    color: "#a1a1a1",
-                                                }}
-                                            />
-                                        </i>
-                                    </div>
-                                </div>
-                                <div
-                                    className="form-group"
-                                    style={{
-                                        position: "relative",
-                                        zIndex: "1",
-                                        marginBottom: "15px",
-                                    }}
-                                >
-                                    <div
-                                        className="fxt-transformY-50 fxt-transition-delay-1 "
-                                        style={{
-                                            WebkitTransitionDelay: "1s",
-                                            OTransitionDelay: "1s",
-                                            transitionDelay: "1s",
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "space-between",
-                                        }}
-                                    >
-                                        <input
-                                            type={
-                                                showPassword
-                                                    ? "text"
-                                                    : "password"
-                                            }
-                                            className="form-control"
-                                            name="password"
-                                            value={password}
-                                            placeholder="password"
-                                            required="required"
-                                            style={inputStyles}
-                                            onChange={handleChange(setPassword)}
-                                        />
-
-                                        <i onClick={togglePasswordVisibility}>
-                                            {" "}
-                                            {showPassword ? (
-                                                <AiFillEyeInvisible
-                                                    style={{
-                                                        fontSize: "17px",
-                                                        color: "#a1a1a1",
-                                                        cursor: "pointer",
-                                                    }}
-                                                />
-                                            ) : (
-                                                <AiFillEye
-                                                    style={{
-                                                        fontSize: "17px",
-                                                        color: "#a1a1a1",
-                                                        cursor: "pointer",
-                                                    }}
-                                                />
-                                            )}
-                                        </i>
-                                    </div>
-                                </div>
-
-                                <div className="form-group">
-                                    <div className="fxt-transformY-50 fxt-transition-delay-3">
-                                        <div className="fxt-content-between">
-                                            <button
-                                                style={{
-                                                    backgroundColor: "#00D6DD",
-                                                    color: '#1d2855'
-                                                }}
-                                                className="fxt-btn-fill"
-                                                type="submit"
-                                            >
-                                                {loading
-                                                    ? "loading..."
-                                                    : "Login"}
-                                            </button>
-                                            <Link
-                                                to="/forgot/password"
-                                                className="switcher-text2"
-                                                style={{
-                                                    color: '#1d2855'
-                                                }}
-                                            >
-                                                Forgot Password
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    className="col-md-6 col-12 fxt-none-767 fxt-bg-img"
+                  <div
                     style={{
-                        backgroundImage:
-                            'url("/images/login.jpg")',
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: 'auto',
+                      width: isSm ? '90%' : '100%',
                     }}
-                ></div>
-            </div>
-        </section>
+                  >
+                    <div
+                       style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <img 
+                        src={logologin}
+                        width={100}
+                        height={100}
+                      />
+                      <h3
+                        style={{
+                          color: '#1d2855',
+                          fontSize: 40,
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        Login
+                      </h3>
+                    
+                    
+                    </div>
+                    <form className="login-form" onSubmit={handleLogin}
+                        style={{
+                            width: isSm ? '100%' : isMd ? '50%' : isLg? '30%': '',
+                            marginTop: '50px'
+                        }}
+                    >
+                        <div className="form-group">
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        </div>
+
+                        <div className="form-group">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            id="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        <button type="button" className="toggle-password" onClick={togglePasswordVisibility}>
+                            <span>⋯</span>
+                        </button>
+                        </div>
+
+                        <div className="forgot-password">
+                        <Link to="/forgot/password">Forgot password?</Link>
+                        </div>
+
+                        <button 
+                            type="submit" 
+                            className="sign-in-button"
+                            style={{ color: '#1d2855' }}
+                            onClick={handleLogin}
+                            disabled={loading}
+                        >
+                            {loading ? (
+                                <span>
+                                    <ClipLoader size={20} color="#1d2855" />
+                                </span>
+                            ) : (
+                                <>
+                                    Sign in <span className="arrow">→</span>
+                                </>
+                            )}
+                        </button>
+
+                        <div className="signup-prompt">
+                        Don't have an account?{" "}
+                        <a href="#" className="signup-link">
+                            Sign up!
+                        </a>
+                        </div>
+                    </form>
+                  </div>
+                </section>
+           
+       </div>
     );
 }

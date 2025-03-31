@@ -6,6 +6,7 @@ import StepperCard from "../Register/StepperCard";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { PiGraduationCap } from "react-icons/pi";
 import { HiOutlineBriefcase } from "react-icons/hi2";
+import NavHeader from "../../components/Layout/NavHeader";
 
 const Login = () => {
 	const dispatch = useDispatch();
@@ -37,17 +38,20 @@ const Login = () => {
 	};
 
 	return (
-		<div
-			style={{
-				height: "45rem",
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-				width: "100%",
-				marginTop: isSm ? "3rem" : isMd ? '-6rem' :  isLg ? "-5rem" : ''
-			}}
-		>
-			<StepperCard list={object} />
+		<div>
+			<NavHeader />
+			<div
+				style={{
+					height: "45rem",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					width: "100%",
+					marginTop: isSm ? "3rem" : isMd ? '-6rem' :  isLg ? "-5rem" : ''
+				}}
+			>
+				<StepperCard list={object} />
+			</div>
 		</div>
 	);
 };

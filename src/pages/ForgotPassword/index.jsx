@@ -1,12 +1,28 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import { BiEnvelope } from "react-icons/bi";
 import axiosInstance from "../../api/axiosInstance";
 import "../Login/custom.css";
+import NavHeader from "../../components/Layout/NavHeader";
+import { useMediaQuery } from "@uidotdev/usehooks";
+import logologin from '../../assets/logo-login.jpg';
+import ClipLoader from "react-spinners/ClipLoader";
 
 export default function ForgotPassword() {
 	const [email, setEmail] = useState();
+	const [loading,setLoading] = useState(false);
+
+	 const isSm = useMediaQuery("only screen and (max-width : 700px)");
+		
+	const isMd = useMediaQuery(
+			"only screen and (min-width : 700px) and (max-width : 1000px)"
+		);
+		
+	const isLg = useMediaQuery(
+			"only screen and (min-width : 1000px)"
+		);
+	
 
 	const history = useHistory();
 	const handleChange = (setState) => (e) => {
@@ -14,12 +30,15 @@ export default function ForgotPassword() {
 	};
 
 	const handleSubmit = async (e) => {
+		setLoading(true);
 		e.preventDefault();
+
 		try {
 			const data = await axiosInstance.post("/auth/forgot/password", {
 				email,
 			});
 			if (data.status == "200") {
+				setLoading(false);
 				displaySuccessMessage(
 					`Password reset instructions sent ${email}`
 				);
@@ -31,151 +50,96 @@ export default function ForgotPassword() {
 		}
 	};
 	return (
-		<section
-			className=" fxt-template-layout1"
-			style={{ background: "white" }}
-		>
-			<div
-				className="container-fluid "
-				style={{ display: "flex" }}
-			>
-				<div
-					className="col-md-6 col-12 "
-					style={{ background: "#fff", height: "100vh" }}
-				>
-					<div
-						className="fxt-content"
-						style={{ background: "#ffff", height: "100%" }}
-					>
-						<div className="fxt-header">
-							<Link
-								to="/"
-								className="fxt-logo"
+		<div>
+			<NavHeader />
+			  <section
+							  style={{
+								height: 'auto'
+							  }}
 							>
-								<img
-									src="/images/logo1.svg"
-									alt="Logo"
-								/>
-							</Link>
-							<div className="fxt-page-switcher">
-								<Link
-									to="/signin"
-									className="switcher-text1 active"
-								>
-									Login
-								</Link>
-								<Link
-									to="/login"
-									className="switcher-text1"
-								>
-									Sign Up
-								</Link>
-							</div>
-						</div>
-						<div className="fxt-form">
-							<h2 style={{ textAlign: "start",color: '#1d2855' }}>
-								Forgot PassWord
-							</h2>
-							<p>Request for password reset</p>
-							<form onSubmit={handleSubmit}>
+							  <div
+								style={{
+								  display: 'flex',
+								  flexDirection: 'column',
+								  alignItems: 'center',
+								  justifyContent: 'center',
+								  margin: 'auto',
+								  width: isSm ? '90%' : '100%',
+								}}
+							  >
 								<div
-									className="form-group"
+								   style={{
+									display: 'flex',
+									flexDirection: 'column',
+									alignItems: 'center',
+									justifyContent: 'center'
+								  }}
+								>
+								  <img 
+									src={logologin}
+									width={100}
+									height={100}
+								  />
+								  <h3
 									style={{
-										position: "relative",
-										zIndex: "1",
-										marginBottom: "15px",
+									  color: '#1d2855',
+									  fontSize: 40,
+									  fontWeight: 'bold',
+									}}
+								  >
+									Forgot password
+								  </h3>
+								
+								
+								</div>
+								<form className="login-form" onSubmit={handleSubmit}
+									style={{
+										width: isSm ? '100%' : isMd ? '50%' : isLg? '30%': '',
+										marginTop: '50px'
 									}}
 								>
-									<div
-										className="fxt-transformY-50 fxt-transition-delay-1 "
+									<div className="form-group">
+									<input
+										type="email"
+										id="email"
+										placeholder="Email"
+										value={email}
+										onChange={(e) => setEmail(e.target.value)}
+										required
+									/>
+									</div>
+									<button type="submit" className="sign-in-button"
 										style={{
-											WebkitTransitionDelay:
-												"1s",
-											OTransitionDelay: "1s",
-											transitionDelay: "1s",
-											display: "flex",
-											alignItems: "center",
-											justifyContent:
-												"space-between",
+											color: '#1d2855'
 										}}
 									>
-										<input
-											type="email"
-											className="form-control"
-											name="email"
-											value={email}
-											placeholder="Email Address"
-											required
-											style={{
-												borderRadius: "0",
-												minHeight: "40px",
-												WebkitBoxShadow:
-													"none",
-												boxShadow: "none",
-												border: "0",
-												borderBottom:
-													"1px solid #e7e7e7",
-												padding: "10px 30px 10px 0",
-												color: "#111111",
-												backgroundColor:
-													"#ffffff",
-											}}
-											onChange={handleChange(
-												setEmail
-											)}
-										/>
-
-										<i>
-											{" "}
-											<BiEnvelope
-												style={{
-													fontSize:
-														"17px",
-													color: "#a1a1a1",
-												}}
-											/>
-										</i>
+										 {loading ? (
+                                <span>
+                                    <ClipLoader size={20} color="#1d2855" />
+                                </span>
+                            ) : (
+                                <>
+                                    Reset <span className="arrow">→</span>
+                                </>
+                            )}
+									</button>
+			
+									<div className="signup-prompt">
+									{" "}
+									<div  className="signup-link"
+										style={{
+											cursor: 'pointer'
+										}}
+										onClick={() => history.goBack()}
+									>
+										Back to login
 									</div>
-								</div>
-
-								<div className="form-group">
-									<div className="fxt-transformY-50 fxt-transition-delay-3">
-										<div className="fxt-content-between">
-											<button
-												type="submit"
-												className="fxt-btn-fill"
-												style={{
-													backgroundColor: '#00D6DD',
-													color: '#1d2855'
-												}}
-											>
-												Reset
-											</button>
-											<Link
-												to="/signin"
-												className="switcher-text2"
-												style={{
-													color: '#1d2855'
-												}}
-											>
-												Back to Login
-											</Link>
-										</div>
 									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div
-					className="col-md-6 col-12 fxt-none-767 fxt-bg-img "
-					style={{
-						backgroundImage: 'url("/images/login.jpg")',
-						backgroundPosition: "center",
-						backgroundSize: "cover",
-					}}
-				></div>
-			</div>
-		</section>
+								</form>
+							  </div>
+							</section>
+
+
+		</div>
 	);
 }
