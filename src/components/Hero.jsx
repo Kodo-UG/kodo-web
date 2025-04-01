@@ -7,6 +7,7 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 function HeroSection() {
   const token = localStorage.getItem('token');
 
+  const isSm = useMediaQuery('only screen and (max-width:700px)');
   const isMd = useMediaQuery('only screen and (max-width: 1023px)');
   const isLg = useMediaQuery('onlyscreen and (min-width:1024px)');
 
@@ -19,7 +20,7 @@ function HeroSection() {
       <CustomContainer>
         <div className="hero-grid"
           style={{
-            marginTop: isMd ? '30px' : '-35px'
+            marginTop: isSm ? '-80px' : isMd ? '-10px' : '-30px'
           }}
         >
           <div className="hero-text-container">
@@ -45,7 +46,8 @@ function HeroSection() {
               alt="Student with books"
               className="hero-image"
               style={{
-                width: isLg &&  '700px'
+                width: isLg &&  '700px',
+                marginTop:  isLg && 120
               }}
             />
           </div>
