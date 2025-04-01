@@ -3,6 +3,10 @@ import { Play } from "lucide-react";
 import "./video.css"; // Import CSS file
 
 export default function VideoSection() {
+  const handleClick = () => {
+    window.open("https://youtu.be/pxUEaxAH27c?feature=shared", "_blank");
+  };
+
   return (
     <section className="video-video-container"
     >
@@ -21,6 +25,10 @@ export default function VideoSection() {
               src="https://res.cloudinary.com/digrh1wj1/image/upload/v1742425949/Frame_21_ogalts.png"
               alt="Video thumbnail"
               className="video-video-image"
+              onClick={handleClick}
+              style={{
+                cursor: 'pointer'
+              }}
             />
             {/* <button
               className="video-video-play-button"

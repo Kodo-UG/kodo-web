@@ -24,7 +24,7 @@
 
 @media(min-width: 768px){
   .bg-eee{
-      margin-top: 200px;
+      margin-top: 80px;
   }
 }
 
@@ -115,6 +115,7 @@
   /* Applies on medium (md) screens and above */
   @media (min-width: 768px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      width: 100%;
   }
 }
 
@@ -352,10 +353,6 @@
   aspect-ratio: 1.2 / 1;
 }
 
-.contact-error{
-
-}
-
 .w-full {
   width: 100%;
 }
@@ -374,6 +371,28 @@
 
 .rounded-lg {
   border-radius: 0.5rem; /* 8px */
+}
+
+.motion {
+  width: 100%;
+}
+
+@media(min-width: 768px){
+  .motion{
+    width: 220px;
+  }
+}
+
+@media(min-width: 1024px){
+  .motion{
+    width: 280px;
+  }
+}
+
+@media(min-width: 1280px){
+  .motion{
+    width: 310px;
+  }
 }
 
 .rounded-4xl {
@@ -485,6 +504,17 @@ textarea {
 
 .send-button:hover {
   background-color: rgba(0, 214, 221, 0.9);
+}
+
+.contact-header-fix-error{
+  margin-top: 40px;
+}
+
+@media(min-width: 768px){
+  .contact-header-fix-error{
+    margin-top: 0px;
+    width: 100%;
+  }
 }
 
 

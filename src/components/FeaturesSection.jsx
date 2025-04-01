@@ -1,5 +1,8 @@
 import React from 'react';
 import './featuressection.css';
+import icon1 from '../assets/icon1.png';
+import icon2 from '../assets/icon2.png';
+import icon3 from '../assets/icon3.png';
 
 function FeaturesSection() {
   return (
@@ -18,28 +21,31 @@ function FeaturesSection() {
           {
             title: "Kodo AI",
             color: "feature-box-red",
+            icon: icon1,
             description:
-              "AI-powered scholarship matching tailored to your profile and preferences.",
+              "Our kodo scholarship AI will compare your profile to thousands of active scholarships to create a prioritized list of opportunities. You’ll be able to sort by level effort, due dates and award amount.",
           },
           {
             title: "Expert Support",
             color: "feature-box-yellow",
+            icon: icon2,
             description:
-              "Get guidance from our team of scholarship and education experts.",
+              "Experience peace of mind with our extensive all-season support team, providing you with the resources and guidance you need.",
           },
           {
             title: "Application Process",
             color: "feature-box-teal",
+            icon: icon3,
             description:
-              "Streamlined application system to help you apply efficiently.",
+              "Take control of your success with our extensive feature-rich dashboard, to provide you with a comprehensive view of your progress and personalized insights to help you reach your full potential.",
           },
         ].map((feature) => (
           <div key={feature.title} className="feature-card">
             <div className={`feature-icon ${feature.color}`}>
               <img
-                src="https://res.cloudinary.com/dfdswxx7x/image/upload/v1740085647/mingcute_ai-line_xwgbqs.png"
-                width={50}
-                height={50}
+                src={feature.icon}
+                width={25}
+                height={25}
                 alt="star"
               />
             </div>

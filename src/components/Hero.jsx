@@ -2,9 +2,14 @@ import React from "react";
 import CustomContainer from "./ShredComponents/CustomerContainer";
 import {Link} from 'react-router-dom';
 import './hero.css';
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 function HeroSection() {
   const token = localStorage.getItem('token');
+
+  const isMd = useMediaQuery('only screen and (max-width: 1023px)');
+  const isLg = useMediaQuery('onlyscreen and (min-width:1024px)');
+
   return (
     <div className="hero-section"
       style={{
@@ -13,6 +18,9 @@ function HeroSection() {
     >
       <CustomContainer>
         <div className="hero-grid"
+          style={{
+            marginTop: isMd ? '30px' : '10px'
+          }}
         >
           <div className="hero-text-container">
             <h1 className="hero-title">
@@ -36,6 +44,9 @@ function HeroSection() {
               src="https://res.cloudinary.com/djbzzqgzx/image/upload/v1742437666/Group_5_mgdcro.png"
               alt="Student with books"
               className="hero-image"
+              style={{
+                width: isLg &&  '700px'
+              }}
             />
           </div>
         </div>

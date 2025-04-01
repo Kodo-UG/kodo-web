@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import "./aboutsection.css";
 
 function AboutSection() {
+  const handleClick = () => {
+    window.open("https://youtu.be/MaOsdLCRQN8?feature=shared", "_blank");
+  };
+
   return (
     <section className="about-section-container">
       <div className="about-section-bg" />
@@ -45,6 +49,7 @@ function AboutSection() {
                       width={300}
                       height={400}
                       className="about-section-image"
+                      onClick={handleClick}
                     />
                     <div className="about-section-experience">
                       <a href="#">

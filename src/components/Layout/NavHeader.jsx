@@ -12,6 +12,7 @@ import { useQueryClient } from 'react-query';
 import { clearFormData } from "../../toolkit/formReducer";
 import { clearJobData } from "../../toolkit/jobReducer";
 import { clearScholarships } from "../../toolkit/scholarshipReducer";
+import { useMediaQuery } from '@uidotdev/usehooks';
 
 
 export default function NavHeader() {
@@ -26,6 +27,8 @@ export default function NavHeader() {
 
   const location = useLocation();
  const token = localStorage.getItem('token');
+
+ const isMd = useMediaQuery('only screen and (max-width: 950px)');
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -104,12 +107,16 @@ export default function NavHeader() {
         </div>
   
         {/* Navigation links */}
-        <div className="nav-links">
+        <div className="nav-links"
+          style={{
+            display: isMd ? 'none' : 'flex'
+          }}
+        >
           {navigationItems.map((item) => (
             <Link style={{
               textDecoration: 'none',
               color: '#1d2855'
-            }} key={item.href} to={item.href} className="nav-link">
+            }} key={item.href} to={item.href} className="nav-link nav-links-fix">
               {item.label}
             </Link>
           ))}
@@ -123,7 +130,10 @@ export default function NavHeader() {
               >Dashboard</Link> : <Link to="/login" className="login-link"> Login</Link>
             }</div>
           }
-          <Link to="/scholarships" className="cta-button">Find Scholarships →</Link>
+          {
+            token ?  <Link to="/scholarships" className="cta-button">Find Scholarships →</Link> :  <Link to="/stepper" className="cta-button">Find Scholarships →</Link>
+          }
+         
   
           {/* Mobile menu toggle */}
           <button className="menu-button" onClick={toggleMobileMenu}>
