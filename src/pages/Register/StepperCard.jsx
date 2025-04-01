@@ -129,7 +129,7 @@ function StepperCard({ list }) {
                   marginLeft: '30%'
                 }}
               >
-                  <Link to="/signin" className="mobile-cta-button">
+                  <Link  to={{ pathname: "/signin", state: { ref: "scholarships" } }} className="mobile-cta-button">
                       Login →
                   </Link>
               </div>
@@ -188,7 +188,7 @@ function StepperCard({ list }) {
                   marginLeft: '30%'
                 }}
               >
-                  <Link to="/signin" className="mobile-cta-button">
+                  <Link  to={{ pathname: "/signin", state: { ref: "job" } }} className="mobile-cta-button">
                       Login →
                   </Link>
               </div>

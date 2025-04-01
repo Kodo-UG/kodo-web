@@ -52,7 +52,7 @@ function FeaturesGrid() {
                   className={`card-text ${feature.isNavy ? "text-white" : "text-gray-600"}`}>
                     {feature.description}
                   </p>
-                  <Link to="/blogs" className={`card-link ${feature.isNavy ? "card-link-color" : "card-link-color-not"}`}>
+                  <Link to="/blog" className={`card-link ${feature.isNavy ? "card-link-color" : "card-link-color-not"}`}>
                     Read More {
                       !feature.isNavy && <span>→ </span>
                     }

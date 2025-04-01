@@ -119,9 +119,8 @@ export default function NavHeader() {
         <div className="nav-right">
           {
             location.pathname == '/signin'|| location.pathname == '/login' || location.pathname == '/forgot/password' || location.pathname == '/final' ? '' : <div>{
-              token ? <Link to="/signin" className="login-link"
-                onClick={handleLogout}
-              >Logout</Link> : <Link to="/login" className="login-link"> Login</Link>
+              token ? <Link to="/scholars" className="login-link"
+              >Dashboard</Link> : <Link to="/login" className="login-link"> Login</Link>
             }</div>
           }
           <Link to="/scholarships" className="cta-button">Find Scholarships →</Link>
@@ -155,12 +154,9 @@ export default function NavHeader() {
         {/* Additional Mobile-only Links */}
         {
             location.pathname == '/signin'|| location.pathname == '/login' || location.pathname == '/forgot/password' || location.pathname == '/final' ? '' : <div>{
-              token ? <Link to="/signin" 
-                className="mobile-menu-item sm-hidden" onClick={() => {
-                  setIsMobileMenuOpen(false)
-                  handleLogout()
-                }}
-              >Logout</Link> : <Link to="/login" 
+              token ? <Link to="/scholars" 
+                className="mobile-menu-item sm-hidden"
+              >Dashboard</Link> : <Link to="/login" 
                 className="mobile-menu-item sm-hidden" onClick={() => setIsMobileMenuOpen(false)}
               > Login</Link>
             }</div>

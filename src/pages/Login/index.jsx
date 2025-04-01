@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory,useLocation } from "react-router-dom";
 import { displayErrorMessage, displaySuccessMessage } from "../../utils/Toast";
 import "./custom.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,6 +19,10 @@ export default function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const [message, setMessage] = useState(null);
     const [modalOpen, setModalOpen] = useState(false);
+
+    const location = useLocation();
+    const ref = location.state?.ref;
+    console.log(`ref: ${ref}`);
 
     const togglePasswordVisibility = () => {
         setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -175,16 +179,25 @@ export default function Login() {
                                 </span>
                             ) : (
                                 <>
-                                    Sign in <span className="arrow">→</span>
+                                    Sign in <span className="arrow"
+                                      style={{
+                                        marginBottom: 6,
+                                        marginLeft: 5
+                                      }}
+                                    >→</span>
                                 </>
                             )}
                         </button>
 
                         <div className="signup-prompt">
                         Don't have an account?{" "}
-                        <Link to="/stepper" className="signup-link">
+                        {
+                          ref == 'job' ?  <Link to="/jobStep1" className="signup-link">
+                          Sign up!
+                      </Link> :  <Link to="/stepper" className="signup-link">
                             Sign up!
                         </Link>
+                        }
                         </div>
                     </form>
                   </div>
