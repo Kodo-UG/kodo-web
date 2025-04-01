@@ -22,7 +22,7 @@ function HeroSection() {
       <CustomContainer>
         <div className="hero-grid"
           style={{
-            marginTop: isSm ? '-120px' : isMd ? '-10px' : '-40px'
+            marginTop: isSm ? '-120px' : isMd ? '-110px' : '-40px'
           }}
         >
           <div className="hero-text-container">

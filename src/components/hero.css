@@ -105,6 +105,13 @@
     width: 100%;
     position: relative;
   }
+
+  @media (min-width: 768px) {
+    .hero-image-container {
+      position: relative;
+      top: -2.5rem;
+    }
+  }
   
   @media (min-width: 1024px) {
     .hero-image-container {
