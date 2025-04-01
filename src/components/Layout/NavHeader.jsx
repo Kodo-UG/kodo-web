@@ -29,6 +29,7 @@ export default function NavHeader() {
  const token = localStorage.getItem('token');
 
  const isMd = useMediaQuery('only screen and (max-width: 950px)');
+ const isSm = useMediaQuery('only screen and (max-width: 600px)');
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -87,8 +88,13 @@ export default function NavHeader() {
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}
     >
-    <div className="container">
-      <nav className="nav">
+    <div className="container"
+    >
+      <nav className="nav"
+         style={{
+          marginBottom: isSm ? 40 : ''
+        }}
+      >
         {/* Logo section */}
         <div className="logo-Container">
           <Link to="/" className="logo-link">

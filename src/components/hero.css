@@ -109,15 +109,16 @@
   @media (min-width: 1024px) {
     .hero-image-container {
       position: relative;
-      margin-top: -3.5rem;
+      top: -2.5rem;
     }
   }
   
   @media (min-width: 1280px) {
     .hero-image-container {
+      position: relative;
       height: 300px;
       width: 500px;
-      margin-top: 0rem;
+      top: -2rem;
     }
   }
   
