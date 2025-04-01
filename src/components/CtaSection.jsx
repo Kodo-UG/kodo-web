@@ -17,7 +17,7 @@ function CtaSection() {
           <p>
             Join thousands of students who have found their perfect scholarship match with Kodo.
           </p>
-          <Link to="/scholarships" className="cta-button-cta">
+          <Link to="/stepper" className="cta-button-cta">
             Find Scholarships →
           </Link>
         </div>

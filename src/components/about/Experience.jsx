@@ -4,6 +4,10 @@ import './experience.css';
 import '../../components/videosection.css';
 
 export default function Experience({background}) {
+  const handleClick = () => {
+    window.open("https://youtu.be/pxUEaxAH27c?feature=shared", "_blank");
+  };
+
   return (
     <div className={`container mx-auto ${background? 'bg': "bg-kodo-cyan"} rounded-2xl md-rounded-3xl relative`}
     >
@@ -35,6 +39,7 @@ export default function Experience({background}) {
               borderRadius: 200,
               width: 200
             }}
+            onClick={handleClick}
           >
             <div className="bg-[#FF3366] text-white p-1.5 md:p-2 rounded-full hover:bg-[#E62E5C]">
               <PlayIcon className="w-3 h-3 md:w-4 md:h-4" />

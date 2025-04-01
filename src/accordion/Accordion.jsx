@@ -16,38 +16,45 @@ export default function Accordion() {
   const scholarship_data = [
     {
       id: 1,
-      title:"Felix Scholarships",
-      about:"TThe Felix Scholarship enables outstanding students from India to pursue graduate studies in any subject at the University of Oxford, the University of Reading and the School of Oriental and African Studies, University of London (SOAS). Felix has been supporting students at Oxford since 1991.",
-      deadline:"05/09/2023",
-      award:"£8,000"
+      title:"No Essay Scholarship",
+      about:"High school seniors who are facing financial challenges may apply to win up to a $10,000 scholarship to help them attend college or a vocational-technical school. Applications are now open through April 25, 2025",
+      deadline:"April 25, 2025",
+      award:"$10,000 "
     },
     {
       id: 2,
-      title:"Standard Bank Africa Chairman's Scholarships",
-      about:"The following scholarships are managed by the University's Student Fees and Funding team. This list is provided to give an idea of the centrally-managed funds that are available to graduate students starting a degree in the 2024-25 academic year. ",
-      deadline:"05/09/2023",
-      award:"£5,000"
+      title:"Be Bold No-Essay Scholarship",
+      about:"we believe that the world will be shaped by the bold—the fighters, the risk-takers, the earnest overachievers who won’t take no for an answer—the ones who know that a mountain is climbed one step at a time",
+      deadline:"05/09/2025",
+      award:"$25,000"
     },
     {
       id: 3,
-      title:"Flinders International Postgraduate Research Scholarship",
-      about:"The Flinders International Research Scholarship (FIPRS) is a scholarship specifically intended to support international students that covers international tuition fees and also provides a stipend.",
-      deadline:"05/09/2023",
-      award:"£10,000"
+      title:"Niche No Essay Scholarship",
+      about:"Niche can help with every step of the college search including paying for it. We're giving one student $25,000 to help cover tuition, housing, books and other college expenses — no essay required!",
+      deadline:"25/11/2025",
+      award:"$25,000"
     },
     {
       id: 4,
-      title:"Be Bold No-Essay Scholarship",
-      about:"At Bold.org, we believe that the world will be shaped by the bold—the fighters, the risk-takers, the earnest overachievers who won’t take no for an answer—the ones who know that a mountain is climbed a step at a time",
-      deadline:"05/09/2023",
+      title:"Utility Workers Union of America Scholarship",
+      about:"The Utility Workers Union of America established a scholarship program in an effort to promote the solidarity of its members and encourage educational growth of the future generations of our labor organization.",
+      deadline:"15/08/2025",
       award:"£15,000"
     },
     {
       id: 5,
-      title:"Nitro Pay For College No-Essay Scholarship",
-      about:"aying for college can be daunting. With so many options available, navigating financial aid and student loan resources is no trivial matter, and a wrong turn can mean far more debt than you bargained for.",
-      deadline:"05/09/2023",
-      award:"£5,000"
+      title:"Cleveland State University Honors Program Scholarship",
+      about:"The Cleveland State University Honors Program Scholarship is open to incoming freshmen students. Students in Honors typically are in the top 10 percent of their class or have an ACT of 30 or an SAT of 1380. Incoming freshmen must attend CSU beginning the summer or fall following their high school graduation and must attend CSU full-time",
+      deadline:"15/07/2025",
+      award:"Full funded"
+    },
+    {
+      id: 6,
+      title:"University of Vermont Green and Gold Scholars Award",
+      about:"The University of Vermont Green & Gold Scholarship is an academic merit scholarship program that considers the nomination of the most academically talented rising high school senior from every eligible Vermont secondary school and Vermont resident attending select border schools.",
+      deadline:"15/08/2024",
+      award:"$65,000"
     }
   ]
   
@@ -105,7 +112,7 @@ export default function Accordion() {
  if(token){
   getScholarship();
  } else {
-  getFree();
+  setData(scholarship_data);
  }
     // getSports();
   },[]);

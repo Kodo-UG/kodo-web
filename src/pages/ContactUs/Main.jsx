@@ -4,18 +4,19 @@ import CustomContainer from "../../components/ShredComponents/CustomerContainer"
 import mapImage from "./map.jpg";
 import { motion } from "framer-motion";
 import "./main.css"; // Import CSS file
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 export default function Main() {
   const contactInfo = [
     {
       title: "Phone Number",
       icon: "https://res.cloudinary.com/digrh1wj1/image/upload/v1742433873/ic_baseline-phone_dcixhz.png",
-      value: "+46 72 848 83 13",
+      value: "+447853711603",
     },
     {
       title: "Email Address",
       icon: "https://res.cloudinary.com/digrh1wj1/image/upload/v1742433873/mynaui_envelope-solid_l1mphe.png",
-      value: "info@kodoscholarships.com",
+      value: "Info@kodoscholarship.com",
     },
     {
       title: "Office Address",
@@ -29,6 +30,11 @@ export default function Main() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
+  const isSm = useMediaQuery("only screen and (max-width : 700px)");
+  const isMd = useMediaQuery("only screen and (min-width: 750px)");
+  const isLg = useMediaQuery("only screen and (min-width: 1024px)");
+  const isXlg = useMediaQuery("only screen and (min-width: 1280px)");
+
   return (
     <div className="min-h-screen flex flex-col justify-center bg-eee">
       <CustomContainer className="bg-eeeef7  rounded-4xl  relative -mb-16">
@@ -36,33 +42,34 @@ export default function Main() {
             <div className="relative w-full h-full"><img src="https://res.cloudinary.com/digrh1wj1/image/upload/v1742433295/Kodo-image-2-2we_1_op5x1b.png" 
           alt="vector" fill objectFit="contain" objectPosition="right"/></div>
           </div>
-            <div className=""
+            <div className="contact-header-fix-error"
             >
             <h1 className="mb-8 text-[32px] font-bold leading-tight text-[#1A1060]">Reach Out to us</h1>
 
-            <div className="mb-16 grid gap-6 md-grid-cols-3 z-20">
-  {contactInfo.map((item, index) => (
-    <motion.div
-      key={index}
-      className="flex flex-col items-center rounded-4xl bg-white text-center p-8"
-      initial="hidden"
-      animate="visible"
-      variants={dropDownAnimation}
-      transition={{ delay: index * 0.1 }} // Adds a stagger effect
-    >
-      <div
-        className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan"
-        style={{
-          marginTop: 20,
-        }}
-      >
-        <img src={item.icon} alt="" width={24} height={24} />
-      </div>
-      <h3 className="mb-2 text-base font-medium text-[#1A1060]">{item.title}</h3>
-      <p className="text-sm text-[#666666]">{item.value}</p>
-    </motion.div>
-  ))}
-</div>;
+            <div className="mb-16 grid gap-6 md-grid-cols-3 z-20"
+            >
+              {contactInfo.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="flex flex-col items-center rounded-4xl bg-white text-center p-8 motion"
+                  initial="hidden"
+                  animate="visible"
+                  variants={dropDownAnimation}
+                  transition={{ delay: index * 0.1 }} // Adds a stagger effect
+                >
+                  <div
+                    className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan"
+                    style={{
+                      marginTop: 20,
+                    }}
+                  >
+                    <img src={item.icon} alt="" width={24} height={24} />
+                  </div>
+                  <h3 className="mb-2 text-base font-medium text-[#1A1060]">{item.title}</h3>
+                  <p className="text-sm text-[#666666]">{item.value}</p>
+                </motion.div>
+              ))}
+            </div>;
                 </div>
               </CustomContainer>
               <div className="form-section">
