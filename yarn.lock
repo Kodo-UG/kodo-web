@@ -10676,6 +10676,11 @@ open@^8.0.9, open@^8.4.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
+openmoji@^15.1.0:
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/openmoji/-/openmoji-15.1.0.tgz#b1d9803465e816996b9c83799642e45091ce7407"
+  integrity sha512-stNFJkXeiH9dQfRNN3vrM8Ac0cSAR83Y1a3UqA8o8eVKTxynU2dUeTK0wWO8968YC7KGYaVbuCWBDp7n6plIrw==
+
 optionator@^0.8.1:
   version "0.8.3"
   resolved "https://registry.npmjs.org/optionator/-/optionator-0.8.3.tgz"
