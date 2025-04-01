@@ -11,6 +11,7 @@ import FreeJobsLarge from "../../../../components/card/FreeJobsLarge";
 import axios from "axios";
 import { BASE_URL, config } from "../../../../constants/api";
 import truncateText from "../../../../utils/truncate";
+import NavHeader from "../../../../components/Layout/NavHeader";
 
 const JobStep1 = () => {
   const [data, setData] = useState([]);
@@ -42,6 +43,7 @@ const JobStep1 = () => {
         config
       );
       // console.log(res?.data.data, "==-----");
+      console.log(res);
 
       setFreeJobs(res.data.data);
     } catch (error) {
@@ -88,28 +90,6 @@ const JobStep1 = () => {
         backgroundColor: "#f0f4f8",
       }}
     >
-      <header
-        className="w-full"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          paddingTop: "1rem",
-          paddingBottom: "1rem",
-          background: "white",
-        }}
-      >
-        <a href="/">
-          <img
-            className="icon-component icon-component--logo-horizontal"
-            src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
-            width="232"
-            height="36"
-            fill="var(--secondary-600)"
-            role="img"
-            alt=""
-          />
-        </a>
-      </header>
       <div
         id="voyager"
         data-basename="/voyager/experience"
@@ -121,7 +101,7 @@ const JobStep1 = () => {
         <section id="voyager-blocks">
           <section>
             <section className="">
-              {apply ? (
+              
                 <>
                   <div
                     data-testid="progress-bar"
@@ -225,6 +205,10 @@ const JobStep1 = () => {
                           type="button"
                           className="_buttonContinue_pmptr_46 _button_pmptr_30"
                           data-testid="continue"
+                          style={{
+                            backgroundColor: '#00d6dd',
+                            color: '#1d2855'
+                          }}
                         >
                           <span>Continue</span>
                           <svg
@@ -233,12 +217,15 @@ const JobStep1 = () => {
                             viewBox="0 0 26 16"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            style={{
+                              color: '#1d2855'
+                            }}
                           >
                             <path
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M16.6774 0.468629C17.3023 -0.15621 18.3153 -0.15621 18.9402 0.468629L25.3402 6.86863C25.965 7.49347 25.965 8.50653 25.3402 9.13137L18.9402 15.5314C18.3153 16.1562 17.3023 16.1562 16.6774 15.5314C16.0526 14.9065 16.0526 13.8935 16.6774 13.2686L20.346 9.6H1.80879C0.925131 9.6 0.208786 8.88366 0.208786 8C0.208786 7.11634 0.925131 6.4 1.80879 6.4H20.346L16.6774 2.73137C16.0526 2.10653 16.0526 1.09347 16.6774 0.468629Z"
-                              fill="white"
+                              fill="#1d2855"
                             ></path>
                           </svg>
                         </button>
@@ -265,86 +252,11 @@ const JobStep1 = () => {
                     </p>
                   </div>
                 </>
-              ) : (
-                <div
-                  style={{
-                    padding: isSm ? "2rem" : "",
-                    width: "100%",
-                    marginBottom: isSm ? "" : "150px",
-                  }}
-                >
-                  {isSm
-                    ? freeJobs?.map((dta) => (
-                        <FreeJobs
-                          key={dta._id}
-                          award={dta.award}
-                          deadline={dta.deadline}
-                          cardTitle={dta.title}
-                          id={dta._id}
-                          link={dta.link}
-                          about={truncateText(dta.about, 7)}
-                          type="Award"
-                          handleRoute={handleRoute}
-                        />
-                      ))
-                    : freeJobs?.map((dta) => (
-                        <FreeJobsLarge
-                          key={dta._id}
-                          award={dta.award}
-                          deadline={dta.deadline}
-                          cardTitle={dta.title}
-                          id={dta._id}
-                          link={dta.link}
-                          about={truncateText(dta.about, 7)}
-                          type="Award"
-                          handleRoute={handleRoute}
-                        />
-                      ))}
-                </div>
-              )}
             </section>
           </section>
         </section>
       </div>
-      <footer className="flex justify-center items-center fixed-bottom bg-primary-900 mt-4 py-5">
-        <div className="flex flex-col items-center justify-center md:flex-row flex-wrap">
-          <a href="/">
-            <img
-              className="icon-component icon-component--logo-stacked-horizontal"
-              style={{ color: "#fff" }}
-              src="https://res.cloudinary.com/itgenius/image/upload/v1688989573/logo-header_jm6s82.svg"
-              width="106"
-              height="56"
-              fill="#fff"
-              role="img"
-              alt=""
-            />
-          </a>
-          <div className="py-2 divide-x px-4 flex flex-wrap justify-center">
-            <a
-              className="px-2 text-xs text-white font-bold hover:text-white"
-              href="/policy"
-              target="_blank"
-            >
-              Privacy Policy
-            </a>
-            <a
-              className="px-2 text-xs text-white font-bold hover:text-white"
-              href="/policy"
-              target="_blank"
-            >
-              Advertising Disclosure
-            </a>
-            <a
-              className="px-2 text-xs text-white font-bold hover:text-white"
-              href="/policy"
-              target="_blank"
-            >
-              Do Not Sell My Info
-            </a>
-          </div>
-        </div>
-      </footer>
+    
     </main>
   );
 };

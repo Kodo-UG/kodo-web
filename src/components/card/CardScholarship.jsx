@@ -3,6 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 
+
 const CardScholarship = ({
 	cardTitle,
 	text,
@@ -53,7 +54,7 @@ const CardScholarship = ({
 					}}
 					className="d-flex align-items-center justify-content-between"
 				>
-					<div className="w-25">
+					<div className="">
 						<img
 							src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1689711758/Screenshot_from_2023-07-18_23-19-08-removebg-preview_kavcdq.png"
 							alt=""
@@ -74,11 +75,15 @@ const CardScholarship = ({
 								color: "white",
 								width: "100%",
 
-								fontSize: "14px",
-								paddingTop: "0.2rem"
+								fontSize: "14px"
 							}}
 						>
-							Upgrade Account Required
+							<p
+								style={{
+									marginTop: 10,
+									marginBottom: 10
+								}}
+							>Upgrade Account Required</p>
 							<br />
 							<span
 								style={{
@@ -86,13 +91,21 @@ const CardScholarship = ({
 									fontWeight: "normal",
 									display: "flex",
 									alignItems: "center",
-									justifyContent: "space-between"
+									justifyContent: "space-between",
+									opacity: 0.7,
+									fontSize: 13,
+									marginTop: -27,
+									marginBottom: 5
 								}}
 							>
-								Access all matched <br /> {text}
+								<p></p>
+								Access all matched {text} 
 								<IoIosArrowForward
 									size={25}
-									style={{ color: "white" }}
+									style={{ 
+										color: "white", 
+										marginRight: 40
+									}}
 								/>
 							</span>
 						</p>
@@ -108,7 +121,7 @@ const CardScholarship = ({
 							style={{
 								color: "#1c2755",
 								fontWeight: "bold",
-								fontSize: "18px"
+								fontSize: "15px"
 							}}
 						>
 							{award}
@@ -120,21 +133,25 @@ const CardScholarship = ({
 							style={{
 								color: "#1c2755",
 								fontWeight: "bold",
-								fontSize: "18px"
+								fontSize: "15px"
 							}}
 						>
 							{formattedDate}
 						</p>
 					</div>
-					<div className="d-flex flex-column align-items-center">
+					<div className="d-flex flex-column align-items-center"
+						style={{
+							marginTop: -18
+						}}
+					>
 						{" "}
 						<p className="mb-1">Effort</p>
 						<div
 							style={{
-								marginTop: "6px",
+								marginTop: "4px",
 								fontWeight: "bold",
 								color: "#1c2755",
-								fontSize: "18px",
+								fontSize: "15px",
 								lineHeight: "20px"
 							}}
 						>

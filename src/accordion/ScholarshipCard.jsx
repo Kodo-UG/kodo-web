@@ -43,7 +43,7 @@ export function ScholarshipCard({ data}) {
             }}
           >
             Save
-          </Link> : <Link to={'/signin'} className="scholarship-save-btn"
+          </Link> : <Link to={'/stepper'} className="scholarship-save-btn"
             style={{
               backgroundColor: '#ffffff',
               color: '#1d2855',
@@ -56,7 +56,7 @@ export function ScholarshipCard({ data}) {
         {
           token ? <Link to={data.link} className="scholarship-apply-btn">
             Apply Now → 
-          </Link> : <Link to={'/signin'} className="scholarship-apply-btn">
+          </Link> : <Link to={'/stepper'} className="scholarship-apply-btn">
             Apply Now →
           </Link>
         }

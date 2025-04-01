@@ -109,9 +109,6 @@ const App = () => {
                     path="/details/:id"
                     component={ScholarshipDetailsPage}
                 />
-                <Route exact path="/JobStep1" component={JobStep1} />
-                <Route exact path="/JobStep2" component={JobStep2} />
-                <Route exact path="/JobStep3" component={JobStep3} />
                 <Route exact path="/policy" component={Privacy} />
                 <Route exact path="/share" component={RSSUsage} />
                 <Route exact path="/player" component={Sports} />
@@ -137,11 +134,14 @@ const App = () => {
                 />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/final" component={StepElement8} />
+                <Route exact path="/JobStep3" component={JobStep3} />
 
                 <Layout>
                     <PrivateRoute path="/payment" component={Payment} />
                     <Route exact path="/aboutus" component={AboutUs} />
                     <Route exact path="/stepper" component={Stepper} />
+                    <Route exact path="/JobStep1" component={JobStep1} />
+                    <Route exact path="/JobStep2" component={JobStep2} />
                    
                     <Route
                         exact

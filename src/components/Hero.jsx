@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import './hero.css';
 
 function HeroSection() {
+  const token = localStorage.getItem('token');
   return (
     <div className="hero-section"
       style={{
@@ -20,10 +21,14 @@ function HeroSection() {
             <p className="hero-description">
               Kodo Scholarships is the #1 college scholarship app in the world 
               and has helped students win more than $1 million dollars
-            </p>
-            <Link to="/scholarships" className="hero-button">
+            </p> {
+              token ?  <Link to="/scholarships" className="hero-button">
+              Find Scholarships →
+            </Link> :  <Link to="/stepper" className="hero-button">
               Find Scholarships →
             </Link>
+            }
+           
           </div>
 
           <div className="hero-image-container">

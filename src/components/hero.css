@@ -32,6 +32,18 @@
   .hero-text-container {
     min-height: 1.5rem;
   }
+
+  @media(min-width:1024px){
+    .hero-text-container{
+      margin-top: 40px;
+    }
+  }
+
+  @media(min-width:1280px){
+    .hero-text-container{
+      margin-top: 80px;
+    }
+  }
   
   .hero-title {
     font-size: clamp(2rem, 5vw, 2.5rem);

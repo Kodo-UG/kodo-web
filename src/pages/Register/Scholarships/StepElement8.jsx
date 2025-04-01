@@ -244,7 +244,7 @@ function StepElement8() {
 
           <div className="auth-prompt">
             Already have an account?{" "}
-            <Link to="/signin" className="auth-link">
+            <Link  to={{ pathname: "/signin", state: { ref: "final" } }} className="auth-link">
               Sign in!
             </Link>
           </div>

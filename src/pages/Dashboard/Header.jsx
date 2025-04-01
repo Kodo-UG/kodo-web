@@ -225,7 +225,7 @@ const MyHeader = ({ setShowContent }) => {
 								items
 							}}
 							trigger={["click"]}
-							style={{ cursor: "pointer",paddingTop: -10 }}
+							style={{ cursor: "pointer",paddingTop: -10}}
 						>
 							<a href="#" onClick={(e) => e.preventDefault()}>
 								<Space>

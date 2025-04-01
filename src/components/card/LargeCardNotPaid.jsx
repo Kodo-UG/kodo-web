@@ -2,6 +2,7 @@ import { FaAward, FaRegCalendarAlt } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import { useMediaQuery } from "@uidotdev/usehooks";
+import { CiLock } from "react-icons/ci";
 
 const LargeCardNotPaid = ({
 	formatDate,
@@ -91,14 +92,15 @@ const LargeCardNotPaid = ({
 								width: "100%"
 							}}
 						>
-							<img
+							{/* <img
 								src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1689711758/Screenshot_from_2023-07-18_23-19-08-removebg-preview_kavcdq.png"
 								alt=""
 								style={{
 									maxWidth: "100%",
 									height: "auto"
 								}}
-							/>
+							/> */}
+							<CiLock size={25} color={'#ffffff'}/>
 
 							<div
 								className=""

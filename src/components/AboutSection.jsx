@@ -31,7 +31,7 @@ function AboutSection() {
                       scholarships in minutes.
                     </p>
                     <div className="about-section-button-container">
-                      <Link to="/about" className="about-section-button">
+                      <Link to="/aboutus" className="about-section-button">
                         More about us →
                       </Link>
                     </div>
