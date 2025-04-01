@@ -7,6 +7,10 @@ import Testimonials from "./Testimonials";
 import "./videosection.css"; // Importing CSS file
 
 function VideoSection() {
+  const handleClick = () => {
+    window.open("https://youtu.be/MaOsdLCRQN8?feature=shared", "_blank");
+  };
+
   return (
     <div>
       <section className="video-section">
@@ -48,6 +52,8 @@ function VideoSection() {
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kodo-image-2%202-Lv1OosmFOfi4RU0BP7E90DWtZZ4p9P.png"
                 alt="Student with colorful background"
                 className="video-section-main-img"
+                style={{ cursor: "pointer" }}
+                onClick={handleClick}
               />
             </div>
             <div>

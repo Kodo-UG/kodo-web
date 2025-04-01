@@ -13,6 +13,8 @@ import { clearFormData } from "../../toolkit/formReducer";
 import { clearJobData } from "../../toolkit/jobReducer";
 import { PiUser } from "react-icons/pi";
 import { IoNotificationsOutline } from "react-icons/io5";
+import  openmojiSmile  from "../../assets/memoji.webp";
+
 
 const MyHeader = ({ setShowContent }) => {
 	const history = useHistory();
@@ -236,10 +238,18 @@ const MyHeader = ({ setShowContent }) => {
 										alt="User"
 										width={35}
 									/> */}
-									<PiUser size={25} style={{
+									{/* <PiUser size={25} style={{
 										color: '#1d2855',
-										marginTop: -5
-									}}/>
+										marginTop: -5,
+										marginLeft: 15
+									}}/> */}
+									 <img src={openmojiSmile} alt="Memoji" width={40} 
+									 	style={{
+											borderRadius: 100,
+											marginTop: -10,
+											marginLeft: 15
+										}}
+									 />
 								</Space>
 							</a>
 						</Dropdown>

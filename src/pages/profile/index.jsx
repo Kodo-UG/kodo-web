@@ -10,6 +10,9 @@ import { Modal } from "antd";
 import { useHistory } from "react-router-dom";
 import { displaySuccessNotification } from "../../utils/Toast";
 import axios from "axios";
+import StatsCards from "./cards";
+import openSmile from '../../assets/memoji.webp'
+
 
 function Profile() {
 	const isSm = useMediaQuery("only screen and (max-width : 1000px)");
@@ -221,42 +224,43 @@ function Profile() {
 							<div className="col-lg-12">
 								<div className="card">
 									<div className="card-body">
-										<div className="row align-items-center">
-											<div className="col-lg-12 col-md-12 col-xl-6">
-												<div className="d-flex flex-wrap align-items-center">
+										<div className="">
+											<div className="">
+												<div className=""
+													style={{
+														display: 'flex'
+													}}
+												>	
 													<div className="profile-img-main rounded">
-														<img
-															style={{
-																padding: "",
-																cursor: "pointer",
-															}}
-															class="rounded-circle header-profile-user"
-															src={`https://ui-avatars.com/api/name=${info.user.fname}&background=random`}
-															alt="User"
-															width={
-																68
-															}
-														/>
+														 <img src={openSmile} alt="Memoji" width={68} 
+																								style={{
+																									borderRadius: 100,
+																									
+																								}}
+																							 />
 													</div>
-													<div className="ms-4 ">
+													<div className="ms-4"
+													>
 														<h4
 															style={{
 																color: "black",
+																marginTop: 6
 															}}
 														>
 															{data.fname +
 																" " +
 																data.lname}
 														</h4>
-														<p className="text-muted mb-2">
+														<p className="text-muted">
 															{
 																data.email
 															}
 														</p>
 													</div>
 												</div>
+													<StatsCards scholarship={scholarship} appliedCount={appliedCount} favData={favData} referCount={referCount} />
 											</div>
-											<div className="col-lg-12 col-md-12 col-xl-6">
+											{/* <div className="col-lg-12 col-md-12 col-xl-6">
 												<div className="d-md-flex flex-wrap justify-content-lg-end">
 													<div className="media m-3">
 														<div
@@ -453,7 +457,7 @@ function Profile() {
 														</div>
 													</div>
 												</div>
-											</div>
+											</div> */}
 										</div>
 									</div>
 									<div className="border-top">
