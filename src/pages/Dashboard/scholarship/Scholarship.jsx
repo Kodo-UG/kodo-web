@@ -41,7 +41,7 @@ const Scholarship = () => {
 									textAlign: "center",
 									letterSpacing: "2px",
 									color: "#1c2755",
-									fontSize: isSm ? "1.45rem" : "2.5rem",
+									fontSize: isSm ? "1.45rem" : "2.5rem"
 								}}
 							>
 								Latest Scholarships

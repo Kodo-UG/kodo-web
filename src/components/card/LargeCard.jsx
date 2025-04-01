@@ -105,7 +105,7 @@ const LargeCard = ({
                                     color: "#4e4b66",
                                     fontSize: "14px",
                                     lineHeight: "22px",
-                                    fontWeight: 500,
+                                    fontWeight: 500
                                 }}
                             >
                                 {subText}
