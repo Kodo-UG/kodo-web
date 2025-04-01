@@ -2,6 +2,7 @@ import React from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import { CiLock } from "react-icons/ci";
 
 
 const CardScholarship = ({
@@ -42,7 +43,6 @@ const CardScholarship = ({
 				style={{
 					background: "#1c2755",
 					color: "white",
-					
 					borderTopLeftRadius: "0.5rem",
 					borderTopRightRadius: "0.5rem"
 				}}
@@ -54,13 +54,20 @@ const CardScholarship = ({
 					}}
 					className="d-flex align-items-center justify-content-between"
 				>
-					<div className="">
+					{/* <div className="">
 						<img
 							src="https://res.cloudinary.com/dmhsf5hqd/image/upload/v1689711758/Screenshot_from_2023-07-18_23-19-08-removebg-preview_kavcdq.png"
 							alt=""
 							style={{ maxWidth: "100%", height: "auto" }}
 						/>
-					</div>
+					</div> */}
+					<CiLock size={25} color={'#ffffff'} 
+						style={{
+							marginLeft: 25,
+							marginTop: -10
+						}}
+					/>
+					
 					<div
 						className="w-75 d-flex flex-column align-items-start justify-content-center "
 						style={{
