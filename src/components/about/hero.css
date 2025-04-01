@@ -65,9 +65,10 @@
     .hero-image-container {
       width: 800px;
       min-height: 500px;
-      top: -70px;
+      top: -80px;
     }
   }
+
   
   .hero-image {
     width: 100%;

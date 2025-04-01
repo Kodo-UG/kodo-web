@@ -10,17 +10,19 @@ function HeroSection() {
   const isSm = useMediaQuery('only screen and (max-width:700px)');
   const isMd = useMediaQuery('only screen and (max-width: 1023px)');
   const isLg = useMediaQuery('onlyscreen and (min-width:1024px)');
+  const isXl = useMediaQuery('only screen and (min-width:1280px)');
 
   return (
     <div className="hero-section"
       style={{
-        backgroundColor: '#eeeef7'
+        backgroundColor: '#eeeef7',
+
       }}
     >
       <CustomContainer>
         <div className="hero-grid"
           style={{
-            marginTop: isSm ? '-80px' : isMd ? '-10px' : '-30px'
+            marginTop: isSm ? '-120px' : isMd ? '-10px' : '-40px'
           }}
         >
           <div className="hero-text-container">
@@ -46,8 +48,8 @@ function HeroSection() {
               alt="Student with books"
               className="hero-image"
               style={{
-                width: isLg &&  '700px',
-                marginTop:  isLg && 120
+               
+                // marginTop:  isLg ? 60 : isXl ? 40 : ''
               }}
             />
           </div>
