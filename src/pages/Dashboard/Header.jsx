@@ -14,6 +14,7 @@ import { clearJobData } from "../../toolkit/jobReducer";
 import { PiUser } from "react-icons/pi";
 import { IoNotificationsOutline } from "react-icons/io5";
 import  openmojiSmile  from "../../assets/memoji.webp";
+import {notifications} from '../../hooks/useNotifications';
 
 
 const MyHeader = ({ setShowContent }) => {
@@ -62,8 +63,16 @@ const MyHeader = ({ setShowContent }) => {
 
 	const HandleClick = async (id) => {
 		try {
-			await axiosInstance.patch(`/user/notifications/${id}`);
-			queryClient.invalidateQueries("/user/notifications"); // Invalidate the query to update the data
+			try {
+				const res = await axios.get(
+					"http://localhost:4000/api/v1/user/notifications",
+					config
+				);
+				const data = await res.json();
+				console.log(data);
+			} catch (error) {
+				throw new Error(error.message || "Failed to fetch notifications");
+			}
 		} catch (error) {
 			throw error;
 		}
@@ -190,7 +199,7 @@ const MyHeader = ({ setShowContent }) => {
 							>
 								{notify.map((data) => (
 									<li
-										onClick={() => deleteMessage(data._id)}
+										onClick={() => HandleClick()}
 										style={{
 											marginBottom: "1rem",
 											display: "flex",
