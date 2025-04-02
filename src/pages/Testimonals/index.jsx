@@ -4,7 +4,8 @@ import FindScholarships from ".././../components/about/FindScholarships";
 import CustomContainer from "../../components/ShredComponents/CustomerContainer";
 import TestimonialHeader from "../../components/testimonials/TestimonialHeader";
 import TestimonialHero from "../../components/testimonials/TestimonialHero";
-import { data } from "../../data/testimonials";
+import { data } from "../../data/testimonialsData";
+
 import "./testimonial.css";  // Import the CSS file
 
 function Testimonals() {

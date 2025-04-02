@@ -87,6 +87,9 @@ const CombinedScholarshipCard = () => {
 				dataLength={data.length}
 				next={fetchData}
 				hasMore={true}
+				style={{
+					width: '100%'
+				}}
 				loader={
 					<h4 style={{ textAlign: "center", padding: "1rem" }}>
 						{data.length < 1 ? " " : "Loading..."}

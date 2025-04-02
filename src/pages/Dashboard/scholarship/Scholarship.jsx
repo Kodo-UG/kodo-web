@@ -23,7 +23,7 @@ const Scholarship = () => {
 							width: "100%",
 							alignItems: "center",
 							padding: "2px",
-							justifyContent: "center",
+							justifyContent: "center"
 						}}
 					>
 						{/* <MatchedCard title="scholarships" total="702,531" /> */}

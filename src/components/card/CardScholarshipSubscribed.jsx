@@ -3,6 +3,7 @@ import { BsBookmark, BsThreeDotsVertical } from "react-icons/bs";
 import { Modal } from "antd";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import truncateText from "../../utils/truncate";
+import './cardscholashipsubscribed.css';
 
 function CardScholarshipSubscribed({
   cardTitle,
@@ -36,7 +37,7 @@ function CardScholarshipSubscribed({
       onClick={() => handleRoute(id)}
       className="shadow-md"
       style={{
-        width: "24rem",
+        width: "50rem",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -44,7 +45,7 @@ function CardScholarshipSubscribed({
         borderRadius: "0.5rem",
         cursor: "pointer",
         marginBottom: "3rem",
-        fontFamily: "Montserrat, sans-serif",
+        marginTop: 15
       }}
     >
       <div
@@ -72,10 +73,9 @@ function CardScholarshipSubscribed({
             className=""
             style={{
               marginLeft: "0.4rem",
-              fontWeight: "normal",
-              fontFamily: "Montserrat, sans-serif",
+              fontWeight: "bold",
               letterSpacing: "2px",
-              fontSize: "1.31rem",
+              fontSize: "1.22rem",
             }}
           >
             {" "}
@@ -96,7 +96,6 @@ function CardScholarshipSubscribed({
             style={{
               fontSize: ".2rem",
               lineBreak: "auto",
-              fontFamily: "Poppins",
               letterSpacing: "2px",
             }}
           >
@@ -118,8 +117,7 @@ function CardScholarshipSubscribed({
       <div
         className="card-body"
         style={{
-          height: "6rem",
-          fontFamily: "Montserrat, sans-serif",
+          height: "6rem"
         }}
       >
         <div className="d-flex justify-content-between align-items-center">
@@ -133,9 +131,7 @@ function CardScholarshipSubscribed({
                 fontWeight: "normal",
                 padding: ".1rem",
                 lineHeight: "1.5rem",
-                fontFamily: "Montserrat, sans-serif",
-                letterSpacing: "2.4px",
-                fontSize: "1.3rem",
+                fontSize: "1.1rem",
               }}
             >
               {truncateText(award)}
@@ -154,9 +150,7 @@ function CardScholarshipSubscribed({
                 fontWeight: "normal",
                 padding: ".1rem",
                 lineHeight: "1.5rem",
-                fontFamily: "Poppins",
-                letterSpacing: "2px",
-                fontSize: "1.3rem",
+                fontSize: "1.1rem",
               }}
             >
               {formattedDate}
@@ -231,7 +225,6 @@ function CardScholarshipSubscribed({
             style={{
               fontWeight: "normal",
               fontSize: "1.5rem",
-              fontFamily: "Poppins",
               letterSpacing: "1px",
             }}
           >
