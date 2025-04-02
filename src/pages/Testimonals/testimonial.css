@@ -86,19 +86,19 @@
 }
 
 .pt{
-  margin-top: 60px;
+  margin-top: 200px;
 }
 
 @media(min-width: 768px){
   .pt{
-    margin-top: 80px
+    margin-top: 120px;
   }
 }
 
 
 @media(min-width: 1024px){
   .pt{
-    margin-top: 80px
+    margin-top: 160px;
   }
 }
 

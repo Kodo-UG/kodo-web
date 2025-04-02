@@ -53,8 +53,11 @@ export default function TestimonialsSection() {
   return (
     <section className="header-fix">
       <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-responsive-4xl">
+        <div className="mb-12 text-center"
+         
+        >
+          <h2 className="mb-4 text-responsive-4xl"
+          >
             Dont take our word for it
           </h2>
           <p className="mx-auto max-w-2xl text-base md:text-lg">
