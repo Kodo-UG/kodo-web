@@ -46,13 +46,23 @@ function Testimonals() {
 										{d.description}
 										</p>
 										<div className="flex items-center gap-4">
-											<img 
-															src={d.image}  // No need to convert to string
-															width={50}
-															height={50}
-															className="object-cover rounded-full"
-															alt="Scholarship student"
-															/>
+											<div
+												style={{
+													width: 50,
+													height: 50
+												}}
+											>
+												<img 
+																src={d.image}  // No need to convert to string
+																className="object-cover"
+																alt="Scholarship student"
+																style={{
+																	borderRadius: 100,
+																	width: '100%',
+																	height: '100%'
+																}}
+																/>
+											</div>
 											<div 
 												style={{
 													marginLeft: -5,
