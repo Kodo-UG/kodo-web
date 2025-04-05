@@ -20,6 +20,10 @@ function VideoSection() {
               src="https://res.cloudinary.com/dfdswxx7x/image/upload/v1740083635/Kodo-image-2-2wewe_1_1_hm4nbe.png"
               alt="vector"
               className="video-section-img"
+              onClick={() => handleClick()}
+              style={{
+                cursor: 'pointer'
+              }}
             />
           </div>
         </div>
