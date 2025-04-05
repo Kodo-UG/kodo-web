@@ -1,5 +1,7 @@
 import React from 'react';
 import './header.css';
+import image1 from '../../assets/tes1.jpg';
+import image2 from '../../assets/tes2.jpg';
 
 const Testimonial = ({ quote, name, university, imageSrc }) => {
   return (
@@ -36,17 +38,17 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        "I love how Kodo Scholarship categorizes scholarships based on field of study. As a STEM student, I was able to find and apply for tech-related scholarships effortlessly. It’s an incredible tool!",
-      name: "Marcus D.",
-      university: "STEM Student",
-      imageSrc: "https://ntrepidcorp.com/wp-content/uploads/2016/06/team-1.jpg",
+        "I believe kodo  Scholarship is the easiest website to search for a multitude of different scholarships. They provide accurate deadlines and make it easy to submit scholarships through their platform",
+      name: "Abraham Eskender",
+      university: "Ethiopia",
+      imageSrc: image1,
     },
     {
       quote:
-        " was worried about paying for community college, but Kodo Scholarship helped me find grants and scholarships I was eligible for. Now, I can complete my associate degree without taking on debt!",
-      name: "Nathan E.",
-      university: "Community College Student",
-      imageSrc: "https://ntrepidcorp.com/wp-content/uploads/2016/06/team-1.jpg",
+        "I heard about kodo  scholarship through my mom! When I saw that I won I was so surprised, thankful, and happy! I go to college and study nursing and plan on being a nurse practitioner as a career! I’m so grateful for this scholarship!",
+      name: "Mandla Lethokuhle",
+      university: "South Africa",
+      imageSrc: image2,
     },
   ]
 

@@ -87,7 +87,7 @@
 }
 
 .object-cover {
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .ml-4 {

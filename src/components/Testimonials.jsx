@@ -1,6 +1,6 @@
 import React from 'react';
 import CustomContainer from './ShredComponents/CustomerContainer';
-import { data } from '../data/testimonials';
+import { data } from '../data/homeData';
 import './testimonials.css';
 
 function Testimonials() {
@@ -37,6 +37,9 @@ function Testimonials() {
                         height={100}
                         className="testimonial-avatar-img"
                         alt="Scholarship student"
+                        style={{
+                          borderRadius: '50%'
+                        }}
                       />
                     </div>
                     <div>
