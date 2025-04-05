@@ -11,6 +11,7 @@ import {
   displaySuccessNotification,
 } from "../../../utils/Toast";
 import truncateText from "../../../utils/truncate";
+import './detail.css';
 
 const ScholarshipDetails = () => {
   const location = useLocation();
@@ -84,7 +85,7 @@ const ScholarshipDetails = () => {
         height: "auto",
         marginBottom: "8rem",
         padding: "1rem",
-        fontFamily: "Montserrat, sans-serif",
+        fontFamily: "Archivo, sans-serif",
         color: "#1c2755",
       }}
       className=" shadow-md "
@@ -180,8 +181,7 @@ const ScholarshipDetails = () => {
                       fontWeight: "bold",
                       color: "#1c2755",
                       fontSize: isSm ? "1.1rem" : "1.5rem",
-                      fontFamily: "Poppins",
-                      letterSpacing: "2px",
+                      letterSpacing: "1px",
                     }}
                   >
                     {getJobs ? data?.salary : data?.award}
@@ -196,8 +196,7 @@ const ScholarshipDetails = () => {
                       color: "#1c2755",
                       lineHeight: "20px",
                       fontSize: isSm ? "1.1rem" : "1.5rem",
-                      fontFamily: "Poppins",
-                      letterSpacing: "2px",
+                      letterSpacing: "1px",
                     }}
                   >
                     {deadline}
@@ -259,7 +258,7 @@ const ScholarshipDetails = () => {
                 <a
                   href={`${data?.link}`}
                   style={{
-                    backgroundColor: "#EB1E5E",
+                    backgroundColor: "#00d6dd",
                     border: "none",
                     color: "white",
                     padding: "1rem",
@@ -283,6 +282,7 @@ const ScholarshipDetails = () => {
                   textAlign: "left",
                   color: "#1c2755",
                   marginTop: "1rem",
+                  fontFamily: 'Archivo'
                 }}
               >
                 About
@@ -298,8 +298,9 @@ const ScholarshipDetails = () => {
                   style={{
                     color: "#4e4b66",
                     textAlign: "justify",
-                    letterSpacing: "1.2px",
+                    letterSpacing: "0px",
                     fontSize: isSm ? "1rem" : "1.3rem",
+                    fontFamily: 'Archivo'
                   }}
                 >
                   {data?.about}
@@ -462,7 +463,7 @@ const ScholarshipDetails = () => {
               <a
                 href={`${data?.link}`}
                 style={{
-                  backgroundColor: "#EB1E5E",
+                  backgroundColor: "#00d6dd",
                   border: "none",
                   color: "white",
                   padding: ".8rem",

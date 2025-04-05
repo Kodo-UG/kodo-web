@@ -8,7 +8,6 @@ import "./index.css"
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ReactQueryDevtools } from "react-query/devtools";
-
 import "./index.css";
 
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -22,7 +21,6 @@ ReactDOM.render(
 				<Provider store={store}>
 					<PersistGate loading={null} persistor={persistor}>
 						<App />
-
 						<ReactQueryDevtools initialIsOpen={false} />
 					</PersistGate>
 				</Provider>
