@@ -109,7 +109,7 @@ const BlogDetails = () => {
                                     {blog?.title}
                                 </p>
 
-                                <div
+                                {/* <div
                                     style={{
                                         width: "100%",
                                         height: "auto",
@@ -120,7 +120,7 @@ const BlogDetails = () => {
                                         src={blog?.image}
                                         alt="blogImage"
                                     />
-                                </div>
+                                </div> */}
                             </div>
 
                             <div

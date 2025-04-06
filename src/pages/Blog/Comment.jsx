@@ -2,6 +2,7 @@ import { useMediaQuery } from "@uidotdev/usehooks";
 import { FaReply } from "react-icons/fa";
 import { BiLike, BiDislike } from "react-icons/bi";
 import React, { useState } from "react";
+import image1 from '../../assets/2.png';
 
 const Comment = ({ image, username, timestamp, text }) => {
 	const [replyText, setReplyText] = useState("");
@@ -40,7 +41,7 @@ const Comment = ({ image, username, timestamp, text }) => {
 		display: "flex",
 		justifyContent: "space-between",
 		alignItems: "center",
-		marginBottom: "10px"
+		marginBottom: "5px"
 	};
 
 	const usernameStyle = {
@@ -57,8 +58,8 @@ const Comment = ({ image, username, timestamp, text }) => {
 	};
 
 	const userImageStyle = {
-		width: "50px",
-		height: "50px",
+		width: "30px",
+		height: "30px",
 		borderRadius: "50%",
 		objectFit: "cover"
 	};
@@ -76,7 +77,8 @@ const Comment = ({ image, username, timestamp, text }) => {
 		<div style={{ fontFamily: "montserrat,san-serif" }} className="comment">
 			<div
 				style={{
-					marginRight: "1rem"
+					marginRight: "1rem",
+					marginTop: 40
 				}}
 			>
 				<img
@@ -84,7 +86,7 @@ const Comment = ({ image, username, timestamp, text }) => {
 					// 	image ||
 					// 	`https://ui-avatars.com/api/name=${username}&background=random`
 					// }
-					src="https://res.cloudinary.com/itgenius/image/upload/v1694959807/default-avatar-profile-icon-vector-18942381_ykvnuu.jpg"
+					src={image1}
 					alt="User"
 					style={userImageStyle}
 				/>
@@ -190,45 +192,48 @@ const Comment = ({ image, username, timestamp, text }) => {
 								resize: "none"
 							}}
 						/>
-						<button
-							onClick={toggleReply}
-							style={{
-								backgroundColor: "#EC1D64",
-								color: "#fff",
-								border: "none",
-								marginRight: ".8rem",
-								borderRadius: "20px",
-								padding: "5px 10px",
-								cursor: "pointer"
-							}}
-						>
-							<span
+						<div>
+							<button
+								onClick={toggleReply}
 								style={{
-									display: "flex",
-									alignItems: "center",
-									justifyContent: "center"
+									backgroundColor: "#00d6dd",
+									color: "#fff",
+									border: "none",
+									marginRight: ".8rem",
+									borderRadius: "20px",
+									padding: "5px 10px",
+									cursor: "pointer"
 								}}
 							>
-								<span style={{ marginRight: ".5rem" }}>
-									<FaReply />
+								<span
+									style={{
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "center"
+									}}
+								>
+									<span style={{ marginRight: ".5rem" }}>
+										<FaReply />
+									</span>
+									<span style={{ marginRight: ".5rem" }}>reply</span>
 								</span>
-								<span style={{ marginRight: ".5rem" }}>reply</span>
-							</span>
-						</button>
+							</button>
 
-						<button
-							onClick={toggleReply}
-							style={{
-								backgroundColor: "#EC1D64",
-								color: "#fff",
-								border: "none",
-								borderRadius: "20px",
-								padding: "5px 10px",
-								cursor: "pointer"
-							}}
-						>
-							cancel
-						</button>
+							<button
+								onClick={toggleReply}
+								style={{
+									position: 'absolute',
+									backgroundColor: "#00d6dd",
+									color: "#fff",
+									border: "none",
+									borderRadius: "20px",
+									padding: "5px 10px",
+									cursor: "pointer"
+								}}
+							>
+								cancel
+							</button>
+						</div>
 					</div>
 				)}
 			</div>

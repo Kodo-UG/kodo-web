@@ -65,14 +65,14 @@ const CommentForm = ({ onCommentSubmit }) => {
 
 	return (
 		<div style={commentStyle}>
-			<div>
+			{/* <div>
 				<img
 					// src={`https://ui-avatars.com/api/name=Baluku Wilton&background=random`}
 					src="/images.png"
 					alt="User"
 					style={userImageStyle}
 				/>
-			</div>
+			</div> */}
 
 			<div style={{ flex: 1 }}>
 				<h3 style={{ fontSize: "16px", marginBottom: "10px" }}>
