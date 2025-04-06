@@ -100,7 +100,7 @@ export default function BlogPage() {
               <Link key={post._id} to={`/blog/${post._id}`} className="group overflow-hidden">
                 <div className="aspect-1-2-1 relative overflow-hidden">
                   <img
-                    src="https://res.cloudinary.com/digrh1wj1/image/upload/v1742432182/Rectangle_23_zukqe2.png"
+                    src={post.image || "https://res.cloudinary.com/digrh1wj1/image/upload/v1742432182/Rectangle_23_zukqe2.png"}
                     alt={post.title}
                     fill
                     className="object-cover transition duration-300 group-hover-scale-105"
