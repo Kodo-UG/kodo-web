@@ -66,7 +66,7 @@ const BlogDetails = () => {
                 <div
                     style={{
                         // height: "100vh",
-                        marginTop: isSm ? "6rem" : "5rem",
+                        marginTop: isSm ? "0rem" : "5rem",
                         paddingLeft: isSm ? "2rem" : "5rem",
                         paddingRight: isSm ? "2rem" : "5rem",
                         // fontFamily: "montserrat, san-serif"
@@ -200,9 +200,7 @@ const BlogDetails = () => {
                                                 opacity: "0.7",
                                             }}
                                         >
-                                            {moment(
-                                                blog?.creator?.createdAt
-                                            ).format("MM-DD-YYYY")}
+                                             {new Date(blog.createdAt).toLocaleDateString()}
                                         </span>
                                     </button>
                                 </div>
