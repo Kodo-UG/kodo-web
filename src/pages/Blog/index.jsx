@@ -7,6 +7,7 @@ import CustomContainer from "../../components/ShredComponents/CustomerContainer"
 import './blog.css';
 import axiosInstance from "../../api/axiosInstance";
 import {useState,useEffect} from 'react';
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 // const blogPosts = [
 //   {
@@ -44,6 +45,13 @@ export default function BlogPage() {
   const [blogs,setBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Adjust as needed
+
+  const isSm = useMediaQuery('only screen and (max-width: 700px)')
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // empty dependency array ensures it runs only once after the component mounts
+
   
   const getBlogs = async () => {
     try {
@@ -98,16 +106,24 @@ export default function BlogPage() {
       <div className="mb-10 grid gap-6 md-grid-cols-3 lg-grid-cols-4">
             {paginatedBlogs.map((post) => (
               <Link key={post._id} to={`/blog/${post._id}`} className="group overflow-hidden">
-                <div className="aspect-1-2-1 relative overflow-hidden">
+                <div className="aspect-1-2-1 relative overflow-hidden"
+                >
                   <img
                     src={post.image || "https://res.cloudinary.com/digrh1wj1/image/upload/v1742432182/Rectangle_23_zukqe2.png"}
                     alt={post.title}
                     fill
                     className="object-cover transition duration-300 group-hover-scale-105"
+                    style={{
+                      backgroundColor: 'gray'
+                    }}
                   />
                 </div>
                 <div className="p-6">
-                  <h2 className="mb-2 text-lg font-medium leading-tight text-color group-hover-text">
+                  <h2 className="mb-2 text-lg font-medium leading-tight text-color group-hover-text"
+                    style={{
+                      marginTop: isSm ? -70 : -40
+                    }}
+                  >
                     {post.title}
                   </h2>
                   <p className="text-sm text">

@@ -1782,7 +1782,7 @@ function Policy() {
 							If you have questions about this Agreement, or if you have
 							technical questions about the operation of the Web
 							Applications, mobile applications, products and services,
-							please contact us via email at: info@kodoscholarships.com
+							please contact us via email at: info@kodoscholarship.com
 						</p>
 					</div>
 				</div>

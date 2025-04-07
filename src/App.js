@@ -11,6 +11,7 @@ import RSSUsage from "./pages/share/RSSUsage";
 import Privacy from "./pages/policyPage";
 import ScholarshipDetailsPage from "./pages/Dashboard/scholarship/ScholarshipDetailsPage";
 import BlogDetails from "./pages/Blog/BlogDetails";
+import ScrollToTop from "./components/ScrollTop";
 // import FormOne from "./pages/Sports/FormOne";
 
 // Lazy-loaded components
