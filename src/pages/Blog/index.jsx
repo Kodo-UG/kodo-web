@@ -47,6 +47,11 @@ export default function BlogPage() {
   const itemsPerPage = 6; // Adjust as needed
 
   const isSm = useMediaQuery('only screen and (max-width: 700px)')
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // empty dependency array ensures it runs only once after the component mounts
+
   
   const getBlogs = async () => {
     try {

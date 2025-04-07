@@ -12,6 +12,11 @@ import { updateFormData } from "../../../toolkit/formReducer";
 const Stepper = () => {
 	const [step, setStep] = useState(1);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	  }, []); // empty dependency array ensures it runs only once after the component mounts
+	
+
 	const [formData, setFormData] = useState({
 		lname: "",
 		fname: "",
