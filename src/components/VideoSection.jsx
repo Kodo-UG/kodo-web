@@ -47,17 +47,18 @@ function VideoSection() {
                 alt="Students in classroom"
                 className="video-section-video-img"
               />
-              {/* <button className="video-section-play-btn">
+              <button className="video-section-play-btn"
+                 style={{ cursor: "pointer"}}
+                 onClick={handleClick}
+              >
                 <Play className="video-section-play-icon" />
-              </button> */}
+              </button>
             </div>
             <div className="video-section-image-container">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kodo-image-2%202-Lv1OosmFOfi4RU0BP7E90DWtZZ4p9P.png"
                 alt="Student with colorful background"
                 className="video-section-main-img"
-                style={{ cursor: "pointer" }}
-                onClick={handleClick}
               />
             </div>
             <div>
