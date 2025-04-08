@@ -46,8 +46,7 @@ export default function Main() {
             >
             <h1 className="mb-8 text-[32px] font-bold leading-tight text-[#1A1060]">Reach Out to us</h1>
 
-            <div className="mb-16 grid gap-6 md-grid-cols-3 z-20"
-            >
+            <div className="mb-16 grid gap-6 md-grid-cols-3 z-20">
               {contactInfo.map((item, index) => (
                 <motion.div
                   key={index}
@@ -56,6 +55,9 @@ export default function Main() {
                   animate="visible"
                   variants={dropDownAnimation}
                   transition={{ delay: index * 0.1 }} // Adds a stagger effect
+                  style={{
+                    width: isXlg && 370
+                  }}
                 >
                   <div
                     className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan"

@@ -113,9 +113,19 @@
 
 .md-grid-cols-3 {
   /* Applies on medium (md) screens and above */
-  @media (min-width: 768px) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      width: 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .md-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+}
+
+@media(min-width: 1280px){
+  .md-grid-cols-3{
+    width: 100%;
   }
 }
 

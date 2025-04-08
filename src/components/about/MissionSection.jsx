@@ -74,7 +74,7 @@ export default function MissionSection() {
     {
       title: "Vision",
       description:
-        "Our Vision is to become one of the most preferred choices of individuals and organization when it comes to the demand htmlFor Scholarships and Job offers in the whole of Africa and the rest of world.",
+        "Our Vision is to become one of the most preferred choices of individuals and organization when it comes to the demand for Scholarships and Job offers in the whole of Africa and the rest of world.",
       icon: <MissionIcon2 />,
     },
   ];
