@@ -96,8 +96,9 @@
   
   .video-section-play-btn {
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 50%;
+    width: '';
     transform: translate(-50%, -50%);
     background-color: #ff3366;
     color: white;
@@ -113,8 +114,8 @@
   }
   
   .video-section-play-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
   
   .video-section-image-container {
