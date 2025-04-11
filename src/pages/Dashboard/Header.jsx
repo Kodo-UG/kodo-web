@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Dropdown, Space } from "antd";
 import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
@@ -52,14 +52,20 @@ const MyHeader = ({ setShowContent }) => {
 	async function fetchNotifications() {
 		try {
 			const res = await axios.get(
-				"https://api.kodoscholarship.com/api/v1/user/notifications",
+				"https://kodo-backend.kodoscholarship.com/api/v1/user/notifications",
 				config
 			);
+			console.log(res.data.data);
 			return res.data.data;
 		} catch (error) {
 			throw new Error(error.message || "Failed to fetch notifications");
 		}
 	}
+
+	useEffect(() => {
+		fetchNotifications()
+	},[]);
+
 
 	const HandleClick = async (id) => {
 		try {
