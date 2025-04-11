@@ -5,6 +5,7 @@ import FeaturesSection from "./FeaturesSection";
 import CtaSection from "./CtaSection";
 import Testimonials from "./Testimonials";
 import "./videosection.css"; // Importing CSS file
+import frame from '../assets/frame.png';
 
 function VideoSection() {
   const handleClick = () => {
@@ -43,16 +44,32 @@ function VideoSection() {
             </div>
             <div className="video-section-video">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Frame%2021-YJJ5UGOQR6DziKVbrlkt3vWMOQluMi.png"
+                src={frame}
                 alt="Students in classroom"
                 className="video-section-video-img"
               />
-              <button className="video-section-play-btn"
-                 style={{ cursor: "pointer"}}
-                 onClick={handleClick}
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  marginTop: '-35%'
+                }}
               >
-                <Play className="video-section-play-icon" />
-              </button>
+                <button className="video-section-play-btn"
+                  style={{ cursor: "pointer"}}
+                  onClick={handleClick}
+                >
+                  <Play className="video-section-play-icon" />
+                </button>
+                <p
+                  style={{
+                    color: 'white'
+                  }}
+                >
+                  Play reel
+                </p>
+              </div>
             </div>
             <div className="video-section-image-container">
               <img
