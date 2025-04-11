@@ -42,38 +42,58 @@ export default function Main() {
             <div className="relative w-full h-full"><img src="https://res.cloudinary.com/digrh1wj1/image/upload/v1742433295/Kodo-image-2-2we_1_op5x1b.png" 
           alt="vector" fill objectFit="contain" objectPosition="right"/></div>
           </div>
-            <div className="contact-header-fix-error"
-            >
-            <h1 className="mb-8 text-[32px] font-bold leading-tight text-[#1A1060]">Reach Out to us</h1>
+            <div className="contact-header-fix-error">
+              <h1 className="mb-8 text-[32px] font-bold leading-tight text-[#1A1060]"
+                style={{
+                  textAlign: 'center'
+                }}
+              >Reach Out to us</h1>
 
-            <div className="mb-16 grid gap-6 md-grid-cols-3 z-20">
-              {contactInfo.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col items-center rounded-4xl bg-white text-center p-8 motion"
-                  initial="hidden"
-                  animate="visible"
-                  variants={dropDownAnimation}
-                  transition={{ delay: index * 0.1 }} // Adds a stagger effect
-                  style={{
-                    width: isXlg && 370
-                  }}
-                >
-                  <div
-                    className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan"
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  width: "100%",
+                }}
+              >
+                <div className="mb-16 grid gap-6 md-grid-cols-3 z-20"
                     style={{
-                      marginTop: 20,
+                      display: "grid",
+                      gap: "1.5rem", // gap-6
+                      gridTemplateColumns: isSm ? "1fr" : "repeat(3, 1fr)",
+                      maxWidth: "1200px",
+                      width: "100%",
                     }}
-                  >
-                    <img src={item.icon} alt="" width={24} height={24} />
-                  </div>
-                  <h3 className="mb-2 text-base font-medium text-[#1A1060]">{item.title}</h3>
-                  <p className="text-sm text-[#666666]">{item.value}</p>
-                </motion.div>
-              ))}
-            </div>;
-                </div>
-              </CustomContainer>
+                >
+                  {contactInfo.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex flex-col items-center rounded-4xl bg-white text-center p-8 motion"
+                      initial="hidden"
+                      animate="visible"
+                      variants={dropDownAnimation}
+                      transition={{ delay: index * 0.1 }} // Adds a stagger effect
+                      style={{
+                        width: isXlg ? 370 : "100%",
+                        margin: "0 auto",
+                      }}
+                    >
+                      <div
+                        className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-kodo-cyan"
+                        style={{
+                          marginTop: 20,
+                        }}
+                      >
+                        <img src={item.icon} alt="" width={24} height={24} />
+                      </div>
+                      <h3 className="mb-2 text-base font-medium text-[#1A1060]">{item.title}</h3>
+                      <p className="text-sm text-[#666666]">{item.value}</p>
+                    </motion.div>
+                  ))}
+                </div>;
+              </div>
+            </div>
+          </CustomContainer>
               <div className="form-section">
 		<div
 			className="form-section-container"
