@@ -21,11 +21,12 @@ export function ScholarshipCard({ data}) {
         <div className="scholarship-info">
           <div className="scholarship-due">
             <span>Due:</span>
-            <span>{new Date(data.deadline).toLocaleDateString("en-US", {
+            <span>
+              {new Date(data.deadline).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
-              })}</span>
+            })}</span>
           </div>
           <div className="scholarship-award">
             <span>Award</span>

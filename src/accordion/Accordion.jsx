@@ -25,35 +25,35 @@ export default function Accordion() {
       id: 2,
       title:"Be Bold No-Essay Scholarship",
       about:"we believe that the world will be shaped by the bold—the fighters, the risk-takers, the earnest overachievers who won’t take no for an answer—the ones who know that a mountain is climbed one step at a time",
-      deadline:"05/09/2025",
+      deadline:"May 5, 2025",
       award:"$25,000"
     },
     {
       id: 3,
       title:"Niche No Essay Scholarship",
       about:"Niche can help with every step of the college search including paying for it. We're giving one student $25,000 to help cover tuition, housing, books and other college expenses — no essay required!",
-      deadline:"25/11/2025",
+      deadline:"October 2, 2025",
       award:"$25,000"
     },
     {
       id: 4,
       title:"Utility Workers Union of America Scholarship",
       about:"The Utility Workers Union of America established a scholarship program in an effort to promote the solidarity of its members and encourage educational growth of the future generations of our labor organization.",
-      deadline:"15/08/2025",
+      deadline:"September 8, 2025",
       award:"£15,000"
     },
     {
       id: 5,
       title:"Cleveland State University Honors Program Scholarship",
       about:"The Cleveland State University Honors Program Scholarship is open to incoming freshmen students. Students in Honors typically are in the top 10 percent of their class or have an ACT of 30 or an SAT of 1380. Incoming freshmen must attend CSU beginning the summer or fall following their high school graduation and must attend CSU full-time",
-      deadline:"15/07/2025",
+      deadline:"August 10, 2025",
       award:"Full funded"
     },
     {
       id: 6,
       title:"University of Vermont Green and Gold Scholars Award",
       about:"The University of Vermont Green & Gold Scholarship is an academic merit scholarship program that considers the nomination of the most academically talented rising high school senior from every eligible Vermont secondary school and Vermont resident attending select border schools.",
-      deadline:"15/08/2024",
+      deadline:"November 25, 2025",
       award:"$65,000"
     }
   ]
