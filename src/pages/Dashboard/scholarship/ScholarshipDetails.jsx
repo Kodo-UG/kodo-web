@@ -47,11 +47,29 @@ const ScholarshipDetails = () => {
   const getAds = async () => {
     try {
       const res = await axios.get(`${BASE_URL}/admin/ads`);
-      setAds(res.data.data);
+  
+      const updatedAds = res.data.data.map(ad => {
+        const rawWebsite = ad?.company?.website || '';
+  
+        const formattedWebsite = rawWebsite.startsWith('http')
+          ? rawWebsite
+          : `https://${rawWebsite}`;
+  
+        return {
+          ...ad,
+          company: {
+            ...ad.company,
+            website: formattedWebsite
+          }
+        };
+      });
+  
+      setAds(updatedAds);
     } catch (error) {
       console.log(error);
     }
   };
+  
 
   const handleClick = async (fav) => {
     try {
@@ -368,7 +386,7 @@ const ScholarshipDetails = () => {
             </div>
           </div>
           {isSm ? null : (
-            <Carousel interval={9900} slide={true}>
+            <Carousel interval={3500} slide={true}>
               {ads.map((data) => (
                 <Carousel.Item>
                   <div
@@ -423,7 +441,17 @@ const ScholarshipDetails = () => {
 
                       // onClick={()=>history.push()}
                     >
-                      <a href={`https:/${data?.company?.website}`}>Learn More</a>
+                    <a
+                      href={
+                        data?.company?.website?.startsWith("http")
+                          ? data.company.website
+                          : `https://${data?.company?.website}`
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Learn More
+                    </a>
                     </button>
                   </div>
                 </Carousel.Item>

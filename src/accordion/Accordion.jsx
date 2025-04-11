@@ -58,64 +58,64 @@ export default function Accordion() {
     }
   ]
   
-	const config = {
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${localStorage.getItem("token")}`,
-		},
-	};
+	// const config = {
+	// 	headers: {
+	// 		"Content-Type": "application/json",
+	// 		Authorization: `Bearer ${localStorage.getItem("token")}`,
+	// 	},
+	// };
 
-  const token = localStorage.getItem("token");
+  // const token = localStorage.getItem("token");
 
-	const getScholarship = async () => {
-		try {
-			const res = await axios.get(`${BASE_URL}/scholarship`, config);
-			// console.log(res?.data.subscription, "==-----");
+	// const getScholarship = async () => {
+	// 	try {
+	// 		const res = await axios.get(`${BASE_URL}/scholarship`, config);
+	// 		// console.log(res?.data.subscription, "==-----");
 
-			setData(res.data.data);
-      console.log(data);
-		} catch (error) {
-			console.log(error);
-		}
-	};
+	// 		setData(res.data.data);
+  //     console.log(data);
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
+	// };
 
-  const getFree = async() => {
-    try{
-      const res = await axios.get(`${BASE_URL}/scholarship/free/scholarships`);
-      console.log(res);
-      setData(res.data.data);
-    }catch(error){
-      console.log(error);
-    }
-  }
+  // const getFree = async() => {
+  //   try{
+  //     const res = await axios.get(`${BASE_URL}/scholarship/free/scholarships`);
+  //     console.log(res);
+  //     setData(res.data.data);
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  // }
 
-  const getSports = async() => {
-    try{
-      const res = await axios.get(`${BASE_URL}/scholarship/sports`,config);
-      console.log(res);
-      setData(res.data.data);
-    }catch(error){
-      console.log(error);
-    }
-  }
+  // const getSports = async() => {
+  //   try{
+  //     const res = await axios.get(`${BASE_URL}/scholarship/sports`,config);
+  //     console.log(res);
+  //     setData(res.data.data);
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  // }
 
-  const getSTEM = async() => {
-    try{
+  // const getSTEM = async() => {
+  //   try{
 
-    }catch(error){
-      console.log(error);
-    }
-  }
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  // }
 
-  useEffect(() => {
-    // getScholarship();
- if(token){
-  getScholarship();
- } else {
-  setData(scholarship_data);
- }
-    // getSports();
-  },[]);
+//   useEffect(() => {
+//     getScholarship();
+//  if(token){
+//   getScholarship();
+//  } else {
+//   setData(scholarship_data);
+//  }
+//     getSports();
+//   },[]);
 
   
   // Pagination Logic
@@ -165,7 +165,7 @@ export default function Accordion() {
           </div>
           <div className="scholarship-list" 
           >
-            {currentData
+            {scholarship_data
               .map((data, i) => (
                 <ScholarshipCard
                   key={i}

@@ -7,7 +7,7 @@ export function ScholarshipCard({ data}) {
 
 //  const handleRoute = () => {
 //   if(token){
-//     window.open(data.link, "_blank");
+//     history('/schloars')
 //   } else {
 //     history('/signin')
 //   }
@@ -55,7 +55,7 @@ export function ScholarshipCard({ data}) {
           </Link>
         }
         {
-          token ? <Link to={data.link} className="scholarship-apply-btn">
+          token ? <Link to={'/scholars'} className="scholarship-apply-btn">
             Apply Now → 
           </Link> : <Link to={'/stepper'} className="scholarship-apply-btn">
             Apply Now →
