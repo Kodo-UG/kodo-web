@@ -34,18 +34,20 @@ const Menu = ({ setShowContent }) => {
         return activeButton === buttonName;
     };
 
-    const fetchNotifications = async () => {
-        let res = await axios.get(
-            "https://api.kodoscholarship.com/api/v1/user/notifications",
-            config
-        );
+    // const fetchNotifications = async () => {
+    //     let res = await axios.get(
+    //         "https://api.kodoscholarship.com/api/v1/user/notifications",
+    //         config
+    //     );
 
-        setData(res.data.data);
-    };
+    //     console.log('hiiiii')
+    //     console.log(res.data.data);
+    //     setData(res.data.data);
+    // };
 
-    useEffect(() => {
-        fetchNotifications();
-    }, []);
+    // useEffect(() => {
+    //     fetchNotifications();
+    // }, []);
 
     const myStyle = {
         display: "flex",
