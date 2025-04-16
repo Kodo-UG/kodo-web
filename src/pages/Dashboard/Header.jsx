@@ -78,7 +78,7 @@ const MyHeader = ({ setShowContent }) => {
 		  return res.data.data;
 		},
 		{
-		  refetchInterval: 1000 // Poll every 10 seconds
+		  refetchInterval: 2500 // Poll every 10 seconds
 		}
 	  );
 
