@@ -71,25 +71,30 @@ const MyHeader = ({ setShowContent }) => {
 		"notifications",
 		async () => {
 		  const res = await axios.get(
-			"http://localhost:4000/api/v1/user/notifications",
+			"https://kodo-backend.kodoscholarship.com/api/v1/user/notifications",
 			config
 		  );
 		  setData(res.data.data);
 		  return res.data.data;
 		},
 		{
-		  refetchInterval: 10000 // Poll every 10 seconds
+		  refetchInterval: 1000 // Poll every 10 seconds
 		}
 	  );
 
 	const HandleClick = async (id) => {
 		try {
 			const res = await axios.patch(
-				`http://localhost:4000/api/v1/user/notifications/${id}`,
+				`https://kodo-backend.kodoscholarship.com/api/v1/user/notifications/${id}`,
 				config
 			);
 			
 			setClickedIds([...clickedIds, id]);
+
+			queryClient.setQueryData("notifications", (oldData) =>
+				oldData?.filter((notif) => notif._id !== id)
+			);
+
 			console.log(res);
 		} catch (error) {
 			throw new Error(error.message || "Failed to fetch notifications");
@@ -164,7 +169,7 @@ const MyHeader = ({ setShowContent }) => {
 						<div style={{ cursor: "pointer", height: 250, overflowY: 'auto', width: "20rem", backgroundColor: "#F4F6F9", padding: 10 }} className="dropdown-menu dropdown-menu-md dropdown-menu-right">
 							<ul className="text-secondary" style={{ display: "flex", flexDirection: "column" }}>
 								{data?.length === 0 ? (
-									<div style={{ textAlign: "center", marginTop: "2rem", color: "gray" }}>
+									<div style={{ textAlign: "center", marginTop: "2rem", color: "gray"}}>
 									No new notifications
 									</div>
 								) : (
