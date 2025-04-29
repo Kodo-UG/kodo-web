@@ -17,6 +17,8 @@ import ScrollToTop from "./components/ScrollTop";
 
 // Lazy-loaded components
 const Home = lazy(() => import("./pages/HomePage"));
+const Otp = lazy(() => import("./pages/otp"));
+const ChangePassword = lazy(() => import("./pages/changepassword"));
 const AboutUs = lazy(() => import("./pages/AboutUs/index"));
 const Blog = lazy(() => import("./pages/Blog"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
@@ -141,6 +143,16 @@ const App = () => {
                     exact
                     path="/forgot/password"
                     component={ForgotPassword}
+                />
+                <Route 
+                    exact
+                    path="/otp"
+                    component={Otp}
+                />
+                <Route 
+                    exact
+                    path="/changepassword"
+                    component={ChangePassword}
                 />
                 <Route
                     path="/reset-password/:token"

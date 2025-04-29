@@ -34,19 +34,26 @@ export default function ForgotPassword() {
 		e.preventDefault();
 
 		try {
-			const data = await axiosInstance.post("/auth/forgot/password", {
-				email,
-			});
-			if (data.status == "200") {
+			const res = await axiosInstance.post("/user/request-otp", { email });
+			const data = res.data; // ✅ Already parsed JSON
+
+			console.log(data)
+			if (data.statusCode == 200) {
 				setLoading(false);
 				displaySuccessMessage(
-					`Password reset instructions sent ${email}`
+					`otp code sent to ${email} to reset password`
 				);
+				history.push({
+					pathname: '/otp',
+					state: {email},
+				})
 			} else {
+				setLoading(false);
 				displayErrorMessage("Password reset");
 			}
 		} catch (error) {
 			displayErrorMessage("Invalid Email or Password");
+			setLoading(false);
 		}
 	};
 	return (
@@ -119,7 +126,7 @@ export default function ForgotPassword() {
                                 </span>
                             ) : (
                                 <>
-                                    Reset <span className="arrow">→</span>
+                                    Continue <span className="arrow">→</span>
                                 </>
                             )}
 									</button>

@@ -21,7 +21,7 @@ const PaymentCard = ({ data }) => {
   const dataInfo = useCurrencyConverter(data.amount);
 
   const config = {
-    public_key: "FLWPUBK-f4cfb0edd79ff0b03bbffc5012173fa1-X",
+    public_key: "FLWPUBK-7493bccd7cf113b3e8b1388c3b5b78e7-X",
     tx_ref: Date.now(),
     amount: dataInfo.convertTo ? dataInfo.result : data.amount,
     currency: dataInfo.convertTo ? dataInfo.convertTo : "USD",
