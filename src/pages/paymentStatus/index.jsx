@@ -1,6 +1,11 @@
 import React from 'react';
 
 const PaymentStatus = () => {
+    const handleClick = () => {
+    // Try to open the app
+    window.location.href = 'myapp://(tabs)/scholarships';
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.box}>
@@ -10,7 +15,10 @@ const PaymentStatus = () => {
           <br />
           You will receive an email once the payment has been confirmed.
         </p>
-        <button style={styles.button}> Back to Kodo app </button>
+        <button 
+            onClick={handleClick}
+            style={styles.button}
+        > Back to Kodo app </button>
       </div>
     </div>
   );
