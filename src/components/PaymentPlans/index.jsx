@@ -20,6 +20,38 @@ const PaymentCard = ({ data }) => {
 
   const dataInfo = useCurrencyConverter(data.amount);
 
+  const getPaymentOptions = (country) => {
+    const channels = {
+      Ghana: "mobilemoneyghana",
+      Nigeria: "ussd",
+      Kenya: "mpesa",
+      Rwanda: "mobilemoneyrwanda",
+      Uganda: "mobilemoneyuganda",
+      Zambia: "mobilemoneyzambia",
+      Tanzania: "mobilemoneytanzania",
+      Malawi: "mobilemoneymalawi",
+    };
+    const mm = channels[country];
+    return mm ? `card,${mm}` : "card";
+  };
+
+  const countryCallingCodes = {
+  Ghana: "233",
+  Uganda: "256",
+  Kenya: "254",
+  Nigeria: "234",
+  Tanzania: "255",
+  Rwanda: "250",
+  Zambia: "260",
+};
+
+// 2. Format phone number
+const rawPhone = dataUser?.user.phone || "";
+const country = dataUser?.user.country || "";
+const code = countryCallingCodes[country] || "";
+const localPhone = rawPhone.replace(/^0+/, ""); // Remove leading zeros
+const formattedPhone = code ? `${code}${localPhone}` : rawPhone; 
+
   const config = {
     public_key: "FLWPUBK-7493bccd7cf113b3e8b1388c3b5b78e7-X",
     tx_ref: Date.now(),
@@ -29,7 +61,7 @@ const PaymentCard = ({ data }) => {
       "card,mobilemoney,ussd,banktransfer,barter,visaqrcode,masterpassqrcode,bankaccount",
     customer: {
       email: `${dataUser?.user.email}`,
-      phone_number: `${dataUser?.user.phone}`,
+      phone_number: formattedPhone,
       name: `${dataUser?.user.fname}`,
     },
     customizations: {
