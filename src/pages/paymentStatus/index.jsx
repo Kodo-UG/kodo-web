@@ -3,7 +3,7 @@ import React from 'react';
 const PaymentStatus = () => {
     const handleClick = () => {
     // Try to open the app
-    window.location.href = 'myapp://(tabs)/scholarships';
+    window.location.href = 'myapp://scholarships';
   };
 
   return (
