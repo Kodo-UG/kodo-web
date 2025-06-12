@@ -64,6 +64,7 @@ const StepComfirmation = lazy(() =>
 );
 const Index = lazy(() => import("../src/pages/profile/index"));
 const Favorite = lazy(() => import("./pages/favorite"));
+const PaymentStatus = lazy(() => import("./pages/paymentStatus/index"));
 
 // useEffect(() => {
 //     const requestPermission = async () => {
@@ -138,6 +139,7 @@ const App = () => {
                 <Route exact path="/index" component={Index} />
                 <Route exact path="/signin" component={Signin} />
                 <Route exact path="/login/:userId" component={Login} />
+                <Route exact path="/payment-status" component={PaymentStatus} />
 
                 <Route
                     exact
