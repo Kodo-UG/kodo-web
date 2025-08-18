@@ -71,7 +71,7 @@ const MyHeader = ({ setShowContent }) => {
 		"notifications",
 		async () => {
 		  const res = await axios.get(
-			"https://kodo-backend.kodoscholarship.com/api/v1/user/notifications",
+			"http://13.61.142.190:4000/api/v1/user/notifications",
 			config
 		  );
 		  setData(res.data.data);
@@ -85,7 +85,7 @@ const MyHeader = ({ setShowContent }) => {
 	const HandleClick = async (id) => {
 		try {
 			const res = await axios.patch(
-				`https://kodo-backend.kodoscholarship.com/api/v1/user/notifications/${id}`,
+				`http://13.61.142.190:4000/api/v1/user/notifications/${id}`,
 				config
 			);
 			

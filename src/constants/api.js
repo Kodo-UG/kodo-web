@@ -1,4 +1,4 @@
-export const BASE_URL = "https://kodo-backend.kodoscholarship.com/api/v1";
+export const BASE_URL = "http://13.61.142.190:4000/api/v1";
 export const config = {
 	headers: {
 		"Content-Type": "application/json",

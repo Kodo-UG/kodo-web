@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-	baseURL: "https://kodo-backend.kodoscholarship.com/api/v1",
+	// baseURL: "https://kodo-backend.kodoscholarship.com/api/v1",
 	// baseURL: "https://api.kodoscholarship.com/api/v1",
+	baseURL: "http://13.61.142.190:4000/api/v1"
 });
 
 apiClient.defaults.headers.post["Content-Type"] = "application/json";

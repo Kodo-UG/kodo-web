@@ -50,7 +50,7 @@ function Profile() {
 	const fetchUser = async () => {
 		try {
 			const response = await axios.get(
-				`https://api.kodoscholarship.com/api/v1/user/profile/${userInfo.user._id}`,
+				`http://13.61.142.190:4000/api/v1/user/profile/${userInfo.user._id}`,
 				config
 			);
 			setData(response.data.data);

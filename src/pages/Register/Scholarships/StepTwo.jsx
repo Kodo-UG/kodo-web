@@ -17,7 +17,7 @@ const StepTwo = ({ nextStep }) => {
 		setLoading(true);
 		try {
 			const response = await fetch(
-				"https://kodo-backend.kodoscholarship.com/api/v1/scholarship/categories"
+				"http://13.61.142.190:4000/api/v1/scholarship/categories"
 			);
 			const data = await response.json();
 			return data;
